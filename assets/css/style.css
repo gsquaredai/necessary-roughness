@@ -300,16 +300,33 @@ th.num {
 }
 
 .champion-row {
+  display: block;
   background: var(--surface);
   border: var(--pixel-border) solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--pixel-shadow);
   padding: 12px 16px;
+  transition: border-color 0.1s, transform 0.1s;
+}
+
+.champion-row:hover,
+.champion-row:focus-visible {
+  border-color: var(--accent-dim);
+}
+
+.champion-row:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 
 .champion-row-main {
   display: flex;
   align-items: center;
+}
+
+.champion-row-arrow {
+  color: var(--text-dim);
+  font-size: 0.9rem;
 }
 
 .champion-row .season {

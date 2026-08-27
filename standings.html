@@ -57,9 +57,16 @@
         .reverse()
         .map((s) => `<option value="${s}">${s} Season</option>`)
         .join("");
-      select.value = idx.currentSeason;
 
-      select.addEventListener("change", () => renderStandings(select.value));
+      const requested = new URLSearchParams(location.search).get("season");
+      select.value = idx.seasons.includes(requested) ? requested : idx.currentSeason;
+
+      select.addEventListener("change", () => {
+        const url = new URL(location.href);
+        url.searchParams.set("season", select.value);
+        history.replaceState(null, "", url);
+        renderStandings(select.value);
+      });
       await renderStandings(select.value);
     }
 

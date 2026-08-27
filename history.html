@@ -71,7 +71,7 @@
           const last = season.teams.find((t) => t.rosterId === season.lastPlace);
           const isCurrent = season.status !== "complete";
           return `
-            <div class="champion-row">
+            <a class="champion-row" href="standings.html?season=${key}">
               <div class="champion-row-main">
                 <span class="season">${key}</span>
                 <span style="flex:1; padding: 0 12px;">
@@ -81,6 +81,7 @@
                       : `<span class="muted">${isCurrent ? "Season in progress" : "No champion recorded"}</span>`
                   }
                 </span>
+                <span class="champion-row-arrow">&gt;</span>
               </div>
               ${
                 last
@@ -90,7 +91,7 @@
                     </div>`
                   : ""
               }
-            </div>
+            </a>
           `;
         })
         .join("");
