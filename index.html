@@ -39,6 +39,7 @@
                 <th>Team</th>
                 <th class="num">Record</th>
                 <th class="num">PF</th>
+                <th class="num">Max PF</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
@@ -109,6 +110,7 @@
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
+              <td class="num">${fmtPts(team.maxPF)}</td>
             </tr>
           `;
         })

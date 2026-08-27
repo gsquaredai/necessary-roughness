@@ -130,6 +130,21 @@ async function buildSeason(league) {
     }));
   }
 
+  const maxByRoster = {};
+  for (const week of Object.values(matchupsByWeek)) {
+    for (const m of week) {
+      for (const side of [m.teamA, m.teamB]) {
+        if (!side) continue;
+        if (side.points > (maxByRoster[side.rosterId] ?? 0)) {
+          maxByRoster[side.rosterId] = side.points;
+        }
+      }
+    }
+  }
+  for (const team of teams) {
+    team.maxPF = maxByRoster[team.rosterId] ?? 0;
+  }
+
   const { champion, lastPlace } = await findChampionAndLastPlace(leagueId, league);
 
   return {

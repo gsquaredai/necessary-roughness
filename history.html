@@ -41,6 +41,7 @@
                 <th class="num">Record</th>
                 <th class="num">Win %</th>
                 <th class="num">PF</th>
+                <th class="num">Max PF</th>
               </tr>
             </thead>
             <tbody id="alltime-body"></tbody>
@@ -113,6 +114,7 @@
               losses: 0,
               ties: 0,
               fpts: 0,
+              maxPF: 0,
               titles: 0,
             });
           }
@@ -121,6 +123,7 @@
           agg.losses += team.losses;
           agg.ties += team.ties;
           agg.fpts += team.fpts;
+          agg.maxPF = Math.max(agg.maxPF, team.maxPF ?? 0);
           // keep most recent team name/avatar
           agg.teamName = team.teamName;
           agg.avatar = team.avatar;
@@ -150,6 +153,7 @@
               <td class="num">${recordStr}</td>
               <td class="num">${pct}%</td>
               <td class="num">${fmtPts(r.fpts)}</td>
+              <td class="num">${fmtPts(r.maxPF)}</td>
             </tr>
           `;
         })

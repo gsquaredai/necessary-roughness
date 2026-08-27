@@ -37,6 +37,7 @@
                 <th>Team</th>
                 <th class="num">Record</th>
                 <th class="num">PF</th>
+                <th class="num">Max PF</th>
                 <th class="num">PA</th>
               </tr>
             </thead>
@@ -83,6 +84,7 @@
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
+              <td class="num">${fmtPts(team.maxPF)}</td>
               <td class="num">${fmtPts(team.fptsAgainst)}</td>
             </tr>
           `;
@@ -93,7 +95,7 @@
     init().catch((err) => {
       console.error(err);
       document.getElementById("standings-body").innerHTML =
-        '<tr><td colspan="5" class="empty-state">Could not load league data.</td></tr>';
+        '<tr><td colspan="6" class="empty-state">Could not load league data.</td></tr>';
     });
   </script>
 </body>
