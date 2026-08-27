@@ -72,17 +72,22 @@
           const isCurrent = season.status !== "complete";
           return `
             <div class="champion-row">
-              <span class="season">${key}</span>
-              <span style="flex:1; padding: 0 12px;">
-                ${
-                  champ
-                    ? teamCellHTML(champ)
-                    : `<span class="muted">${isCurrent ? "Season in progress" : "No champion recorded"}</span>`
-                }
-              </span>
+              <div class="champion-row-main">
+                <span class="season">${key}</span>
+                <span style="flex:1; padding: 0 12px;">
+                  ${
+                    champ
+                      ? teamCellHTML(champ)
+                      : `<span class="muted">${isCurrent ? "Season in progress" : "No champion recorded"}</span>`
+                  }
+                </span>
+              </div>
               ${
                 last
-                  ? `<span class="muted">Last: ${last.teamName}</span>`
+                  ? `<div class="champion-row-last">
+                      <span class="muted">Last:</span>
+                      ${teamCellHTML(last)}
+                    </div>`
                   : ""
               }
             </div>
