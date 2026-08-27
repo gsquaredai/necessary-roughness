@@ -63,6 +63,15 @@ async function buildSeason(league) {
 
   const usersByOwnerId = Object.fromEntries(users.map((u) => [u.user_id, u]));
 
+  // Sleeper gives each manager two images: an account profile picture (avatar,
+  // an id you resolve against the CDN) and, if they've set one, a per-league
+  // team logo (metadata.avatar, already a full URL). Prefer the team logo.
+  const resolveAvatar = (user) => {
+    if (user?.metadata?.avatar) return user.metadata.avatar;
+    if (user?.avatar) return `https://sleepercdn.com/avatars/thumbs/${user.avatar}`;
+    return null;
+  };
+
   const teams = rosters.map((r) => {
     const user = usersByOwnerId[r.owner_id];
     return {
@@ -70,7 +79,7 @@ async function buildSeason(league) {
       ownerId: r.owner_id ?? null,
       teamName: user?.metadata?.team_name || user?.display_name || `Team ${r.roster_id}`,
       displayName: user?.display_name || "Unknown",
-      avatar: user?.avatar || null,
+      avatar: resolveAvatar(user),
       wins: r.settings?.wins ?? 0,
       losses: r.settings?.losses ?? 0,
       ties: r.settings?.ties ?? 0,

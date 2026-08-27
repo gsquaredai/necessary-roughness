@@ -16,6 +16,16 @@ async function loadSeason(season) {
   return data;
 }
 
+async function loadLatestCompletedSeason() {
+  const idx = await loadIndex();
+  const seasonKeys = idx.seasons.slice().reverse();
+  for (const key of seasonKeys) {
+    const season = await loadSeason(key);
+    if (season.status === "complete" && season.champion != null) return season;
+  }
+  return null;
+}
+
 async function loadAllSeasons() {
   const idx = await loadIndex();
   return Promise.all(idx.seasons.map(loadSeason));
@@ -33,16 +43,28 @@ function fmtPts(n) {
   return n.toFixed(2);
 }
 
-function avatarUrl(avatarId) {
-  return avatarId ? `https://sleepercdn.com/avatars/thumbs/${avatarId}` : null;
+// If a local 8-bit team image exists at assets/img/teams/<ownerId>.png, use it.
+// Otherwise fall back to the team's Sleeper logo, and if that's missing too,
+// render a blank placeholder. No manifest to maintain — just drop a PNG in
+// that folder named after the manager's Sleeper owner ID and it takes over.
+function avatarImgHTML(team) {
+  const fallback = team?.avatar || "";
+  if (team?.ownerId) {
+    const localSrc = `assets/img/teams/${team.ownerId}.png`;
+    const onerror = fallback
+      ? `this.onerror=null;this.src='${fallback}';`
+      : `this.onerror=null;this.style.visibility='hidden';`;
+    return `<img class="avatar" src="${localSrc}" onerror="${onerror}" alt="" loading="lazy">`;
+  }
+  if (fallback) return `<img class="avatar" src="${fallback}" alt="" loading="lazy">`;
+  return `<span class="avatar"></span>`;
 }
 
 function teamCellHTML(team, { champ = false, last = false } = {}) {
-  const img = avatarUrl(team?.avatar);
   const name = team?.teamName ?? "Unknown";
   return `
     <span class="team-cell">
-      ${img ? `<img class="avatar" src="${img}" alt="" loading="lazy">` : `<span class="avatar"></span>`}
+      ${avatarImgHTML(team)}
       <span class="team-name">${name}</span>
       ${champ ? '<span class="badge champ">Champ</span>' : ""}
       ${last ? '<span class="badge last">Last</span>' : ""}

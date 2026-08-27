@@ -21,6 +21,11 @@
 
   <div class="page">
     <main>
+      <div class="hero">
+        <h1 id="league-name">Necessary <span>Roughness</span></h1>
+        <div id="champion-card-slot"></div>
+      </div>
+
       <section id="standings-section">
         <h2>Current Standings</h2>
         <div class="card table-wrap">
@@ -49,6 +54,38 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    async function renderChampionCard() {
+      const champSeason = await loadLatestCompletedSeason();
+      const slot = document.getElementById("champion-card-slot");
+      if (!champSeason) {
+        slot.innerHTML = "";
+        return;
+      }
+      const champ = teamById(champSeason, champSeason.champion);
+      if (!champ) {
+        slot.innerHTML = "";
+        return;
+      }
+      slot.innerHTML = `
+        <div class="champion-card">
+          <div class="eyebrow">${champSeason.season} Champion</div>
+          ${avatarImgHTML(champ)}
+          <div class="champ-name">${champ.teamName}</div>
+          <div class="champ-season">${champSeason.season} Season</div>
+          <div class="champ-stats">
+            <div class="stat">
+              <div class="value">${record(champ)}</div>
+              <div class="label">Record</div>
+            </div>
+            <div class="stat">
+              <div class="value">${fmtPts(champ.fpts)}</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     async function renderHome() {
       const idx = await loadIndex();
       const season = await loadSeason(idx.currentSeason);
@@ -112,6 +149,8 @@
         </div>
       `;
     }
+
+    renderChampionCard().catch((err) => console.error(err));
 
     renderHome().catch((err) => {
       console.error(err);
