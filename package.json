@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "fetch": "node scripts/fetch-sleeper.mjs"
+    "fetch": "node scripts/fetch-sleeper.mjs",
+    "pixelate": "node scripts/pixelate-logos.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.35.4"
   }
 }
