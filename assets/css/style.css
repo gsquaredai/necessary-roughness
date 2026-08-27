@@ -32,8 +32,9 @@ body {
   background-image: radial-gradient(var(--surface-2) 1px, transparent 1px);
   background-size: 24px 24px;
   color: var(--text);
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  line-height: 1.4;
+  font-family: "Press Start 2P", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -41,8 +42,6 @@ h1,
 h2,
 h3,
 .brand {
-  font-family: "Press Start 2P", "Inter", system-ui, sans-serif;
-  font-weight: 400;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   margin: 0;
@@ -156,21 +155,20 @@ select {
   border: var(--pixel-border) solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--pixel-shadow);
-  padding: 8px 10px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 10px;
+  font-size: 0.6rem;
   font-family: inherit;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 0.62rem;
 }
 
 th,
 td {
-  padding: 10px 8px;
+  padding: 12px 8px;
   text-align: left;
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
@@ -178,8 +176,7 @@ td {
 
 th {
   color: var(--text-dim);
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -292,7 +289,6 @@ th.num {
 .matchup .vs {
   color: var(--text-dim);
   font-size: 0.65rem;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -344,19 +340,21 @@ th.num {
 
 .muted {
   color: var(--text-dim);
-  font-size: 0.85rem;
+  font-size: 0.6rem;
 }
 
 .empty-state {
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: 0.65rem;
+  line-height: 1.8;
   padding: 24px;
   text-align: center;
 }
 
 .updated-note {
   color: var(--text-dim);
-  font-size: 0.75rem;
+  font-size: 0.55rem;
+  line-height: 1.8;
   margin-top: 24px;
   text-align: center;
 }
@@ -427,7 +425,7 @@ th.num {
 
 .champion-card .champ-season {
   color: var(--text-dim);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   margin-bottom: 16px;
 }
 
