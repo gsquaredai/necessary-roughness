@@ -13,7 +13,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const FORCE = process.argv.includes("--force");
-const PIXEL_GRID = 16; // how blocky — smaller = chunkier pixels
+const PIXEL_GRID = 22; // how blocky — smaller = chunkier pixels
 const OUTPUT_SIZE = 256;
 const PALETTE_COLORS = 16;
 
@@ -60,8 +60,16 @@ async function main() {
     const sourcePath = path.join(SOURCE_DIR, `${team.ownerId}.${ext}`);
     await fs.writeFile(sourcePath, buf);
 
-    await sharp(buf)
+    // sharp doesn't compose chained .resize() calls sequentially — only the
+    // last one takes effect — so the downsample step has to be materialized
+    // into its own buffer before the blocky upscale, or "pixelation" quietly
+    // does nothing but reduce the color palette.
+    const small = await sharp(buf)
       .resize(PIXEL_GRID, PIXEL_GRID, { fit: "cover", position: "centre" })
+      .png()
+      .toBuffer();
+
+    await sharp(small)
       .modulate({ saturation: 1.35 })
       .resize(OUTPUT_SIZE, OUTPUT_SIZE, { kernel: "nearest" })
       .png({ palette: true, colors: PALETTE_COLORS })

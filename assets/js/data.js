@@ -60,6 +60,21 @@ function avatarImgHTML(team) {
   return `<span class="avatar"></span>`;
 }
 
+const CROWN_SVG = `
+  <svg class="crown-icon" viewBox="0 0 11 5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" shape-rendering="crispEdges">
+    <rect x="1" y="0" width="1" height="1"/>
+    <rect x="5" y="0" width="1" height="1"/>
+    <rect x="9" y="0" width="1" height="1"/>
+    <rect x="0" y="1" width="3" height="1"/>
+    <rect x="4" y="1" width="3" height="1"/>
+    <rect x="8" y="1" width="3" height="1"/>
+    <rect x="0" y="2" width="3" height="1"/>
+    <rect x="4" y="2" width="3" height="1"/>
+    <rect x="8" y="2" width="3" height="1"/>
+    <rect x="0" y="3" width="11" height="2"/>
+  </svg>
+`;
+
 function teamCellHTML(team, { champ = false, last = false } = {}) {
   const name = team?.teamName ?? "Unknown";
   return `

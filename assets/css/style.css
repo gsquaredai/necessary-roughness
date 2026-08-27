@@ -397,10 +397,22 @@ th.num {
   margin-bottom: 14px;
 }
 
+.champion-card .crown {
+  display: flex;
+  justify-content: center;
+}
+
+.champion-card .crown-icon {
+  width: 46px;
+  height: 20px;
+  color: var(--accent);
+}
+
 .champion-card .avatar {
   width: 64px;
   height: 64px;
   border-width: 3px;
+  margin-top: 4px;
   margin-bottom: 12px;
 }
 
