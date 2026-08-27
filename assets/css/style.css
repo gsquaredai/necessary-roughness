@@ -215,6 +215,7 @@ th.num {
   font-family: "Press Start 2P", "Inter", system-ui, sans-serif;
   font-size: 0.65rem;
   line-height: 1.6;
+  text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -386,6 +387,7 @@ th.num {
   font-family: "Press Start 2P", sans-serif;
   font-size: 1rem;
   color: var(--text);
+  text-transform: uppercase;
   margin-bottom: 6px;
   word-break: break-word;
 }
