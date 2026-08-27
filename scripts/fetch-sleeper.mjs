@@ -72,12 +72,24 @@ async function buildSeason(league) {
     return null;
   };
 
+  // Team names come straight from Sleeper and often carry emoji, which don't
+  // fit the site's pixel-font look, so strip them out here at the source.
+  const stripEmoji = (str) =>
+    str
+      .replace(/\p{Extended_Pictographic}/gu, "")
+      .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, "") // regional indicators (flag emoji)
+      .replace(/[‍️]/gu, "") // zero-width joiner / variation selector
+      .replace(/\s+/g, " ")
+      .trim();
+
   const teams = rosters.map((r) => {
     const user = usersByOwnerId[r.owner_id];
     return {
       rosterId: r.roster_id,
       ownerId: r.owner_id ?? null,
-      teamName: user?.metadata?.team_name || user?.display_name || `Team ${r.roster_id}`,
+      teamName: stripEmoji(
+        user?.metadata?.team_name || user?.display_name || `Team ${r.roster_id}`
+      ),
       displayName: user?.display_name || "Unknown",
       avatar: resolveAvatar(user),
       wins: r.settings?.wins ?? 0,
