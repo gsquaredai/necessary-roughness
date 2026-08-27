@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History — Necessary Roughness</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="history">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <section>
+        <h2>Champions</h2>
+        <div class="champions-list" id="champions-list"></div>
+      </section>
+
+      <section>
+        <h2>All-Time Standings</h2>
+        <div class="card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Manager</th>
+                <th class="num">Titles</th>
+                <th class="num">Record</th>
+                <th class="num">Win %</th>
+                <th class="num">PF</th>
+              </tr>
+            </thead>
+            <tbody id="alltime-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    async function init() {
+      const idx = await loadIndex();
+      const seasons = await loadAllSeasons();
+      const bySeasonKey = Object.fromEntries(idx.seasons.map((s, i) => [s, seasons[i]]));
+
+      renderChampions(idx.seasons, bySeasonKey);
+      renderAllTime(seasons);
+    }
+
+    function renderChampions(seasonKeys, bySeasonKey) {
+      const rows = seasonKeys
+        .slice()
+        .reverse()
+        .map((key) => {
+          const season = bySeasonKey[key];
+          const champ = season.teams.find((t) => t.rosterId === season.champion);
+          const last = season.teams.find((t) => t.rosterId === season.lastPlace);
+          const isCurrent = season.status !== "complete";
+          return `
+            <div class="champion-row">
+              <span class="season">${key}</span>
+              <span style="flex:1; padding: 0 12px;">
+                ${
+                  champ
+                    ? teamCellHTML(champ)
+                    : `<span class="muted">${isCurrent ? "Season in progress" : "No champion recorded"}</span>`
+                }
+              </span>
+              ${
+                last
+                  ? `<span class="muted">Last: ${last.teamName}</span>`
+                  : ""
+              }
+            </div>
+          `;
+        })
+        .join("");
+      document.getElementById("champions-list").innerHTML = rows;
+    }
+
+    function renderAllTime(seasons) {
+      const byOwner = new Map();
+
+      for (const season of seasons) {
+        for (const team of season.teams) {
+          const key = team.ownerId || team.teamName;
+          if (!byOwner.has(key)) {
+            byOwner.set(key, {
+              displayName: team.displayName,
+              teamName: team.teamName,
+              avatar: team.avatar,
+              wins: 0,
+              losses: 0,
+              ties: 0,
+              fpts: 0,
+              titles: 0,
+            });
+          }
+          const agg = byOwner.get(key);
+          agg.wins += team.wins;
+          agg.losses += team.losses;
+          agg.ties += team.ties;
+          agg.fpts += team.fpts;
+          // keep most recent team name/avatar
+          agg.teamName = team.teamName;
+          agg.avatar = team.avatar;
+          if (season.champion === team.rosterId) agg.titles += 1;
+        }
+      }
+
+      const rows = [...byOwner.values()].sort((a, b) => {
+        const aTotal = a.wins + a.losses + a.ties;
+        const bTotal = b.wins + b.losses + b.ties;
+        const aPct = aTotal ? a.wins / aTotal : 0;
+        const bPct = bTotal ? b.wins / bTotal : 0;
+        if (b.titles !== a.titles) return b.titles - a.titles;
+        return bPct - aPct;
+      });
+
+      document.getElementById("alltime-body").innerHTML = rows
+        .map((r, i) => {
+          const total = r.wins + r.losses + r.ties;
+          const pct = total ? ((r.wins / total) * 100).toFixed(1) : "0.0";
+          const recordStr = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
+          return `
+            <tr>
+              <td>${i + 1}</td>
+              <td>${teamCellHTML(r)}</td>
+              <td class="num">${r.titles}</td>
+              <td class="num">${recordStr}</td>
+              <td class="num">${pct}%</td>
+              <td class="num">${fmtPts(r.fpts)}</td>
+            </tr>
+          `;
+        })
+        .join("");
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("champions-list").innerHTML =
+        '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>

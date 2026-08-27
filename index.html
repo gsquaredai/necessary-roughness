@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Necessary Roughness</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <section id="standings-section">
+        <h2>Current Standings</h2>
+        <div class="card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th class="num">Record</th>
+                <th class="num">PF</th>
+              </tr>
+            </thead>
+            <tbody id="standings-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="matchups-section">
+        <h2 id="matchups-heading">This Week's Matchups</h2>
+        <div class="matchup-grid" id="matchups-list"></div>
+      </section>
+
+      <p class="updated-note" id="updated-note"></p>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    async function renderHome() {
+      const idx = await loadIndex();
+      const season = await loadSeason(idx.currentSeason);
+
+      const standingsBody = document.getElementById("standings-body");
+      const sorted = standingsSorted(season);
+      standingsBody.innerHTML = sorted
+        .map((team, i) => {
+          const champ = season.champion === team.rosterId;
+          const last = season.lastPlace === team.rosterId;
+          return `
+            <tr>
+              <td>${i + 1}</td>
+              <td>${teamCellHTML(team, { champ, last })}</td>
+              <td class="num">${record(team)}</td>
+              <td class="num">${fmtPts(team.fpts)}</td>
+            </tr>
+          `;
+        })
+        .join("");
+
+      const week = latestWeekWithData(season);
+      const matchupsList = document.getElementById("matchups-list");
+      const heading = document.getElementById("matchups-heading");
+
+      if (week == null) {
+        heading.textContent = "No Matchups Yet";
+        matchupsList.innerHTML = `<div class="empty-state">The season hasn't kicked off yet.</div>`;
+      } else {
+        heading.textContent = `Week ${week} Matchups`;
+        matchupsList.innerHTML = season.matchups[week]
+          .map((m) => renderMatchup(season, m))
+          .join("");
+      }
+
+      document.getElementById("updated-note").textContent = `Data last updated ${new Date(
+        idx.updatedAt
+      ).toLocaleString()}`;
+    }
+
+    function renderMatchup(season, m) {
+      const teamA = teamById(season, m.teamA.rosterId);
+      const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
+      const aWins = teamB && m.teamA.points > m.teamB.points;
+      const bWins = teamB && m.teamB.points > m.teamA.points;
+      return `
+        <div class="matchup">
+          <div class="side">
+            ${teamCellHTML(teamA)}
+          </div>
+          <div style="text-align:center;">
+            <div class="points ${aWins ? "winner" : ""}">${fmtPts(m.teamA.points)}</div>
+            <div class="vs">vs</div>
+            <div class="points ${bWins ? "winner" : ""}">${
+        teamB ? fmtPts(m.teamB.points) : "—"
+      }</div>
+          </div>
+          <div class="side right">
+            ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
+          </div>
+        </div>
+      `;
+    }
+
+    renderHome().catch((err) => {
+      console.error(err);
+      document.getElementById("matchups-list").innerHTML =
+        '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>

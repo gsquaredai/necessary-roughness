@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Standings — Necessary Roughness</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="standings">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <div class="controls">
+        <select id="season-select"></select>
+      </div>
+
+      <section>
+        <div class="card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th class="num">Record</th>
+                <th class="num">PF</th>
+                <th class="num">PA</th>
+              </tr>
+            </thead>
+            <tbody id="standings-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    async function init() {
+      const idx = await loadIndex();
+      const select = document.getElementById("season-select");
+      select.innerHTML = idx.seasons
+        .slice()
+        .reverse()
+        .map((s) => `<option value="${s}">${s} Season</option>`)
+        .join("");
+      select.value = idx.currentSeason;
+
+      select.addEventListener("change", () => renderStandings(select.value));
+      await renderStandings(select.value);
+    }
+
+    async function renderStandings(seasonKey) {
+      const season = await loadSeason(seasonKey);
+      const sorted = standingsSorted(season);
+      document.getElementById("standings-body").innerHTML = sorted
+        .map((team, i) => {
+          const champ = season.champion === team.rosterId;
+          const last = season.lastPlace === team.rosterId;
+          return `
+            <tr>
+              <td>${i + 1}</td>
+              <td>${teamCellHTML(team, { champ, last })}</td>
+              <td class="num">${record(team)}</td>
+              <td class="num">${fmtPts(team.fpts)}</td>
+              <td class="num">${fmtPts(team.fptsAgainst)}</td>
+            </tr>
+          `;
+        })
+        .join("");
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("standings-body").innerHTML =
+        '<tr><td colspan="5" class="empty-state">Could not load league data.</td></tr>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1291 @@
+{
+  "season": "2025",
+  "leagueId": "1181873994852401152",
+  "leagueName": "𝓝𝓮𝓬𝓮𝓼𝓼𝓪𝓻𝔂 𝓡𝓸𝓾𝓰𝓱𝓷𝓮𝓼𝓼",
+  "status": "complete",
+  "teams": [
+    {
+      "rosterId": 1,
+      "ownerId": "989741725566427136",
+      "teamName": "𝙎𝙘𝙝𝙧𝙤'𝙨 𝙉𝙚𝙨𝙩",
+      "displayName": "schrog",
+      "avatar": "678b99085c02c2231854dac4d3eacd5f",
+      "wins": 14,
+      "losses": 14,
+      "ties": 0,
+      "fpts": 1592.22,
+      "fptsAgainst": 1653.22
+    },
+    {
+      "rosterId": 2,
+      "ownerId": "990079789383897088",
+      "teamName": "𝒢𝓇𝒶𝓎𝒫𝑜𝓇𝓃𝑜𝑔𝓇𝒶𝓅𝒽𝓎",
+      "displayName": "GardenLaman",
+      "avatar": "481eef6f2f86b5f47b7c0e6096c18e7b",
+      "wins": 11,
+      "losses": 17,
+      "ties": 0,
+      "fpts": 1535.66,
+      "fptsAgainst": 1644.42
+    },
+    {
+      "rosterId": 3,
+      "ownerId": "326066174007713792",
+      "teamName": "Big Dike Energy",
+      "displayName": "Lukas713",
+      "avatar": "2945cbbbc25171040e479851048afcf6",
+      "wins": 10,
+      "losses": 18,
+      "ties": 0,
+      "fpts": 1626.2,
+      "fptsAgainst": 1611.88
+    },
+    {
+      "rosterId": 4,
+      "ownerId": "1125954610599964672",
+      "teamName": "Faded off the Josh ",
+      "displayName": "ChubbFan419",
+      "avatar": "b3338675f635c2c1f42b469621d38ec6",
+      "wins": 13,
+      "losses": 15,
+      "ties": 0,
+      "fpts": 1651.04,
+      "fptsAgainst": 1710.28
+    },
+    {
+      "rosterId": 5,
+      "ownerId": "1044114449679917056",
+      "teamName": "𝓑𝓵𝓪𝓬𝓴 𝓞𝓹𝓼",
+      "displayName": "BIues",
+      "avatar": "af8b6e31acdf9e6cff881a7d6c2cd2dc",
+      "wins": 26,
+      "losses": 2,
+      "ties": 0,
+      "fpts": 2023.92,
+      "fptsAgainst": 1638.62
+    },
+    {
+      "rosterId": 6,
+      "ownerId": "854223684238454784",
+      "teamName": "Smitty Committee",
+      "displayName": "smittycommitee",
+      "avatar": "4f4090e5e9c3941414db40a871e3e909",
+      "wins": 13,
+      "losses": 15,
+      "ties": 0,
+      "fpts": 1576.02,
+      "fptsAgainst": 1651.18
+    },
+    {
+      "rosterId": 7,
+      "ownerId": "1128523568641466368",
+      "teamName": "WANGAF",
+      "displayName": "Rosst810",
+      "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+      "wins": 13,
+      "losses": 15,
+      "ties": 0,
+      "fpts": 1639.78,
+      "fptsAgainst": 1635.98
+    },
+    {
+      "rosterId": 8,
+      "ownerId": "996557160589000704",
+      "teamName": "the left one’s bigger",
+      "displayName": "joecoppola",
+      "avatar": "a17041cc3194fbab07f5e6fa72539a59",
+      "wins": 20,
+      "losses": 8,
+      "ties": 0,
+      "fpts": 1900.52,
+      "fptsAgainst": 1659.5
+    },
+    {
+      "rosterId": 9,
+      "ownerId": "1128774237046636544",
+      "teamName": "Ta-run it Back!",
+      "displayName": "tafinley",
+      "avatar": "b3338675f635c2c1f42b469621d38ec6",
+      "wins": 16,
+      "losses": 12,
+      "ties": 0,
+      "fpts": 1768.64,
+      "fptsAgainst": 1634.78
+    },
+    {
+      "rosterId": 10,
+      "ownerId": "1004418514142253056",
+      "teamName": "D1 Jayden Glazer ",
+      "displayName": "stephrath",
+      "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+      "wins": 12,
+      "losses": 16,
+      "ties": 0,
+      "fpts": 1587.84,
+      "fptsAgainst": 1742.8
+    },
+    {
+      "rosterId": 11,
+      "ownerId": "1128912559073067008",
+      "teamName": "Exciting Whites ",
+      "displayName": "TopChuck",
+      "avatar": "e7af4deab0289b4f5505646424895246",
+      "wins": 5,
+      "losses": 23,
+      "ties": 0,
+      "fpts": 1494.99,
+      "fptsAgainst": 1831.1
+    },
+    {
+      "rosterId": 12,
+      "ownerId": "1129464212063006720",
+      "teamName": "Caleb Williams Sucks",
+      "displayName": "dannyhatty06",
+      "avatar": "e7af4deab0289b4f5505646424895246",
+      "wins": 15,
+      "losses": 13,
+      "ties": 0,
+      "fpts": 1828.44,
+      "fptsAgainst": 1811.52
+    }
+  ],
+  "matchups": {
+    "1": [
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 1,
+          "points": 130.6
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 121.74
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 2,
+          "points": 121.82
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 68.34
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 3,
+          "points": 109.74
+        },
+        "teamB": {
+          "rosterId": 4,
+          "points": 111.84
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 5,
+          "points": 117.92
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 115.22
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 6,
+          "points": 132.34
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 134.68
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 7,
+          "points": 121.76
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 113.82
+        }
+      }
+    ],
+    "2": [
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 1,
+          "points": 128.48
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 171.94
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 2,
+          "points": 153.02
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 117.22
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 3,
+          "points": 122.08
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 113.84
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 4,
+          "points": 139.72
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 91.7
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 8,
+          "points": 125.68
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 118.62
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 9,
+          "points": 140.74
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 114.02
+        }
+      }
+    ],
+    "3": [
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 1,
+          "points": 118.42
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 102.84
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 2,
+          "points": 101.36
+        },
+        "teamB": {
+          "rosterId": 3,
+          "points": 130.3
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 4,
+          "points": 120.64
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 116.74
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 5,
+          "points": 148.24
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 130.86
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 6,
+          "points": 76.5
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 152.9
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 9,
+          "points": 91.4
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 114.16
+        }
+      }
+    ],
+    "4": [
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 1,
+          "points": 145.64
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 97.02
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 2,
+          "points": 115.14
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 138.92
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 3,
+          "points": 133.92
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 135.82
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 4,
+          "points": 125.12
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 162.42
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 5,
+          "points": 165.82
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 101.88
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 7,
+          "points": 132.78
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 141.72
+        }
+      }
+    ],
+    "5": [
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 1,
+          "points": 76.72
+        },
+        "teamB": {
+          "rosterId": 3,
+          "points": 125.14
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 2,
+          "points": 93.98
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 157.68
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 4,
+          "points": 95.38
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 184.24
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 6,
+          "points": 116.64
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 121.04
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 7,
+          "points": 167.92
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 128.78
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 10,
+          "points": 171.6
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 125.7
+        }
+      }
+    ],
+    "6": [
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 1,
+          "points": 81.24
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 146.66
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 2,
+          "points": 81.32
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 139.08
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 3,
+          "points": 122.2
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 91.64
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 4,
+          "points": 96.54
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 129.12
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 5,
+          "points": 133.5
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 107.26
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 8,
+          "points": 168.94
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 143.76
+        }
+      }
+    ],
+    "7": [
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 1,
+          "points": 89.16
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 141.18
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 2,
+          "points": 92.34
+        },
+        "teamB": {
+          "rosterId": 4,
+          "points": 89.22
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 3,
+          "points": 101.9
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 146.84
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 5,
+          "points": 139.68
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 131.48
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 6,
+          "points": 116.56
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 145.8
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 9,
+          "points": 178.22
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 148.76
+        }
+      }
+    ],
+    "8": [
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 1,
+          "points": 150.36
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 106.08
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 2,
+          "points": 124.88
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 163.32
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 3,
+          "points": 129.74
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 143.32
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 4,
+          "points": 95.1
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 130.94
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 6,
+          "points": 128.6
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 61.02
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 8,
+          "points": 121.96
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 97.62
+        }
+      }
+    ],
+    "9": [
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 1,
+          "points": 192.4
+        },
+        "teamB": {
+          "rosterId": 4,
+          "points": 113.16
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 2,
+          "points": 123.3
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 120.06
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 3,
+          "points": 101.74
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 118.52
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 7,
+          "points": 43.5
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 160.04
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 8,
+          "points": 167.9
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 98.54
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 10,
+          "points": 87.16
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 157.44
+        }
+      }
+    ],
+    "10": [
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 1,
+          "points": 76
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 122.68
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 2,
+          "points": 112.7
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 101.7
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 3,
+          "points": 120.72
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 154.5
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 4,
+          "points": 135.96
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 138.12
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 5,
+          "points": 155.04
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 122.42
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 11,
+          "points": 112.34
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 118.1
+        }
+      }
+    ],
+    "11": [
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 1,
+          "points": 94.94
+        },
+        "teamB": {
+          "rosterId": 2,
+          "points": 95.14
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 3,
+          "points": 98.28
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 113.84
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 4,
+          "points": 151
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 102.32
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 5,
+          "points": 115.18
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 103.52
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 6,
+          "points": 88.24
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 117.36
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 7,
+          "points": 99.54
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 124.28
+        }
+      }
+    ],
+    "12": [
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 1,
+          "points": 102.4
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 151.24
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 2,
+          "points": 114.02
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 97.16
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 3,
+          "points": 127.76
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 74.16
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 4,
+          "points": 103.26
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 72.34
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 8,
+          "points": 155.68
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 148.48
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 9,
+          "points": 100.8
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 144.86
+        }
+      }
+    ],
+    "13": [
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 1,
+          "points": 115.96
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 83.2
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 2,
+          "points": 101.26
+        },
+        "teamB": {
+          "rosterId": 3,
+          "points": 112
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 4,
+          "points": 144.88
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 99.18
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 5,
+          "points": 136.58
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 123.4
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 6,
+          "points": 118.3
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 115.84
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 9,
+          "points": 159.22
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 108
+        }
+      }
+    ],
+    "14": [
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 1,
+          "points": 100.4
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 91.7
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 2,
+          "points": 118.38
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 122.48
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 3,
+          "points": 100.68
+        },
+        "teamB": {
+          "rosterId": 4,
+          "points": 135.72
+        }
+      },
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 5,
+          "points": 154.66
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 131.78
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 6,
+          "points": 118.78
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 114.9
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 7,
+          "points": 84.94
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 97.6
+        }
+      }
+    ],
+    "15": [
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 1,
+          "points": 143.4
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 122.62
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 2,
+          "points": 107.04
+        },
+        "teamB": {
+          "rosterId": 3,
+          "points": 127.24
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 4,
+          "points": 132.8
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 123.24
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 5,
+          "points": 197.18
+        },
+        "teamB": {
+          "rosterId": 6,
+          "points": 110.5
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 7,
+          "points": 143.96
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 168.88
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 10,
+          "points": 161.5
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 127.46
+        }
+      }
+    ],
+    "16": [
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 1,
+          "points": 138.44
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 149
+        }
+      },
+      {
+        "matchupId": 5,
+        "teamA": {
+          "rosterId": 2,
+          "points": 85.46
+        },
+        "teamB": {
+          "rosterId": 11,
+          "points": 52.46
+        }
+      },
+      {
+        "matchupId": 6,
+        "teamA": {
+          "rosterId": 3,
+          "points": 115.48
+        },
+        "teamB": {
+          "rosterId": 10,
+          "points": 123.84
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 4,
+          "points": 120.9
+        },
+        "teamB": {
+          "rosterId": 5,
+          "points": 195.2
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 6,
+          "points": 120.72
+        },
+        "teamB": {
+          "rosterId": 9,
+          "points": 140.56
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 7,
+          "points": 89.72
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 185.18
+        }
+      }
+    ],
+    "17": [
+      {
+        "matchupId": 2,
+        "teamA": {
+          "rosterId": 1,
+          "points": 121.66
+        },
+        "teamB": {
+          "rosterId": 4,
+          "points": 109.62
+        }
+      },
+      {
+        "matchupId": 1,
+        "teamA": {
+          "rosterId": 5,
+          "points": 145.8
+        },
+        "teamB": {
+          "rosterId": 8,
+          "points": 121.62
+        }
+      },
+      {
+        "matchupId": 4,
+        "teamA": {
+          "rosterId": 6,
+          "points": 62.24
+        },
+        "teamB": {
+          "rosterId": 7,
+          "points": 128.38
+        }
+      },
+      {
+        "matchupId": 3,
+        "teamA": {
+          "rosterId": 9,
+          "points": 136.6
+        },
+        "teamB": {
+          "rosterId": 12,
+          "points": 168.9
+        }
+      }
+    ],
+    "18": []
+  },
+  "champion": 5,
+  "lastPlace": 2
+}

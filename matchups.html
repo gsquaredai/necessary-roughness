@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matchups — Necessary Roughness</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="matchups">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <div class="controls">
+        <select id="season-select"></select>
+        <select id="week-select"></select>
+      </div>
+
+      <section>
+        <div class="matchup-grid" id="matchups-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    let currentSeason = null;
+
+    async function init() {
+      const idx = await loadIndex();
+      const seasonSelect = document.getElementById("season-select");
+      seasonSelect.innerHTML = idx.seasons
+        .slice()
+        .reverse()
+        .map((s) => `<option value="${s}">${s} Season</option>`)
+        .join("");
+      seasonSelect.value = idx.currentSeason;
+
+      seasonSelect.addEventListener("change", () => loadSeasonInto(seasonSelect.value));
+      await loadSeasonInto(seasonSelect.value);
+
+      document.getElementById("week-select").addEventListener("change", renderWeek);
+    }
+
+    async function loadSeasonInto(seasonKey) {
+      currentSeason = await loadSeason(seasonKey);
+      const weeks = Object.keys(currentSeason.matchups)
+        .map(Number)
+        .sort((a, b) => a - b);
+
+      const weekSelect = document.getElementById("week-select");
+      weekSelect.innerHTML = weeks.map((w) => `<option value="${w}">Week ${w}</option>`).join("");
+
+      if (weeks.length) {
+        const latestPlayed = latestWeekWithData(currentSeason);
+        weekSelect.value = latestPlayed ?? weeks[0];
+        renderWeek();
+      } else {
+        document.getElementById("matchups-list").innerHTML =
+          '<div class="empty-state">No matchups played yet this season.</div>';
+      }
+    }
+
+    function renderWeek() {
+      const week = document.getElementById("week-select").value;
+      const matchups = currentSeason.matchups[week] || [];
+      document.getElementById("matchups-list").innerHTML = matchups
+        .map((m) => renderMatchup(currentSeason, m))
+        .join("");
+    }
+
+    function renderMatchup(season, m) {
+      const teamA = teamById(season, m.teamA.rosterId);
+      const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
+      const aWins = teamB && m.teamA.points > m.teamB.points;
+      const bWins = teamB && m.teamB.points > m.teamA.points;
+      return `
+        <div class="matchup">
+          <div class="side">
+            ${teamCellHTML(teamA)}
+          </div>
+          <div style="text-align:center;">
+            <div class="points ${aWins ? "winner" : ""}">${fmtPts(m.teamA.points)}</div>
+            <div class="vs">vs</div>
+            <div class="points ${bWins ? "winner" : ""}">${
+        teamB ? fmtPts(m.teamB.points) : "—"
+      }</div>
+          </div>
+          <div class="side right">
+            ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
+          </div>
+        </div>
+      `;
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("matchups-list").innerHTML =
+        '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>
