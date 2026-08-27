@@ -72,10 +72,15 @@ async function buildSeason(league) {
     return null;
   };
 
-  // Team names come straight from Sleeper and often carry emoji, which don't
-  // fit the site's pixel-font look, so strip them out here at the source.
-  const stripEmoji = (str) =>
+  // Team names come straight from Sleeper and often carry emoji or "fancy
+  // font" styling (from unicode-text-generator sites — mathematical
+  // alphanumeric symbols, not real font styling). Neither survives the
+  // pixel font, so normalize both away here at the source. NFKD's
+  // compatibility decomposition maps styled-letter unicode back to plain
+  // ASCII (e.g. "𝓑𝓵𝓪𝓬𝓴 𝓞𝓹𝓼" -> "Black Ops").
+  const cleanTeamName = (str) =>
     str
+      .normalize("NFKD")
       .replace(/\p{Extended_Pictographic}/gu, "")
       .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, "") // regional indicators (flag emoji)
       .replace(/[‍️]/gu, "") // zero-width joiner / variation selector
@@ -87,7 +92,7 @@ async function buildSeason(league) {
     return {
       rosterId: r.roster_id,
       ownerId: r.owner_id ?? null,
-      teamName: stripEmoji(
+      teamName: cleanTeamName(
         user?.metadata?.team_name || user?.display_name || `Team ${r.roster_id}`
       ),
       displayName: user?.display_name || "Unknown",
