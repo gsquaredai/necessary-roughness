@@ -214,6 +214,9 @@ th.num {
 }
 
 .team-name {
+  font-family: "Press Start 2P", "Inter", system-ui, sans-serif;
+  font-size: 0.65rem;
+  line-height: 1.6;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
