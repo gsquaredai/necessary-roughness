@@ -88,6 +88,9 @@
           </div>
         </div>
       `;
+
+      const cardEl = slot.querySelector(".champion-card");
+      if (cardEl) playChampionCelebration(cardEl);
     }
 
     async function renderHome() {

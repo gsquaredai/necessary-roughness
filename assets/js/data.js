@@ -75,6 +75,66 @@ const CROWN_SVG = `
   </svg>
 `;
 
+const FOOTBALL_SVG = `
+  <svg class="football-icon" viewBox="0 0 9 7" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+    <g fill="#8b5a2b">
+      <rect x="3" y="0" width="3" height="1"/>
+      <rect x="2" y="1" width="5" height="1"/>
+      <rect x="1" y="2" width="7" height="1"/>
+      <rect x="0" y="3" width="9" height="1"/>
+      <rect x="1" y="4" width="7" height="1"/>
+      <rect x="2" y="5" width="5" height="1"/>
+      <rect x="3" y="6" width="3" height="1"/>
+    </g>
+    <g fill="#f5eee0">
+      <rect x="4" y="2" width="1" height="3"/>
+      <rect x="3" y="2" width="1" height="1"/>
+      <rect x="3" y="4" width="1" height="1"/>
+      <rect x="5" y="2" width="1" height="1"/>
+      <rect x="5" y="4" width="1" height="1"/>
+    </g>
+  </svg>
+`;
+
+const CONFETTI_COLORS = ["#f2c94c", "#4fd47a", "#4cc9f0", "#ff5d6c", "#e8e8f0"];
+
+function randBetween(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+// Spawns a one-shot confetti + football burst into `container` (which must
+// be position:relative or position:absolute), then cleans itself up once
+// the animations finish. Call after the champion card's HTML is in the DOM.
+function playChampionCelebration(container) {
+  const layer = document.createElement("div");
+  layer.className = "celebration-layer";
+
+  const pieceCount = 28;
+  for (let i = 0; i < pieceCount; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti-piece";
+    piece.style.left = `${randBetween(2, 98)}%`;
+    piece.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    piece.style.animationDelay = `${randBetween(0, 0.5)}s`;
+    piece.style.animationDuration = `${randBetween(1.6, 2.6)}s`;
+    piece.style.setProperty("--spin", `${Math.round(randBetween(180, 540))}deg`);
+    layer.appendChild(piece);
+  }
+
+  const footballLeft = document.createElement("div");
+  footballLeft.className = "football-piece football-left";
+  footballLeft.innerHTML = FOOTBALL_SVG;
+  layer.appendChild(footballLeft);
+
+  const footballRight = document.createElement("div");
+  footballRight.className = "football-piece football-right";
+  footballRight.innerHTML = FOOTBALL_SVG;
+  layer.appendChild(footballRight);
+
+  container.appendChild(layer);
+  setTimeout(() => layer.remove(), 3200);
+}
+
 function teamCellHTML(team, { champ = false, last = false } = {}) {
   const name = team?.teamName ?? "Unknown";
   return `
