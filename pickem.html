@@ -37,13 +37,16 @@
 
   <script src="assets/js/data.js"></script>
   <script>
-    // Real accounts + a real database (Firebase free tier) — this is the
-    // one feature on an otherwise fully static/read-only site that needs
-    // shared, multi-user, writable state: 12 managers submitting and
-    // editing their own picks, with everyone seeing the same pool
-    // standings. Firestore security rules (configured in the Firebase
-    // console, not in this file) enforce that a signed-in user can only
-    // ever write their own picks doc and their own identity doc.
+    // A real database (Firebase free tier) — this is the one feature on an
+    // otherwise fully static/read-only site that needs shared, multi-user,
+    // writable state: 12 managers submitting and editing their own picks,
+    // with everyone seeing the same pool standings. No visible sign-in —
+    // every visitor is signed in anonymously behind the scenes purely so
+    // Firestore's security rules have a stable request.auth.uid to check
+    // (a signed-in browser can only write its own identity doc, and only
+    // the picks doc for whatever team that identity doc claims). Which
+    // team someone IS is just the site-wide "which team are you" pick
+    // (assets/js/data.js), honor system from there on.
     const firebaseConfig = {
       apiKey: "AIzaSyAwRdeJXzmPaInTH2rDMNriQfErQPj33yQ",
       authDomain: "necessaryroughness-5edd5.firebaseapp.com",
@@ -104,87 +107,13 @@
       return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
     }
 
-    // ---------- auth gate ----------
+    // ---------- team identity ----------
 
-    function renderAuthGate() {
+    // Shows the "which team are you?" picker directly in Pick-Em. Picking
+    // a team here sets it as the site-wide identity too (assets/js/data.js)
+    // so the rest of the site picks it up as well.
+    function renderTeamPickerUI() {
       const root = document.getElementById("pickem-root");
-      root.innerHTML = `
-        <div class="pickem-auth-box">
-          <div class="info-lead" style="text-align: center;">Sign in to make your Pick-Em picks</div>
-          <div class="view-toggle" id="pickem-auth-mode" style="justify-content: center; margin: 14px 0;">
-            <button type="button" data-mode="login" class="active">Log In</button>
-            <button type="button" data-mode="signup">Sign Up</button>
-          </div>
-          <form id="pickem-auth-form" class="pickem-auth-form">
-            <input type="email" id="pickem-email" placeholder="Email" required autocomplete="email" />
-            <input type="password" id="pickem-password" placeholder="Password" required autocomplete="current-password" minlength="6" />
-            <button type="submit" class="btn-primary">Log In</button>
-          </form>
-          <div id="pickem-auth-error" class="pickem-auth-error"></div>
-        </div>
-      `;
-
-      let mode = "login";
-      const modeToggle = root.querySelector("#pickem-auth-mode");
-      const submitBtn = root.querySelector("#pickem-auth-form button[type=submit]");
-      const passwordInput = root.querySelector("#pickem-password");
-
-      modeToggle.addEventListener("click", (e) => {
-        const btn = e.target.closest("button[data-mode]");
-        if (!btn) return;
-        mode = btn.dataset.mode;
-        modeToggle.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
-        submitBtn.textContent = mode === "signup" ? "Sign Up" : "Log In";
-        passwordInput.autocomplete = mode === "signup" ? "new-password" : "current-password";
-      });
-
-      root.querySelector("#pickem-auth-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const email = root.querySelector("#pickem-email").value.trim();
-        const password = passwordInput.value;
-        const errEl = root.querySelector("#pickem-auth-error");
-        errEl.textContent = "";
-        submitBtn.disabled = true;
-        try {
-          if (mode === "signup") {
-            await auth.createUserWithEmailAndPassword(email, password);
-          } else {
-            await auth.signInWithEmailAndPassword(email, password);
-          }
-          // onAuthStateChanged fires next and re-renders.
-        } catch (err) {
-          errEl.textContent = err.message || "Something went wrong.";
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    // ---------- team claim (first sign-in only) ----------
-
-    async function renderTeamClaimPicker() {
-      const root = document.getElementById("pickem-root");
-
-      // If the manager already picked their team via the site-wide "which
-      // team are you" bar, auto-claim that same team here instead of making
-      // them pick again — unless it's already claimed by a different login.
-      const siteId = loadSiteIdentity();
-      if (siteId) {
-        const team = teamById(currentSeason, siteId.rosterId);
-        if (team) {
-          const existing = await db.collection("identities").where("ownerId", "==", team.ownerId).get();
-          if (existing.empty || existing.docs[0].id === currentUser.uid) {
-            await db.collection("identities").doc(currentUser.uid).set({
-              ownerId: team.ownerId,
-              rosterId: team.rosterId,
-              teamName: team.teamName,
-            });
-            identity = { ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName };
-            renderMain();
-            return;
-          }
-        }
-      }
-
       const rows = currentSeason.teams
         .slice()
         .sort((a, b) => a.teamName.localeCompare(b.teamName))
@@ -203,27 +132,9 @@
       root.innerHTML = `
         <div class="info-lead" style="text-align: center; margin-bottom: 16px;">Which team are you?</div>
         <div class="team-box-list">${rows}</div>
-        <div id="pickem-claim-error" class="pickem-auth-error" style="text-align: center;"></div>
-        <button type="button" id="pickem-signout" class="link-btn" style="display: block; margin: 16px auto 0;">Sign out</button>
       `;
       root.querySelectorAll(".team-list-row").forEach((row) => {
-        const pick = async () => {
-          const team = teamById(currentSeason, Number(row.dataset.rosterId));
-          const errEl = root.querySelector("#pickem-claim-error");
-          errEl.textContent = "";
-          const existing = await db.collection("identities").where("ownerId", "==", team.ownerId).get();
-          if (!existing.empty && existing.docs[0].id !== currentUser.uid) {
-            errEl.textContent = `${team.teamName} is already linked to another login. If that's wrong, ask the commissioner.`;
-            return;
-          }
-          await db.collection("identities").doc(currentUser.uid).set({
-            ownerId: team.ownerId,
-            rosterId: team.rosterId,
-            teamName: team.teamName,
-          });
-          identity = { ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName };
-          renderMain();
-        };
+        const pick = () => claimTeam(teamById(currentSeason, Number(row.dataset.rosterId)));
         row.addEventListener("click", pick);
         row.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -232,7 +143,39 @@
           }
         });
       });
-      root.querySelector("#pickem-signout").addEventListener("click", () => auth.signOut());
+    }
+
+    async function claimTeam(team) {
+      await db.collection("identities").doc(currentUser.uid).set({
+        ownerId: team.ownerId,
+        rosterId: team.rosterId,
+        teamName: team.teamName,
+      });
+      saveSiteIdentity(team);
+      refreshSiteIdentityBar();
+      identity = { ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName };
+      renderMain();
+    }
+
+    // Reconciles Pick-Em's Firestore identity with the site-wide "which
+    // team are you" pick (localStorage). If no team's been picked anywhere
+    // on the site yet, forces the picker here before anything else shows.
+    async function resolveIdentityAndRender() {
+      const siteId = loadSiteIdentity();
+      if (siteId) {
+        const team = teamById(currentSeason, siteId.rosterId);
+        if (team) {
+          const idDoc = await db.collection("identities").doc(currentUser.uid).get();
+          if (idDoc.exists && idDoc.data().ownerId === team.ownerId) {
+            identity = idDoc.data();
+            renderMain();
+          } else {
+            await claimTeam(team);
+          }
+          return;
+        }
+      }
+      renderTeamPickerUI();
     }
 
     // ---------- main shell ----------
@@ -240,17 +183,12 @@
     function renderMain() {
       const root = document.getElementById("pickem-root");
       root.innerHTML = `
-        <div class="pickem-identity-bar">
-          Playing as <strong>${identity.teamName}</strong> <span class="muted">(${currentUser.email})</span>
-          <button type="button" id="pickem-logout" class="link-btn">Log Out</button>
-        </div>
         <div class="view-toggle" id="pickem-tabs">
           <button type="button" data-tab="weeks">Weeks</button>
           <button type="button" data-tab="pool">Pool</button>
         </div>
         <div id="pickem-content"></div>
       `;
-      root.querySelector("#pickem-logout").addEventListener("click", () => auth.signOut());
 
       const tabs = root.querySelector("#pickem-tabs");
       const params = new URLSearchParams(location.search);
@@ -560,23 +498,21 @@
       [allPlayers, schedule] = await Promise.all([loadPlayers(), loadSchedule()]);
 
       auth.onAuthStateChanged(async (user) => {
-        currentUser = user;
         if (!user) {
-          identity = null;
-          renderAuthGate();
-          return;
-        }
-        try {
-          const idDoc = await db.collection("identities").doc(user.uid).get();
-          if (!idDoc.exists) {
-            await renderTeamClaimPicker();
-          } else {
-            identity = idDoc.data();
-            renderMain();
+          try {
+            await auth.signInAnonymously();
+          } catch (err) {
+            document.getElementById("pickem-root").innerHTML =
+              '<div class="empty-state">Could not connect — try refreshing.</div>';
           }
+          return; // onAuthStateChanged fires again once the anonymous user exists
+        }
+        currentUser = user;
+        try {
+          await resolveIdentityAndRender();
         } catch (err) {
           document.getElementById("pickem-root").innerHTML =
-            '<div class="empty-state">Could not load your account. Try refreshing.</div>';
+            '<div class="empty-state">Could not load league data. Try refreshing.</div>';
         }
       });
     }

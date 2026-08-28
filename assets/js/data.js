@@ -503,24 +503,33 @@ async function openSiteIdentityPicker() {
   });
 }
 
+function refreshSiteIdentityBar() {
+  const bar = document.getElementById("site-identity-bar");
+  if (!bar) return;
+  const id = loadSiteIdentity();
+  bar.innerHTML = id
+    ? `<button type="button" class="site-identity-btn" id="site-identity-btn">Playing as <strong>${id.teamName}</strong> &middot; change</button>`
+    : `<button type="button" class="site-identity-btn site-identity-btn-empty" id="site-identity-btn">Pick your team &rarr; highlight it across the site</button>`;
+  bar.querySelector("#site-identity-btn").addEventListener("click", openSiteIdentityPicker);
+}
+
 function renderSiteIdentityBar() {
   const page = document.querySelector(".page");
   if (!page || document.getElementById("site-identity-bar")) return;
   const bar = document.createElement("div");
   bar.className = "site-identity-bar";
   bar.id = "site-identity-bar";
-  const id = loadSiteIdentity();
-  bar.innerHTML = id
-    ? `<button type="button" class="site-identity-btn" id="site-identity-btn">Playing as <strong>${id.teamName}</strong> &middot; change</button>`
-    : `<button type="button" class="site-identity-btn site-identity-btn-empty" id="site-identity-btn">Pick your team &rarr; highlight it across the site</button>`;
   page.parentNode.insertBefore(bar, page);
-  bar.querySelector("#site-identity-btn").addEventListener("click", openSiteIdentityPicker);
+  refreshSiteIdentityBar();
 }
 
 const SITE_IDENTITY_PROMPTED_KEY = "nr_site_identity_prompted_v1";
 
 function maybeAutoPromptSiteIdentity() {
   if (loadSiteIdentity()) return;
+  // pickem.html has its own inline "which team are you" screen and forces
+  // it before showing anything else — don't stack the generic modal on it.
+  if (document.body.dataset.page === "pickem") return;
   let prompted = false;
   try {
     prompted = localStorage.getItem(SITE_IDENTITY_PROMPTED_KEY) === "1";
