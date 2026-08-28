@@ -1756,6 +1756,24 @@ tr.is-my-team td:first-child {
   margin-top: 8px;
 }
 
+.pickem-locked-callout {
+  border-left-color: var(--loss);
+  margin-bottom: 16px;
+}
+
+.pickem-locked-callout .info-callout-label {
+  color: var(--loss);
+}
+
+.draft-list.pickem-locked .pickem-card {
+  opacity: 0.7;
+}
+
+.draft-list.pickem-locked .pickem-side {
+  cursor: default;
+  pointer-events: none;
+}
+
 .new-rules-callout {
   background: var(--surface);
   border: var(--pixel-border) solid var(--accent);

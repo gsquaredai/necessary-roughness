@@ -81,6 +81,41 @@
       return Math.min(next, lastRegularWeek());
     }
 
+    // ---------- kickoff lock ----------
+    // Once a week's first game kicks off (minus a safety buffer), no new
+    // picks or edits are accepted for it — "you snooze, you lose." Sleeper's
+    // own schedule data (data/schedule.json) only has a date, not a kickoff
+    // time, so this checks ESPN's public scoreboard API live, in the
+    // browser, for the real kickoff timestamp — not the static, build-time
+    // schedule snapshot.
+    const LOCK_BUFFER_MS = 30 * 60 * 1000;
+    const kickoffCache = new Map(); // week -> earliest kickoff (ms), or null if unknown
+
+    async function firstKickoffForWeek(week) {
+      if (kickoffCache.has(week)) return kickoffCache.get(week);
+      let kickoff = null;
+      try {
+        const res = await fetch(
+          `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=${week}&dates=${currentSeason.season}`
+        );
+        const data = await res.json();
+        const times = (data.events || [])
+          .map((e) => new Date(e.date).getTime())
+          .filter((t) => !Number.isNaN(t));
+        if (times.length) kickoff = Math.min(...times);
+      } catch {
+        // network hiccup / API unreachable — treat as unknown, fail open
+      }
+      kickoffCache.set(week, kickoff);
+      return kickoff;
+    }
+
+    async function isWeekLocked(week) {
+      const kickoff = await firstKickoffForWeek(week);
+      if (kickoff == null) return false; // can't determine kickoff — don't block
+      return Date.now() >= kickoff - LOCK_BUFFER_MS;
+    }
+
     // ---------- team identity ----------
 
     // Shows the "which team are you?" picker directly in Pick-Em. Picking
@@ -234,9 +269,10 @@
 
     async function renderWeekBody(container, week) {
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
-      const [existing, counts] = await Promise.all([
+      const [existing, counts, locked] = await Promise.all([
         identity ? loadPicksDoc(identity.ownerId, week) : null,
         loadPickCounts(week),
+        isWeekLocked(week),
       ]);
       currentPicks = existing && existing.picks ? { ...existing.picks } : {};
 
@@ -259,25 +295,38 @@
             `
             : ""
         }
-        <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
-        <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;">${
-          existing ? "Update Picks" : "Submit Picks"
+        ${
+          locked
+            ? `
+              <div class="info-callout pickem-locked-callout">
+                <span class="info-callout-label">Picks Locked</span>
+                The first game of Week ${week} has kicked off (or kicks off within 30 minutes) — no new picks or
+                edits are accepted for this week anymore.
+              </div>
+            `
+            : ""
+        }
+        <div class="draft-list${locked ? " pickem-locked" : ""}" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
+        <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;"${locked ? " disabled" : ""}>${
+          locked ? "Picks Locked" : existing ? "Update Picks" : "Submit Picks"
         }</button>
         <div id="pickem-submit-status" class="muted" style="margin-top: 8px;"></div>
       `;
 
       const list = container.querySelector("#pickem-matchups");
 
-      list.querySelectorAll("[data-pick-roster]").forEach((el) => {
-        el.addEventListener("click", () => {
-          const matchupId = el.dataset.matchupId;
-          currentPicks[matchupId] = Number(el.dataset.pickRoster);
-          list
-            .querySelectorAll(`[data-matchup-id="${matchupId}"][data-pick-roster]`)
-            .forEach((x) => x.classList.toggle("selected", x === el));
-          updateSubmitButtonState(container, matchupInfo);
+      if (!locked) {
+        list.querySelectorAll("[data-pick-roster]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const matchupId = el.dataset.matchupId;
+            currentPicks[matchupId] = Number(el.dataset.pickRoster);
+            list
+              .querySelectorAll(`[data-matchup-id="${matchupId}"][data-pick-roster]`)
+              .forEach((x) => x.classList.toggle("selected", x === el));
+            updateSubmitButtonState(container, matchupInfo);
+          });
         });
-      });
+      }
 
       list.querySelectorAll("[data-view-rosters]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -285,6 +334,8 @@
           openMatchupModal(currentSeason, week, Number(btn.dataset.t1), Number(btn.dataset.t2));
         });
       });
+
+      if (locked) return;
 
       updateSubmitButtonState(container, matchupInfo);
 
@@ -345,6 +396,13 @@
       const status = container.querySelector("#pickem-submit-status");
       if (!matchupInfo.every((info) => currentPicks[info.m.matchupId] != null)) {
         status.textContent = `Pick all ${matchupInfo.length} matchups before submitting.`;
+        return;
+      }
+
+      // Re-check the lock right before saving — the page may have been sitting
+      // open since before kickoff.
+      if (await isWeekLocked(week)) {
+        await renderWeekBody(container, week);
         return;
       }
 
