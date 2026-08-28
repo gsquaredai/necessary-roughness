@@ -67,6 +67,13 @@
       allPlayers = players;
     }
 
+    // Long team names are what push things onto an extra row in the
+    // mobile card layouts — shorten anything past 13 characters.
+    function truncName(name, max = 13) {
+      if (!name) return "";
+      return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
+    }
+
     function latestTeamByOwner(seasons, ownerId) {
       for (let i = seasons.length - 1; i >= 0; i--) {
         const t = seasons[i].teams.find((t) => t.ownerId === ownerId);
@@ -339,7 +346,22 @@
       return results.slice(0, 10);
     }
 
-    function computeTopPlayerScores(players) {
+    // Which dynasty roster gets credit for a player's score in a given
+    // week — whoever had them on their roster (starter or bench) that
+    // week, found by searching that week's matchup rosters.
+    function creditedTeamForPlayerWeek(season, week, playerId) {
+      const matchups = season.matchups[week] || season.matchups[String(week)] || [];
+      for (const m of matchups) {
+        for (const side of [m.teamA, m.teamB].filter(Boolean)) {
+          if ((side.players || []).includes(playerId)) {
+            return teamById(season, side.rosterId);
+          }
+        }
+      }
+      return null;
+    }
+
+    function computeTopPlayerScores(seasons, players) {
       const results = [];
       for (const p of Object.values(players)) {
         for (const [season, data] of Object.entries(p.seasons || {})) {
@@ -359,13 +381,18 @@
         }
       }
       results.sort((a, b) => b.points - a.points);
-      return results.slice(0, 10);
+      const top = results.slice(0, 10);
+      for (const r of top) {
+        const seasonObj = seasons.find((s) => s.season === r.season);
+        r.creditedTeam = seasonObj ? creditedTeamForPlayerWeek(seasonObj, r.week, r.playerId) : null;
+      }
+      return top;
     }
 
     async function renderScoringTab(container) {
       await ensureData();
       const topTeams = computeTopTeamScores(allSeasons);
-      const topPlayers = computeTopPlayerScores(allPlayers);
+      const topPlayers = computeTopPlayerScores(allSeasons, allPlayers);
 
       const teamRows = topTeams.length
         ? topTeams
@@ -374,12 +401,14 @@
               const attrs = clickable
                 ? ` data-season="${r.season}" data-week="${r.week}" data-t1="${r.team.rosterId}" data-t2="${r.opponent.rosterId}"`
                 : "";
+              const teamForDisplay = { ...r.team, teamName: truncName(r.team.teamName) };
+              const oppName = r.opponent ? truncName(r.opponent.teamName) : "Bye";
               return `
                 <div class="info-stat-row history-score-row${clickable ? " clickable-row" : ""}"${attrs}>
                   <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
-                  ${teamCellHTML(r.team)}
+                  ${teamCellHTML(teamForDisplay)}
                   <span class="muted history-score-context">
-                    vs ${r.opponent ? r.opponent.teamName : "Bye"} &middot; ${r.season} Wk ${r.week}
+                    vs ${oppName} &middot; ${r.season} Wk ${r.week}
                   </span>
                   <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
                 </div>
@@ -392,12 +421,24 @@
         ? topPlayers
             .map(
               (r, i) => `
-                <div class="info-stat-row history-score-row">
-                  <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
-                  <span>${playerLinkHTML(r.playerId, r.name)}</span>
-                  <span class="player-meta">${r.position || ""}${r.nflTeam ? " &middot; " + nflAbbr3(r.nflTeam) : ""}</span>
-                  <span class="muted history-score-context">${r.season} Wk ${r.week}</span>
-                  <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
+                <div class="info-stat-row history-player-row">
+                  <div class="history-player-line">
+                    <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
+                    <span>${playerLinkHTML(r.playerId, r.name)}</span>
+                  </div>
+                  <div class="history-player-line">
+                    <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
+                    <span class="player-meta">${r.position || ""}${r.nflTeam ? " &middot; " + nflAbbr3(r.nflTeam) : ""}</span>
+                    ${nflLogoImgHTML(r.nflTeam)}
+                  </div>
+                  <div class="history-player-line muted">
+                    <span>${r.season} Wk ${r.week}</span>
+                    ${
+                      r.creditedTeam
+                        ? `<span class="history-player-credit">${avatarImgHTML(r.creditedTeam)}${truncName(r.creditedTeam.teamName)}</span>`
+                        : ""
+                    }
+                  </div>
                 </div>
               `
             )
@@ -534,23 +575,27 @@
         .map((r) => {
           const teamA = latestTeamByOwner(allSeasons, r.owners[0]);
           const teamB = latestTeamByOwner(allSeasons, r.owners[1]);
-          const recordStr = r.ties ? `${r.winsA}-${r.winsB}-${r.ties}` : `${r.winsA}-${r.winsB}`;
+          // Each side shows its OWN record (from its own perspective) right
+          // under its own team, instead of one shared "2-0" string in the
+          // middle that's ambiguous about which side is which.
+          const recordAStr = r.ties ? `${r.winsA}-${r.winsB}-${r.ties}` : `${r.winsA}-${r.winsB}`;
+          const recordBStr = r.ties ? `${r.winsB}-${r.winsA}-${r.ties}` : `${r.winsB}-${r.winsA}`;
           return `
             <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding: 14px;">
               <div class="rivalry-banner" style="--rivalry-color: ${r.color || "#4cc9f0"}; margin: 0;">${r.name}</div>
               <div class="rivalry-matchup-row">
                 <div style="text-align: center;">
                   ${teamA ? teamCellHTML(teamA) : '<span class="muted">Unknown</span>'}
-                  ${r.meetings ? `<div class="muted" style="margin-top: 4px;">${fmtPts(r.pointsA)} pts</div>` : ""}
+                  ${r.meetings ? `<div class="info-stat-value money accent" style="margin-top: 6px;">${recordAStr}</div>` : ""}
+                  ${r.meetings ? `<div class="muted" style="margin-top: 2px;">${fmtPts(r.pointsA)} pts</div>` : ""}
                 </div>
-                <span class="info-stat-value money accent">${
-                  r.meetings ? recordStr : "No meetings yet"
-                }</span>
                 <div style="text-align: center;">
                   ${teamB ? teamCellHTML(teamB) : '<span class="muted">Unknown</span>'}
-                  ${r.meetings ? `<div class="muted" style="margin-top: 4px;">${fmtPts(r.pointsB)} pts</div>` : ""}
+                  ${r.meetings ? `<div class="info-stat-value money accent" style="margin-top: 6px;">${recordBStr}</div>` : ""}
+                  ${r.meetings ? `<div class="muted" style="margin-top: 2px;">${fmtPts(r.pointsB)} pts</div>` : ""}
                 </div>
               </div>
+              ${!r.meetings ? '<div class="muted" style="text-align: center;">No meetings yet</div>' : ""}
             </div>
           `;
         })
@@ -811,15 +856,10 @@
         const medianCls = mr && mr.wins > mr.losses ? "h2h-winning" : mr && mr.losses > mr.wins ? "h2h-losing" : "";
 
         const medianCard = `
-          <div class="standing-card">
-            <div class="standing-card-top">
-              <span class="standing-card-stat-label">Vs League Median (regular season)</span>
-            </div>
-            <div class="standing-card-stats">
-              <div class="standing-card-stat standing-card-stat-full">
-                <span class="standing-card-stat-label">Record</span>
-                <span class="standing-card-stat-value ${medianCls}">${medianStr}</span>
-              </div>
+          <div class="standing-card h2h-mini-card">
+            <div class="h2h-mini-row">
+              <span class="standing-card-stat-label">Vs League Median</span>
+              <span class="standing-card-stat-value ${medianCls}">${medianStr}</span>
             </div>
           </div>
         `;
@@ -831,16 +871,12 @@
             const has = rec && rec.wins + rec.losses + rec.ties > 0;
             const str = has ? (rec.ties ? `${rec.wins}-${rec.losses}-${rec.ties}` : `${rec.wins}-${rec.losses}`) : "No meetings yet";
             const cls = has ? (rec.wins > rec.losses ? "h2h-winning" : rec.losses > rec.wins ? "h2h-losing" : "") : "muted";
+            const oppForDisplay = { ...opp, teamName: truncName(opp.teamName) };
             return `
-              <div class="standing-card">
-                <div class="standing-card-top">
-                  ${teamCellHTML(opp)}
-                </div>
-                <div class="standing-card-stats">
-                  <div class="standing-card-stat standing-card-stat-full">
-                    <span class="standing-card-stat-label">Record</span>
-                    <span class="standing-card-stat-value ${cls}">${str}</span>
-                  </div>
+              <div class="standing-card h2h-mini-card">
+                <div class="h2h-mini-row">
+                  ${teamCellHTML(oppForDisplay)}
+                  <span class="standing-card-stat-value ${cls}">${str}</span>
                 </div>
               </div>
             `;

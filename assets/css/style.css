@@ -1670,6 +1670,32 @@ tr.is-my-team td:first-child {
   border-bottom: none;
 }
 
+/* history — highest single-week player score: rank+name / points+pos+NFL
+   team / season+week+credited dynasty team, each on its own line */
+.history-player-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.history-player-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-player-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.history-player-credit .avatar {
+  width: 18px;
+  height: 18px;
+}
+
 .info-stat-label {
   color: var(--text-dim);
 }
@@ -1878,6 +1904,17 @@ tr.is-my-team td:first-child {
 
 .standing-card-stat-full {
   grid-column: 1 / -1;
+}
+
+.h2h-mini-card {
+  padding: 10px 12px;
+}
+
+.h2h-mini-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 /* ---------- responsive ---------- */
