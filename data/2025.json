@@ -1339,7 +1339,48 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "11560",
+                    "name": "Caleb Williams",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "11563",
+                    "name": "Bo Nix",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1367,7 +1408,68 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8112",
+                    "name": "Drake London",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7526",
+                    "name": "Jaylen Waddle",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1395,7 +1497,53 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "11581",
+                    "name": "MarShawn Lloyd",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "10222",
+                    "name": "Jayden Reed",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-29T19:07:28.171Z",
@@ -1410,7 +1558,47 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "8151",
+                    "name": "Kenneth Walker",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:05:46.921Z",
@@ -1425,7 +1613,51 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11635",
+                    "name": "Ladd McConkey",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1453,7 +1685,58 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "8205",
+                    "name": "Isiah Pacheco",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "9228",
+                    "name": "Bryce Young",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "6768",
+                    "name": "Tua Tagovailoa",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7526",
+                    "name": "Jaylen Waddle",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-06T02:34:12.660Z",
@@ -1468,7 +1751,55 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6786",
+                    "name": "CeeDee Lamb",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T00:50:36.368Z",
@@ -1483,7 +1814,68 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8112",
+                    "name": "Drake London",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7526",
+                    "name": "Jaylen Waddle",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1511,7 +1903,63 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "4046",
+                    "name": "Patrick Mahomes",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "9493",
+                    "name": "Puka Nacua",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "4881",
+                    "name": "Lamar Jackson",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "6801",
+                    "name": "Tee Higgins",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1539,7 +1987,69 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "MW2 is better",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "1373",
+                    "name": "Geno Smith",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "2374",
+                    "name": "Tyler Lockett",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "11647",
+                    "name": "Kimani Vidal",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-06T02:34:12.660Z",
@@ -1554,7 +2064,55 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6786",
+                    "name": "CeeDee Lamb",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:48:52.365Z",
@@ -1569,7 +2127,49 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
               "ownerId": "1129464212063006720",
               "rosterId": 12
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1597,7 +2197,51 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11565",
+                    "name": "J.J. McCarthy",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-29T20:36:53.983Z",
@@ -1612,7 +2256,48 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7571",
+                    "name": "Rashod Bateman",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "10229",
+                    "name": "Rashee Rice",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1640,7 +2325,62 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "3321",
+                    "name": "Tyreek Hill",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "2309",
+                    "name": "Amari Cooper",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7090",
+                    "name": "Darnell Mooney",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-26T01:48:00.826Z",
@@ -1655,7 +2395,51 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "4988",
+                    "name": "Nick Chubb",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T00:29:09.915Z",
@@ -1670,7 +2454,42 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
               "ownerId": "1129464212063006720",
               "rosterId": 12
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "10859",
+                    "name": "Sam LaPorta",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:48:52.365Z",
@@ -1685,7 +2504,49 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1713,7 +2574,47 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Polk Bowl",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "6783",
+                    "name": "Jerry Jeudy",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1741,7 +2642,49 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1769,7 +2712,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9225",
+                    "name": "Tank Bigsby",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-31T00:40:10.219Z",
@@ -1784,7 +2771,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
               "ownerId": "1129464212063006720",
               "rosterId": 12
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [
+                  {
+                    "playerId": "5995",
+                    "name": "Justice Hill",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1812,7 +2843,57 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "1373",
+                    "name": "Geno Smith",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "3294",
+                    "name": "Dak Prescott",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "tafinley",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "6770",
+                    "name": "Joe Burrow",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:17:43.794Z",
@@ -1827,7 +2908,48 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
               "ownerId": "1129464212063006720",
               "rosterId": 12
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [
+                  {
+                    "playerId": "8142",
+                    "name": "Alec Pierce",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-31T00:40:10.219Z",
@@ -1842,7 +2964,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [
+                  {
+                    "playerId": "5995",
+                    "name": "Justice Hill",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1870,7 +3036,42 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "11592",
+                    "name": "Erick All",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-18T05:05:33.419Z",
@@ -1885,7 +3086,52 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5892",
+                    "name": "David Montgomery",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "4988",
+                    "name": "Nick Chubb",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-31T00:23:38.749Z",
@@ -1900,7 +3146,42 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "5892",
+                    "name": "David Montgomery",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1928,7 +3209,68 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8112",
+                    "name": "Drake London",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7526",
+                    "name": "Jaylen Waddle",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:48:52.365Z",
@@ -1943,7 +3285,49 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
               "ownerId": "1129464212063006720",
               "rosterId": 12
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-31T00:40:10.219Z",
@@ -1958,7 +3342,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Caleb Williams Sucks",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [
+                  {
+                    "playerId": "5995",
+                    "name": "Justice Hill",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1986,7 +3414,42 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-25T17:43:24.498Z",
@@ -2001,7 +3464,47 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Polk Bowl",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "6783",
+                    "name": "Jerry Jeudy",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-27T21:55:07.865Z",
@@ -2016,7 +3519,48 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "11638",
+                    "name": "Ricky Pearsall",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "9480",
+                    "name": "Brenton Strange",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2044,7 +3588,53 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "11581",
+                    "name": "MarShawn Lloyd",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "10222",
+                    "name": "Jayden Reed",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-18T05:19:06.705Z",
@@ -2059,7 +3649,57 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6801",
+                    "name": "Tee Higgins",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "8132",
+                    "name": "Tyler Allgeier",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "9757",
+                    "name": "Kendre Miller",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2111,7 +3751,62 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "3321",
+                    "name": "Tyreek Hill",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "2309",
+                    "name": "Amari Cooper",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7090",
+                    "name": "Darnell Mooney",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-10-21T15:02:50.841Z",
@@ -2126,7 +3821,42 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
               "ownerId": "1128774237046636544",
               "rosterId": 9
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5045",
+                    "name": "Courtland Sutton",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "tafinley",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2154,7 +3884,48 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "6803",
+                    "name": "Brandon Aiyuk",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "11638",
+                    "name": "Ricky Pearsall",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2182,7 +3953,53 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "11620",
+                    "name": "Rome Odunze",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Polk Bowl",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "8137",
+                    "name": "George Pickens",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-10-16T18:27:44.585Z",
@@ -2197,7 +4014,65 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "9502",
+                    "name": "Tank Dell",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "11650",
+                    "name": "Luke McCaffrey",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": [
+                  20
+                ]
+              },
+              {
+                "team": {
+                  "teamName": "TopChuck",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "829",
+                    "name": "Andy Dalton",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8167",
+                    "name": "Christian Watson",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "9228",
+                    "name": "Bryce Young",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2237,7 +4112,42 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "5248",
+                    "name": "Gus Edwards",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-12-02T11:47:58.824Z",
@@ -2252,7 +4162,69 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5849",
+                    "name": "Kyler Murray",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "dannyhatty06",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+                  "ownerId": "1129464212063006720",
+                  "rosterId": 12
+                },
+                "players": [
+                  {
+                    "playerId": "8408",
+                    "name": "Jordan Mason",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "9501",
+                    "name": "DeMario Douglas",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "11564",
+                    "name": "Drake Maye",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2292,7 +4264,69 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "MW2 is better",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "1373",
+                    "name": "Geno Smith",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "2374",
+                    "name": "Tyler Lockett",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "11647",
+                    "name": "Kimani Vidal",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-29T14:25:19.722Z",
@@ -2307,7 +4341,42 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "4950",
+                    "name": "Christian Kirk",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2335,7 +4404,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "4988",
+                    "name": "Nick Chubb",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-06T02:34:43.950Z",
@@ -2350,7 +4463,51 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11565",
+                    "name": "J.J. McCarthy",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-29T13:38:20.319Z",
@@ -2365,7 +4522,63 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "4046",
+                    "name": "Patrick Mahomes",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "9493",
+                    "name": "Puka Nacua",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "4881",
+                    "name": "Lamar Jackson",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "6801",
+                    "name": "Tee Higgins",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2393,7 +4606,50 @@
               "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7553",
+                    "name": "Kyle Pitts",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": [
+                  26
+                ]
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "5012",
+                    "name": "Mark Andrews",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-06T02:34:12.660Z",
@@ -2408,7 +4664,55 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6786",
+                    "name": "CeeDee Lamb",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-30T01:03:32.770Z",
@@ -2423,7 +4727,51 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9225",
+                    "name": "Tank Bigsby",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2475,7 +4823,53 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "10232",
+                    "name": "Michael Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "MW2 is better",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "6130",
+                    "name": "Devin Singletary",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7593",
+                    "name": "Trey Sermon",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-18T05:19:06.705Z",
@@ -2490,7 +4884,57 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6801",
+                    "name": "Tee Higgins",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "8132",
+                    "name": "Tyler Allgeier",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "9757",
+                    "name": "Kendre Miller",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-26T01:48:00.826Z",
@@ -2505,7 +4949,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "4988",
+                    "name": "Nick Chubb",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-05-29T19:07:28.171Z",
@@ -2520,7 +5008,47 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "8151",
+                    "name": "Kenneth Walker",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2548,7 +5076,51 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9225",
+                    "name": "Tank Bigsby",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2576,7 +5148,62 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "3321",
+                    "name": "Tyreek Hill",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "2309",
+                    "name": "Amari Cooper",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7090",
+                    "name": "Darnell Mooney",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2024-11-12T20:19:19.399Z",
@@ -2591,7 +5218,48 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Polk Bowl",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "4066",
+                    "name": "Evan Engram",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "smittycommitee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "5846",
+                    "name": "DK Metcalf",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-06-01T15:59:36.298Z",
@@ -2606,7 +5274,42 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "10235",
+                    "name": "Roschon Johnson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2682,7 +5385,53 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "11620",
+                    "name": "Rome Odunze",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Polk Bowl",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "8137",
+                    "name": "George Pickens",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2722,7 +5471,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11565",
+                    "name": "J.J. McCarthy",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },

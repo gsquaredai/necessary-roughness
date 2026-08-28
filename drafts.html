@@ -139,10 +139,13 @@
         .map(
           (h) => `
             <div class="history-hop">
-              <span class="history-team">${h.from.teamName}</span>
-              <span class="history-arrow">&rarr;</span>
-              <span class="history-team">${h.to.teamName}</span>
-              <span class="history-date">${new Date(h.date).toLocaleDateString()}</span>
+              <div class="history-hop-top">
+                <span class="history-team">${h.from.teamName}</span>
+                <span class="history-arrow">&rarr;</span>
+                <span class="history-team">${h.to.teamName}</span>
+                <span class="history-date">${new Date(h.date).toLocaleDateString()}</span>
+              </div>
+              <div class="history-hop-trade">${tradeSidesHTML(h.sides)}</div>
             </div>
           `
         )

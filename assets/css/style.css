@@ -450,15 +450,21 @@ th.num {
 .history-chain {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .history-hop {
+  border-left: 2px solid var(--border);
+  padding-left: 10px;
+}
+
+.history-hop-top {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
   font-size: 0.6rem;
+  margin-bottom: 4px;
 }
 
 .history-team {
@@ -473,6 +479,22 @@ th.num {
   color: var(--text-dim);
   margin-left: auto;
   font-size: 0.55rem;
+}
+
+.history-hop-trade {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trade-side {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+}
+
+.trade-side-team {
+  color: var(--win);
+  font-weight: 600;
 }
 
 /* transactions */

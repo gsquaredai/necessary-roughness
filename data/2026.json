@@ -1440,7 +1440,57 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1468,7 +1518,53 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "7528",
+                    "name": "Najee Harris",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "5045",
+                    "name": "Courtland Sutton",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-01T02:15:50.934Z",
@@ -1483,7 +1579,62 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5927",
+                    "name": "Terry McLaurin",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "9508",
+                    "name": "Tyjae Spears",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "11646",
+                    "name": "Jalen Coker",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1511,7 +1662,51 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9502",
+                    "name": "Tank Dell",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-05T22:49:18.929Z",
@@ -1526,7 +1721,59 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6813",
+                    "name": "Jonathan Taylor",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8146",
+                    "name": "Garrett Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-24T02:53:24.837Z",
@@ -1541,7 +1788,57 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1569,7 +1866,62 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "4039",
+                    "name": "Cooper Kupp",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "1479",
+                    "name": "Keenan Allen",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-08T12:23:49.452Z",
@@ -1584,7 +1936,51 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9502",
+                    "name": "Tank Dell",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-27T13:53:26.266Z",
@@ -1599,7 +1995,119 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6904",
+                    "name": "Jalen Hurts",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7591",
+                    "name": "Justin Fields",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "12529",
+                    "name": "TreVeyon Henderson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "3163",
+                    "name": "Jared Goff",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "8150",
+                    "name": "Kyren Williams",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1627,7 +2135,51 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11635",
+                    "name": "Ladd McConkey",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-23T00:05:57.858Z",
@@ -1642,7 +2194,68 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "4881",
+                    "name": "Lamar Jackson",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "6801",
+                    "name": "Tee Higgins",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "5849",
+                    "name": "Kyler Murray",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "6783",
+                    "name": "Jerry Jeudy",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "8130",
+                    "name": "Trey McBride",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-12T17:54:40.485Z",
@@ -1657,7 +2270,59 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "10232",
+                    "name": "Michael Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1685,7 +2350,57 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "1373",
+                    "name": "Geno Smith",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "3294",
+                    "name": "Dak Prescott",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "tafinley",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "6770",
+                    "name": "Joe Burrow",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-05T22:49:18.929Z",
@@ -1700,7 +2415,59 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6813",
+                    "name": "Jonathan Taylor",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8146",
+                    "name": "Garrett Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-24T02:53:24.837Z",
@@ -1715,7 +2482,57 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1772,7 +2589,62 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5927",
+                    "name": "Terry McLaurin",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "9508",
+                    "name": "Tyjae Spears",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "11646",
+                    "name": "Jalen Coker",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-27T13:53:26.266Z",
@@ -1787,7 +2659,119 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6904",
+                    "name": "Jalen Hurts",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7591",
+                    "name": "Justin Fields",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "12529",
+                    "name": "TreVeyon Henderson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "3163",
+                    "name": "Jared Goff",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "8150",
+                    "name": "Kyren Williams",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1815,7 +2799,57 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7596",
+                    "name": "Elijah Moore",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8126",
+                    "name": "Wan'Dale Robinson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-21T01:29:26.987Z",
@@ -1830,7 +2864,42 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "12484",
+                    "name": "Jayden Higgins",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1858,7 +2927,57 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "4866",
+                    "name": "Saquon Barkley",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "12512",
+                    "name": "Quinshon Judkins",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-24T02:53:24.837Z",
@@ -1873,7 +2992,57 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-27T13:53:26.266Z",
@@ -1888,7 +3057,119 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6904",
+                    "name": "Jalen Hurts",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7591",
+                    "name": "Justin Fields",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "12529",
+                    "name": "TreVeyon Henderson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "3163",
+                    "name": "Jared Goff",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "8150",
+                    "name": "Kyren Williams",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1916,7 +3197,53 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/03c39fad9480469d9eca0f9469d36080",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6011",
+                    "name": "Gardner Minshew",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "6826",
+                    "name": "Cole Kmet",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "7553",
+                    "name": "Kyle Pitts",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-02T13:43:51.415Z",
@@ -1931,7 +3258,57 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7596",
+                    "name": "Elijah Moore",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8126",
+                    "name": "Wan'Dale Robinson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-02T20:56:01.130Z",
@@ -1946,7 +3323,62 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "4039",
+                    "name": "Cooper Kupp",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "1479",
+                    "name": "Keenan Allen",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -1974,7 +3406,53 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "11627",
+                    "name": "Troy Franklin",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "12503",
+                    "name": "Isaiah Bond",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "12533",
+                    "name": "Jacory Croskey-Merritt",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-05T22:49:18.929Z",
@@ -1989,7 +3467,59 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6813",
+                    "name": "Jonathan Taylor",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8146",
+                    "name": "Garrett Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2017,7 +3547,44 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": [
+                  38
+                ]
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "8228",
+                    "name": "Jaylen Warren",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-07T13:37:22.031Z",
@@ -2032,7 +3599,46 @@
               "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
               "ownerId": "1128774237046636544",
               "rosterId": 9
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "2133",
+                    "name": "Davante Adams",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Los pollos hermanos",
+                  "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-05-21T14:39:25.765Z",
@@ -2047,7 +3653,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Los pollos hermanos",
+                  "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "5846",
+                    "name": "DK Metcalf",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2075,7 +3725,49 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": [
+                  30
+                ]
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-08T12:23:49.452Z",
@@ -2090,7 +3782,51 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "9502",
+                    "name": "Tank Dell",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-06T00:24:49.104Z",
@@ -2105,7 +3841,51 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "11597",
+                    "name": "Theo Johnson",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-07T13:37:22.031Z",
@@ -2120,7 +3900,46 @@
               "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
               "ownerId": "1128774237046636544",
               "rosterId": 9
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "2133",
+                    "name": "Davante Adams",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Los pollos hermanos",
+                  "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-05-21T14:39:25.765Z",
@@ -2135,7 +3954,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Los pollos hermanos",
+                  "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "5846",
+                    "name": "DK Metcalf",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2163,7 +4026,47 @@
               "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "6790",
+                    "name": "D'Andre Swift",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2191,7 +4094,55 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6786",
+                    "name": "CeeDee Lamb",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2025",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-06-11T11:59:33.898Z",
@@ -2206,7 +4157,48 @@
               "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "8131",
+                    "name": "Isaiah Likely",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "6826",
+                    "name": "Cole Kmet",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-09-22T00:23:40.010Z",
@@ -2221,7 +4213,48 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/2945cbbbc25171040e479851048afcf6",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "7002",
+                    "name": "Juwan Johnson",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "9500",
+                    "name": "Josh Downs",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-05T18:05:26.247Z",
@@ -2236,7 +4269,75 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "12514",
+                    "name": "Emeka Egbuka",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "8136",
+                    "name": "Rachaad White",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8144",
+                    "name": "Chris Olave",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "10213",
+                    "name": "Tre Tucker",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-13T02:29:29.899Z",
@@ -2251,7 +4352,57 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "10236",
+                    "name": "Dalton Kincaid",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "12481",
+                    "name": "Cam Skattebo",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "5850",
+                    "name": "Josh Jacobs",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2279,7 +4430,53 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "4217",
+                    "name": "George Kittle",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Ta-run it Back!",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "7588",
+                    "name": "Javonte Williams",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8210",
+                    "name": "Chig Okonkwo",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-10-02T13:47:26.224Z",
@@ -2294,7 +4491,57 @@
               "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
               "ownerId": "1128912559073067008",
               "rosterId": 11
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "4866",
+                    "name": "Saquon Barkley",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "12512",
+                    "name": "Quinshon Judkins",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-24T02:53:24.837Z",
@@ -2309,7 +4556,57 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-25T13:59:50.209Z",
@@ -2324,7 +4621,52 @@
               "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "3257",
+                    "name": "Jacoby Brissett",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "5022",
+                    "name": "Dallas Goedert",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2381,7 +4723,51 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2025",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "11635",
+                    "name": "Ladd McConkey",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-09-22T13:32:13.514Z",
@@ -2396,7 +4782,63 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/4f4090e5e9c3941414db40a871e3e909",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "4035",
+                    "name": "Alvin Kamara",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "11624",
+                    "name": "Xavier Worthy",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "10219",
+                    "name": "Chris Rodriguez",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "11631",
+                    "name": "Brian Thomas",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-11-26T23:37:39.982Z",
@@ -2411,7 +4853,46 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7527",
+                    "name": "Mac Jones",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2025-12-02T00:20:11.676Z",
@@ -2426,7 +4907,48 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "8148",
+                    "name": "Jameson Williams",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [
+                  {
+                    "playerId": "11624",
+                    "name": "Xavier Worthy",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2466,7 +4988,63 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "8136",
+                    "name": "Rachaad White",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8144",
+                    "name": "Chris Olave",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "5892",
+                    "name": "David Montgomery",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "9997",
+                    "name": "Zay Flowers",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2494,7 +5072,57 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "7596",
+                    "name": "Elijah Moore",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "8126",
+                    "name": "Wan'Dale Robinson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2522,7 +5150,59 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [
+                  {
+                    "playerId": "10232",
+                    "name": "Michael Wilson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2562,7 +5242,46 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7527",
+                    "name": "Mac Jones",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-10T04:37:16.841Z",
@@ -2577,7 +5296,52 @@
               "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
               "ownerId": "326066174007713792",
               "rosterId": 3
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "6794",
+                    "name": "Justin Jefferson",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [
+                  {
+                    "playerId": "11628",
+                    "name": "Marvin Harrison",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-05-24T02:20:20.970Z",
@@ -2592,7 +5356,43 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Big Dike Energy",
+                  "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+                  "ownerId": "326066174007713792",
+                  "rosterId": 3
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2028",
+                    "round": 3
+                  }
+                ],
+                "faab": [
+                  35
+                ]
+              }
+            ]
           }
         ]
       },
@@ -2620,7 +5420,62 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "4039",
+                    "name": "Cooper Kupp",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [
+                  {
+                    "playerId": "1479",
+                    "name": "Keenan Allen",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-06T00:24:49.104Z",
@@ -2635,7 +5490,51 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "11597",
+                    "name": "Theo Johnson",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2663,7 +5562,75 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "12514",
+                    "name": "Emeka Egbuka",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [
+                  {
+                    "playerId": "8136",
+                    "name": "Rachaad White",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8144",
+                    "name": "Chris Olave",
+                    "position": "WR"
+                  },
+                  {
+                    "playerId": "10213",
+                    "name": "Tre Tucker",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-27T13:53:26.266Z",
@@ -2678,7 +5645,119 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6904",
+                    "name": "Jalen Hurts",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7591",
+                    "name": "Justin Fields",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "12529",
+                    "name": "TreVeyon Henderson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "3163",
+                    "name": "Jared Goff",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "8150",
+                    "name": "Kyren Williams",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2706,7 +5785,42 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Ta-run it Back!",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/b3338675f635c2c1f42b469621d38ec6",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "11625",
+                    "name": "Adonai Mitchell",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-04-27T22:11:52.035Z",
@@ -2721,7 +5835,42 @@
               "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
               "ownerId": "1125954610599964672",
               "rosterId": 4
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [
+                  {
+                    "playerId": "6768",
+                    "name": "Tua Tagovailoa",
+                    "position": "QB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Faded off the Josh",
+                  "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+                  "ownerId": "1125954610599964672",
+                  "rosterId": 4
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2778,7 +5927,52 @@
               "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
               "ownerId": "996557160589000704",
               "rosterId": 8
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "5892",
+                    "name": "David Montgomery",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "4988",
+                    "name": "Nick Chubb",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2025",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2818,7 +6012,119 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
               "ownerId": "1128523568641466368",
               "rosterId": 7
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "6904",
+                    "name": "Jalen Hurts",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7591",
+                    "name": "Justin Fields",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "7594",
+                    "name": "Chuba Hubbard",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "12529",
+                    "name": "TreVeyon Henderson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 3
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "WANGHAF",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+                  "ownerId": "1128523568641466368",
+                  "rosterId": 7
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 1
+                  },
+                  {
+                    "season": "2026",
+                    "round": 3
+                  },
+                  {
+                    "season": "2027",
+                    "round": 1
+                  },
+                  {
+                    "season": "2027",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 1
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "3163",
+                    "name": "Jared Goff",
+                    "position": "QB"
+                  },
+                  {
+                    "playerId": "8110",
+                    "name": "Jake Ferguson",
+                    "position": "TE"
+                  },
+                  {
+                    "playerId": "8150",
+                    "name": "Kyren Williams",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2846,7 +6152,49 @@
               "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
               "ownerId": "1004418514142253056",
               "rosterId": 10
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": [
+                  30
+                ]
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "7611",
+                    "name": "Rhamondre Stevenson",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-01-06T00:24:49.104Z",
@@ -2861,7 +6209,51 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "D1 Jayden Glazer",
+                  "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+                  "ownerId": "1004418514142253056",
+                  "rosterId": 10
+                },
+                "players": [
+                  {
+                    "playerId": "11597",
+                    "name": "Theo Johnson",
+                    "position": "TE"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 3
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2889,7 +6281,43 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Exciting Whites",
+                  "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+                  "ownerId": "1128912559073067008",
+                  "rosterId": 11
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2027",
+                    "round": 4
+                  }
+                ],
+                "faab": [
+                  9
+                ]
+              }
+            ]
           }
         ]
       },
@@ -2953,7 +6381,51 @@
               "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
               "ownerId": "1128774237046636544",
               "rosterId": 9
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  },
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Los pollos hermanos",
+                  "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+                  "ownerId": "1128774237046636544",
+                  "rosterId": 9
+                },
+                "players": [
+                  {
+                    "playerId": "5846",
+                    "name": "DK Metcalf",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -2993,7 +6465,43 @@
               "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
               "ownerId": "854223684238454784",
               "rosterId": 6
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Smitty Committee",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+                  "ownerId": "854223684238454784",
+                  "rosterId": 6
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Spotted Cow",
+                  "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+                  "ownerId": "1373899826093096960",
+                  "rosterId": 12
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2028",
+                    "round": 4
+                  }
+                ],
+                "faab": [
+                  10
+                ]
+              }
+            ]
           }
         ]
       },
@@ -3033,7 +6541,46 @@
               "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
               "ownerId": "990079789383897088",
               "rosterId": 2
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [
+                  {
+                    "playerId": "8205",
+                    "name": "Isiah Pacheco",
+                    "position": "RB"
+                  }
+                ],
+                "picks": [],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "GrayPornography",
+                  "avatar": "https://sleepercdn.com/uploads/162bda1c40a5e705e526b19db0cb43e0.jpg",
+                  "ownerId": "990079789383897088",
+                  "rosterId": 2
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  },
+                  {
+                    "season": "2028",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },
@@ -3061,7 +6608,63 @@
               "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
               "ownerId": "1044114449679917056",
               "rosterId": 5
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [
+                  {
+                    "playerId": "8136",
+                    "name": "Rachaad White",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "8144",
+                    "name": "Chris Olave",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "the left one’s bigger",
+                  "avatar": "https://sleepercdn.com/avatars/thumbs/a17041cc3194fbab07f5e6fa72539a59",
+                  "ownerId": "996557160589000704",
+                  "rosterId": 8
+                },
+                "players": [
+                  {
+                    "playerId": "5892",
+                    "name": "David Montgomery",
+                    "position": "RB"
+                  },
+                  {
+                    "playerId": "9997",
+                    "name": "Zay Flowers",
+                    "position": "WR"
+                  }
+                ],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 2
+                  }
+                ],
+                "faab": []
+              }
+            ]
           },
           {
             "date": "2026-05-25T17:08:02.875Z",
@@ -3076,7 +6679,41 @@
               "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
               "ownerId": "989741725566427136",
               "rosterId": 1
-            }
+            },
+            "sides": [
+              {
+                "team": {
+                  "teamName": "Schro's Nest",
+                  "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+                  "ownerId": "989741725566427136",
+                  "rosterId": 1
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2026",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              },
+              {
+                "team": {
+                  "teamName": "Black Ops",
+                  "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+                  "ownerId": "1044114449679917056",
+                  "rosterId": 5
+                },
+                "players": [],
+                "picks": [
+                  {
+                    "season": "2028",
+                    "round": 4
+                  }
+                ],
+                "faab": []
+              }
+            ]
           }
         ]
       },

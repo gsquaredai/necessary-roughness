@@ -9,6 +9,24 @@ async function loadTransactions() {
   return transactionsCache;
 }
 
+// Renders a trade's "sides" (grouped by receiving team) as
+// "Team A received: X, Y / Team B received: 1, 2" lines.
+function tradeSidesHTML(sides) {
+  if (!sides || sides.length === 0) return "";
+  return sides
+    .map((side) => {
+      const items = [
+        ...side.players.map((p) => `${p.name}${p.position ? ` (${p.position})` : ""}`),
+        ...side.picks.map((pk) => `${pk.season} Rd ${pk.round} pick`),
+        ...side.faab.map((amt) => `$${amt} FAAB`),
+      ];
+      return `<div class="trade-side"><span class="trade-side-team">${side.team.teamName} received:</span> ${
+        items.length ? items.join(", ") : "nothing"
+      }</div>`;
+    })
+    .join("");
+}
+
 async function loadIndex() {
   if (indexCache) return indexCache;
   const res = await fetch("data/index.json");

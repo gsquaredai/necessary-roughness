@@ -326,6 +326,30 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     return { playerId, name: p?.name ?? "Unknown Player", position: p?.position ?? null };
   };
 
+  // What each team walked away with in a trade — grouped by receiving
+  // roster, so a trade renders as "Team A received: X, Y / Team B
+  // received: 1, 2" instead of a flat, hard-to-parse add/drop list.
+  const resolveTradeSides = (t) => {
+    const sides = new Map();
+    const sideFor = (rosterId) => {
+      if (!sides.has(rosterId)) {
+        sides.set(rosterId, { team: teamRef(t.season, rosterId), players: [], picks: [], faab: [] });
+      }
+      return sides.get(rosterId);
+    };
+    for (const rosterId of t.rosterIds) sideFor(rosterId);
+    for (const [playerId, toRosterId] of Object.entries(t.adds)) {
+      sideFor(toRosterId).players.push(playerRef(playerId));
+    }
+    for (const dp of t.draftPicks) {
+      sideFor(dp.toRosterId).picks.push({ season: dp.season, round: dp.round });
+    }
+    for (const w of t.waiverBudget) {
+      sideFor(w.toRosterId).faab.push(w.amount);
+    }
+    return [...sides.values()];
+  };
+
   const allTrades = seasonDatas.flatMap((s) => s.rawTransactions.filter((t) => t.type === "trade"));
 
   for (const s of seasonDatas) {
@@ -339,13 +363,14 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
                 dp.round === pick.round &&
                 dp.rosterId === pick.originalRosterId
             )
-            .map((dp) => ({ created: t.created, dp }))
+            .map((dp) => ({ t, dp }))
         )
-        .sort((a, b) => a.created - b.created);
-      pick.tradeHistory = hops.map(({ created, dp }) => ({
-        date: new Date(created).toISOString(),
+        .sort((a, b) => a.t.created - b.t.created);
+      pick.tradeHistory = hops.map(({ t, dp }) => ({
+        date: new Date(t.created).toISOString(),
         from: teamRef(s.season, dp.fromRosterId),
         to: teamRef(s.season, dp.toRosterId),
+        sides: resolveTradeSides(t),
       }));
     }
   }
@@ -358,6 +383,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
         date: new Date(t.created).toISOString(),
         season: t.season,
         teams: t.rosterIds.map((rid) => teamRef(t.season, rid)),
+        sides: t.type === "trade" ? resolveTradeSides(t) : [],
         adds: Object.entries(t.adds).map(([playerId, rosterId]) => ({
           ...playerRef(playerId),
           team: teamRef(t.season, rosterId),

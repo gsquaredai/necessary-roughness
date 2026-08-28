@@ -121,21 +121,22 @@
 
     function renderTxnRow(t) {
       const teamNames = t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown";
-      const parts = [];
 
-      for (const a of t.adds) {
-        parts.push(`<span class="txn-add">+ ${a.name}${a.position ? ` (${a.position})` : ""}</span>`);
-      }
-      for (const d of t.drops) {
-        parts.push(`<span class="txn-drop">- ${d.name}${d.position ? ` (${d.position})` : ""}</span>`);
-      }
-      for (const dp of t.draftPicksTraded) {
-        parts.push(
-          `<span class="txn-pick">${dp.season} Rd ${dp.round} pick: ${dp.from.teamName} &rarr; ${dp.to.teamName}</span>`
-        );
-      }
-      for (const f of t.faab) {
-        parts.push(`<span class="txn-faab">$${f.amount} FAAB: ${f.from.teamName} &rarr; ${f.to.teamName}</span>`);
+      let details;
+      if (t.type === "trade") {
+        details = `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>`;
+      } else {
+        const parts = [];
+        for (const a of t.adds) {
+          parts.push(`<span class="txn-add">+ ${a.name}${a.position ? ` (${a.position})` : ""}</span>`);
+        }
+        for (const d of t.drops) {
+          parts.push(`<span class="txn-drop">- ${d.name}${d.position ? ` (${d.position})` : ""}</span>`);
+        }
+        for (const f of t.faab) {
+          parts.push(`<span class="txn-faab">$${f.amount} FAAB: ${f.from.teamName} &rarr; ${f.to.teamName}</span>`);
+        }
+        details = `<div class="txn-details">${parts.join("")}</div>`;
       }
 
       return `
@@ -145,7 +146,7 @@
             <span class="txn-teams">${teamNames}</span>
             <span class="txn-date">${new Date(t.date).toLocaleDateString()}</span>
           </div>
-          <div class="txn-details">${parts.join("")}</div>
+          ${details}
         </div>
       `;
     }
