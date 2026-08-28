@@ -83,14 +83,23 @@ async function buildSeason(league, nextLeague) {
 
   // The actual draft board for THIS season — the one that ran before it
   // started, setting up that season's rosters (round-by-round, who took
-  // whom). This is league.draft_id itself, unlike draftPickByOwner above.
+  // whom). Usually just league.draft_id, but a league can have more than
+  // one draft object on record (e.g. 2024 has both the real 25-round
+  // startup snake draft and an unused, empty 4-round "dud" draft) — so
+  // pull every draft for the league and use whichever one actually has
+  // picks, preferring a snake draft / more rounds if more than one does.
   let draftBoard = null;
-  if (league.draft_id) {
-    try {
-      const [draftMeta, picks] = await Promise.all([
-        fetchJSON(`${API}/draft/${league.draft_id}`),
-        fetchJSON(`${API}/draft/${league.draft_id}/picks`),
-      ]);
+  try {
+    const leagueDrafts = await fetchJSON(`${API}/league/${leagueId}/drafts`);
+    const ranked = [...(leagueDrafts || [])].sort((a, b) => {
+      const snakeA = a.type === "snake" ? 1 : 0;
+      const snakeB = b.type === "snake" ? 1 : 0;
+      if (snakeA !== snakeB) return snakeB - snakeA;
+      return (b.settings?.rounds ?? 0) - (a.settings?.rounds ?? 0);
+    });
+    for (const draftMeta of ranked) {
+      const picks = await fetchJSON(`${API}/draft/${draftMeta.draft_id}/picks`).catch(() => []);
+      if (!picks.length) continue;
       draftBoard = {
         rounds: draftMeta.settings?.rounds ?? null,
         picks: picks
@@ -106,9 +115,10 @@ async function buildSeason(league, nextLeague) {
           }))
           .sort((a, b) => a.pickNo - b.pickNo),
       };
-    } catch {
-      // no draft data available for this season
+      break;
     }
+  } catch {
+    // no draft data available for this season
   }
 
   // Sleeper gives each manager two images: an account profile picture (avatar,

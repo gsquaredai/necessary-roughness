@@ -63,6 +63,14 @@
       return `<img class="nfl-logo" src="assets/img/nfl/${teamAbbr}.png" onerror="this.style.visibility='hidden';" alt="">`;
     }
 
+    // A handful of NFL abbreviations are 2 letters (GB, KC, LV, NE, NO, SF,
+    // TB) while the rest are 3 — normalize to 3 for a consistent column.
+    // Display-only: image lookups still use Sleeper's original code.
+    const NFL_ABBR_3 = { GB: "GNB", KC: "KAN", LV: "LVR", NE: "NWE", NO: "NOR", SF: "SFO", TB: "TAM" };
+    function nflAbbr3(teamAbbr) {
+      return NFL_ABBR_3[teamAbbr] || teamAbbr;
+    }
+
     async function renderDraft(seasonKey) {
       const season = await loadSeason(seasonKey);
       const container = document.getElementById("draft-list");
@@ -88,7 +96,7 @@
               </div>
               <div class="draft-pick-nfl">
                 ${nflLogoImgHTML(pick.nflTeam)}
-                <span class="nfl-team-abbr">${pick.nflTeam || "—"}</span>
+                <span class="nfl-team-abbr">${pick.nflTeam ? nflAbbr3(pick.nflTeam) : "—"}</span>
               </div>
             </div>
           `;
