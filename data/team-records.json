@@ -6,8 +6,10 @@
     "trades": 20,
     "waiverPickups": 9,
     "faabSpent": 83,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -91,
-    "faabUnspent": 141
+    "faabUnspent": 141,
+    "faabCurrent": 130
   },
   {
     "ownerId": "989741725566427136",
@@ -16,8 +18,10 @@
     "trades": 28,
     "waiverPickups": 11,
     "faabSpent": 105,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -92,
-    "faabUnspent": 118
+    "faabUnspent": 118,
+    "faabCurrent": 93
   },
   {
     "ownerId": "1128774237046636544",
@@ -26,8 +30,10 @@
     "trades": 11,
     "waiverPickups": 15,
     "faabSpent": 85,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -15,
-    "faabUnspent": 215
+    "faabUnspent": 215,
+    "faabCurrent": 100
   },
   {
     "ownerId": "990079789383897088",
@@ -36,8 +42,10 @@
     "trades": 34,
     "waiverPickups": 17,
     "faabSpent": 225,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 81,
-    "faabUnspent": 171
+    "faabUnspent": 171,
+    "faabCurrent": 106
   },
   {
     "ownerId": "1004418514142253056",
@@ -46,8 +54,10 @@
     "trades": 13,
     "waiverPickups": 20,
     "faabSpent": 170,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -30,
-    "faabUnspent": 115
+    "faabUnspent": 115,
+    "faabCurrent": 115
   },
   {
     "ownerId": "326066174007713792",
@@ -56,8 +66,10 @@
     "trades": 21,
     "waiverPickups": 23,
     "faabSpent": 279,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 91,
-    "faabUnspent": 127
+    "faabUnspent": 127,
+    "faabCurrent": 150
   },
   {
     "ownerId": "854223684238454784",
@@ -66,8 +78,10 @@
     "trades": 29,
     "waiverPickups": 13,
     "faabSpent": 195,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 5,
-    "faabUnspent": 125
+    "faabUnspent": 125,
+    "faabCurrent": 92
   },
   {
     "ownerId": "996557160589000704",
@@ -76,8 +90,10 @@
     "trades": 16,
     "waiverPickups": 2,
     "faabSpent": 100,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 0,
-    "faabUnspent": 215
+    "faabUnspent": 215,
+    "faabCurrent": 115
   },
   {
     "ownerId": "1125954610599964672",
@@ -86,8 +102,10 @@
     "trades": 13,
     "waiverPickups": 3,
     "faabSpent": 110,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 82,
-    "faabUnspent": 287
+    "faabUnspent": 287,
+    "faabCurrent": 115
   },
   {
     "ownerId": "1128523568641466368",
@@ -96,8 +114,10 @@
     "trades": 11,
     "waiverPickups": 2,
     "faabSpent": 55,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 0,
-    "faabUnspent": 260
+    "faabUnspent": 260,
+    "faabCurrent": 115
   },
   {
     "ownerId": "1128912559073067008",
@@ -106,8 +126,10 @@
     "trades": 9,
     "waiverPickups": 9,
     "faabSpent": 130,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -11,
-    "faabUnspent": 174
+    "faabUnspent": 174,
+    "faabCurrent": 124
   },
   {
     "ownerId": "1129464212063006720",
@@ -116,8 +138,10 @@
     "trades": 9,
     "waiverPickups": 2,
     "faabSpent": 0,
+    "faabSpentCurrent": 0,
     "faabTradedNet": -20,
-    "faabUnspent": 170
+    "faabUnspent": 170,
+    "faabCurrent": 0
   },
   {
     "ownerId": "1373899826093096960",
@@ -126,7 +150,9 @@
     "trades": 1,
     "waiverPickups": 0,
     "faabSpent": 0,
+    "faabSpentCurrent": 0,
     "faabTradedNet": 0,
-    "faabUnspent": 125
+    "faabUnspent": 125,
+    "faabCurrent": 125
   }
 ]

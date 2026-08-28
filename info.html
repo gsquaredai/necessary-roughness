@@ -193,15 +193,18 @@
         const [season, rivalries] = await Promise.all([loadSeason(idx.currentSeason), loadRivalries()]);
         const week1 = season.matchups?.[1] || season.matchups?.["1"] || [];
         if (!week1.length) return "";
-        const nameFor = (ownerIdA, ownerIdB) => findRivalry(rivalries, ownerIdA, ownerIdB)?.name || null;
         const rows = week1
           .map((m) => {
             const teamA = teamById(season, m.teamA.rosterId);
             const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
-            const rivalryName = teamB ? nameFor(teamA.ownerId, teamB.ownerId) : null;
+            const rivalry = teamB ? findRivalry(rivalries, teamA.ownerId, teamB.ownerId) : null;
             return `
-              <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding-top: 14px; padding-bottom: 14px;">
-                ${rivalryName ? `<div class="info-section-title" style="margin: 0; font-size: 0.6rem;">${rivalryName}</div>` : ""}
+              <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding: 14px;">
+                ${
+                  rivalry
+                    ? `<div class="rivalry-banner" style="--rivalry-color: ${rivalry.color || "#4cc9f0"}; margin: 0;">${rivalry.name}</div>`
+                    : ""
+                }
                 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
                   <div>${teamCellHTML(teamA)}</div>
                   <span class="muted">vs</span>

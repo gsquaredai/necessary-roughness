@@ -365,15 +365,29 @@ th.num {
   font-family: "Press Start 2P", sans-serif;
   font-size: 0.65rem;
   color: #14141c;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: var(--rivalry-color, var(--accent-2));
   padding: 6px 10px;
   margin: -14px -16px 10px;
   letter-spacing: 0.02em;
 }
 
 .matchup.rivalry-matchup {
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 1px var(--accent-2), var(--pixel-shadow);
+  border-color: var(--rivalry-color, var(--accent-2));
+  box-shadow: 0 0 0 1px var(--rivalry-color, var(--accent-2)), var(--pixel-shadow);
+}
+
+.rivalry-color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--rivalry-color, var(--accent-2));
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.rivalry-title {
+  color: var(--rivalry-color, var(--accent));
 }
 
 .matchup .proj-points {

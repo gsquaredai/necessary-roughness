@@ -1,8 +1,8 @@
 [
-  { "name": "Salt City Classic", "owners": ["989741725566427136", "1128774237046636544"] },
-  { "name": "Battle for Kensington", "owners": ["990079789383897088", "1004418514142253056"] },
-  { "name": "Slim Series", "owners": ["1044114449679917056", "996557160589000704"] },
-  { "name": "Winner of the L's", "owners": ["326066174007713792", "1125954610599964672"] },
-  { "name": "Tordik Tilt", "owners": ["1128523568641466368", "1128912559073067008"] },
-  { "name": "Great Lake Stakes", "owners": ["854223684238454784", "1373899826093096960"] }
+  { "name": "Salt City Classic", "owners": ["989741725566427136", "1128774237046636544"], "color": "#f2c94c" },
+  { "name": "Battle for Kensington", "owners": ["990079789383897088", "1004418514142253056"], "color": "#4cc9f0" },
+  { "name": "Slim Series", "owners": ["1044114449679917056", "996557160589000704"], "color": "#4fd47a" },
+  { "name": "Winner of the L's", "owners": ["326066174007713792", "1125954610599964672"], "color": "#ff5d6c" },
+  { "name": "Tordik Tilt", "owners": ["1128523568641466368", "1128912559073067008"], "color": "#bdb2ff" },
+  { "name": "Great Lake Stakes", "owners": ["854223684238454784", "1373899826093096960"], "color": "#ffd6a5" }
 ]

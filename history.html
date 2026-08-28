@@ -64,6 +64,9 @@
 
       <section>
         <h2>Team Activity &amp; FAAB</h2>
+        <p class="muted" style="margin-bottom: 12px;">
+          Trades, waiver pickups, and FAAB totals are lifetime; the number in parentheses is this season only.
+        </p>
         <div class="card table-wrap">
           <table>
             <thead>
@@ -130,9 +133,9 @@
               <td>${teamCellHTML(r)}</td>
               <td class="num">${r.trades}</td>
               <td class="num">${r.waiverPickups}</td>
-              <td class="num">$${r.faabSpent}</td>
+              <td class="num">$${r.faabSpent} <span class="muted">($${r.faabSpentCurrent ?? 0})</span></td>
               <td class="num">${r.faabTradedNet > 0 ? "+" : ""}$${r.faabTradedNet}</td>
-              <td class="num">$${r.faabUnspent}</td>
+              <td class="num">$${r.faabUnspent} <span class="muted">($${r.faabCurrent ?? 0})</span></td>
             </tr>
           `
         )
@@ -179,8 +182,8 @@
           const teamB = latestTeamByOwner(seasons, r.owners[1]);
           const recordStr = r.ties ? `${r.winsA}-${r.winsB}-${r.ties}` : `${r.winsA}-${r.winsB}`;
           return `
-            <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding-top: 14px; padding-bottom: 14px;">
-              <div class="info-section-title" style="margin: 0; font-size: 0.6rem;">${r.name}</div>
+            <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding: 14px;">
+              <div class="rivalry-banner" style="--rivalry-color: ${r.color || "#4cc9f0"}; margin: 0;">${r.name}</div>
               <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
                 ${teamA ? teamCellHTML(teamA) : '<span class="muted">Unknown</span>'}
                 <span class="info-stat-value money accent">${

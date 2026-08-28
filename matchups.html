@@ -216,10 +216,11 @@
       const bData = played && wr && teamB ? wr.teams[m.teamB.rosterId] : null;
 
       const clickable = played && teamB;
+      const rivalryStyle = showRivalry && rivalry.color ? ` style="--rivalry-color: ${rivalry.color};"` : "";
       return `
         <div class="matchup${showRivalry ? " rivalry-matchup" : ""}${clickable ? " clickable" : ""}"${
         clickable ? ` data-week="${week}" data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}"` : ""
-      }>
+      }${rivalryStyle}>
           ${showRivalry ? `<div class="rivalry-banner">${rivalry.name}</div>` : ""}
           <div class="matchup-side-block">
             ${teamCellHTML(teamA)}

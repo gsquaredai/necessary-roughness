@@ -548,7 +548,9 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     // key yet (the draft hasn't happened) — fall back to the latest known
     // season for team lookups, same as originalTeamName does.
     const lookupSeason = teamsBySeasonRoster.has(season) ? season : latestSeason;
-    return hops.map(({ t, dp }) => {
+    // getHops is oldest-first (other callers rely on that for "which hop
+    // is the current holder"), but displayed history reads most-recent-first.
+    return [...hops].reverse().map(({ t, dp }) => {
       const tradeDate = new Date(t.created).toISOString();
       return {
         date: tradeDate,
@@ -731,8 +733,10 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
         trades: 0,
         waiverPickups: 0,
         faabSpent: 0,
+        faabSpentCurrent: 0,
         faabTradedNet: 0,
         faabUnspent: 0,
+        faabCurrent: 0,
       });
     }
     const r = teamRecords.get(team.ownerId);
@@ -742,9 +746,14 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   };
 
   for (const s of seasonDatas) {
+    const isCurrentSeason = s === seasonDatas[seasonDatas.length - 1];
     const startingBudget = s.leagueSettings?.waiverBudget ?? 0;
     const perRosterBalance = new Map();
-    for (const team of s.teams) perRosterBalance.set(team.rosterId, startingBudget);
+    const perRosterSpent = new Map();
+    for (const team of s.teams) {
+      perRosterBalance.set(team.rosterId, startingBudget);
+      perRosterSpent.set(team.rosterId, 0);
+    }
 
     for (const t of s.rawTransactions) {
       const date = new Date(t.created).toISOString();
@@ -779,13 +788,21 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
           if (perRosterBalance.has(rosterId)) {
             perRosterBalance.set(rosterId, perRosterBalance.get(rosterId) - bid);
           }
+          if (perRosterSpent.has(rosterId)) {
+            perRosterSpent.set(rosterId, perRosterSpent.get(rosterId) + bid);
+          }
         }
       }
     }
 
     for (const team of s.teams) {
       const r = recordFor(team);
-      if (r) r.faabUnspent += perRosterBalance.get(team.rosterId) ?? 0;
+      if (!r) continue;
+      r.faabUnspent += perRosterBalance.get(team.rosterId) ?? 0;
+      if (isCurrentSeason) {
+        r.faabCurrent = perRosterBalance.get(team.rosterId) ?? 0;
+        r.faabSpentCurrent = perRosterSpent.get(team.rosterId) ?? 0;
+      }
     }
   }
 
