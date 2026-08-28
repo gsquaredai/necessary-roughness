@@ -42,16 +42,21 @@
     },
     {
       "title": "Rookie Draft Order",
-      "body": "The rookie draft order is set by the previous season's results, worst finish picking first:",
+      "body": "Before getting into the order itself: Max PF (\"Maximum Points For,\" also called optimal or potential points) is the score a team would have put up if they'd started their best possible lineup out of every player on their roster that week — not just what they actually started. We use Max PF, instead of plain wins and losses, to sort the bottom of the draft order because it can't be gamed: a team that's out of contention can't just bench their best players and \"tank\" for a better pick, since Max PF is calculated from their full roster's best possible lineup regardless of who they actually started. With that in mind, here's the rookie draft order, pick by pick:",
       "list": [
-        "1st place finishes the season picking 12th (last).",
-        "2nd place picks 11th.",
-        "3rd place picks 10th.",
-        "4th place picks 9th.",
-        "5th through 8th are the four teams that made the playoffs but lost in the first round, ordered by Max PF — highest Max PF among those four picks 5th, lowest picks 8th.",
-        "9th through 12th are the four teams that missed the playoffs entirely, also ordered by Max PF — highest Max PF among those four picks 9th, lowest picks 12th. In other words, the single lowest Max PF in the whole league gets the 1st overall pick."
-      ],
-      "outro": "What is Max PF? Max PF (\"Maximum Points For,\" also called optimal or potential points) is the score a team would have put up if they'd started their best possible lineup out of every player on their roster that week — not just what they actually started. We use Max PF, instead of plain wins and losses, to sort the bottom of the draft order because it can't be gamed: a team that's out of contention can't just bench their best players and \"tank\" for a better pick, since Max PF is calculated from their full roster's best possible lineup regardless of who they actually started."
+        "Pick 1: the lowest Max PF among the 4 teams that missed the playoffs.",
+        "Pick 2: the 2nd-lowest Max PF among the 4 teams that missed the playoffs.",
+        "Pick 3: the 2nd-highest Max PF among the 4 teams that missed the playoffs.",
+        "Pick 4: the highest Max PF among the 4 teams that missed the playoffs.",
+        "Pick 5: the lowest Max PF among the 4 teams that lost in the first round of the playoffs.",
+        "Pick 6: the 2nd-lowest Max PF among the 4 teams that lost in the first round of the playoffs.",
+        "Pick 7: the 2nd-highest Max PF among the 4 teams that lost in the first round of the playoffs.",
+        "Pick 8: the highest Max PF among the 4 teams that lost in the first round of the playoffs.",
+        "Pick 9: whichever team finished the season in 4th place.",
+        "Pick 10: whichever team finished the season in 3rd place.",
+        "Pick 11: the runner-up (2nd place).",
+        "Pick 12: the league champion (1st place)."
+      ]
     },
     {
       "title": "League Median",
@@ -66,12 +71,16 @@
       "body": "IDP stands for Individual Defensive Player. Instead of (or alongside) a team defense/special teams unit, IDP leagues let you draft, start, and score actual individual defensive players — linebackers, defensive backs, and defensive linemen — based on their real tackles, sacks, interceptions, and other defensive stats. Our IDP FLEX spot can be filled by any individual defensive player."
     },
     {
+      "title": "Tight End Premium",
+      "body": "Tight ends get a scoring boost in this league: on top of the standard 0.5 points per reception every position gets, a tight end earns an extra 0.5 points per reception — a full 1 point per catch instead of 0.5. That's meant to close the usual points gap between tight ends and wide receivers/running backs, since tight ends normally see fewer targets and touches than those positions. It pushes reliable pass-catching tight ends up draft boards and gives the position real trade value instead of being an afterthought."
+    },
+    {
       "title": "Co-Managers",
       "body": "Co-managers — a second (or third) person sharing control of a single roster alongside the primary owner — are welcome and encouraged in this league. It's a great low-commitment way for a friend to get a feel for the league and get \"in line\" before eventually taking over a roster of their own outright, whether that's an orphaned team that opens up or a brand-new expansion spot."
     },
     {
       "title": "Rivalry Weeks",
-      "body": "Weeks 1 and 14 are rivalry weeks. Your rival is whoever you're matched up against in Week 1 that season — that same head-to-head pairing runs it back in Week 14, giving every manager a first-half and second-half grudge match against the same opponent."
+      "body": "Weeks 1 and 14 are rivalry weeks. Every manager has a designated rival — a fixed pairing that stays the same every season, not just whoever you happen to be scheduled against that year — and you play your rival in both Week 1 and Week 14 every single season, giving each side a first-half and second-half grudge match year after year. This year's Week 1 matchups are everyone's designated rivals."
     }
   ]
 }
