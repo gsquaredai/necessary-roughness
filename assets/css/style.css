@@ -1812,4 +1812,15 @@ tr.is-my-team td:first-child {
   td {
     font-size: 0.82rem;
   }
+
+  /* home page — current standings widget */
+  #standings-section th,
+  #standings-section td {
+    font-size: 0.615rem;
+  }
+
+  #standings-section .avatar {
+    width: 24px;
+    height: 24px;
+  }
 }
