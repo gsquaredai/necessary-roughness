@@ -1813,14 +1813,51 @@ tr.is-my-team td:first-child {
     font-size: 0.82rem;
   }
 
-  /* home page — current standings widget */
+  /* home page — current standings widget: fit the viewport with no
+     side-to-side scroll instead of just shrinking everything — fixed
+     column widths so long team names truncate instead of forcing the
+     table wider, Max PF dropped (it's on the full Standings page). */
   #standings-section th,
   #standings-section td {
     font-size: 0.615rem;
+    padding: 10px 4px;
   }
 
   #standings-section .avatar {
     width: 24px;
     height: 24px;
+  }
+
+  #standings-section table {
+    table-layout: fixed;
+  }
+
+  #standings-section th:nth-child(1),
+  #standings-section td:nth-child(1) {
+    width: 7%;
+  }
+
+  #standings-section th:nth-child(2),
+  #standings-section td:nth-child(2) {
+    width: 60%;
+  }
+
+  #standings-section th:nth-child(3),
+  #standings-section td:nth-child(3) {
+    width: 17%;
+  }
+
+  #standings-section th:nth-child(4),
+  #standings-section td:nth-child(4) {
+    width: 16%;
+  }
+
+  #standings-section th:nth-child(5),
+  #standings-section td:nth-child(5) {
+    display: none;
+  }
+
+  #standings-section .team-name {
+    max-width: 100%;
   }
 }
