@@ -72,11 +72,14 @@
         return;
       }
 
+      const POSITION_CLASS = { QB: "pos-qb", RB: "pos-rb", WR: "pos-wr", TE: "pos-te" };
+
       container.innerHTML = season.draft.picks
         .map((pick) => {
           const team = teamById(season, pick.rosterId);
+          const posClass = POSITION_CLASS[pick.position] || "pos-other";
           return `
-            <div class="draft-pick-row">
+            <div class="draft-pick-row ${posClass}">
               <div class="draft-pick-no">${pick.pickNo}</div>
               <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
               <div class="draft-pick-player">

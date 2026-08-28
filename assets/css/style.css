@@ -343,6 +343,40 @@ th.num {
   border-bottom: none;
 }
 
+/* pastel position coloring — whole row tinted, dark text for contrast
+   against the light pastel fills */
+.draft-pick-row.pos-qb {
+  background: #ffadad;
+}
+.draft-pick-row.pos-rb {
+  background: #caffbf;
+}
+.draft-pick-row.pos-wr {
+  background: #a0c4ff;
+}
+.draft-pick-row.pos-te {
+  background: #ffd6a5;
+}
+.draft-pick-row.pos-other {
+  background: #bdb2ff;
+}
+
+.draft-pick-row[class*="pos-"] {
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+.draft-pick-row[class*="pos-"] .draft-pick-no,
+.draft-pick-row[class*="pos-"] .team-name,
+.draft-pick-row[class*="pos-"] .player-name,
+.draft-pick-row[class*="pos-"] .player-meta,
+.draft-pick-row[class*="pos-"] .nfl-team-abbr {
+  color: #1a1526;
+}
+
+.draft-pick-row[class*="pos-"] .avatar {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
 .draft-pick-no {
   font-family: "Press Start 2P", sans-serif;
   font-size: 0.55rem;
