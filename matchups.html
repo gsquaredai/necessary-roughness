@@ -208,7 +208,9 @@
       const aWins = played && teamB && m.teamA.points > m.teamB.points;
       const bWins = played && teamB && m.teamB.points > m.teamA.points;
 
-      const rivalry = teamB ? findRivalry(rivalries, teamA?.ownerId, teamB?.ownerId) : null;
+      // Rivalry Week started in 2025 — 2024 had no designated rivalries yet.
+      const rivalry =
+        teamB && parseInt(season.season, 10) >= 2025 ? findRivalry(rivalries, teamA?.ownerId, teamB?.ownerId) : null;
       const isRivalryWeek = week === 1 || week === lastRegularWeek;
       const showRivalry = !!(rivalry && isRivalryWeek);
 
