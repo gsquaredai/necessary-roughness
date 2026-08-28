@@ -227,6 +227,66 @@ th.num {
   min-width: 0;
 }
 
+/* all-time head-to-head grid */
+
+.h2h-grid th,
+.h2h-grid td {
+  text-align: center;
+  padding: 8px 10px;
+}
+
+.h2h-grid thead th {
+  vertical-align: bottom;
+}
+
+.h2h-grid thead th .avatar {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+.h2h-col-name {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  max-height: 90px;
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  margin: 0 auto;
+}
+
+.h2h-row-label {
+  text-align: left !important;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.h2h-row-label .avatar {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.h2h-self {
+  background: var(--surface-2);
+  color: var(--text-dim);
+}
+
+.h2h-winning {
+  color: var(--win);
+}
+
+.h2h-losing {
+  color: var(--loss);
+}
+
+.h2h-median {
+  border-left: 2px solid var(--border);
+  font-weight: 600;
+}
+
 .avatar {
   width: 28px;
   height: 28px;

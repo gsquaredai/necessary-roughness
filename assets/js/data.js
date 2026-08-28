@@ -45,6 +45,21 @@ async function loadRivalries() {
   return rivalriesCache;
 }
 
+// League median (the middle score across every team that week) for the
+// bonus median win/loss each team's record includes, per the League
+// Median rule. Regular season only — playoffs don't use it.
+function weekMedian(season, week) {
+  const scores = [];
+  for (const m of season.matchups[week] || []) {
+    scores.push(m.teamA.points);
+    if (m.teamB) scores.push(m.teamB.points);
+  }
+  if (!scores.length) return null;
+  scores.sort((a, b) => a - b);
+  const mid = Math.floor(scores.length / 2);
+  return scores.length % 2 === 0 ? (scores[mid - 1] + scores[mid]) / 2 : scores[mid];
+}
+
 // Named rivalry (if any) between two owner ids, order-independent.
 function findRivalry(rivalries, ownerIdA, ownerIdB) {
   if (!ownerIdA || !ownerIdB) return null;
