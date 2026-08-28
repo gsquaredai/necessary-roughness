@@ -279,7 +279,10 @@
 
     async function renderWeekBody(container, week) {
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
-      const existing = identity ? await loadPicksDoc(identity.ownerId, week) : null;
+      const [existing, counts] = await Promise.all([
+        identity ? loadPicksDoc(identity.ownerId, week) : null,
+        loadPickCounts(week),
+      ]);
       currentPicks = existing && existing.picks ? { ...existing.picks } : {};
 
       const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
@@ -290,7 +293,7 @@
       const matchupInfo = matchups.map(matchupSpreadInfo);
 
       container.innerHTML = `
-        <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week)).join("")}</div>
+        <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
         <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;">${
           existing ? "Update Picks" : "Submit Picks"
         }</button>
@@ -330,24 +333,31 @@
       btn.disabled = !allPicked;
     }
 
-    function pickemMatchupCardHTML(info, week) {
+    function pickemMatchupCardHTML(info, week, counts) {
       const { m, teamA, teamB, totalA, totalB, spread } = info;
       const favA = totalA >= totalB;
       const lineA = spread === 0 ? "PICK'EM" : favA ? `-${spread.toFixed(1)}` : `+${spread.toFixed(1)}`;
       const lineB = spread === 0 ? "PICK'EM" : favA ? `+${spread.toFixed(1)}` : `-${spread.toFixed(1)}`;
       const pickedA = currentPicks[m.matchupId] === teamA.rosterId;
       const pickedB = currentPicks[m.matchupId] === teamB.rosterId;
+      const matchupCounts = counts ? counts[m.matchupId] : null;
+      const countA = matchupCounts ? matchupCounts[teamA.rosterId] || 0 : null;
+      const countB = matchupCounts ? matchupCounts[teamB.rosterId] || 0 : null;
       return `
         <div class="pickem-card">
           <div class="pickem-card-row">
             <div class="pickem-side${pickedA ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamA.rosterId}">
               ${teamCellHTML(teamA)}
+              <div class="pickem-proj">Proj ${fmtPts(totalA)}</div>
               <div class="pickem-line">${lineA}</div>
+              ${countA != null ? `<div class="pick-count">${countA} picked</div>` : ""}
             </div>
             <div class="pickem-vs">vs</div>
             <div class="pickem-side${pickedB ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamB.rosterId}">
               ${teamCellHTML(teamB)}
+              <div class="pickem-proj">Proj ${fmtPts(totalB)}</div>
               <div class="pickem-line">${lineB}</div>
+              ${countB != null ? `<div class="pick-count">${countB} picked</div>` : ""}
             </div>
           </div>
           <button type="button" class="pickem-expand-btn" data-expand-matchup="${m.matchupId}">View Rosters &amp; Projections</button>

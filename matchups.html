@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 </head>
 <body data-page="matchups">
   <header class="site-header">
@@ -41,13 +44,35 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    // Read-only Pick-Em vote tallies — same Firebase project as pickem.html,
+    // signed in anonymously (no visible auth), just to show "N picked this
+    // side" on each current-season matchup card. loadPickCounts() (data.js)
+    // fails closed if this isn't ready, so the counts just quietly don't show.
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwRdeJXzmPaInTH2rDMNriQfErQPj33yQ",
+      authDomain: "necessaryroughness-5edd5.firebaseapp.com",
+      projectId: "necessaryroughness-5edd5",
+      storageBucket: "necessaryroughness-5edd5.firebasestorage.app",
+      messagingSenderId: "104157286944",
+      appId: "1:104157286944:web:1a3506b9062c4149ee2245",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    auth.onAuthStateChanged((user) => {
+      if (!user) auth.signInAnonymously().catch(() => {});
+    });
+
     let currentSeason = null;
     let rivalries = [];
     let weeklyRecords = null; // Map week -> { median, teams: { [rosterId]: {...} } }
     let lastRegularWeek = 14;
+    let siteCurrentSeasonKey = null;
+    let pickCountsRequestId = 0;
 
     async function init() {
       const idx = await loadIndex();
+      siteCurrentSeasonKey = idx.currentSeason;
       rivalries = await loadRivalries();
       const seasonSelect = document.getElementById("season-select");
       seasonSelect.innerHTML = idx.seasons
@@ -155,6 +180,28 @@
           ? `<div class="week-median-banner">League Median: <strong>${fmtPts(wr.median)}</strong></div>`
           : "";
       container.innerHTML = medianHTML + matchups.map((m) => renderMatchup(currentSeason, m, weekNum, wr)).join("");
+
+      applyPickCounts(weekNum);
+    }
+
+    // Pick-Em only ever exists for the site's current season's regular
+    // season weeks — everything else (past seasons, playoffs) just skips
+    // the fetch entirely rather than showing "0 picked" noise.
+    async function applyPickCounts(weekNum) {
+      const requestId = ++pickCountsRequestId;
+      if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
+      const counts = await loadPickCounts(weekNum);
+      if (requestId !== pickCountsRequestId) return; // a newer week was selected while this was in flight
+
+      document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
+        const matchupCounts = counts[card.dataset.matchupId];
+        if (!matchupCounts) return;
+        const countA = matchupCounts[card.dataset.t1] || 0;
+        const countB = matchupCounts[card.dataset.t2] || 0;
+        const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
+        if (blockA) blockA.insertAdjacentHTML("beforeend", `<div class="pick-count">${countA} picked</div>`);
+        if (blockB) blockB.insertAdjacentHTML("beforeend", `<div class="pick-count">${countB} picked</div>`);
+      });
     }
 
     function scoreBlockHTML(side, played, isWinner) {
@@ -209,7 +256,9 @@
       const mineB = teamB && isMyTeam(teamB.ownerId) ? " is-my-team" : "";
       return `
         <div class="matchup${showRivalry ? " rivalry-matchup" : ""}${clickable ? " clickable" : ""}"${
-        clickable ? ` data-week="${week}" data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}"` : ""
+        clickable
+          ? ` data-week="${week}" data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}" data-matchup-id="${m.matchupId}"`
+          : ""
       }${rivalryStyle}>
           ${showRivalry ? `<div class="rivalry-banner">${rivalry.name}</div>` : ""}
           <div class="matchup-side-block${mineA}">

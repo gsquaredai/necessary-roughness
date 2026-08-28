@@ -604,6 +604,18 @@ th.num {
   color: var(--win);
 }
 
+.pickem-proj {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.pick-count {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
 .pickem-vs {
   color: var(--text-dim);
   font-size: 0.6rem;

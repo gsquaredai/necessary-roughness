@@ -831,6 +831,40 @@ function matchupSideHTML(season, week, team, side, players, played) {
   `;
 }
 
+// ---------- Pick-Em vote tallies (read-only) ----------
+// Shared by matchups.html and pickem.html, both of which define their own
+// Firebase `auth`/`db` (same project) and kick off an anonymous sign-in on
+// load. Returns matchupId -> {rosterId: pickCount} for a given week's
+// Pick-Em picks. Fails closed (returns {}) if Firebase isn't reachable so
+// the pick-count UI just quietly doesn't show rather than erroring.
+async function loadPickCounts(week) {
+  try {
+    if (!auth.currentUser) {
+      await new Promise((resolve) => {
+        const unsub = auth.onAuthStateChanged((user) => {
+          if (user) {
+            unsub();
+            resolve();
+          }
+        });
+      });
+    }
+    const snap = await db.collection("picks").where("week", "==", week).get();
+    const counts = {};
+    snap.docs.forEach((d) => {
+      const data = d.data();
+      if (!data.picks) return;
+      for (const [matchupId, rosterId] of Object.entries(data.picks)) {
+        if (!counts[matchupId]) counts[matchupId] = {};
+        counts[matchupId][rosterId] = (counts[matchupId][rosterId] || 0) + 1;
+      }
+    });
+    return counts;
+  } catch {
+    return {};
+  }
+}
+
 async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
   let root = document.getElementById("player-modal-root");
   if (!root) {
