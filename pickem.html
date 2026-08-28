@@ -95,9 +95,13 @@
       if (kickoffCache.has(week)) return kickoffCache.get(week);
       let kickoff = null;
       try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
         const res = await fetch(
-          `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=${week}&dates=${currentSeason.season}`
+          `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=${week}&dates=${currentSeason.season}`,
+          { signal: controller.signal }
         );
+        clearTimeout(timeout);
         const data = await res.json();
         const times = (data.events || [])
           .map((e) => new Date(e.date).getTime())
@@ -282,6 +286,13 @@
         return;
       }
       const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
+      if (locked) {
+        // Freeze the spread everyone sees/is graded against at exactly what
+        // it was the moment this week locked (30 min before kickoff) —
+        // permanent in Firestore, so a later data refresh can't move it.
+        await ensureLockedSpreadsSaved(currentSeason, week, matchupInfo);
+        applyLockedSpreads(matchupInfo, await loadLockedSpreads(currentSeason, week));
+      }
       const isRivalryWeek = week === 1 || week === lastRegularWeek();
 
       container.innerHTML = `
@@ -350,8 +361,8 @@
     }
 
     function pickemMatchupCardHTML(info, week, counts) {
-      const { m, teamA, teamB, totalA, totalB, spread } = info;
-      const favA = totalA >= totalB;
+      const { m, teamA, teamB, totalA, totalB, spread, favRosterId } = info;
+      const favA = favRosterId === teamA.rosterId;
       const lineA = spread === 0 ? "PICK'EM" : favA ? `-${spread.toFixed(1)}` : `+${spread.toFixed(1)}`;
       const lineB = spread === 0 ? "PICK'EM" : favA ? `+${spread.toFixed(1)}` : `-${spread.toFixed(1)}`;
       const pickedA = currentPicks[m.matchupId] === teamA.rosterId;

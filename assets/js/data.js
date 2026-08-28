@@ -1020,7 +1020,62 @@ function matchupSpreadInfo(season, players, m) {
   const totalA = computeOptimalProjectedLineup(m.teamA.players, m.teamA.projByPlayer, players, season.rosterPositions);
   const totalB = computeOptimalProjectedLineup(m.teamB.players, m.teamB.projByPlayer, players, season.rosterPositions);
   const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
-  return { m, teamA, teamB, totalA, totalB, spread };
+  const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
+  return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
+}
+
+// ---------- Pick-Em spread locking ----------
+// The spread above is computed live from data.json's current projections,
+// which only change when the site's data pipeline is manually re-run — but
+// nothing stops that re-run from landing after a week's Pick-Em picks have
+// already locked (30 min before kickoff). To guarantee everyone is graded
+// against the exact spread they picked against, the first client to see a
+// week as locked snapshots it permanently to Firestore; everyone else (and
+// grading) reads that frozen snapshot instead of recomputing live.
+
+function lockedSpreadsDocId(season, week) {
+  return `${season.season}_${week}`;
+}
+
+async function loadLockedSpreads(season, week) {
+  try {
+    const snap = await db.collection("lockedSpreads").doc(lockedSpreadsDocId(season, week)).get();
+    return snap.exists ? snap.data() : null;
+  } catch {
+    return null;
+  }
+}
+
+// Best-effort, idempotent: only writes if no snapshot exists yet for this
+// week, so the FIRST lock observed wins and later data refreshes can't
+// change what's already been locked in.
+async function ensureLockedSpreadsSaved(season, week, matchupInfo) {
+  try {
+    await waitForFirebaseAuth();
+    const ref = db.collection("lockedSpreads").doc(lockedSpreadsDocId(season, week));
+    const snap = await ref.get();
+    if (snap.exists) return;
+    const data = {};
+    matchupInfo.forEach((info) => {
+      data[info.m.matchupId] = { spread: info.spread, favRosterId: info.favRosterId };
+    });
+    await ref.set(data);
+  } catch {
+    // Best-effort — display/grading just falls back to a live computation.
+  }
+}
+
+// Mutates a week's matchupInfo array in place, overlaying any locked
+// snapshot's spread/favorite on top of the live-computed values.
+function applyLockedSpreads(matchupInfo, lockedData) {
+  if (!lockedData) return matchupInfo;
+  matchupInfo.forEach((info) => {
+    const locked = lockedData[info.m.matchupId];
+    if (!locked) return;
+    info.spread = locked.spread;
+    info.favRosterId = locked.favRosterId;
+  });
+  return matchupInfo;
 }
 
 // All-time Pick-Em pool points per ownerId, graded through the last
@@ -1034,6 +1089,24 @@ async function computePickEmPoints(season, players) {
     const snap = await db.collection("picks").get();
     const gradedThroughWeek = latestWeekWithData(season) ?? 0;
     const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
+
+    // Preload each graded week's spread info once (not per pick doc),
+    // overlaying any locked snapshot so grading always uses the exact
+    // spread managers picked against.
+    const weeksToGrade = [];
+    for (let week = 1; week <= gradedThroughWeek; week++) {
+      const matchups = (season.matchups[week] || []).filter((m) => m.teamB);
+      if (matchups.length) weeksToGrade.push({ week, matchups });
+    }
+    const weekInfo = new Map();
+    await Promise.all(
+      weeksToGrade.map(async ({ week, matchups }) => {
+        const info = matchups.map((m) => matchupSpreadInfo(season, players, m));
+        applyLockedSpreads(info, await loadLockedSpreads(season, week));
+        weekInfo.set(week, info);
+      })
+    );
+
     snap.docs.forEach((d) => {
       const data = d.data();
       const week = Number(data.week);
@@ -1041,12 +1114,12 @@ async function computePickEmPoints(season, players) {
       if (!points.has(data.ownerId)) points.set(data.ownerId, 0);
       // Rivalry Week (week 1 and the last regular-season week) pays double.
       const pointValue = week === 1 || week === lastRegWeek ? 2 : 1;
-      const matchups = (season.matchups[week] || []).filter((m) => m.teamB);
-      for (const m of matchups) {
+      const matchupInfo = weekInfo.get(week) || [];
+      for (const info of matchupInfo) {
+        const { m, spread, favRosterId, teamA, teamB } = info;
         const pickedRosterId = data.picks ? data.picks[m.matchupId] : null;
         if (pickedRosterId == null) continue;
-        const { totalA, totalB, spread } = matchupSpreadInfo(season, players, m);
-        const favIsA = totalA >= totalB;
+        const favIsA = favRosterId === teamA.rosterId;
         const actualMargin = favIsA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
         let coveringRosterId = null;
         if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;

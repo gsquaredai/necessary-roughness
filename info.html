@@ -33,6 +33,7 @@
         <button type="button" data-tab="roster">Roster</button>
         <button type="button" data-tab="scoring">Scoring</button>
         <button type="button" data-tab="rules">Rules</button>
+        <button type="button" data-tab="pickem">Pick-Em</button>
         <button type="button" data-tab="money">$$$</button>
         <button type="button" data-tab="allstar">All Star Game</button>
       </div>
@@ -253,6 +254,52 @@
           `;
         })
         .join("");
+    }
+
+    // ---------- pick-em ----------
+
+    async function renderPickemInfoTab(container) {
+      const idx = await loadIndex();
+      const season = await loadSeason(idx.currentSeason);
+      const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
+      container.innerHTML = `
+        <div class="info-section-title" style="margin-top: 0;">What Is Pick-Em?</div>
+        <div class="info-lead">
+          Every week, every manager picks against the spread on all of that week's matchups &mdash; head to the
+          <a href="pickem.html">Pick-Em tab</a>, select which team you are, and lock in a side for every
+          matchup. The spread for a matchup is the difference between the two teams' best-possible
+          projected lineups (every rostered player's projection, slotted into the optimal starting
+          lineup for that roster's positions, not just whoever's actually starting), rounded to the
+          nearest half point. Pick the favorite and they have to win by more than the spread to cover;
+          pick the underdog and they cover by losing by less than the spread (or winning outright).
+        </div>
+
+        <div class="info-section-title">Deadline To Submit</div>
+        <div class="info-lead">
+          You can submit or change your picks for a week any time right up until that week's first game
+          kicks off &mdash; picks lock 30 minutes before the earliest kickoff and can't be entered or edited
+          after that. You snooze, you lose: whatever's saved at that point (or nothing, if you never
+          submitted) is what gets graded.
+        </div>
+        <div class="info-lead">
+          The spread itself keeps moving with player projections right up until that same 30-minute
+          cutoff. Once a week locks, its spread locks right along with it &mdash; permanently, at exactly
+          what everyone last saw and picked against, even if projections change afterward.
+        </div>
+
+        <div class="info-section-title">Double Weeks</div>
+        <div class="info-lead">
+          Weeks 1 and ${lastRegWeek} are Rivalry Weeks &mdash; every manager's designated rival, the same
+          pairing every season. Correct picks are worth double on both of those weeks: 2 points instead
+          of 1.
+        </div>
+
+        <div class="info-section-title">The Prize</div>
+        <div class="info-lead">
+          Whoever has the most points at the end of the regular season wins the pool and earns the bonus
+          3.14 rookie pick at the following rookie draft.
+        </div>
+      `;
     }
 
     // ---------- $$$ ----------
@@ -526,6 +573,7 @@
       roster: renderRosterTab,
       scoring: renderScoringTab,
       rules: renderRulesTab,
+      pickem: renderPickemInfoTab,
       money: renderMoneyTab,
       allstar: renderAllStarTab,
       teams: renderTeamsTab,
