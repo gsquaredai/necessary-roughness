@@ -363,6 +363,12 @@ th.num {
   border: 2px solid rgba(216, 85, 92, 0.4);
 }
 
+.badge.you {
+  background: rgba(107, 168, 255, 0.15);
+  color: var(--accent-2);
+  border: 2px solid rgba(107, 168, 255, 0.4);
+}
+
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -1336,6 +1342,63 @@ th.num {
 }
 
 /* hero */
+
+/* site-wide "which team are you" bar + highlighting */
+
+.site-identity-bar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-identity-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 0.6rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.site-identity-btn strong {
+  color: var(--accent);
+}
+
+.site-identity-btn:hover {
+  color: var(--text);
+}
+
+.site-identity-btn-empty {
+  color: var(--accent-2);
+}
+
+.site-identity-btn-empty:hover {
+  color: var(--accent);
+}
+
+tr.is-my-team td {
+  background: rgba(242, 201, 76, 0.08);
+}
+
+tr.is-my-team td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.matchup-side-block.is-my-team,
+.team-list-row.is-my-team {
+  background: rgba(242, 201, 76, 0.08);
+}
+
+.team-list-row.is-my-team {
+  border-color: var(--accent);
+}
+
+.matchup-side-block.is-my-team {
+  border-radius: var(--radius);
+}
 
 .hero {
   text-align: center;

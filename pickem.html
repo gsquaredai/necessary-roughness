@@ -161,8 +161,30 @@
 
     // ---------- team claim (first sign-in only) ----------
 
-    function renderTeamClaimPicker() {
+    async function renderTeamClaimPicker() {
       const root = document.getElementById("pickem-root");
+
+      // If the manager already picked their team via the site-wide "which
+      // team are you" bar, auto-claim that same team here instead of making
+      // them pick again — unless it's already claimed by a different login.
+      const siteId = loadSiteIdentity();
+      if (siteId) {
+        const team = teamById(currentSeason, siteId.rosterId);
+        if (team) {
+          const existing = await db.collection("identities").where("ownerId", "==", team.ownerId).get();
+          if (existing.empty || existing.docs[0].id === currentUser.uid) {
+            await db.collection("identities").doc(currentUser.uid).set({
+              ownerId: team.ownerId,
+              rosterId: team.rosterId,
+              teamName: team.teamName,
+            });
+            identity = { ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName };
+            renderMain();
+            return;
+          }
+        }
+      }
+
       const rows = currentSeason.teams
         .slice()
         .sort((a, b) => a.teamName.localeCompare(b.teamName))
@@ -547,7 +569,7 @@
         try {
           const idDoc = await db.collection("identities").doc(user.uid).get();
           if (!idDoc.exists) {
-            renderTeamClaimPicker();
+            await renderTeamClaimPicker();
           } else {
             identity = idDoc.data();
             renderMain();

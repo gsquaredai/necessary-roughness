@@ -205,18 +205,20 @@
 
       const clickable = !!teamB;
       const rivalryStyle = showRivalry && rivalry.color ? ` style="--rivalry-color: ${rivalry.color};"` : "";
+      const mineA = isMyTeam(teamA?.ownerId) ? " is-my-team" : "";
+      const mineB = teamB && isMyTeam(teamB.ownerId) ? " is-my-team" : "";
       return `
         <div class="matchup${showRivalry ? " rivalry-matchup" : ""}${clickable ? " clickable" : ""}"${
         clickable ? ` data-week="${week}" data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}"` : ""
       }${rivalryStyle}>
           ${showRivalry ? `<div class="rivalry-banner">${rivalry.name}</div>` : ""}
-          <div class="matchup-side-block">
+          <div class="matchup-side-block${mineA}">
             ${teamCellHTML(teamA)}
             ${scoreBlockHTML(m.teamA, played, aWins)}
             ${weekBadgesHTML(aData)}
           </div>
           <div class="vs">vs</div>
-          <div class="matchup-side-block">
+          <div class="matchup-side-block${mineB}">
             ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
             ${scoreBlockHTML(m.teamB, played, bWins)}
             ${weekBadgesHTML(bData)}

@@ -466,11 +466,12 @@
           const finish = bestFinish(seasons, team.ownerId);
           const contact = contacts[team.ownerId] || {};
           const isChampThisSeason = currentSeason.champion === team.rosterId;
+          const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
           return `
-            <div class="team-list-row" data-roster-id="${team.rosterId}" role="button" tabindex="0">
+            <div class="team-list-row${mine}" data-roster-id="${team.rosterId}" role="button" tabindex="0">
               ${avatarImgHTML(team)}
               <div class="team-list-info">
-                <div class="team-name">${team.teamName}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</div>
+                <div class="team-name">${team.teamName}${mine ? ' <span class="badge you">You</span>' : ""}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</div>
                 <div class="team-list-owner">${team.displayName}</div>
               </div>
               <div class="team-list-meta">

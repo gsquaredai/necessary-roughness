@@ -190,8 +190,9 @@
           if (currentView === "draft") rankCell = isProjectedDraft ? projectedPicks.get(team.rosterId) ?? "—" : team.draftPick ?? "—";
           else rankCell = i + 1;
           const cutoff = currentView === "standings" && playoffTeams && i === playoffTeams - 1 ? " playoff-cutoff" : "";
+          const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
           return `
-            <tr class="clickable-row${cutoff}" data-roster-id="${team.rosterId}">
+            <tr class="clickable-row${cutoff}${mine}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>

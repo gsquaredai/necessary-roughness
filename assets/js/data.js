@@ -368,10 +368,12 @@ function playChampionCelebration(container) {
 
 function teamCellHTML(team, { champ = false, last = false } = {}) {
   const name = team?.teamName ?? "Unknown";
+  const mine = isMyTeam(team?.ownerId);
   return `
     <span class="team-cell">
       ${avatarImgHTML(team)}
       <span class="team-name">${name}</span>
+      ${mine ? '<span class="badge you">You</span>' : ""}
       ${champ ? '<span class="badge champ">Champ</span>' : ""}
       ${last ? '<span class="badge last">Last</span>' : ""}
     </span>
@@ -404,7 +406,119 @@ function setActiveNav() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", setActiveNav);
+// ---------- site-wide "which team are you" (localStorage, casual) ----------
+// Separate from Pick-Em's real login — this is purely a per-browser
+// convenience so the site can highlight "your" team wherever it shows up.
+// Persists until the browser's storage is cleared.
+
+const SITE_IDENTITY_KEY = "nr_site_identity_v1";
+
+function loadSiteIdentity() {
+  try {
+    return JSON.parse(localStorage.getItem(SITE_IDENTITY_KEY));
+  } catch {
+    return null;
+  }
+}
+
+function saveSiteIdentity(team) {
+  try {
+    localStorage.setItem(
+      SITE_IDENTITY_KEY,
+      JSON.stringify({ ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName })
+    );
+  } catch {
+    // localStorage unavailable — highlighting just won't persist
+  }
+}
+
+function clearSiteIdentity() {
+  try {
+    localStorage.removeItem(SITE_IDENTITY_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+function isMyTeam(ownerId) {
+  const id = loadSiteIdentity();
+  return !!(id && ownerId && id.ownerId === ownerId);
+}
+
+async function openSiteIdentityPicker() {
+  const idx = await loadIndex();
+  const season = await loadSeason(idx.currentSeason);
+  let root = document.getElementById("player-modal-root");
+  if (!root) {
+    root = document.createElement("div");
+    root.id = "player-modal-root";
+    document.body.appendChild(root);
+  }
+  const current = loadSiteIdentity();
+  const rows = season.teams
+    .slice()
+    .sort((a, b) => a.teamName.localeCompare(b.teamName))
+    .map(
+      (t) => `
+        <div class="team-list-row" data-roster-id="${t.rosterId}" role="button" tabindex="0">
+          ${avatarImgHTML(t)}
+          <div class="team-list-info">
+            <div class="team-name">${t.teamName}</div>
+            <div class="team-list-owner">${t.displayName}</div>
+          </div>
+        </div>
+      `
+    )
+    .join("");
+  root.innerHTML = `
+    <div class="modal-overlay" id="player-modal-overlay">
+      <div class="modal-box">
+        <button class="modal-close" id="player-modal-close">&times;</button>
+        <div class="modal-header">
+          <h2>Which team are you?</h2>
+          <div class="modal-subtitle">Highlights your team across the site on this browser.</div>
+        </div>
+        <div class="modal-tab-content">
+          <div class="team-box-list">${rows}</div>
+          ${current ? `<button type="button" id="site-identity-clear" class="link-btn" style="display: block; margin: 14px auto 0;">Clear</button>` : ""}
+        </div>
+      </div>
+    </div>
+  `;
+  root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "player-modal-overlay") closePlayerModal();
+  });
+  root.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+  root.querySelectorAll(".team-list-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      saveSiteIdentity(teamById(season, Number(row.dataset.rosterId)));
+      location.reload();
+    });
+  });
+  root.querySelector("#site-identity-clear")?.addEventListener("click", () => {
+    clearSiteIdentity();
+    location.reload();
+  });
+}
+
+function renderSiteIdentityBar() {
+  const page = document.querySelector(".page");
+  if (!page || document.getElementById("site-identity-bar")) return;
+  const bar = document.createElement("div");
+  bar.className = "site-identity-bar";
+  bar.id = "site-identity-bar";
+  const id = loadSiteIdentity();
+  bar.innerHTML = id
+    ? `<button type="button" class="site-identity-btn" id="site-identity-btn">Playing as <strong>${id.teamName}</strong> &middot; change</button>`
+    : `<button type="button" class="site-identity-btn site-identity-btn-empty" id="site-identity-btn">Pick your team &rarr; highlight it across the site</button>`;
+  page.parentNode.insertBefore(bar, page);
+  bar.querySelector("#site-identity-btn").addEventListener("click", openSiteIdentityPicker);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setActiveNav();
+  renderSiteIdentityBar();
+});
 
 // ---------- player profile modal ----------
 

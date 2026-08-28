@@ -646,7 +646,12 @@
         .sort((a, b) => nameFor(a).localeCompare(nameFor(b)));
 
       const headerCells = owners
-        .map((t) => `<th>${avatarImgHTML(t)}<div class="h2h-col-name">${nameFor(t)}</div></th>`)
+        .map(
+          (t) =>
+            `<th>${avatarImgHTML(t)}<div class="h2h-col-name">${nameFor(t)}${
+              isMyTeam(t.ownerId) ? ' <span class="badge you">You</span>' : ""
+            }</div></th>`
+        )
         .join("");
 
       const bodyRows = owners
@@ -670,7 +675,9 @@
           const medianCls = mr && mr.wins > mr.losses ? "h2h-winning" : mr && mr.losses > mr.wins ? "h2h-losing" : "";
           return `
             <tr>
-              <th class="h2h-row-label">${avatarImgHTML(rowTeam)}<span>${nameFor(rowTeam)}</span></th>
+              <th class="h2h-row-label">${avatarImgHTML(rowTeam)}<span>${nameFor(rowTeam)}${
+                isMyTeam(rowTeam.ownerId) ? ' <span class="badge you">You</span>' : ""
+              }</span></th>
               ${cells}
               <td class="h2h-median ${medianCls}">${medianStr}</td>
             </tr>
