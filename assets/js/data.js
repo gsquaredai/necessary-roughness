@@ -366,7 +366,7 @@ function playChampionCelebration(container) {
   setTimeout(() => layer.remove(), 3200);
 }
 
-function teamCellHTML(team, { champ = false, last = false } = {}) {
+function teamCellHTML(team, { champ = false, second = false, third = false, last = false } = {}) {
   const name = team?.teamName ?? "Unknown";
   const mine = isMyTeam(team?.ownerId);
   return `
@@ -375,6 +375,8 @@ function teamCellHTML(team, { champ = false, last = false } = {}) {
       <span class="team-name">${name}</span>
       ${mine ? '<span class="badge you">You</span>' : ""}
       ${champ ? '<span class="badge champ">Champ</span>' : ""}
+      ${second ? '<span class="badge second">2nd</span>' : ""}
+      ${third ? '<span class="badge third">3rd</span>' : ""}
       ${last ? '<span class="badge last">Last</span>' : ""}
     </span>
   `;

@@ -369,6 +369,18 @@ th.num {
   border: 2px solid rgba(107, 168, 255, 0.4);
 }
 
+.badge.second {
+  background: rgba(201, 201, 220, 0.12);
+  color: #c9c9dc;
+  border: 2px solid rgba(201, 201, 220, 0.4);
+}
+
+.badge.third {
+  background: rgba(205, 127, 50, 0.15);
+  color: #cd7f32;
+  border: 2px solid rgba(205, 127, 50, 0.4);
+}
+
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;

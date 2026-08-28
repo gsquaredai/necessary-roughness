@@ -34,6 +34,7 @@
 
       <div class="view-toggle" id="view-toggle">
         <button type="button" data-view="standings">Standings</button>
+        <button type="button" data-view="record">Record</button>
         <button type="button" data-view="draft">Draft Order</button>
         <button type="button" data-view="pf">PF</button>
         <button type="button" data-view="pa">PA</button>
@@ -41,9 +42,10 @@
       </div>
 
       <p class="muted" id="draft-projection-note" hidden style="margin-bottom: 12px;">
-        This season's rookie draft order isn't final yet — this is a live projection assuming no more upsets:
-        every team's current seed holds through the playoffs, ties for record are broken by PF, and the 4 teams
-        currently projected to miss the playoffs are ordered by Max PF, same as the real rule.
+        This season's real draft order isn't set yet, so Standings and Draft Order both use a live projection
+        assuming no more upsets: every team's current seed holds through the playoffs, ties for record are broken
+        by PF, and the 4 teams currently projected to miss the playoffs are ordered by Max PF, same as the real
+        rule.
       </p>
 
       <section>
@@ -68,27 +70,38 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    // "Standings" defaults to the reverse of the draft order, not plain
+    // win-loss record — the draft order is this league's real, official
+    // final placement (it accounts for actual playoff results, not just
+    // regular-season record), so reversing it puts the champion on top and
+    // last place on the bottom exactly like a final standings table should.
+    // Plain win-loss record is still available as its own "Record" view.
     const VIEWS = {
       standings: {
         label: "#",
-        sort: (teams) => standingsSorted({ teams }),
+        sort: (season, pickMap) =>
+          [...season.teams].sort((a, b) => (pickMap.get(b.rosterId) ?? 0) - (pickMap.get(a.rosterId) ?? 0)),
+      },
+      record: {
+        label: "#",
+        sort: (season) => standingsSorted(season),
       },
       draft: {
         label: "Pick",
-        sort: (teams) =>
-          [...teams].sort((a, b) => (a.draftPick ?? 999) - (b.draftPick ?? 999)),
+        sort: (season, pickMap) =>
+          [...season.teams].sort((a, b) => (pickMap.get(a.rosterId) ?? 999) - (pickMap.get(b.rosterId) ?? 999)),
       },
       pf: {
         label: "#",
-        sort: (teams) => [...teams].sort((a, b) => b.fpts - a.fpts),
+        sort: (season) => [...season.teams].sort((a, b) => b.fpts - a.fpts),
       },
       pa: {
         label: "#",
-        sort: (teams) => [...teams].sort((a, b) => b.fptsAgainst - a.fptsAgainst),
+        sort: (season) => [...season.teams].sort((a, b) => b.fptsAgainst - a.fptsAgainst),
       },
       maxpf: {
         label: "#",
-        sort: (teams) => [...teams].sort((a, b) => b.maxPF - a.maxPF),
+        sort: (season) => [...season.teams].sort((a, b) => b.maxPF - a.maxPF),
       },
     };
 
@@ -166,35 +179,61 @@
       return projected;
     }
 
+    // rosterId -> pick number for this season, real if the draft that uses
+    // it has already happened, otherwise the live projection above.
+    function pickNumberMap(season) {
+      const allKnown = season.teams.every((t) => t.draftPick != null);
+      if (allKnown) {
+        const m = new Map();
+        season.teams.forEach((t) => m.set(t.rosterId, t.draftPick));
+        return { picks: m, projected: false };
+      }
+      return { picks: computeProjectedDraftOrder(season), projected: true };
+    }
+
+    // Champion/runner-up/3rd/last place for this season, derived from the
+    // stored playoff bracket (p:1 match = championship, p:3 = 3rd place
+    // game) plus the already-computed champion/lastPlace fields.
+    function playoffPlacements(season) {
+      const winners = season.playoffBracket?.winners || [];
+      const finalMatch = winners.find((m) => m.p === 1 && m.w != null && m.l != null);
+      const thirdMatch = winners.find((m) => m.p === 3 && m.w != null);
+      return {
+        champion: season.champion ?? null,
+        runnerUp: finalMatch?.l ?? null,
+        thirdPlace: thirdMatch?.w ?? null,
+        lastPlace: season.lastPlace ?? null,
+      };
+    }
+
     async function renderStandings(seasonKey) {
       const season = await loadSeason(seasonKey);
       currentSeason = season;
 
-      const isProjectedDraft = currentView === "draft" && season.teams.every((t) => t.draftPick == null);
-      const projectedPicks = isProjectedDraft ? computeProjectedDraftOrder(season) : null;
-      document.getElementById("draft-projection-note").hidden = !isProjectedDraft;
+      const { picks: pickMap, projected } = pickNumberMap(season);
+      const usesProjection = projected && (currentView === "standings" || currentView === "draft");
+      document.getElementById("draft-projection-note").hidden = !usesProjection;
 
-      const sorted = isProjectedDraft
-        ? [...season.teams].sort(
-            (a, b) => (projectedPicks.get(a.rosterId) ?? 999) - (projectedPicks.get(b.rosterId) ?? 999)
-          )
-        : VIEWS[currentView].sort(season.teams);
-
+      const sorted = VIEWS[currentView].sort(season, pickMap);
+      const placements = playoffPlacements(season);
       const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
 
       document.getElementById("standings-body").innerHTML = sorted
         .map((team, i) => {
-          const champ = season.champion === team.rosterId;
-          const last = season.lastPlace === team.rosterId;
-          let rankCell;
-          if (currentView === "draft") rankCell = isProjectedDraft ? projectedPicks.get(team.rosterId) ?? "—" : team.draftPick ?? "—";
-          else rankCell = i + 1;
-          const cutoff = currentView === "standings" && playoffTeams && i === playoffTeams - 1 ? " playoff-cutoff" : "";
+          const champ = placements.champion === team.rosterId;
+          const second = placements.runnerUp === team.rosterId;
+          const third = placements.thirdPlace === team.rosterId;
+          const last = placements.lastPlace === team.rosterId;
+          const rankCell = currentView === "draft" ? pickMap.get(team.rosterId) ?? "—" : i + 1;
+          const cutoff =
+            (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1
+              ? " playoff-cutoff"
+              : "";
           const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
           return `
             <tr class="clickable-row${cutoff}${mine}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
-              <td>${teamCellHTML(team, { champ, last })}</td>
+              <td>${teamCellHTML(team, { champ, second, third, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
               <td class="num">${fmtPts(team.maxPF)}</td>
