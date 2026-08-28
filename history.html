@@ -31,6 +31,7 @@
       <div class="view-toggle" id="history-tabs">
         <button type="button" data-tab="champions">Champions</button>
         <button type="button" data-tab="alltime">All-Time Standings</button>
+        <button type="button" data-tab="seasons">Single Season Rankings</button>
         <button type="button" data-tab="scoring">Highest Scoring</button>
         <button type="button" data-tab="activity">Team Activity</button>
         <button type="button" data-tab="rivalries">Rivalries</button>
@@ -311,6 +312,184 @@
       });
 
       renderAllTimeBody(container);
+    }
+
+    // ---------- single season rankings ----------
+
+    let seasonTeamRows = null;
+    let seasonSortKey = "record";
+
+    const SEASON_SORT_FIELDS = {
+      record: (r) => r.winPct,
+      pf: (r) => r.fpts,
+      maxpf: (r) => r.maxPF,
+    };
+
+    function seasonRecordStr(r) {
+      return r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
+    }
+
+    function computeTeamSeasons(seasons) {
+      const results = [];
+      for (const season of seasons) {
+        for (const team of season.teams) {
+          const total = team.wins + team.losses + team.ties;
+          if (!total) continue; // season still in progress / no games yet
+          results.push({
+            team,
+            season: season.season,
+            wins: team.wins,
+            losses: team.losses,
+            ties: team.ties,
+            winPct: team.wins / total,
+            fpts: team.fpts,
+            maxPF: team.maxPF,
+          });
+        }
+      }
+      return results;
+    }
+
+    function seasonTeamRowHTML(r, i) {
+      return `
+        <tr>
+          <td>${i + 1}</td>
+          <td>${teamCellHTML(r.team)}</td>
+          <td class="num">${r.season}</td>
+          <td class="num">${seasonRecordStr(r)}</td>
+          <td class="num">${fmtPts(r.fpts)}</td>
+          <td class="num">${fmtPts(r.maxPF)}</td>
+        </tr>
+      `;
+    }
+
+    function seasonTeamCardHTML(r, i) {
+      return `
+        <div class="standing-card">
+          <div class="standing-card-top">
+            <span class="standing-card-rank">${i + 1}</span>
+            ${teamCellHTML(r.team)}
+          </div>
+          <div class="standing-card-stats">
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Season</span>
+              <span class="standing-card-stat-value">${r.season}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Record</span>
+              <span class="standing-card-stat-value">${seasonRecordStr(r)}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">PF</span>
+              <span class="standing-card-stat-value">${fmtPts(r.fpts)}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Max PF</span>
+              <span class="standing-card-stat-value">${fmtPts(r.maxPF)}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSeasonTeamBody(container) {
+      const field = SEASON_SORT_FIELDS[seasonSortKey];
+      const top10 = [...seasonTeamRows].sort((a, b) => field(b) - field(a)).slice(0, 10);
+      container.querySelector("#season-team-body").innerHTML = top10.map(seasonTeamRowHTML).join("");
+      container.querySelector("#season-team-cards").innerHTML = top10.map((r, i) => seasonTeamCardHTML(r, i)).join("");
+      container.querySelectorAll("[data-season-sort]").forEach((el) => {
+        el.classList.toggle("active", el.dataset.seasonSort === seasonSortKey);
+      });
+    }
+
+    function computePlayerSeasons(players) {
+      const results = [];
+      for (const p of Object.values(players)) {
+        for (const [season, data] of Object.entries(p.seasons || {})) {
+          const games = (data.games || []).filter((g) => g.played);
+          if (!games.length) continue;
+          const totalPoints = games.reduce((sum, g) => sum + (g.points || 0), 0);
+          results.push({
+            playerId: p.playerId,
+            name: p.name,
+            position: p.position,
+            nflTeam: p.nflTeam,
+            season,
+            gamesPlayed: games.length,
+            totalPoints,
+          });
+        }
+      }
+      results.sort((a, b) => b.totalPoints - a.totalPoints);
+      return results.slice(0, 10);
+    }
+
+    async function renderSeasonsTab(container) {
+      await ensureData();
+      seasonTeamRows = computeTeamSeasons(allSeasons);
+      seasonSortKey = "record";
+      const topPlayerSeasons = computePlayerSeasons(allPlayers);
+
+      const playerRows = topPlayerSeasons.length
+        ? topPlayerSeasons
+            .map(
+              (r, i) => `
+                <div class="info-stat-row history-player-row">
+                  <div class="history-player-line">
+                    <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
+                    <span>${playerLinkHTML(r.playerId, r.name)}</span>
+                  </div>
+                  <div class="history-player-line">
+                    <span class="info-stat-value money accent">${fmtPts(r.totalPoints)}</span>
+                    <span class="player-meta">${r.position || ""}${r.nflTeam ? " &middot; " + nflAbbr3(r.nflTeam) : ""}</span>
+                    ${nflLogoImgHTML(r.nflTeam)}
+                  </div>
+                  <div class="history-player-line muted">
+                    <span>${r.season} &middot; ${r.gamesPlayed} GP</span>
+                  </div>
+                </div>
+              `
+            )
+            .join("")
+        : '<div class="empty-state">No games played yet.</div>';
+
+      container.innerHTML = `
+        <div class="info-section-title">Best Single-Season — Teams (Top 10)</div>
+        <p class="muted" style="margin-bottom: 12px;">Ranked by record by default — switch to PF or Max PF to re-rank the top 10.</p>
+        <div class="view-toggle" id="season-sort-toggle">
+          <button type="button" data-season-sort="record">Record</button>
+          <button type="button" data-season-sort="pf">PF</button>
+          <button type="button" data-season-sort="maxpf">Max PF</button>
+        </div>
+        <div class="card table-wrap standings-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th class="num">Season</th>
+                <th class="num">Record</th>
+                <th class="num">PF</th>
+                <th class="num">Max PF</th>
+              </tr>
+            </thead>
+            <tbody id="season-team-body"></tbody>
+          </table>
+        </div>
+        <div class="standing-cards" id="season-team-cards"></div>
+
+        <div class="info-section-title" style="margin-top: 28px;">Best Single-Season — Players (Top 10 by Points)</div>
+        <div class="draft-list">${playerRows}</div>
+      `;
+
+      container.querySelectorAll("#season-sort-toggle button[data-season-sort]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          seasonSortKey = btn.dataset.seasonSort;
+          renderSeasonTeamBody(container);
+        });
+      });
+
+      renderSeasonTeamBody(container);
     }
 
     // ---------- highest scoring ----------
@@ -895,6 +1074,7 @@
     const TAB_RENDERERS = {
       champions: renderChampionsTab,
       alltime: renderAllTimeTab,
+      seasons: renderSeasonsTab,
       scoring: renderScoringTab,
       activity: renderActivityTab,
       rivalries: renderRivalriesTab,
