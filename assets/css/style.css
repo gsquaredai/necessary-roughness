@@ -1881,6 +1881,36 @@ tr.is-my-team td:first-child {
     text-align: center;
   }
 
+  /* playoff bracket — same stacked-card look as a regular week's matchups
+     instead of the flat, side-by-side bracket row */
+  .bracket-list {
+    background: none;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bracket-list .bracket-match {
+    flex-direction: column;
+    text-align: center;
+    background: var(--surface);
+    border: var(--pixel-border) solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--pixel-shadow);
+    padding: 14px 16px;
+  }
+
+  .bracket-list .bracket-match:last-child {
+    border-bottom: var(--pixel-border) solid var(--border);
+  }
+
+  .bracket-list .bracket-score {
+    font-size: 1.05rem;
+  }
+
   th,
   td {
     font-size: 0.82rem;

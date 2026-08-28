@@ -354,7 +354,7 @@
               return `${label ? `<div class="bracket-round-title" style="font-size:0.55rem;margin:12px 0 4px;">${label}</div>` : ""}${bracketMatchHTML(season, m, week)}`;
             })
             .join("");
-          return `<div class="bracket-round-title">${title}</div><div class="draft-list">${rowsHTML}</div>`;
+          return `<div class="bracket-round-title">${title}</div><div class="draft-list bracket-list">${rowsHTML}</div>`;
         })
         .join("");
     }
