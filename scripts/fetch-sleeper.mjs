@@ -203,6 +203,11 @@ async function buildSeason(league, nextLeague) {
       const slotToRosterId = draftDetail.slot_to_roster_id || {};
       draftBoard = {
         rounds: draftMeta.settings?.rounds ?? null,
+        draftedAt: draftDetail.last_picked
+          ? new Date(draftDetail.last_picked).toISOString()
+          : draftDetail.start_time
+          ? new Date(draftDetail.start_time).toISOString()
+          : null,
         picks: picks
           .map((p) => {
             const override = DRAFT_PICK_OWNER_OVERRIDES.find(
@@ -443,37 +448,67 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     }
   }
 
-  const log = seasonDatas
-    .flatMap((s) =>
-      s.rawTransactions.map((t) => ({
-        id: t.id,
-        type: t.type,
-        date: new Date(t.created).toISOString(),
-        season: t.season,
-        teams: t.rosterIds.map((rid) => teamRef(t.season, rid)),
-        sides: t.type === "trade" ? resolveTradeSides(t) : [],
-        adds: Object.entries(t.adds).map(([playerId, rosterId]) => ({
-          ...playerRef(playerId),
-          team: teamRef(t.season, rosterId),
-        })),
-        drops: Object.entries(t.drops).map(([playerId, rosterId]) => ({
-          ...playerRef(playerId),
-          team: teamRef(t.season, rosterId),
-        })),
-        draftPicksTraded: t.draftPicks.map((dp) => ({
-          season: dp.season,
-          round: dp.round,
-          from: teamRef(t.season, dp.fromRosterId),
-          to: teamRef(t.season, dp.toRosterId),
-        })),
-        faab: t.waiverBudget.map((w) => ({
-          amount: w.amount,
-          from: teamRef(t.season, w.fromRosterId),
-          to: teamRef(t.season, w.toRosterId),
-        })),
-      }))
-    )
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  // Every draft pick is its own transaction too — "how this player entered
+  // the league" — so every player has at least one entry in their history,
+  // even one never traded or dropped since. Not a real Sleeper transaction
+  // (drafts aren't in the transactions endpoint at all), so synthesized
+  // here in the same shape, reusing "adds" so it flows through existing
+  // per-player filtering (adds/drops/sides) for free.
+  const draftEntries = seasonDatas.flatMap((s) => {
+    if (!s.draft || !s.draft.picks.length) return [];
+    const teamsPerRound = Math.round(s.draft.picks.length / s.draft.rounds);
+    return s.draft.picks.map((p) => {
+      const pickInRound = ((p.pickNo - 1) % teamsPerRound) + 1;
+      const team = p.teamOverride
+        ? { teamName: p.teamOverride.teamName, avatar: p.teamOverride.avatar, ownerId: p.teamOverride.ownerId, rosterId: p.rosterId }
+        : teamRef(s.season, p.rosterId);
+      return {
+        id: `draft-${s.season}-${p.pickNo}`,
+        type: "draft",
+        date: s.draft.draftedAt || `${s.season}-01-01T00:00:00.000Z`,
+        season: s.season,
+        teams: [team],
+        sides: [],
+        adds: [{ playerId: p.playerId, name: p.playerName, position: p.position, team }],
+        drops: [],
+        draftPicksTraded: [],
+        faab: [],
+        pickLabel: `${s.season} - ${p.round}.${String(pickInRound).padStart(2, "0")}`,
+      };
+    });
+  });
+
+  const realEntries = seasonDatas.flatMap((s) =>
+    s.rawTransactions.map((t) => ({
+      id: t.id,
+      type: t.type,
+      date: new Date(t.created).toISOString(),
+      season: t.season,
+      teams: t.rosterIds.map((rid) => teamRef(t.season, rid)),
+      sides: t.type === "trade" ? resolveTradeSides(t) : [],
+      adds: Object.entries(t.adds).map(([playerId, rosterId]) => ({
+        ...playerRef(playerId),
+        team: teamRef(t.season, rosterId),
+      })),
+      drops: Object.entries(t.drops).map(([playerId, rosterId]) => ({
+        ...playerRef(playerId),
+        team: teamRef(t.season, rosterId),
+      })),
+      draftPicksTraded: t.draftPicks.map((dp) => ({
+        season: dp.season,
+        round: dp.round,
+        from: teamRef(t.season, dp.fromRosterId),
+        to: teamRef(t.season, dp.toRosterId),
+      })),
+      faab: t.waiverBudget.map((w) => ({
+        amount: w.amount,
+        from: teamRef(t.season, w.fromRosterId),
+        to: teamRef(t.season, w.toRosterId),
+      })),
+    }))
+  );
+
+  const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return log;
 }

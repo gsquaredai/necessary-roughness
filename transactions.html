@@ -36,6 +36,7 @@
 
       <div class="view-toggle" id="type-toggle">
         <button type="button" data-type="all" class="active">All</button>
+        <button type="button" data-type="draft">Draft</button>
         <button type="button" data-type="trade">Trades</button>
         <button type="button" data-type="waiver">Waiver</button>
         <button type="button" data-type="free_agent">Free Agent</button>
@@ -52,12 +53,6 @@
 
   <script src="assets/js/data.js"></script>
   <script>
-    const TYPE_LABEL = {
-      trade: "Trade",
-      waiver: "Waiver",
-      free_agent: "Free Agent",
-      commissioner: "Commissioner",
-    };
 
     let allTxns = [];
     let currentType = "all";
@@ -123,7 +118,12 @@
       const teamNames = t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown";
 
       let details;
-      if (t.type === "trade") {
+      if (t.type === "draft") {
+        const a = t.adds[0];
+        details = `<div class="txn-details"><span class="txn-add">${playerLinkHTML(a.playerId, a.name)}${
+          a.position ? ` (${a.position})` : ""
+        } &mdash; ${t.pickLabel}</span></div>`;
+      } else if (t.type === "trade") {
         details = `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>`;
       } else {
         const parts = [];

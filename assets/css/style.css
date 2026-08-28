@@ -619,6 +619,12 @@ th.num {
   flex-shrink: 0;
 }
 
+.txn-type-draft {
+  background: rgba(189, 178, 255, 0.15);
+  color: #bdb2ff;
+  border: 2px solid #bdb2ff;
+}
+
 .txn-type-trade {
   background: rgba(242, 201, 76, 0.15);
   color: var(--accent);

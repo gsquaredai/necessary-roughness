@@ -3,6 +3,14 @@ let indexCache = null;
 let transactionsCache = null;
 let playersCache = null;
 
+const TYPE_LABEL = {
+  draft: "Draft",
+  trade: "Trade",
+  waiver: "Waiver",
+  free_agent: "Free Agent",
+  commissioner: "Commissioner",
+};
+
 async function loadTransactions() {
   if (transactionsCache) return transactionsCache;
   const res = await fetch("data/transactions.json");
@@ -391,18 +399,41 @@ async function openPlayerModal(playerId) {
   function renderTxns() {
     if (!relatedTxns.length) return `<div class="empty-state">No transaction history.</div>`;
     return relatedTxns
-      .map(
-        (t) => `
+      .map((t) => {
+        let details = "";
+        if (t.type === "draft") {
+          const a = t.adds[0];
+          details = `<div class="txn-details"><span class="txn-add">${playerLinkHTML(a.playerId, a.name)}${
+            a.position ? ` (${a.position})` : ""
+          } &mdash; ${t.pickLabel}</span></div>`;
+        } else if (t.type === "trade") {
+          details = `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>`;
+        } else {
+          const parts = [
+            ...t.adds.map(
+              (a) => `<span class="txn-add">+ ${playerLinkHTML(a.playerId, a.name)}${
+                a.position ? ` (${a.position})` : ""
+              }</span>`
+            ),
+            ...t.drops.map(
+              (d) => `<span class="txn-drop">- ${playerLinkHTML(d.playerId, d.name)}${
+                d.position ? ` (${d.position})` : ""
+              }</span>`
+            ),
+          ];
+          if (parts.length) details = `<div class="txn-details">${parts.join("")}</div>`;
+        }
+        return `
           <div class="txn-row">
             <div class="txn-row-top">
-              <span class="txn-type txn-type-${t.type}">${t.type}</span>
+              <span class="txn-type txn-type-${t.type}">${TYPE_LABEL[t.type] || t.type}</span>
               <span class="txn-teams">${t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown"}</span>
               <span class="txn-date">${new Date(t.date).toLocaleDateString()}</span>
             </div>
-            ${t.type === "trade" ? `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>` : ""}
+            ${details}
           </div>
-        `
-      )
+        `;
+      })
       .join("");
   }
 
