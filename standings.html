@@ -42,10 +42,9 @@
       </div>
 
       <p class="muted" id="draft-projection-note" hidden style="margin-bottom: 12px;">
-        This season's real draft order isn't set yet, so Standings and Draft Order both use a live projection
-        assuming no more upsets: every team's current seed holds through the playoffs, ties for record are broken
-        by PF, and the 4 teams currently projected to miss the playoffs are ordered by Max PF, same as the real
-        rule.
+        This season's real draft order isn't set yet — this is a live projection assuming no more upsets: every
+        team's current seed holds through the playoffs, ties for record are broken by PF, and the 4 teams
+        currently projected to miss the playoffs are ordered by Max PF, same as the real rule.
       </p>
 
       <section>
@@ -70,17 +69,21 @@
 
   <script src="assets/js/data.js"></script>
   <script>
-    // "Standings" defaults to the reverse of the draft order, not plain
-    // win-loss record — the draft order is this league's real, official
+    // "Standings" defaults to the reverse of the draft order once a season
+    // is actually over — the draft order is this league's real, official
     // final placement (it accounts for actual playoff results, not just
     // regular-season record), so reversing it puts the champion on top and
     // last place on the bottom exactly like a final standings table should.
-    // Plain win-loss record is still available as its own "Record" view.
+    // While a season is still in progress there's no real final placement
+    // yet, so Standings just falls back to plain record + PF tiebreak
+    // (same as the "Record" view) instead of a projected draft order.
     const VIEWS = {
       standings: {
         label: "#",
-        sort: (season, pickMap) =>
-          [...season.teams].sort((a, b) => (pickMap.get(b.rosterId) ?? 0) - (pickMap.get(a.rosterId) ?? 0)),
+        sort: (season, pickMap, projected) =>
+          projected
+            ? standingsSorted(season)
+            : [...season.teams].sort((a, b) => (pickMap.get(b.rosterId) ?? 0) - (pickMap.get(a.rosterId) ?? 0)),
       },
       record: {
         label: "#",
@@ -211,10 +214,9 @@
       currentSeason = season;
 
       const { picks: pickMap, projected } = pickNumberMap(season);
-      const usesProjection = projected && (currentView === "standings" || currentView === "draft");
-      document.getElementById("draft-projection-note").hidden = !usesProjection;
+      document.getElementById("draft-projection-note").hidden = !(projected && currentView === "draft");
 
-      const sorted = VIEWS[currentView].sort(season, pickMap);
+      const sorted = VIEWS[currentView].sort(season, pickMap, projected);
       const placements = playoffPlacements(season);
       const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
 
