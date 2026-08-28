@@ -56,11 +56,6 @@
         <div class="standing-cards" id="standings-cards"></div>
       </section>
 
-      <section id="matchups-section">
-        <h2 id="matchups-heading">This Week's Matchups</h2>
-        <div class="matchup-grid" id="matchups-list"></div>
-      </section>
-
       <p class="updated-note" id="updated-note"></p>
     </main>
   </div>
@@ -185,53 +180,17 @@
         )
         .join("");
 
-      const week = latestWeekWithData(season);
-      const matchupsList = document.getElementById("matchups-list");
-      const heading = document.getElementById("matchups-heading");
-
-      if (week == null) {
-        heading.textContent = "No Matchups Yet";
-        matchupsList.innerHTML = `<div class="empty-state">The season hasn't kicked off yet.</div>`;
-      } else {
-        heading.textContent = `Week ${week} Matchups`;
-        matchupsList.innerHTML = season.matchups[week]
-          .map((m) => renderMatchup(season, m))
-          .join("");
-      }
-
       document.getElementById("updated-note").textContent = `Data last updated ${new Date(
         idx.updatedAt
       ).toLocaleString()}`;
-    }
-
-    function renderMatchup(season, m) {
-      const teamA = teamById(season, m.teamA.rosterId);
-      const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
-      const aWins = teamB && m.teamA.points > m.teamB.points;
-      const bWins = teamB && m.teamB.points > m.teamA.points;
-      const mineA = isMyTeam(teamA?.ownerId) ? " is-my-team" : "";
-      const mineB = teamB && isMyTeam(teamB.ownerId) ? " is-my-team" : "";
-      return `
-        <div class="matchup">
-          <div class="matchup-side-block${mineA}">
-            ${teamCellHTML(teamA)}
-            <div class="points ${aWins ? "winner" : ""}">${fmtPts(m.teamA.points)}</div>
-          </div>
-          <div class="vs">vs</div>
-          <div class="matchup-side-block${mineB}">
-            ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
-            <div class="points ${bWins ? "winner" : ""}">${teamB ? fmtPts(m.teamB.points) : "—"}</div>
-          </div>
-        </div>
-      `;
     }
 
     renderChampionCard().catch((err) => console.error(err));
 
     renderHome().catch((err) => {
       console.error(err);
-      document.getElementById("matchups-list").innerHTML =
-        '<div class="empty-state">Could not load league data.</div>';
+      document.getElementById("standings-body").innerHTML =
+        '<tr><td colspan="6" class="empty-state">Could not load league data.</td></tr>';
     });
   </script>
 </body>
