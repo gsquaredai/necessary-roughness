@@ -345,6 +345,7 @@ th.num {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .badge {
@@ -355,6 +356,7 @@ th.num {
   border-radius: 0;
   margin-left: 6px;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .badge.champ {

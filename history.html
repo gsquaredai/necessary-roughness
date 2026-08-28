@@ -69,8 +69,8 @@
     }
 
     // Long team names are what push things onto an extra row in the
-    // mobile card layouts — shorten anything past 20 characters.
-    function truncName(name, max = 20) {
+    // mobile card layouts — shorten anything past 15 characters.
+    function truncName(name, max = 15) {
       if (!name) return "";
       return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
     }
