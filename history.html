@@ -580,7 +580,10 @@
               const attrs = clickable
                 ? ` data-season="${r.season}" data-week="${r.week}" data-t1="${r.team.rosterId}" data-t2="${r.opponent.rosterId}"`
                 : "";
-              const teamForDisplay = { ...r.team, teamName: truncName(r.team.teamName) };
+              // The "You" badge eats up extra width this row doesn't have to
+              // spare, so shrink the name further specifically when it'll show.
+              const mine = isMyTeam(r.team.ownerId);
+              const teamForDisplay = { ...r.team, teamName: truncName(r.team.teamName, mine ? 7 : 15) };
               const oppName = r.opponent ? truncName(r.opponent.teamName) : "Bye";
               return `
                 <div class="info-stat-row history-score-row${clickable ? " clickable-row" : ""}"${attrs}>
