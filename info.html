@@ -181,17 +181,28 @@
         const res = await fetch("data/league-rules.json");
         return await res.json();
       } catch {
-        return { rules: [] };
+        return { sections: [] };
       }
     }
 
     async function renderRulesTab(container) {
       const data = await loadRules();
-      if (!data.rules || !data.rules.length) {
+      if (!data.sections || !data.sections.length) {
         container.innerHTML = `<div class="empty-state">League rules coming soon.</div>`;
         return;
       }
-      container.innerHTML = `<ol class="rules-list">${data.rules.map((r) => `<li>${r}</li>`).join("")}</ol>`;
+      container.innerHTML = data.sections
+        .map((s) => {
+          const list = s.list && s.list.length ? `<ol class="rules-list">${s.list.map((li) => `<li>${li}</li>`).join("")}</ol>` : "";
+          const outro = s.outro ? `<div class="info-lead">${s.outro}</div>` : "";
+          return `
+            <div class="info-section-title">${s.title}</div>
+            <div class="info-lead">${s.body}</div>
+            ${list}
+            ${outro}
+          `;
+        })
+        .join("");
     }
 
     // ---------- $$$ ----------

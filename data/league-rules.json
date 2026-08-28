@@ -1,3 +1,77 @@
 {
-  "rules": []
+  "sections": [
+    {
+      "title": "What Is A Dynasty League?",
+      "body": "Unlike a redraft league, where every roster resets and you draft a brand new team each year, a dynasty league carries your roster forward from season to season. The players on your team this year are still yours next year — and the year after that — until you trade them, drop them, or they retire. That gives every move real long-term weight: you're not just building a team to win this year, you're managing a franchise across multiple seasons, balancing win-now trades against stockpiling future draft capital and young talent."
+    },
+    {
+      "title": "The Startup Draft",
+      "body": "When a dynasty league first forms, every manager starts from a completely blank roster — there's no history to inherit yet. That's what the startup draft is for: a single, extra-long draft that stocks every team's roster from scratch. Ours was 25 rounds, run with no trading of picks allowed, so every manager drafted their own roster start to finish."
+    },
+    {
+      "title": "What Is A Slow Draft?",
+      "body": "A draft can run live (the whole league joins at a set date/time and picks in a matter of seconds per turn) or as a slow draft, where each manager gets an extended window — commonly anywhere from several hours to a full day — to make their pick before the clock passes to the next manager. Slow drafts let a 25-round startup, or any long draft, play out over several days instead of requiring the entire league to be online and picking back-to-back for hours straight."
+    },
+    {
+      "title": "The Rookie Draft",
+      "body": "After the startup draft, each incoming rookie class gets added to the league through a rookie draft — always held sometime after the actual NFL Draft, once that year's incoming rookies have been assigned to their NFL teams. Ours is 4 rounds. On top of those 4 rounds, we also grant a bonus pick at the end of the 3rd round — pick 3.13 — to the winner of the loser's bracket, a mini-tournament played among the 4 teams that missed the playoffs. It's a small reward for playing that bracket out to win instead of just mailing it in."
+    },
+    {
+      "title": "Taxi Squad",
+      "body": "The taxi squad is a stash spot for rookies and other qualifying young players that sits outside your active roster (starters + bench) and doesn't count against your roster limit. We run 3 taxi spots, letting you develop or hold onto prospects without burning a bench spot. A player is only taxi-eligible for up to 2 years of NFL experience — after that he ages off the taxi squad and has to be moved to your active roster or dropped."
+    },
+    {
+      "title": "FAAB",
+      "body": "FAAB stands for Free Agent Acquisition Budget. Instead of a first-come-first-served or rotating priority-order waiver wire, every team gets a set budget of fake dollars each season and bids blindly against the rest of the league for available free agents — highest bid wins the player. The base budget is $100 per season. Two bonuses stack on top of that: any team that misses the playoffs gets an extra $15 in FAAB the following season, and every manager on the winning roster of the Week 18 All-Star Game also gets an extra $15 in FAAB the following season."
+    },
+    {
+      "title": "The Offseason & Waivers",
+      "body": "From the moment the championship game ends until \"Week 0\" hits, waivers are shut off completely — no free agent adds or drops process during the offseason. Waivers open and run for the first time in Week 0, the week before Week 1 of the new season, giving every manager one waiver period to set their roster before games start counting."
+    },
+    {
+      "title": "No Trade Vetoes",
+      "body": "This league does not use trade vetoes. Dynasty trades are notoriously hard to value fairly in the moment — a package that looks lopsided today can look completely different a year from now once a rookie breaks out or a veteran declines — so managers are free to make whatever trades they agree to, without a league vote to overturn them. The only exception is obvious collusion (e.g. two teams trading purely to manipulate standings or dump assets to help a third team), which the commissioner can still step in on."
+    },
+    {
+      "title": "Trade Deadline",
+      "body": "Trades are only allowed through Week 13. Once the Week 13 deadline passes, rosters are locked in for the rest of the season — no further trades until the following offseason — so the playoff push happens with the roster you've built."
+    },
+    {
+      "title": "Playoffs",
+      "body": "8 of the league's 12 teams make the playoffs. Rather than a fixed bracket set once at the start of the postseason, the bracket re-seeds every week: after each round, the remaining teams are re-ranked by seed and matched back up highest remaining seed vs. lowest remaining seed, instead of following a locked bracket path. That keeps the top seeds getting rewarded for their regular-season finish all the way through the playoffs, rather than getting stuck on a tough side of a static bracket."
+    },
+    {
+      "title": "Rookie Draft Order",
+      "body": "The rookie draft order is set by the previous season's results, worst finish picking first:",
+      "list": [
+        "1st place finishes the season picking 12th (last).",
+        "2nd place picks 11th.",
+        "3rd place picks 10th.",
+        "4th place picks 9th.",
+        "5th through 8th are the four teams that made the playoffs but lost in the first round, ordered by Max PF — highest Max PF among those four picks 5th, lowest picks 8th.",
+        "9th through 12th are the four teams that missed the playoffs entirely, also ordered by Max PF — highest Max PF among those four picks 9th, lowest picks 12th. In other words, the single lowest Max PF in the whole league gets the 1st overall pick."
+      ],
+      "outro": "What is Max PF? Max PF (\"Maximum Points For,\" also called optimal or potential points) is the score a team would have put up if they'd started their best possible lineup out of every player on their roster that week — not just what they actually started. We use Max PF, instead of plain wins and losses, to sort the bottom of the draft order because it can't be gamed: a team that's out of contention can't just bench their best players and \"tank\" for a better pick, since Max PF is calculated from their full roster's best possible lineup regardless of who they actually started."
+    },
+    {
+      "title": "League Median",
+      "body": "On top of your normal head-to-head matchup each week, your score is also compared against the league median — the middle score among all 12 teams that week. Score above the median and you pick up a bonus win added to your record; score below it and you take a bonus loss. That means your official record each week reflects two results, your matchup and the median, which rewards teams for consistently scoring well rather than just winning close matchups against a weak opponent."
+    },
+    {
+      "title": "Superflex",
+      "body": "SUPER FLEX is a lineup slot that can be filled by a QB, RB, WR, or TE — but since quarterbacks usually score the most points in this format, it effectively creates a second startable QB spot as the norm. That shifts draft and trade value significantly: quarterbacks are worth much more in a Superflex league than in a standard one-QB league, since almost every team wants two of them in its lineup."
+    },
+    {
+      "title": "IDP",
+      "body": "IDP stands for Individual Defensive Player. Instead of (or alongside) a team defense/special teams unit, IDP leagues let you draft, start, and score actual individual defensive players — linebackers, defensive backs, and defensive linemen — based on their real tackles, sacks, interceptions, and other defensive stats. Our IDP FLEX spot can be filled by any individual defensive player."
+    },
+    {
+      "title": "Co-Managers",
+      "body": "Co-managers — a second (or third) person sharing control of a single roster alongside the primary owner — are welcome and encouraged in this league. It's a great low-commitment way for a friend to get a feel for the league and get \"in line\" before eventually taking over a roster of their own outright, whether that's an orphaned team that opens up or a brand-new expansion spot."
+    },
+    {
+      "title": "Rivalry Weeks",
+      "body": "Weeks 1 and 14 are rivalry weeks. Your rival is whoever you're matched up against in Week 1 that season — that same head-to-head pairing runs it back in Week 14, giving every manager a first-half and second-half grudge match against the same opponent."
+    }
+  ]
 }
