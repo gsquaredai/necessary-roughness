@@ -232,6 +232,17 @@
           const list = s.list && s.list.length ? `<ol class="rules-list">${s.list.map((li) => `<li>${li}</li>`).join("")}</ol>` : "";
           const outro = s.outro ? `<div class="info-lead">${s.outro}</div>` : "";
           const rivalry = s.title === "Rivalry Weeks" ? rivalryHTML : "";
+
+          if (s.title === "New Rules For 2026") {
+            return `
+              <div class="new-rules-callout">
+                <div class="info-section-title" style="margin-top: 0;">${s.title}</div>
+                <div class="info-lead">${s.body}</div>
+                ${list}
+              </div>
+            `;
+          }
+
           return `
             <div class="info-section-title">${s.title}</div>
             <div class="info-lead">${s.body}</div>

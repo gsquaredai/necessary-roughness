@@ -1379,6 +1379,18 @@ th.num {
   margin-top: 8px;
 }
 
+.new-rules-callout {
+  background: var(--surface);
+  border: var(--pixel-border) solid var(--accent);
+  box-shadow: var(--pixel-shadow), 0 0 0 1px var(--accent) inset;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+}
+
+.new-rules-callout .rules-list li::before {
+  color: var(--accent);
+}
+
 .info-callout-label {
   font-family: "Press Start 2P", sans-serif;
   font-size: 0.6rem;
