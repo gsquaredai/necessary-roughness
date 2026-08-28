@@ -1375,7 +1375,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Ashton Jeanty",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1421,11 +1427,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Tetairoa McMillan",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1464,7 +1482,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1516,7 +1540,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1538,7 +1568,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jayden Higgins",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1577,7 +1613,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1593,7 +1635,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1626,11 +1674,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1652,7 +1712,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1709,7 +1775,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1770,7 +1842,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1786,15 +1864,33 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1827,11 +1923,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Tetairoa McMillan",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1870,7 +1978,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1927,7 +2041,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Quinshon Judkins",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1954,7 +2074,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2000,7 +2126,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2044,7 +2176,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Dylan Sampson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2083,7 +2221,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2099,15 +2243,33 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2140,11 +2302,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Kaleb Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2160,11 +2334,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2210,11 +2396,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Colston Loveland",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2236,7 +2434,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Woody Marks",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2275,7 +2479,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Colston Loveland",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2344,7 +2554,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Mason Taylor",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2371,11 +2587,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Shedeur Sanders",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2414,11 +2642,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2434,7 +2674,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2484,7 +2730,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2517,11 +2769,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Kaleb Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2537,11 +2801,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2593,7 +2869,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Matthew Golden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2609,7 +2891,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 9,
+                      "playerName": "Cameron Ward",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2655,11 +2943,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Kaleb Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2675,11 +2975,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2725,7 +3037,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2747,11 +3065,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Devin Neal",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2784,11 +3114,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2810,7 +3152,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2867,11 +3215,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2944,7 +3304,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2977,11 +3343,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3003,7 +3381,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3049,7 +3433,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Tre Harris",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3122,11 +3512,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Malachi Fields",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Tre Harris",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3159,7 +3561,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Tre Harris",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3222,11 +3630,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Tetairoa McMillan",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3265,7 +3685,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3298,11 +3724,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Kaleb Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3318,11 +3756,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3355,11 +3805,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Luther Burden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3381,7 +3843,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3444,7 +3912,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Matthew Golden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3483,7 +3957,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Matthew Golden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3499,7 +3979,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 9,
+                      "playerName": "Cameron Ward",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3555,7 +4041,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Matthew Golden",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3607,7 +4099,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3629,7 +4127,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jayden Higgins",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3690,11 +4194,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jayden Higgins",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3770,7 +4286,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Mason Taylor",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3797,11 +4319,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Shedeur Sanders",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3851,7 +4385,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Mason Taylor",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3920,7 +4460,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Jaydon Blue",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3972,7 +4518,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 9,
+                      "playerName": "Jaxson Dart",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3994,7 +4546,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Brashard Smith",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4067,7 +4625,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 9,
+                      "playerName": "Jaxson Dart",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4125,7 +4689,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Kyle Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4192,7 +4762,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Kyle Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4277,7 +4853,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4321,7 +4903,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Dylan Sampson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4354,7 +4942,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Dylan Sampson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4423,11 +5017,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4443,7 +5049,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4476,11 +5088,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Colston Loveland",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4502,7 +5126,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Woody Marks",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4546,7 +5176,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Quinshon Judkins",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4573,7 +5209,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4625,7 +5267,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": [
@@ -4683,7 +5331,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4699,15 +5353,33 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4740,7 +5412,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4762,11 +5440,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Devin Neal",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4842,7 +5532,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4925,11 +5621,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jayden Higgins",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4968,11 +5676,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4988,7 +5708,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5027,7 +5753,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Elijah Arroyo",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5043,7 +5775,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5089,7 +5827,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Tyler Warren",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5111,11 +5855,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Devin Neal",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5167,7 +5923,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Mason Taylor",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5194,11 +5956,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "RJ Harvey",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Shedeur Sanders",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5237,7 +6011,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Shedeur Sanders",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5287,7 +6067,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Shedeur Sanders",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5404,7 +6190,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 9,
+                      "playerName": "Jaxson Dart",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5426,7 +6218,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Brashard Smith",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5484,11 +6282,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Colston Loveland",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Elic Ayomanor",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5510,7 +6320,13 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Woody Marks",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []

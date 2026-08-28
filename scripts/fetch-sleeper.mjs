@@ -326,6 +326,35 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     return { playerId, name: p?.name ?? "Unknown Player", position: p?.position ?? null };
   };
 
+  // Once a season's draft has actually happened, a traded pick "resolves"
+  // into a real player — look those up by (season, original slot owner,
+  // round), the same identity used for pick.tradeHistory, so a traded pick
+  // can show what it turned into instead of just "2026 Rd 2 pick".
+  const pickResultLookup = new Map();
+  for (const s of seasonDatas) {
+    if (!s.draft || !s.draft.picks.length) continue;
+    const teamsPerRound = Math.round(s.draft.picks.length / s.draft.rounds);
+    const byKey = new Map();
+    for (const p of s.draft.picks) {
+      byKey.set(`${p.originalRosterId}-${p.round}`, {
+        pickInRound: ((p.pickNo - 1) % teamsPerRound) + 1,
+        playerName: p.playerName,
+        position: p.position,
+      });
+    }
+    pickResultLookup.set(s.season, byKey);
+  }
+
+  // For an undrafted pick, name the team whose original slot it is — using
+  // that season's own roster data when we have it, or falling back to the
+  // most recent season's (roster_id identity is stable across the chain)
+  // for picks tied to a future season we don't have any data for yet.
+  const latestSeason = seasonDatas[seasonDatas.length - 1]?.season;
+  const originalTeamName = (dp) => {
+    const season = teamsBySeasonRoster.has(dp.season) ? dp.season : latestSeason;
+    return teamRef(season, dp.rosterId).teamName;
+  };
+
   // What each team walked away with in a trade — grouped by receiving
   // roster, so a trade renders as "Team A received: X, Y / Team B
   // received: 1, 2" instead of a flat, hard-to-parse add/drop list.
@@ -342,7 +371,13 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
       sideFor(toRosterId).players.push(playerRef(playerId));
     }
     for (const dp of t.draftPicks) {
-      sideFor(dp.toRosterId).picks.push({ season: dp.season, round: dp.round });
+      const result = pickResultLookup.get(dp.season)?.get(`${dp.rosterId}-${dp.round}`) ?? null;
+      sideFor(dp.toRosterId).picks.push({
+        season: dp.season,
+        round: dp.round,
+        result,
+        originalTeam: result ? null : originalTeamName(dp),
+      });
     }
     for (const w of t.waiverBudget) {
       sideFor(w.toRosterId).faab.push(w.amount);

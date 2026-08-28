@@ -9,6 +9,32 @@ async function loadTransactions() {
   return transactionsCache;
 }
 
+// "Jeremiyah Love" -> "J. Love"
+function abbreviateName(name) {
+  const parts = name.trim().split(/\s+/);
+  return parts.length < 2 ? name : `${parts[0][0]}. ${parts.slice(1).join(" ")}`;
+}
+
+function ordinal(n) {
+  const v = n % 100;
+  if (v >= 11 && v <= 13) return `${n}th`;
+  return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
+}
+
+// A traded pick shows what it actually turned into once that season's
+// draft has happened (e.g. "2025 - 1.01 (RB - J. Love)"), or which team's
+// slot it is if the draft hasn't happened yet ("2027 3rd (Black Ops)").
+function pickLabel(pk) {
+  if (pk.result) {
+    const { pickInRound, playerName, position } = pk.result;
+    const posPart = position ? `${position} - ` : "";
+    return `${pk.season} - ${pk.round}.${String(pickInRound).padStart(2, "0")} (${posPart}${abbreviateName(
+      playerName
+    )})`;
+  }
+  return `${pk.season} ${ordinal(pk.round)} (${pk.originalTeam || "?"})`;
+}
+
 // Renders a trade's "sides" (grouped by receiving team) as
 // "Team A received: X, Y / Team B received: 1, 2" lines.
 function tradeSidesHTML(sides) {
@@ -17,7 +43,7 @@ function tradeSidesHTML(sides) {
     .map((side) => {
       const items = [
         ...side.players.map((p) => `${p.name}${p.position ? ` (${p.position})` : ""}`),
-        ...side.picks.map((pk) => `${pk.season} Rd ${pk.round} pick`),
+        ...side.picks.map(pickLabel),
         ...side.faab.map((amt) => `$${amt} FAAB`),
       ];
       return `<div class="trade-side"><span class="trade-side-team">${side.team.teamName} received:</span> ${

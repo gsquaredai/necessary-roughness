@@ -1453,15 +1453,33 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Fernando Mendoza",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1477,15 +1495,29 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "WANGHAF"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1537,7 +1569,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Carnell Tate",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1559,7 +1597,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   }
                 ],
                 "faab": []
@@ -1603,7 +1643,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "D1 Jayden Glazer"
                   }
                 ],
                 "faab": []
@@ -1625,11 +1667,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Carnell Tate",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1675,7 +1729,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1697,11 +1757,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1756,19 +1828,39 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Omar Cooper",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "GrayPornography"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1801,15 +1893,33 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Fernando Mendoza",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1825,15 +1935,29 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "WANGHAF"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1885,11 +2009,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1916,7 +2052,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1949,7 +2091,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -1971,11 +2119,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2034,11 +2194,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2054,23 +2222,45 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Skyler Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2102,7 +2292,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2148,11 +2344,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2174,7 +2382,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2218,7 +2432,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   }
                 ],
                 "faab": []
@@ -2250,7 +2466,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2283,11 +2505,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Chris Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2309,15 +2543,21 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 4
+                    "round": 4,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   }
                 ],
                 "faab": []
@@ -2374,11 +2614,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Emeka Egbuka",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2450,19 +2702,39 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Omar Cooper",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "GrayPornography"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2495,15 +2767,33 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Fernando Mendoza",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2519,15 +2809,29 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "WANGHAF"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2613,7 +2917,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "D1 Jayden Glazer"
                   }
                 ],
                 "faab": []
@@ -2635,11 +2941,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Carnell Tate",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2698,11 +3016,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2718,23 +3044,45 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Skyler Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2766,7 +3114,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2818,11 +3172,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Emmett Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2844,7 +3210,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Arvell Reese",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2894,7 +3266,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Emmett Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -2946,7 +3324,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   }
                 ],
                 "faab": []
@@ -2968,11 +3348,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3005,15 +3397,33 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Fernando Mendoza",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3029,15 +3439,29 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "WANGHAF"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3096,11 +3520,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3116,23 +3548,45 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Skyler Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3164,7 +3618,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3238,7 +3698,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3277,11 +3743,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Emmett Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3303,7 +3781,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Arvell Reese",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3342,11 +3826,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3373,7 +3869,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3425,7 +3927,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Omar Cooper",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3502,19 +4010,39 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Omar Cooper",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "GrayPornography"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3560,7 +4088,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": [
@@ -3629,11 +4163,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3666,11 +4212,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3692,7 +4250,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Daiyan Henley",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3738,7 +4302,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": [
@@ -3762,7 +4332,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Eli Heidenreich",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3795,7 +4371,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3817,11 +4399,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3854,11 +4448,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Eli Heidenreich",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3880,7 +4486,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3930,11 +4542,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3967,11 +4591,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -3993,7 +4629,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Daiyan Henley",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4045,7 +4687,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Zachariah Branch",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4061,7 +4709,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Los pollos hermanos"
                   }
                 ],
                 "faab": []
@@ -4113,7 +4763,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4129,15 +4785,33 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "TreVeyon Henderson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Jalen Milroe",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Travis Hunter",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4193,7 +4867,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4249,7 +4929,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4288,15 +4974,25 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   }
                 ],
                 "faab": []
@@ -4328,11 +5024,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4393,11 +5097,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4449,7 +5161,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4510,7 +5228,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   }
                 ],
                 "faab": []
@@ -4532,11 +5252,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4569,15 +5301,33 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Fernando Mendoza",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4593,15 +5343,29 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Jordyn Tyson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "WANGHAF"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Kenyon Sadiq",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4645,7 +5409,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "Germie Bernard",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4661,7 +5431,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "D1 Jayden Glazer"
                   }
                 ],
                 "faab": []
@@ -4736,11 +5508,23 @@
                 "picks": [
                   {
                     "season": "2025",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Omarion Hampton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4762,7 +5546,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4806,7 +5596,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "D1 Jayden Glazer"
                   }
                 ],
                 "faab": []
@@ -4833,7 +5625,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4866,11 +5664,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "De'Zhaun Stribling",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -4943,7 +5753,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5012,7 +5828,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Brenen Thompson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5039,7 +5861,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Ted Hurst",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5091,11 +5919,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Emmett Johnson",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5117,7 +5957,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Arvell Reese",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5163,11 +6009,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Chris Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Jadarian Price",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5189,15 +6047,21 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 4
+                    "round": 4,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   }
                 ],
                 "faab": []
@@ -5255,11 +6119,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Chris Brazzell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "De'Zhaun Stribling",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5332,11 +6208,19 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "De'Zhaun Stribling",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "D1 Jayden Glazer"
                   }
                 ],
                 "faab": []
@@ -5369,7 +6253,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "De'Zhaun Stribling",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5385,7 +6275,9 @@
                 "picks": [
                   {
                     "season": "2028",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   }
                 ],
                 "faab": [
@@ -5439,11 +6331,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5470,7 +6374,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Jonah Coleman",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5503,11 +6413,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Eli Heidenreich",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5529,7 +6451,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5581,15 +6509,25 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   }
                 ],
                 "faab": []
@@ -5621,11 +6559,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Exciting Whites"
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Antonio Williams",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5684,11 +6630,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5704,23 +6658,45 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Skyler Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5752,7 +6728,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5798,7 +6780,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "CJ Allen",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5865,7 +6853,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 7,
+                      "playerName": "CJ Allen",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -5963,11 +6957,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Malachi Fields",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2025",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Tre Harris",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6051,11 +7057,19 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 3
+                    "round": 3,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Sonny Styles",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6071,23 +7085,45 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Stowers",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Skyler Bell",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2027",
-                    "round": 1
+                    "round": 1,
+                    "result": null,
+                    "originalTeam": "Black Ops"
                   },
                   {
                     "season": "2027",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   },
                   {
                     "season": "2026",
-                    "round": 1
+                    "round": 1,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Makai Lemon",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6119,7 +7155,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Michael Trigg",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6165,7 +7207,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": [
@@ -6189,7 +7237,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Eli Heidenreich",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6222,11 +7276,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 1,
+                      "playerName": "Eli Heidenreich",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6248,7 +7314,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 3
+                    "round": 3,
+                    "result": {
+                      "pickInRound": 5,
+                      "playerName": "Rueben Bain",
+                      "position": "DL"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6294,7 +7366,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 2,
+                      "playerName": "Justin Joly",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6310,7 +7388,9 @@
                 "picks": [
                   {
                     "season": "2027",
-                    "round": 4
+                    "round": 4,
+                    "result": null,
+                    "originalTeam": "GrayPornography"
                   }
                 ],
                 "faab": [
@@ -6394,11 +7474,23 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 4,
+                      "playerName": "Nicholas Singleton",
+                      "position": "RB"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 3,
+                      "playerName": "Denzel Boston",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6420,7 +7512,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 6,
+                      "playerName": "Daiyan Henley",
+                      "position": "LB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6478,7 +7576,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 8,
+                      "playerName": "Cade Klubnik",
+                      "position": "QB"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6494,7 +7598,9 @@
                 "picks": [
                   {
                     "season": "2028",
-                    "round": 4
+                    "round": 4,
+                    "result": null,
+                    "originalTeam": "Smitty Committee"
                   }
                 ],
                 "faab": [
@@ -6571,11 +7677,19 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 10,
+                      "playerName": "Eli Raridon",
+                      "position": "TE"
+                    },
+                    "originalTeam": null
                   },
                   {
                     "season": "2028",
-                    "round": 2
+                    "round": 2,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   }
                 ],
                 "faab": []
@@ -6632,7 +7746,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Brenen Thompson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6659,7 +7779,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 2
+                    "round": 2,
+                    "result": {
+                      "pickInRound": 12,
+                      "playerName": "Ted Hurst",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6692,7 +7818,13 @@
                 "picks": [
                   {
                     "season": "2026",
-                    "round": 4
+                    "round": 4,
+                    "result": {
+                      "pickInRound": 11,
+                      "playerName": "Brenen Thompson",
+                      "position": "WR"
+                    },
+                    "originalTeam": null
                   }
                 ],
                 "faab": []
@@ -6708,7 +7840,9 @@
                 "picks": [
                   {
                     "season": "2028",
-                    "round": 4
+                    "round": 4,
+                    "result": null,
+                    "originalTeam": "Schro's Nest"
                   }
                 ],
                 "faab": []
