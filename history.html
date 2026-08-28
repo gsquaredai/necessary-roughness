@@ -160,6 +160,42 @@
       `;
     }
 
+    function allTimeCardHTML(r, i) {
+      const total = r.wins + r.losses + r.ties;
+      const pct = total ? ((r.wins / total) * 100).toFixed(1) : "0.0";
+      const recordStr = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
+      return `
+        <div class="standing-card">
+          <div class="standing-card-top">
+            <span class="standing-card-rank">${i + 1}</span>
+            ${teamCellHTML(r)}
+          </div>
+          <div class="standing-card-stats">
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Titles</span>
+              <span class="standing-card-stat-value">${r.titles}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Record</span>
+              <span class="standing-card-stat-value">${recordStr}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Win %</span>
+              <span class="standing-card-stat-value">${pct}%</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">PF</span>
+              <span class="standing-card-stat-value">${fmtPts(r.fpts)}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Max PF</span>
+              <span class="standing-card-stat-value">${fmtPts(r.maxPF)}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     function renderAllTimeBody(container) {
       const field = ALLTIME_SORT_FIELDS[allTimeSortKey];
       const dir = allTimeSortDir === "asc" ? 1 : -1;
@@ -172,6 +208,7 @@
       });
 
       container.querySelector("tbody").innerHTML = sorted.map(allTimeRowHTML).join("");
+      container.querySelector(".standing-cards").innerHTML = sorted.map(allTimeCardHTML).join("");
 
       container.querySelectorAll("th[data-sort]").forEach((th) => {
         th.querySelector(".sort-arrow")?.remove();
@@ -183,6 +220,10 @@
             `<span class="sort-arrow">${allTimeSortDir === "asc" ? " ▲" : " ▼"}</span>`
           );
         }
+      });
+
+      container.querySelectorAll(".mobile-sort-toggle button[data-sort]").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.sort === allTimeSortKey);
       });
     }
 
@@ -223,8 +264,14 @@
       allTimeSortDir = "desc";
 
       container.innerHTML = `
-        <p class="muted" style="margin-bottom: 12px;">Click a column to sort by it.</p>
-        <div class="card table-wrap">
+        <p class="muted" style="margin-bottom: 12px;">Click a column — or, on mobile, a sort button — to sort by it.</p>
+        <div class="view-toggle mobile-sort-toggle">
+          <button type="button" data-sort="titles">Titles</button>
+          <button type="button" data-sort="record">Record</button>
+          <button type="button" data-sort="pf">PF</button>
+          <button type="button" data-sort="maxpf">Max PF</button>
+        </div>
+        <div class="card table-wrap standings-table-wrap">
           <table>
             <thead>
               <tr>
@@ -240,11 +287,12 @@
             <tbody></tbody>
           </table>
         </div>
+        <div class="standing-cards"></div>
       `;
 
-      container.querySelectorAll("th[data-sort]").forEach((th) => {
-        th.addEventListener("click", () => {
-          const key = th.dataset.sort;
+      container.querySelectorAll("th[data-sort], .mobile-sort-toggle button[data-sort]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const key = el.dataset.sort;
           if (allTimeSortKey === key) {
             allTimeSortDir = allTimeSortDir === "desc" ? "asc" : "desc";
           } else {
@@ -327,10 +375,10 @@
                 ? ` data-season="${r.season}" data-week="${r.week}" data-t1="${r.team.rosterId}" data-t2="${r.opponent.rosterId}"`
                 : "";
               return `
-                <div class="info-stat-row${clickable ? " clickable-row" : ""}"${attrs}>
+                <div class="info-stat-row history-score-row${clickable ? " clickable-row" : ""}"${attrs}>
                   <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
                   ${teamCellHTML(r.team)}
-                  <span class="muted" style="flex: 1;">
+                  <span class="muted history-score-context">
                     vs ${r.opponent ? r.opponent.teamName : "Bye"} &middot; ${r.season} Wk ${r.week}
                   </span>
                   <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
@@ -344,11 +392,11 @@
         ? topPlayers
             .map(
               (r, i) => `
-                <div class="info-stat-row">
+                <div class="info-stat-row history-score-row">
                   <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
                   <span>${playerLinkHTML(r.playerId, r.name)}</span>
                   <span class="player-meta">${r.position || ""}${r.nflTeam ? " &middot; " + nflAbbr3(r.nflTeam) : ""}</span>
-                  <span class="muted" style="flex: 1;">${r.season} Wk ${r.week}</span>
+                  <span class="muted history-score-context">${r.season} Wk ${r.week}</span>
                   <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
                 </div>
               `
@@ -374,6 +422,38 @@
 
     // ---------- team activity & faab ----------
 
+    function activityCardHTML(r) {
+      return `
+        <div class="standing-card">
+          <div class="standing-card-top">
+            ${teamCellHTML(r)}
+          </div>
+          <div class="standing-card-stats">
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Trades</span>
+              <span class="standing-card-stat-value">${r.trades}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Waiver Pickups</span>
+              <span class="standing-card-stat-value">${r.waiverPickups}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">FAAB Spent</span>
+              <span class="standing-card-stat-value">$${r.faabSpent} <span class="muted">($${r.faabSpentCurrent ?? 0})</span></span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">Net FAAB Traded</span>
+              <span class="standing-card-stat-value">${r.faabTradedNet > 0 ? "+" : ""}$${r.faabTradedNet}</span>
+            </div>
+            <div class="standing-card-stat">
+              <span class="standing-card-stat-label">FAAB Unspent</span>
+              <span class="standing-card-stat-value">$${r.faabUnspent} <span class="muted">($${r.faabCurrent ?? 0})</span></span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     async function renderActivityTab(container) {
       const records = await loadTeamRecords();
       const sorted = [...records].sort((a, b) => b.trades - a.trades);
@@ -396,7 +476,7 @@
         <p class="muted" style="margin-bottom: 12px;">
           Trades, waiver pickups, and FAAB totals are lifetime; the number in parentheses is this season only.
         </p>
-        <div class="card table-wrap">
+        <div class="card table-wrap standings-table-wrap">
           <table>
             <thead>
               <tr>
@@ -411,6 +491,7 @@
             <tbody>${body}</tbody>
           </table>
         </div>
+        <div class="standing-cards">${sorted.map(activityCardHTML).join("")}</div>
       `;
     }
 
@@ -457,7 +538,7 @@
           return `
             <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding: 14px;">
               <div class="rivalry-banner" style="--rivalry-color: ${r.color || "#4cc9f0"}; margin: 0;">${r.name}</div>
-              <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
+              <div class="rivalry-matchup-row">
                 <div style="text-align: center;">
                   ${teamA ? teamCellHTML(teamA) : '<span class="muted">Unknown</span>'}
                   ${r.meetings ? `<div class="muted" style="margin-top: 4px;">${fmtPts(r.pointsA)} pts</div>` : ""}
@@ -685,6 +766,20 @@
         })
         .join("");
 
+      // Mobile: the full grid doesn't fit a phone screen usefully, so
+      // instead pick one team from a dropdown (defaulting to the site-wide
+      // "which team are you" pick, if set) and show that team's record
+      // against everyone else as stacked cards.
+      const savedIdentity = loadSiteIdentity();
+      const defaultOwnerId =
+        savedIdentity && owners.some((t) => t.ownerId === savedIdentity.ownerId)
+          ? savedIdentity.ownerId
+          : owners[0]?.ownerId;
+
+      const teamOptionsHTML = owners
+        .map((t) => `<option value="${t.ownerId}"${t.ownerId === defaultOwnerId ? " selected" : ""}>${nameFor(t)}</option>`)
+        .join("");
+
       container.innerHTML = `
         <p class="muted" style="margin-bottom: 12px;">
           Every regular-season and playoff meeting, all-time — read a row as that manager's record against the
@@ -692,7 +787,7 @@
           championship/3rd-place games; the loser's-bracket bonus-pick games count from 2026 on). "vs Median"
           is regular season only.
         </p>
-        <div class="card table-wrap">
+        <div class="card table-wrap standings-table-wrap">
           <table class="h2h-grid">
             <thead>
               <tr><th></th>${headerCells}<th>vs Median</th></tr>
@@ -700,7 +795,63 @@
             <tbody>${bodyRows}</tbody>
           </table>
         </div>
+        <div class="h2h-mobile-view">
+          <div class="controls">
+            <select id="h2h-team-select">${teamOptionsHTML}</select>
+          </div>
+          <div class="standing-cards" id="h2h-cards"></div>
+        </div>
       `;
+
+      function renderH2HCards(ownerId) {
+        const selected = owners.find((t) => t.ownerId === ownerId);
+        if (!selected) return;
+        const mr = medianRecords.get(selected.ownerId);
+        const medianStr = mr ? (mr.ties ? `${mr.wins}-${mr.losses}-${mr.ties}` : `${mr.wins}-${mr.losses}`) : "&mdash;";
+        const medianCls = mr && mr.wins > mr.losses ? "h2h-winning" : mr && mr.losses > mr.wins ? "h2h-losing" : "";
+
+        const medianCard = `
+          <div class="standing-card">
+            <div class="standing-card-top">
+              <span class="standing-card-stat-label">Vs League Median (regular season)</span>
+            </div>
+            <div class="standing-card-stats">
+              <div class="standing-card-stat standing-card-stat-full">
+                <span class="standing-card-stat-label">Record</span>
+                <span class="standing-card-stat-value ${medianCls}">${medianStr}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const opponentCards = owners
+          .filter((t) => t.ownerId !== selected.ownerId)
+          .map((opp) => {
+            const rec = grid.get(selected.ownerId)?.get(opp.ownerId);
+            const has = rec && rec.wins + rec.losses + rec.ties > 0;
+            const str = has ? (rec.ties ? `${rec.wins}-${rec.losses}-${rec.ties}` : `${rec.wins}-${rec.losses}`) : "No meetings yet";
+            const cls = has ? (rec.wins > rec.losses ? "h2h-winning" : rec.losses > rec.wins ? "h2h-losing" : "") : "muted";
+            return `
+              <div class="standing-card">
+                <div class="standing-card-top">
+                  ${teamCellHTML(opp)}
+                </div>
+                <div class="standing-card-stats">
+                  <div class="standing-card-stat standing-card-stat-full">
+                    <span class="standing-card-stat-label">Record</span>
+                    <span class="standing-card-stat-value ${cls}">${str}</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+
+        document.getElementById("h2h-cards").innerHTML = medianCard + opponentCards;
+      }
+
+      document.getElementById("h2h-team-select").addEventListener("change", (e) => renderH2HCards(e.target.value));
+      renderH2HCards(defaultOwnerId);
     }
 
     // ---------- tab wiring ----------

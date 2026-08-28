@@ -167,6 +167,12 @@ select {
   margin-bottom: 16px;
 }
 
+/* sort controls that only make sense once the table's clickable column
+   headers are hidden in favor of the mobile card view */
+.mobile-sort-toggle {
+  display: none;
+}
+
 .view-toggle button {
   background: var(--surface-2);
   color: var(--text-dim);
@@ -481,6 +487,19 @@ th.num {
   padding: 6px 10px;
   margin: -14px -16px 10px;
   letter-spacing: 0.02em;
+}
+
+.rivalry-matchup-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* history — all time matchups: mobile-only single-team picker + cards,
+   an alternative to the full H2H grid which doesn't fit a phone screen */
+.h2h-mobile-view {
+  display: none;
 }
 
 .matchup.rivalry-matchup {
@@ -1857,6 +1876,10 @@ tr.is-my-team td:first-child {
   color: var(--text);
 }
 
+.standing-card-stat-full {
+  grid-column: 1 / -1;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 560px) {
@@ -1918,13 +1941,42 @@ tr.is-my-team td:first-child {
     font-size: 0.82rem;
   }
 
-  /* home page + standings page — card layout instead of the table */
+  /* home page + standings page + history page tables — card layout
+     instead of the table */
   .standings-table-wrap {
     display: none;
   }
 
   .standing-cards {
     display: flex;
+  }
+
+  .mobile-sort-toggle {
+    display: flex;
+  }
+
+  /* history — highest single-week scoring leaderboards: wrap the "vs Team
+     · Season Wk N" context onto its own line instead of squeezing it
+     between the name and the points on one row */
+  .history-score-row {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .history-score-row .history-score-context {
+    flex: 1 1 100%;
+    order: 10;
+  }
+
+  /* history — rivalries: stack team / record / team instead of squeezing
+     all three side by side */
+  .rivalry-matchup-row {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+
+  .h2h-mobile-view {
+    display: block;
   }
 
   /* kept in case the table view comes back for comparison — dead while
