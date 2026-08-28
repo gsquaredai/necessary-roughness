@@ -30,7 +30,7 @@
       </div>
 
       <section>
-        <div id="draft-rounds"></div>
+        <div id="draft-list" class="draft-list"></div>
       </section>
     </main>
   </div>
@@ -58,48 +58,35 @@
       await renderDraft(select.value);
     }
 
+    function nflLogoImgHTML(teamAbbr) {
+      if (!teamAbbr) return `<span class="nfl-logo"></span>`;
+      return `<img class="nfl-logo" src="assets/img/nfl/${teamAbbr}.png" onerror="this.style.visibility='hidden';" alt="">`;
+    }
+
     async function renderDraft(seasonKey) {
       const season = await loadSeason(seasonKey);
-      const container = document.getElementById("draft-rounds");
+      const container = document.getElementById("draft-list");
 
       if (!season.draft || !season.draft.picks.length) {
         container.innerHTML = '<div class="empty-state">No draft data for this season.</div>';
         return;
       }
 
-      const teamsPerRound = Math.round(season.draft.picks.length / season.draft.rounds);
-      const byRound = new Map();
-      for (const pick of season.draft.picks) {
-        if (!byRound.has(pick.round)) byRound.set(pick.round, []);
-        byRound.get(pick.round).push(pick);
-      }
-
-      container.innerHTML = [...byRound.entries()]
-        .map(([round, picks]) => {
-          const cards = picks
-            .map((pick) => {
-              const team = teamById(season, pick.rosterId);
-              const pickInRound = ((pick.pickNo - 1) % teamsPerRound) + 1;
-              return `
-                <div class="draft-pick">
-                  <div class="draft-pick-no">${round}.${String(pickInRound).padStart(2, "0")}</div>
-                  <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
-                  <div class="draft-pick-player">
-                    <span class="player-name">${pick.playerName}</span>
-                    ${
-                      pick.position
-                        ? `<span class="player-meta">${pick.position}${pick.nflTeam ? " · " + pick.nflTeam : ""}</span>`
-                        : ""
-                    }
-                  </div>
-                </div>
-              `;
-            })
-            .join("");
+      container.innerHTML = season.draft.picks
+        .map((pick) => {
+          const team = teamById(season, pick.rosterId);
           return `
-            <div class="draft-round">
-              <h2>Round ${round}</h2>
-              <div class="draft-pick-grid">${cards}</div>
+            <div class="draft-pick-row">
+              <div class="draft-pick-no">${pick.pickNo}</div>
+              <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
+              <div class="draft-pick-player">
+                <span class="player-name">${pick.playerName}</span>
+                ${pick.position ? `<span class="player-meta">${pick.position}</span>` : ""}
+              </div>
+              <div class="draft-pick-nfl">
+                ${nflLogoImgHTML(pick.nflTeam)}
+                <span class="nfl-team-abbr">${pick.nflTeam || "—"}</span>
+              </div>
             </div>
           `;
         })
@@ -108,7 +95,7 @@
 
     init().catch((err) => {
       console.error(err);
-      document.getElementById("draft-rounds").innerHTML =
+      document.getElementById("draft-list").innerHTML =
         '<div class="empty-state">Could not load league data.</div>';
     });
   </script>
