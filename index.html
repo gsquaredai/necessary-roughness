@@ -49,6 +49,7 @@
             <tbody id="standings-body"></tbody>
           </table>
         </div>
+        <div class="standing-cards" id="standings-cards"></div>
       </section>
 
       <section id="matchups-section">
@@ -103,13 +104,18 @@
       const season = await loadSeason(idx.currentSeason);
 
       const standingsBody = document.getElementById("standings-body");
+      const standingsCards = document.getElementById("standings-cards");
       const sorted = standingsSorted(season);
-      standingsBody.innerHTML = sorted
-        .map((team, i) => {
-          const champ = season.champion === team.rosterId;
-          const last = season.lastPlace === team.rosterId;
-          const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
-          return `
+      const rows = sorted.map((team, i) => {
+        const champ = season.champion === team.rosterId;
+        const last = season.lastPlace === team.rosterId;
+        const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
+        return { team, i, champ, last, mine };
+      });
+
+      standingsBody.innerHTML = rows
+        .map(
+          ({ team, i, champ, last, mine }) => `
             <tr class="${mine}">
               <td>${i + 1}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
@@ -117,8 +123,31 @@
               <td class="num">${fmtPts(team.fpts)}</td>
               <td class="num">${fmtPts(team.maxPF)}</td>
             </tr>
-          `;
-        })
+          `
+        )
+        .join("");
+
+      standingsCards.innerHTML = rows
+        .map(
+          ({ team, i, champ, last, mine }) => `
+            <div class="standing-card${mine}">
+              <div class="standing-card-top">
+                <span class="standing-card-rank">${i + 1}</span>
+                ${teamCellHTML(team, { champ, last })}
+              </div>
+              <div class="standing-card-stats">
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Record</span>
+                  <span class="standing-card-stat-value">${record(team)}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">PF</span>
+                  <span class="standing-card-stat-value">${fmtPts(team.fpts)}</span>
+                </div>
+              </div>
+            </div>
+          `
+        )
         .join("");
 
       const week = latestWeekWithData(season);
