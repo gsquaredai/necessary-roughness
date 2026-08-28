@@ -274,9 +274,13 @@
 
       const teamRows = topTeams.length
         ? topTeams
-            .map(
-              (r, i) => `
-                <div class="info-stat-row">
+            .map((r, i) => {
+              const clickable = !!r.opponent;
+              const attrs = clickable
+                ? ` data-season="${r.season}" data-week="${r.week}" data-t1="${r.team.rosterId}" data-t2="${r.opponent.rosterId}"`
+                : "";
+              return `
+                <div class="info-stat-row${clickable ? " clickable-row" : ""}"${attrs}>
                   <span class="info-stat-label" style="width: 22px; display: inline-block;">${i + 1}</span>
                   ${teamCellHTML(r.team)}
                   <span class="muted" style="flex: 1;">
@@ -284,8 +288,8 @@
                   </span>
                   <span class="info-stat-value money accent">${fmtPts(r.points)}</span>
                 </div>
-              `
-            )
+              `;
+            })
             .join("")
         : '<div class="empty-state">No games played yet.</div>';
 
@@ -311,6 +315,14 @@
         <div class="info-section-title">Highest Single-Week Player Score</div>
         <div class="draft-list">${playerRows}</div>
       `;
+
+      container.querySelectorAll(".info-stat-row.clickable-row[data-week]").forEach((row) => {
+        row.addEventListener("click", () => {
+          const season = allSeasons.find((s) => s.season === row.dataset.season);
+          if (!season) return;
+          openMatchupModal(season, Number(row.dataset.week), Number(row.dataset.t1), Number(row.dataset.t2));
+        });
+      });
     }
 
     // ---------- team activity & faab ----------

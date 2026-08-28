@@ -570,6 +570,107 @@ function closePlayerModal() {
   if (root) root.innerHTML = "";
 }
 
+// ---------- matchup detail modal ----------
+// Shared by matchups.html (every regular-season/playoff matchup card) and
+// history.html (the Highest Single-Week Team Score list) — both open the
+// same side-by-side roster/scoring popup for a given week's matchup.
+
+// A given week's matchup entry for a roster, regardless of which side
+// (teamA/teamB) it ended up on.
+function matchupEntryForRosterInWeek(season, week, rosterId) {
+  if (rosterId == null) return null;
+  const matchups = season.matchups?.[week] || season.matchups?.[String(week)] || [];
+  return matchups.find((m) => m.teamA.rosterId === rosterId || m.teamB?.rosterId === rosterId) || null;
+}
+
+let matchupPlayersCache = null;
+
+function matchupPlayerRowHTML(players, playerId, season, week, played, side) {
+  const p = players[playerId];
+  const name = p ? p.name : "Unknown Player";
+  const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
+  let pts, isProj;
+  if (played) {
+    const game = p?.seasons?.[season.season]?.games?.find((g) => g.week === week);
+    pts = game ? game.points : null;
+    isProj = false;
+  } else {
+    pts = side.projByPlayer ? side.projByPlayer[playerId] : null;
+    isProj = true;
+  }
+  return `
+    <div class="roster-player">
+      <span>${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
+      <span class="info-stat-value${isProj ? " proj-primary" : ""}">${pts != null ? fmtPts(pts) : "—"}</span>
+    </div>
+  `;
+}
+
+function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side) {
+  if (!playerIds.length) return "";
+  return `
+    <div class="roster-group">
+      <div class="roster-group-title">${title} (${playerIds.length})</div>
+      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side)).join("")}
+    </div>
+  `;
+}
+
+function matchupSideHTML(season, week, team, side, players, played) {
+  if (!team || !side) return `<div class="empty-state">No roster data for this team.</div>`;
+  const starters = new Set(side.starters || []);
+  const bench = (side.players || []).filter((pid) => !starters.has(pid));
+  const totalHTML = played
+    ? `${fmtPts(side.points)} pts`
+    : `<span class="proj-primary">Proj ${side.projPoints != null ? fmtPts(side.projPoints) : "—"}</span>`;
+  return `
+    <div class="info-section-title">${team.teamName} &mdash; ${totalHTML}</div>
+    ${matchupRosterGroupHTML("Starters", side.starters || [], players, season, week, played, side)}
+    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side)}
+  `;
+}
+
+async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
+  let root = document.getElementById("player-modal-root");
+  if (!root) {
+    root = document.createElement("div");
+    root.id = "player-modal-root";
+    document.body.appendChild(root);
+  }
+  root.innerHTML = `
+    <div class="modal-overlay" id="player-modal-overlay">
+      <div class="modal-box wide"><div class="empty-state">Loading...</div></div>
+    </div>
+  `;
+  root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "player-modal-overlay") closePlayerModal();
+  });
+
+  if (!matchupPlayersCache) matchupPlayersCache = await loadPlayers();
+  const players = matchupPlayersCache;
+
+  const entry = matchupEntryForRosterInWeek(season, week, rosterIdA);
+  const sideA = entry ? (entry.teamA.rosterId === rosterIdA ? entry.teamA : entry.teamB) : null;
+  const sideB = entry ? (entry.teamA.rosterId === rosterIdB ? entry.teamA : entry.teamB) : null;
+  const teamA = teamById(season, rosterIdA);
+  const teamB = teamById(season, rosterIdB);
+  const played = weekHasBeenPlayed(season, week);
+
+  const box = document.getElementById("player-modal-root").querySelector(".modal-box");
+  box.innerHTML = `
+    <button class="modal-close" id="player-modal-close">&times;</button>
+    <div class="modal-header">
+      <h2>Week ${week}</h2>
+      <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
+    </div>
+    <div class="modal-tab-content matchup-modal-columns">
+      <div>${matchupSideHTML(season, week, teamA, sideA, players, played)}</div>
+      <div>${matchupSideHTML(season, week, teamB, sideB, players, played)}</div>
+    </div>
+  `;
+  box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+}
+
 // ---------- shared trade-hop chain renderer ----------
 
 // Renders a pick's (or player's) full trade-hop chain: "Team A -> Team B

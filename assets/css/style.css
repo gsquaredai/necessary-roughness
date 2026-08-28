@@ -214,11 +214,15 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-tr.clickable-row {
+.clickable-row {
   cursor: pointer;
 }
 
 tr.clickable-row:hover td {
+  background: var(--surface-2);
+}
+
+.info-stat-row.clickable-row:hover {
   background: var(--surface-2);
 }
 
