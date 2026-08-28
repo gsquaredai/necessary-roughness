@@ -187,7 +187,25 @@
     const HIDDEN_PLACES = new Set([5, 7]);
 
     function bracketRoundsHTML(season, matches, playoffWeekStart) {
-      const visible = matches.filter((m) => !HIDDEN_PLACES.has(m.p));
+      let visible = matches.filter((m) => !HIDDEN_PLACES.has(m.p));
+
+      // With the 5th/7th place games gone, the semifinal-round matches that
+      // only fed into those (never into the championship or 3rd-place game)
+      // don't lead anywhere shown either — drop them too, keeping just the
+      // 2 true semifinal matches.
+      const roundNums = [...new Set(visible.map((m) => m.r))].sort((a, b) => a - b);
+      if (roundNums.length >= 2) {
+        const finalRound = roundNums[roundNums.length - 1];
+        const referenced = new Set();
+        for (const m of visible) {
+          if (m.r !== finalRound) continue;
+          if (m.t1_from) referenced.add(m.t1_from.w ?? m.t1_from.l);
+          if (m.t2_from) referenced.add(m.t2_from.w ?? m.t2_from.l);
+        }
+        const semiRound = roundNums[roundNums.length - 2];
+        visible = visible.filter((m) => m.r !== semiRound || referenced.has(m.m));
+      }
+
       const rounds = [...new Set(visible.map((m) => m.r))].sort((a, b) => a - b);
       return rounds
         .map((r) => {
