@@ -654,6 +654,48 @@ th.num {
   padding-top: 0;
 }
 
+.roster-group {
+  margin-bottom: 16px;
+}
+
+.roster-group-title {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.55rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.roster-player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.roster-player:last-child {
+  border-bottom: none;
+}
+
+.roster-player .player-meta {
+  color: var(--text-dim);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.roster-pick {
+  font-size: 0.6rem;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.roster-pick:last-child {
+  border-bottom: none;
+}
+
 /* transactions */
 
 .txn-row {

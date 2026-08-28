@@ -303,10 +303,18 @@ async function buildSeason(league, nextLeague) {
   });
 
   // Every player ever on a roster this season (not just current starters),
-  // for the player-profile feature: whose transaction/points history is
-  // relevant, and (for the most recent season) who's a free agent.
+  // for the player-profile feature (whose transaction/points history is
+  // relevant, and for the most recent season, who's a free agent) and for
+  // the Teams page's roster popup (grouped by starters/bench/taxi/IR).
   const rosterPlayers = {};
-  for (const r of rosters) rosterPlayers[r.roster_id] = r.players || [];
+  for (const r of rosters) {
+    rosterPlayers[r.roster_id] = {
+      players: r.players || [],
+      starters: r.starters || [],
+      taxi: r.taxi || [],
+      reserve: r.reserve || [],
+    };
+  }
 
   const matchupsByWeek = {};
   const weeklyPlayerPoints = {}; // week -> { player_id: points }, this league's exact scoring
@@ -469,6 +477,50 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     }
   }
 
+  // Future draft picks each current team holds, accounting for trades — for
+  // the Teams page. "Future" = any season beyond the ones we have an actual
+  // league/draft for (2024-2026); those already have a real, resolved
+  // draft. Assumes future drafts keep the same round count as the most
+  // recent one, since that's the only signal we have.
+  const latestTeamsList = seasonDatas[seasonDatas.length - 1].teams;
+  const assumedRounds = seasonDatas[seasonDatas.length - 1]?.draft?.rounds ?? 4;
+  const knownSeasons = new Set(seasonDatas.map((s) => s.season));
+  const futureSeasons = [
+    ...new Set(
+      allTrades.flatMap((t) => t.draftPicks.map((dp) => dp.season)).filter((s) => !knownSeasons.has(s))
+    ),
+  ].sort();
+
+  const picksHeldByRoster = {};
+  for (const team of latestTeamsList) picksHeldByRoster[team.rosterId] = [];
+
+  for (const futureSeason of futureSeasons) {
+    for (let round = 1; round <= assumedRounds; round++) {
+      for (const team of latestTeamsList) {
+        const originalRosterId = team.rosterId;
+        const hops = allTrades
+          .flatMap((t) =>
+            t.draftPicks
+              .filter(
+                (dp) => dp.season === futureSeason && dp.round === round && dp.rosterId === originalRosterId
+              )
+              .map((dp) => ({ t, dp }))
+          )
+          .sort((a, b) => a.t.created - b.t.created);
+        const finalHolder = hops.length ? hops[hops.length - 1].dp.toRosterId : originalRosterId;
+        if (!picksHeldByRoster[finalHolder]) continue;
+        picksHeldByRoster[finalHolder].push({
+          season: futureSeason,
+          round,
+          originalTeam: finalHolder !== originalRosterId ? teamRef(latestSeason, originalRosterId) : null,
+        });
+      }
+    }
+  }
+  for (const list of Object.values(picksHeldByRoster)) {
+    list.sort((a, b) => a.season.localeCompare(b.season) || a.round - b.round);
+  }
+
   // Every draft pick is its own transaction too — "how this player entered
   // the league" — so every player has at least one entry in their history,
   // even one never traded or dropped since. Not a real Sleeper transaction
@@ -534,7 +586,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
 
   const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  return log;
+  return { log, picksHeldByRoster };
 }
 
 // Builds a profile for every player who's ever appeared on a roster in this
@@ -555,8 +607,8 @@ async function buildPlayerProfiles(seasonDatas, playerNames) {
 
   const relevantPlayerIds = new Set();
   for (const s of seasonDatas) {
-    for (const players of Object.values(s.rosterPlayers)) {
-      for (const pid of players) relevantPlayerIds.add(pid);
+    for (const roster of Object.values(s.rosterPlayers)) {
+      for (const pid of roster.players) relevantPlayerIds.add(pid);
     }
   }
 
@@ -577,8 +629,8 @@ async function buildPlayerProfiles(seasonDatas, playerNames) {
   // current dynasty team (or free agent) — most recent season's rosters
   const latest = seasonDatas[seasonDatas.length - 1];
   const ownerOfPlayer = new Map();
-  for (const [rosterId, players] of Object.entries(latest.rosterPlayers)) {
-    for (const pid of players) ownerOfPlayer.set(pid, Number(rosterId));
+  for (const [rosterId, roster] of Object.entries(latest.rosterPlayers)) {
+    for (const pid of roster.players) ownerOfPlayer.set(pid, Number(rosterId));
   }
   for (const [playerId, profile] of profiles) {
     const rosterId = ownerOfPlayer.get(playerId);
@@ -688,8 +740,9 @@ async function main() {
   }
 
   console.log("Cross-referencing trades against draft picks...");
-  const transactionLog = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
+  const { log: transactionLog, picksHeldByRoster } = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
   await fs.writeFile("data/transactions.json", JSON.stringify(transactionLog, null, 2));
+  await fs.writeFile("data/future-picks.json", JSON.stringify(picksHeldByRoster, null, 2));
 
   const playerProfiles = await buildPlayerProfiles(seasonDatas, playerNames);
   await fs.writeFile("data/players.json", JSON.stringify(playerProfiles, null, 2));
@@ -698,8 +751,8 @@ async function main() {
   for (const s of seasonDatas) {
     // internal-only, not needed by the site
     delete s.rawTransactions;
-    delete s.rosterPlayers;
     delete s.weeklyPlayerPoints;
+    // rosterPlayers is kept — the Teams page's roster popup needs it
     await fs.writeFile(`data/${s.season}.json`, JSON.stringify(s, null, 2));
     seasons.push(s.season);
   }
