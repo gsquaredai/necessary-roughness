@@ -103,6 +103,11 @@ async function buildSeason(league) {
       fpts: (r.settings?.fpts ?? 0) + (r.settings?.fpts_decimal ?? 0) / 100,
       fptsAgainst:
         (r.settings?.fpts_against ?? 0) + (r.settings?.fpts_against_decimal ?? 0) / 100,
+      // "Potential points" — what the team would have scored with an optimal
+      // lineup every week. Sleeper computes this itself (same number their
+      // own detailed standings view shows) and exposes it right on the
+      // roster, so just use it directly rather than re-deriving it.
+      maxPF: (r.settings?.ppts ?? 0) + (r.settings?.ppts_decimal ?? 0) / 100,
     };
   });
 
@@ -128,21 +133,6 @@ async function buildSeason(league) {
       teamA: { rosterId: a.roster_id, points: a.points ?? 0 },
       teamB: b ? { rosterId: b.roster_id, points: b.points ?? 0 } : null,
     }));
-  }
-
-  const maxByRoster = {};
-  for (const week of Object.values(matchupsByWeek)) {
-    for (const m of week) {
-      for (const side of [m.teamA, m.teamB]) {
-        if (!side) continue;
-        if (side.points > (maxByRoster[side.rosterId] ?? 0)) {
-          maxByRoster[side.rosterId] = side.points;
-        }
-      }
-    }
-  }
-  for (const team of teams) {
-    team.maxPF = maxByRoster[team.rosterId] ?? 0;
   }
 
   const { champion, lastPlace } = await findChampionAndLastPlace(leagueId, league);
