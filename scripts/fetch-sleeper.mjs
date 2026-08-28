@@ -81,6 +81,36 @@ async function buildSeason(league, nextLeague) {
     }
   }
 
+  // The actual draft board for THIS season — the one that ran before it
+  // started, setting up that season's rosters (round-by-round, who took
+  // whom). This is league.draft_id itself, unlike draftPickByOwner above.
+  let draftBoard = null;
+  if (league.draft_id) {
+    try {
+      const [draftMeta, picks] = await Promise.all([
+        fetchJSON(`${API}/draft/${league.draft_id}`),
+        fetchJSON(`${API}/draft/${league.draft_id}/picks`),
+      ]);
+      draftBoard = {
+        rounds: draftMeta.settings?.rounds ?? null,
+        picks: picks
+          .map((p) => ({
+            round: p.round,
+            pickNo: p.pick_no,
+            rosterId: p.roster_id,
+            playerName: p.metadata
+              ? `${p.metadata.first_name} ${p.metadata.last_name}`.trim()
+              : "Unknown",
+            position: p.metadata?.position ?? null,
+            nflTeam: p.metadata?.team || null,
+          }))
+          .sort((a, b) => a.pickNo - b.pickNo),
+      };
+    } catch {
+      // no draft data available for this season
+    }
+  }
+
   // Sleeper gives each manager two images: an account profile picture (avatar,
   // an id you resolve against the CDN) and, if they've set one, a per-league
   // team logo (metadata.avatar, already a full URL). Prefer the team logo.
@@ -165,6 +195,7 @@ async function buildSeason(league, nextLeague) {
     matchups: matchupsByWeek,
     champion,
     lastPlace,
+    draft: draftBoard,
   };
 }
 

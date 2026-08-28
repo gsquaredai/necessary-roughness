@@ -1311,5 +1311,394 @@
     "18": []
   },
   "champion": 5,
-  "lastPlace": 2
+  "lastPlace": 2,
+  "draft": {
+    "rounds": 4,
+    "picks": [
+      {
+        "round": 1,
+        "pickNo": 1,
+        "rosterId": 8,
+        "playerName": "Ashton Jeanty",
+        "position": "RB",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 1,
+        "pickNo": 2,
+        "rosterId": 6,
+        "playerName": "Tetairoa McMillan",
+        "position": "WR",
+        "nflTeam": "CAR"
+      },
+      {
+        "round": 1,
+        "pickNo": 3,
+        "rosterId": 1,
+        "playerName": "Omarion Hampton",
+        "position": "RB",
+        "nflTeam": "LAC"
+      },
+      {
+        "round": 1,
+        "pickNo": 4,
+        "rosterId": 10,
+        "playerName": "TreVeyon Henderson",
+        "position": "RB",
+        "nflTeam": "NE"
+      },
+      {
+        "round": 1,
+        "pickNo": 5,
+        "rosterId": 5,
+        "playerName": "Quinshon Judkins",
+        "position": "RB",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 1,
+        "pickNo": 6,
+        "rosterId": 12,
+        "playerName": "Travis Hunter",
+        "position": "WR",
+        "nflTeam": "JAX"
+      },
+      {
+        "round": 1,
+        "pickNo": 7,
+        "rosterId": 2,
+        "playerName": "Colston Loveland",
+        "position": "TE",
+        "nflTeam": "CHI"
+      },
+      {
+        "round": 1,
+        "pickNo": 8,
+        "rosterId": 6,
+        "playerName": "RJ Harvey",
+        "position": "RB",
+        "nflTeam": "DEN"
+      },
+      {
+        "round": 1,
+        "pickNo": 9,
+        "rosterId": 8,
+        "playerName": "Cameron Ward",
+        "position": "QB",
+        "nflTeam": "TEN"
+      },
+      {
+        "round": 1,
+        "pickNo": 10,
+        "rosterId": 6,
+        "playerName": "Kaleb Johnson",
+        "position": "RB",
+        "nflTeam": "PIT"
+      },
+      {
+        "round": 1,
+        "pickNo": 11,
+        "rosterId": 12,
+        "playerName": "Tyler Warren",
+        "position": "TE",
+        "nflTeam": "IND"
+      },
+      {
+        "round": 1,
+        "pickNo": 12,
+        "rosterId": 6,
+        "playerName": "Emeka Egbuka",
+        "position": "WR",
+        "nflTeam": "TB"
+      },
+      {
+        "round": 2,
+        "pickNo": 13,
+        "rosterId": 1,
+        "playerName": "Tre Harris",
+        "position": "WR",
+        "nflTeam": "LAC"
+      },
+      {
+        "round": 2,
+        "pickNo": 14,
+        "rosterId": 6,
+        "playerName": "Luther Burden",
+        "position": "WR",
+        "nflTeam": "CHI"
+      },
+      {
+        "round": 2,
+        "pickNo": 15,
+        "rosterId": 4,
+        "playerName": "Matthew Golden",
+        "position": "WR",
+        "nflTeam": "GB"
+      },
+      {
+        "round": 2,
+        "pickNo": 16,
+        "rosterId": 8,
+        "playerName": "Jayden Higgins",
+        "position": "WR",
+        "nflTeam": "HOU"
+      },
+      {
+        "round": 2,
+        "pickNo": 17,
+        "rosterId": 11,
+        "playerName": "Cam Skattebo",
+        "position": "RB",
+        "nflTeam": "NYG"
+      },
+      {
+        "round": 2,
+        "pickNo": 18,
+        "rosterId": 7,
+        "playerName": "Jack Bech",
+        "position": "WR",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 2,
+        "pickNo": 19,
+        "rosterId": 9,
+        "playerName": "Mason Taylor",
+        "position": "TE",
+        "nflTeam": "NYJ"
+      },
+      {
+        "round": 2,
+        "pickNo": 20,
+        "rosterId": 4,
+        "playerName": "Jaydon Blue",
+        "position": "RB",
+        "nflTeam": "DAL"
+      },
+      {
+        "round": 2,
+        "pickNo": 21,
+        "rosterId": 11,
+        "playerName": "Jaxson Dart",
+        "position": "QB",
+        "nflTeam": "NYG"
+      },
+      {
+        "round": 2,
+        "pickNo": 22,
+        "rosterId": 12,
+        "playerName": "Tyler Shough",
+        "position": "QB",
+        "nflTeam": "NO"
+      },
+      {
+        "round": 2,
+        "pickNo": 23,
+        "rosterId": 2,
+        "playerName": "Kyle Williams",
+        "position": "WR",
+        "nflTeam": "NE"
+      },
+      {
+        "round": 2,
+        "pickNo": 24,
+        "rosterId": 9,
+        "playerName": "Jaylin Noel",
+        "position": "WR",
+        "nflTeam": "HOU"
+      },
+      {
+        "round": 3,
+        "pickNo": 25,
+        "rosterId": 5,
+        "playerName": "Dylan Sampson",
+        "position": "RB",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 3,
+        "pickNo": 26,
+        "rosterId": 11,
+        "playerName": "Elic Ayomanor",
+        "position": "WR",
+        "nflTeam": "TEN"
+      },
+      {
+        "round": 3,
+        "pickNo": 27,
+        "rosterId": 10,
+        "playerName": "Jalen Milroe",
+        "position": "QB",
+        "nflTeam": "SEA"
+      },
+      {
+        "round": 3,
+        "pickNo": 28,
+        "rosterId": 4,
+        "playerName": "Bhayshul Tuten",
+        "position": "RB",
+        "nflTeam": "JAX"
+      },
+      {
+        "round": 3,
+        "pickNo": 29,
+        "rosterId": 11,
+        "playerName": "Jalen Royals",
+        "position": "WR",
+        "nflTeam": "KC"
+      },
+      {
+        "round": 3,
+        "pickNo": 30,
+        "rosterId": 4,
+        "playerName": "Elijah Arroyo",
+        "position": "TE",
+        "nflTeam": "SEA"
+      },
+      {
+        "round": 3,
+        "pickNo": 31,
+        "rosterId": 10,
+        "playerName": "Devin Neal",
+        "position": "RB",
+        "nflTeam": "NO"
+      },
+      {
+        "round": 3,
+        "pickNo": 32,
+        "rosterId": 1,
+        "playerName": "Shedeur Sanders",
+        "position": "QB",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 3,
+        "pickNo": 33,
+        "rosterId": 3,
+        "playerName": "Pat Bryant",
+        "position": "WR",
+        "nflTeam": "DEN"
+      },
+      {
+        "round": 3,
+        "pickNo": 34,
+        "rosterId": 12,
+        "playerName": "Harold Fannin",
+        "position": "TE",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 3,
+        "pickNo": 35,
+        "rosterId": 10,
+        "playerName": "Terrance Ferguson",
+        "position": "TE",
+        "nflTeam": "LAR"
+      },
+      {
+        "round": 3,
+        "pickNo": 36,
+        "rosterId": 9,
+        "playerName": "Xavier Restrepo",
+        "position": "WR",
+        "nflTeam": "TEN"
+      },
+      {
+        "round": 4,
+        "pickNo": 37,
+        "rosterId": 3,
+        "playerName": "Brashard Smith",
+        "position": "RB",
+        "nflTeam": "KC"
+      },
+      {
+        "round": 4,
+        "pickNo": 38,
+        "rosterId": 8,
+        "playerName": "Daniel Jones",
+        "position": "QB",
+        "nflTeam": "IND"
+      },
+      {
+        "round": 4,
+        "pickNo": 39,
+        "rosterId": 6,
+        "playerName": "Woody Marks",
+        "position": "RB",
+        "nflTeam": "HOU"
+      },
+      {
+        "round": 4,
+        "pickNo": 40,
+        "rosterId": 4,
+        "playerName": "Trevor Etienne",
+        "position": "RB",
+        "nflTeam": "CAR"
+      },
+      {
+        "round": 4,
+        "pickNo": 41,
+        "rosterId": 11,
+        "playerName": "Ollie Gordon",
+        "position": "RB",
+        "nflTeam": "MIA"
+      },
+      {
+        "round": 4,
+        "pickNo": 42,
+        "rosterId": 7,
+        "playerName": "Will Howard",
+        "position": "QB",
+        "nflTeam": "PIT"
+      },
+      {
+        "round": 4,
+        "pickNo": 43,
+        "rosterId": 6,
+        "playerName": "Kyle Monangai",
+        "position": "RB",
+        "nflTeam": "CHI"
+      },
+      {
+        "round": 4,
+        "pickNo": 44,
+        "rosterId": 1,
+        "playerName": "Oronde Gadsden",
+        "position": "TE",
+        "nflTeam": "LAC"
+      },
+      {
+        "round": 4,
+        "pickNo": 45,
+        "rosterId": 3,
+        "playerName": "Dillon Gabriel",
+        "position": "QB",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 4,
+        "pickNo": 46,
+        "rosterId": 12,
+        "playerName": "DJ Giddens",
+        "position": "RB",
+        "nflTeam": "IND"
+      },
+      {
+        "round": 4,
+        "pickNo": 47,
+        "rosterId": 10,
+        "playerName": "Dyami Brown",
+        "position": "WR",
+        "nflTeam": "JAX"
+      },
+      {
+        "round": 4,
+        "pickNo": 48,
+        "rosterId": 9,
+        "playerName": "Isaac TeSlaa",
+        "position": "WR",
+        "nflTeam": "DET"
+      }
+    ]
+  }
 }

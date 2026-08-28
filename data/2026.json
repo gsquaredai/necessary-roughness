@@ -1400,5 +1400,394 @@
     ]
   },
   "champion": null,
-  "lastPlace": null
+  "lastPlace": null,
+  "draft": {
+    "rounds": 4,
+    "picks": [
+      {
+        "round": 1,
+        "pickNo": 1,
+        "rosterId": 2,
+        "playerName": "Jeremiyah Love",
+        "position": "RB",
+        "nflTeam": "ARI"
+      },
+      {
+        "round": 1,
+        "pickNo": 2,
+        "rosterId": 7,
+        "playerName": "Fernando Mendoza",
+        "position": "QB",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 1,
+        "pickNo": 3,
+        "rosterId": 10,
+        "playerName": "Carnell Tate",
+        "position": "WR",
+        "nflTeam": "TEN"
+      },
+      {
+        "round": 1,
+        "pickNo": 4,
+        "rosterId": 11,
+        "playerName": "Jordyn Tyson",
+        "position": "WR",
+        "nflTeam": "NO"
+      },
+      {
+        "round": 1,
+        "pickNo": 5,
+        "rosterId": 7,
+        "playerName": "Makai Lemon",
+        "position": "WR",
+        "nflTeam": "PHI"
+      },
+      {
+        "round": 1,
+        "pickNo": 6,
+        "rosterId": 5,
+        "playerName": "Jadarian Price",
+        "position": "RB",
+        "nflTeam": "SEA"
+      },
+      {
+        "round": 1,
+        "pickNo": 7,
+        "rosterId": 11,
+        "playerName": "Kenyon Sadiq",
+        "position": "TE",
+        "nflTeam": "NYJ"
+      },
+      {
+        "round": 1,
+        "pickNo": 8,
+        "rosterId": 12,
+        "playerName": "Ty Simpson",
+        "position": "QB",
+        "nflTeam": "LAR"
+      },
+      {
+        "round": 1,
+        "pickNo": 9,
+        "rosterId": 4,
+        "playerName": "KC Concepcion",
+        "position": "WR",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 1,
+        "pickNo": 10,
+        "rosterId": 7,
+        "playerName": "Eli Stowers",
+        "position": "TE",
+        "nflTeam": "PHI"
+      },
+      {
+        "round": 1,
+        "pickNo": 11,
+        "rosterId": 8,
+        "playerName": "Emmett Johnson",
+        "position": "RB",
+        "nflTeam": "KC"
+      },
+      {
+        "round": 1,
+        "pickNo": 12,
+        "rosterId": 5,
+        "playerName": "Sonny Styles",
+        "position": "LB",
+        "nflTeam": "WAS"
+      },
+      {
+        "round": 2,
+        "pickNo": 13,
+        "rosterId": 7,
+        "playerName": "Jonah Coleman",
+        "position": "RB",
+        "nflTeam": "DEN"
+      },
+      {
+        "round": 2,
+        "pickNo": 14,
+        "rosterId": 7,
+        "playerName": "Omar Cooper",
+        "position": "WR",
+        "nflTeam": "NYJ"
+      },
+      {
+        "round": 2,
+        "pickNo": 15,
+        "rosterId": 6,
+        "playerName": "Denzel Boston",
+        "position": "WR",
+        "nflTeam": "CLE"
+      },
+      {
+        "round": 2,
+        "pickNo": 16,
+        "rosterId": 6,
+        "playerName": "Nicholas Singleton",
+        "position": "RB",
+        "nflTeam": "TEN"
+      },
+      {
+        "round": 2,
+        "pickNo": 17,
+        "rosterId": 3,
+        "playerName": "Zachariah Branch",
+        "position": "WR",
+        "nflTeam": "ATL"
+      },
+      {
+        "round": 2,
+        "pickNo": 18,
+        "rosterId": 11,
+        "playerName": "Antonio Williams",
+        "position": "WR",
+        "nflTeam": "WAS"
+      },
+      {
+        "round": 2,
+        "pickNo": 19,
+        "rosterId": 3,
+        "playerName": "Germie Bernard",
+        "position": "WR",
+        "nflTeam": "PIT"
+      },
+      {
+        "round": 2,
+        "pickNo": 20,
+        "rosterId": 12,
+        "playerName": "Elijah Sarratt",
+        "position": "WR",
+        "nflTeam": "BAL"
+      },
+      {
+        "round": 2,
+        "pickNo": 21,
+        "rosterId": 4,
+        "playerName": "Ja'Kobi Lane",
+        "position": "WR",
+        "nflTeam": "BAL"
+      },
+      {
+        "round": 2,
+        "pickNo": 22,
+        "rosterId": 4,
+        "playerName": "Chris Brazzell",
+        "position": "WR",
+        "nflTeam": "CAR"
+      },
+      {
+        "round": 2,
+        "pickNo": 23,
+        "rosterId": 8,
+        "playerName": "Kaytron Allen",
+        "position": "RB",
+        "nflTeam": "WAS"
+      },
+      {
+        "round": 2,
+        "pickNo": 24,
+        "rosterId": 8,
+        "playerName": "Ted Hurst",
+        "position": "WR",
+        "nflTeam": "TB"
+      },
+      {
+        "round": 3,
+        "pickNo": 25,
+        "rosterId": 8,
+        "playerName": "Arvell Reese",
+        "position": "LB",
+        "nflTeam": "NYG"
+      },
+      {
+        "round": 3,
+        "pickNo": 26,
+        "rosterId": 5,
+        "playerName": "Chris Bell",
+        "position": "WR",
+        "nflTeam": "MIA"
+      },
+      {
+        "round": 3,
+        "pickNo": 27,
+        "rosterId": 3,
+        "playerName": "Mike Washington",
+        "position": "RB",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 3,
+        "pickNo": 28,
+        "rosterId": 1,
+        "playerName": "De'Zhaun Stribling",
+        "position": "WR",
+        "nflTeam": "SF"
+      },
+      {
+        "round": 3,
+        "pickNo": 29,
+        "rosterId": 10,
+        "playerName": "Rueben Bain",
+        "position": "DL",
+        "nflTeam": "TB"
+      },
+      {
+        "round": 3,
+        "pickNo": 30,
+        "rosterId": 10,
+        "playerName": "Michael Trigg",
+        "position": "TE",
+        "nflTeam": "DAL"
+      },
+      {
+        "round": 3,
+        "pickNo": 31,
+        "rosterId": 4,
+        "playerName": "CJ Allen",
+        "position": "LB",
+        "nflTeam": "IND"
+      },
+      {
+        "round": 3,
+        "pickNo": 32,
+        "rosterId": 12,
+        "playerName": "Max Klare",
+        "position": "TE",
+        "nflTeam": "LAR"
+      },
+      {
+        "round": 3,
+        "pickNo": 33,
+        "rosterId": 4,
+        "playerName": "Kirk Cousins",
+        "position": "QB",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 3,
+        "pickNo": 34,
+        "rosterId": 8,
+        "playerName": "Malachi Fields",
+        "position": "WR",
+        "nflTeam": "NYG"
+      },
+      {
+        "round": 3,
+        "pickNo": 35,
+        "rosterId": 8,
+        "playerName": "Jalen Nailor",
+        "position": "WR",
+        "nflTeam": "LV"
+      },
+      {
+        "round": 3,
+        "pickNo": 36,
+        "rosterId": 7,
+        "playerName": "Skyler Bell",
+        "position": "WR",
+        "nflTeam": "BUF"
+      },
+      {
+        "round": 4,
+        "pickNo": 37,
+        "rosterId": 2,
+        "playerName": "Eli Heidenreich",
+        "position": "RB",
+        "nflTeam": "PIT"
+      },
+      {
+        "round": 4,
+        "pickNo": 38,
+        "rosterId": 2,
+        "playerName": "Justin Joly",
+        "position": "TE",
+        "nflTeam": "DEN"
+      },
+      {
+        "round": 4,
+        "pickNo": 39,
+        "rosterId": 3,
+        "playerName": "Caleb Downs",
+        "position": "DB",
+        "nflTeam": "DAL"
+      },
+      {
+        "round": 4,
+        "pickNo": 40,
+        "rosterId": 10,
+        "playerName": "Demond Claiborne",
+        "position": "RB",
+        "nflTeam": "MIN"
+      },
+      {
+        "round": 4,
+        "pickNo": 41,
+        "rosterId": 7,
+        "playerName": "Carson Beck",
+        "position": "QB",
+        "nflTeam": "ARI"
+      },
+      {
+        "round": 4,
+        "pickNo": 42,
+        "rosterId": 9,
+        "playerName": "Daiyan Henley",
+        "position": "LB",
+        "nflTeam": "LAC"
+      },
+      {
+        "round": 4,
+        "pickNo": 43,
+        "rosterId": 9,
+        "playerName": "Foyesade Oluokun",
+        "position": "LB",
+        "nflTeam": "JAX"
+      },
+      {
+        "round": 4,
+        "pickNo": 44,
+        "rosterId": 6,
+        "playerName": "Cade Klubnik",
+        "position": "QB",
+        "nflTeam": "NYJ"
+      },
+      {
+        "round": 4,
+        "pickNo": 45,
+        "rosterId": 4,
+        "playerName": "Riley Leonard",
+        "position": "QB",
+        "nflTeam": "IND"
+      },
+      {
+        "round": 4,
+        "pickNo": 46,
+        "rosterId": 2,
+        "playerName": "Eli Raridon",
+        "position": "TE",
+        "nflTeam": "NE"
+      },
+      {
+        "round": 4,
+        "pickNo": 47,
+        "rosterId": 1,
+        "playerName": "Brenen Thompson",
+        "position": "WR",
+        "nflTeam": "LAC"
+      },
+      {
+        "round": 4,
+        "pickNo": 48,
+        "rosterId": 5,
+        "playerName": "Adam Randall",
+        "position": "RB",
+        "nflTeam": "BAL"
+      }
+    ]
+  }
 }

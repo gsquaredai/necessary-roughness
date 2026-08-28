@@ -321,6 +321,71 @@ th.num {
   text-transform: uppercase;
 }
 
+/* drafts */
+
+.draft-round {
+  margin-bottom: 28px;
+}
+
+.draft-round h2 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.draft-pick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.draft-pick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.draft-pick-no {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.6rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.draft-pick-team {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.draft-pick-player {
+  flex: 1 1 50%;
+  min-width: 0;
+  text-align: right;
+}
+
+.draft-pick-player .player-name {
+  display: block;
+  font-size: 0.65rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.draft-pick-player .player-meta {
+  display: block;
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* history */
 
 .champions-list {
@@ -618,13 +683,15 @@ th.num {
   nav.main-nav {
     order: 3;
     width: 100%;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   nav.main-nav a {
-    flex: 1;
+    flex: 1 1 30%;
     text-align: center;
     padding: 8px 4px;
+    font-size: 0.5rem;
   }
 
   .matchup {
