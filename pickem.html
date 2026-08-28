@@ -61,19 +61,9 @@
 
     let currentSeason = null;
     let allPlayers = null;
-    let schedule = null;
     let currentUser = null;
     let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
     let currentPicks = {};
-
-    async function loadSchedule() {
-      try {
-        const res = await fetch("data/schedule.json");
-        return await res.json();
-      } catch {
-        return [];
-      }
-    }
 
     // ---------- week gating ----------
 
@@ -88,23 +78,6 @@
       const played = latestWeekWithData(currentSeason);
       const next = played == null ? 1 : played + 1;
       return Math.min(next, lastRegularWeek());
-    }
-
-    // ---------- schedule lookups ----------
-
-    function opponentForPlayer(playerId, week) {
-      const p = allPlayers[playerId];
-      if (!p?.nflTeam || !schedule) return null;
-      const game = schedule.find((g) => g.week === week && (g.home === p.nflTeam || g.away === p.nflTeam));
-      if (!game) return null;
-      const isHome = game.home === p.nflTeam;
-      return { opp: isHome ? game.away : game.home, isHome, date: game.date };
-    }
-
-    function fmtGameDate(dateStr) {
-      if (!dateStr) return "";
-      const d = new Date(dateStr + "T12:00:00Z");
-      return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
     }
 
     // ---------- team identity ----------
@@ -294,11 +267,10 @@
         });
       });
 
-      list.querySelectorAll("[data-expand-matchup]").forEach((btn) => {
+      list.querySelectorAll("[data-view-rosters]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
-          const panel = list.querySelector(`#pickem-detail-${btn.dataset.expandMatchup}`);
-          if (panel) panel.hidden = !panel.hidden;
+          openMatchupModal(currentSeason, week, Number(btn.dataset.t1), Number(btn.dataset.t2));
         });
       });
 
@@ -341,49 +313,8 @@
               ${countB != null ? `<div class="pick-count">${countB} picked</div>` : ""}
             </div>
           </div>
-          <button type="button" class="pickem-expand-btn" data-expand-matchup="${m.matchupId}">View Rosters &amp; Projections</button>
-          <div class="pickem-detail matchup-modal-columns" id="pickem-detail-${m.matchupId}" hidden>
-            <div>${pickemRosterHTML(teamA, m.teamA, week)}</div>
-            <div>${pickemRosterHTML(teamB, m.teamB, week)}</div>
-          </div>
+          <button type="button" class="pickem-expand-btn" data-view-rosters data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}">View Rosters &amp; Projections</button>
         </div>
-      `;
-    }
-
-    function pickemPlayerRowHTML(playerId, week, isStarter) {
-      const p = allPlayers[playerId];
-      const name = p ? p.name : "Unknown Player";
-      const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
-      const opp = opponentForPlayer(playerId, week);
-      const oppText = opp ? `${opp.isHome ? "vs" : "@"} ${nflAbbr3(opp.opp)} &middot; ${fmtGameDate(opp.date)}` : "Bye / N/A";
-      return `
-        <div class="pickem-player-row${isStarter ? " pickem-starter" : ""}">
-          <span class="pickem-player-name">${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
-          <span class="pickem-player-opp">${oppText}</span>
-        </div>
-      `;
-    }
-
-    function pickemRosterHTML(team, side, week) {
-      const starters = new Set(side.starters || []);
-      const bench = (side.players || []).filter((pid) => !starters.has(pid));
-      const rowsFor = (playerIds, isStarter) =>
-        playerIds
-          .map((pid) => {
-            const proj = side.projByPlayer ? side.projByPlayer[pid] : null;
-            const row = pickemPlayerRowHTML(pid, week, isStarter);
-            return row.replace(
-              "</div>",
-              `<span class="info-stat-value proj-primary">${proj != null ? fmtPts(proj) : "—"}</span></div>`
-            );
-          })
-          .join("");
-      return `
-        <div class="info-section-title">${team.teamName}</div>
-        <div class="roster-group-title">Starters (${side.starters.length})</div>
-        ${rowsFor(side.starters || [], true)}
-        <div class="roster-group-title" style="margin-top: 10px;">Bench (${bench.length})</div>
-        ${rowsFor(bench, false)}
       `;
     }
 
@@ -488,7 +419,7 @@
     async function init() {
       const idx = await loadIndex();
       currentSeason = await loadSeason(idx.currentSeason);
-      [allPlayers, schedule] = await Promise.all([loadPlayers(), loadSchedule()]);
+      allPlayers = await loadPlayers();
 
       auth.onAuthStateChanged(async (user) => {
         if (!user) {

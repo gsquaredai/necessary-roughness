@@ -662,45 +662,6 @@ th.num {
   border-color: var(--accent-dim);
 }
 
-.pickem-detail {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--border);
-}
-
-.pickem-detail[hidden] {
-  display: none;
-}
-
-.pickem-player-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.62rem;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.pickem-player-row:last-child {
-  border-bottom: none;
-}
-
-.pickem-player-name {
-  flex: 1;
-  min-width: 0;
-}
-
-.pickem-player-opp {
-  color: var(--text-dim);
-  font-size: 0.55rem;
-  white-space: nowrap;
-}
-
-.pickem-starter .pickem-player-name {
-  color: var(--accent);
-}
-
 /* playoff bracket */
 
 .bracket-round-title {
