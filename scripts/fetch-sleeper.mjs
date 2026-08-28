@@ -201,6 +201,9 @@ async function fetchLeagueTransactions(leagueId, season) {
           fromRosterId: w.sender,
           toRosterId: w.receiver,
         })),
+        // FAAB bid paid on a waiver claim — only meaningful for type
+        // "waiver" (this league's waivers run on FAAB, not priority order).
+        waiverBid: t.settings?.waiver_bid ?? null,
       });
     }
   }
@@ -704,7 +707,84 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
 
   const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  return { log, picksHeldByRoster, pickRegistry };
+  // Lifetime per-manager activity for the History page: trade count,
+  // waiver-claim count, FAAB spent on those claims, net FAAB moved via
+  // trades (received minus sent), and FAAB left on the table at the end of
+  // each season (that season's starting budget, plus net FAAB traded,
+  // minus FAAB spent — summed across every season). Keyed by owner id via
+  // the same override-aware team identity used everywhere else, so a
+  // mid-season handoff (e.g. Spotted Cow/dannyhatty06) attributes activity
+  // to whoever actually made each move.
+  const teamRecords = new Map();
+  const recordFor = (team) => {
+    if (!team?.ownerId) return null;
+    if (!teamRecords.has(team.ownerId)) {
+      teamRecords.set(team.ownerId, {
+        ownerId: team.ownerId,
+        teamName: team.teamName,
+        avatar: team.avatar,
+        trades: 0,
+        waiverPickups: 0,
+        faabSpent: 0,
+        faabTradedNet: 0,
+        faabUnspent: 0,
+      });
+    }
+    const r = teamRecords.get(team.ownerId);
+    r.teamName = team.teamName; // keep the most recent team name/avatar
+    r.avatar = team.avatar;
+    return r;
+  };
+
+  for (const s of seasonDatas) {
+    const startingBudget = s.leagueSettings?.waiverBudget ?? 0;
+    const perRosterBalance = new Map();
+    for (const team of s.teams) perRosterBalance.set(team.rosterId, startingBudget);
+
+    for (const t of s.rawTransactions) {
+      const date = new Date(t.created).toISOString();
+      if (t.type === "trade") {
+        const seenOwners = new Set();
+        for (const rosterId of t.rosterIds) {
+          const r = recordFor(teamRef(s.season, rosterId, date));
+          if (r && !seenOwners.has(r.ownerId)) {
+            r.trades += 1;
+            seenOwners.add(r.ownerId);
+          }
+        }
+        for (const w of t.waiverBudget) {
+          const fromR = recordFor(teamRef(s.season, w.fromRosterId, date));
+          const toR = recordFor(teamRef(s.season, w.toRosterId, date));
+          if (fromR) fromR.faabTradedNet -= w.amount;
+          if (toR) toR.faabTradedNet += w.amount;
+          if (perRosterBalance.has(w.fromRosterId)) {
+            perRosterBalance.set(w.fromRosterId, perRosterBalance.get(w.fromRosterId) - w.amount);
+          }
+          if (perRosterBalance.has(w.toRosterId)) {
+            perRosterBalance.set(w.toRosterId, perRosterBalance.get(w.toRosterId) + w.amount);
+          }
+        }
+      } else if (t.type === "waiver") {
+        const rosterId = t.rosterIds[0];
+        const r = recordFor(teamRef(s.season, rosterId, date));
+        if (r) r.waiverPickups += 1;
+        const bid = t.waiverBid || 0;
+        if (bid) {
+          if (r) r.faabSpent += bid;
+          if (perRosterBalance.has(rosterId)) {
+            perRosterBalance.set(rosterId, perRosterBalance.get(rosterId) - bid);
+          }
+        }
+      }
+    }
+
+    for (const team of s.teams) {
+      const r = recordFor(team);
+      if (r) r.faabUnspent += perRosterBalance.get(team.rosterId) ?? 0;
+    }
+  }
+
+  return { log, picksHeldByRoster, pickRegistry, teamRecords: [...teamRecords.values()] };
 }
 
 // Builds a profile for every player who's ever appeared on a roster in this
@@ -858,10 +938,11 @@ async function main() {
   }
 
   console.log("Cross-referencing trades against draft picks...");
-  const { log: transactionLog, picksHeldByRoster, pickRegistry } = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
+  const { log: transactionLog, picksHeldByRoster, pickRegistry, teamRecords } = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
   await fs.writeFile("data/transactions.json", JSON.stringify(transactionLog, null, 2));
   await fs.writeFile("data/future-picks.json", JSON.stringify(picksHeldByRoster, null, 2));
   await fs.writeFile("data/pick-registry.json", JSON.stringify(pickRegistry, null, 2));
+  await fs.writeFile("data/team-records.json", JSON.stringify(teamRecords, null, 2));
 
   const playerProfiles = await buildPlayerProfiles(seasonDatas, playerNames);
   await fs.writeFile("data/players.json", JSON.stringify(playerProfiles, null, 2));
