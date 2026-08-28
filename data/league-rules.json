@@ -9,7 +9,8 @@
         "Passing touchdowns now score 5 points instead of 4.",
         "A pick-six now costs the QB -6 points total: the standard -2 for the interception, plus a new -4 penalty specifically for throwing a pick-six.",
         "The bonus 3.13 rookie pick, awarded to the winner of the loser's bracket, is new this year.",
-        "Teams that miss the playoffs now get an extra $15 in FAAB the following season."
+        "Teams that miss the playoffs now get an extra $15 in FAAB the following season.",
+        "The Dynasty Pick-Em Pool is new this year — pick against the spread every week on the new Pick-Em tab. Win the pool and you earn the bonus 3.14 rookie pick. See its own section below."
       ]
     },
     {
@@ -26,7 +27,19 @@
     },
     {
       "title": "The Rookie Draft",
-      "body": "After the startup draft, each incoming rookie class gets added to the league through a rookie draft — always held sometime after the actual NFL Draft, once that year's incoming rookies have been assigned to their NFL teams. Ours is 4 rounds. On top of those 4 rounds, we also grant a bonus pick at the end of the 3rd round — pick 3.13 — to the winner of the loser's bracket, a mini-tournament played among the 4 teams that missed the playoffs. It's a small reward for playing that bracket out to win instead of just mailing it in."
+      "body": "After the startup draft, each incoming rookie class gets added to the league through a rookie draft — always held sometime after the actual NFL Draft, once that year's incoming rookies have been assigned to their NFL teams. Ours is 4 rounds. On top of those 4 rounds, we also grant two bonus picks at the end of the 3rd round: pick 3.13 to the winner of the loser's bracket, a mini-tournament played among the 4 teams that missed the playoffs, and pick 3.14 to the winner of the Dynasty Pick-Em Pool (see its own section below). Both are small rewards for playing something out all season instead of just mailing it in."
+    },
+    {
+      "title": "Dynasty Pick-Em Pool",
+      "body": "Every week, every manager picks against the spread on all of that week's matchups. Head to the Pick-Em tab, select which team you are, and lock in your picks before you run out of time — a new week's picks unlock once the previous week has actually been played.",
+      "list": [
+        "For each matchup, we take the difference between the two teams' best-possible projected lineups — every rostered player's projection, slotted into the optimal starting lineup for that roster's positions, not just whoever's actually starting — and round it to the nearest half point. That's the spread.",
+        "Pick which side you think beats the spread: the favorite has to win by more than the spread to cover, and the underdog covers if they lose by less than the spread (or win outright).",
+        "Submit all of that week's picks at once. You can go back and change your picks any time before they're graded — resubmitting just updates them.",
+        "Each correct pick is worth 1 point, each incorrect pick is worth 0. Standings, and who's submitted each week, are tracked on the Pick-Em tab's Pool sub-tab.",
+        "It's an honor system — don't enter or edit picks for anyone but yourself."
+      ],
+      "outro": "Whoever has the most points at the end of the regular season wins the pool and earns the bonus 3.14 rookie pick."
     },
     {
       "title": "Taxi Squad",

@@ -60,6 +60,66 @@ function weekMedian(season, week) {
   return scores.length % 2 === 0 ? (scores[mid - 1] + scores[mid]) / 2 : scores[mid];
 }
 
+// Best-possible-lineup projected total for a team that week — the spread
+// basis for Pick-Em. Same nested-eligibility greedy fill a "potential
+// points" calc would use, just run on projections instead of actual
+// scores: exact positions first, then FLEX, then SUPER_FLEX, then
+// IDP_FLEX, each slot always taking the single highest-projected
+// still-available eligible player. That fill order is provably optimal
+// here because each later category's eligibility is a superset of the
+// ones already filled (a classic nested/laminar-matroid greedy).
+function computeOptimalProjectedLineup(playerIds, projByPlayer, playersDb, rosterPositions) {
+  const slotCounts = {};
+  for (const pos of rosterPositions || []) {
+    if (pos === "BN") continue;
+    slotCounts[pos] = (slotCounts[pos] || 0) + 1;
+  }
+
+  const pool = (playerIds || [])
+    .map((pid) => ({
+      id: pid,
+      pos: playersDb[pid]?.position || null,
+      pts: projByPlayer && projByPlayer[pid] != null ? projByPlayer[pid] : 0,
+    }))
+    .filter((p) => p.pos);
+
+  const used = new Set();
+  let total = 0;
+
+  // `eligible` is either an array of exact position codes, or a predicate
+  // function — needed for IDP_FLEX, since Sleeper labels individual
+  // defensive players with granular codes (DE, DT, CB, S, OLB, ILB, ...)
+  // rather than a fixed small set, so "anything that isn't offense" is the
+  // only reliable eligibility check there.
+  function takeBest(eligible, count) {
+    const isEligible = typeof eligible === "function" ? eligible : (pos) => eligible.includes(pos);
+    for (let i = 0; i < count; i++) {
+      let best = null;
+      for (const p of pool) {
+        if (used.has(p.id) || !isEligible(p.pos)) continue;
+        if (!best || p.pts > best.pts) best = p;
+      }
+      if (best) {
+        used.add(best.id);
+        total += best.pts;
+      }
+    }
+  }
+
+  const OFFENSE_POSITIONS = new Set(["QB", "RB", "WR", "TE", "K"]);
+
+  for (const exact of ["QB", "RB", "WR", "TE"]) {
+    if (slotCounts[exact]) takeBest([exact], slotCounts[exact]);
+  }
+  if (slotCounts.FLEX) takeBest(["RB", "WR", "TE"], slotCounts.FLEX);
+  if (slotCounts.WRRB_FLEX) takeBest(["WR", "RB"], slotCounts.WRRB_FLEX);
+  if (slotCounts.REC_FLEX) takeBest(["WR", "TE"], slotCounts.REC_FLEX);
+  if (slotCounts.SUPER_FLEX) takeBest(["QB", "RB", "WR", "TE"], slotCounts.SUPER_FLEX);
+  if (slotCounts.IDP_FLEX) takeBest((pos) => !OFFENSE_POSITIONS.has(pos), slotCounts.IDP_FLEX);
+
+  return total;
+}
+
 // Named rivalry (if any) between two owner ids, order-independent.
 function findRivalry(rivalries, ownerIdA, ownerIdB) {
   if (!ownerIdA || !ownerIdB) return null;

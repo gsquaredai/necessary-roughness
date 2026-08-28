@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pick-Em — Necessary Roughness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="pickem">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="drafts.html" data-page="drafts">Drafts</a>
+        <a href="transactions.html" data-page="transactions">Transactions</a>
+        <a href="pickem.html" data-page="pickem">Pick-Em</a>
+        <a href="info.html" data-page="info">Info</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <div id="pickem-root"></div>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    const IDENTITY_KEY = "pickem_identity_v1";
+
+    let currentSeason = null;
+    let allPlayers = null;
+    let schedule = null;
+    let pickemConfig = null;
+    let poolRowsCache = null;
+    let identity = null;
+    let currentPicks = {};
+
+    async function loadPickemConfig() {
+      try {
+        const res = await fetch("data/pickem-config.json");
+        return await res.json();
+      } catch {
+        return null;
+      }
+    }
+
+    async function loadSchedule() {
+      try {
+        const res = await fetch("data/schedule.json");
+        return await res.json();
+      } catch {
+        return [];
+      }
+    }
+
+    function loadIdentity() {
+      try {
+        return JSON.parse(localStorage.getItem(IDENTITY_KEY));
+      } catch {
+        return null;
+      }
+    }
+
+    function saveIdentity(team) {
+      try {
+        localStorage.setItem(
+          IDENTITY_KEY,
+          JSON.stringify({ ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName })
+        );
+      } catch {
+        // localStorage unavailable — identity just won't persist across visits
+      }
+    }
+
+    function clearIdentity() {
+      try {
+        localStorage.removeItem(IDENTITY_KEY);
+      } catch {
+        // ignore
+      }
+    }
+
+    function isConfigured() {
+      return !!(pickemConfig && pickemConfig.formActionUrl && pickemConfig.formActionUrl !== "REPLACE_ME");
+    }
+
+    // ---------- CSV (published Google Sheet) ----------
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
+        if (inQuotes) {
+          if (c === '"') {
+            if (text[i + 1] === '"') {
+              field += '"';
+              i++;
+            } else inQuotes = false;
+          } else {
+            field += c;
+          }
+        } else if (c === '"') {
+          inQuotes = true;
+        } else if (c === ",") {
+          row.push(field);
+          field = "";
+        } else if (c === "\n") {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = "";
+        } else if (c === "\r") {
+          // skip
+        } else {
+          field += c;
+        }
+      }
+      if (field.length || row.length) {
+        row.push(field);
+        rows.push(row);
+      }
+      return rows;
+    }
+
+    async function loadPoolRows() {
+      if (poolRowsCache) return poolRowsCache;
+      if (!pickemConfig || !pickemConfig.csvUrl || pickemConfig.csvUrl === "REPLACE_ME") {
+        poolRowsCache = [];
+        return poolRowsCache;
+      }
+      try {
+        const res = await fetch(pickemConfig.csvUrl);
+        const text = await res.text();
+        const rows = parseCSV(text);
+        const header = (rows[0] || []).map((h) => h.trim().toLowerCase());
+        const idxManager = header.indexOf("manager");
+        const idxWeek = header.indexOf("week");
+        const idxPicks = header.indexOf("picksjson");
+        poolRowsCache = rows
+          .slice(1)
+          .filter((r) => r.length > 1)
+          .map((r) => ({
+            timestamp: r[0],
+            manager: r[idxManager],
+            week: r[idxWeek],
+            picksJSON: r[idxPicks],
+          }));
+      } catch {
+        poolRowsCache = [];
+      }
+      return poolRowsCache;
+    }
+
+    function findLatestSubmission(rows, ownerId, week) {
+      const matches = rows.filter((r) => r.manager === ownerId && String(r.week) === String(week));
+      if (!matches.length) return null;
+      matches.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      return matches[0];
+    }
+
+    function latestByManagerWeek(rows) {
+      const map = new Map();
+      for (const r of rows) {
+        const key = `${r.manager}-${r.week}`;
+        const prev = map.get(key);
+        if (!prev || new Date(r.timestamp) > new Date(prev.timestamp)) map.set(key, r);
+      }
+      return map;
+    }
+
+    // ---------- week gating ----------
+
+    function lastRegularWeek() {
+      return (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
+    }
+
+    // A new week's picks unlock once the previous week has actually been
+    // played — never further ahead than that, and never past the regular
+    // season (no Pick-Em on playoff weeks).
+    function unlockedThroughWeek() {
+      const played = latestWeekWithData(currentSeason);
+      const next = played == null ? 1 : played + 1;
+      return Math.min(next, lastRegularWeek());
+    }
+
+    // ---------- schedule lookups ----------
+
+    function opponentForPlayer(playerId, week) {
+      const p = allPlayers[playerId];
+      if (!p?.nflTeam || !schedule) return null;
+      const game = schedule.find((g) => g.week === week && (g.home === p.nflTeam || g.away === p.nflTeam));
+      if (!game) return null;
+      const isHome = game.home === p.nflTeam;
+      return { opp: isHome ? game.away : game.home, isHome, date: game.date };
+    }
+
+    function fmtGameDate(dateStr) {
+      if (!dateStr) return "";
+      const d = new Date(dateStr + "T12:00:00Z");
+      return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
+    }
+
+    // ---------- identity picker ----------
+
+    function renderIdentityPicker() {
+      const root = document.getElementById("pickem-root");
+      const rows = currentSeason.teams
+        .slice()
+        .sort((a, b) => a.teamName.localeCompare(b.teamName))
+        .map(
+          (t) => `
+            <div class="team-list-row" data-roster-id="${t.rosterId}" role="button" tabindex="0">
+              ${avatarImgHTML(t)}
+              <div class="team-list-info">
+                <div class="team-name">${t.teamName}</div>
+                <div class="team-list-owner">${t.displayName}</div>
+              </div>
+            </div>
+          `
+        )
+        .join("");
+      root.innerHTML = `
+        <div class="info-lead" style="text-align: center; margin-bottom: 16px;">Which team are you?</div>
+        <div class="team-box-list">${rows}</div>
+      `;
+      root.querySelectorAll(".team-list-row").forEach((row) => {
+        const pick = () => {
+          const team = teamById(currentSeason, Number(row.dataset.rosterId));
+          saveIdentity(team);
+          identity = loadIdentity();
+          renderMain();
+        };
+        row.addEventListener("click", pick);
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            pick();
+          }
+        });
+      });
+    }
+
+    // ---------- main shell ----------
+
+    function renderMain() {
+      const root = document.getElementById("pickem-root");
+      root.innerHTML = `
+        <div class="pickem-identity-bar">
+          Playing as <strong>${identity.teamName}</strong>
+          <button type="button" id="pickem-switch" class="link-btn">Not you? Switch</button>
+        </div>
+        <div class="view-toggle" id="pickem-tabs">
+          <button type="button" data-tab="weeks">Weeks</button>
+          <button type="button" data-tab="pool">Pool</button>
+        </div>
+        <div id="pickem-content"></div>
+      `;
+      root.querySelector("#pickem-switch").addEventListener("click", () => {
+        clearIdentity();
+        identity = null;
+        renderIdentityPicker();
+      });
+
+      const tabs = root.querySelector("#pickem-tabs");
+      const params = new URLSearchParams(location.search);
+      const initialTab = params.get("tab") === "pool" ? "pool" : "weeks";
+      tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.tab === initialTab));
+
+      tabs.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-tab]");
+        if (!btn) return;
+        tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
+        const url = new URL(location.href);
+        url.searchParams.set("tab", btn.dataset.tab);
+        history.replaceState(null, "", url);
+        showPickemTab(btn.dataset.tab);
+      });
+
+      showPickemTab(initialTab);
+    }
+
+    async function showPickemTab(tab) {
+      const content = document.getElementById("pickem-content");
+      content.innerHTML = `<div class="empty-state">Loading...</div>`;
+      if (tab === "pool") await renderPoolTab(content);
+      else await renderWeeksTab(content);
+    }
+
+    // ---------- weeks tab ----------
+
+    async function renderWeeksTab(container) {
+      const maxWeek = unlockedThroughWeek();
+      const weeks = [];
+      for (let w = 1; w <= maxWeek; w++) weeks.push(w);
+
+      const params = new URLSearchParams(location.search);
+      const requestedWeek = Number(params.get("week"));
+      const initialWeek = weeks.includes(requestedWeek) ? requestedWeek : maxWeek;
+
+      container.innerHTML = `
+        <div class="controls">
+          <select id="pickem-week-select">${weeks.map((w) => `<option value="${w}">Week ${w}</option>`).join("")}</select>
+        </div>
+        <div id="pickem-week-body"></div>
+      `;
+
+      const sel = container.querySelector("#pickem-week-select");
+      sel.value = initialWeek;
+      sel.addEventListener("change", () => {
+        const url = new URL(location.href);
+        url.searchParams.set("week", sel.value);
+        history.replaceState(null, "", url);
+        renderWeekBody(container.querySelector("#pickem-week-body"), Number(sel.value));
+      });
+
+      const url = new URL(location.href);
+      url.searchParams.set("week", String(initialWeek));
+      history.replaceState(null, "", url);
+
+      await renderWeekBody(container.querySelector("#pickem-week-body"), initialWeek);
+    }
+
+    function matchupSpreadInfo(m) {
+      const teamA = teamById(currentSeason, m.teamA.rosterId);
+      const teamB = teamById(currentSeason, m.teamB.rosterId);
+      const totalA = computeOptimalProjectedLineup(
+        m.teamA.players,
+        m.teamA.projByPlayer,
+        allPlayers,
+        currentSeason.rosterPositions
+      );
+      const totalB = computeOptimalProjectedLineup(
+        m.teamB.players,
+        m.teamB.projByPlayer,
+        allPlayers,
+        currentSeason.rosterPositions
+      );
+      const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
+      return { m, teamA, teamB, totalA, totalB, spread };
+    }
+
+    async function renderWeekBody(container, week) {
+      container.innerHTML = `<div class="empty-state">Loading...</div>`;
+      const rows = await loadPoolRows();
+      const existing = identity ? findLatestSubmission(rows, identity.ownerId, week) : null;
+      currentPicks = {};
+      if (existing) {
+        try {
+          currentPicks = JSON.parse(existing.picksJSON) || {};
+        } catch {
+          currentPicks = {};
+        }
+      }
+
+      const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
+      if (!matchups.length) {
+        container.innerHTML = `<div class="empty-state">No matchups for this week.</div>`;
+        return;
+      }
+      const matchupInfo = matchups.map(matchupSpreadInfo);
+
+      container.innerHTML = `
+        <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week)).join("")}</div>
+        <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;">${
+          existing ? "Update Picks" : "Submit Picks"
+        }</button>
+        <div id="pickem-submit-status" class="muted" style="margin-top: 8px;"></div>
+      `;
+
+      const list = container.querySelector("#pickem-matchups");
+
+      list.querySelectorAll("[data-pick-roster]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const matchupId = el.dataset.matchupId;
+          currentPicks[matchupId] = Number(el.dataset.pickRoster);
+          list
+            .querySelectorAll(`[data-matchup-id="${matchupId}"][data-pick-roster]`)
+            .forEach((x) => x.classList.toggle("selected", x === el));
+          updateSubmitButtonState(container, matchupInfo);
+        });
+      });
+
+      list.querySelectorAll("[data-expand-matchup]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const panel = list.querySelector(`#pickem-detail-${btn.dataset.expandMatchup}`);
+          if (panel) panel.hidden = !panel.hidden;
+        });
+      });
+
+      updateSubmitButtonState(container, matchupInfo);
+
+      container.querySelector("#pickem-submit").addEventListener("click", () => submitPicks(container, week, matchupInfo));
+    }
+
+    function updateSubmitButtonState(container, matchupInfo) {
+      const btn = container.querySelector("#pickem-submit");
+      if (!btn) return;
+      const allPicked = matchupInfo.every((info) => currentPicks[info.m.matchupId] != null);
+      btn.disabled = !allPicked;
+    }
+
+    function pickemMatchupCardHTML(info, week) {
+      const { m, teamA, teamB, totalA, totalB, spread } = info;
+      const favA = totalA >= totalB;
+      const lineA = spread === 0 ? "PICK'EM" : favA ? `-${spread.toFixed(1)}` : `+${spread.toFixed(1)}`;
+      const lineB = spread === 0 ? "PICK'EM" : favA ? `+${spread.toFixed(1)}` : `-${spread.toFixed(1)}`;
+      const pickedA = currentPicks[m.matchupId] === teamA.rosterId;
+      const pickedB = currentPicks[m.matchupId] === teamB.rosterId;
+      return `
+        <div class="pickem-card">
+          <div class="pickem-card-row">
+            <div class="pickem-side${pickedA ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamA.rosterId}">
+              ${teamCellHTML(teamA)}
+              <div class="pickem-line">${lineA}</div>
+            </div>
+            <div class="pickem-vs">vs</div>
+            <div class="pickem-side${pickedB ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamB.rosterId}">
+              ${teamCellHTML(teamB)}
+              <div class="pickem-line">${lineB}</div>
+            </div>
+          </div>
+          <button type="button" class="pickem-expand-btn" data-expand-matchup="${m.matchupId}">View Rosters &amp; Projections</button>
+          <div class="pickem-detail matchup-modal-columns" id="pickem-detail-${m.matchupId}" hidden>
+            <div>${pickemRosterHTML(teamA, m.teamA, week)}</div>
+            <div>${pickemRosterHTML(teamB, m.teamB, week)}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function pickemPlayerRowHTML(playerId, week, isStarter) {
+      const p = allPlayers[playerId];
+      const name = p ? p.name : "Unknown Player";
+      const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
+      const opp = opponentForPlayer(playerId, week);
+      const oppText = opp ? `${opp.isHome ? "vs" : "@"} ${nflAbbr3(opp.opp)} &middot; ${fmtGameDate(opp.date)}` : "Bye / N/A";
+      const pts = null; // filled by caller via data attr replace below
+      return `
+        <div class="pickem-player-row${isStarter ? " pickem-starter" : ""}">
+          <span class="pickem-player-name">${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
+          <span class="pickem-player-opp">${oppText}</span>
+        </div>
+      `;
+    }
+
+    function pickemRosterHTML(team, side, week) {
+      const starters = new Set(side.starters || []);
+      const bench = (side.players || []).filter((pid) => !starters.has(pid));
+      const rowsFor = (playerIds, isStarter) =>
+        playerIds
+          .map((pid) => {
+            const proj = side.projByPlayer ? side.projByPlayer[pid] : null;
+            const row = pickemPlayerRowHTML(pid, week, isStarter);
+            return row.replace(
+              "</div>",
+              `<span class="info-stat-value proj-primary">${proj != null ? fmtPts(proj) : "—"}</span></div>`
+            );
+          })
+          .join("");
+      return `
+        <div class="info-section-title">${team.teamName}</div>
+        <div class="roster-group-title">Starters (${side.starters.length})</div>
+        ${rowsFor(side.starters || [], true)}
+        <div class="roster-group-title" style="margin-top: 10px;">Bench (${bench.length})</div>
+        ${rowsFor(bench, false)}
+      `;
+    }
+
+    async function submitPicks(container, week, matchupInfo) {
+      const status = container.querySelector("#pickem-submit-status");
+      if (!isConfigured()) {
+        status.textContent = "Pick-Em submissions aren't wired up yet — check back soon.";
+        return;
+      }
+      if (!matchupInfo.every((info) => currentPicks[info.m.matchupId] != null)) {
+        status.textContent = `Pick all ${matchupInfo.length} matchups before submitting.`;
+        return;
+      }
+
+      const body = new URLSearchParams();
+      body.set(pickemConfig.entryManager, identity.ownerId);
+      body.set(pickemConfig.entryWeek, String(week));
+      body.set(pickemConfig.entryPicks, JSON.stringify(currentPicks));
+
+      status.textContent = "Submitting...";
+      try {
+        await fetch(pickemConfig.formActionUrl, { method: "POST", mode: "no-cors", body });
+        status.textContent = "Picks submitted! It may take a few seconds to show up in the Pool tab.";
+        poolRowsCache = null;
+      } catch {
+        status.textContent = "Something went wrong submitting — try again.";
+      }
+    }
+
+    // ---------- pool tab ----------
+
+    async function renderPoolTab(container) {
+      if (!isConfigured()) {
+        container.innerHTML = `<div class="empty-state">Pick-Em pool isn't set up yet.</div>`;
+        return;
+      }
+      const rows = await loadPoolRows();
+      const latest = latestByManagerWeek(rows);
+      const maxWeek = unlockedThroughWeek();
+      const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
+
+      const pointsByOwner = new Map();
+      const submittedThisWeek = new Set();
+
+      for (const r of latest.values()) {
+        const week = Number(r.week);
+        if (week === maxWeek) submittedThisWeek.add(r.manager);
+        if (week > gradedThroughWeek) continue;
+
+        let picks;
+        try {
+          picks = JSON.parse(r.picksJSON);
+        } catch {
+          continue;
+        }
+        if (!pointsByOwner.has(r.manager)) pointsByOwner.set(r.manager, 0);
+
+        const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
+        for (const m of matchups) {
+          const pickedRosterId = picks[m.matchupId];
+          if (pickedRosterId == null) continue;
+          const { totalA, totalB, spread } = matchupSpreadInfo(m);
+          const favIsA = totalA >= totalB;
+          const actualMargin = favIsA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
+          let coveringRosterId = null;
+          if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;
+          else if (actualMargin < spread) coveringRosterId = favIsA ? m.teamB.rosterId : m.teamA.rosterId;
+          if (coveringRosterId != null && pickedRosterId === coveringRosterId) {
+            pointsByOwner.set(r.manager, pointsByOwner.get(r.manager) + 1);
+          }
+        }
+      }
+
+      const teams = currentSeason.teams
+        .slice()
+        .sort((a, b) => (pointsByOwner.get(b.ownerId) || 0) - (pointsByOwner.get(a.ownerId) || 0));
+
+      const body = teams
+        .map(
+          (t) => `
+            <tr>
+              <td>${teamCellHTML(t)}</td>
+              <td class="num">${pointsByOwner.get(t.ownerId) || 0}</td>
+              <td class="num">${submittedThisWeek.has(t.ownerId) ? "&#10003;" : "&mdash;"}</td>
+            </tr>
+          `
+        )
+        .join("");
+
+      container.innerHTML = `
+        <p class="muted" style="margin-bottom: 12px;">
+          1 point for every matchup pick that beats the spread. Graded through Week ${gradedThroughWeek || "—"}.
+          "Submitted" reflects Week ${maxWeek}.
+        </p>
+        <div class="card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Manager</th>
+                <th class="num">Points</th>
+                <th class="num">Submitted Wk ${maxWeek}</th>
+              </tr>
+            </thead>
+            <tbody>${body}</tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    // ---------- init ----------
+
+    async function init() {
+      const idx = await loadIndex();
+      currentSeason = await loadSeason(idx.currentSeason);
+      [allPlayers, schedule, pickemConfig] = await Promise.all([loadPlayers(), loadSchedule(), loadPickemConfig()]);
+      identity = loadIdentity();
+
+      if (!identity || !teamById(currentSeason, identity.rosterId)) {
+        renderIdentityPicker();
+      } else {
+        renderMain();
+      }
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("pickem-root").innerHTML = '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>

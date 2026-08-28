@@ -124,6 +124,17 @@ function computeLeagueScoredPoints(rawStats, scoringSettings) {
   return total;
 }
 
+// The current season's full NFL schedule (every team's weekly opponent and
+// game date) — used by the Pick-Em page's matchup deep-dive to show who
+// each rostered player is playing that week and when.
+async function fetchNflSchedule(season) {
+  try {
+    return await fetchJSON(`https://api.sleeper.app/schedule/nfl/regular/${season}`);
+  } catch {
+    return [];
+  }
+}
+
 async function findChampionAndLastPlace(leagueId, league) {
   let champion = league.metadata?.latest_league_winner_roster_id
     ? Number(league.metadata.latest_league_winner_roster_id)
@@ -1000,6 +1011,11 @@ async function main() {
   }
 
   const currentSeason = leagueChain[leagueChain.length - 1];
+
+  console.log("Fetching NFL schedule for the current season...");
+  const schedule = await fetchNflSchedule(currentSeason.season);
+  await fs.writeFile("data/schedule.json", JSON.stringify(schedule, null, 2));
+
   await fs.writeFile(
     "data/index.json",
     JSON.stringify(
