@@ -416,7 +416,7 @@
       }
       root.innerHTML = `
         <div class="modal-overlay" id="player-modal-overlay">
-          <div class="modal-box"><div class="empty-state">Loading...</div></div>
+          <div class="modal-box wide"><div class="empty-state">Loading...</div></div>
         </div>
       `;
       root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
@@ -439,9 +439,9 @@
           <h2>Week ${week}</h2>
           <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
         </div>
-        <div class="modal-tab-content">
-          ${matchupSideHTML(season, week, teamA, sideA, players)}
-          ${matchupSideHTML(season, week, teamB, sideB, players)}
+        <div class="modal-tab-content matchup-modal-columns">
+          <div>${matchupSideHTML(season, week, teamA, sideA, players)}</div>
+          <div>${matchupSideHTML(season, week, teamB, sideB, players)}</div>
         </div>
       `;
       box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);

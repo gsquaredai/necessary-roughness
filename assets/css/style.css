@@ -722,6 +722,28 @@ th.num {
   padding: 20px;
 }
 
+.modal-box.wide {
+  max-width: 860px;
+}
+
+.matchup-modal-columns {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.matchup-modal-columns > div {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .matchup-modal-columns {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
 .modal-close {
   position: absolute;
   top: 10px;
