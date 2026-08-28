@@ -515,9 +515,25 @@ function renderSiteIdentityBar() {
   bar.querySelector("#site-identity-btn").addEventListener("click", openSiteIdentityPicker);
 }
 
+const SITE_IDENTITY_PROMPTED_KEY = "nr_site_identity_prompted_v1";
+
+function maybeAutoPromptSiteIdentity() {
+  if (loadSiteIdentity()) return;
+  let prompted = false;
+  try {
+    prompted = localStorage.getItem(SITE_IDENTITY_PROMPTED_KEY) === "1";
+  } catch {}
+  if (prompted) return;
+  try {
+    localStorage.setItem(SITE_IDENTITY_PROMPTED_KEY, "1");
+  } catch {}
+  openSiteIdentityPicker();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   renderSiteIdentityBar();
+  maybeAutoPromptSiteIdentity();
 });
 
 // ---------- player profile modal ----------
