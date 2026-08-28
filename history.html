@@ -566,17 +566,28 @@
       return records;
     }
 
+    async function loadContacts() {
+      try {
+        const res = await fetch("data/team-contacts.json");
+        return await res.json();
+      } catch {
+        return {};
+      }
+    }
+
     async function renderMatchupsTab(container) {
       await ensureData();
       const { grid, ownerOrder } = computeH2HGrid(allSeasons);
       const medianRecords = computeMedianRecords(allSeasons);
+      const contacts = await loadContacts();
+      const nameFor = (t) => contacts[t.ownerId]?.firstName || t.teamName;
       const owners = ownerOrder
         .map((id) => latestTeamByOwner(allSeasons, id))
         .filter(Boolean)
-        .sort((a, b) => a.teamName.localeCompare(b.teamName));
+        .sort((a, b) => nameFor(a).localeCompare(nameFor(b)));
 
       const headerCells = owners
-        .map((t) => `<th>${avatarImgHTML(t)}<div class="h2h-col-name">${t.teamName}</div></th>`)
+        .map((t) => `<th>${avatarImgHTML(t)}<div class="h2h-col-name">${nameFor(t)}</div></th>`)
         .join("");
 
       const bodyRows = owners
@@ -600,7 +611,7 @@
           const medianCls = mr && mr.wins > mr.losses ? "h2h-winning" : mr && mr.losses > mr.wins ? "h2h-losing" : "";
           return `
             <tr>
-              <th class="h2h-row-label">${avatarImgHTML(rowTeam)}<span>${rowTeam.teamName}</span></th>
+              <th class="h2h-row-label">${avatarImgHTML(rowTeam)}<span>${nameFor(rowTeam)}</span></th>
               ${cells}
               <td class="h2h-median ${medianCls}">${medianStr}</td>
             </tr>
