@@ -131,12 +131,28 @@
 
     // ---------- playoff bracket ----------
 
-    function bracketSideHTML(season, rosterId, fromLabel, isWinner) {
+    // A bracket round's matches happen in a real season week — round 1 of
+    // the playoffs is the season's first playoff week, round 2 the next,
+    // and so on — so scores can be pulled straight from that week's actual
+    // matchup data.
+    function scoreForRosterInWeek(season, week, rosterId) {
+      if (rosterId == null) return null;
+      const matchups = season.matchups?.[week] || season.matchups?.[String(week)] || [];
+      for (const m of matchups) {
+        if (m.teamA.rosterId === rosterId) return m.teamA.points;
+        if (m.teamB && m.teamB.rosterId === rosterId) return m.teamB.points;
+      }
+      return null;
+    }
+
+    function bracketSideHTML(season, rosterId, fromLabel, isWinner, week) {
       if (rosterId != null) {
         const team = teamById(season, rosterId);
-        return `<div class="bracket-side${isWinner ? " winner" : ""}">${
-          team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'
-        }</div>`;
+        const score = week != null ? scoreForRosterInWeek(season, week, rosterId) : null;
+        return `<div class="bracket-side${isWinner ? " winner" : ""}">
+          ${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}
+          ${score != null ? `<span class="bracket-score">${fmtPts(score)}</span>` : ""}
+        </div>`;
       }
       return `<div class="bracket-side"><span class="bracket-placeholder">${fromLabel || "TBD"}</span></div>`;
     }
@@ -151,33 +167,38 @@
       return "TBD";
     }
 
-    function bracketMatchHTML(season, m) {
+    function bracketMatchHTML(season, m, week) {
       const t1Winner = m.w != null && m.w === m.t1;
       const t2Winner = m.w != null && m.w === m.t2;
       return `
         <div class="bracket-match">
-          ${bracketSideHTML(season, m.t1, fromLabel(m.t1_from), t1Winner)}
+          ${bracketSideHTML(season, m.t1, fromLabel(m.t1_from), t1Winner, week)}
           <span class="bracket-vs">vs</span>
-          ${bracketSideHTML(season, m.t2, fromLabel(m.t2_from), t2Winner)}
+          ${bracketSideHTML(season, m.t2, fromLabel(m.t2_from), t2Winner, week)}
         </div>
       `;
     }
 
-    const PLACE_LABELS = { 1: "Championship", 3: "3rd Place Game", 5: "5th Place Game", 7: "7th Place Game" };
+    // Only the championship and 3rd-place game are shown — 5th/7th place
+    // games aren't, since the rookie draft order for those slots comes
+    // from Max PF, not from these results, and showing them next to each
+    // other would look contradictory.
+    const PLACE_LABELS = { 1: "Championship", 3: "3rd Place Game" };
+    const HIDDEN_PLACES = new Set([5, 7]);
 
-    function bracketRoundsHTML(season, matches) {
-      const rounds = [...new Set(matches.map((m) => m.r))].sort((a, b) => a - b);
+    function bracketRoundsHTML(season, matches, playoffWeekStart) {
+      const visible = matches.filter((m) => !HIDDEN_PLACES.has(m.p));
+      const rounds = [...new Set(visible.map((m) => m.r))].sort((a, b) => a - b);
       return rounds
         .map((r) => {
-          const roundMatches = matches.filter((m) => m.r === r);
+          const roundMatches = visible.filter((m) => m.r === r);
           const placementMatches = roundMatches.filter((m) => m.p != null);
-          const title = placementMatches.length
-            ? "Placement Games"
-            : `Round ${r}`;
+          const title = placementMatches.length ? "Placement Games" : `Round ${r}`;
+          const week = playoffWeekStart != null ? playoffWeekStart + r - 1 : null;
           const rowsHTML = roundMatches
             .map((m) => {
               const label = m.p != null ? PLACE_LABELS[m.p] || `Place ${m.p}/${m.p + 1} Game` : null;
-              return `${label ? `<div class="bracket-round-title" style="font-size:0.55rem;margin:12px 0 4px;">${label}</div>` : ""}${bracketMatchHTML(season, m)}`;
+              return `${label ? `<div class="bracket-round-title" style="font-size:0.55rem;margin:12px 0 4px;">${label}</div>` : ""}${bracketMatchHTML(season, m, week)}`;
             })
             .join("");
           return `<div class="bracket-round-title">${title}</div><div class="draft-list">${rowsHTML}</div>`;
@@ -189,6 +210,7 @@
       container.className = "";
       const winners = currentSeason.playoffBracket?.winners || [];
       const losers = currentSeason.playoffBracket?.losers || [];
+      const playoffWeekStart = currentSeason.leagueSettings?.playoffWeekStart ?? null;
       // Sleeper pre-seeds round 1 of the bracket before the playoffs
       // actually start (based on current, still-changing standings) — with
       // no winner decided on any match yet, that's not a real bracket, just
@@ -200,11 +222,16 @@
         return;
       }
 
-      const winnersHTML = bracketRoundsHTML(currentSeason, winners);
-      const losersHTML = losers.length
+      const winnersHTML = bracketRoundsHTML(currentSeason, winners, playoffWeekStart);
+      // The loser's-bracket bonus pick (3.13) is new starting in 2026 —
+      // don't show that bracket for earlier seasons even though the raw
+      // Sleeper data exists for them too.
+      const showLosersBracket = losers.length && parseInt(currentSeason.season, 10) >= 2026;
+      const losersHTML = showLosersBracket
         ? `<div class="info-section-title" style="margin-top:32px;">Loser's Bracket (Bonus Pick 3.13)</div>${bracketRoundsHTML(
             currentSeason,
-            losers
+            losers,
+            playoffWeekStart
           )}`
         : "";
 

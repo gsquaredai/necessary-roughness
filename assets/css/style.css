@@ -363,10 +363,22 @@ th.num {
   flex: 1;
   min-width: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .bracket-match .bracket-side.winner .team-name {
+  color: var(--win);
+}
+
+.bracket-score {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.bracket-side.winner .bracket-score {
   color: var(--win);
 }
 
