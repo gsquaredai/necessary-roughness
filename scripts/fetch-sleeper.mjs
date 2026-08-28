@@ -52,7 +52,7 @@ async function findChampionAndLastPlace(leagueId, league) {
   return { champion, lastPlace };
 }
 
-async function buildSeason(league) {
+async function buildSeason(league, nextLeague) {
   const leagueId = league.league_id;
   const season = league.season;
 
@@ -63,18 +63,21 @@ async function buildSeason(league) {
 
   const usersByOwnerId = Object.fromEntries(users.map((u) => [u.user_id, u]));
 
-  // That season's actual rookie/startup draft order (pick 1, 2, 3, ...),
-  // keyed by roster_id. Real historical data straight from Sleeper's draft
-  // object, not something derived from standings.
-  let draftPickByRoster = {};
-  if (league.draft_id) {
+  // The rookie draft order that resulted from THIS season's standings is the
+  // draft that ran going into the *next* season, not this league's own
+  // draft_id (that one ran going into this season, based on the season
+  // before it). Keyed by owner_id (draft_order, unlike slot_to_roster_id,
+  // maps directly to user_id, which — unlike roster_id — stays consistent
+  // across a different season's league object). No entry for the most
+  // recent season, since next season's draft hasn't happened yet, or for
+  // an inaugural season's predecessor, since it never existed.
+  let draftPickByOwner = {};
+  if (nextLeague?.draft_id) {
     try {
-      const draft = await fetchJSON(`${API}/draft/${league.draft_id}`);
-      for (const [pick, rosterId] of Object.entries(draft.slot_to_roster_id || {})) {
-        draftPickByRoster[rosterId] = Number(pick);
-      }
+      const draft = await fetchJSON(`${API}/draft/${nextLeague.draft_id}`);
+      draftPickByOwner = draft.draft_order || {};
     } catch {
-      // no draft data available for this season
+      // no draft data available for next season
     }
   }
 
@@ -123,7 +126,7 @@ async function buildSeason(league) {
       // own detailed standings view shows) and exposes it right on the
       // roster, so just use it directly rather than re-deriving it.
       maxPF: (r.settings?.ppts ?? 0) + (r.settings?.ppts_decimal ?? 0) / 100,
-      draftPick: draftPickByRoster[r.roster_id] ?? null,
+      draftPick: r.owner_id ? draftPickByOwner[r.owner_id] ?? null : null,
     };
   });
 
@@ -177,9 +180,11 @@ async function main() {
   await fs.mkdir("data", { recursive: true });
 
   const seasons = [];
-  for (const league of leagueChain) {
+  for (let i = 0; i < leagueChain.length; i++) {
+    const league = leagueChain[i];
+    const nextLeague = leagueChain[i + 1];
     console.log(`Fetching season ${league.season}...`);
-    const seasonData = await buildSeason(league);
+    const seasonData = await buildSeason(league, nextLeague);
     await fs.writeFile(
       `data/${league.season}.json`,
       JSON.stringify(seasonData, null, 2)
