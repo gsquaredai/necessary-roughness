@@ -179,66 +179,78 @@
         "matchupId": 6,
         "teamA": {
           "rosterId": 1,
-          "points": 130.6
+          "points": 130.6,
+          "projPoints": 141.4568
         },
         "teamB": {
           "rosterId": 9,
-          "points": 121.74
+          "points": 121.74,
+          "projPoints": 145.8032
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 2,
-          "points": 121.82
+          "points": 121.82,
+          "projPoints": 116.82520000000001
         },
         "teamB": {
           "rosterId": 10,
-          "points": 68.34
+          "points": 68.34,
+          "projPoints": 136.59640000000002
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 3,
-          "points": 109.74
+          "points": 109.74,
+          "projPoints": 134.7354
         },
         "teamB": {
           "rosterId": 4,
-          "points": 111.84
+          "points": 111.84,
+          "projPoints": 131.8178
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 5,
-          "points": 117.92
+          "points": 117.92,
+          "projPoints": 128.5256
         },
         "teamB": {
           "rosterId": 8,
-          "points": 115.22
+          "points": 115.22,
+          "projPoints": 133.8132
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 6,
-          "points": 132.34
+          "points": 132.34,
+          "projPoints": 123.7988
         },
         "teamB": {
           "rosterId": 12,
-          "points": 134.68
+          "points": 134.68,
+          "projPoints": 127.47140000000002
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 7,
-          "points": 121.76
+          "points": 121.76,
+          "projPoints": 130.0944
         },
         "teamB": {
           "rosterId": 11,
-          "points": 113.82
+          "points": 113.82,
+          "projPoints": 118.71560000000001
         }
       }
     ],
@@ -247,66 +259,78 @@
         "matchupId": 6,
         "teamA": {
           "rosterId": 1,
-          "points": 128.48
+          "points": 128.48,
+          "projPoints": 143.2108
         },
         "teamB": {
           "rosterId": 5,
-          "points": 171.94
+          "points": 171.94,
+          "projPoints": 132.927
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 2,
-          "points": 153.02
+          "points": 153.02,
+          "projPoints": 117.74300000000001
         },
         "teamB": {
           "rosterId": 11,
-          "points": 117.22
+          "points": 117.22,
+          "projPoints": 118.68460000000002
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 3,
-          "points": 122.08
+          "points": 122.08,
+          "projPoints": 132.0776
         },
         "teamB": {
           "rosterId": 7,
-          "points": 113.84
+          "points": 113.84,
+          "projPoints": 132.5378
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 4,
-          "points": 139.72
+          "points": 139.72,
+          "projPoints": 127.12900000000002
         },
         "teamB": {
           "rosterId": 6,
-          "points": 91.7
+          "points": 91.7,
+          "projPoints": 130.40540000000001
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 8,
-          "points": 125.68
+          "points": 125.68,
+          "projPoints": 138.58159999999998
         },
         "teamB": {
           "rosterId": 12,
-          "points": 118.62
+          "points": 118.62,
+          "projPoints": 130.3422
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 9,
-          "points": 140.74
+          "points": 140.74,
+          "projPoints": 141.7946
         },
         "teamB": {
           "rosterId": 10,
-          "points": 114.02
+          "points": 114.02,
+          "projPoints": 123.3962
         }
       }
     ],
@@ -315,66 +339,78 @@
         "matchupId": 4,
         "teamA": {
           "rosterId": 1,
-          "points": 118.42
+          "points": 118.42,
+          "projPoints": 136.07080000000002
         },
         "teamB": {
           "rosterId": 10,
-          "points": 102.84
+          "points": 102.84,
+          "projPoints": 118.79039999999999
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 2,
-          "points": 101.36
+          "points": 101.36,
+          "projPoints": 130.133
         },
         "teamB": {
           "rosterId": 3,
-          "points": 130.3
+          "points": 130.3,
+          "projPoints": 121.6578
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 4,
-          "points": 120.64
+          "points": 120.64,
+          "projPoints": 130.56040000000002
         },
         "teamB": {
           "rosterId": 8,
-          "points": 116.74
+          "points": 116.74,
+          "projPoints": 139.9274
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 5,
-          "points": 148.24
+          "points": 148.24,
+          "projPoints": 141.638
         },
         "teamB": {
           "rosterId": 12,
-          "points": 130.86
+          "points": 130.86,
+          "projPoints": 138.824
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 6,
-          "points": 76.5
+          "points": 76.5,
+          "projPoints": 124.9438
         },
         "teamB": {
           "rosterId": 7,
-          "points": 152.9
+          "points": 152.9,
+          "projPoints": 139.2786
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 9,
-          "points": 91.4
+          "points": 91.4,
+          "projPoints": 136.18820000000002
         },
         "teamB": {
           "rosterId": 11,
-          "points": 114.16
+          "points": 114.16,
+          "projPoints": 121.1436
         }
       }
     ],
@@ -383,66 +419,78 @@
         "matchupId": 4,
         "teamA": {
           "rosterId": 1,
-          "points": 145.64
+          "points": 145.64,
+          "projPoints": 139.4948
         },
         "teamB": {
           "rosterId": 11,
-          "points": 97.02
+          "points": 97.02,
+          "projPoints": 120.9624
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 2,
-          "points": 115.14
+          "points": 115.14,
+          "projPoints": 105.9258
         },
         "teamB": {
           "rosterId": 6,
-          "points": 138.92
+          "points": 138.92,
+          "projPoints": 119.00500000000001
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 3,
-          "points": 133.92
+          "points": 133.92,
+          "projPoints": 120.04320000000001
         },
         "teamB": {
           "rosterId": 9,
-          "points": 135.82
+          "points": 135.82,
+          "projPoints": 126.05560000000003
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 4,
-          "points": 125.12
+          "points": 125.12,
+          "projPoints": 136.675
         },
         "teamB": {
           "rosterId": 12,
-          "points": 162.42
+          "points": 162.42,
+          "projPoints": 137.2358
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 5,
-          "points": 165.82
+          "points": 165.82,
+          "projPoints": 138.4982
         },
         "teamB": {
           "rosterId": 10,
-          "points": 101.88
+          "points": 101.88,
+          "projPoints": 109.5888
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 7,
-          "points": 132.78
+          "points": 132.78,
+          "projPoints": 129.69920000000002
         },
         "teamB": {
           "rosterId": 8,
-          "points": 141.72
+          "points": 141.72,
+          "projPoints": 132.6854
         }
       }
     ],
@@ -451,66 +499,78 @@
         "matchupId": 5,
         "teamA": {
           "rosterId": 1,
-          "points": 76.72
+          "points": 76.72,
+          "projPoints": 122.51140000000001
         },
         "teamB": {
           "rosterId": 3,
-          "points": 125.14
+          "points": 125.14,
+          "projPoints": 116.99580000000002
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 2,
-          "points": 93.98
+          "points": 93.98,
+          "projPoints": 86.1192
         },
         "teamB": {
           "rosterId": 8,
-          "points": 157.68
+          "points": 157.68,
+          "projPoints": 136.11100000000002
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 4,
-          "points": 95.38
+          "points": 95.38,
+          "projPoints": 121.8306
         },
         "teamB": {
           "rosterId": 5,
-          "points": 184.24
+          "points": 184.24,
+          "projPoints": 142.96540000000002
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 6,
-          "points": 116.64
+          "points": 116.64,
+          "projPoints": 112.66839999999999
         },
         "teamB": {
           "rosterId": 9,
-          "points": 121.04
+          "points": 121.04,
+          "projPoints": 102.0392
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 7,
-          "points": 167.92
+          "points": 167.92,
+          "projPoints": 131.1924
         },
         "teamB": {
           "rosterId": 12,
-          "points": 128.78
+          "points": 128.78,
+          "projPoints": 135.5164
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 10,
-          "points": 171.6
+          "points": 171.6,
+          "projPoints": 112.72660000000002
         },
         "teamB": {
           "rosterId": 11,
-          "points": 125.7
+          "points": 125.7,
+          "projPoints": 114.6132
         }
       }
     ],
@@ -519,66 +579,78 @@
         "matchupId": 4,
         "teamA": {
           "rosterId": 1,
-          "points": 81.24
+          "points": 81.24,
+          "projPoints": 107.1044
         },
         "teamB": {
           "rosterId": 6,
-          "points": 146.66
+          "points": 146.66,
+          "projPoints": 128.0828
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 2,
-          "points": 81.32
+          "points": 81.32,
+          "projPoints": 105.35920000000002
         },
         "teamB": {
           "rosterId": 12,
-          "points": 139.08
+          "points": 139.08,
+          "projPoints": 122.4464
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 3,
-          "points": 122.2
+          "points": 122.2,
+          "projPoints": 116.8776
         },
         "teamB": {
           "rosterId": 10,
-          "points": 91.64
+          "points": 91.64,
+          "projPoints": 112.892
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 4,
-          "points": 96.54
+          "points": 96.54,
+          "projPoints": 123.82439999999998
         },
         "teamB": {
           "rosterId": 7,
-          "points": 129.12
+          "points": 129.12,
+          "projPoints": 132.83140000000003
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 5,
-          "points": 133.5
+          "points": 133.5,
+          "projPoints": 152.5976
         },
         "teamB": {
           "rosterId": 11,
-          "points": 107.26
+          "points": 107.26,
+          "projPoints": 105.2524
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 8,
-          "points": 168.94
+          "points": 168.94,
+          "projPoints": 143.2398
         },
         "teamB": {
           "rosterId": 9,
-          "points": 143.76
+          "points": 143.76,
+          "projPoints": 119.85680000000002
         }
       }
     ],
@@ -587,66 +659,78 @@
         "matchupId": 3,
         "teamA": {
           "rosterId": 1,
-          "points": 89.16
+          "points": 89.16,
+          "projPoints": 89.605
         },
         "teamB": {
           "rosterId": 8,
-          "points": 141.18
+          "points": 141.18,
+          "projPoints": 141.48880000000003
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 2,
-          "points": 92.34
+          "points": 92.34,
+          "projPoints": 116.0862
         },
         "teamB": {
           "rosterId": 4,
-          "points": 89.22
+          "points": 89.22,
+          "projPoints": 101.2912
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 3,
-          "points": 101.9
+          "points": 101.9,
+          "projPoints": 133.4108
         },
         "teamB": {
           "rosterId": 11,
-          "points": 146.84
+          "points": 146.84,
+          "projPoints": 110.96019999999999
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 5,
-          "points": 139.68
+          "points": 139.68,
+          "projPoints": 151.0174
         },
         "teamB": {
           "rosterId": 7,
-          "points": 131.48
+          "points": 131.48,
+          "projPoints": 124.64080000000001
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 6,
-          "points": 116.56
+          "points": 116.56,
+          "projPoints": 121.916
         },
         "teamB": {
           "rosterId": 10,
-          "points": 145.8
+          "points": 145.8,
+          "projPoints": 115.4354
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 9,
-          "points": 178.22
+          "points": 178.22,
+          "projPoints": 127.57220000000001
         },
         "teamB": {
           "rosterId": 12,
-          "points": 148.76
+          "points": 148.76,
+          "projPoints": 135.2668
         }
       }
     ],
@@ -655,66 +739,78 @@
         "matchupId": 4,
         "teamA": {
           "rosterId": 1,
-          "points": 150.36
+          "points": 150.36,
+          "projPoints": 106.1034
         },
         "teamB": {
           "rosterId": 12,
-          "points": 106.08
+          "points": 106.08,
+          "projPoints": 129.5376
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 2,
-          "points": 124.88
+          "points": 124.88,
+          "projPoints": 108.7954
         },
         "teamB": {
           "rosterId": 7,
-          "points": 163.32
+          "points": 163.32,
+          "projPoints": 128.4358
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 3,
-          "points": 129.74
+          "points": 129.74,
+          "projPoints": 118.05479999999997
         },
         "teamB": {
           "rosterId": 5,
-          "points": 143.32
+          "points": 143.32,
+          "projPoints": 139.54719999999998
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 4,
-          "points": 95.1
+          "points": 95.1,
+          "projPoints": 98.72760000000002
         },
         "teamB": {
           "rosterId": 9,
-          "points": 130.94
+          "points": 130.94,
+          "projPoints": 127.53359999999999
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 6,
-          "points": 128.6
+          "points": 128.6,
+          "projPoints": 128.94039999999998
         },
         "teamB": {
           "rosterId": 11,
-          "points": 61.02
+          "points": 61.02,
+          "projPoints": 103.4982
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 8,
-          "points": 121.96
+          "points": 121.96,
+          "projPoints": 105.49400000000003
         },
         "teamB": {
           "rosterId": 10,
-          "points": 97.62
+          "points": 97.62,
+          "projPoints": 105.90140000000001
         }
       }
     ],
@@ -723,66 +819,78 @@
         "matchupId": 3,
         "teamA": {
           "rosterId": 1,
-          "points": 192.4
+          "points": 192.4,
+          "projPoints": 132.959
         },
         "teamB": {
           "rosterId": 4,
-          "points": 113.16
+          "points": 113.16,
+          "projPoints": 115.86500000000001
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 2,
-          "points": 123.3
+          "points": 123.3,
+          "projPoints": 103.534
         },
         "teamB": {
           "rosterId": 5,
-          "points": 120.06
+          "points": 120.06,
+          "projPoints": 149.78340000000003
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 3,
-          "points": 101.74
+          "points": 101.74,
+          "projPoints": 136.2604
         },
         "teamB": {
           "rosterId": 6,
-          "points": 118.52
+          "points": 118.52,
+          "projPoints": 129.84920000000002
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 7,
-          "points": 43.5
+          "points": 43.5,
+          "projPoints": 77.93199999999999
         },
         "teamB": {
           "rosterId": 9,
-          "points": 160.04
+          "points": 160.04,
+          "projPoints": 135.1352
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 8,
-          "points": 167.9
+          "points": 167.9,
+          "projPoints": 146.178
         },
         "teamB": {
           "rosterId": 11,
-          "points": 98.54
+          "points": 98.54,
+          "projPoints": 94.7372
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 10,
-          "points": 87.16
+          "points": 87.16,
+          "projPoints": 121.3418
         },
         "teamB": {
           "rosterId": 12,
-          "points": 157.44
+          "points": 157.44,
+          "projPoints": 132.786
         }
       }
     ],
@@ -791,66 +899,78 @@
         "matchupId": 2,
         "teamA": {
           "rosterId": 1,
-          "points": 76
+          "points": 76,
+          "projPoints": 105.13680000000001
         },
         "teamB": {
           "rosterId": 7,
-          "points": 122.68
+          "points": 122.68,
+          "projPoints": 130.6368
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 2,
-          "points": 112.7
+          "points": 112.7,
+          "projPoints": 88.5896
         },
         "teamB": {
           "rosterId": 9,
-          "points": 101.7
+          "points": 101.7,
+          "projPoints": 107.1694
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 3,
-          "points": 120.72
+          "points": 120.72,
+          "projPoints": 124.95660000000001
         },
         "teamB": {
           "rosterId": 8,
-          "points": 154.5
+          "points": 154.5,
+          "projPoints": 148.1208
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 4,
-          "points": 135.96
+          "points": 135.96,
+          "projPoints": 122.00980000000001
         },
         "teamB": {
           "rosterId": 10,
-          "points": 138.12
+          "points": 138.12,
+          "projPoints": 110.2152
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 5,
-          "points": 155.04
+          "points": 155.04,
+          "projPoints": 149.2316
         },
         "teamB": {
           "rosterId": 6,
-          "points": 122.42
+          "points": 122.42,
+          "projPoints": 122.4882
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 11,
-          "points": 112.34
+          "points": 112.34,
+          "projPoints": 116.60400000000003
         },
         "teamB": {
           "rosterId": 12,
-          "points": 118.1
+          "points": 118.1,
+          "projPoints": 138.3808
         }
       }
     ],
@@ -859,66 +979,78 @@
         "matchupId": 1,
         "teamA": {
           "rosterId": 1,
-          "points": 94.94
+          "points": 94.94,
+          "projPoints": 126.53439999999998
         },
         "teamB": {
           "rosterId": 2,
-          "points": 95.14
+          "points": 95.14,
+          "projPoints": 115.14540000000001
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 3,
-          "points": 98.28
+          "points": 98.28,
+          "projPoints": 123.28399999999999
         },
         "teamB": {
           "rosterId": 12,
-          "points": 113.84
+          "points": 113.84,
+          "projPoints": 138.575
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 4,
-          "points": 151
+          "points": 151,
+          "projPoints": 114.56639999999999
         },
         "teamB": {
           "rosterId": 11,
-          "points": 102.32
+          "points": 102.32,
+          "projPoints": 97.53380000000001
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 5,
-          "points": 115.18
+          "points": 115.18,
+          "projPoints": 151.84220000000002
         },
         "teamB": {
           "rosterId": 9,
-          "points": 103.52
+          "points": 103.52,
+          "projPoints": 139.92680000000001
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 6,
-          "points": 88.24
+          "points": 88.24,
+          "projPoints": 136.324
         },
         "teamB": {
           "rosterId": 8,
-          "points": 117.36
+          "points": 117.36,
+          "projPoints": 143.96020000000001
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 7,
-          "points": 99.54
+          "points": 99.54,
+          "projPoints": 105.1216
         },
         "teamB": {
           "rosterId": 10,
-          "points": 124.28
+          "points": 124.28,
+          "projPoints": 122.56280000000002
         }
       }
     ],
@@ -927,66 +1059,78 @@
         "matchupId": 6,
         "teamA": {
           "rosterId": 1,
-          "points": 102.4
+          "points": 102.4,
+          "projPoints": 128.76760000000002
         },
         "teamB": {
           "rosterId": 5,
-          "points": 151.24
+          "points": 151.24,
+          "projPoints": 153.9762
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 2,
-          "points": 114.02
+          "points": 114.02,
+          "projPoints": 109.5026
         },
         "teamB": {
           "rosterId": 11,
-          "points": 97.16
+          "points": 97.16,
+          "projPoints": 92.85400000000001
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 3,
-          "points": 127.76
+          "points": 127.76,
+          "projPoints": 111.7174
         },
         "teamB": {
           "rosterId": 7,
-          "points": 74.16
+          "points": 74.16,
+          "projPoints": 110.89699999999999
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 4,
-          "points": 103.26
+          "points": 103.26,
+          "projPoints": 131.20260000000002
         },
         "teamB": {
           "rosterId": 6,
-          "points": 72.34
+          "points": 72.34,
+          "projPoints": 114.7182
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 8,
-          "points": 155.68
+          "points": 155.68,
+          "projPoints": 122.2766
         },
         "teamB": {
           "rosterId": 12,
-          "points": 148.48
+          "points": 148.48,
+          "projPoints": 141.6542
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 9,
-          "points": 100.8
+          "points": 100.8,
+          "projPoints": 124.13140000000001
         },
         "teamB": {
           "rosterId": 10,
-          "points": 144.86
+          "points": 144.86,
+          "projPoints": 119.11880000000001
         }
       }
     ],
@@ -995,66 +1139,78 @@
         "matchupId": 3,
         "teamA": {
           "rosterId": 1,
-          "points": 115.96
+          "points": 115.96,
+          "projPoints": 127.2078
         },
         "teamB": {
           "rosterId": 10,
-          "points": 83.2
+          "points": 83.2,
+          "projPoints": 128.2032
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 2,
-          "points": 101.26
+          "points": 101.26,
+          "projPoints": 116.95279999999998
         },
         "teamB": {
           "rosterId": 3,
-          "points": 112
+          "points": 112,
+          "projPoints": 121.29260000000001
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 4,
-          "points": 144.88
+          "points": 144.88,
+          "projPoints": 127.79019999999998
         },
         "teamB": {
           "rosterId": 8,
-          "points": 99.18
+          "points": 99.18,
+          "projPoints": 141.5326
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 5,
-          "points": 136.58
+          "points": 136.58,
+          "projPoints": 149.339
         },
         "teamB": {
           "rosterId": 12,
-          "points": 123.4
+          "points": 123.4,
+          "projPoints": 140.2204
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 6,
-          "points": 118.3
+          "points": 118.3,
+          "projPoints": 124.04619999999998
         },
         "teamB": {
           "rosterId": 7,
-          "points": 115.84
+          "points": 115.84,
+          "projPoints": 132.6568
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 9,
-          "points": 159.22
+          "points": 159.22,
+          "projPoints": 136.13559999999998
         },
         "teamB": {
           "rosterId": 11,
-          "points": 108
+          "points": 108,
+          "projPoints": 103.38719999999999
         }
       }
     ],
@@ -1063,66 +1219,78 @@
         "matchupId": 1,
         "teamA": {
           "rosterId": 1,
-          "points": 100.4
+          "points": 100.4,
+          "projPoints": 128.4716
         },
         "teamB": {
           "rosterId": 9,
-          "points": 91.7
+          "points": 91.7,
+          "projPoints": 134.5916
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 2,
-          "points": 118.38
+          "points": 118.38,
+          "projPoints": 110.27779999999998
         },
         "teamB": {
           "rosterId": 10,
-          "points": 122.48
+          "points": 122.48,
+          "projPoints": 116.88799999999999
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 3,
-          "points": 100.68
+          "points": 100.68,
+          "projPoints": 122.54939999999999
         },
         "teamB": {
           "rosterId": 4,
-          "points": 135.72
+          "points": 135.72,
+          "projPoints": 128.39880000000002
         }
       },
       {
         "matchupId": 2,
         "teamA": {
           "rosterId": 5,
-          "points": 154.66
+          "points": 154.66,
+          "projPoints": 147.6798
         },
         "teamB": {
           "rosterId": 8,
-          "points": 131.78
+          "points": 131.78,
+          "projPoints": 129.65420000000003
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 6,
-          "points": 118.78
+          "points": 118.78,
+          "projPoints": 124.53000000000002
         },
         "teamB": {
           "rosterId": 12,
-          "points": 114.9
+          "points": 114.9,
+          "projPoints": 120.30820000000001
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 7,
-          "points": 84.94
+          "points": 84.94,
+          "projPoints": 123.9702
         },
         "teamB": {
           "rosterId": 11,
-          "points": 97.6
+          "points": 97.6,
+          "projPoints": 86.90299999999999
         }
       }
     ],
@@ -1131,66 +1299,78 @@
         "matchupId": 2,
         "teamA": {
           "rosterId": 1,
-          "points": 143.4
+          "points": 143.4,
+          "projPoints": 136.84360000000004
         },
         "teamB": {
           "rosterId": 12,
-          "points": 122.62
+          "points": 122.62,
+          "projPoints": 140.03820000000002
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 2,
-          "points": 107.04
+          "points": 107.04,
+          "projPoints": 106.02319999999999
         },
         "teamB": {
           "rosterId": 3,
-          "points": 127.24
+          "points": 127.24,
+          "projPoints": 105.22780000000002
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 4,
-          "points": 132.8
+          "points": 132.8,
+          "projPoints": 130.743
         },
         "teamB": {
           "rosterId": 9,
-          "points": 123.24
+          "points": 123.24,
+          "projPoints": 139.3234
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 5,
-          "points": 197.18
+          "points": 197.18,
+          "projPoints": 147.245
         },
         "teamB": {
           "rosterId": 6,
-          "points": 110.5
+          "points": 110.5,
+          "projPoints": 128.316
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 7,
-          "points": 143.96
+          "points": 143.96,
+          "projPoints": 121.24479999999998
         },
         "teamB": {
           "rosterId": 8,
-          "points": 168.88
+          "points": 168.88,
+          "projPoints": 132.7922
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 10,
-          "points": 161.5
+          "points": 161.5,
+          "projPoints": 120.816
         },
         "teamB": {
           "rosterId": 11,
-          "points": 127.46
+          "points": 127.46,
+          "projPoints": 119.6368
         }
       }
     ],
@@ -1199,66 +1379,78 @@
         "matchupId": 2,
         "teamA": {
           "rosterId": 1,
-          "points": 138.44
+          "points": 138.44,
+          "projPoints": 138.1172
         },
         "teamB": {
           "rosterId": 8,
-          "points": 149
+          "points": 149,
+          "projPoints": 130.9136
         }
       },
       {
         "matchupId": 5,
         "teamA": {
           "rosterId": 2,
-          "points": 85.46
+          "points": 85.46,
+          "projPoints": 102.36460000000001
         },
         "teamB": {
           "rosterId": 11,
-          "points": 52.46
+          "points": 52.46,
+          "projPoints": 111.0512
         }
       },
       {
         "matchupId": 6,
         "teamA": {
           "rosterId": 3,
-          "points": 115.48
+          "points": 115.48,
+          "projPoints": 117.133
         },
         "teamB": {
           "rosterId": 10,
-          "points": 123.84
+          "points": 123.84,
+          "projPoints": 127.38020000000002
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 4,
-          "points": 120.9
+          "points": 120.9,
+          "projPoints": 130.8206
         },
         "teamB": {
           "rosterId": 5,
-          "points": 195.2
+          "points": 195.2,
+          "projPoints": 146.4398
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 6,
-          "points": 120.72
+          "points": 120.72,
+          "projPoints": 123.2518
         },
         "teamB": {
           "rosterId": 9,
-          "points": 140.56
+          "points": 140.56,
+          "projPoints": 129.25
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 7,
-          "points": 89.72
+          "points": 89.72,
+          "projPoints": 128.3062
         },
         "teamB": {
           "rosterId": 12,
-          "points": 185.18
+          "points": 185.18,
+          "projPoints": 134.58900000000003
         }
       }
     ],
@@ -1267,44 +1459,52 @@
         "matchupId": 2,
         "teamA": {
           "rosterId": 1,
-          "points": 121.66
+          "points": 121.66,
+          "projPoints": 132.873
         },
         "teamB": {
           "rosterId": 4,
-          "points": 109.62
+          "points": 109.62,
+          "projPoints": 129.27159999999998
         }
       },
       {
         "matchupId": 1,
         "teamA": {
           "rosterId": 5,
-          "points": 145.8
+          "points": 145.8,
+          "projPoints": 133.5894
         },
         "teamB": {
           "rosterId": 8,
-          "points": 121.62
+          "points": 121.62,
+          "projPoints": 139.0334
         }
       },
       {
         "matchupId": 4,
         "teamA": {
           "rosterId": 6,
-          "points": 62.24
+          "points": 62.24,
+          "projPoints": 84.15520000000001
         },
         "teamB": {
           "rosterId": 7,
-          "points": 128.38
+          "points": 128.38,
+          "projPoints": 119.09020000000001
         }
       },
       {
         "matchupId": 3,
         "teamA": {
           "rosterId": 9,
-          "points": 136.6
+          "points": 136.6,
+          "projPoints": 115.5608
         },
         "teamB": {
           "rosterId": 12,
-          "points": 168.9
+          "points": 168.9,
+          "projPoints": 141.3552
         }
       }
     ],
@@ -1312,6 +1512,182 @@
   },
   "champion": 5,
   "lastPlace": 2,
+  "playoffBracket": {
+    "winners": [
+      {
+        "m": 1,
+        "r": 1,
+        "l": 6,
+        "w": 5,
+        "t1": 5,
+        "t2": 6
+      },
+      {
+        "m": 2,
+        "r": 1,
+        "l": 12,
+        "w": 1,
+        "t1": 12,
+        "t2": 1
+      },
+      {
+        "m": 3,
+        "r": 1,
+        "l": 9,
+        "w": 4,
+        "t1": 9,
+        "t2": 4
+      },
+      {
+        "m": 4,
+        "r": 1,
+        "l": 7,
+        "w": 8,
+        "t1": 8,
+        "t2": 7
+      },
+      {
+        "m": 5,
+        "r": 2,
+        "l": 4,
+        "w": 5,
+        "t1": 5,
+        "t2": 4
+      },
+      {
+        "m": 6,
+        "r": 2,
+        "l": 1,
+        "w": 8,
+        "t1": 8,
+        "t2": 1
+      },
+      {
+        "m": 7,
+        "r": 2,
+        "l": 6,
+        "w": 9,
+        "t1": 9,
+        "t2": 6
+      },
+      {
+        "m": 8,
+        "r": 2,
+        "l": 7,
+        "w": 12,
+        "t1": 12,
+        "t2": 7
+      },
+      {
+        "p": 1,
+        "m": 9,
+        "r": 3,
+        "l": 8,
+        "w": 5,
+        "t1": 5,
+        "t2": 8,
+        "t2_from": {
+          "w": 6
+        },
+        "t1_from": {
+          "w": 5
+        }
+      },
+      {
+        "p": 3,
+        "m": 10,
+        "r": 3,
+        "l": 4,
+        "w": 1,
+        "t1": 4,
+        "t2": 1,
+        "t2_from": {
+          "l": 6
+        },
+        "t1_from": {
+          "l": 5
+        }
+      },
+      {
+        "p": 5,
+        "m": 11,
+        "r": 3,
+        "l": 9,
+        "w": 12,
+        "t1": 9,
+        "t2": 12,
+        "t2_from": {
+          "w": 8
+        },
+        "t1_from": {
+          "w": 7
+        }
+      },
+      {
+        "p": 7,
+        "m": 12,
+        "r": 3,
+        "l": 6,
+        "w": 7,
+        "t1": 6,
+        "t2": 7,
+        "t2_from": {
+          "l": 8
+        },
+        "t1_from": {
+          "l": 7
+        }
+      }
+    ],
+    "losers": [
+      {
+        "m": 1,
+        "r": 1,
+        "l": 10,
+        "w": 11,
+        "t1": 11,
+        "t2": 10
+      },
+      {
+        "m": 2,
+        "r": 1,
+        "l": 3,
+        "w": 2,
+        "t1": 3,
+        "t2": 2
+      },
+      {
+        "m": 3,
+        "p": 1,
+        "r": 2,
+        "l": 2,
+        "w": 11,
+        "t1": 11,
+        "t2": 2,
+        "t2_from": {
+          "w": 2
+        },
+        "t1_from": {
+          "w": 1
+        }
+      },
+      {
+        "m": 4,
+        "p": 3,
+        "r": 2,
+        "l": 10,
+        "w": 3,
+        "t1": 10,
+        "t2": 3,
+        "t2_from": {
+          "l": 2
+        },
+        "t1_from": {
+          "l": 1
+        }
+      }
+    ]
+  },
   "draft": {
     "rounds": 4,
     "draftedAt": "2025-06-03T00:44:35.223Z",

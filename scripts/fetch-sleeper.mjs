@@ -99,6 +99,31 @@ async function fetchWeeklyStats(season, week) {
   }
 }
 
+// Sleeper doesn't expose per-league-scored projections directly — only
+// generic std/half-PPR/PPR totals, which don't reflect this league's actual
+// settings (TE premium, 6pt passing TDs, IDP, etc). It does expose the same
+// raw per-category projected stats (pass_yd, rec, idp_sack, ...) that real
+// box scores use, though, so score them ourselves with this league's own
+// scoring_settings — the same dot-product Sleeper's own engine effectively
+// runs for actual games, just applied to projected stats instead.
+async function fetchWeeklyProjections(season, week) {
+  try {
+    return await fetchJSON(`${API}/projections/nfl/regular/${season}/${week}`);
+  } catch {
+    return null;
+  }
+}
+
+function computeLeagueScoredPoints(rawStats, scoringSettings) {
+  if (!rawStats || !scoringSettings) return 0;
+  let total = 0;
+  for (const [key, weight] of Object.entries(scoringSettings)) {
+    const value = rawStats[key];
+    if (value) total += value * weight;
+  }
+  return total;
+}
+
 async function findChampionAndLastPlace(leagueId, league) {
   let champion = league.metadata?.latest_league_winner_roster_id
     ? Number(league.metadata.latest_league_winner_roster_id)
@@ -122,6 +147,23 @@ async function findChampionAndLastPlace(leagueId, league) {
   }
 
   return { champion, lastPlace };
+}
+
+// The raw bracket data for the Matchups page's "Playoffs" view: the
+// 8-team playoff bracket (winners_bracket — despite the name, it tracks
+// every playoff team through 3 rounds of re-seeding, not just who's still
+// alive) and the 4-team consolation bracket among the teams that missed
+// the playoffs (losers_bracket), whose winner earns the bonus 3.13 rookie
+// pick. Both are Sleeper-native brackets, not something we compute.
+async function fetchPlayoffBrackets(leagueId) {
+  const [winners, losers] = await Promise.all([
+    fetchJSON(`${API}/league/${leagueId}/winners_bracket`).catch(() => []),
+    fetchJSON(`${API}/league/${leagueId}/losers_bracket`).catch(() => []),
+  ]);
+  return {
+    winners: winners.filter((m) => m.t1 != null || m.t2 != null),
+    losers: losers.filter((m) => m.t1 != null || m.t2 != null),
+  };
 }
 
 // All transactions (trades, waiver claims, free agent moves) for a league,
@@ -327,6 +369,16 @@ async function buildSeason(league, nextLeague) {
     }
     if (!raw || raw.length === 0) continue;
 
+    const projections = await fetchWeeklyProjections(season, week);
+    const projTotalFor = (entry) => {
+      if (!projections) return null;
+      const starters = (entry.starters || []).filter((pid) => pid && pid !== "0");
+      return starters.reduce(
+        (sum, pid) => sum + computeLeagueScoredPoints(projections[pid], league.scoring_settings),
+        0
+      );
+    };
+
     const byMatchupId = new Map();
     const pointsThisWeek = {};
     for (const entry of raw) {
@@ -339,13 +391,14 @@ async function buildSeason(league, nextLeague) {
 
     matchupsByWeek[week] = [...byMatchupId.values()].map(([a, b]) => ({
       matchupId: a.matchup_id,
-      teamA: { rosterId: a.roster_id, points: a.points ?? 0 },
-      teamB: b ? { rosterId: b.roster_id, points: b.points ?? 0 } : null,
+      teamA: { rosterId: a.roster_id, points: a.points ?? 0, projPoints: projTotalFor(a) },
+      teamB: b ? { rosterId: b.roster_id, points: b.points ?? 0, projPoints: projTotalFor(b) } : null,
     }));
   }
 
   const { champion, lastPlace } = await findChampionAndLastPlace(leagueId, league);
   const rawTransactions = await fetchLeagueTransactions(leagueId, season);
+  const playoffBracket = await fetchPlayoffBrackets(leagueId);
 
   return {
     season,
@@ -356,6 +409,7 @@ async function buildSeason(league, nextLeague) {
     matchups: matchupsByWeek,
     champion,
     lastPlace,
+    playoffBracket,
     draft: draftBoard,
     rawTransactions,
     rosterPlayers,

@@ -60,16 +60,20 @@
 
     async function loadSeasonInto(seasonKey) {
       currentSeason = await loadSeason(seasonKey);
+      const lastRegularWeek = (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
       const weeks = Object.keys(currentSeason.matchups)
         .map(Number)
+        .filter((w) => w <= lastRegularWeek)
         .sort((a, b) => a - b);
 
       const weekSelect = document.getElementById("week-select");
-      weekSelect.innerHTML = weeks.map((w) => `<option value="${w}">Week ${w}</option>`).join("");
+      weekSelect.innerHTML =
+        weeks.map((w) => `<option value="${w}">Week ${w}</option>`).join("") +
+        `<option value="playoffs">Playoffs</option>`;
 
       if (weeks.length) {
         const latestPlayed = latestWeekWithData(currentSeason);
-        weekSelect.value = latestPlayed ?? weeks[0];
+        weekSelect.value = latestPlayed != null && latestPlayed > lastRegularWeek ? "playoffs" : latestPlayed ?? weeks[0];
         renderWeek();
       } else {
         document.getElementById("matchups-list").innerHTML =
@@ -79,33 +83,135 @@
 
     function renderWeek() {
       const week = document.getElementById("week-select").value;
+      const container = document.getElementById("matchups-list");
+      if (week === "playoffs") {
+        renderPlayoffs(container);
+        return;
+      }
+      container.className = "matchup-grid";
       const matchups = currentSeason.matchups[week] || [];
-      document.getElementById("matchups-list").innerHTML = matchups
-        .map((m) => renderMatchup(currentSeason, m))
-        .join("");
+      container.innerHTML = matchups.map((m) => renderMatchup(currentSeason, m, Number(week))).join("");
     }
 
-    function renderMatchup(season, m) {
+    function scoreBlockHTML(side, played, isWinner) {
+      if (!side) return '<div class="points">—</div>';
+      if (played) {
+        const projHTML =
+          side.projPoints != null ? `<div class="proj-points">Proj ${fmtPts(side.projPoints)}</div>` : "";
+        return `<div class="points ${isWinner ? "winner" : ""}">${fmtPts(side.points)}</div>${projHTML}`;
+      }
+      return `
+        <div class="points proj-primary">${side.projPoints != null ? fmtPts(side.projPoints) : "—"}</div>
+        <div class="proj-points">Projected</div>
+      `;
+    }
+
+    function renderMatchup(season, m, week) {
       const teamA = teamById(season, m.teamA.rosterId);
       const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
-      const aWins = teamB && m.teamA.points > m.teamB.points;
-      const bWins = teamB && m.teamB.points > m.teamA.points;
+      const played = weekHasBeenPlayed(season, week);
+      const aWins = played && teamB && m.teamA.points > m.teamB.points;
+      const bWins = played && teamB && m.teamB.points > m.teamA.points;
       return `
         <div class="matchup">
           <div class="side">
             ${teamCellHTML(teamA)}
           </div>
           <div style="text-align:center;">
-            <div class="points ${aWins ? "winner" : ""}">${fmtPts(m.teamA.points)}</div>
+            ${scoreBlockHTML(m.teamA, played, aWins)}
             <div class="vs">vs</div>
-            <div class="points ${bWins ? "winner" : ""}">${
-        teamB ? fmtPts(m.teamB.points) : "—"
-      }</div>
+            ${scoreBlockHTML(m.teamB, played, bWins)}
           </div>
           <div class="side right">
             ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
           </div>
         </div>
+      `;
+    }
+
+    // ---------- playoff bracket ----------
+
+    function bracketSideHTML(season, rosterId, fromLabel, isWinner) {
+      if (rosterId != null) {
+        const team = teamById(season, rosterId);
+        return `<div class="bracket-side${isWinner ? " winner" : ""}">${
+          team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'
+        }</div>`;
+      }
+      return `<div class="bracket-side"><span class="bracket-placeholder">${fromLabel || "TBD"}</span></div>`;
+    }
+
+    // A t1_from/t2_from of {w: N} or {l: N} means "winner/loser of match N" —
+    // resolve that to a human label when the match itself hasn't been
+    // decided yet.
+    function fromLabel(from) {
+      if (!from) return null;
+      if (from.w != null) return `Winner of Game ${from.w}`;
+      if (from.l != null) return `Loser of Game ${from.l}`;
+      return "TBD";
+    }
+
+    function bracketMatchHTML(season, m) {
+      const t1Winner = m.w != null && m.w === m.t1;
+      const t2Winner = m.w != null && m.w === m.t2;
+      return `
+        <div class="bracket-match">
+          ${bracketSideHTML(season, m.t1, fromLabel(m.t1_from), t1Winner)}
+          <span class="bracket-vs">vs</span>
+          ${bracketSideHTML(season, m.t2, fromLabel(m.t2_from), t2Winner)}
+        </div>
+      `;
+    }
+
+    const PLACE_LABELS = { 1: "Championship", 3: "3rd Place Game", 5: "5th Place Game", 7: "7th Place Game" };
+
+    function bracketRoundsHTML(season, matches) {
+      const rounds = [...new Set(matches.map((m) => m.r))].sort((a, b) => a - b);
+      return rounds
+        .map((r) => {
+          const roundMatches = matches.filter((m) => m.r === r);
+          const placementMatches = roundMatches.filter((m) => m.p != null);
+          const title = placementMatches.length
+            ? "Placement Games"
+            : `Round ${r}`;
+          const rowsHTML = roundMatches
+            .map((m) => {
+              const label = m.p != null ? PLACE_LABELS[m.p] || `Place ${m.p}/${m.p + 1} Game` : null;
+              return `${label ? `<div class="bracket-round-title" style="font-size:0.55rem;margin:12px 0 4px;">${label}</div>` : ""}${bracketMatchHTML(season, m)}`;
+            })
+            .join("");
+          return `<div class="bracket-round-title">${title}</div><div class="draft-list">${rowsHTML}</div>`;
+        })
+        .join("");
+    }
+
+    function renderPlayoffs(container) {
+      container.className = "";
+      const winners = currentSeason.playoffBracket?.winners || [];
+      const losers = currentSeason.playoffBracket?.losers || [];
+      // Sleeper pre-seeds round 1 of the bracket before the playoffs
+      // actually start (based on current, still-changing standings) — with
+      // no winner decided on any match yet, that's not a real bracket, just
+      // a placeholder, so treat it the same as no bracket at all.
+      const started = winners.some((m) => m.w != null);
+
+      if (!winners.length || !started) {
+        container.innerHTML = '<div class="empty-state">The playoff bracket isn\'t set yet this season.</div>';
+        return;
+      }
+
+      const winnersHTML = bracketRoundsHTML(currentSeason, winners);
+      const losersHTML = losers.length
+        ? `<div class="info-section-title" style="margin-top:32px;">Loser's Bracket (Bonus Pick 3.13)</div>${bracketRoundsHTML(
+            currentSeason,
+            losers
+          )}`
+        : "";
+
+      container.innerHTML = `
+        <div class="info-section-title">Playoff Bracket</div>
+        ${winnersHTML}
+        ${losersHTML}
       `;
     }
 

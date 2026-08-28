@@ -321,6 +321,68 @@ th.num {
   text-transform: uppercase;
 }
 
+.matchup .proj-points {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+}
+
+.matchup .points.proj-primary {
+  color: var(--accent-2);
+}
+
+/* playoff bracket */
+
+.bracket-round-title {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.65rem;
+  color: var(--accent);
+  margin: 20px 0 10px;
+}
+
+.bracket-round-title:first-child {
+  margin-top: 0;
+}
+
+.bracket-match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bracket-match:last-child {
+  border-bottom: none;
+}
+
+.bracket-match .bracket-side {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bracket-match .bracket-side.winner .team-name {
+  color: var(--win);
+}
+
+.bracket-match .bracket-vs {
+  color: var(--text-dim);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.bracket-placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 /* drafts */
 
 .draft-list {
