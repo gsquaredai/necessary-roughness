@@ -160,6 +160,35 @@ select {
   font-family: inherit;
 }
 
+.view-toggle {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.view-toggle button {
+  background: var(--surface-2);
+  color: var(--text-dim);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  font-size: 0.55rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.view-toggle button:hover {
+  color: var(--text);
+  border-color: var(--accent-dim);
+}
+
+.view-toggle button.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

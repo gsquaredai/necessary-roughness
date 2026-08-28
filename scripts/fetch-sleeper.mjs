@@ -63,6 +63,21 @@ async function buildSeason(league) {
 
   const usersByOwnerId = Object.fromEntries(users.map((u) => [u.user_id, u]));
 
+  // That season's actual rookie/startup draft order (pick 1, 2, 3, ...),
+  // keyed by roster_id. Real historical data straight from Sleeper's draft
+  // object, not something derived from standings.
+  let draftPickByRoster = {};
+  if (league.draft_id) {
+    try {
+      const draft = await fetchJSON(`${API}/draft/${league.draft_id}`);
+      for (const [pick, rosterId] of Object.entries(draft.slot_to_roster_id || {})) {
+        draftPickByRoster[rosterId] = Number(pick);
+      }
+    } catch {
+      // no draft data available for this season
+    }
+  }
+
   // Sleeper gives each manager two images: an account profile picture (avatar,
   // an id you resolve against the CDN) and, if they've set one, a per-league
   // team logo (metadata.avatar, already a full URL). Prefer the team logo.
@@ -108,6 +123,7 @@ async function buildSeason(league) {
       // own detailed standings view shows) and exposes it right on the
       // roster, so just use it directly rather than re-deriving it.
       maxPF: (r.settings?.ppts ?? 0) + (r.settings?.ppts_decimal ?? 0) / 100,
+      draftPick: draftPickByRoster[r.roster_id] ?? null,
     };
   });
 

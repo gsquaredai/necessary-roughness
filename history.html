@@ -123,7 +123,7 @@
           agg.losses += team.losses;
           agg.ties += team.ties;
           agg.fpts += team.fpts;
-          agg.maxPF = Math.max(agg.maxPF, team.maxPF ?? 0);
+          agg.maxPF += team.maxPF ?? 0;
           // keep most recent team name/avatar
           agg.teamName = team.teamName;
           agg.avatar = team.avatar;

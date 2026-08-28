@@ -28,12 +28,20 @@
         <select id="season-select"></select>
       </div>
 
+      <div class="view-toggle" id="view-toggle">
+        <button type="button" data-view="standings">Standings</button>
+        <button type="button" data-view="draft">Draft Order</button>
+        <button type="button" data-view="pf">PF</button>
+        <button type="button" data-view="pa">PA</button>
+        <button type="button" data-view="maxpf">Max PF</button>
+      </div>
+
       <section>
         <div class="card table-wrap">
           <table>
             <thead>
               <tr>
-                <th>#</th>
+                <th id="rank-header">#</th>
                 <th>Team</th>
                 <th class="num">Record</th>
                 <th class="num">PF</th>
@@ -50,6 +58,33 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    const VIEWS = {
+      standings: {
+        label: "#",
+        sort: (teams) => standingsSorted({ teams }),
+      },
+      draft: {
+        label: "Pick",
+        sort: (teams) =>
+          [...teams].sort((a, b) => (a.draftPick ?? 999) - (b.draftPick ?? 999)),
+      },
+      pf: {
+        label: "#",
+        sort: (teams) => [...teams].sort((a, b) => b.fpts - a.fpts),
+      },
+      pa: {
+        label: "#",
+        sort: (teams) => [...teams].sort((a, b) => b.fptsAgainst - a.fptsAgainst),
+      },
+      maxpf: {
+        label: "#",
+        sort: (teams) => [...teams].sort((a, b) => b.maxPF - a.maxPF),
+      },
+    };
+
+    let currentSeason = null;
+    let currentView = "standings";
+
     async function init() {
       const idx = await loadIndex();
       const select = document.getElementById("season-select");
@@ -59,28 +94,58 @@
         .map((s) => `<option value="${s}">${s} Season</option>`)
         .join("");
 
-      const requested = new URLSearchParams(location.search).get("season");
-      select.value = idx.seasons.includes(requested) ? requested : idx.currentSeason;
+      const params = new URLSearchParams(location.search);
+      const requestedSeason = params.get("season");
+      select.value = idx.seasons.includes(requestedSeason) ? requestedSeason : idx.currentSeason;
+
+      const requestedView = params.get("view");
+      currentView = VIEWS[requestedView] ? requestedView : "standings";
+      updateViewButtons();
 
       select.addEventListener("change", () => {
-        const url = new URL(location.href);
-        url.searchParams.set("season", select.value);
-        history.replaceState(null, "", url);
+        updateUrl();
         renderStandings(select.value);
       });
+
+      document.getElementById("view-toggle").addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-view]");
+        if (!btn) return;
+        currentView = btn.dataset.view;
+        updateViewButtons();
+        updateUrl();
+        renderStandings(select.value);
+      });
+
+      function updateUrl() {
+        const url = new URL(location.href);
+        url.searchParams.set("season", select.value);
+        url.searchParams.set("view", currentView);
+        history.replaceState(null, "", url);
+      }
+
       await renderStandings(select.value);
+    }
+
+    function updateViewButtons() {
+      document.querySelectorAll("#view-toggle button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.view === currentView);
+      });
+      document.getElementById("rank-header").textContent = VIEWS[currentView].label;
     }
 
     async function renderStandings(seasonKey) {
       const season = await loadSeason(seasonKey);
-      const sorted = standingsSorted(season);
+      currentSeason = season;
+      const sorted = VIEWS[currentView].sort(season.teams);
+
       document.getElementById("standings-body").innerHTML = sorted
         .map((team, i) => {
           const champ = season.champion === team.rosterId;
           const last = season.lastPlace === team.rosterId;
+          const rankCell = currentView === "draft" ? team.draftPick ?? "—" : i + 1;
           return `
             <tr>
-              <td>${i + 1}</td>
+              <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
