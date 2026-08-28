@@ -28,12 +28,12 @@
   <div class="page">
     <main>
       <div class="view-toggle" id="info-tabs">
+        <button type="button" data-tab="teams">Teams</button>
         <button type="button" data-tab="roster">Roster</button>
         <button type="button" data-tab="scoring">Scoring</button>
         <button type="button" data-tab="rules">Rules</button>
         <button type="button" data-tab="money">$$$</button>
         <button type="button" data-tab="allstar">All Star Game</button>
-        <button type="button" data-tab="teams">Teams</button>
       </div>
 
       <section>
@@ -462,7 +462,7 @@
     async function showTab(tab) {
       const container = document.getElementById("info-content");
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
-      const fn = TAB_RENDERERS[tab] || renderRosterTab;
+      const fn = TAB_RENDERERS[tab] || renderTeamsTab;
       await fn(container);
     }
 
@@ -470,7 +470,7 @@
       const tabs = document.getElementById("info-tabs");
       const params = new URLSearchParams(location.search);
       const requested = params.get("tab");
-      const initialTab = TAB_RENDERERS[requested] ? requested : "roster";
+      const initialTab = TAB_RENDERERS[requested] ? requested : "teams";
 
       tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.tab === initialTab));
 
