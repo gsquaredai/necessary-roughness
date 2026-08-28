@@ -392,10 +392,20 @@ async function buildSeason(league, nextLeague) {
     }
     weeklyPlayerPoints[week] = pointsThisWeek;
 
-    const rosterSlice = (entry) => ({
-      starters: (entry.starters || []).filter((pid) => pid && pid !== "0"),
-      players: entry.players || [],
-    });
+    const rosterSlice = (entry) => {
+      const players = entry.players || [];
+      const projByPlayer = {};
+      if (projections) {
+        for (const pid of players) {
+          projByPlayer[pid] = computeLeagueScoredPoints(projections[pid], league.scoring_settings);
+        }
+      }
+      return {
+        starters: (entry.starters || []).filter((pid) => pid && pid !== "0"),
+        players,
+        projByPlayer,
+      };
+    };
 
     matchupsByWeek[week] = [...byMatchupId.values()].map(([a, b]) => ({
       matchupId: a.matchup_id,

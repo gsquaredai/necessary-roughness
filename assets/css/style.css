@@ -214,6 +214,14 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
+tr.clickable-row {
+  cursor: pointer;
+}
+
+tr.clickable-row:hover td {
+  background: var(--surface-2);
+}
+
 td.num,
 th.num {
   text-align: right;
@@ -458,7 +466,8 @@ th.num {
   margin-top: 4px;
 }
 
-.matchup .points.proj-primary {
+.matchup .points.proj-primary,
+.proj-primary {
   color: var(--accent-2);
 }
 
