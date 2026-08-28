@@ -185,23 +185,44 @@
       }
     }
 
+    async function loadRivalries() {
+      try {
+        const res = await fetch("data/rivalries.json");
+        return await res.json();
+      } catch {
+        return [];
+      }
+    }
+
     // Rivalry Weeks names live rivals, so it pulls this season's actual
     // Week 1 matchups rather than being static text.
     async function rivalryMatchupsHTML() {
       try {
         const idx = await loadIndex();
-        const season = await loadSeason(idx.currentSeason);
+        const [season, rivalries] = await Promise.all([loadSeason(idx.currentSeason), loadRivalries()]);
         const week1 = season.matchups?.[1] || season.matchups?.["1"] || [];
         if (!week1.length) return "";
+        const nameFor = (ownerIdA, ownerIdB) => {
+          const match = rivalries.find(
+            (r) =>
+              (r.owners[0] === ownerIdA && r.owners[1] === ownerIdB) ||
+              (r.owners[0] === ownerIdB && r.owners[1] === ownerIdA)
+          );
+          return match?.name || null;
+        };
         const rows = week1
           .map((m) => {
             const teamA = teamById(season, m.teamA.rosterId);
             const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
+            const rivalryName = teamB ? nameFor(teamA.ownerId, teamB.ownerId) : null;
             return `
-              <div class="info-stat-row" style="justify-content: center; gap: 20px;">
-                <div>${teamCellHTML(teamA)}</div>
-                <span class="muted">vs</span>
-                <div>${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}</div>
+              <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding-top: 14px; padding-bottom: 14px;">
+                ${rivalryName ? `<div class="info-section-title" style="margin: 0; font-size: 0.6rem;">${rivalryName}</div>` : ""}
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                  <div>${teamCellHTML(teamA)}</div>
+                  <span class="muted">vs</span>
+                  <div>${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}</div>
+                </div>
               </div>
             `;
           })
