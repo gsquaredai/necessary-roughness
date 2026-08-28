@@ -131,6 +131,60 @@
 
     // ---------- all-time standings ----------
 
+    let allTimeRows = null;
+    let allTimeSortKey = "titles";
+    let allTimeSortDir = "desc";
+
+    const ALLTIME_SORT_FIELDS = {
+      titles: (r) => r.titles,
+      record: (r) => (r.wins + r.losses + r.ties ? r.wins / (r.wins + r.losses + r.ties) : 0),
+      pf: (r) => r.fpts,
+      maxpf: (r) => r.maxPF,
+    };
+
+    function allTimeRowHTML(r, i) {
+      const total = r.wins + r.losses + r.ties;
+      const pct = total ? ((r.wins / total) * 100).toFixed(1) : "0.0";
+      const recordStr = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
+      return `
+        <tr>
+          <td>${i + 1}</td>
+          <td>${teamCellHTML(r)}</td>
+          <td class="num">${r.titles}</td>
+          <td class="num">${recordStr}</td>
+          <td class="num">${pct}%</td>
+          <td class="num">${fmtPts(r.fpts)}</td>
+          <td class="num">${fmtPts(r.maxPF)}</td>
+        </tr>
+      `;
+    }
+
+    function renderAllTimeBody(container) {
+      const field = ALLTIME_SORT_FIELDS[allTimeSortKey];
+      const dir = allTimeSortDir === "asc" ? 1 : -1;
+      const sorted = [...allTimeRows].sort((a, b) => {
+        const diff = (field(a) - field(b)) * dir;
+        if (diff !== 0) return diff;
+        // Tiebreak: win% then titles, regardless of which column is sorted.
+        if (b.titles !== a.titles) return b.titles - a.titles;
+        return ALLTIME_SORT_FIELDS.record(b) - ALLTIME_SORT_FIELDS.record(a);
+      });
+
+      container.querySelector("tbody").innerHTML = sorted.map(allTimeRowHTML).join("");
+
+      container.querySelectorAll("th[data-sort]").forEach((th) => {
+        th.querySelector(".sort-arrow")?.remove();
+        const isSorted = th.dataset.sort === allTimeSortKey;
+        th.classList.toggle("sorted", isSorted);
+        if (isSorted) {
+          th.insertAdjacentHTML(
+            "beforeend",
+            `<span class="sort-arrow">${allTimeSortDir === "asc" ? " ▲" : " ▼"}</span>`
+          );
+        }
+      });
+    }
+
     async function renderAllTimeTab(container) {
       await ensureData();
       const byOwner = new Map();
@@ -163,52 +217,44 @@
         }
       }
 
-      const rows = [...byOwner.values()].sort((a, b) => {
-        const aTotal = a.wins + a.losses + a.ties;
-        const bTotal = b.wins + b.losses + b.ties;
-        const aPct = aTotal ? a.wins / aTotal : 0;
-        const bPct = bTotal ? b.wins / bTotal : 0;
-        if (b.titles !== a.titles) return b.titles - a.titles;
-        return bPct - aPct;
-      });
-
-      const body = rows
-        .map((r, i) => {
-          const total = r.wins + r.losses + r.ties;
-          const pct = total ? ((r.wins / total) * 100).toFixed(1) : "0.0";
-          const recordStr = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
-          return `
-            <tr>
-              <td>${i + 1}</td>
-              <td>${teamCellHTML(r)}</td>
-              <td class="num">${r.titles}</td>
-              <td class="num">${recordStr}</td>
-              <td class="num">${pct}%</td>
-              <td class="num">${fmtPts(r.fpts)}</td>
-              <td class="num">${fmtPts(r.maxPF)}</td>
-            </tr>
-          `;
-        })
-        .join("");
+      allTimeRows = [...byOwner.values()];
+      allTimeSortKey = "titles";
+      allTimeSortDir = "desc";
 
       container.innerHTML = `
+        <p class="muted" style="margin-bottom: 12px;">Click a column to sort by it.</p>
         <div class="card table-wrap">
           <table>
             <thead>
               <tr>
                 <th>#</th>
                 <th>Manager</th>
-                <th class="num">Titles</th>
-                <th class="num">Record</th>
-                <th class="num">Win %</th>
-                <th class="num">PF</th>
-                <th class="num">Max PF</th>
+                <th class="num sortable" data-sort="titles">Titles</th>
+                <th class="num sortable" data-sort="record">Record</th>
+                <th class="num sortable" data-sort="record">Win %</th>
+                <th class="num sortable" data-sort="pf">PF</th>
+                <th class="num sortable" data-sort="maxpf">Max PF</th>
               </tr>
             </thead>
-            <tbody>${body}</tbody>
+            <tbody></tbody>
           </table>
         </div>
       `;
+
+      container.querySelectorAll("th[data-sort]").forEach((th) => {
+        th.addEventListener("click", () => {
+          const key = th.dataset.sort;
+          if (allTimeSortKey === key) {
+            allTimeSortDir = allTimeSortDir === "desc" ? "asc" : "desc";
+          } else {
+            allTimeSortKey = key;
+            allTimeSortDir = "desc";
+          }
+          renderAllTimeBody(container);
+        });
+      });
+
+      renderAllTimeBody(container);
     }
 
     // ---------- highest scoring ----------

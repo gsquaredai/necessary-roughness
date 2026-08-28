@@ -210,6 +210,23 @@ th {
   letter-spacing: 0.04em;
 }
 
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+th.sortable:hover {
+  color: var(--text);
+}
+
+th.sortable.sorted {
+  color: var(--accent);
+}
+
+.sort-arrow {
+  font-size: 0.5rem;
+}
+
 tbody tr:last-child td {
   border-bottom: none;
 }
