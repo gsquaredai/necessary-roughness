@@ -224,16 +224,26 @@ async function buildSeason(league, nextLeague) {
   // The rookie draft order that resulted from THIS season's standings is the
   // draft that ran going into the *next* season, not this league's own
   // draft_id (that one ran going into this season, based on the season
-  // before it). Keyed by owner_id (draft_order, unlike slot_to_roster_id,
-  // maps directly to user_id, which — unlike roster_id — stays consistent
-  // across a different season's league object). No entry for the most
-  // recent season, since next season's draft hasn't happened yet, or for
-  // an inaugural season's predecessor, since it never existed.
+  // before it). Primarily keyed by owner_id (draft_order) since roster_id
+  // isn't guaranteed stable across a different season's league object in
+  // general — but draft_order can silently drop an entry for a roster
+  // whose owner changed hands *after* the draft ran (Sleeper reflects only
+  // the current owner, and if that owner was never on this draft's roster,
+  // there's simply no key for them at all). slot_to_roster_id doesn't have
+  // that problem — it's keyed by this draft's own roster_id, which for a
+  // roster we already know about (from this season's own roster list) is
+  // reliable — so it's a fallback for exactly that edge case. No entry for
+  // the most recent season, since next season's draft hasn't happened yet,
+  // or for an inaugural season's predecessor, since it never existed.
   let draftPickByOwner = {};
+  let draftPickByRosterId = {};
   if (nextLeague?.draft_id) {
     try {
       const draft = await fetchJSON(`${API}/draft/${nextLeague.draft_id}`);
       draftPickByOwner = draft.draft_order || {};
+      for (const [slot, rosterId] of Object.entries(draft.slot_to_roster_id || {})) {
+        draftPickByRosterId[rosterId] = Number(slot);
+      }
     } catch {
       // no draft data available for next season
     }
@@ -343,7 +353,7 @@ async function buildSeason(league, nextLeague) {
       // own detailed standings view shows) and exposes it right on the
       // roster, so just use it directly rather than re-deriving it.
       maxPF: (r.settings?.ppts ?? 0) + (r.settings?.ppts_decimal ?? 0) / 100,
-      draftPick: r.owner_id ? draftPickByOwner[r.owner_id] ?? null : null,
+      draftPick: (r.owner_id ? draftPickByOwner[r.owner_id] : null) ?? draftPickByRosterId[r.roster_id] ?? null,
     };
   });
 
