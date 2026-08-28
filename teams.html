@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teams — Necessary Roughness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="teams">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="drafts.html" data-page="drafts">Drafts</a>
+        <a href="transactions.html" data-page="transactions">Transactions</a>
+        <a href="teams.html" data-page="teams">Teams</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <section>
+        <div class="team-card-grid" id="team-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    async function loadContacts() {
+      try {
+        const res = await fetch("data/team-contacts.json");
+        return await res.json();
+      } catch {
+        return {};
+      }
+    }
+
+    // "Best finish" per the league's own convention: the following season's
+    // draft order is reverse-standings, so the highest draftPick a manager
+    // ever earned (closest to last pick) marks their best season. Skips the
+    // current in-progress season (no draftPick yet — next draft hasn't run).
+    function bestFinish(seasons, ownerId) {
+      let best = null;
+      for (const season of seasons) {
+        const team = season.teams.find((t) => t.ownerId === ownerId);
+        if (!team || team.draftPick == null) continue;
+        if (!best || team.draftPick > best.draftPick) {
+          best = { draftPick: team.draftPick, season: season.season, teamsCount: season.teams.length };
+        }
+      }
+      if (!best) return null;
+      const rank = best.teamsCount + 1 - best.draftPick;
+      return { label: `${ordinal(rank)} (${best.season})`, rank, season: best.season };
+    }
+
+    async function init() {
+      const idx = await loadIndex();
+      const [seasons, contacts] = await Promise.all([loadAllSeasons(), loadContacts()]);
+      const currentSeason = seasons.find((s) => s.season === idx.currentSeason);
+
+      const grid = document.getElementById("team-grid");
+      grid.innerHTML = currentSeason.teams
+        .slice()
+        .sort((a, b) => a.teamName.localeCompare(b.teamName))
+        .map((team) => {
+          const finish = bestFinish(seasons, team.ownerId);
+          const contact = contacts[team.ownerId] || {};
+          const isChampThisSeason = currentSeason.champion === team.rosterId;
+          return `
+            <div class="team-card">
+              ${avatarImgHTML(team)}
+              <div class="team-card-name">${team.teamName}</div>
+              <div class="team-card-owner">${team.displayName}</div>
+              <div class="team-card-row">
+                <span class="player-bio-label">Best Finish</span>
+                <span>${finish ? finish.label : "—"}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</span>
+              </div>
+              ${
+                contact.firstName || contact.phone
+                  ? `<div class="team-card-row">
+                      <span class="player-bio-label">Contact</span>
+                      <span>${contact.firstName || "—"}${contact.phone ? " &middot; " + contact.phone : ""}</span>
+                    </div>`
+                  : ""
+              }
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("team-grid").innerHTML =
+        '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>

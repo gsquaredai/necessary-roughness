@@ -600,6 +600,60 @@ th.num {
   white-space: normal;
 }
 
+/* teams */
+
+.team-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.team-card {
+  background: var(--surface);
+  border: var(--pixel-border) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--pixel-shadow);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.team-card .avatar {
+  width: 56px;
+  height: 56px;
+  border-width: 3px;
+  margin-bottom: 12px;
+}
+
+.team-card-name {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.team-card-owner {
+  color: var(--text-dim);
+  font-size: 0.6rem;
+  margin-bottom: 14px;
+}
+
+.team-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  text-align: left;
+}
+
+.team-card-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
 /* transactions */
 
 .txn-row {
