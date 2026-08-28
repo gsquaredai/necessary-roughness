@@ -459,6 +459,7 @@
       futurePicks = picks;
 
       const grid = document.getElementById("team-grid");
+      grid.className = "team-box-list";
       grid.innerHTML = currentSeason.teams
         .slice()
         .sort((a, b) => a.teamName.localeCompare(b.teamName))
@@ -468,17 +469,37 @@
           const isChampThisSeason = currentSeason.champion === team.rosterId;
           const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
           return `
-            <div class="team-list-row${mine}" data-roster-id="${team.rosterId}" role="button" tabindex="0">
-              ${avatarImgHTML(team)}
-              <div class="team-list-info">
-                <div class="team-name">${team.teamName}${mine ? ' <span class="badge you">You</span>' : ""}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</div>
-                <div class="team-list-owner">${team.displayName}</div>
+            <div class="standing-card${mine}" data-roster-id="${team.rosterId}" role="button" tabindex="0">
+              <div class="standing-card-top">
+                ${teamCellHTML(team, { champ: isChampThisSeason })}
               </div>
-              <div class="team-list-meta">
-                <div><span class="info-stat-label">Best Finish</span> ${finish ? finish.label : "—"}</div>
+              <div class="standing-card-stats">
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Manager</span>
+                  <span class="standing-card-stat-value">${team.displayName}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Best Finish</span>
+                  <span class="standing-card-stat-value">${finish ? finish.label : "—"}</span>
+                </div>
                 ${
-                  contact.firstName || contact.phone
-                    ? `<div><span class="info-stat-label">Contact</span> ${contact.firstName || "—"}${contact.phone ? " &middot; " + contact.phone : ""}</div>`
+                  contact.firstName
+                    ? `
+                      <div class="standing-card-stat">
+                        <span class="standing-card-stat-label">Contact</span>
+                        <span class="standing-card-stat-value">${contact.firstName}</span>
+                      </div>
+                    `
+                    : ""
+                }
+                ${
+                  contact.phone
+                    ? `
+                      <div class="standing-card-stat">
+                        <span class="standing-card-stat-label">Phone</span>
+                        <span class="standing-card-stat-value">${contact.phone}</span>
+                      </div>
+                    `
                     : ""
                 }
               </div>
@@ -487,7 +508,7 @@
         })
         .join("");
 
-      grid.querySelectorAll(".team-list-row").forEach((row) => {
+      grid.querySelectorAll(".standing-card").forEach((row) => {
         const open = () => openRosterModal(Number(row.dataset.rosterId));
         row.addEventListener("click", open);
         row.addEventListener("keydown", (e) => {
