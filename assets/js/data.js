@@ -37,6 +37,22 @@ async function loadPickRegistry() {
   return pickRegistryCache;
 }
 
+// The current season's full NFL schedule (every team's weekly opponent and
+// game date) — only ever covers the current season, since that's the only
+// one the data pipeline fetches. Used to show each player's full-season
+// schedule (including weeks not yet played) in their profile's Game Log.
+let scheduleCache = null;
+async function loadSchedule() {
+  if (scheduleCache) return scheduleCache;
+  try {
+    const res = await fetch("data/schedule.json");
+    scheduleCache = await res.json();
+  } catch {
+    scheduleCache = [];
+  }
+  return scheduleCache;
+}
+
 let rivalriesCache = null;
 async function loadRivalries() {
   if (rivalriesCache) return rivalriesCache;
@@ -154,6 +170,23 @@ function nflLogoImgHTML(teamAbbr) {
 const NFL_ABBR_3 = { GB: "GNB", KC: "KAN", LV: "LVR", NE: "NWE", NO: "NOR", SF: "SFO", TB: "TAM" };
 function nflAbbr3(teamAbbr) {
   return NFL_ABBR_3[teamAbbr] || teamAbbr;
+}
+
+function fmtGameDate(dateStr) {
+  if (!dateStr) return "";
+  const d = new Date(dateStr + "T12:00:00Z");
+  return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
+}
+
+// This player's schedule.json opponent for a given week — home/away and
+// game date. Only meaningful for the current season (the only one
+// schedule.json covers); returns null for a bye week or an unknown team.
+function opponentForPlayerWeek(schedule, nflTeam, week) {
+  if (!nflTeam || !schedule) return null;
+  const game = schedule.find((g) => g.week === week && (g.home === nflTeam || g.away === nflTeam));
+  if (!game) return null;
+  const isHome = game.home === nflTeam;
+  return { opp: isHome ? game.away : game.home, isHome, date: game.date };
 }
 
 // "Jeremiyah Love" -> "J. Love"
@@ -575,7 +608,12 @@ async function openPlayerModal(playerId) {
     if (e.target.id === "player-modal-overlay") closePlayerModal();
   });
 
-  const [players, txns] = await Promise.all([loadPlayers(), loadTransactions()]);
+  const [players, txns, idx, schedule] = await Promise.all([
+    loadPlayers(),
+    loadTransactions(),
+    loadIndex(),
+    loadSchedule(),
+  ]);
   const player = players[playerId];
   const box = root.querySelector(".modal-box");
   if (!player) {
@@ -656,19 +694,45 @@ async function openPlayerModal(playerId) {
           .join("")}
       </select>
     `;
-    if (!seasonData || !seasonData.games.length) {
+
+    // The full-season schedule (opponent + date, including weeks not yet
+    // played) only exists for the current season — schedule.json is only
+    // ever fetched for whichever season is currently in progress.
+    const isCurrentSeason = state.season === idx.currentSeason;
+    const showSchedule = isCurrentSeason && schedule.length > 0 && !!player.nflTeam;
+
+    const loggedGames = seasonData ? seasonData.games : [];
+    if (!loggedGames.length && !showSchedule) {
       return `${seasonPicker}<div class="empty-state">No games logged for this season.</div>`;
     }
-    const rows = [...seasonData.games]
-      .sort((a, b) => a.week - b.week)
-      .map((g) => {
-        const statParts = Object.entries(g.stats)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join(", ");
+
+    const weeks = new Set(loggedGames.map((g) => g.week));
+    if (showSchedule) {
+      for (const g of schedule) {
+        if (g.home === player.nflTeam || g.away === player.nflTeam) weeks.add(g.week);
+      }
+    }
+
+    const rows = [...weeks]
+      .sort((a, b) => a - b)
+      .map((week) => {
+        const g = loggedGames.find((x) => x.week === week);
+        const sched = showSchedule ? opponentForPlayerWeek(schedule, player.nflTeam, week) : null;
+        const oppCell = showSchedule
+          ? sched
+            ? `${sched.isHome ? "vs" : "@"} ${nflAbbr3(sched.opp)} &middot; ${fmtGameDate(sched.date)}`
+            : "BYE"
+          : null;
+        const statParts = g
+          ? Object.entries(g.stats)
+              .map(([k, v]) => `${k}: ${v}`)
+              .join(", ")
+          : "";
         return `<tr>
-          <td>${g.week}</td>
-          <td class="num">${g.points.toFixed(2)}</td>
-          <td>${g.played ? "Yes" : "No"}</td>
+          <td>${week}</td>
+          ${showSchedule ? `<td>${oppCell}</td>` : ""}
+          <td class="num">${g ? g.points.toFixed(2) : "—"}</td>
+          <td>${g ? (g.played ? "Yes" : "No") : "—"}</td>
           <td class="game-log-stats">${statParts || "—"}</td>
         </tr>`;
       })
@@ -677,7 +741,7 @@ async function openPlayerModal(playerId) {
       ${seasonPicker}
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Wk</th><th class="num">Pts</th><th>Played</th><th>Stats</th></tr></thead>
+          <thead><tr><th>Wk</th>${showSchedule ? "<th>Opponent</th>" : ""}<th class="num">Pts</th><th>Played</th><th>Stats</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>
