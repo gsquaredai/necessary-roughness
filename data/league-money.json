@@ -6,6 +6,6 @@
     { "place": "3rd", "amount": 50 }
   ],
   "specialRules": [
-    "If a team trades away one of their future 1st-round picks, they must submit their buy-in for that year and every year between the current year and that year (if they haven't already). This prevents a team from trading away picks and then deciding they no longer want to stay in the league."
+    "Trading away a future 1st-round pick locks in your commitment to the league through that pick's season: as soon as the trade is made, you must pay your buy-in for every season from the current year through the year that pick belongs to (for any of those years you haven't already paid). This stops a manager from selling off their future picks and then bailing on the league before those seasons happen. If the buy-in isn't submitted within 7 days of the trade, the trade is reversed."
   ]
 }

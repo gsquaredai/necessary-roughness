@@ -62,21 +62,34 @@
       const starters = positions.filter((p) => p !== "BN");
       const benchCount = positions.filter((p) => p === "BN").length;
 
+      const starterRows = starters
+        .map(
+          (p, i) =>
+            `<div class="info-stat-row"><span class="info-stat-label">Slot ${i + 1}</span><span class="info-stat-value">${pillHTML(p)}</span></div>`
+        )
+        .join("");
+
       container.innerHTML = `
         <div class="info-section-title">Starting Lineup (${starters.length} spots)</div>
-        <div>${starters.map(pillHTML).join("") || '<span class="muted">No data.</span>'}</div>
+        <div class="draft-list">${starterRows || '<div class="empty-state">No data.</div>'}</div>
 
         <div class="info-section-title">Bench</div>
-        <div class="info-stat-row"><span class="info-stat-label">Bench Spots</span><span class="info-stat-value">${benchCount}</span></div>
+        <div class="draft-list">
+          <div class="info-stat-row"><span class="info-stat-label">Bench Spots</span><span class="info-stat-value">${benchCount}</span></div>
+        </div>
 
         <div class="info-section-title">Injured Reserve</div>
-        <div class="info-stat-row"><span class="info-stat-label">IR Spots</span><span class="info-stat-value">${settings.reserveSlots ?? "—"}</span></div>
+        <div class="draft-list">
+          <div class="info-stat-row"><span class="info-stat-label">IR Spots</span><span class="info-stat-value">${settings.reserveSlots ?? "—"}</span></div>
+        </div>
 
         <div class="info-section-title">Taxi Squad</div>
-        <div class="info-stat-row"><span class="info-stat-label">Taxi Spots</span><span class="info-stat-value">${settings.taxiSlots ?? "—"}</span></div>
-        <div class="info-stat-row"><span class="info-stat-label">Taxi Eligibility</span><span class="info-stat-value">${
-          settings.taxiYears ? `Up to ${settings.taxiYears} year${settings.taxiYears === 1 ? "" : "s"} of NFL experience` : "—"
-        }</span></div>
+        <div class="draft-list">
+          <div class="info-stat-row"><span class="info-stat-label">Taxi Spots</span><span class="info-stat-value">${settings.taxiSlots ?? "—"}</span></div>
+          <div class="info-stat-row"><span class="info-stat-label">Taxi Eligibility</span><span class="info-stat-value">${
+            settings.taxiYears ? `Up to ${settings.taxiYears} year${settings.taxiYears === 1 ? "" : "s"} of NFL experience` : "—"
+          }</span></div>
+        </div>
       `;
     }
 
@@ -142,20 +155,20 @@
       const statRow = (k) =>
         `<div class="info-stat-row"><span class="info-stat-label">${SCORING_LABELS[k] || k}</span><span class="info-stat-value">${fmtScoringValue(k, settings[k])}</span></div>`;
 
-      const cards = SCORING_CATEGORIES.map(([title, keys]) => {
+      const sections = SCORING_CATEGORIES.map(([title, keys]) => {
         const present = keys.filter((k) => k in settings);
         present.forEach((k) => usedKeys.add(k));
         if (!present.length) return "";
-        return `<div><div class="info-section-title">${title}</div>${present.map(statRow).join("")}</div>`;
+        return `<div class="info-section-title">${title}</div><div class="draft-list">${present.map(statRow).join("")}</div>`;
       }).join("");
 
       const leftover = Object.keys(settings).filter((k) => !usedKeys.has(k));
       const leftoverHTML = leftover.length
-        ? `<div><div class="info-section-title">Other</div>${leftover.map(statRow).join("")}</div>`
+        ? `<div class="info-section-title">Other</div><div class="draft-list">${leftover.map(statRow).join("")}</div>`
         : "";
 
       container.innerHTML = Object.keys(settings).length
-        ? `<div class="scoring-grid">${cards}${leftoverHTML}</div>`
+        ? `${sections}${leftoverHTML}`
         : `<div class="empty-state">No scoring data available.</div>`;
     }
 
@@ -196,20 +209,11 @@
         container.innerHTML = `<div class="empty-state">Payout info coming soon.</div>`;
         return;
       }
-      const buyInCard = `
-        <div class="money-card buy-in">
-          <div class="money-place">Buy-In / Year</div>
-          <div class="money-amount">$${data.buyIn}</div>
-        </div>
-      `;
-      const payoutCards = (data.payouts || [])
+      const buyInRow = `<div class="info-stat-row"><span class="info-stat-label">Buy-In / Year</span><span class="info-stat-value money accent">$${data.buyIn}</span></div>`;
+      const payoutRows = (data.payouts || [])
         .map(
-          (p) => `
-            <div class="money-card">
-              <div class="money-place">${p.place}</div>
-              <div class="money-amount">$${p.amount}</div>
-            </div>
-          `
+          (p) =>
+            `<div class="info-stat-row"><span class="info-stat-label">${p.place} Place</span><span class="info-stat-value money">$${p.amount}</span></div>`
         )
         .join("");
       const rulesHTML =
@@ -220,15 +224,39 @@
           : "";
       container.innerHTML = `
         <div class="info-section-title">Payouts</div>
-        <div class="money-hero">${buyInCard}${payoutCards}</div>
+        <div class="draft-list">${buyInRow}${payoutRows}</div>
         ${rulesHTML}
       `;
     }
 
     // ---------- all star game ----------
 
-    function renderAllStarTab(container) {
-      container.innerHTML = `<div class="empty-state">Details coming soon.</div>`;
+    async function loadAllStarGame() {
+      try {
+        const res = await fetch("data/all-star-game.json");
+        return await res.json();
+      } catch {
+        return null;
+      }
+    }
+
+    async function renderAllStarTab(container) {
+      const data = await loadAllStarGame();
+      if (!data) {
+        container.innerHTML = `<div class="empty-state">Details coming soon.</div>`;
+        return;
+      }
+      container.innerHTML = `
+        <div class="info-lead">${data.overview}</div>
+        <div class="info-section-title">How It Works</div>
+        <ol class="rules-list">${(data.steps || []).map((s) => `<li>${s}</li>`).join("")}</ol>
+        ${
+          data.example
+            ? `<div class="info-section-title">Example</div>
+               <div class="info-callout"><span class="info-callout-label">Walkthrough</span>${data.example}</div>`
+            : ""
+        }
+      `;
     }
 
     // ---------- teams (moved from teams.html) ----------
@@ -354,7 +382,7 @@
     }
 
     async function renderTeamsTab(container) {
-      container.innerHTML = `<div class="team-card-grid" id="team-grid"></div>`;
+      container.innerHTML = `<div class="draft-list" id="team-grid"></div>`;
       const idx = await loadIndex();
       const [seasons, contacts, players, picks] = await Promise.all([
         loadAllSeasons(),
@@ -376,31 +404,29 @@
           const contact = contacts[team.ownerId] || {};
           const isChampThisSeason = currentSeason.champion === team.rosterId;
           return `
-            <div class="team-card" data-roster-id="${team.rosterId}" role="button" tabindex="0">
+            <div class="team-list-row" data-roster-id="${team.rosterId}" role="button" tabindex="0">
               ${avatarImgHTML(team)}
-              <div class="team-card-name">${team.teamName}</div>
-              <div class="team-card-owner">${team.displayName}</div>
-              <div class="team-card-row">
-                <span class="player-bio-label">Best Finish</span>
-                <span>${finish ? finish.label : "—"}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</span>
+              <div class="team-list-info">
+                <div class="team-name">${team.teamName}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</div>
+                <div class="team-list-owner">${team.displayName}</div>
               </div>
-              ${
-                contact.firstName || contact.phone
-                  ? `<div class="team-card-row">
-                      <span class="player-bio-label">Contact</span>
-                      <span>${contact.firstName || "—"}${contact.phone ? " &middot; " + contact.phone : ""}</span>
-                    </div>`
-                  : ""
-              }
+              <div class="team-list-meta">
+                <div><span class="info-stat-label">Best Finish</span> ${finish ? finish.label : "—"}</div>
+                ${
+                  contact.firstName || contact.phone
+                    ? `<div><span class="info-stat-label">Contact</span> ${contact.firstName || "—"}${contact.phone ? " &middot; " + contact.phone : ""}</div>`
+                    : ""
+                }
+              </div>
             </div>
           `;
         })
         .join("");
 
-      grid.querySelectorAll(".team-card").forEach((card) => {
-        const open = () => openRosterModal(Number(card.dataset.rosterId));
-        card.addEventListener("click", open);
-        card.addEventListener("keydown", (e) => {
+      grid.querySelectorAll(".team-list-row").forEach((row) => {
+        const open = () => openRosterModal(Number(row.dataset.rosterId));
+        row.addEventListener("click", open);
+        row.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             open();

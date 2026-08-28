@@ -624,56 +624,11 @@ th.num {
 
 /* teams */
 
-.team-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
-}
-
-.team-card {
-  background: var(--surface);
-  border: var(--pixel-border) solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--pixel-shadow);
-  padding: 20px 16px;
-  text-align: center;
-}
-
-.team-card .avatar {
-  width: 56px;
-  height: 56px;
+.team-list-row .avatar {
+  width: 44px;
+  height: 44px;
   border-width: 3px;
-  margin-bottom: 12px;
-}
-
-.team-card-name {
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  word-break: break-word;
-}
-
-.team-card-owner {
-  color: var(--text-dim);
-  font-size: 0.6rem;
-  margin-bottom: 14px;
-}
-
-.team-card-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.6rem;
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--border);
-  text-align: left;
-}
-
-.team-card-row:first-of-type {
-  border-top: none;
-  padding-top: 0;
+  flex-shrink: 0;
 }
 
 .roster-group {
@@ -1136,8 +1091,9 @@ th.num {
 .info-stat-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
-  padding: 6px 0;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border);
   font-size: 0.85rem;
 }
@@ -1154,45 +1110,58 @@ th.num {
   font-weight: 600;
 }
 
-.scoring-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.money-hero {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.money-card {
-  flex: 1 1 140px;
-  background: var(--surface);
-  border: var(--pixel-border) solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--pixel-shadow);
-  padding: 16px;
-  text-align: center;
-}
-
-.money-card .money-place {
-  font-size: 0.65rem;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.money-card .money-amount {
+.info-stat-value.money {
   font-family: "Press Start 2P", sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   color: var(--win);
-  margin-top: 8px;
 }
 
-.money-card.buy-in .money-amount {
+.info-stat-value.money.accent {
   color: var(--accent);
+}
+
+.team-list-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.team-list-row:last-child {
+  border-bottom: none;
+}
+
+.team-list-row:hover {
+  background: var(--surface-2);
+}
+
+.team-list-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-list-owner {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.team-list-meta {
+  text-align: right;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+.team-list-meta .info-stat-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.team-list-meta > div + div {
+  margin-top: 6px;
 }
 
 .rules-list {
@@ -1213,6 +1182,30 @@ th.num {
 
 .rules-list li:last-child {
   border-bottom: none;
+}
+
+.info-callout {
+  background: var(--surface);
+  border-left: var(--pixel-border) solid var(--accent-2);
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.info-callout-label {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.6rem;
+  color: var(--accent-2);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info-lead {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
 .rules-list li::before {
