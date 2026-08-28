@@ -99,6 +99,22 @@
       if (cardEl) playChampionCelebration(cardEl);
     }
 
+    // First week that hasn't been played yet — the upcoming week, as
+    // opposed to latestWeekWithData() which is the last COMPLETED week.
+    function nextUnplayedWeek(season) {
+      const weeks = Object.keys(season.matchups)
+        .map(Number)
+        .sort((a, b) => a - b);
+      return weeks.find((w) => !weekHasBeenPlayed(season, w)) ?? null;
+    }
+
+    function opponentInWeek(season, week, rosterId) {
+      const entry = matchupEntryForRosterInWeek(season, week, rosterId);
+      if (!entry || !entry.teamB) return null;
+      const oppRosterId = entry.teamA.rosterId === rosterId ? entry.teamB.rosterId : entry.teamA.rosterId;
+      return teamById(season, oppRosterId);
+    }
+
     async function renderHome() {
       const idx = await loadIndex();
       const season = await loadSeason(idx.currentSeason);
@@ -106,11 +122,13 @@
       const standingsBody = document.getElementById("standings-body");
       const standingsCards = document.getElementById("standings-cards");
       const sorted = standingsSorted(season);
+      const nextWeek = nextUnplayedWeek(season);
       const rows = sorted.map((team, i) => {
         const champ = season.champion === team.rosterId;
         const last = season.lastPlace === team.rosterId;
         const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
-        return { team, i, champ, last, mine };
+        const nextOpponent = nextWeek != null ? opponentInWeek(season, nextWeek, team.rosterId) : null;
+        return { team, i, champ, last, mine, nextOpponent };
       });
 
       standingsBody.innerHTML = rows
@@ -129,7 +147,7 @@
 
       standingsCards.innerHTML = rows
         .map(
-          ({ team, i, champ, last, mine }) => `
+          ({ team, i, champ, last, mine, nextOpponent }) => `
             <div class="standing-card${mine}">
               <div class="standing-card-top">
                 <span class="standing-card-rank">${i + 1}</span>
@@ -144,6 +162,20 @@
                   <span class="standing-card-stat-label">PF</span>
                   <span class="standing-card-stat-value">${fmtPts(team.fpts)}</span>
                 </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Max PF</span>
+                  <span class="standing-card-stat-value">${fmtPts(team.maxPF)}</span>
+                </div>
+                ${
+                  nextOpponent
+                    ? `
+                      <div class="standing-card-stat standing-card-next">
+                        <span class="standing-card-stat-label">Next</span>
+                        ${avatarImgHTML(nextOpponent)}
+                      </div>
+                    `
+                    : ""
+                }
               </div>
             </div>
           `
