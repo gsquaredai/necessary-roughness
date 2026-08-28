@@ -1844,16 +1844,6 @@ tr.is-my-team td:first-child {
   color: var(--text);
 }
 
-.standing-card-next {
-  margin-left: auto;
-  align-items: center;
-}
-
-.standing-card-next .avatar {
-  width: 22px;
-  height: 22px;
-}
-
 /* ---------- responsive ---------- */
 
 @media (max-width: 560px) {

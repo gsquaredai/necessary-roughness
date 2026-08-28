@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 </head>
 <body data-page="home">
   <header class="site-header">
@@ -44,6 +47,7 @@
                 <th class="num">Record</th>
                 <th class="num">PF</th>
                 <th class="num">Max PF</th>
+                <th class="num">Pick-Em Pts</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
@@ -63,6 +67,25 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    // Read-only Pick-Em pool points — same Firebase project as pickem.html,
+    // signed in anonymously (no visible auth). computePickEmPoints()
+    // (data.js) fails closed if this isn't ready, so the column/stat just
+    // quietly shows 0 rather than erroring.
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwRdeJXzmPaInTH2rDMNriQfErQPj33yQ",
+      authDomain: "necessaryroughness-5edd5.firebaseapp.com",
+      projectId: "necessaryroughness-5edd5",
+      storageBucket: "necessaryroughness-5edd5.firebasestorage.app",
+      messagingSenderId: "104157286944",
+      appId: "1:104157286944:web:1a3506b9062c4149ee2245",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    auth.onAuthStateChanged((user) => {
+      if (!user) auth.signInAnonymously().catch(() => {});
+    });
+
     async function renderChampionCard() {
       const champSeason = await loadLatestCompletedSeason();
       const slot = document.getElementById("champion-card-slot");
@@ -99,47 +122,33 @@
       if (cardEl) playChampionCelebration(cardEl);
     }
 
-    // First week that hasn't been played yet — the upcoming week, as
-    // opposed to latestWeekWithData() which is the last COMPLETED week.
-    function nextUnplayedWeek(season) {
-      const weeks = Object.keys(season.matchups)
-        .map(Number)
-        .sort((a, b) => a - b);
-      return weeks.find((w) => !weekHasBeenPlayed(season, w)) ?? null;
-    }
-
-    function opponentInWeek(season, week, rosterId) {
-      const entry = matchupEntryForRosterInWeek(season, week, rosterId);
-      if (!entry || !entry.teamB) return null;
-      const oppRosterId = entry.teamA.rosterId === rosterId ? entry.teamB.rosterId : entry.teamA.rosterId;
-      return teamById(season, oppRosterId);
-    }
-
     async function renderHome() {
       const idx = await loadIndex();
       const season = await loadSeason(idx.currentSeason);
+      const players = await loadPlayers();
+      const pickemPoints = await computePickEmPoints(season, players);
 
       const standingsBody = document.getElementById("standings-body");
       const standingsCards = document.getElementById("standings-cards");
       const sorted = standingsSorted(season);
-      const nextWeek = nextUnplayedWeek(season);
       const rows = sorted.map((team, i) => {
         const champ = season.champion === team.rosterId;
         const last = season.lastPlace === team.rosterId;
         const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
-        const nextOpponent = nextWeek != null ? opponentInWeek(season, nextWeek, team.rosterId) : null;
-        return { team, i, champ, last, mine, nextOpponent };
+        const pickemPts = pickemPoints.get(team.ownerId) || 0;
+        return { team, i, champ, last, mine, pickemPts };
       });
 
       standingsBody.innerHTML = rows
         .map(
-          ({ team, i, champ, last, mine }) => `
+          ({ team, i, champ, last, mine, pickemPts }) => `
             <tr class="${mine}">
               <td>${i + 1}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
               <td class="num">${fmtPts(team.maxPF)}</td>
+              <td class="num">${pickemPts}</td>
             </tr>
           `
         )
@@ -147,7 +156,7 @@
 
       standingsCards.innerHTML = rows
         .map(
-          ({ team, i, champ, last, mine, nextOpponent }) => `
+          ({ team, i, champ, last, mine, pickemPts }) => `
             <div class="standing-card${mine}">
               <div class="standing-card-top">
                 <span class="standing-card-rank">${i + 1}</span>
@@ -166,16 +175,10 @@
                   <span class="standing-card-stat-label">Max PF</span>
                   <span class="standing-card-stat-value">${fmtPts(team.maxPF)}</span>
                 </div>
-                ${
-                  nextOpponent
-                    ? `
-                      <div class="standing-card-stat standing-card-next">
-                        <span class="standing-card-stat-label">Next</span>
-                        ${avatarImgHTML(nextOpponent)}
-                      </div>
-                    `
-                    : ""
-                }
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Pick-Em Pts</span>
+                  <span class="standing-card-stat-value">${pickemPts}</span>
+                </div>
               </div>
             </div>
           `

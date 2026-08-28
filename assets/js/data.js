@@ -832,23 +832,28 @@ function matchupSideHTML(season, week, team, side, players, played) {
 }
 
 // ---------- Pick-Em vote tallies (read-only) ----------
-// Shared by matchups.html and pickem.html, both of which define their own
-// Firebase `auth`/`db` (same project) and kick off an anonymous sign-in on
-// load. Returns matchupId -> {rosterId: pickCount} for a given week's
-// Pick-Em picks. Fails closed (returns {}) if Firebase isn't reachable so
-// the pick-count UI just quietly doesn't show rather than erroring.
+// Shared by matchups.html, pickem.html, and index.html — all of which
+// define their own Firebase `auth`/`db` (same project) and kick off an
+// anonymous sign-in on load.
+
+async function waitForFirebaseAuth() {
+  if (auth.currentUser) return;
+  await new Promise((resolve) => {
+    const unsub = auth.onAuthStateChanged((user) => {
+      if (user) {
+        unsub();
+        resolve();
+      }
+    });
+  });
+}
+
+// matchupId -> {rosterId: pickCount} for a given week's Pick-Em picks.
+// Fails closed (returns {}) if Firebase isn't reachable so the pick-count
+// UI just quietly doesn't show rather than erroring.
 async function loadPickCounts(week) {
   try {
-    if (!auth.currentUser) {
-      await new Promise((resolve) => {
-        const unsub = auth.onAuthStateChanged((user) => {
-          if (user) {
-            unsub();
-            resolve();
-          }
-        });
-      });
-    }
+    await waitForFirebaseAuth();
     const snap = await db.collection("picks").where("week", "==", week).get();
     const counts = {};
     snap.docs.forEach((d) => {
@@ -863,6 +868,53 @@ async function loadPickCounts(week) {
   } catch {
     return {};
   }
+}
+
+// The spread for one matchup: each side's best-possible-lineup projected
+// total, and the rounded-to-nearest-0.5 point difference between them.
+function matchupSpreadInfo(season, players, m) {
+  const teamA = teamById(season, m.teamA.rosterId);
+  const teamB = teamById(season, m.teamB.rosterId);
+  const totalA = computeOptimalProjectedLineup(m.teamA.players, m.teamA.projByPlayer, players, season.rosterPositions);
+  const totalB = computeOptimalProjectedLineup(m.teamB.players, m.teamB.projByPlayer, players, season.rosterPositions);
+  const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
+  return { m, teamA, teamB, totalA, totalB, spread };
+}
+
+// All-time Pick-Em pool points per ownerId, graded through the last
+// actually-played week (an unplayed week has no real result to grade
+// against yet). Fails closed (returns an empty map) if Firebase isn't
+// reachable.
+async function computePickEmPoints(season, players) {
+  const points = new Map();
+  try {
+    await waitForFirebaseAuth();
+    const snap = await db.collection("picks").get();
+    const gradedThroughWeek = latestWeekWithData(season) ?? 0;
+    snap.docs.forEach((d) => {
+      const data = d.data();
+      const week = Number(data.week);
+      if (week > gradedThroughWeek) return;
+      if (!points.has(data.ownerId)) points.set(data.ownerId, 0);
+      const matchups = (season.matchups[week] || []).filter((m) => m.teamB);
+      for (const m of matchups) {
+        const pickedRosterId = data.picks ? data.picks[m.matchupId] : null;
+        if (pickedRosterId == null) continue;
+        const { totalA, totalB, spread } = matchupSpreadInfo(season, players, m);
+        const favIsA = totalA >= totalB;
+        const actualMargin = favIsA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
+        let coveringRosterId = null;
+        if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;
+        else if (actualMargin < spread) coveringRosterId = favIsA ? m.teamB.rosterId : m.teamA.rosterId;
+        if (coveringRosterId != null && pickedRosterId === coveringRosterId) {
+          points.set(data.ownerId, points.get(data.ownerId) + 1);
+        }
+      }
+    });
+  } catch {
+    // Firebase unreachable — return whatever's accumulated (likely empty).
+  }
+  return points;
 }
 
 async function openMatchupModal(season, week, rosterIdA, rosterIdB) {

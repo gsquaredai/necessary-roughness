@@ -249,25 +249,6 @@
       await renderWeekBody(container.querySelector("#pickem-week-body"), initialWeek);
     }
 
-    function matchupSpreadInfo(m) {
-      const teamA = teamById(currentSeason, m.teamA.rosterId);
-      const teamB = teamById(currentSeason, m.teamB.rosterId);
-      const totalA = computeOptimalProjectedLineup(
-        m.teamA.players,
-        m.teamA.projByPlayer,
-        allPlayers,
-        currentSeason.rosterPositions
-      );
-      const totalB = computeOptimalProjectedLineup(
-        m.teamB.players,
-        m.teamB.projByPlayer,
-        allPlayers,
-        currentSeason.rosterPositions
-      );
-      const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
-      return { m, teamA, teamB, totalA, totalB, spread };
-    }
-
     function picksDocId(ownerId, week) {
       return `${ownerId}_${week}`;
     }
@@ -290,7 +271,7 @@
         container.innerHTML = `<div class="empty-state">No matchups for this week.</div>`;
         return;
       }
-      const matchupInfo = matchups.map(matchupSpreadInfo);
+      const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
 
       container.innerHTML = `
         <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
@@ -434,35 +415,14 @@
     // ---------- pool tab ----------
 
     async function renderPoolTab(container) {
-      const snap = await db.collection("picks").get();
-      const allPicksDocs = snap.docs.map((d) => d.data());
       const maxWeek = unlockedThroughWeek();
       const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
 
-      const pointsByOwner = new Map();
-      const submittedThisWeek = new Set();
-
-      for (const doc of allPicksDocs) {
-        const week = Number(doc.week);
-        if (week === maxWeek) submittedThisWeek.add(doc.ownerId);
-        if (week > gradedThroughWeek) continue;
-        if (!pointsByOwner.has(doc.ownerId)) pointsByOwner.set(doc.ownerId, 0);
-
-        const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
-        for (const m of matchups) {
-          const pickedRosterId = doc.picks ? doc.picks[m.matchupId] : null;
-          if (pickedRosterId == null) continue;
-          const { totalA, totalB, spread } = matchupSpreadInfo(m);
-          const favIsA = totalA >= totalB;
-          const actualMargin = favIsA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
-          let coveringRosterId = null;
-          if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;
-          else if (actualMargin < spread) coveringRosterId = favIsA ? m.teamB.rosterId : m.teamA.rosterId;
-          if (coveringRosterId != null && pickedRosterId === coveringRosterId) {
-            pointsByOwner.set(doc.ownerId, pointsByOwner.get(doc.ownerId) + 1);
-          }
-        }
-      }
+      const [pointsByOwner, submittedSnap] = await Promise.all([
+        computePickEmPoints(currentSeason, allPlayers),
+        db.collection("picks").where("week", "==", maxWeek).get(),
+      ]);
+      const submittedThisWeek = new Set(submittedSnap.docs.map((d) => d.data().ownerId));
 
       const teams = currentSeason.teams
         .slice()
