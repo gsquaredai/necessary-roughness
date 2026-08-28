@@ -1120,21 +1120,26 @@ th.num {
   color: var(--accent);
 }
 
+.team-box-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .team-list-row {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
+  padding: 14px 16px;
+  background: var(--surface);
+  border: var(--pixel-border) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--pixel-shadow);
   cursor: pointer;
 }
 
-.team-list-row:last-child {
-  border-bottom: none;
-}
-
 .team-list-row:hover {
-  background: var(--surface-2);
+  border-color: var(--accent);
 }
 
 .team-list-info {

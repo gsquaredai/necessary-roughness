@@ -384,7 +384,7 @@
     }
 
     async function renderTeamsTab(container) {
-      container.innerHTML = `<div class="draft-list" id="team-grid"></div>`;
+      container.innerHTML = `<div class="team-box-list" id="team-grid"></div>`;
       const idx = await loadIndex();
       const [seasons, contacts, players, picks] = await Promise.all([
         loadAllSeasons(),
