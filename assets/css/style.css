@@ -499,6 +499,48 @@ th.num {
 
 /* pick-em */
 
+.pickem-auth-box {
+  max-width: 340px;
+  margin: 24px auto 0;
+  background: var(--surface);
+  border: var(--pixel-border) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--pixel-shadow);
+  padding: 20px;
+}
+
+.pickem-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pickem-auth-form input {
+  background: var(--surface-2);
+  color: var(--text);
+  border: var(--pixel-border) solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 0.75rem;
+  font-family: inherit;
+}
+
+.pickem-auth-form input:focus {
+  outline: none;
+  border-color: var(--accent-dim);
+}
+
+.pickem-auth-form .btn-primary {
+  margin-top: 4px;
+}
+
+.pickem-auth-error {
+  color: var(--loss);
+  font-size: 0.65rem;
+  margin-top: 10px;
+  min-height: 1em;
+}
+
 .pickem-identity-bar {
   display: flex;
   align-items: center;

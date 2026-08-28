@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 </head>
 <body data-page="pickem">
   <header class="site-header">
@@ -34,24 +37,31 @@
 
   <script src="assets/js/data.js"></script>
   <script>
-    const IDENTITY_KEY = "pickem_identity_v1";
+    // Real accounts + a real database (Firebase free tier) — this is the
+    // one feature on an otherwise fully static/read-only site that needs
+    // shared, multi-user, writable state: 12 managers submitting and
+    // editing their own picks, with everyone seeing the same pool
+    // standings. Firestore security rules (configured in the Firebase
+    // console, not in this file) enforce that a signed-in user can only
+    // ever write their own picks doc and their own identity doc.
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwRdeJXzmPaInTH2rDMNriQfErQPj33yQ",
+      authDomain: "necessaryroughness-5edd5.firebaseapp.com",
+      projectId: "necessaryroughness-5edd5",
+      storageBucket: "necessaryroughness-5edd5.firebasestorage.app",
+      messagingSenderId: "104157286944",
+      appId: "1:104157286944:web:1a3506b9062c4149ee2245",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
     let currentSeason = null;
     let allPlayers = null;
     let schedule = null;
-    let pickemConfig = null;
-    let poolRowsCache = null;
-    let identity = null;
+    let currentUser = null;
+    let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
     let currentPicks = {};
-
-    async function loadPickemConfig() {
-      try {
-        const res = await fetch("data/pickem-config.json");
-        return await res.json();
-      } catch {
-        return null;
-      }
-    }
 
     async function loadSchedule() {
       try {
@@ -60,124 +70,6 @@
       } catch {
         return [];
       }
-    }
-
-    function loadIdentity() {
-      try {
-        return JSON.parse(localStorage.getItem(IDENTITY_KEY));
-      } catch {
-        return null;
-      }
-    }
-
-    function saveIdentity(team) {
-      try {
-        localStorage.setItem(
-          IDENTITY_KEY,
-          JSON.stringify({ ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName })
-        );
-      } catch {
-        // localStorage unavailable — identity just won't persist across visits
-      }
-    }
-
-    function clearIdentity() {
-      try {
-        localStorage.removeItem(IDENTITY_KEY);
-      } catch {
-        // ignore
-      }
-    }
-
-    function isConfigured() {
-      return !!(pickemConfig && pickemConfig.formActionUrl && pickemConfig.formActionUrl !== "REPLACE_ME");
-    }
-
-    // ---------- CSV (published Google Sheet) ----------
-
-    function parseCSV(text) {
-      const rows = [];
-      let row = [];
-      let field = "";
-      let inQuotes = false;
-      for (let i = 0; i < text.length; i++) {
-        const c = text[i];
-        if (inQuotes) {
-          if (c === '"') {
-            if (text[i + 1] === '"') {
-              field += '"';
-              i++;
-            } else inQuotes = false;
-          } else {
-            field += c;
-          }
-        } else if (c === '"') {
-          inQuotes = true;
-        } else if (c === ",") {
-          row.push(field);
-          field = "";
-        } else if (c === "\n") {
-          row.push(field);
-          rows.push(row);
-          row = [];
-          field = "";
-        } else if (c === "\r") {
-          // skip
-        } else {
-          field += c;
-        }
-      }
-      if (field.length || row.length) {
-        row.push(field);
-        rows.push(row);
-      }
-      return rows;
-    }
-
-    async function loadPoolRows() {
-      if (poolRowsCache) return poolRowsCache;
-      if (!pickemConfig || !pickemConfig.csvUrl || pickemConfig.csvUrl === "REPLACE_ME") {
-        poolRowsCache = [];
-        return poolRowsCache;
-      }
-      try {
-        const res = await fetch(pickemConfig.csvUrl);
-        const text = await res.text();
-        const rows = parseCSV(text);
-        const header = (rows[0] || []).map((h) => h.trim().toLowerCase());
-        const idxManager = header.indexOf("manager");
-        const idxWeek = header.indexOf("week");
-        const idxPicks = header.indexOf("picksjson");
-        poolRowsCache = rows
-          .slice(1)
-          .filter((r) => r.length > 1)
-          .map((r) => ({
-            timestamp: r[0],
-            manager: r[idxManager],
-            week: r[idxWeek],
-            picksJSON: r[idxPicks],
-          }));
-      } catch {
-        poolRowsCache = [];
-      }
-      return poolRowsCache;
-    }
-
-    function findLatestSubmission(rows, ownerId, week) {
-      const matches = rows.filter((r) => r.manager === ownerId && String(r.week) === String(week));
-      if (!matches.length) return null;
-      matches.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-      return matches[0];
-    }
-
-    function latestByManagerWeek(rows) {
-      const map = new Map();
-      for (const r of rows) {
-        const key = `${r.manager}-${r.week}`;
-        const prev = map.get(key);
-        if (!prev || new Date(r.timestamp) > new Date(prev.timestamp)) map.set(key, r);
-      }
-      return map;
     }
 
     // ---------- week gating ----------
@@ -212,9 +104,64 @@
       return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
     }
 
-    // ---------- identity picker ----------
+    // ---------- auth gate ----------
 
-    function renderIdentityPicker() {
+    function renderAuthGate() {
+      const root = document.getElementById("pickem-root");
+      root.innerHTML = `
+        <div class="pickem-auth-box">
+          <div class="info-lead" style="text-align: center;">Sign in to make your Pick-Em picks</div>
+          <div class="view-toggle" id="pickem-auth-mode" style="justify-content: center; margin: 14px 0;">
+            <button type="button" data-mode="login" class="active">Log In</button>
+            <button type="button" data-mode="signup">Sign Up</button>
+          </div>
+          <form id="pickem-auth-form" class="pickem-auth-form">
+            <input type="email" id="pickem-email" placeholder="Email" required autocomplete="email" />
+            <input type="password" id="pickem-password" placeholder="Password" required autocomplete="current-password" minlength="6" />
+            <button type="submit" class="btn-primary">Log In</button>
+          </form>
+          <div id="pickem-auth-error" class="pickem-auth-error"></div>
+        </div>
+      `;
+
+      let mode = "login";
+      const modeToggle = root.querySelector("#pickem-auth-mode");
+      const submitBtn = root.querySelector("#pickem-auth-form button[type=submit]");
+      const passwordInput = root.querySelector("#pickem-password");
+
+      modeToggle.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-mode]");
+        if (!btn) return;
+        mode = btn.dataset.mode;
+        modeToggle.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
+        submitBtn.textContent = mode === "signup" ? "Sign Up" : "Log In";
+        passwordInput.autocomplete = mode === "signup" ? "new-password" : "current-password";
+      });
+
+      root.querySelector("#pickem-auth-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = root.querySelector("#pickem-email").value.trim();
+        const password = passwordInput.value;
+        const errEl = root.querySelector("#pickem-auth-error");
+        errEl.textContent = "";
+        submitBtn.disabled = true;
+        try {
+          if (mode === "signup") {
+            await auth.createUserWithEmailAndPassword(email, password);
+          } else {
+            await auth.signInWithEmailAndPassword(email, password);
+          }
+          // onAuthStateChanged fires next and re-renders.
+        } catch (err) {
+          errEl.textContent = err.message || "Something went wrong.";
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // ---------- team claim (first sign-in only) ----------
+
+    function renderTeamClaimPicker() {
       const root = document.getElementById("pickem-root");
       const rows = currentSeason.teams
         .slice()
@@ -234,12 +181,25 @@
       root.innerHTML = `
         <div class="info-lead" style="text-align: center; margin-bottom: 16px;">Which team are you?</div>
         <div class="team-box-list">${rows}</div>
+        <div id="pickem-claim-error" class="pickem-auth-error" style="text-align: center;"></div>
+        <button type="button" id="pickem-signout" class="link-btn" style="display: block; margin: 16px auto 0;">Sign out</button>
       `;
       root.querySelectorAll(".team-list-row").forEach((row) => {
-        const pick = () => {
+        const pick = async () => {
           const team = teamById(currentSeason, Number(row.dataset.rosterId));
-          saveIdentity(team);
-          identity = loadIdentity();
+          const errEl = root.querySelector("#pickem-claim-error");
+          errEl.textContent = "";
+          const existing = await db.collection("identities").where("ownerId", "==", team.ownerId).get();
+          if (!existing.empty && existing.docs[0].id !== currentUser.uid) {
+            errEl.textContent = `${team.teamName} is already linked to another login. If that's wrong, ask the commissioner.`;
+            return;
+          }
+          await db.collection("identities").doc(currentUser.uid).set({
+            ownerId: team.ownerId,
+            rosterId: team.rosterId,
+            teamName: team.teamName,
+          });
+          identity = { ownerId: team.ownerId, rosterId: team.rosterId, teamName: team.teamName };
           renderMain();
         };
         row.addEventListener("click", pick);
@@ -250,6 +210,7 @@
           }
         });
       });
+      root.querySelector("#pickem-signout").addEventListener("click", () => auth.signOut());
     }
 
     // ---------- main shell ----------
@@ -258,8 +219,8 @@
       const root = document.getElementById("pickem-root");
       root.innerHTML = `
         <div class="pickem-identity-bar">
-          Playing as <strong>${identity.teamName}</strong>
-          <button type="button" id="pickem-switch" class="link-btn">Not you? Switch</button>
+          Playing as <strong>${identity.teamName}</strong> <span class="muted">(${currentUser.email})</span>
+          <button type="button" id="pickem-logout" class="link-btn">Log Out</button>
         </div>
         <div class="view-toggle" id="pickem-tabs">
           <button type="button" data-tab="weeks">Weeks</button>
@@ -267,11 +228,7 @@
         </div>
         <div id="pickem-content"></div>
       `;
-      root.querySelector("#pickem-switch").addEventListener("click", () => {
-        clearIdentity();
-        identity = null;
-        renderIdentityPicker();
-      });
+      root.querySelector("#pickem-logout").addEventListener("click", () => auth.signOut());
 
       const tabs = root.querySelector("#pickem-tabs");
       const params = new URLSearchParams(location.search);
@@ -351,18 +308,19 @@
       return { m, teamA, teamB, totalA, totalB, spread };
     }
 
+    function picksDocId(ownerId, week) {
+      return `${ownerId}_${week}`;
+    }
+
+    async function loadPicksDoc(ownerId, week) {
+      const snap = await db.collection("picks").doc(picksDocId(ownerId, week)).get();
+      return snap.exists ? snap.data() : null;
+    }
+
     async function renderWeekBody(container, week) {
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
-      const rows = await loadPoolRows();
-      const existing = identity ? findLatestSubmission(rows, identity.ownerId, week) : null;
-      currentPicks = {};
-      if (existing) {
-        try {
-          currentPicks = JSON.parse(existing.picksJSON) || {};
-        } catch {
-          currentPicks = {};
-        }
-      }
+      const existing = identity ? await loadPicksDoc(identity.ownerId, week) : null;
+      currentPicks = existing && existing.picks ? { ...existing.picks } : {};
 
       const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
       if (!matchups.length) {
@@ -447,7 +405,6 @@
       const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
       const opp = opponentForPlayer(playerId, week);
       const oppText = opp ? `${opp.isHome ? "vs" : "@"} ${nflAbbr3(opp.opp)} &middot; ${fmtGameDate(opp.date)}` : "Bye / N/A";
-      const pts = null; // filled by caller via data attr replace below
       return `
         <div class="pickem-player-row${isStarter ? " pickem-starter" : ""}">
           <span class="pickem-player-name">${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
@@ -481,61 +438,49 @@
 
     async function submitPicks(container, week, matchupInfo) {
       const status = container.querySelector("#pickem-submit-status");
-      if (!isConfigured()) {
-        status.textContent = "Pick-Em submissions aren't wired up yet — check back soon.";
-        return;
-      }
       if (!matchupInfo.every((info) => currentPicks[info.m.matchupId] != null)) {
         status.textContent = `Pick all ${matchupInfo.length} matchups before submitting.`;
         return;
       }
 
-      const body = new URLSearchParams();
-      body.set(pickemConfig.entryManager, identity.ownerId);
-      body.set(pickemConfig.entryWeek, String(week));
-      body.set(pickemConfig.entryPicks, JSON.stringify(currentPicks));
-
-      status.textContent = "Submitting...";
+      status.textContent = "Saving...";
       try {
-        await fetch(pickemConfig.formActionUrl, { method: "POST", mode: "no-cors", body });
-        status.textContent = "Picks submitted! It may take a few seconds to show up in the Pool tab.";
-        poolRowsCache = null;
-      } catch {
-        status.textContent = "Something went wrong submitting — try again.";
+        await db
+          .collection("picks")
+          .doc(picksDocId(identity.ownerId, week))
+          .set({
+            uid: currentUser.uid,
+            ownerId: identity.ownerId,
+            week,
+            picks: currentPicks,
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+          });
+        status.textContent = "Picks saved!";
+      } catch (err) {
+        status.textContent = "Something went wrong saving — try again.";
       }
     }
 
     // ---------- pool tab ----------
 
     async function renderPoolTab(container) {
-      if (!isConfigured()) {
-        container.innerHTML = `<div class="empty-state">Pick-Em pool isn't set up yet.</div>`;
-        return;
-      }
-      const rows = await loadPoolRows();
-      const latest = latestByManagerWeek(rows);
+      const snap = await db.collection("picks").get();
+      const allPicksDocs = snap.docs.map((d) => d.data());
       const maxWeek = unlockedThroughWeek();
       const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
 
       const pointsByOwner = new Map();
       const submittedThisWeek = new Set();
 
-      for (const r of latest.values()) {
-        const week = Number(r.week);
-        if (week === maxWeek) submittedThisWeek.add(r.manager);
+      for (const doc of allPicksDocs) {
+        const week = Number(doc.week);
+        if (week === maxWeek) submittedThisWeek.add(doc.ownerId);
         if (week > gradedThroughWeek) continue;
-
-        let picks;
-        try {
-          picks = JSON.parse(r.picksJSON);
-        } catch {
-          continue;
-        }
-        if (!pointsByOwner.has(r.manager)) pointsByOwner.set(r.manager, 0);
+        if (!pointsByOwner.has(doc.ownerId)) pointsByOwner.set(doc.ownerId, 0);
 
         const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
         for (const m of matchups) {
-          const pickedRosterId = picks[m.matchupId];
+          const pickedRosterId = doc.picks ? doc.picks[m.matchupId] : null;
           if (pickedRosterId == null) continue;
           const { totalA, totalB, spread } = matchupSpreadInfo(m);
           const favIsA = totalA >= totalB;
@@ -544,7 +489,7 @@
           if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;
           else if (actualMargin < spread) coveringRosterId = favIsA ? m.teamB.rosterId : m.teamA.rosterId;
           if (coveringRosterId != null && pickedRosterId === coveringRosterId) {
-            pointsByOwner.set(r.manager, pointsByOwner.get(r.manager) + 1);
+            pointsByOwner.set(doc.ownerId, pointsByOwner.get(doc.ownerId) + 1);
           }
         }
       }
@@ -590,14 +535,28 @@
     async function init() {
       const idx = await loadIndex();
       currentSeason = await loadSeason(idx.currentSeason);
-      [allPlayers, schedule, pickemConfig] = await Promise.all([loadPlayers(), loadSchedule(), loadPickemConfig()]);
-      identity = loadIdentity();
+      [allPlayers, schedule] = await Promise.all([loadPlayers(), loadSchedule()]);
 
-      if (!identity || !teamById(currentSeason, identity.rosterId)) {
-        renderIdentityPicker();
-      } else {
-        renderMain();
-      }
+      auth.onAuthStateChanged(async (user) => {
+        currentUser = user;
+        if (!user) {
+          identity = null;
+          renderAuthGate();
+          return;
+        }
+        try {
+          const idDoc = await db.collection("identities").doc(user.uid).get();
+          if (!idDoc.exists) {
+            renderTeamClaimPicker();
+          } else {
+            identity = idDoc.data();
+            renderMain();
+          }
+        } catch (err) {
+          document.getElementById("pickem-root").innerHTML =
+            '<div class="empty-state">Could not load your account. Try refreshing.</div>';
+        }
+      });
     }
 
     init().catch((err) => {
