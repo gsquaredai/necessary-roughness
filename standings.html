@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 </head>
 <body data-page="standings">
   <header class="site-header">
@@ -39,6 +42,7 @@
         <button type="button" data-view="pf">PF</button>
         <button type="button" data-view="pa">PA</button>
         <button type="button" data-view="maxpf">Max PF</button>
+        <button type="button" data-view="pickem" id="pickem-view-btn" hidden>Pick-Em Pts</button>
       </div>
 
       <p class="muted" id="draft-projection-note" hidden style="margin-bottom: 12px;">
@@ -48,7 +52,7 @@
       </p>
 
       <section>
-        <div class="card table-wrap">
+        <div class="card table-wrap standings-table-wrap">
           <table>
             <thead>
               <tr>
@@ -58,17 +62,37 @@
                 <th class="num">PF</th>
                 <th class="num">Max PF</th>
                 <th class="num">PA</th>
+                <th class="num" id="pickem-col-header" hidden>Pick-Em Pts</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
           </table>
         </div>
+        <div class="standing-cards" id="standings-cards"></div>
       </section>
     </main>
   </div>
 
   <script src="assets/js/data.js"></script>
   <script>
+    // Read-only Pick-Em pool points — same Firebase project as pickem.html,
+    // signed in anonymously (no visible auth). computePickEmPoints()
+    // (data.js) fails closed if this isn't ready.
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwRdeJXzmPaInTH2rDMNriQfErQPj33yQ",
+      authDomain: "necessaryroughness-5edd5.firebaseapp.com",
+      projectId: "necessaryroughness-5edd5",
+      storageBucket: "necessaryroughness-5edd5.firebasestorage.app",
+      messagingSenderId: "104157286944",
+      appId: "1:104157286944:web:1a3506b9062c4149ee2245",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    auth.onAuthStateChanged((user) => {
+      if (!user) auth.signInAnonymously().catch(() => {});
+    });
+
     // "Standings" defaults to the reverse of the draft order once a season
     // is actually over — the draft order is this league's real, official
     // final placement (it accounts for actual playoff results, not just
@@ -106,7 +130,20 @@
         label: "#",
         sort: (season) => [...season.teams].sort((a, b) => b.maxPF - a.maxPF),
       },
+      pickem: {
+        label: "#",
+        sort: (season, pickMap, projected, pickemPoints) =>
+          [...season.teams].sort(
+            (a, b) => (pickemPoints.get(b.ownerId) || 0) - (pickemPoints.get(a.ownerId) || 0)
+          ),
+      },
     };
+
+    // Pick-Em didn't exist before the 2026 season — only show it (the view
+    // toggle, the table column, the card stat) for that season and later.
+    function isPickEmEra(season) {
+      return parseInt(season.season, 10) >= 2026;
+    }
 
     let currentSeason = null;
     let currentView = "standings";
@@ -213,110 +250,95 @@
       const season = await loadSeason(seasonKey);
       currentSeason = season;
 
+      const pickemEra = isPickEmEra(season);
+      document.getElementById("pickem-view-btn").hidden = !pickemEra;
+      document.getElementById("pickem-col-header").hidden = !pickemEra;
+      if (!pickemEra && currentView === "pickem") {
+        currentView = "standings";
+        updateViewButtons();
+      }
+      const pickemPoints = pickemEra ? await computePickEmPoints(season, await loadPlayers()) : new Map();
+
       const { picks: pickMap, projected } = pickNumberMap(season);
       document.getElementById("draft-projection-note").hidden = !(projected && currentView === "draft");
 
-      const sorted = VIEWS[currentView].sort(season, pickMap, projected);
+      const sorted = VIEWS[currentView].sort(season, pickMap, projected, pickemPoints);
       const placements = playoffPlacements(season);
       const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
 
-      document.getElementById("standings-body").innerHTML = sorted
-        .map((team, i) => {
-          const champ = placements.champion === team.rosterId;
-          const second = placements.runnerUp === team.rosterId;
-          const third = placements.thirdPlace === team.rosterId;
-          const last = placements.lastPlace === team.rosterId;
-          const rankCell = currentView === "draft" ? pickMap.get(team.rosterId) ?? "—" : i + 1;
-          const cutoff =
-            (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1
-              ? " playoff-cutoff"
-              : "";
-          const mine = isMyTeam(team.ownerId) ? " is-my-team" : "";
-          return `
-            <tr class="clickable-row${cutoff}${mine}" data-roster-id="${team.rosterId}">
+      const rows = sorted.map((team, i) => {
+        const champ = placements.champion === team.rosterId;
+        const second = placements.runnerUp === team.rosterId;
+        const third = placements.thirdPlace === team.rosterId;
+        const last = placements.lastPlace === team.rosterId;
+        const rankCell = currentView === "draft" ? pickMap.get(team.rosterId) ?? "—" : i + 1;
+        const cutoff =
+          (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1;
+        const mine = isMyTeam(team.ownerId);
+        const pickemPts = pickemPoints.get(team.ownerId) || 0;
+        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts };
+      });
+
+      document.getElementById("standings-body").innerHTML = rows
+        .map(
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts }) => `
+            <tr class="clickable-row${cutoff ? " playoff-cutoff" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, second, third, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
               <td class="num">${fmtPts(team.maxPF)}</td>
               <td class="num">${fmtPts(team.fptsAgainst)}</td>
+              <td class="num"${pickemEra ? "" : " hidden"}>${pickemPts}</td>
             </tr>
-          `;
-        })
+          `
+        )
         .join("");
 
-      document.querySelectorAll("#standings-body tr[data-roster-id]").forEach((row) => {
-        row.addEventListener("click", () => openRosterModal(Number(row.dataset.rosterId)));
+      document.getElementById("standings-cards").innerHTML = rows
+        .map(
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts }) => `
+            <div class="standing-card${cutoff ? " playoff-cutoff-card" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
+              <div class="standing-card-top">
+                <span class="standing-card-rank">${rankCell}</span>
+                ${teamCellHTML(team, { champ, second, third, last })}
+              </div>
+              <div class="standing-card-stats">
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Record</span>
+                  <span class="standing-card-stat-value">${record(team)}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">PF</span>
+                  <span class="standing-card-stat-value">${fmtPts(team.fpts)}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Max PF</span>
+                  <span class="standing-card-stat-value">${fmtPts(team.maxPF)}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">PA</span>
+                  <span class="standing-card-stat-value">${fmtPts(team.fptsAgainst)}</span>
+                </div>
+                ${
+                  pickemEra
+                    ? `
+                      <div class="standing-card-stat">
+                        <span class="standing-card-stat-label">Pick-Em Pts</span>
+                        <span class="standing-card-stat-value">${pickemPts}</span>
+                      </div>
+                    `
+                    : ""
+                }
+              </div>
+            </div>
+          `
+        )
+        .join("");
+
+      document.querySelectorAll("#standings-body tr[data-roster-id], .standing-card[data-roster-id]").forEach((row) => {
+        row.addEventListener("click", () => openRosterModal(currentSeason, Number(row.dataset.rosterId)));
       });
-    }
-
-    function playerRosterLinkHTML(playerId, players) {
-      const p = players[playerId];
-      const name = p ? p.name : "Unknown Player";
-      const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
-      return `<div class="roster-player">${playerLinkHTML(playerId, name)}${
-        meta ? `<span class="player-meta">${meta}</span>` : ""
-      }</div>`;
-    }
-
-    function rosterGroupHTML(title, playerIds, players) {
-      if (!playerIds.length) return "";
-      return `
-        <div class="roster-group">
-          <div class="roster-group-title">${title} (${playerIds.length})</div>
-          ${playerIds.map((pid) => playerRosterLinkHTML(pid, players)).join("")}
-        </div>
-      `;
-    }
-
-    let standingsPlayersCache = null;
-
-    async function openRosterModal(rosterId) {
-      const team = teamById(currentSeason, rosterId);
-      const roster = currentSeason.rosterPlayers?.[rosterId];
-      let root = document.getElementById("player-modal-root");
-      if (!root) {
-        root = document.createElement("div");
-        root.id = "player-modal-root";
-        document.body.appendChild(root);
-      }
-      root.innerHTML = `
-        <div class="modal-overlay" id="player-modal-overlay">
-          <div class="modal-box"><div class="empty-state">Loading...</div></div>
-        </div>
-      `;
-      root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
-        if (e.target.id === "player-modal-overlay") closePlayerModal();
-      });
-
-      if (!standingsPlayersCache) standingsPlayersCache = await loadPlayers();
-      const players = standingsPlayersCache;
-      const box = root.querySelector(".modal-box");
-
-      if (!roster) {
-        box.innerHTML = `<div class="empty-state">No roster data available.</div>`;
-        return;
-      }
-
-      const starters = new Set(roster.starters);
-      const taxi = new Set(roster.taxi);
-      const reserve = new Set(roster.reserve);
-      const bench = roster.players.filter((p) => !starters.has(p) && !taxi.has(p) && !reserve.has(p));
-
-      box.innerHTML = `
-        <button class="modal-close" id="player-modal-close">&times;</button>
-        <div class="modal-header">
-          <h2>${team.teamName}</h2>
-          <div class="modal-subtitle">${team.displayName} &middot; ${currentSeason.season}</div>
-        </div>
-        <div class="modal-tab-content">
-          ${rosterGroupHTML("Starters", roster.starters, players)}
-          ${rosterGroupHTML("Bench", bench, players)}
-          ${rosterGroupHTML("Taxi Squad", roster.taxi, players)}
-          ${rosterGroupHTML("IR", roster.reserve, players)}
-        </div>
-      `;
-      box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
     }
 
     init().catch((err) => {

@@ -1797,6 +1797,16 @@ tr.is-my-team td:first-child {
   border-radius: var(--radius);
   box-shadow: var(--pixel-shadow);
   padding: 10px 12px;
+  cursor: pointer;
+}
+
+.standing-card:hover {
+  background: var(--surface-2);
+}
+
+.standing-card.playoff-cutoff-card {
+  border-bottom: 3px dashed var(--accent);
+  margin-bottom: 14px;
 }
 
 .standing-card.is-my-team {
@@ -1819,8 +1829,9 @@ tr.is-my-team td:first-child {
 }
 
 .standing-card-stats {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 10px 12px;
   margin-top: 8px;
   padding-left: 26px;
 }
@@ -1875,8 +1886,8 @@ tr.is-my-team td:first-child {
     font-size: 0.82rem;
   }
 
-  /* home page — current standings: card layout instead of the table */
-  #standings-section .table-wrap {
+  /* home page + standings page — card layout instead of the table */
+  .standings-table-wrap {
     display: none;
   }
 

@@ -771,6 +771,80 @@ function closePlayerModal() {
   if (root) root.innerHTML = "";
 }
 
+// ---------- team roster modal ----------
+// Shared by standings.html and index.html — clicking any team (table row
+// or mobile card) opens this same starters/bench/taxi/IR popup for
+// whichever season is currently being viewed.
+
+function playerRosterLinkHTML(playerId, players) {
+  const p = players[playerId];
+  const name = p ? p.name : "Unknown Player";
+  const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
+  return `<div class="roster-player">${playerLinkHTML(playerId, name)}${
+    meta ? `<span class="player-meta">${meta}</span>` : ""
+  }</div>`;
+}
+
+function rosterGroupHTML(title, playerIds, players) {
+  if (!playerIds.length) return "";
+  return `
+    <div class="roster-group">
+      <div class="roster-group-title">${title} (${playerIds.length})</div>
+      ${playerIds.map((pid) => playerRosterLinkHTML(pid, players)).join("")}
+    </div>
+  `;
+}
+
+let rosterModalPlayersCache = null;
+
+async function openRosterModal(season, rosterId) {
+  const team = teamById(season, rosterId);
+  const roster = season.rosterPlayers?.[rosterId];
+  let root = document.getElementById("player-modal-root");
+  if (!root) {
+    root = document.createElement("div");
+    root.id = "player-modal-root";
+    document.body.appendChild(root);
+  }
+  root.innerHTML = `
+    <div class="modal-overlay" id="player-modal-overlay">
+      <div class="modal-box"><div class="empty-state">Loading...</div></div>
+    </div>
+  `;
+  root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "player-modal-overlay") closePlayerModal();
+  });
+
+  if (!rosterModalPlayersCache) rosterModalPlayersCache = await loadPlayers();
+  const players = rosterModalPlayersCache;
+  const box = root.querySelector(".modal-box");
+
+  if (!roster) {
+    box.innerHTML = `<div class="empty-state">No roster data available.</div>`;
+    return;
+  }
+
+  const starters = new Set(roster.starters);
+  const taxi = new Set(roster.taxi);
+  const reserve = new Set(roster.reserve);
+  const bench = roster.players.filter((p) => !starters.has(p) && !taxi.has(p) && !reserve.has(p));
+
+  box.innerHTML = `
+    <button class="modal-close" id="player-modal-close">&times;</button>
+    <div class="modal-header">
+      <h2>${team.teamName}</h2>
+      <div class="modal-subtitle">${team.displayName} &middot; ${season.season}</div>
+    </div>
+    <div class="modal-tab-content">
+      ${rosterGroupHTML("Starters", roster.starters, players)}
+      ${rosterGroupHTML("Bench", bench, players)}
+      ${rosterGroupHTML("Taxi Squad", roster.taxi, players)}
+      ${rosterGroupHTML("IR", roster.reserve, players)}
+    </div>
+  `;
+  box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+}
+
 // ---------- matchup detail modal ----------
 // Shared by matchups.html (every regular-season/playoff matchup card) and
 // history.html (the Highest Single-Week Team Score list) — both open the

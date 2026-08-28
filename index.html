@@ -38,7 +38,7 @@
 
       <section id="standings-section">
         <h2>Current Standings</h2>
-        <div class="card table-wrap">
+        <div class="card table-wrap standings-table-wrap">
           <table>
             <thead>
               <tr>
@@ -137,7 +137,7 @@
       standingsBody.innerHTML = rows
         .map(
           ({ team, i, champ, last, mine, pickemPts }) => `
-            <tr class="${mine}">
+            <tr class="clickable-row${mine}" data-roster-id="${team.rosterId}">
               <td>${i + 1}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
@@ -152,7 +152,7 @@
       standingsCards.innerHTML = rows
         .map(
           ({ team, i, champ, last, mine, pickemPts }) => `
-            <div class="standing-card${mine}">
+            <div class="standing-card${mine}" data-roster-id="${team.rosterId}">
               <div class="standing-card-top">
                 <span class="standing-card-rank">${i + 1}</span>
                 ${teamCellHTML(team, { champ, last })}
@@ -179,6 +179,10 @@
           `
         )
         .join("");
+
+      document.querySelectorAll("#standings-body tr[data-roster-id], #standings-cards .standing-card[data-roster-id]").forEach((row) => {
+        row.addEventListener("click", () => openRosterModal(season, Number(row.dataset.rosterId)));
+      });
 
       document.getElementById("updated-note").textContent = `Data last updated ${new Date(
         idx.updatedAt
