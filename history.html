@@ -346,7 +346,7 @@
     async function renderRivalriesTab(container) {
       await ensureData();
       const rivalries = await loadRivalries();
-      const records = rivalries.map((r) => ({ ...r, winsA: 0, winsB: 0, ties: 0, meetings: 0 }));
+      const records = rivalries.map((r) => ({ ...r, winsA: 0, winsB: 0, ties: 0, meetings: 0, pointsA: 0, pointsB: 0 }));
       const findRecord = (ownerA, ownerB) => findRivalry(records, ownerA, ownerB);
 
       // Rivalry Week started in 2025, and only counts the two designated
@@ -369,6 +369,8 @@
             if (m.teamA.points > m.teamB.points) rec[aIsOwnersFirst ? "winsA" : "winsB"] += 1;
             else if (m.teamB.points > m.teamA.points) rec[aIsOwnersFirst ? "winsB" : "winsA"] += 1;
             else rec.ties += 1;
+            rec[aIsOwnersFirst ? "pointsA" : "pointsB"] += m.teamA.points;
+            rec[aIsOwnersFirst ? "pointsB" : "pointsA"] += m.teamB.points;
             rec.meetings += 1;
           }
         }
@@ -383,11 +385,17 @@
             <div class="info-stat-row" style="flex-direction: column; gap: 8px; padding: 14px;">
               <div class="rivalry-banner" style="--rivalry-color: ${r.color || "#4cc9f0"}; margin: 0;">${r.name}</div>
               <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
-                ${teamA ? teamCellHTML(teamA) : '<span class="muted">Unknown</span>'}
+                <div style="text-align: center;">
+                  ${teamA ? teamCellHTML(teamA) : '<span class="muted">Unknown</span>'}
+                  ${r.meetings ? `<div class="muted" style="margin-top: 4px;">${fmtPts(r.pointsA)} pts</div>` : ""}
+                </div>
                 <span class="info-stat-value money accent">${
                   r.meetings ? recordStr : "No meetings yet"
                 }</span>
-                ${teamB ? teamCellHTML(teamB) : '<span class="muted">Unknown</span>'}
+                <div style="text-align: center;">
+                  ${teamB ? teamCellHTML(teamB) : '<span class="muted">Unknown</span>'}
+                  ${r.meetings ? `<div class="muted" style="margin-top: 4px;">${fmtPts(r.pointsB)} pts</div>` : ""}
+                </div>
               </div>
             </div>
           `;
