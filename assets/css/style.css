@@ -293,16 +293,13 @@ th.num {
   gap: 10px;
 }
 
-.matchup .side {
+.matchup-side-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   min-width: 0;
-}
-
-.matchup .side.right {
-  flex-direction: row-reverse;
-  text-align: right;
+  text-align: center;
 }
 
 .matchup .points {
@@ -319,6 +316,64 @@ th.num {
   color: var(--text-dim);
   font-size: 0.65rem;
   text-transform: uppercase;
+}
+
+.week-median-banner {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.week-median-banner strong {
+  color: var(--accent-2);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.7rem;
+}
+
+.week-icons {
+  display: flex;
+  gap: 6px;
+  height: 14px;
+}
+
+.week-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.week-icon.crown {
+  color: var(--accent);
+}
+
+.week-icon.trophy {
+  color: var(--accent-2);
+}
+
+.week-record {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.rivalry-banner {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.65rem;
+  color: #14141c;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  padding: 6px 10px;
+  margin: -14px -16px 10px;
+  letter-spacing: 0.02em;
+}
+
+.matchup.rivalry-matchup {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 1px var(--accent-2), var(--pixel-shadow);
 }
 
 .matchup .proj-points {
@@ -344,6 +399,22 @@ th.num {
 
 .bracket-round-title:first-child {
   margin-top: 0;
+}
+
+.matchup.clickable {
+  cursor: pointer;
+}
+
+.matchup.clickable:hover {
+  border-color: var(--accent-2);
+}
+
+.bracket-match[data-week] {
+  cursor: pointer;
+}
+
+.bracket-match[data-week]:hover {
+  background: var(--surface-2);
 }
 
 .bracket-match {
@@ -1320,12 +1391,6 @@ th.num {
 
   .matchup {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .matchup .side,
-  .matchup .side.right {
-    flex-direction: column;
     text-align: center;
   }
 

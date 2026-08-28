@@ -84,8 +84,8 @@
       <section>
         <h2>Rivalries</h2>
         <p class="muted" style="margin-bottom: 12px;">
-          All-time head-to-head records, including playoffs. Rivalry Week itself started in 2025, but these totals
-          count every meeting between each pair, dating back to 2024.
+          All-time head-to-head records, including playoffs. Rivalry Week started in 2025, so 2024 meetings
+          (before these rivalries existed) aren't counted.
         </p>
         <div class="draft-list" id="rivalries-list"></div>
       </section>
@@ -97,15 +97,6 @@
     async function loadTeamRecords() {
       try {
         const res = await fetch("data/team-records.json");
-        return await res.json();
-      } catch {
-        return [];
-      }
-    }
-
-    async function loadRivalries() {
-      try {
-        const res = await fetch("data/rivalries.json");
         return await res.json();
       } catch {
         return [];
@@ -158,14 +149,12 @@
 
     function renderRivalries(seasons, rivalries) {
       const records = rivalries.map((r) => ({ ...r, winsA: 0, winsB: 0, ties: 0, meetings: 0 }));
-      const findRecord = (ownerA, ownerB) =>
-        records.find(
-          (r) =>
-            (r.owners[0] === ownerA && r.owners[1] === ownerB) ||
-            (r.owners[0] === ownerB && r.owners[1] === ownerA)
-        );
+      const findRecord = (ownerA, ownerB) => findRivalry(records, ownerA, ownerB);
 
+      // Rivalry Week started in 2025 — 2024 meetings weren't rivalry games
+      // (there was no rivalry to have yet), so they're left out entirely.
       for (const season of seasons) {
+        if (season.season === "2024") continue;
         for (const weekKey of Object.keys(season.matchups)) {
           for (const m of season.matchups[weekKey]) {
             if (!m.teamB) continue;

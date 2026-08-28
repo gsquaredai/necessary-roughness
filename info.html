@@ -185,15 +185,6 @@
       }
     }
 
-    async function loadRivalries() {
-      try {
-        const res = await fetch("data/rivalries.json");
-        return await res.json();
-      } catch {
-        return [];
-      }
-    }
-
     // Rivalry Weeks names live rivals, so it pulls this season's actual
     // Week 1 matchups rather than being static text.
     async function rivalryMatchupsHTML() {
@@ -202,14 +193,7 @@
         const [season, rivalries] = await Promise.all([loadSeason(idx.currentSeason), loadRivalries()]);
         const week1 = season.matchups?.[1] || season.matchups?.["1"] || [];
         if (!week1.length) return "";
-        const nameFor = (ownerIdA, ownerIdB) => {
-          const match = rivalries.find(
-            (r) =>
-              (r.owners[0] === ownerIdA && r.owners[1] === ownerIdB) ||
-              (r.owners[0] === ownerIdB && r.owners[1] === ownerIdA)
-          );
-          return match?.name || null;
-        };
+        const nameFor = (ownerIdA, ownerIdB) => findRivalry(rivalries, ownerIdA, ownerIdB)?.name || null;
         const rows = week1
           .map((m) => {
             const teamA = teamById(season, m.teamA.rosterId);

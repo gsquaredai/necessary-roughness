@@ -33,6 +33,30 @@ async function loadPickRegistry() {
   return pickRegistryCache;
 }
 
+let rivalriesCache = null;
+async function loadRivalries() {
+  if (rivalriesCache) return rivalriesCache;
+  try {
+    const res = await fetch("data/rivalries.json");
+    rivalriesCache = await res.json();
+  } catch {
+    rivalriesCache = [];
+  }
+  return rivalriesCache;
+}
+
+// Named rivalry (if any) between two owner ids, order-independent.
+function findRivalry(rivalries, ownerIdA, ownerIdB) {
+  if (!ownerIdA || !ownerIdB) return null;
+  return (
+    rivalries.find(
+      (r) =>
+        (r.owners[0] === ownerIdA && r.owners[1] === ownerIdB) ||
+        (r.owners[0] === ownerIdB && r.owners[1] === ownerIdA)
+    ) || null
+  );
+}
+
 // The one stable identity for a draft pick everywhere on the site: which
 // season, which round, and whose original draft slot it is — independent
 // of who currently holds it or who it was drafted by.
@@ -192,6 +216,18 @@ const CROWN_SVG = `
     <rect x="4" y="2" width="3" height="1"/>
     <rect x="8" y="2" width="3" height="1"/>
     <rect x="0" y="3" width="11" height="2"/>
+  </svg>
+`;
+
+const TROPHY_SVG = `
+  <svg class="trophy-icon" viewBox="0 0 7 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor" shape-rendering="crispEdges">
+    <rect x="0" y="0" width="1" height="2"/>
+    <rect x="6" y="0" width="1" height="2"/>
+    <rect x="1" y="0" width="5" height="1"/>
+    <rect x="1" y="1" width="5" height="2"/>
+    <rect x="2" y="3" width="3" height="1"/>
+    <rect x="3" y="4" width="1" height="1"/>
+    <rect x="1" y="5" width="5" height="1"/>
   </svg>
 `;
 

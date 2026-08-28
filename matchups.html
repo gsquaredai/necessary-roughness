@@ -41,9 +41,13 @@
   <script src="assets/js/data.js"></script>
   <script>
     let currentSeason = null;
+    let rivalries = [];
+    let weeklyRecords = null; // Map week -> { median, teams: { [rosterId]: {...} } }
+    let lastRegularWeek = 14;
 
     async function init() {
       const idx = await loadIndex();
+      rivalries = await loadRivalries();
       const seasonSelect = document.getElementById("season-select");
       seasonSelect.innerHTML = idx.seasons
         .slice()
@@ -60,7 +64,8 @@
 
     async function loadSeasonInto(seasonKey) {
       currentSeason = await loadSeason(seasonKey);
-      const lastRegularWeek = (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
+      lastRegularWeek = (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
+      weeklyRecords = computeWeeklyRecords(currentSeason, lastRegularWeek);
       const weeks = Object.keys(currentSeason.matchups)
         .map(Number)
         .filter((w) => w <= lastRegularWeek)
@@ -81,6 +86,73 @@
       }
     }
 
+    // League median (the middle score across every team that week) for the
+    // bonus median win/loss each team's record includes, per the League
+    // Median rule. Regular season only — playoffs don't use it.
+    function weekMedian(season, week) {
+      const scores = [];
+      for (const m of season.matchups[week] || []) {
+        scores.push(m.teamA.points);
+        if (m.teamB) scores.push(m.teamB.points);
+      }
+      if (!scores.length) return null;
+      scores.sort((a, b) => a - b);
+      const mid = Math.floor(scores.length / 2);
+      return scores.length % 2 === 0 ? (scores[mid - 1] + scores[mid]) / 2 : scores[mid];
+    }
+
+    // Per team, per played regular-season week: did they win their
+    // matchup, did they beat the median, and their cumulative record
+    // (matchup + median results combined) through that week.
+    function computeWeeklyRecords(season, throughWeek) {
+      const running = new Map(season.teams.map((t) => [t.rosterId, { wins: 0, losses: 0, ties: 0 }]));
+      const perWeek = new Map();
+
+      for (let week = 1; week <= throughWeek; week++) {
+        if (!weekHasBeenPlayed(season, week)) continue;
+        const matchups = season.matchups[week] || [];
+        const median = weekMedian(season, week);
+        const teamsData = {};
+
+        for (const m of matchups) {
+          const sides = [m.teamA, m.teamB].filter(Boolean);
+          for (const side of sides) {
+            const opponent = sides.length === 2 ? sides.find((s) => s !== side) : null;
+            let matchupResult = null;
+            if (opponent) {
+              if (side.points > opponent.points) matchupResult = "W";
+              else if (side.points < opponent.points) matchupResult = "L";
+              else matchupResult = "T";
+            }
+            let medianResult = null;
+            if (median != null) {
+              if (side.points > median) medianResult = "W";
+              else if (side.points < median) medianResult = "L";
+              else medianResult = "T";
+            }
+
+            const r = running.get(side.rosterId);
+            if (r) {
+              if (matchupResult === "W") r.wins += 1;
+              else if (matchupResult === "L") r.losses += 1;
+              else if (matchupResult === "T") r.ties += 1;
+              if (medianResult === "W") r.wins += 1;
+              else if (medianResult === "L") r.losses += 1;
+              else if (medianResult === "T") r.ties += 1;
+            }
+
+            teamsData[side.rosterId] = {
+              matchupResult,
+              medianResult,
+              cumRecord: r ? { ...r } : null,
+            };
+          }
+        }
+        perWeek.set(week, { median, teams: teamsData });
+      }
+      return perWeek;
+    }
+
     function renderWeek() {
       const week = document.getElementById("week-select").value;
       const container = document.getElementById("matchups-list");
@@ -89,8 +161,14 @@
         return;
       }
       container.className = "matchup-grid";
+      const weekNum = Number(week);
       const matchups = currentSeason.matchups[week] || [];
-      container.innerHTML = matchups.map((m) => renderMatchup(currentSeason, m, Number(week))).join("");
+      const wr = weeklyRecords.get(weekNum);
+      const medianHTML =
+        wr && wr.median != null
+          ? `<div class="week-median-banner">League Median: <strong>${fmtPts(wr.median)}</strong></div>`
+          : "";
+      container.innerHTML = medianHTML + matchups.map((m) => renderMatchup(currentSeason, m, weekNum, wr)).join("");
     }
 
     function scoreBlockHTML(side, played, isWinner) {
@@ -106,24 +184,53 @@
       `;
     }
 
-    function renderMatchup(season, m, week) {
+    function weekBadgesHTML(data) {
+      if (!data) return "";
+      const crown =
+        data.matchupResult === "W" ? `<span class="week-icon crown" title="Won the matchup">${CROWN_SVG}</span>` : "";
+      const trophy =
+        data.medianResult === "W" ? `<span class="week-icon trophy" title="Beat the league median">${TROPHY_SVG}</span>` : "";
+      const weekW = (data.matchupResult === "W" ? 1 : 0) + (data.medianResult === "W" ? 1 : 0);
+      const weekL = (data.matchupResult === "L" ? 1 : 0) + (data.medianResult === "L" ? 1 : 0);
+      const cum = data.cumRecord
+        ? `${data.cumRecord.wins}-${data.cumRecord.losses}${data.cumRecord.ties ? "-" + data.cumRecord.ties : ""}`
+        : "";
+      return `
+        <div class="week-icons">${crown}${trophy}</div>
+        <div class="week-record">Wk ${weekW}-${weekL} &middot; Season ${cum}</div>
+      `;
+    }
+
+    function renderMatchup(season, m, week, wr) {
       const teamA = teamById(season, m.teamA.rosterId);
       const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
       const played = weekHasBeenPlayed(season, week);
       const aWins = played && teamB && m.teamA.points > m.teamB.points;
       const bWins = played && teamB && m.teamB.points > m.teamA.points;
+
+      const rivalry = teamB ? findRivalry(rivalries, teamA?.ownerId, teamB?.ownerId) : null;
+      const isRivalryWeek = week === 1 || week === lastRegularWeek;
+      const showRivalry = !!(rivalry && isRivalryWeek);
+
+      const aData = played && wr ? wr.teams[m.teamA.rosterId] : null;
+      const bData = played && wr && teamB ? wr.teams[m.teamB.rosterId] : null;
+
+      const clickable = played && teamB;
       return `
-        <div class="matchup">
-          <div class="side">
+        <div class="matchup${showRivalry ? " rivalry-matchup" : ""}${clickable ? " clickable" : ""}"${
+        clickable ? ` data-week="${week}" data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}"` : ""
+      }>
+          ${showRivalry ? `<div class="rivalry-banner">${rivalry.name}</div>` : ""}
+          <div class="matchup-side-block">
             ${teamCellHTML(teamA)}
-          </div>
-          <div style="text-align:center;">
             ${scoreBlockHTML(m.teamA, played, aWins)}
-            <div class="vs">vs</div>
-            ${scoreBlockHTML(m.teamB, played, bWins)}
+            ${weekBadgesHTML(aData)}
           </div>
-          <div class="side right">
+          <div class="vs">vs</div>
+          <div class="matchup-side-block">
             ${teamB ? teamCellHTML(teamB) : '<span class="muted">Bye</span>'}
+            ${scoreBlockHTML(m.teamB, played, bWins)}
+            ${weekBadgesHTML(bData)}
           </div>
         </div>
       `;
@@ -133,22 +240,19 @@
 
     // A bracket round's matches happen in a real season week — round 1 of
     // the playoffs is the season's first playoff week, round 2 the next,
-    // and so on — so scores can be pulled straight from that week's actual
-    // matchup data.
-    function scoreForRosterInWeek(season, week, rosterId) {
+    // and so on — so scores (and rosters) can be pulled straight from that
+    // week's actual matchup data.
+    function matchupEntryForRosterInWeek(season, week, rosterId) {
       if (rosterId == null) return null;
       const matchups = season.matchups?.[week] || season.matchups?.[String(week)] || [];
-      for (const m of matchups) {
-        if (m.teamA.rosterId === rosterId) return m.teamA.points;
-        if (m.teamB && m.teamB.rosterId === rosterId) return m.teamB.points;
-      }
-      return null;
+      return matchups.find((m) => m.teamA.rosterId === rosterId || m.teamB?.rosterId === rosterId) || null;
     }
 
     function bracketSideHTML(season, rosterId, fromLabel, isWinner, week) {
       if (rosterId != null) {
         const team = teamById(season, rosterId);
-        const score = week != null ? scoreForRosterInWeek(season, week, rosterId) : null;
+        const entry = week != null ? matchupEntryForRosterInWeek(season, week, rosterId) : null;
+        const score = entry ? (entry.teamA.rosterId === rosterId ? entry.teamA.points : entry.teamB.points) : null;
         return `<div class="bracket-side${isWinner ? " winner" : ""}">
           ${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}
           ${score != null ? `<span class="bracket-score">${fmtPts(score)}</span>` : ""}
@@ -170,8 +274,9 @@
     function bracketMatchHTML(season, m, week) {
       const t1Winner = m.w != null && m.w === m.t1;
       const t2Winner = m.w != null && m.w === m.t2;
+      const clickable = week != null && m.t1 != null && m.t2 != null;
       return `
-        <div class="bracket-match">
+        <div class="bracket-match"${clickable ? ` data-week="${week}" data-t1="${m.t1}" data-t2="${m.t2}"` : ""}>
           ${bracketSideHTML(season, m.t1, fromLabel(m.t1_from), t1Winner, week)}
           <span class="bracket-vs">vs</span>
           ${bracketSideHTML(season, m.t2, fromLabel(m.t2_from), t2Winner, week)}
@@ -259,6 +364,93 @@
         ${losersHTML}
       `;
     }
+
+    // ---------- matchup detail modal ----------
+
+    let matchupPlayersCache = null;
+
+    function matchupPlayerRowHTML(players, playerId, season, week) {
+      const p = players[playerId];
+      const name = p ? p.name : "Unknown Player";
+      const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
+      const game = p?.seasons?.[season.season]?.games?.find((g) => g.week === week);
+      const pts = game ? game.points : null;
+      return `
+        <div class="roster-player">
+          <span>${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
+          <span class="info-stat-value">${pts != null ? fmtPts(pts) : "—"}</span>
+        </div>
+      `;
+    }
+
+    function matchupRosterGroupHTML(title, playerIds, players, season, week) {
+      if (!playerIds.length) return "";
+      return `
+        <div class="roster-group">
+          <div class="roster-group-title">${title} (${playerIds.length})</div>
+          ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week)).join("")}
+        </div>
+      `;
+    }
+
+    function matchupSideHTML(season, week, team, side, players) {
+      if (!team || !side) return `<div class="empty-state">No roster data for this team.</div>`;
+      const starters = new Set(side.starters || []);
+      const bench = (side.players || []).filter((pid) => !starters.has(pid));
+      return `
+        <div class="info-section-title">${team.teamName} &mdash; ${fmtPts(side.points)} pts</div>
+        ${matchupRosterGroupHTML("Starters", side.starters || [], players, season, week)}
+        ${matchupRosterGroupHTML("Bench", bench, players, season, week)}
+      `;
+    }
+
+    async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
+      let root = document.getElementById("player-modal-root");
+      if (!root) {
+        root = document.createElement("div");
+        root.id = "player-modal-root";
+        document.body.appendChild(root);
+      }
+      root.innerHTML = `
+        <div class="modal-overlay" id="player-modal-overlay">
+          <div class="modal-box"><div class="empty-state">Loading...</div></div>
+        </div>
+      `;
+      root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+        if (e.target.id === "player-modal-overlay") closePlayerModal();
+      });
+
+      if (!matchupPlayersCache) matchupPlayersCache = await loadPlayers();
+      const players = matchupPlayersCache;
+
+      const entry = matchupEntryForRosterInWeek(season, week, rosterIdA);
+      const sideA = entry ? (entry.teamA.rosterId === rosterIdA ? entry.teamA : entry.teamB) : null;
+      const sideB = entry ? (entry.teamA.rosterId === rosterIdB ? entry.teamA : entry.teamB) : null;
+      const teamA = teamById(season, rosterIdA);
+      const teamB = teamById(season, rosterIdB);
+
+      const box = document.getElementById("player-modal-root").querySelector(".modal-box");
+      box.innerHTML = `
+        <button class="modal-close" id="player-modal-close">&times;</button>
+        <div class="modal-header">
+          <h2>Week ${week}</h2>
+          <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
+        </div>
+        <div class="modal-tab-content">
+          ${matchupSideHTML(season, week, teamA, sideA, players)}
+          ${matchupSideHTML(season, week, teamB, sideB, players)}
+        </div>
+      `;
+      box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+    }
+
+    document.getElementById("matchups-list").addEventListener("click", (e) => {
+      const matchupEl = e.target.closest(".matchup[data-week]");
+      const bracketEl = e.target.closest(".bracket-match[data-week]");
+      const el = matchupEl || bracketEl;
+      if (!el) return;
+      openMatchupModal(currentSeason, Number(el.dataset.week), Number(el.dataset.t1), Number(el.dataset.t2));
+    });
 
     init().catch((err) => {
       console.error(err);
