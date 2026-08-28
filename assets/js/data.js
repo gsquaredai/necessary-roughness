@@ -969,11 +969,14 @@ async function computePickEmPoints(season, players) {
     await waitForFirebaseAuth();
     const snap = await db.collection("picks").get();
     const gradedThroughWeek = latestWeekWithData(season) ?? 0;
+    const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
     snap.docs.forEach((d) => {
       const data = d.data();
       const week = Number(data.week);
       if (week > gradedThroughWeek) return;
       if (!points.has(data.ownerId)) points.set(data.ownerId, 0);
+      // Rivalry Week (week 1 and the last regular-season week) pays double.
+      const pointValue = week === 1 || week === lastRegWeek ? 2 : 1;
       const matchups = (season.matchups[week] || []).filter((m) => m.teamB);
       for (const m of matchups) {
         const pickedRosterId = data.picks ? data.picks[m.matchupId] : null;
@@ -985,7 +988,7 @@ async function computePickEmPoints(season, players) {
         if (actualMargin > spread) coveringRosterId = favIsA ? m.teamA.rosterId : m.teamB.rosterId;
         else if (actualMargin < spread) coveringRosterId = favIsA ? m.teamB.rosterId : m.teamA.rosterId;
         if (coveringRosterId != null && pickedRosterId === coveringRosterId) {
-          points.set(data.ownerId, points.get(data.ownerId) + 1);
+          points.set(data.ownerId, points.get(data.ownerId) + pointValue);
         }
       }
     });

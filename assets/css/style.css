@@ -504,7 +504,8 @@ th.num {
   display: none;
 }
 
-.matchup.rivalry-matchup {
+.matchup.rivalry-matchup,
+.pickem-card.rivalry-matchup {
   border-color: var(--rivalry-color, var(--accent-2));
   box-shadow: 0 0 0 1px var(--rivalry-color, var(--accent-2)), var(--pixel-shadow);
 }

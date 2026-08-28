@@ -61,6 +61,7 @@
 
     let currentSeason = null;
     let allPlayers = null;
+    let rivalries = [];
     let currentUser = null;
     let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
     let currentPicks = {};
@@ -245,8 +246,19 @@
         return;
       }
       const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
+      const isRivalryWeek = week === 1 || week === lastRegularWeek();
 
       container.innerHTML = `
+        ${
+          isRivalryWeek
+            ? `
+              <div class="info-callout">
+                <span class="info-callout-label">Rivalry Week</span>
+                Correct spread picks count double this week — 2 points each instead of 1.
+              </div>
+            `
+            : ""
+        }
         <div class="draft-list" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
         <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;">${
           existing ? "Update Picks" : "Submit Picks"
@@ -296,8 +308,19 @@
       const matchupCounts = counts ? counts[m.matchupId] : null;
       const countA = matchupCounts ? matchupCounts[teamA.rosterId] || 0 : null;
       const countB = matchupCounts ? matchupCounts[teamB.rosterId] || 0 : null;
+
+      // Same rivalry theming as the Matchups page — Week 1 and the last
+      // regular-season week only, and only for 2025+ (when Rivalry Week
+      // started).
+      const rivalry =
+        parseInt(currentSeason.season, 10) >= 2025 ? findRivalry(rivalries, teamA.ownerId, teamB.ownerId) : null;
+      const isRivalryWeek = week === 1 || week === lastRegularWeek();
+      const showRivalry = !!(rivalry && isRivalryWeek);
+      const rivalryStyle = showRivalry && rivalry.color ? ` style="--rivalry-color: ${rivalry.color};"` : "";
+
       return `
-        <div class="pickem-card">
+        <div class="pickem-card${showRivalry ? " rivalry-matchup" : ""}"${rivalryStyle}>
+          ${showRivalry ? `<div class="rivalry-banner">${rivalry.name}</div>` : ""}
           <div class="pickem-card-row">
             <div class="pickem-side${pickedA ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamA.rosterId}">
               ${teamCellHTML(teamA)}
@@ -395,8 +418,8 @@
 
       container.innerHTML = `
         <p class="muted" style="margin-bottom: 12px;">
-          1 point for every matchup pick that beats the spread. Graded through Week ${gradedThroughWeek || "—"}.
-          "Submitted" reflects Week ${maxWeek}.
+          1 point for every matchup pick that beats the spread — 2 points on Rivalry Weeks (Week 1 and Week
+          ${lastRegularWeek()}). Graded through Week ${gradedThroughWeek || "—"}. "Submitted" reflects Week ${maxWeek}.
         </p>
         <div class="card table-wrap standings-table-wrap">
           <table>
@@ -419,7 +442,7 @@
     async function init() {
       const idx = await loadIndex();
       currentSeason = await loadSeason(idx.currentSeason);
-      allPlayers = await loadPlayers();
+      [allPlayers, rivalries] = await Promise.all([loadPlayers(), loadRivalries()]);
 
       auth.onAuthStateChanged(async (user) => {
         if (!user) {
