@@ -2000,6 +2000,15 @@ tr.is-my-team td:first-child {
     row-gap: 4px;
   }
 
+  /* pin the points value to line 1 regardless of how wide the name (plus
+     any badges) ends up — without this it's the first thing pushed to
+     its own line once the name/badge eats up the available width */
+  .history-score-row .info-stat-value {
+    margin-left: auto;
+    flex-shrink: 0;
+    order: 9;
+  }
+
   .history-score-row .history-score-context {
     flex: 1 1 100%;
     order: 10;

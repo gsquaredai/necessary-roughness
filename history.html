@@ -68,8 +68,8 @@
     }
 
     // Long team names are what push things onto an extra row in the
-    // mobile card layouts — shorten anything past 13 characters.
-    function truncName(name, max = 13) {
+    // mobile card layouts — shorten anything past 20 characters.
+    function truncName(name, max = 20) {
       if (!name) return "";
       return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
     }
@@ -869,7 +869,7 @@
           .map((opp) => {
             const rec = grid.get(selected.ownerId)?.get(opp.ownerId);
             const has = rec && rec.wins + rec.losses + rec.ties > 0;
-            const str = has ? (rec.ties ? `${rec.wins}-${rec.losses}-${rec.ties}` : `${rec.wins}-${rec.losses}`) : "No meetings yet";
+            const str = has ? (rec.ties ? `${rec.wins}-${rec.losses}-${rec.ties}` : `${rec.wins}-${rec.losses}`) : "N/A";
             const cls = has ? (rec.wins > rec.losses ? "h2h-winning" : rec.losses > rec.wins ? "h2h-losing" : "") : "muted";
             const oppForDisplay = { ...opp, teamName: truncName(opp.teamName) };
             return `
