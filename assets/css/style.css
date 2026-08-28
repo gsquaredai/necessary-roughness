@@ -344,21 +344,30 @@ th.num {
   border-bottom: none;
 }
 
-/* pastel position accent — left border only */
+/* pastel position accent — left border, echoed in the player name/position text */
 .draft-pick-row.pos-qb {
-  border-left-color: #ffadad;
+  --pos-color: #ffadad;
 }
 .draft-pick-row.pos-rb {
-  border-left-color: #caffbf;
+  --pos-color: #caffbf;
 }
 .draft-pick-row.pos-wr {
-  border-left-color: #a0c4ff;
+  --pos-color: #a0c4ff;
 }
 .draft-pick-row.pos-te {
-  border-left-color: #ffd6a5;
+  --pos-color: #ffd6a5;
 }
 .draft-pick-row.pos-other {
-  border-left-color: #bdb2ff;
+  --pos-color: #bdb2ff;
+}
+
+.draft-pick-row[class*="pos-"] {
+  border-left-color: var(--pos-color);
+}
+
+.draft-pick-row[class*="pos-"] .player-name,
+.draft-pick-row[class*="pos-"] .player-meta {
+  color: var(--pos-color);
 }
 
 .draft-pick-no {
