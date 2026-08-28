@@ -68,7 +68,8 @@
         "Pick 10: whichever team finished the season in 3rd place.",
         "Pick 11: the runner-up (2nd place).",
         "Pick 12: the league champion (1st place)."
-      ]
+      ],
+      "outro": "If two teams are tied on record for the last playoff spot, Points For (PF) breaks the tie to decide who actually makes the playoffs."
     },
     {
       "title": "League Median",

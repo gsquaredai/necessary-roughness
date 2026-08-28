@@ -222,6 +222,11 @@ tr.clickable-row:hover td {
   background: var(--surface-2);
 }
 
+tr.playoff-cutoff td {
+  border-bottom: 3px dashed var(--accent);
+  padding-bottom: 10px;
+}
+
 td.num,
 th.num {
   text-align: right;
@@ -1307,8 +1312,8 @@ th.num {
 }
 
 .champion-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 

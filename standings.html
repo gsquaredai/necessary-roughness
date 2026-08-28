@@ -39,6 +39,12 @@
         <button type="button" data-view="maxpf">Max PF</button>
       </div>
 
+      <p class="muted" id="draft-projection-note" hidden style="margin-bottom: 12px;">
+        This season's rookie draft order isn't final yet — this is a live projection assuming no more upsets:
+        every team's current seed holds through the playoffs, ties for record are broken by PF, and the 4 teams
+        currently projected to miss the playoffs are ordered by Max PF, same as the real rule.
+      </p>
+
       <section>
         <div class="card table-wrap">
           <table>
@@ -136,18 +142,55 @@
       document.getElementById("rank-header").textContent = VIEWS[currentView].label;
     }
 
+    // Live projection of next year's rookie draft order for a season still
+    // in progress (Sleeper won't generate the real draft_order until the
+    // season ends). Assumes every team's current seed holds all the way
+    // through the playoffs — no upsets — same as the real rule otherwise:
+    // the 4 teams currently projected to miss the playoffs are ordered by
+    // Max PF (lowest = pick 1), and ties for record are broken by PF
+    // (already how standingsSorted ranks everyone).
+    function computeProjectedDraftOrder(season) {
+      const ranked = standingsSorted(season);
+      const numTeams = season.leagueSettings?.numTeams ?? ranked.length;
+      const playoffTeams = season.leagueSettings?.playoffTeams ?? 8;
+      const finalFourCount = Math.floor(playoffTeams / 2);
+      const projected = new Map();
+
+      ranked.slice(0, finalFourCount).forEach((t, i) => projected.set(t.rosterId, numTeams - i));
+      ranked.slice(finalFourCount, playoffTeams).forEach((t, i) => projected.set(t.rosterId, playoffTeams - i));
+
+      const bottom = ranked.slice(playoffTeams, numTeams);
+      [...bottom].sort((a, b) => a.maxPF - b.maxPF).forEach((t, i) => projected.set(t.rosterId, i + 1));
+
+      return projected;
+    }
+
     async function renderStandings(seasonKey) {
       const season = await loadSeason(seasonKey);
       currentSeason = season;
-      const sorted = VIEWS[currentView].sort(season.teams);
+
+      const isProjectedDraft = currentView === "draft" && season.teams.every((t) => t.draftPick == null);
+      const projectedPicks = isProjectedDraft ? computeProjectedDraftOrder(season) : null;
+      document.getElementById("draft-projection-note").hidden = !isProjectedDraft;
+
+      const sorted = isProjectedDraft
+        ? [...season.teams].sort(
+            (a, b) => (projectedPicks.get(a.rosterId) ?? 999) - (projectedPicks.get(b.rosterId) ?? 999)
+          )
+        : VIEWS[currentView].sort(season.teams);
+
+      const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
 
       document.getElementById("standings-body").innerHTML = sorted
         .map((team, i) => {
           const champ = season.champion === team.rosterId;
           const last = season.lastPlace === team.rosterId;
-          const rankCell = currentView === "draft" ? team.draftPick ?? "—" : i + 1;
+          let rankCell;
+          if (currentView === "draft") rankCell = isProjectedDraft ? projectedPicks.get(team.rosterId) ?? "—" : team.draftPick ?? "—";
+          else rankCell = i + 1;
+          const cutoff = currentView === "standings" && playoffTeams && i === playoffTeams - 1 ? " playoff-cutoff" : "";
           return `
-            <tr class="clickable-row" data-roster-id="${team.rosterId}">
+            <tr class="clickable-row${cutoff}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, last })}</td>
               <td class="num">${record(team)}</td>
