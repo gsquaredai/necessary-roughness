@@ -1171,16 +1171,11 @@ th.num {
   border: 2px solid var(--accent-dim);
 }
 
-.txn-type-waiver {
+.txn-type-waiver,
+.txn-type-free_agent {
   background: rgba(79, 212, 122, 0.15);
   color: var(--win);
   border: 2px solid var(--win);
-}
-
-.txn-type-free_agent {
-  background: rgba(76, 201, 240, 0.15);
-  color: var(--accent-2);
-  border: 2px solid var(--accent-2);
 }
 
 .txn-type-commissioner {
@@ -1201,6 +1196,13 @@ th.num {
 .txn-date {
   color: var(--text-dim);
   font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+.txn-faab-tag {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.5rem;
+  color: var(--accent-2);
   flex-shrink: 0;
 }
 

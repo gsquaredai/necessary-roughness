@@ -40,8 +40,7 @@
         <button type="button" data-type="all" class="active">All</button>
         <button type="button" data-type="draft">Draft</button>
         <button type="button" data-type="trade">Trades</button>
-        <button type="button" data-type="waiver">Waiver</button>
-        <button type="button" data-type="free_agent">Free Agent</button>
+        <button type="button" data-type="waivers">Waivers</button>
         <button type="button" data-type="commissioner">Commissioner</button>
       </div>
 
@@ -95,7 +94,11 @@
       const teamFilter = document.getElementById("team-select").value;
       const sortOrder = document.getElementById("sort-select").value;
 
-      let filtered = allTxns.filter((t) => currentType === "all" || t.type === currentType);
+      let filtered = allTxns.filter((t) => {
+        if (currentType === "all") return true;
+        if (currentType === "waivers") return t.type === "waiver" || t.type === "free_agent";
+        return t.type === currentType;
+      });
       if (teamFilter) {
         filtered = filtered.filter((t) => t.teams.some((team) => team.ownerId === teamFilter));
       }
@@ -118,6 +121,15 @@
 
     function renderTxnRow(t) {
       const teamNames = t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown";
+
+      // Every waiver claim/free agent pickup shows what it cost: the FAAB
+      // bid for a waiver claim, or "FA" for an uncontested free agent add.
+      const faabTag =
+        t.type === "waiver"
+          ? `<span class="txn-faab-tag">$${t.waiverBid ?? 0} FAAB</span>`
+          : t.type === "free_agent"
+          ? `<span class="txn-faab-tag">FA</span>`
+          : "";
 
       let details;
       if (t.type === "draft") {
@@ -153,6 +165,7 @@
         <div class="txn-row">
           <div class="txn-row-top">
             <span class="txn-type txn-type-${t.type}">${TYPE_LABEL[t.type] || t.type}</span>
+            ${faabTag}
             <span class="txn-teams">${teamNames}</span>
             <span class="txn-date">${new Date(t.date).toLocaleDateString()}</span>
           </div>

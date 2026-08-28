@@ -4,11 +4,15 @@ let transactionsCache = null;
 let playersCache = null;
 let pickRegistryCache = null;
 
+// "waiver" and "free_agent" are two distinct Sleeper transaction types,
+// but both just mean "picked up off the wire" to a manager — shown as one
+// combined "Waivers" label everywhere (still distinguishable by whether a
+// FAAB amount or "FA" shows next to it).
 const TYPE_LABEL = {
   draft: "Draft",
   trade: "Trade",
-  waiver: "Waiver",
-  free_agent: "Free Agent",
+  waiver: "Waivers",
+  free_agent: "Waivers",
   commissioner: "Commissioner",
 };
 

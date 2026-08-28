@@ -739,6 +739,10 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
           from: teamRef(t.season, w.fromRosterId, date),
           to: teamRef(t.season, w.toRosterId, date),
         })),
+        // The FAAB actually bid/spent to win this waiver claim — distinct
+        // from `faab` above, which is only ever populated for an explicit
+        // budget transfer between two teams (e.g. inside a trade).
+        waiverBid: t.type === "waiver" ? t.waiverBid : null,
       };
     })
   );
