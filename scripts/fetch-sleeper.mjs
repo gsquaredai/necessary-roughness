@@ -10,18 +10,22 @@ const CURRENT_LEAGUE_ID = "1312043132170301440";
 const MAX_WEEKS = 18;
 const API = "https://api.sleeper.app/v1";
 
-// Manual corrections for draft-pick attribution Sleeper's API can't tell us:
-// a roster that changed managers *mid-season*, after that season's draft
-// already happened. Sleeper's roster snapshot (and even the pick's own
-// picked_by field) reflects only the *current* owner, so a handoff that
-// happened after the draft but before we fetch shows the new manager for
-// picks the old one actually made. Standings/matchups for that season are
-// unaffected — those correctly track the manager mid-season, this only
-// overrides who the draft board credits.
-const DRAFT_PICK_OWNER_OVERRIDES = [
+// Manual corrections for attribution Sleeper's API can't tell us: a roster
+// that changed managers *mid-season*. Sleeper's roster snapshot (and even a
+// transaction's own creator/picked_by field) reflects only the *current*
+// owner, so a handoff shows the new manager for everything the old one
+// actually did before it. `before` is an exclusive cutoff (ISO timestamp)
+// — anything dated strictly earlier gets attributed to `team` instead of
+// the real current owner; at/after the cutoff, the real owner shows as
+// normal. Applies everywhere a roster's owner gets resolved for display
+// (draft board, draft-pick trade history, the transaction log, and the
+// player-profile "current team" — that last one intentionally uses today's
+// real owner, not this override, since it asks who owns the player *now*).
+const ROSTER_OWNER_OVERRIDES = [
   {
     season: "2026",
     rosterId: 12,
+    before: "2026-08-22T18:56:59.745Z", // the one trade Spotted Cow actually made
     team: {
       teamName: "Caleb Williams Sucks",
       displayName: "dannyhatty06",
@@ -30,6 +34,18 @@ const DRAFT_PICK_OWNER_OVERRIDES = [
     },
   },
 ];
+
+// Returns the override team for (season, rosterId) if one applies at this
+// date, else null (caller falls back to the real current owner).
+function findOwnerOverride(season, rosterId, dateISO) {
+  const o = ROSTER_OWNER_OVERRIDES.find(
+    (o) =>
+      o.season === season &&
+      o.rosterId === rosterId &&
+      (!dateISO || new Date(dateISO) < new Date(o.before))
+  );
+  return o ? { ...o.team, rosterId } : null;
+}
 
 async function fetchJSON(url) {
   const res = await fetch(url);
@@ -201,18 +217,17 @@ async function buildSeason(league, nextLeague) {
       // slot_to_roster_id — only the single-draft detail endpoint does.
       const draftDetail = await fetchJSON(`${API}/draft/${draftMeta.draft_id}`).catch(() => draftMeta);
       const slotToRosterId = draftDetail.slot_to_roster_id || {};
+      const draftedAt = draftDetail.last_picked
+        ? new Date(draftDetail.last_picked).toISOString()
+        : draftDetail.start_time
+        ? new Date(draftDetail.start_time).toISOString()
+        : null;
       draftBoard = {
         rounds: draftMeta.settings?.rounds ?? null,
-        draftedAt: draftDetail.last_picked
-          ? new Date(draftDetail.last_picked).toISOString()
-          : draftDetail.start_time
-          ? new Date(draftDetail.start_time).toISOString()
-          : null,
+        draftedAt,
         picks: picks
           .map((p) => {
-            const override = DRAFT_PICK_OWNER_OVERRIDES.find(
-              (o) => o.season === season && o.rosterId === p.roster_id
-            );
+            const override = findOwnerOverride(season, p.roster_id, draftedAt);
             return {
               round: p.round,
               pickNo: p.pick_no,
@@ -227,7 +242,7 @@ async function buildSeason(league, nextLeague) {
                 : "Unknown",
               position: p.metadata?.position ?? null,
               nflTeam: p.metadata?.team || null,
-              teamOverride: override?.team ?? null,
+              teamOverride: override,
             };
           })
           .sort((a, b) => a.pickNo - b.pickNo),
@@ -352,7 +367,9 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     const byRoster = new Map(s.teams.map((t) => [t.rosterId, t]));
     teamsBySeasonRoster.set(s.season, byRoster);
   }
-  const teamRef = (season, rosterId) => {
+  const teamRef = (season, rosterId, dateISO) => {
+    const override = dateISO ? findOwnerOverride(season, rosterId, dateISO) : null;
+    if (override) return override;
     const t = teamsBySeasonRoster.get(season)?.get(rosterId);
     return t
       ? { teamName: t.teamName, avatar: t.avatar, ownerId: t.ownerId, rosterId }
@@ -397,10 +414,11 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   // roster, so a trade renders as "Team A received: X, Y / Team B
   // received: 1, 2" instead of a flat, hard-to-parse add/drop list.
   const resolveTradeSides = (t) => {
+    const tradeDate = new Date(t.created).toISOString();
     const sides = new Map();
     const sideFor = (rosterId) => {
       if (!sides.has(rosterId)) {
-        sides.set(rosterId, { team: teamRef(t.season, rosterId), players: [], picks: [], faab: [] });
+        sides.set(rosterId, { team: teamRef(t.season, rosterId, tradeDate), players: [], picks: [], faab: [] });
       }
       return sides.get(rosterId);
     };
@@ -439,12 +457,15 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
             .map((dp) => ({ t, dp }))
         )
         .sort((a, b) => a.t.created - b.t.created);
-      pick.tradeHistory = hops.map(({ t, dp }) => ({
-        date: new Date(t.created).toISOString(),
-        from: teamRef(s.season, dp.fromRosterId),
-        to: teamRef(s.season, dp.toRosterId),
-        sides: resolveTradeSides(t),
-      }));
+      pick.tradeHistory = hops.map(({ t, dp }) => {
+        const tradeDate = new Date(t.created).toISOString();
+        return {
+          date: tradeDate,
+          from: teamRef(s.season, dp.fromRosterId, tradeDate),
+          to: teamRef(s.season, dp.toRosterId, tradeDate),
+          sides: resolveTradeSides(t),
+        };
+      });
     }
   }
 
@@ -479,33 +500,36 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   });
 
   const realEntries = seasonDatas.flatMap((s) =>
-    s.rawTransactions.map((t) => ({
-      id: t.id,
-      type: t.type,
-      date: new Date(t.created).toISOString(),
-      season: t.season,
-      teams: t.rosterIds.map((rid) => teamRef(t.season, rid)),
-      sides: t.type === "trade" ? resolveTradeSides(t) : [],
-      adds: Object.entries(t.adds).map(([playerId, rosterId]) => ({
-        ...playerRef(playerId),
-        team: teamRef(t.season, rosterId),
-      })),
-      drops: Object.entries(t.drops).map(([playerId, rosterId]) => ({
-        ...playerRef(playerId),
-        team: teamRef(t.season, rosterId),
-      })),
-      draftPicksTraded: t.draftPicks.map((dp) => ({
-        season: dp.season,
-        round: dp.round,
-        from: teamRef(t.season, dp.fromRosterId),
-        to: teamRef(t.season, dp.toRosterId),
-      })),
-      faab: t.waiverBudget.map((w) => ({
-        amount: w.amount,
-        from: teamRef(t.season, w.fromRosterId),
-        to: teamRef(t.season, w.toRosterId),
-      })),
-    }))
+    s.rawTransactions.map((t) => {
+      const date = new Date(t.created).toISOString();
+      return {
+        id: t.id,
+        type: t.type,
+        date,
+        season: t.season,
+        teams: t.rosterIds.map((rid) => teamRef(t.season, rid, date)),
+        sides: t.type === "trade" ? resolveTradeSides(t) : [],
+        adds: Object.entries(t.adds).map(([playerId, rosterId]) => ({
+          ...playerRef(playerId),
+          team: teamRef(t.season, rosterId, date),
+        })),
+        drops: Object.entries(t.drops).map(([playerId, rosterId]) => ({
+          ...playerRef(playerId),
+          team: teamRef(t.season, rosterId, date),
+        })),
+        draftPicksTraded: t.draftPicks.map((dp) => ({
+          season: dp.season,
+          round: dp.round,
+          from: teamRef(t.season, dp.fromRosterId, date),
+          to: teamRef(t.season, dp.toRosterId, date),
+        })),
+        faab: t.waiverBudget.map((w) => ({
+          amount: w.amount,
+          from: teamRef(t.season, w.fromRosterId, date),
+          to: teamRef(t.season, w.toRosterId, date),
+        })),
+      };
+    })
   );
 
   const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));

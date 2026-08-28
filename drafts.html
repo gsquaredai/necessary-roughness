@@ -28,6 +28,7 @@
     <main>
       <div class="controls">
         <select id="season-select"></select>
+        <select id="team-select"></select>
       </div>
 
       <section>
@@ -38,6 +39,8 @@
 
   <script src="assets/js/data.js"></script>
   <script>
+    let currentSeason = null;
+
     async function init() {
       const idx = await loadIndex();
       const select = document.getElementById("season-select");
@@ -47,31 +50,77 @@
         .map((s) => `<option value="${s}">${s} Season</option>`)
         .join("");
 
-      const requested = new URLSearchParams(location.search).get("season");
+      const params = new URLSearchParams(location.search);
+      const requested = params.get("season");
       select.value = idx.seasons.includes(requested) ? requested : idx.currentSeason;
+      const requestedTeam = params.get("team") || "";
 
-      select.addEventListener("change", () => {
+      const teamSelect = document.getElementById("team-select");
+
+      function updateUrl() {
         const url = new URL(location.href);
         url.searchParams.set("season", select.value);
+        if (teamSelect.value) url.searchParams.set("team", teamSelect.value);
+        else url.searchParams.delete("team");
         history.replaceState(null, "", url);
-        renderDraft(select.value);
+      }
+
+      select.addEventListener("change", () => {
+        teamSelect.value = ""; // reset before updateUrl reads it, so a stale team id doesn't linger in the URL
+        updateUrl();
+        renderDraft(select.value, "");
       });
-      await renderDraft(select.value);
+      teamSelect.addEventListener("change", () => {
+        updateUrl();
+        renderRows(teamSelect.value);
+      });
+
+      await renderDraft(select.value, requestedTeam);
     }
 
-
-    async function renderDraft(seasonKey) {
+    async function renderDraft(seasonKey, requestedTeam) {
       const season = await loadSeason(seasonKey);
+      currentSeason = season;
       const container = document.getElementById("draft-list");
+      const teamSelect = document.getElementById("team-select");
 
       if (!season.draft || !season.draft.picks.length) {
+        teamSelect.innerHTML = "";
         container.innerHTML = '<div class="empty-state">No draft data for this season.</div>';
         return;
       }
 
+      const teamsByOwner = new Map();
+      for (const pick of season.draft.picks) {
+        const team = pick.teamOverride || teamById(season, pick.rosterId);
+        if (team?.ownerId && !teamsByOwner.has(team.ownerId)) teamsByOwner.set(team.ownerId, team.teamName);
+      }
+      const teamOptions = [...teamsByOwner.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+      teamSelect.innerHTML =
+        `<option value="">All Teams</option>` +
+        teamOptions.map(([ownerId, name]) => `<option value="${ownerId}">${name}</option>`).join("");
+      teamSelect.value = teamsByOwner.has(requestedTeam) ? requestedTeam : "";
+
+      renderRows(teamSelect.value);
+    }
+
+    function renderRows(teamFilter) {
+      const season = currentSeason;
+      const container = document.getElementById("draft-list");
       const POSITION_CLASS = { QB: "pos-qb", RB: "pos-rb", WR: "pos-wr", TE: "pos-te" };
 
-      container.innerHTML = season.draft.picks
+      const picks = season.draft.picks.filter((pick) => {
+        if (!teamFilter) return true;
+        const team = pick.teamOverride || teamById(season, pick.rosterId);
+        return team?.ownerId === teamFilter;
+      });
+
+      if (!picks.length) {
+        container.innerHTML = '<div class="empty-state">No picks for that team.</div>';
+        return;
+      }
+
+      container.innerHTML = picks
         .map((pick, i) => {
           const team = pick.teamOverride || teamById(season, pick.rosterId);
           const posClass = POSITION_CLASS[pick.position] || "pos-other";
