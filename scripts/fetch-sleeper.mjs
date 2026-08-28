@@ -10,6 +10,27 @@ const CURRENT_LEAGUE_ID = "1312043132170301440";
 const MAX_WEEKS = 18;
 const API = "https://api.sleeper.app/v1";
 
+// Manual corrections for draft-pick attribution Sleeper's API can't tell us:
+// a roster that changed managers *mid-season*, after that season's draft
+// already happened. Sleeper's roster snapshot (and even the pick's own
+// picked_by field) reflects only the *current* owner, so a handoff that
+// happened after the draft but before we fetch shows the new manager for
+// picks the old one actually made. Standings/matchups for that season are
+// unaffected — those correctly track the manager mid-season, this only
+// overrides who the draft board credits.
+const DRAFT_PICK_OWNER_OVERRIDES = [
+  {
+    season: "2026",
+    rosterId: 12,
+    team: {
+      teamName: "Caleb Williams Sucks",
+      displayName: "dannyhatty06",
+      avatar: "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+      ownerId: "1129464212063006720",
+    },
+  },
+];
+
 async function fetchJSON(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} — ${url}`);
@@ -103,16 +124,22 @@ async function buildSeason(league, nextLeague) {
       draftBoard = {
         rounds: draftMeta.settings?.rounds ?? null,
         picks: picks
-          .map((p) => ({
-            round: p.round,
-            pickNo: p.pick_no,
-            rosterId: p.roster_id,
-            playerName: p.metadata
-              ? `${p.metadata.first_name} ${p.metadata.last_name}`.trim()
-              : "Unknown",
-            position: p.metadata?.position ?? null,
-            nflTeam: p.metadata?.team || null,
-          }))
+          .map((p) => {
+            const override = DRAFT_PICK_OWNER_OVERRIDES.find(
+              (o) => o.season === season && o.rosterId === p.roster_id
+            );
+            return {
+              round: p.round,
+              pickNo: p.pick_no,
+              rosterId: p.roster_id,
+              playerName: p.metadata
+                ? `${p.metadata.first_name} ${p.metadata.last_name}`.trim()
+                : "Unknown",
+              position: p.metadata?.position ?? null,
+              nflTeam: p.metadata?.team || null,
+              teamOverride: override?.team ?? null,
+            };
+          })
           .sort((a, b) => a.pickNo - b.pickNo),
       };
       break;

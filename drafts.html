@@ -84,7 +84,7 @@
 
       container.innerHTML = season.draft.picks
         .map((pick) => {
-          const team = teamById(season, pick.rosterId);
+          const team = pick.teamOverride || teamById(season, pick.rosterId);
           const posClass = POSITION_CLASS[pick.position] || "pos-other";
           return `
             <div class="draft-pick-row ${posClass}">

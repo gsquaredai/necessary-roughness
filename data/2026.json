@@ -1410,7 +1410,8 @@
         "rosterId": 2,
         "playerName": "Jeremiyah Love",
         "position": "RB",
-        "nflTeam": "ARI"
+        "nflTeam": "ARI",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1418,7 +1419,8 @@
         "rosterId": 7,
         "playerName": "Fernando Mendoza",
         "position": "QB",
-        "nflTeam": "LV"
+        "nflTeam": "LV",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1426,7 +1428,8 @@
         "rosterId": 10,
         "playerName": "Carnell Tate",
         "position": "WR",
-        "nflTeam": "TEN"
+        "nflTeam": "TEN",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1434,7 +1437,8 @@
         "rosterId": 11,
         "playerName": "Jordyn Tyson",
         "position": "WR",
-        "nflTeam": "NO"
+        "nflTeam": "NO",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1442,7 +1446,8 @@
         "rosterId": 7,
         "playerName": "Makai Lemon",
         "position": "WR",
-        "nflTeam": "PHI"
+        "nflTeam": "PHI",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1450,7 +1455,8 @@
         "rosterId": 5,
         "playerName": "Jadarian Price",
         "position": "RB",
-        "nflTeam": "SEA"
+        "nflTeam": "SEA",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1458,7 +1464,8 @@
         "rosterId": 11,
         "playerName": "Kenyon Sadiq",
         "position": "TE",
-        "nflTeam": "NYJ"
+        "nflTeam": "NYJ",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1466,7 +1473,13 @@
         "rosterId": 12,
         "playerName": "Ty Simpson",
         "position": "QB",
-        "nflTeam": "LAR"
+        "nflTeam": "LAR",
+        "teamOverride": {
+          "teamName": "Caleb Williams Sucks",
+          "displayName": "dannyhatty06",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+          "ownerId": "1129464212063006720"
+        }
       },
       {
         "round": 1,
@@ -1474,7 +1487,8 @@
         "rosterId": 4,
         "playerName": "KC Concepcion",
         "position": "WR",
-        "nflTeam": "CLE"
+        "nflTeam": "CLE",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1482,7 +1496,8 @@
         "rosterId": 7,
         "playerName": "Eli Stowers",
         "position": "TE",
-        "nflTeam": "PHI"
+        "nflTeam": "PHI",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1490,7 +1505,8 @@
         "rosterId": 8,
         "playerName": "Emmett Johnson",
         "position": "RB",
-        "nflTeam": "KC"
+        "nflTeam": "KC",
+        "teamOverride": null
       },
       {
         "round": 1,
@@ -1498,7 +1514,8 @@
         "rosterId": 5,
         "playerName": "Sonny Styles",
         "position": "LB",
-        "nflTeam": "WAS"
+        "nflTeam": "WAS",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1506,7 +1523,8 @@
         "rosterId": 7,
         "playerName": "Jonah Coleman",
         "position": "RB",
-        "nflTeam": "DEN"
+        "nflTeam": "DEN",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1514,7 +1532,8 @@
         "rosterId": 7,
         "playerName": "Omar Cooper",
         "position": "WR",
-        "nflTeam": "NYJ"
+        "nflTeam": "NYJ",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1522,7 +1541,8 @@
         "rosterId": 6,
         "playerName": "Denzel Boston",
         "position": "WR",
-        "nflTeam": "CLE"
+        "nflTeam": "CLE",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1530,7 +1550,8 @@
         "rosterId": 6,
         "playerName": "Nicholas Singleton",
         "position": "RB",
-        "nflTeam": "TEN"
+        "nflTeam": "TEN",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1538,7 +1559,8 @@
         "rosterId": 3,
         "playerName": "Zachariah Branch",
         "position": "WR",
-        "nflTeam": "ATL"
+        "nflTeam": "ATL",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1546,7 +1568,8 @@
         "rosterId": 11,
         "playerName": "Antonio Williams",
         "position": "WR",
-        "nflTeam": "WAS"
+        "nflTeam": "WAS",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1554,7 +1577,8 @@
         "rosterId": 3,
         "playerName": "Germie Bernard",
         "position": "WR",
-        "nflTeam": "PIT"
+        "nflTeam": "PIT",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1562,7 +1586,13 @@
         "rosterId": 12,
         "playerName": "Elijah Sarratt",
         "position": "WR",
-        "nflTeam": "BAL"
+        "nflTeam": "BAL",
+        "teamOverride": {
+          "teamName": "Caleb Williams Sucks",
+          "displayName": "dannyhatty06",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+          "ownerId": "1129464212063006720"
+        }
       },
       {
         "round": 2,
@@ -1570,7 +1600,8 @@
         "rosterId": 4,
         "playerName": "Ja'Kobi Lane",
         "position": "WR",
-        "nflTeam": "BAL"
+        "nflTeam": "BAL",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1578,7 +1609,8 @@
         "rosterId": 4,
         "playerName": "Chris Brazzell",
         "position": "WR",
-        "nflTeam": "CAR"
+        "nflTeam": "CAR",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1586,7 +1618,8 @@
         "rosterId": 8,
         "playerName": "Kaytron Allen",
         "position": "RB",
-        "nflTeam": "WAS"
+        "nflTeam": "WAS",
+        "teamOverride": null
       },
       {
         "round": 2,
@@ -1594,7 +1627,8 @@
         "rosterId": 8,
         "playerName": "Ted Hurst",
         "position": "WR",
-        "nflTeam": "TB"
+        "nflTeam": "TB",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1602,7 +1636,8 @@
         "rosterId": 8,
         "playerName": "Arvell Reese",
         "position": "LB",
-        "nflTeam": "NYG"
+        "nflTeam": "NYG",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1610,7 +1645,8 @@
         "rosterId": 5,
         "playerName": "Chris Bell",
         "position": "WR",
-        "nflTeam": "MIA"
+        "nflTeam": "MIA",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1618,7 +1654,8 @@
         "rosterId": 3,
         "playerName": "Mike Washington",
         "position": "RB",
-        "nflTeam": "LV"
+        "nflTeam": "LV",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1626,7 +1663,8 @@
         "rosterId": 1,
         "playerName": "De'Zhaun Stribling",
         "position": "WR",
-        "nflTeam": "SF"
+        "nflTeam": "SF",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1634,7 +1672,8 @@
         "rosterId": 10,
         "playerName": "Rueben Bain",
         "position": "DL",
-        "nflTeam": "TB"
+        "nflTeam": "TB",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1642,7 +1681,8 @@
         "rosterId": 10,
         "playerName": "Michael Trigg",
         "position": "TE",
-        "nflTeam": "DAL"
+        "nflTeam": "DAL",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1650,7 +1690,8 @@
         "rosterId": 4,
         "playerName": "CJ Allen",
         "position": "LB",
-        "nflTeam": "IND"
+        "nflTeam": "IND",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1658,7 +1699,13 @@
         "rosterId": 12,
         "playerName": "Max Klare",
         "position": "TE",
-        "nflTeam": "LAR"
+        "nflTeam": "LAR",
+        "teamOverride": {
+          "teamName": "Caleb Williams Sucks",
+          "displayName": "dannyhatty06",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
+          "ownerId": "1129464212063006720"
+        }
       },
       {
         "round": 3,
@@ -1666,7 +1713,8 @@
         "rosterId": 4,
         "playerName": "Kirk Cousins",
         "position": "QB",
-        "nflTeam": "LV"
+        "nflTeam": "LV",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1674,7 +1722,8 @@
         "rosterId": 8,
         "playerName": "Malachi Fields",
         "position": "WR",
-        "nflTeam": "NYG"
+        "nflTeam": "NYG",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1682,7 +1731,8 @@
         "rosterId": 8,
         "playerName": "Jalen Nailor",
         "position": "WR",
-        "nflTeam": "LV"
+        "nflTeam": "LV",
+        "teamOverride": null
       },
       {
         "round": 3,
@@ -1690,7 +1740,8 @@
         "rosterId": 7,
         "playerName": "Skyler Bell",
         "position": "WR",
-        "nflTeam": "BUF"
+        "nflTeam": "BUF",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1698,7 +1749,8 @@
         "rosterId": 2,
         "playerName": "Eli Heidenreich",
         "position": "RB",
-        "nflTeam": "PIT"
+        "nflTeam": "PIT",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1706,7 +1758,8 @@
         "rosterId": 2,
         "playerName": "Justin Joly",
         "position": "TE",
-        "nflTeam": "DEN"
+        "nflTeam": "DEN",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1714,7 +1767,8 @@
         "rosterId": 3,
         "playerName": "Caleb Downs",
         "position": "DB",
-        "nflTeam": "DAL"
+        "nflTeam": "DAL",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1722,7 +1776,8 @@
         "rosterId": 10,
         "playerName": "Demond Claiborne",
         "position": "RB",
-        "nflTeam": "MIN"
+        "nflTeam": "MIN",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1730,7 +1785,8 @@
         "rosterId": 7,
         "playerName": "Carson Beck",
         "position": "QB",
-        "nflTeam": "ARI"
+        "nflTeam": "ARI",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1738,7 +1794,8 @@
         "rosterId": 9,
         "playerName": "Daiyan Henley",
         "position": "LB",
-        "nflTeam": "LAC"
+        "nflTeam": "LAC",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1746,7 +1803,8 @@
         "rosterId": 9,
         "playerName": "Foyesade Oluokun",
         "position": "LB",
-        "nflTeam": "JAX"
+        "nflTeam": "JAX",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1754,7 +1812,8 @@
         "rosterId": 6,
         "playerName": "Cade Klubnik",
         "position": "QB",
-        "nflTeam": "NYJ"
+        "nflTeam": "NYJ",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1762,7 +1821,8 @@
         "rosterId": 4,
         "playerName": "Riley Leonard",
         "position": "QB",
-        "nflTeam": "IND"
+        "nflTeam": "IND",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1770,7 +1830,8 @@
         "rosterId": 2,
         "playerName": "Eli Raridon",
         "position": "TE",
-        "nflTeam": "NE"
+        "nflTeam": "NE",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1778,7 +1839,8 @@
         "rosterId": 1,
         "playerName": "Brenen Thompson",
         "position": "WR",
-        "nflTeam": "LAC"
+        "nflTeam": "LAC",
+        "teamOverride": null
       },
       {
         "round": 4,
@@ -1786,7 +1848,8 @@
         "rosterId": 5,
         "playerName": "Adam Randall",
         "position": "RB",
-        "nflTeam": "BAL"
+        "nflTeam": "BAL",
+        "teamOverride": null
       }
     ]
   }
