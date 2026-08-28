@@ -374,7 +374,15 @@ th.num {
   font-family: "Press Start 2P", sans-serif;
   font-size: 0.55rem;
   color: var(--accent);
-  flex: 0 0 26px;
+  flex: 0 0 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.draft-pick-round {
+  font-size: 0.45rem;
+  color: var(--text-dim);
 }
 
 .draft-pick-team {

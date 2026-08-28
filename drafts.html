@@ -108,6 +108,7 @@
       const season = currentSeason;
       const container = document.getElementById("draft-list");
       const POSITION_CLASS = { QB: "pos-qb", RB: "pos-rb", WR: "pos-wr", TE: "pos-te" };
+      const teamsPerRound = Math.round(season.draft.picks.length / season.draft.rounds);
 
       const picks = season.draft.picks.filter((pick) => {
         if (!teamFilter) return true;
@@ -125,9 +126,13 @@
           const team = pick.teamOverride || teamById(season, pick.rosterId);
           const posClass = POSITION_CLASS[pick.position] || "pos-other";
           const hasHistory = pick.tradeHistory && pick.tradeHistory.length > 0;
+          const pickInRound = ((pick.pickNo - 1) % teamsPerRound) + 1;
           return `
             <div class="draft-pick-row ${posClass}" data-pick-idx="${i}" role="button" tabindex="0">
-              <div class="draft-pick-no">${pick.pickNo}</div>
+              <div class="draft-pick-no">
+                ${pick.pickNo}
+                <span class="draft-pick-round">(${pick.round}.${String(pickInRound).padStart(2, "0")})</span>
+              </div>
               <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
               <div class="draft-pick-player">
                 <span class="player-name">${playerLinkHTML(pick.playerId, pick.playerName)}</span>
