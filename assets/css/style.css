@@ -1943,6 +1943,12 @@ tr.is-my-team td:first-child {
     text-align: center;
   }
 
+  /* pick-em weeks tab — same stacked vertical layout as the Matchups page */
+  .pickem-card-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   /* playoff bracket — same stacked-card look as a regular week's matchups
      instead of the flat, side-by-side bracket row */
   .bracket-list {

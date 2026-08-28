@@ -440,12 +440,34 @@
         )
         .join("");
 
+      const cards = teams
+        .map(
+          (t) => `
+            <div class="standing-card">
+              <div class="standing-card-top">
+                ${teamCellHTML(t)}
+              </div>
+              <div class="standing-card-stats">
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Points</span>
+                  <span class="standing-card-stat-value">${pointsByOwner.get(t.ownerId) || 0}</span>
+                </div>
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">Submitted Wk ${maxWeek}</span>
+                  <span class="standing-card-stat-value">${submittedThisWeek.has(t.ownerId) ? "&#10003;" : "&mdash;"}</span>
+                </div>
+              </div>
+            </div>
+          `
+        )
+        .join("");
+
       container.innerHTML = `
         <p class="muted" style="margin-bottom: 12px;">
           1 point for every matchup pick that beats the spread. Graded through Week ${gradedThroughWeek || "—"}.
           "Submitted" reflects Week ${maxWeek}.
         </p>
-        <div class="card table-wrap">
+        <div class="card table-wrap standings-table-wrap">
           <table>
             <thead>
               <tr>
@@ -457,6 +479,7 @@
             <tbody>${body}</tbody>
           </table>
         </div>
+        <div class="standing-cards">${cards}</div>
       `;
     }
 
