@@ -55,6 +55,7 @@
       const requested = params.get("season");
       select.value = idx.seasons.includes(requested) ? requested : idx.currentSeason;
       const requestedTeam = params.get("team") || "";
+      const requestedPickNo = params.get("pickNo") ? Number(params.get("pickNo")) : null;
 
       const teamSelect = document.getElementById("team-select");
 
@@ -77,6 +78,27 @@
       });
 
       await renderDraft(select.value, requestedTeam);
+
+      if (requestedPickNo != null) {
+        // A pick-info popup deep-link always targets the full board, not a
+        // team-filtered view, so the row is guaranteed to be there.
+        document.getElementById("team-select").value = "";
+        renderRows("");
+        jumpToPick(requestedPickNo);
+      }
+    }
+
+    function jumpToPick(pickNo) {
+      const row = document.querySelector(`.draft-pick-row[data-pick-no="${pickNo}"]`);
+      if (!row) return;
+      row.scrollIntoView({ behavior: "smooth", block: "center" });
+      const panel = document.getElementById("history-" + row.dataset.pickIdx);
+      if (panel) {
+        panel.hidden = false;
+        row.classList.add("expanded");
+      }
+      row.classList.add("pick-highlight");
+      setTimeout(() => row.classList.remove("pick-highlight"), 2600);
     }
 
     async function renderDraft(seasonKey, requestedTeam) {
@@ -129,8 +151,8 @@
           const hasHistory = pick.tradeHistory && pick.tradeHistory.length > 0;
           const pickInRound = ((pick.pickNo - 1) % teamsPerRound) + 1;
           return `
-            <div class="draft-pick-row ${posClass}" data-pick-idx="${i}" role="button" tabindex="0">
-              <div class="draft-pick-no">
+            <div class="draft-pick-row ${posClass}" data-pick-idx="${i}" data-pick-no="${pick.pickNo}" role="button" tabindex="0">
+              <div class="draft-pick-no pick-link" data-pick-id="${season.season}-${pick.round}-${pick.originalRosterId}">
                 ${pick.pickNo}
                 <span class="draft-pick-round">(${pick.round}.${String(pickInRound).padStart(2, "0")})</span>
               </div>
@@ -171,30 +193,11 @@
     }
 
     function renderPickHistory(season, pick) {
-      if (!pick.tradeHistory || pick.tradeHistory.length === 0) {
-        const original = pick.teamOverride || teamById(season, pick.originalRosterId ?? pick.rosterId);
-        return `<div class="history-empty">Never traded — held by ${
-          original ? original.teamName : "the original team"
-        } since the draft order was set.</div>`;
-      }
-
-      const hops = pick.tradeHistory
-        .map(
-          (h) => `
-            <div class="history-hop">
-              <div class="history-hop-top">
-                <span class="history-team">${h.from.teamName}</span>
-                <span class="history-arrow">&rarr;</span>
-                <span class="history-team">${h.to.teamName}</span>
-                <span class="history-date">${new Date(h.date).toLocaleDateString()}</span>
-              </div>
-              <div class="history-hop-trade">${tradeSidesHTML(h.sides)}</div>
-            </div>
-          `
-        )
-        .join("");
-
-      return `<div class="history-chain">${hops}</div>`;
+      const original = pick.teamOverride || teamById(season, pick.originalRosterId ?? pick.rosterId);
+      const emptyText = `Never traded — held by ${
+        original ? original.teamName : "the original team"
+      } since the draft order was set.`;
+      return renderTradeHopsHTML(pick.tradeHistory, emptyText);
     }
 
     init().catch((err) => {

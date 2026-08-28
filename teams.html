@@ -150,7 +150,7 @@
     }
 
     function pickHeldLabel(pk) {
-      const base = `${pk.season} ${ordinal(pk.round)}`;
+      const base = pickLinkHTML(pk, `${pk.season} ${ordinal(pk.round)}`);
       return pk.originalTeam ? `${base} (from ${pk.originalTeam.teamName})` : base;
     }
 

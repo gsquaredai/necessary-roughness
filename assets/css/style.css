@@ -507,15 +507,37 @@ th.num {
 
 /* player modal */
 
-.player-link {
+.player-link,
+.pick-link {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 2px;
   cursor: pointer;
 }
 
-.player-link:hover {
+.player-link:hover,
+.pick-link:hover {
   color: var(--accent);
+}
+
+.pick-goto-draft {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.pick-goto-draft:hover {
+  color: var(--accent);
+}
+
+@keyframes pick-highlight-flash {
+  0%, 100% { background: transparent; }
+  25%, 75% { background: rgba(255, 214, 165, 0.35); }
+}
+
+.draft-pick-row.pick-highlight {
+  animation: pick-highlight-flash 1.3s ease-in-out 2;
 }
 
 .modal-overlay {

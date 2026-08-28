@@ -439,6 +439,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
       sideFor(dp.toRosterId).picks.push({
         season: dp.season,
         round: dp.round,
+        originalRosterId: dp.rosterId,
         result,
         originalTeam: result ? null : originalTeamName(dp),
       });
@@ -451,67 +452,73 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
 
   const allTrades = seasonDatas.flatMap((s) => s.rawTransactions.filter((t) => t.type === "trade"));
 
+  // Every trade that's ever moved this exact pick (season/round/whichever
+  // roster's original slot it is), oldest first. The one identity used
+  // everywhere a pick needs tracing: draft-board history, the Teams page's
+  // "picks held", and the pick-info popup.
+  const getHops = (season, round, originalRosterId) =>
+    allTrades
+      .flatMap((t) =>
+        t.draftPicks
+          .filter((dp) => dp.season === season && dp.round === round && dp.rosterId === originalRosterId)
+          .map((dp) => ({ t, dp }))
+      )
+      .sort((a, b) => a.t.created - b.t.created);
+
+  const hopsToHistory = (season, hops) => {
+    // A pick tied to a future season has no roster data under that season
+    // key yet (the draft hasn't happened) — fall back to the latest known
+    // season for team lookups, same as originalTeamName does.
+    const lookupSeason = teamsBySeasonRoster.has(season) ? season : latestSeason;
+    return hops.map(({ t, dp }) => {
+      const tradeDate = new Date(t.created).toISOString();
+      return {
+        date: tradeDate,
+        from: teamRef(lookupSeason, dp.fromRosterId, tradeDate),
+        to: teamRef(lookupSeason, dp.toRosterId, tradeDate),
+        sides: resolveTradeSides(t),
+      };
+    });
+  };
+
   for (const s of seasonDatas) {
     if (!s.draft) continue;
     for (const pick of s.draft.picks) {
-      const hops = allTrades
-        .flatMap((t) =>
-          t.draftPicks
-            .filter(
-              (dp) => dp.season === pick.season /* set below */ &&
-                dp.round === pick.round &&
-                dp.rosterId === pick.originalRosterId
-            )
-            .map((dp) => ({ t, dp }))
-        )
-        .sort((a, b) => a.t.created - b.t.created);
-      pick.tradeHistory = hops.map(({ t, dp }) => {
-        const tradeDate = new Date(t.created).toISOString();
-        return {
-          date: tradeDate,
-          from: teamRef(s.season, dp.fromRosterId, tradeDate),
-          to: teamRef(s.season, dp.toRosterId, tradeDate),
-          sides: resolveTradeSides(t),
-        };
-      });
+      pick.tradeHistory = hopsToHistory(s.season, getHops(s.season, pick.round, pick.originalRosterId));
     }
   }
 
   // Future draft picks each current team holds, accounting for trades — for
-  // the Teams page. "Future" = any season beyond the ones we have an actual
-  // league/draft for (2024-2026); those already have a real, resolved
-  // draft. Assumes future drafts keep the same round count as the most
-  // recent one, since that's the only signal we have.
+  // the Teams page and the pick registry below. Every team always has
+  // exactly 3 years of future picks on the board (Sleeper's own convention);
+  // that window rolls forward each season regardless of whether any trade
+  // happens to reference a given future year. Assumes future drafts keep
+  // the same round count as the most recent one, since that's the only
+  // signal we have.
   const latestTeamsList = seasonDatas[seasonDatas.length - 1].teams;
   const assumedRounds = seasonDatas[seasonDatas.length - 1]?.draft?.rounds ?? 4;
-  const knownSeasons = new Set(seasonDatas.map((s) => s.season));
-  const futureSeasons = [
-    ...new Set(
-      allTrades.flatMap((t) => t.draftPicks.map((dp) => dp.season)).filter((s) => !knownSeasons.has(s))
-    ),
-  ].sort();
+  const latestYear = parseInt(latestSeason, 10);
+  const futureSeasons = [1, 2, 3].map((n) => String(latestYear + n));
 
   const picksHeldByRoster = {};
   for (const team of latestTeamsList) picksHeldByRoster[team.rosterId] = [];
+
+  // Every future (season, round, original owner) combo — the full set of
+  // picks that exist but haven't been drafted yet, for the registry.
+  const futurePickIdentities = [];
 
   for (const futureSeason of futureSeasons) {
     for (let round = 1; round <= assumedRounds; round++) {
       for (const team of latestTeamsList) {
         const originalRosterId = team.rosterId;
-        const hops = allTrades
-          .flatMap((t) =>
-            t.draftPicks
-              .filter(
-                (dp) => dp.season === futureSeason && dp.round === round && dp.rosterId === originalRosterId
-              )
-              .map((dp) => ({ t, dp }))
-          )
-          .sort((a, b) => a.t.created - b.t.created);
+        futurePickIdentities.push({ season: futureSeason, round, originalRosterId });
+        const hops = getHops(futureSeason, round, originalRosterId);
         const finalHolder = hops.length ? hops[hops.length - 1].dp.toRosterId : originalRosterId;
         if (!picksHeldByRoster[finalHolder]) continue;
         picksHeldByRoster[finalHolder].push({
           season: futureSeason,
           round,
+          originalRosterId,
           originalTeam: finalHolder !== originalRosterId ? teamRef(latestSeason, originalRosterId) : null,
         });
       }
@@ -519,6 +526,44 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   }
   for (const list of Object.values(picksHeldByRoster)) {
     list.sort((a, b) => a.season.localeCompare(b.season) || a.round - b.round);
+  }
+
+  // One registry covering every pick that's ever existed — drafted or not
+  // — for the pick-info popup. Real picks reuse what's already computed
+  // above (draft.picks); future ones get the same treatment freshly.
+  const pickRegistry = {};
+  for (const s of seasonDatas) {
+    if (!s.draft) continue;
+    for (const pick of s.draft.picks) {
+      const id = `${pick.season}-${pick.round}-${pick.originalRosterId}`;
+      const teamsPerRound = Math.round(s.draft.picks.length / s.draft.rounds);
+      pickRegistry[id] = {
+        season: pick.season,
+        round: pick.round,
+        originalTeam: teamRef(pick.season, pick.originalRosterId),
+        resolved: true,
+        pickNo: pick.pickNo,
+        pickInRound: ((pick.pickNo - 1) % teamsPerRound) + 1,
+        playerId: pick.playerId,
+        playerName: pick.playerName,
+        position: pick.position,
+        draftedByTeam: pick.teamOverride || teamRef(pick.season, pick.rosterId),
+        tradeHistory: pick.tradeHistory,
+      };
+    }
+  }
+  for (const { season, round, originalRosterId } of futurePickIdentities) {
+    const id = `${season}-${round}-${originalRosterId}`;
+    const hops = getHops(season, round, originalRosterId);
+    const finalHolder = hops.length ? hops[hops.length - 1].dp.toRosterId : originalRosterId;
+    pickRegistry[id] = {
+      season,
+      round,
+      originalTeam: teamRef(latestSeason, originalRosterId),
+      resolved: false,
+      currentHolderTeam: teamRef(latestSeason, finalHolder),
+      tradeHistory: hopsToHistory(season, hops),
+    };
   }
 
   // Every draft pick is its own transaction too — "how this player entered
@@ -540,6 +585,8 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
         type: "draft",
         date: s.draft.draftedAt || `${s.season}-01-01T00:00:00.000Z`,
         season: s.season,
+        round: p.round,
+        originalRosterId: p.originalRosterId,
         teams: [team],
         sides: [],
         adds: [{ playerId: p.playerId, name: p.playerName, position: p.position, team }],
@@ -572,6 +619,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
         draftPicksTraded: t.draftPicks.map((dp) => ({
           season: dp.season,
           round: dp.round,
+          originalRosterId: dp.rosterId,
           from: teamRef(t.season, dp.fromRosterId, date),
           to: teamRef(t.season, dp.toRosterId, date),
         })),
@@ -586,7 +634,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
 
   const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  return { log, picksHeldByRoster };
+  return { log, picksHeldByRoster, pickRegistry };
 }
 
 // Builds a profile for every player who's ever appeared on a roster in this
@@ -740,9 +788,10 @@ async function main() {
   }
 
   console.log("Cross-referencing trades against draft picks...");
-  const { log: transactionLog, picksHeldByRoster } = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
+  const { log: transactionLog, picksHeldByRoster, pickRegistry } = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
   await fs.writeFile("data/transactions.json", JSON.stringify(transactionLog, null, 2));
   await fs.writeFile("data/future-picks.json", JSON.stringify(picksHeldByRoster, null, 2));
+  await fs.writeFile("data/pick-registry.json", JSON.stringify(pickRegistry, null, 2));
 
   const playerProfiles = await buildPlayerProfiles(seasonDatas, playerNames);
   await fs.writeFile("data/players.json", JSON.stringify(playerProfiles, null, 2));

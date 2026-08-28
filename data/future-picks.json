@@ -3,6 +3,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 3,
       "originalTeam": {
         "teamName": "Big Dike Energy",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
@@ -13,6 +14,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 7,
       "originalTeam": {
         "teamName": "WANGHAF",
         "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
@@ -23,6 +25,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 11,
       "originalTeam": {
         "teamName": "Exciting Whites",
         "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
@@ -33,33 +36,62 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 7,
       "originalTeam": {
         "teamName": "WANGHAF",
         "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
         "ownerId": "1128523568641466368",
         "rosterId": 7
       }
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 1,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 1,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 1,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 1,
+      "originalTeam": null
     }
   ],
   "2": [
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -70,16 +102,43 @@
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 2,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 2,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 2,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 2,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 2,
       "originalTeam": null
     }
   ],
@@ -87,6 +146,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -97,6 +157,7 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -107,21 +168,25 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -132,16 +197,19 @@
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -152,11 +220,37 @@
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 3,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 3,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 3,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 3,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 3,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 3,
       "originalTeam": null
     }
   ],
@@ -164,16 +258,19 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 10,
       "originalTeam": {
         "teamName": "D1 Jayden Glazer",
         "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
@@ -184,31 +281,61 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 4,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 4,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 4,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 4,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 4,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 4,
       "originalTeam": null
     }
   ],
@@ -216,6 +343,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 6,
       "originalTeam": {
         "teamName": "Smitty Committee",
         "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
@@ -226,6 +354,7 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 9,
       "originalTeam": {
         "teamName": "Los pollos hermanos",
         "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
@@ -236,21 +365,25 @@
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 5,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 5,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 5,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -261,6 +394,31 @@
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 5,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 5,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 5,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 5,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 5,
       "originalTeam": null
     }
   ],
@@ -268,6 +426,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 12,
       "originalTeam": {
         "teamName": "Spotted Cow",
         "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
@@ -278,26 +437,55 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 6,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 6,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 6,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 6,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 6,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 6,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 6,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 6,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 6,
       "originalTeam": null
     }
   ],
@@ -305,6 +493,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 2,
       "originalTeam": {
         "teamName": "GrayPornography",
         "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
@@ -315,6 +504,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 5,
       "originalTeam": {
         "teamName": "Black Ops",
         "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
@@ -325,6 +515,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 9,
       "originalTeam": {
         "teamName": "Los pollos hermanos",
         "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
@@ -335,6 +526,7 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 10,
       "originalTeam": {
         "teamName": "D1 Jayden Glazer",
         "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
@@ -345,6 +537,7 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 6,
       "originalTeam": {
         "teamName": "Smitty Committee",
         "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
@@ -355,6 +548,7 @@
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -365,26 +559,55 @@
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 7,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 7,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 7,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 7,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 7,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 7,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 7,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 7,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 7,
       "originalTeam": null
     }
   ],
@@ -392,31 +615,61 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 8,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 8,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 8,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 8,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 8,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 8,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 8,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 8,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 8,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 8,
       "originalTeam": null
     }
   ],
@@ -424,6 +677,7 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 1,
       "originalTeam": {
         "teamName": "Schro's Nest",
         "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
@@ -434,31 +688,61 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 9,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 9,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 9,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 9,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 9,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 9,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 9,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 9,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 9,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 9,
       "originalTeam": null
     }
   ],
@@ -466,31 +750,61 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 10,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 10,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 10,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 10,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 10,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 10,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 10,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 10,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 10,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 10,
       "originalTeam": null
     }
   ],
@@ -498,6 +812,7 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 5,
       "originalTeam": {
         "teamName": "Black Ops",
         "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
@@ -508,11 +823,13 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 5,
       "originalTeam": {
         "teamName": "Black Ops",
         "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
@@ -523,6 +840,7 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 7,
       "originalTeam": {
         "teamName": "WANGHAF",
         "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
@@ -533,11 +851,13 @@
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 2,
       "originalTeam": {
         "teamName": "GrayPornography",
         "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
@@ -548,6 +868,7 @@
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 5,
       "originalTeam": {
         "teamName": "Black Ops",
         "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
@@ -558,26 +879,55 @@
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 11,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 11,
       "originalTeam": null
     }
   ],
@@ -585,6 +935,7 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 8,
       "originalTeam": {
         "teamName": "the left one’s bigger",
         "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
@@ -595,26 +946,31 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 3,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 1,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 8,
       "originalTeam": {
         "teamName": "the left one’s bigger",
         "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
@@ -625,16 +981,19 @@
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
+      "originalRosterId": 12,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 6,
       "originalTeam": {
         "teamName": "Smitty Committee",
         "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
@@ -645,6 +1004,31 @@
     {
       "season": "2028",
       "round": 4,
+      "originalRosterId": 12,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 1,
+      "originalRosterId": 12,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 12,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 12,
+      "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 4,
+      "originalRosterId": 12,
       "originalTeam": null
     }
   ]

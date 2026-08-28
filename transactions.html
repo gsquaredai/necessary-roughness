@@ -123,7 +123,7 @@
         const a = t.adds[0];
         details = `<div class="txn-details"><span class="txn-add">${playerLinkHTML(a.playerId, a.name)}${
           a.position ? ` (${a.position})` : ""
-        } &mdash; ${t.pickLabel}</span></div>`;
+        } &mdash; ${txnPickLabelHTML(t)}</span></div>`;
       } else if (t.type === "trade") {
         details = `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>`;
       } else {
