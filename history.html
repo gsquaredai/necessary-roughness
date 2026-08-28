@@ -79,40 +79,54 @@
     async function renderChampionsTab(container) {
       await ensureData();
       const bySeasonKey = Object.fromEntries(seasonIndex.seasons.map((s, i) => [s, allSeasons[i]]));
-      const rows = seasonIndex.seasons
+      const cards = seasonIndex.seasons
         .slice()
         .reverse()
         .map((key) => {
           const season = bySeasonKey[key];
           const champ = season.teams.find((t) => t.rosterId === season.champion);
-          const last = season.teams.find((t) => t.rosterId === season.lastPlace);
           const isCurrent = season.status !== "complete";
+
+          if (!champ) {
+            return `
+              <a class="champion-card-link" href="standings.html?season=${key}">
+                <div class="champion-card champion-card-blank">
+                  <div class="eyebrow">${key} Champion</div>
+                  <div class="champ-season">${isCurrent ? "Season in progress" : "No champion recorded"}</div>
+                </div>
+              </a>
+            `;
+          }
+
           return `
-            <a class="champion-row" href="standings.html?season=${key}">
-              <div class="champion-row-main">
-                <span class="season">${key}</span>
-                <span style="flex:1; padding: 0 12px;">
-                  ${
-                    champ
-                      ? teamCellHTML(champ)
-                      : `<span class="muted">${isCurrent ? "Season in progress" : "No champion recorded"}</span>`
-                  }
-                </span>
-                <span class="champion-row-arrow">&gt;</span>
+            <a class="champion-card-link" href="standings.html?season=${key}">
+              <div class="champion-card">
+                <div class="eyebrow">${key} Champion</div>
+                <div class="crown">${CROWN_SVG}</div>
+                ${avatarImgHTML(champ)}
+                <div class="champ-name">${champ.teamName}</div>
+                <div class="champ-season">${key} Season</div>
+                <div class="champ-stats">
+                  <div class="stat">
+                    <div class="value">${record(champ)}</div>
+                    <div class="label">Record</div>
+                  </div>
+                  <div class="stat">
+                    <div class="value">${fmtPts(champ.fpts)}</div>
+                    <div class="label">Points</div>
+                  </div>
+                </div>
               </div>
-              ${
-                last
-                  ? `<div class="champion-row-last">
-                      <span class="muted">Last:</span>
-                      ${teamCellHTML(last)}
-                    </div>`
-                  : ""
-              }
             </a>
           `;
         })
         .join("");
-      container.innerHTML = `<div class="champions-list">${rows}</div>`;
+
+      container.innerHTML = `<div class="champion-card-grid">${cards}</div>`;
+
+      container.querySelectorAll(".champion-card:not(.champion-card-blank)").forEach((cardEl) => {
+        playChampionCelebration(cardEl);
+      });
     }
 
     // ---------- all-time standings ----------

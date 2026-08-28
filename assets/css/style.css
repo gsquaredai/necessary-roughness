@@ -1306,6 +1306,37 @@ th.num {
   margin-top: 4px;
 }
 
+.champion-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.champion-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.champion-card-link:hover .champion-card {
+  border-color: var(--accent);
+}
+
+.champion-card-grid .champion-card {
+  margin: 0;
+  max-width: none;
+}
+
+.champion-card-blank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-style: dashed;
+  opacity: 0.6;
+}
+
 /* ---------- info page ---------- */
 
 .info-section-title {
