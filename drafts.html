@@ -18,6 +18,7 @@
         <a href="standings.html" data-page="standings">Standings</a>
         <a href="matchups.html" data-page="matchups">Matchups</a>
         <a href="drafts.html" data-page="drafts">Drafts</a>
+        <a href="transactions.html" data-page="transactions">Transactions</a>
         <a href="history.html" data-page="history">History</a>
       </nav>
     </div>
@@ -83,11 +84,12 @@
       const POSITION_CLASS = { QB: "pos-qb", RB: "pos-rb", WR: "pos-wr", TE: "pos-te" };
 
       container.innerHTML = season.draft.picks
-        .map((pick) => {
+        .map((pick, i) => {
           const team = pick.teamOverride || teamById(season, pick.rosterId);
           const posClass = POSITION_CLASS[pick.position] || "pos-other";
+          const hasHistory = pick.tradeHistory && pick.tradeHistory.length > 0;
           return `
-            <div class="draft-pick-row ${posClass}">
+            <div class="draft-pick-row ${posClass}" data-pick-idx="${i}" role="button" tabindex="0">
               <div class="draft-pick-no">${pick.pickNo}</div>
               <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
               <div class="draft-pick-player">
@@ -98,10 +100,55 @@
                 ${nflLogoImgHTML(pick.nflTeam)}
                 <span class="nfl-team-abbr">${pick.nflTeam ? nflAbbr3(pick.nflTeam) : "—"}</span>
               </div>
+              <div class="draft-pick-expand">${hasHistory ? "&gt;" : ""}</div>
+            </div>
+            <div class="draft-pick-history" id="history-${i}" hidden>
+              ${renderPickHistory(season, pick)}
             </div>
           `;
         })
         .join("");
+
+      container.querySelectorAll(".draft-pick-row").forEach((row) => {
+        row.addEventListener("click", () => togglePickHistory(row));
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            togglePickHistory(row);
+          }
+        });
+      });
+    }
+
+    function togglePickHistory(row) {
+      const panel = document.getElementById("history-" + row.dataset.pickIdx);
+      if (!panel) return;
+      panel.hidden = !panel.hidden;
+      row.classList.toggle("expanded", !panel.hidden);
+    }
+
+    function renderPickHistory(season, pick) {
+      if (!pick.tradeHistory || pick.tradeHistory.length === 0) {
+        const original = pick.teamOverride || teamById(season, pick.originalRosterId ?? pick.rosterId);
+        return `<div class="history-empty">Never traded — held by ${
+          original ? original.teamName : "the original team"
+        } since the draft order was set.</div>`;
+      }
+
+      const hops = pick.tradeHistory
+        .map(
+          (h) => `
+            <div class="history-hop">
+              <span class="history-team">${h.from.teamName}</span>
+              <span class="history-arrow">&rarr;</span>
+              <span class="history-team">${h.to.teamName}</span>
+              <span class="history-date">${new Date(h.date).toLocaleDateString()}</span>
+            </div>
+          `
+        )
+        .join("");
+
+      return `<div class="history-chain">${hops}</div>`;
     }
 
     init().catch((err) => {

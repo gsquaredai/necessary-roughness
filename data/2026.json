@@ -1408,69 +1408,322 @@
         "round": 1,
         "pickNo": 1,
         "rosterId": 2,
+        "originalRosterId": 2,
         "playerName": "Jeremiyah Love",
         "position": "RB",
         "nflTeam": "ARI",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 1,
         "pickNo": 2,
         "rosterId": 7,
+        "originalRosterId": 11,
         "playerName": "Fernando Mendoza",
         "position": "QB",
         "nflTeam": "LV",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-04-24T02:53:24.837Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 3,
         "rosterId": 10,
+        "originalRosterId": 3,
         "playerName": "Carnell Tate",
         "position": "WR",
         "nflTeam": "TEN",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-05-31T00:29:36.389Z",
+            "from": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          },
+          {
+            "date": "2025-10-01T02:15:50.934Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 4,
         "rosterId": 11,
+        "originalRosterId": 10,
         "playerName": "Jordyn Tyson",
         "position": "WR",
         "nflTeam": "NO",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-08T12:23:49.452Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-05T22:49:18.929Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          },
+          {
+            "date": "2026-04-24T02:53:24.837Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 5,
         "rosterId": 7,
+        "originalRosterId": 7,
         "playerName": "Makai Lemon",
         "position": "WR",
         "nflTeam": "PHI",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-02T20:56:01.130Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2025-10-08T12:23:49.452Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          },
+          {
+            "date": "2026-04-27T13:53:26.266Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 6,
         "rosterId": 5,
+        "originalRosterId": 6,
         "playerName": "Jadarian Price",
         "position": "RB",
         "nflTeam": "SEA",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-05-30T01:05:46.921Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          },
+          {
+            "date": "2025-10-23T00:05:57.858Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          },
+          {
+            "date": "2026-01-12T17:54:40.485Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 7,
         "rosterId": 11,
+        "originalRosterId": 9,
         "playerName": "Kenyon Sadiq",
         "position": "TE",
         "nflTeam": "NYJ",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2024-11-27T18:34:51.125Z",
+            "from": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-05T22:49:18.929Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          },
+          {
+            "date": "2026-04-24T02:53:24.837Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 8,
         "rosterId": 12,
+        "originalRosterId": 12,
         "playerName": "Ty Simpson",
         "position": "QB",
         "nflTeam": "LAR",
@@ -1479,111 +1732,607 @@
           "displayName": "dannyhatty06",
           "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
           "ownerId": "1129464212063006720"
-        }
+        },
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 1,
         "pickNo": 9,
         "rosterId": 4,
+        "originalRosterId": 4,
         "playerName": "KC Concepcion",
         "position": "WR",
         "nflTeam": "CLE",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 1,
         "pickNo": 10,
         "rosterId": 7,
+        "originalRosterId": 1,
         "playerName": "Eli Stowers",
         "position": "TE",
         "nflTeam": "PHI",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-01T02:15:50.934Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          },
+          {
+            "date": "2026-04-27T13:53:26.266Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 11,
         "rosterId": 8,
+        "originalRosterId": 8,
         "playerName": "Emmett Johnson",
         "position": "RB",
         "nflTeam": "KC",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-02T13:43:51.415Z",
+            "from": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-21T01:29:26.987Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            }
+          }
+        ]
       },
       {
         "round": 1,
         "pickNo": 12,
         "rosterId": 5,
+        "originalRosterId": 5,
         "playerName": "Sonny Styles",
         "position": "LB",
         "nflTeam": "WAS",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-02T13:47:26.224Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          },
+          {
+            "date": "2026-04-24T02:53:24.837Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          },
+          {
+            "date": "2026-04-27T13:53:26.266Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 13,
         "rosterId": 7,
+        "originalRosterId": 2,
         "playerName": "Jonah Coleman",
         "position": "RB",
         "nflTeam": "DEN",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2024-10-18T01:09:18.084Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            }
+          },
+          {
+            "date": "2025-10-02T13:43:51.415Z",
+            "from": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2025-10-02T20:56:01.130Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 14,
         "rosterId": 7,
+        "originalRosterId": 11,
         "playerName": "Omar Cooper",
         "position": "WR",
         "nflTeam": "NYJ",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-01T23:40:12.162Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-05T22:49:18.929Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 15,
         "rosterId": 6,
+        "originalRosterId": 3,
         "playerName": "Denzel Boston",
         "position": "WR",
         "nflTeam": "CLE",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-08-27T01:54:48.263Z",
+            "from": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-07T13:37:22.031Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            }
+          },
+          {
+            "date": "2026-05-21T14:39:25.765Z",
+            "from": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            },
+            "to": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 16,
         "rosterId": 6,
+        "originalRosterId": 10,
         "playerName": "Nicholas Singleton",
         "position": "RB",
         "nflTeam": "TEN",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-09-03T12:49:48.452Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2025-10-08T12:23:49.452Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          },
+          {
+            "date": "2026-01-06T00:24:49.104Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-07T13:37:22.031Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            }
+          },
+          {
+            "date": "2026-05-21T14:39:25.765Z",
+            "from": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            },
+            "to": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 17,
         "rosterId": 3,
+        "originalRosterId": 7,
         "playerName": "Zachariah Branch",
         "position": "WR",
         "nflTeam": "ATL",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-01-06T13:49:46.004Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 18,
         "rosterId": 11,
+        "originalRosterId": 6,
         "playerName": "Antonio Williams",
         "position": "WR",
         "nflTeam": "WAS",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-05-06T02:34:12.660Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2025-06-11T11:59:33.898Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            }
+          },
+          {
+            "date": "2025-09-22T00:23:40.010Z",
+            "from": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          },
+          {
+            "date": "2026-01-05T18:05:26.247Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            }
+          },
+          {
+            "date": "2026-01-13T02:29:29.899Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 19,
         "rosterId": 3,
+        "originalRosterId": 9,
         "playerName": "Germie Bernard",
         "position": "WR",
         "nflTeam": "PIT",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-09-22T00:28:20.172Z",
+            "from": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          },
+          {
+            "date": "2025-10-02T13:47:26.224Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            }
+          },
+          {
+            "date": "2026-04-24T02:53:24.837Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          },
+          {
+            "date": "2026-04-25T13:59:50.209Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 20,
         "rosterId": 12,
+        "originalRosterId": 12,
         "playerName": "Elijah Sarratt",
         "position": "WR",
         "nflTeam": "BAL",
@@ -1592,111 +2341,395 @@
           "displayName": "dannyhatty06",
           "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
           "ownerId": "1129464212063006720"
-        }
+        },
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 2,
         "pickNo": 21,
         "rosterId": 4,
+        "originalRosterId": 4,
         "playerName": "Ja'Kobi Lane",
         "position": "WR",
         "nflTeam": "BAL",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 2,
         "pickNo": 22,
         "rosterId": 4,
+        "originalRosterId": 1,
         "playerName": "Chris Brazzell",
         "position": "WR",
         "nflTeam": "CAR",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-05-30T01:05:46.921Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            }
+          },
+          {
+            "date": "2025-09-22T13:32:13.514Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          },
+          {
+            "date": "2025-11-26T23:37:39.982Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          },
+          {
+            "date": "2025-12-02T00:20:11.676Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            }
+          }
+        ]
       },
       {
         "round": 2,
         "pickNo": 23,
         "rosterId": 8,
+        "originalRosterId": 8,
         "playerName": "Kaytron Allen",
         "position": "RB",
         "nflTeam": "WAS",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 2,
         "pickNo": 24,
         "rosterId": 8,
+        "originalRosterId": 5,
         "playerName": "Ted Hurst",
         "position": "WR",
         "nflTeam": "TB",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2024-09-18T21:09:52.287Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 25,
         "rosterId": 8,
+        "originalRosterId": 2,
         "playerName": "Arvell Reese",
         "position": "LB",
         "nflTeam": "NYG",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-02T13:43:51.415Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 26,
         "rosterId": 5,
+        "originalRosterId": 11,
         "playerName": "Chris Bell",
         "position": "WR",
         "nflTeam": "MIA",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-01-12T17:54:40.485Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 27,
         "rosterId": 3,
+        "originalRosterId": 3,
         "playerName": "Mike Washington",
         "position": "RB",
         "nflTeam": "LV",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 3,
         "pickNo": 28,
         "rosterId": 1,
+        "originalRosterId": 10,
         "playerName": "De'Zhaun Stribling",
         "position": "WR",
         "nflTeam": "SF",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-11-26T23:37:39.982Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          },
+          {
+            "date": "2026-01-10T04:37:16.841Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            }
+          },
+          {
+            "date": "2026-05-24T02:20:20.970Z",
+            "from": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 29,
         "rosterId": 10,
+        "originalRosterId": 7,
         "playerName": "Rueben Bain",
         "position": "DL",
         "nflTeam": "TB",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-02T20:56:01.130Z",
+            "from": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-01-06T00:24:49.104Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 30,
         "rosterId": 10,
+        "originalRosterId": 6,
         "playerName": "Michael Trigg",
         "position": "TE",
         "nflTeam": "DAL",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-01-05T18:05:26.247Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          },
+          {
+            "date": "2026-04-27T13:53:26.266Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 31,
         "rosterId": 4,
+        "originalRosterId": 9,
         "playerName": "CJ Allen",
         "position": "LB",
         "nflTeam": "IND",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-12-02T03:19:35.832Z",
+            "from": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          },
+          {
+            "date": "2026-04-27T22:11:52.035Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 32,
         "rosterId": 12,
+        "originalRosterId": 12,
         "playerName": "Max Klare",
         "position": "TE",
         "nflTeam": "LAR",
@@ -1705,151 +2738,359 @@
           "displayName": "dannyhatty06",
           "avatar": "https://sleepercdn.com/avatars/thumbs/e7af4deab0289b4f5505646424895246",
           "ownerId": "1129464212063006720"
-        }
+        },
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 3,
         "pickNo": 33,
         "rosterId": 4,
+        "originalRosterId": 4,
         "playerName": "Kirk Cousins",
         "position": "QB",
         "nflTeam": "LV",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 3,
         "pickNo": 34,
         "rosterId": 8,
+        "originalRosterId": 1,
         "playerName": "Malachi Fields",
         "position": "WR",
         "nflTeam": "NYG",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2024-11-18T05:05:33.419Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            }
+          }
+        ]
       },
       {
         "round": 3,
         "pickNo": 35,
         "rosterId": 8,
+        "originalRosterId": 8,
         "playerName": "Jalen Nailor",
         "position": "WR",
         "nflTeam": "LV",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 3,
         "pickNo": 36,
         "rosterId": 7,
+        "originalRosterId": 5,
         "playerName": "Skyler Bell",
         "position": "WR",
         "nflTeam": "BUF",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-04-27T13:53:26.266Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 37,
         "rosterId": 2,
+        "originalRosterId": 2,
         "playerName": "Eli Heidenreich",
         "position": "RB",
         "nflTeam": "PIT",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-09-03T12:49:48.452Z",
+            "from": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "to": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            }
+          },
+          {
+            "date": "2026-01-06T00:24:49.104Z",
+            "from": {
+              "teamName": "D1 Jayden Glazer",
+              "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 38,
         "rosterId": 2,
+        "originalRosterId": 11,
         "playerName": "Justin Joly",
         "position": "TE",
         "nflTeam": "DEN",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-05-24T17:52:10.263Z",
+            "from": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 39,
         "rosterId": 3,
+        "originalRosterId": 3,
         "playerName": "Caleb Downs",
         "position": "DB",
         "nflTeam": "DAL",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 4,
         "pickNo": 40,
         "rosterId": 10,
+        "originalRosterId": 10,
         "playerName": "Demond Claiborne",
         "position": "RB",
         "nflTeam": "MIN",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 4,
         "pickNo": 41,
         "rosterId": 7,
+        "originalRosterId": 7,
         "playerName": "Carson Beck",
         "position": "QB",
         "nflTeam": "ARI",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 4,
         "pickNo": 42,
         "rosterId": 9,
+        "originalRosterId": 6,
         "playerName": "Daiyan Henley",
         "position": "LB",
         "nflTeam": "LAC",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-05-21T14:39:25.765Z",
+            "from": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "to": {
+              "teamName": "Los pollos hermanos",
+              "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+              "ownerId": "1128774237046636544",
+              "rosterId": 9
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 43,
         "rosterId": 9,
+        "originalRosterId": 9,
         "playerName": "Foyesade Oluokun",
         "position": "LB",
         "nflTeam": "JAX",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 4,
         "pickNo": 44,
         "rosterId": 6,
+        "originalRosterId": 12,
         "playerName": "Cade Klubnik",
         "position": "QB",
         "nflTeam": "NYJ",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2026-05-25T04:02:56.232Z",
+            "from": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "to": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 45,
         "rosterId": 4,
+        "originalRosterId": 4,
         "playerName": "Riley Leonard",
         "position": "QB",
         "nflTeam": "IND",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       },
       {
         "round": 4,
         "pickNo": 46,
         "rosterId": 2,
+        "originalRosterId": 1,
         "playerName": "Eli Raridon",
         "position": "TE",
         "nflTeam": "NE",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2025-10-25T01:21:01.600Z",
+            "from": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "to": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 47,
         "rosterId": 1,
+        "originalRosterId": 8,
         "playerName": "Brenen Thompson",
         "position": "WR",
         "nflTeam": "LAC",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": [
+          {
+            "date": "2024-09-18T21:09:52.287Z",
+            "from": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            },
+            "to": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            }
+          },
+          {
+            "date": "2026-05-25T17:08:02.875Z",
+            "from": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "to": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            }
+          }
+        ]
       },
       {
         "round": 4,
         "pickNo": 48,
         "rosterId": 5,
+        "originalRosterId": 5,
         "playerName": "Adam Randall",
         "position": "RB",
         "nflTeam": "BAL",
-        "teamOverride": null
+        "teamOverride": null,
+        "season": "2026",
+        "tradeHistory": []
       }
     ]
   }

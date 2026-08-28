@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transactions — Necessary Roughness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="transactions">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="drafts.html" data-page="drafts">Drafts</a>
+        <a href="transactions.html" data-page="transactions">Transactions</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <div class="controls">
+        <select id="team-select"></select>
+        <select id="sort-select">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+
+      <div class="view-toggle" id="type-toggle">
+        <button type="button" data-type="all" class="active">All</button>
+        <button type="button" data-type="trade">Trades</button>
+        <button type="button" data-type="waiver">Waiver</button>
+        <button type="button" data-type="free_agent">Free Agent</button>
+        <button type="button" data-type="commissioner">Commissioner</button>
+      </div>
+
+      <p class="muted" id="result-count" style="margin-bottom: 12px;"></p>
+
+      <section>
+        <div id="txn-list" class="draft-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    const TYPE_LABEL = {
+      trade: "Trade",
+      waiver: "Waiver",
+      free_agent: "Free Agent",
+      commissioner: "Commissioner",
+    };
+
+    let allTxns = [];
+    let currentType = "all";
+
+    async function init() {
+      allTxns = await loadTransactions();
+
+      const teamSelect = document.getElementById("team-select");
+      const teamsByOwner = new Map();
+      for (const t of allTxns) {
+        for (const team of t.teams) {
+          if (team.ownerId && !teamsByOwner.has(team.ownerId)) {
+            teamsByOwner.set(team.ownerId, team.teamName);
+          }
+        }
+      }
+      const teamOptions = [...teamsByOwner.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+      teamSelect.innerHTML =
+        `<option value="">All Teams</option>` +
+        teamOptions.map(([ownerId, name]) => `<option value="${ownerId}">${name}</option>`).join("");
+
+      teamSelect.addEventListener("change", render);
+      document.getElementById("sort-select").addEventListener("change", render);
+      document.getElementById("type-toggle").addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-type]");
+        if (!btn) return;
+        currentType = btn.dataset.type;
+        document
+          .querySelectorAll("#type-toggle button")
+          .forEach((b) => b.classList.toggle("active", b === btn));
+        render();
+      });
+
+      render();
+    }
+
+    function render() {
+      const teamFilter = document.getElementById("team-select").value;
+      const sortOrder = document.getElementById("sort-select").value;
+
+      let filtered = allTxns.filter((t) => currentType === "all" || t.type === currentType);
+      if (teamFilter) {
+        filtered = filtered.filter((t) => t.teams.some((team) => team.ownerId === teamFilter));
+      }
+      filtered = [...filtered].sort((a, b) =>
+        sortOrder === "oldest" ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date)
+      );
+
+      document.getElementById("result-count").textContent = `${filtered.length} transaction${
+        filtered.length === 1 ? "" : "s"
+      }`;
+
+      const container = document.getElementById("txn-list");
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state">No transactions match those filters.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(renderTxnRow).join("");
+    }
+
+    function renderTxnRow(t) {
+      const teamNames = t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown";
+      const parts = [];
+
+      for (const a of t.adds) {
+        parts.push(`<span class="txn-add">+ ${a.name}${a.position ? ` (${a.position})` : ""}</span>`);
+      }
+      for (const d of t.drops) {
+        parts.push(`<span class="txn-drop">- ${d.name}${d.position ? ` (${d.position})` : ""}</span>`);
+      }
+      for (const dp of t.draftPicksTraded) {
+        parts.push(
+          `<span class="txn-pick">${dp.season} Rd ${dp.round} pick: ${dp.from.teamName} &rarr; ${dp.to.teamName}</span>`
+        );
+      }
+      for (const f of t.faab) {
+        parts.push(`<span class="txn-faab">$${f.amount} FAAB: ${f.from.teamName} &rarr; ${f.to.teamName}</span>`);
+      }
+
+      return `
+        <div class="txn-row">
+          <div class="txn-row-top">
+            <span class="txn-type txn-type-${t.type}">${TYPE_LABEL[t.type] || t.type}</span>
+            <span class="txn-teams">${teamNames}</span>
+            <span class="txn-date">${new Date(t.date).toLocaleDateString()}</span>
+          </div>
+          <div class="txn-details">${parts.join("")}</div>
+        </div>
+      `;
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("txn-list").innerHTML =
+        '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>

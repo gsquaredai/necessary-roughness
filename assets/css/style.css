@@ -421,6 +421,150 @@ th.num {
   color: var(--text-dim);
 }
 
+.draft-pick-row {
+  cursor: pointer;
+}
+
+.draft-pick-expand {
+  flex: 0 0 14px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.65rem;
+}
+
+.draft-pick-row.expanded .draft-pick-expand {
+  color: var(--accent);
+}
+
+.draft-pick-history {
+  background: var(--surface-2);
+  padding: 10px 14px 10px 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-empty {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+}
+
+.history-chain {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.history-hop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.6rem;
+}
+
+.history-team {
+  color: var(--text);
+}
+
+.history-arrow {
+  color: var(--accent);
+}
+
+.history-date {
+  color: var(--text-dim);
+  margin-left: auto;
+  font-size: 0.55rem;
+}
+
+/* transactions */
+
+.txn-row {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.txn-row:last-child {
+  border-bottom: none;
+}
+
+.txn-row-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.txn-type {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.5rem;
+  padding: 4px 7px;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+.txn-type-trade {
+  background: rgba(242, 201, 76, 0.15);
+  color: var(--accent);
+  border: 2px solid var(--accent-dim);
+}
+
+.txn-type-waiver {
+  background: rgba(79, 212, 122, 0.15);
+  color: var(--win);
+  border: 2px solid var(--win);
+}
+
+.txn-type-free_agent {
+  background: rgba(76, 201, 240, 0.15);
+  color: var(--accent-2);
+  border: 2px solid var(--accent-2);
+}
+
+.txn-type-commissioner {
+  background: rgba(255, 93, 108, 0.15);
+  color: var(--loss);
+  border: 2px solid var(--loss);
+}
+
+.txn-teams {
+  flex: 1;
+  font-size: 0.65rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.txn-date {
+  color: var(--text-dim);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+.txn-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 0.6rem;
+  padding-left: 2px;
+}
+
+.txn-add {
+  color: var(--win);
+}
+
+.txn-drop {
+  color: var(--loss);
+}
+
+.txn-pick {
+  color: var(--accent);
+}
+
+.txn-faab {
+  color: var(--accent-2);
+}
+
 /* history */
 
 .champions-list {

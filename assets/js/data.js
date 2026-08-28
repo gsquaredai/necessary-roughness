@@ -1,5 +1,13 @@
 const seasonCache = new Map();
 let indexCache = null;
+let transactionsCache = null;
+
+async function loadTransactions() {
+  if (transactionsCache) return transactionsCache;
+  const res = await fetch("data/transactions.json");
+  transactionsCache = await res.json();
+  return transactionsCache;
+}
 
 async function loadIndex() {
   if (indexCache) return indexCache;
