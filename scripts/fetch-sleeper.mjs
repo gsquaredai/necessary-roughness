@@ -360,6 +360,22 @@ async function buildSeason(league, nextLeague) {
     rawTransactions,
     rosterPlayers,
     weeklyPlayerPoints,
+    rosterPositions: league.roster_positions,
+    scoringSettings: league.scoring_settings,
+    leagueSettings: {
+      numTeams: league.settings?.num_teams,
+      taxiSlots: league.settings?.taxi_slots,
+      taxiYears: league.settings?.taxi_years,
+      reserveSlots: league.settings?.reserve_slots,
+      playoffTeams: league.settings?.playoff_teams,
+      playoffWeekStart: league.settings?.playoff_week_start,
+      playoffRoundType: league.settings?.playoff_round_type,
+      tradeDeadline: league.settings?.trade_deadline,
+      waiverType: league.settings?.waiver_type,
+      waiverBudget: league.settings?.waiver_budget,
+      pickTrading: league.settings?.pick_trading,
+      bestBall: league.settings?.best_ball,
+    },
   };
 }
 

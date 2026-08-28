@@ -1101,6 +1101,130 @@ th.num {
   margin-top: 4px;
 }
 
+/* ---------- info page ---------- */
+
+.info-section-title {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin: 24px 0 12px;
+}
+
+.info-section-title:first-child {
+  margin-top: 0;
+}
+
+.pos-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #14141c;
+  margin: 0 6px 6px 0;
+}
+
+.pos-pill.pos-qb { background: #ffadad; }
+.pos-pill.pos-rb { background: #caffbf; }
+.pos-pill.pos-wr { background: #a0c4ff; }
+.pos-pill.pos-te { background: #ffd6a5; }
+.pos-pill.pos-other { background: #bdb2ff; }
+.pos-pill.pos-flex { background: var(--text-dim); }
+.pos-pill.pos-bn { background: var(--border); color: var(--text); }
+
+.info-stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.info-stat-row:last-child {
+  border-bottom: none;
+}
+
+.info-stat-label {
+  color: var(--text-dim);
+}
+
+.info-stat-value {
+  font-weight: 600;
+}
+
+.scoring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.money-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.money-card {
+  flex: 1 1 140px;
+  background: var(--surface);
+  border: var(--pixel-border) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--pixel-shadow);
+  padding: 16px;
+  text-align: center;
+}
+
+.money-card .money-place {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.money-card .money-amount {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1.1rem;
+  color: var(--win);
+  margin-top: 8px;
+}
+
+.money-card.buy-in .money-amount {
+  color: var(--accent);
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: rule-counter;
+}
+
+.rules-list li {
+  counter-increment: rule-counter;
+  padding: 10px 0 10px 32px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.rules-list li:last-child {
+  border-bottom: none;
+}
+
+.rules-list li::before {
+  content: counter(rule-counter);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.6rem;
+  color: var(--accent);
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 560px) {

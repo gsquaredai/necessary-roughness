@@ -1,0 +1,11 @@
+{
+  "buyIn": 50,
+  "payouts": [
+    { "place": "1st", "amount": 400 },
+    { "place": "2nd", "amount": 150 },
+    { "place": "3rd", "amount": 50 }
+  ],
+  "specialRules": [
+    "If a team trades away one of their future 1st-round picks, they must submit their buy-in for that year and every year between the current year and that year (if they haven't already). This prevents a team from trading away picks and then deciding they no longer want to stay in the league."
+  ]
+}

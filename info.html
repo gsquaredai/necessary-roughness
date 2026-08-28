@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Info — Necessary Roughness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="info">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Necessary <span>Roughness</span></a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="standings.html" data-page="standings">Standings</a>
+        <a href="matchups.html" data-page="matchups">Matchups</a>
+        <a href="drafts.html" data-page="drafts">Drafts</a>
+        <a href="transactions.html" data-page="transactions">Transactions</a>
+        <a href="info.html" data-page="info">Info</a>
+        <a href="history.html" data-page="history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <div class="view-toggle" id="info-tabs">
+        <button type="button" data-tab="roster">Roster</button>
+        <button type="button" data-tab="scoring">Scoring</button>
+        <button type="button" data-tab="rules">Rules</button>
+        <button type="button" data-tab="money">$$$</button>
+        <button type="button" data-tab="allstar">All Star Game</button>
+        <button type="button" data-tab="teams">Teams</button>
+      </div>
+
+      <section>
+        <div id="info-content"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    // ---------- roster ----------
+
+    async function renderRosterTab(container) {
+      const idx = await loadIndex();
+      const season = await loadSeason(idx.currentSeason);
+      const positions = season.rosterPositions || [];
+      const settings = season.leagueSettings || {};
+
+      const POSITION_CLASS = { QB: "pos-qb", RB: "pos-rb", WR: "pos-wr", TE: "pos-te" };
+      const FLEX_POSITIONS = new Set(["FLEX", "SUPER_FLEX", "IDP_FLEX", "WRRB_FLEX", "REC_FLEX"]);
+      const pillHTML = (p) => {
+        const cls = POSITION_CLASS[p] || (FLEX_POSITIONS.has(p) ? "pos-flex" : "pos-other");
+        return `<span class="pos-pill ${cls}">${p.replace(/_/g, " ")}</span>`;
+      };
+
+      const starters = positions.filter((p) => p !== "BN");
+      const benchCount = positions.filter((p) => p === "BN").length;
+
+      container.innerHTML = `
+        <div class="info-section-title">Starting Lineup (${starters.length} spots)</div>
+        <div>${starters.map(pillHTML).join("") || '<span class="muted">No data.</span>'}</div>
+
+        <div class="info-section-title">Bench</div>
+        <div class="info-stat-row"><span class="info-stat-label">Bench Spots</span><span class="info-stat-value">${benchCount}</span></div>
+
+        <div class="info-section-title">Injured Reserve</div>
+        <div class="info-stat-row"><span class="info-stat-label">IR Spots</span><span class="info-stat-value">${settings.reserveSlots ?? "—"}</span></div>
+
+        <div class="info-section-title">Taxi Squad</div>
+        <div class="info-stat-row"><span class="info-stat-label">Taxi Spots</span><span class="info-stat-value">${settings.taxiSlots ?? "—"}</span></div>
+        <div class="info-stat-row"><span class="info-stat-label">Taxi Eligibility</span><span class="info-stat-value">${
+          settings.taxiYears ? `Up to ${settings.taxiYears} year${settings.taxiYears === 1 ? "" : "s"} of NFL experience` : "—"
+        }</span></div>
+      `;
+    }
+
+    // ---------- scoring ----------
+
+    const SCORING_LABELS = {
+      pass_yd: "Passing Yards", pass_td: "Passing TD", pass_int: "Interception Thrown",
+      pass_2pt: "Passing 2PT", pass_int_td: "Pick-Six Thrown",
+      rush_yd: "Rushing Yards", rush_td: "Rushing TD", rush_2pt: "Rushing 2PT",
+      rec: "Reception (PPR)", rec_yd: "Receiving Yards", rec_td: "Receiving TD",
+      rec_2pt: "Receiving 2PT", bonus_rec_te: "TE Reception Bonus",
+      fum: "Fumble", fum_lost: "Fumble Lost", fum_rec: "Fumble Recovery", fum_rec_td: "Fumble Return TD",
+      fgm_0_19: "FG Made 0-19 Yds", fgm_20_29: "FG Made 20-29 Yds", fgm_30_39: "FG Made 30-39 Yds",
+      fgm_40_49: "FG Made 40-49 Yds", fgm_50p: "FG Made 50+ Yds", fgmiss: "FG Missed",
+      xpm: "Extra Point Made", xpmiss: "Extra Point Missed",
+      idp_sack: "Sack", idp_int: "Interception", idp_fum_rec: "Fumble Recovery", idp_ff: "Forced Fumble",
+      idp_blk_kick: "Blocked Kick", idp_safe: "Safety", idp_def_td: "Defensive TD", idp_pass_def: "Pass Defended",
+      idp_tkl_solo: "Solo Tackle", idp_tkl_ast: "Assisted Tackle", idp_tkl_loss: "Tackle For Loss", idp_qb_hit: "QB Hit",
+      sack: "Sack", int: "Interception", safe: "Safety", blk_kick: "Blocked Kick", def_td: "Defensive TD",
+      st_td: "Special Teams TD", st_ff: "Forced Fumble", st_fum_rec: "Fumble Recovery",
+      def_st_fum_rec: "Fumble Recovery", def_st_td: "Defensive/ST TD", def_st_ff: "Forced Fumble", ff: "Forced Fumble",
+      pts_allow_0: "0 Points Allowed", pts_allow_1_6: "1-6 Points Allowed", pts_allow_7_13: "7-13 Points Allowed",
+      pts_allow_14_20: "14-20 Points Allowed", pts_allow_21_27: "21-27 Points Allowed",
+      pts_allow_28_34: "28-34 Points Allowed", pts_allow_35p: "35+ Points Allowed",
+    };
+
+    const SCORING_CATEGORIES = [
+      ["Passing", ["pass_yd", "pass_td", "pass_int", "pass_2pt", "pass_int_td"]],
+      ["Rushing", ["rush_yd", "rush_td", "rush_2pt"]],
+      ["Receiving", ["rec", "rec_yd", "rec_td", "rec_2pt", "bonus_rec_te"]],
+      ["Fumbles", ["fum", "fum_lost", "fum_rec", "fum_rec_td"]],
+      ["Kicking", ["fgm_0_19", "fgm_20_29", "fgm_30_39", "fgm_40_49", "fgm_50p", "fgmiss", "xpm", "xpmiss"]],
+      [
+        "Individual Defense (IDP)",
+        [
+          "idp_sack", "idp_int", "idp_fum_rec", "idp_ff", "idp_blk_kick", "idp_safe", "idp_def_td",
+          "idp_pass_def", "idp_tkl_solo", "idp_tkl_ast", "idp_tkl_loss", "idp_qb_hit",
+        ],
+      ],
+      [
+        "Team Defense / Special Teams",
+        [
+          "sack", "int", "safe", "blk_kick", "def_td", "st_td", "st_ff", "st_fum_rec", "def_st_fum_rec",
+          "def_st_td", "def_st_ff", "ff", "pts_allow_0", "pts_allow_1_6", "pts_allow_7_13", "pts_allow_14_20",
+          "pts_allow_21_27", "pts_allow_28_34", "pts_allow_35p",
+        ],
+      ],
+    ];
+
+    function fmtScoringValue(key, v) {
+      if (v == null) return "—";
+      const perYard = key.endsWith("_yd");
+      const sign = v > 0 ? "+" : "";
+      return perYard ? `${sign}${v} / yd` : `${sign}${v}`;
+    }
+
+    async function renderScoringTab(container) {
+      const idx = await loadIndex();
+      const season = await loadSeason(idx.currentSeason);
+      const settings = season.scoringSettings || {};
+      const usedKeys = new Set();
+
+      const statRow = (k) =>
+        `<div class="info-stat-row"><span class="info-stat-label">${SCORING_LABELS[k] || k}</span><span class="info-stat-value">${fmtScoringValue(k, settings[k])}</span></div>`;
+
+      const cards = SCORING_CATEGORIES.map(([title, keys]) => {
+        const present = keys.filter((k) => k in settings);
+        present.forEach((k) => usedKeys.add(k));
+        if (!present.length) return "";
+        return `<div><div class="info-section-title">${title}</div>${present.map(statRow).join("")}</div>`;
+      }).join("");
+
+      const leftover = Object.keys(settings).filter((k) => !usedKeys.has(k));
+      const leftoverHTML = leftover.length
+        ? `<div><div class="info-section-title">Other</div>${leftover.map(statRow).join("")}</div>`
+        : "";
+
+      container.innerHTML = Object.keys(settings).length
+        ? `<div class="scoring-grid">${cards}${leftoverHTML}</div>`
+        : `<div class="empty-state">No scoring data available.</div>`;
+    }
+
+    // ---------- rules ----------
+
+    async function loadRules() {
+      try {
+        const res = await fetch("data/league-rules.json");
+        return await res.json();
+      } catch {
+        return { rules: [] };
+      }
+    }
+
+    async function renderRulesTab(container) {
+      const data = await loadRules();
+      if (!data.rules || !data.rules.length) {
+        container.innerHTML = `<div class="empty-state">League rules coming soon.</div>`;
+        return;
+      }
+      container.innerHTML = `<ol class="rules-list">${data.rules.map((r) => `<li>${r}</li>`).join("")}</ol>`;
+    }
+
+    // ---------- $$$ ----------
+
+    async function loadMoney() {
+      try {
+        const res = await fetch("data/league-money.json");
+        return await res.json();
+      } catch {
+        return null;
+      }
+    }
+
+    async function renderMoneyTab(container) {
+      const data = await loadMoney();
+      if (!data) {
+        container.innerHTML = `<div class="empty-state">Payout info coming soon.</div>`;
+        return;
+      }
+      const buyInCard = `
+        <div class="money-card buy-in">
+          <div class="money-place">Buy-In / Year</div>
+          <div class="money-amount">$${data.buyIn}</div>
+        </div>
+      `;
+      const payoutCards = (data.payouts || [])
+        .map(
+          (p) => `
+            <div class="money-card">
+              <div class="money-place">${p.place}</div>
+              <div class="money-amount">$${p.amount}</div>
+            </div>
+          `
+        )
+        .join("");
+      const rulesHTML =
+        data.specialRules && data.specialRules.length
+          ? `<div class="info-section-title">Special Rules</div><ol class="rules-list">${data.specialRules
+              .map((r) => `<li>${r}</li>`)
+              .join("")}</ol>`
+          : "";
+      container.innerHTML = `
+        <div class="info-section-title">Payouts</div>
+        <div class="money-hero">${buyInCard}${payoutCards}</div>
+        ${rulesHTML}
+      `;
+    }
+
+    // ---------- all star game ----------
+
+    function renderAllStarTab(container) {
+      container.innerHTML = `<div class="empty-state">Details coming soon.</div>`;
+    }
+
+    // ---------- teams (moved from teams.html) ----------
+
+    async function loadContacts() {
+      try {
+        const res = await fetch("data/team-contacts.json");
+        return await res.json();
+      } catch {
+        return {};
+      }
+    }
+
+    async function loadFuturePicks() {
+      try {
+        const res = await fetch("data/future-picks.json");
+        return await res.json();
+      } catch {
+        return {};
+      }
+    }
+
+    // "Best finish" per the league's own convention: the following season's
+    // draft order is reverse-standings, so the highest draftPick a manager
+    // ever earned (closest to last pick) marks their best season. Skips the
+    // current in-progress season (no draftPick yet — next draft hasn't run).
+    function bestFinish(seasons, ownerId) {
+      let best = null;
+      for (const season of seasons) {
+        const team = season.teams.find((t) => t.ownerId === ownerId);
+        if (!team || team.draftPick == null) continue;
+        if (!best || team.draftPick > best.draftPick) {
+          best = { draftPick: team.draftPick, season: season.season, teamsCount: season.teams.length };
+        }
+      }
+      if (!best) return null;
+      const rank = best.teamsCount + 1 - best.draftPick;
+      return { label: `${ordinal(rank)} (${best.season})`, rank, season: best.season };
+    }
+
+    let allPlayers = null;
+    let futurePicks = null;
+    let activeSeason = null;
+
+    function playerRosterLinkHTML(playerId) {
+      const p = allPlayers[playerId];
+      const name = p ? p.name : "Unknown Player";
+      const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" · ") : "";
+      return `<div class="roster-player">${playerLinkHTML(playerId, name)}${
+        meta ? `<span class="player-meta">${meta}</span>` : ""
+      }</div>`;
+    }
+
+    function rosterGroupHTML(title, playerIds) {
+      if (!playerIds.length) return "";
+      return `
+        <div class="roster-group">
+          <div class="roster-group-title">${title} (${playerIds.length})</div>
+          ${playerIds.map(playerRosterLinkHTML).join("")}
+        </div>
+      `;
+    }
+
+    function pickHeldLabel(pk) {
+      const base = pickLinkHTML(pk, `${pk.season} ${ordinal(pk.round)}`);
+      return pk.originalTeam ? `${base} (from ${pk.originalTeam.teamName})` : base;
+    }
+
+    function openRosterModal(rosterId) {
+      const team = teamById(activeSeason, rosterId);
+      const roster = activeSeason.rosterPlayers?.[rosterId];
+      let root = document.getElementById("player-modal-root");
+      if (!root) {
+        root = document.createElement("div");
+        root.id = "player-modal-root";
+        document.body.appendChild(root);
+      }
+
+      if (!roster) {
+        root.innerHTML = `
+          <div class="modal-overlay" id="player-modal-overlay">
+            <div class="modal-box"><div class="empty-state">No roster data available.</div></div>
+          </div>
+        `;
+      } else {
+        const starters = new Set(roster.starters);
+        const taxi = new Set(roster.taxi);
+        const reserve = new Set(roster.reserve);
+        const bench = roster.players.filter((p) => !starters.has(p) && !taxi.has(p) && !reserve.has(p));
+        const picks = (futurePicks[rosterId] || []).map(pickHeldLabel);
+
+        root.innerHTML = `
+          <div class="modal-overlay" id="player-modal-overlay">
+            <div class="modal-box">
+              <button class="modal-close" id="player-modal-close">&times;</button>
+              <div class="modal-header">
+                <h2>${team.teamName}</h2>
+                <div class="modal-subtitle">${team.displayName}</div>
+              </div>
+              <div class="modal-tab-content">
+                ${rosterGroupHTML("Starters", roster.starters)}
+                ${rosterGroupHTML("Bench", bench)}
+                ${rosterGroupHTML("Taxi Squad", roster.taxi)}
+                ${rosterGroupHTML("IR", roster.reserve)}
+                <div class="roster-group">
+                  <div class="roster-group-title">Draft Picks Held (${picks.length})</div>
+                  ${
+                    picks.length
+                      ? picks.map((p) => `<div class="roster-pick">${p}</div>`).join("")
+                      : `<div class="muted">No future picks on record.</div>`
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+        if (e.target.id === "player-modal-overlay") closePlayerModal();
+      });
+      root.querySelector("#player-modal-close")?.addEventListener("click", closePlayerModal);
+    }
+
+    async function renderTeamsTab(container) {
+      container.innerHTML = `<div class="team-card-grid" id="team-grid"></div>`;
+      const idx = await loadIndex();
+      const [seasons, contacts, players, picks] = await Promise.all([
+        loadAllSeasons(),
+        loadContacts(),
+        loadPlayers(),
+        loadFuturePicks(),
+      ]);
+      const currentSeason = seasons.find((s) => s.season === idx.currentSeason);
+      activeSeason = currentSeason;
+      allPlayers = players;
+      futurePicks = picks;
+
+      const grid = document.getElementById("team-grid");
+      grid.innerHTML = currentSeason.teams
+        .slice()
+        .sort((a, b) => a.teamName.localeCompare(b.teamName))
+        .map((team) => {
+          const finish = bestFinish(seasons, team.ownerId);
+          const contact = contacts[team.ownerId] || {};
+          const isChampThisSeason = currentSeason.champion === team.rosterId;
+          return `
+            <div class="team-card" data-roster-id="${team.rosterId}" role="button" tabindex="0">
+              ${avatarImgHTML(team)}
+              <div class="team-card-name">${team.teamName}</div>
+              <div class="team-card-owner">${team.displayName}</div>
+              <div class="team-card-row">
+                <span class="player-bio-label">Best Finish</span>
+                <span>${finish ? finish.label : "—"}${isChampThisSeason ? ' <span class="badge champ">Champ</span>' : ""}</span>
+              </div>
+              ${
+                contact.firstName || contact.phone
+                  ? `<div class="team-card-row">
+                      <span class="player-bio-label">Contact</span>
+                      <span>${contact.firstName || "—"}${contact.phone ? " &middot; " + contact.phone : ""}</span>
+                    </div>`
+                  : ""
+              }
+            </div>
+          `;
+        })
+        .join("");
+
+      grid.querySelectorAll(".team-card").forEach((card) => {
+        const open = () => openRosterModal(Number(card.dataset.rosterId));
+        card.addEventListener("click", open);
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open();
+          }
+        });
+      });
+    }
+
+    // ---------- tab wiring ----------
+
+    const TAB_RENDERERS = {
+      roster: renderRosterTab,
+      scoring: renderScoringTab,
+      rules: renderRulesTab,
+      money: renderMoneyTab,
+      allstar: renderAllStarTab,
+      teams: renderTeamsTab,
+    };
+
+    async function showTab(tab) {
+      const container = document.getElementById("info-content");
+      container.innerHTML = `<div class="empty-state">Loading...</div>`;
+      const fn = TAB_RENDERERS[tab] || renderRosterTab;
+      await fn(container);
+    }
+
+    async function init() {
+      const tabs = document.getElementById("info-tabs");
+      const params = new URLSearchParams(location.search);
+      const requested = params.get("tab");
+      const initialTab = TAB_RENDERERS[requested] ? requested : "roster";
+
+      tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.tab === initialTab));
+
+      tabs.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-tab]");
+        if (!btn) return;
+        tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
+        const url = new URL(location.href);
+        url.searchParams.set("tab", btn.dataset.tab);
+        history.replaceState(null, "", url);
+        showTab(btn.dataset.tab);
+      });
+
+      await showTab(initialTab);
+    }
+
+    init().catch((err) => {
+      console.error(err);
+      document.getElementById("info-content").innerHTML = '<div class="empty-state">Could not load league data.</div>';
+    });
+  </script>
+</body>
+</html>
