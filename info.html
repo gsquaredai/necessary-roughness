@@ -116,12 +116,15 @@
       pts_allow_28_34: "28-34 Points Allowed", pts_allow_35p: "35+ Points Allowed",
     };
 
+    // No kicker or team defense roster spots in this league, so those
+    // categories are left out of the scoring breakdown entirely (even
+    // though Sleeper's scoring_settings still carries default values for
+    // them). IDP stays since IDP_FLEX is a real roster spot.
     const SCORING_CATEGORIES = [
       ["Passing", ["pass_yd", "pass_td", "pass_int", "pass_2pt", "pass_int_td"]],
       ["Rushing", ["rush_yd", "rush_td", "rush_2pt"]],
       ["Receiving", ["rec", "rec_yd", "rec_td", "rec_2pt", "bonus_rec_te"]],
       ["Fumbles", ["fum", "fum_lost", "fum_rec", "fum_rec_td"]],
-      ["Kicking", ["fgm_0_19", "fgm_20_29", "fgm_30_39", "fgm_40_49", "fgm_50p", "fgmiss", "xpm", "xpmiss"]],
       [
         "Individual Defense (IDP)",
         [
@@ -129,15 +132,14 @@
           "idp_pass_def", "idp_tkl_solo", "idp_tkl_ast", "idp_tkl_loss", "idp_qb_hit",
         ],
       ],
-      [
-        "Team Defense / Special Teams",
-        [
-          "sack", "int", "safe", "blk_kick", "def_td", "st_td", "st_ff", "st_fum_rec", "def_st_fum_rec",
-          "def_st_td", "def_st_ff", "ff", "pts_allow_0", "pts_allow_1_6", "pts_allow_7_13", "pts_allow_14_20",
-          "pts_allow_21_27", "pts_allow_28_34", "pts_allow_35p",
-        ],
-      ],
     ];
+
+    const SCORING_EXCLUDED_KEYS = new Set([
+      "fgm_0_19", "fgm_20_29", "fgm_30_39", "fgm_40_49", "fgm_50p", "fgmiss", "xpm", "xpmiss",
+      "sack", "int", "safe", "blk_kick", "def_td", "st_td", "st_ff", "st_fum_rec", "def_st_fum_rec",
+      "def_st_td", "def_st_ff", "ff", "pts_allow_0", "pts_allow_1_6", "pts_allow_7_13", "pts_allow_14_20",
+      "pts_allow_21_27", "pts_allow_28_34", "pts_allow_35p",
+    ]);
 
     function fmtScoringValue(key, v) {
       if (v == null) return "—";
@@ -162,7 +164,7 @@
         return `<div class="info-section-title">${title}</div><div class="draft-list">${present.map(statRow).join("")}</div>`;
       }).join("");
 
-      const leftover = Object.keys(settings).filter((k) => !usedKeys.has(k));
+      const leftover = Object.keys(settings).filter((k) => !usedKeys.has(k) && !SCORING_EXCLUDED_KEYS.has(k));
       const leftoverHTML = leftover.length
         ? `<div class="info-section-title">Other</div><div class="draft-list">${leftover.map(statRow).join("")}</div>`
         : "";
