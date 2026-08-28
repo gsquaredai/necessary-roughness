@@ -59,18 +59,6 @@
       await renderDraft(select.value);
     }
 
-    function nflLogoImgHTML(teamAbbr) {
-      if (!teamAbbr) return `<span class="nfl-logo"></span>`;
-      return `<img class="nfl-logo" src="assets/img/nfl/${teamAbbr}.png" onerror="this.style.visibility='hidden';" alt="">`;
-    }
-
-    // A handful of NFL abbreviations are 2 letters (GB, KC, LV, NE, NO, SF,
-    // TB) while the rest are 3 — normalize to 3 for a consistent column.
-    // Display-only: image lookups still use Sleeper's original code.
-    const NFL_ABBR_3 = { GB: "GNB", KC: "KAN", LV: "LVR", NE: "NWE", NO: "NOR", SF: "SFO", TB: "TAM" };
-    function nflAbbr3(teamAbbr) {
-      return NFL_ABBR_3[teamAbbr] || teamAbbr;
-    }
 
     async function renderDraft(seasonKey) {
       const season = await loadSeason(seasonKey);
@@ -93,7 +81,7 @@
               <div class="draft-pick-no">${pick.pickNo}</div>
               <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">Unknown</span>'}</div>
               <div class="draft-pick-player">
-                <span class="player-name">${pick.playerName}</span>
+                <span class="player-name">${playerLinkHTML(pick.playerId, pick.playerName)}</span>
                 ${pick.position ? `<span class="player-meta">${pick.position}</span>` : ""}
               </div>
               <div class="draft-pick-nfl">

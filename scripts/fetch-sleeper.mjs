@@ -52,16 +52,35 @@ async function buildSeasonChain(startId) {
 // regardless of league/season — reduced immediately to just name/position
 // so it doesn't stick around in memory as the full ~14MB payload.
 async function fetchPlayerNames() {
-  console.log("Fetching NFL player data (one-time, for transaction player names)...");
+  console.log("Fetching NFL player data (one-time, for transaction names + player profiles)...");
   const players = await fetchJSON(`${API}/players/nfl`);
   const map = new Map();
   for (const [pid, p] of Object.entries(players)) {
     map.set(pid, {
       name: p.full_name || `${p.first_name ?? ""} ${p.last_name ?? ""}`.trim() || "Unknown",
       position: p.position ?? null,
+      team: p.team ?? null,
+      birthDate: p.birth_date ?? null,
     });
   }
   return map;
+}
+
+// A curated subset of box-score stat categories — enough for a useful game
+// log without storing all 60+ fields Sleeper tracks per player per game.
+const GAME_LOG_STAT_KEYS = [
+  "pass_att", "pass_cmp", "pass_yd", "pass_td", "pass_int",
+  "rush_att", "rush_yd", "rush_td",
+  "rec", "rec_tgt", "rec_yd", "rec_td",
+  "fum_lost",
+];
+
+async function fetchWeeklyStats(season, week) {
+  try {
+    return await fetchJSON(`${API}/stats/nfl/regular/${season}/${week}`);
+  } catch {
+    return null;
+  }
 }
 
 async function findChampionAndLastPlace(leagueId, league) {
@@ -197,6 +216,7 @@ async function buildSeason(league, nextLeague) {
               // belongs to — differs from rosterId (who actually drafted)
               // if the pick was traded at any point before the draft.
               originalRosterId: slotToRosterId[p.draft_slot] ?? p.roster_id,
+              playerId: p.player_id ?? null,
               playerName: p.metadata
                 ? `${p.metadata.first_name} ${p.metadata.last_name}`.trim()
                 : "Unknown",
@@ -262,7 +282,14 @@ async function buildSeason(league, nextLeague) {
     };
   });
 
+  // Every player ever on a roster this season (not just current starters),
+  // for the player-profile feature: whose transaction/points history is
+  // relevant, and (for the most recent season) who's a free agent.
+  const rosterPlayers = {};
+  for (const r of rosters) rosterPlayers[r.roster_id] = r.players || [];
+
   const matchupsByWeek = {};
+  const weeklyPlayerPoints = {}; // week -> { player_id: points }, this league's exact scoring
   for (let week = 1; week <= MAX_WEEKS; week++) {
     let raw;
     try {
@@ -273,11 +300,14 @@ async function buildSeason(league, nextLeague) {
     if (!raw || raw.length === 0) continue;
 
     const byMatchupId = new Map();
+    const pointsThisWeek = {};
     for (const entry of raw) {
       if (entry.matchup_id == null) continue;
       if (!byMatchupId.has(entry.matchup_id)) byMatchupId.set(entry.matchup_id, []);
       byMatchupId.get(entry.matchup_id).push(entry);
+      Object.assign(pointsThisWeek, entry.players_points || {});
     }
+    weeklyPlayerPoints[week] = pointsThisWeek;
 
     matchupsByWeek[week] = [...byMatchupId.values()].map(([a, b]) => ({
       matchupId: a.matchup_id,
@@ -300,6 +330,8 @@ async function buildSeason(league, nextLeague) {
     lastPlace,
     draft: draftBoard,
     rawTransactions,
+    rosterPlayers,
+    weeklyPlayerPoints,
   };
 }
 
@@ -338,6 +370,7 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
     for (const p of s.draft.picks) {
       byKey.set(`${p.originalRosterId}-${p.round}`, {
         pickInRound: ((p.pickNo - 1) % teamsPerRound) + 1,
+        playerId: p.playerId,
         playerName: p.playerName,
         position: p.position,
       });
@@ -445,6 +478,126 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   return log;
 }
 
+// Builds a profile for every player who's ever appeared on a roster in this
+// league: bio, current team (or free agent), season-by-season stat lines
+// (points via this league's own scoring, from matchup players_points
+// already fetched; games played + box score via Sleeper's stats endpoint,
+// real NFL games independent of fantasy rostering), and positional/overall
+// rank each season among only the players relevant to this league.
+async function buildPlayerProfiles(seasonDatas, playerNames) {
+  const teamsBySeasonRoster = new Map();
+  for (const s of seasonDatas) {
+    teamsBySeasonRoster.set(s.season, new Map(s.teams.map((t) => [t.rosterId, t])));
+  }
+  const teamRef = (season, rosterId) => {
+    const t = teamsBySeasonRoster.get(season)?.get(rosterId);
+    return t ? { teamName: t.teamName, avatar: t.avatar, ownerId: t.ownerId, rosterId } : null;
+  };
+
+  const relevantPlayerIds = new Set();
+  for (const s of seasonDatas) {
+    for (const players of Object.values(s.rosterPlayers)) {
+      for (const pid of players) relevantPlayerIds.add(pid);
+    }
+  }
+
+  const profiles = new Map();
+  for (const playerId of relevantPlayerIds) {
+    const info = playerNames.get(playerId);
+    profiles.set(playerId, {
+      playerId,
+      name: info?.name ?? "Unknown Player",
+      position: info?.position ?? null,
+      nflTeam: info?.team ?? null,
+      birthDate: info?.birthDate ?? null,
+      currentTeam: null,
+      seasons: {},
+    });
+  }
+
+  // current dynasty team (or free agent) — most recent season's rosters
+  const latest = seasonDatas[seasonDatas.length - 1];
+  const ownerOfPlayer = new Map();
+  for (const [rosterId, players] of Object.entries(latest.rosterPlayers)) {
+    for (const pid of players) ownerOfPlayer.set(pid, Number(rosterId));
+  }
+  for (const [playerId, profile] of profiles) {
+    const rosterId = ownerOfPlayer.get(playerId);
+    profile.currentTeam = rosterId != null ? teamRef(latest.season, rosterId) : null;
+  }
+
+  // season point totals — only for players who actually appeared that season
+  for (const s of seasonDatas) {
+    const totals = new Map();
+    for (const weekPoints of Object.values(s.weeklyPlayerPoints)) {
+      for (const [pid, pts] of Object.entries(weekPoints)) {
+        if (!relevantPlayerIds.has(pid)) continue;
+        totals.set(pid, (totals.get(pid) ?? 0) + (pts ?? 0));
+      }
+    }
+    for (const [pid, totalPoints] of totals) {
+      profiles.get(pid).seasons[s.season] = {
+        totalPoints,
+        gamesPlayed: 0,
+        positionRank: null,
+        overallRank: null,
+        games: [],
+      };
+    }
+  }
+
+  console.log("Fetching weekly game stats for player profiles...");
+  for (const s of seasonDatas) {
+    const weeks = Object.keys(s.weeklyPlayerPoints).map(Number).sort((a, b) => a - b);
+    for (const week of weeks) {
+      const stats = await fetchWeeklyStats(s.season, week);
+      if (!stats) continue;
+      const pointsThisWeek = s.weeklyPlayerPoints[week] || {};
+      for (const pid of Object.keys(pointsThisWeek)) {
+        if (!relevantPlayerIds.has(pid)) continue;
+        const seasonEntry = profiles.get(pid)?.seasons[s.season];
+        if (!seasonEntry) continue;
+        const stat = stats[pid];
+        const gp = stat?.gp ?? 0;
+        if (gp) seasonEntry.gamesPlayed += gp;
+        seasonEntry.games.push({
+          week,
+          points: pointsThisWeek[pid] ?? 0,
+          played: !!gp,
+          stats: stat
+            ? Object.fromEntries(
+                GAME_LOG_STAT_KEYS.filter((k) => stat[k] != null).map((k) => [k, stat[k]])
+              )
+            : {},
+        });
+      }
+    }
+  }
+
+  // rank within position and overall, per season, among relevant players
+  for (const s of seasonDatas) {
+    const entries = [...profiles.values()]
+      .map((p) => ({ p, season: p.seasons[s.season] }))
+      .filter((e) => e.season);
+
+    const overall = [...entries].sort((a, b) => b.season.totalPoints - a.season.totalPoints);
+    overall.forEach((e, i) => (e.season.overallRank = i + 1));
+
+    const byPosition = new Map();
+    for (const e of entries) {
+      const pos = e.p.position || "UNK";
+      if (!byPosition.has(pos)) byPosition.set(pos, []);
+      byPosition.get(pos).push(e);
+    }
+    for (const group of byPosition.values()) {
+      group.sort((a, b) => b.season.totalPoints - a.season.totalPoints);
+      group.forEach((e, i) => (e.season.positionRank = i + 1));
+    }
+  }
+
+  return Object.fromEntries(profiles);
+}
+
 async function main() {
   console.log("Walking season chain from", CURRENT_LEAGUE_ID);
   const leagueChain = await buildSeasonChain(CURRENT_LEAGUE_ID);
@@ -479,9 +632,15 @@ async function main() {
   const transactionLog = attachTradeHistoryAndBuildLog(seasonDatas, playerNames);
   await fs.writeFile("data/transactions.json", JSON.stringify(transactionLog, null, 2));
 
+  const playerProfiles = await buildPlayerProfiles(seasonDatas, playerNames);
+  await fs.writeFile("data/players.json", JSON.stringify(playerProfiles, null, 2));
+
   const seasons = [];
   for (const s of seasonDatas) {
-    delete s.rawTransactions; // internal-only, not needed by the site
+    // internal-only, not needed by the site
+    delete s.rawTransactions;
+    delete s.rosterPlayers;
+    delete s.weeklyPlayerPoints;
     await fs.writeFile(`data/${s.season}.json`, JSON.stringify(s, null, 2));
     seasons.push(s.season);
   }

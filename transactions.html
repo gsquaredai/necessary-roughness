@@ -128,10 +128,18 @@
       } else {
         const parts = [];
         for (const a of t.adds) {
-          parts.push(`<span class="txn-add">+ ${a.name}${a.position ? ` (${a.position})` : ""}</span>`);
+          parts.push(
+            `<span class="txn-add">+ ${playerLinkHTML(a.playerId, a.name)}${
+              a.position ? ` (${a.position})` : ""
+            }</span>`
+          );
         }
         for (const d of t.drops) {
-          parts.push(`<span class="txn-drop">- ${d.name}${d.position ? ` (${d.position})` : ""}</span>`);
+          parts.push(
+            `<span class="txn-drop">- ${playerLinkHTML(d.playerId, d.name)}${
+              d.position ? ` (${d.position})` : ""
+            }</span>`
+          );
         }
         for (const f of t.faab) {
           parts.push(`<span class="txn-faab">$${f.amount} FAAB: ${f.from.teamName} &rarr; ${f.to.teamName}</span>`);

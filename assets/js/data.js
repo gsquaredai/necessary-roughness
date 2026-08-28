@@ -1,12 +1,33 @@
 const seasonCache = new Map();
 let indexCache = null;
 let transactionsCache = null;
+let playersCache = null;
 
 async function loadTransactions() {
   if (transactionsCache) return transactionsCache;
   const res = await fetch("data/transactions.json");
   transactionsCache = await res.json();
   return transactionsCache;
+}
+
+async function loadPlayers() {
+  if (playersCache) return playersCache;
+  const res = await fetch("data/players.json");
+  playersCache = await res.json();
+  return playersCache;
+}
+
+function nflLogoImgHTML(teamAbbr) {
+  if (!teamAbbr) return `<span class="nfl-logo"></span>`;
+  return `<img class="nfl-logo" src="assets/img/nfl/${teamAbbr}.png" onerror="this.style.visibility='hidden';" alt="">`;
+}
+
+// A handful of NFL abbreviations are 2 letters (GB, KC, LV, NE, NO, SF, TB)
+// while the rest are 3 — normalize to 3 for a consistent column.
+// Display-only: image lookups still use Sleeper's original code.
+const NFL_ABBR_3 = { GB: "GNB", KC: "KAN", LV: "LVR", NE: "NWE", NO: "NOR", SF: "SFO", TB: "TAM" };
+function nflAbbr3(teamAbbr) {
+  return NFL_ABBR_3[teamAbbr] || teamAbbr;
 }
 
 // "Jeremiyah Love" -> "J. Love"
@@ -21,16 +42,21 @@ function ordinal(n) {
   return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
 }
 
+// Every player name on the site is clickable, opening their profile modal.
+function playerLinkHTML(playerId, displayText) {
+  if (!playerId) return displayText;
+  return `<span class="player-link" data-player-id="${playerId}">${displayText}</span>`;
+}
+
 // A traded pick shows what it actually turned into once that season's
 // draft has happened (e.g. "2025 - 1.01 (RB - J. Love)"), or which team's
 // slot it is if the draft hasn't happened yet ("2027 3rd (Black Ops)").
 function pickLabel(pk) {
   if (pk.result) {
-    const { pickInRound, playerName, position } = pk.result;
+    const { pickInRound, playerId, playerName, position } = pk.result;
     const posPart = position ? `${position} - ` : "";
-    return `${pk.season} - ${pk.round}.${String(pickInRound).padStart(2, "0")} (${posPart}${abbreviateName(
-      playerName
-    )})`;
+    const nameHTML = playerLinkHTML(playerId, abbreviateName(playerName));
+    return `${pk.season} - ${pk.round}.${String(pickInRound).padStart(2, "0")} (${posPart}${nameHTML})`;
   }
   return `${pk.season} ${ordinal(pk.round)} (${pk.originalTeam || "?"})`;
 }
@@ -42,7 +68,9 @@ function tradeSidesHTML(sides) {
   return sides
     .map((side) => {
       const items = [
-        ...side.players.map((p) => `${p.name}${p.position ? ` (${p.position})` : ""}`),
+        ...side.players.map(
+          (p) => `${playerLinkHTML(p.playerId, p.name)}${p.position ? ` (${p.position})` : ""}`
+        ),
         ...side.picks.map(pickLabel),
         ...side.faab.map((amt) => `$${amt} FAAB`),
       ];
@@ -226,3 +254,223 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", setActiveNav);
+
+// ---------- player profile modal ----------
+
+function ageAt(birthDateStr) {
+  if (!birthDateStr) return null;
+  const birth = new Date(birthDateStr + "T00:00:00Z");
+  return (Date.now() - birth.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+}
+
+async function openPlayerModal(playerId) {
+  let root = document.getElementById("player-modal-root");
+  if (!root) {
+    root = document.createElement("div");
+    root.id = "player-modal-root";
+    document.body.appendChild(root);
+  }
+  root.innerHTML = `
+    <div class="modal-overlay" id="player-modal-overlay">
+      <div class="modal-box"><div class="empty-state">Loading...</div></div>
+    </div>
+  `;
+  root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "player-modal-overlay") closePlayerModal();
+  });
+
+  const [players, txns] = await Promise.all([loadPlayers(), loadTransactions()]);
+  const player = players[playerId];
+  const box = root.querySelector(".modal-box");
+  if (!player) {
+    box.innerHTML = `<div class="empty-state">Player not found.</div>`;
+    return;
+  }
+
+  const seasons = Object.keys(player.seasons).sort((a, b) => b - a);
+  const age = ageAt(player.birthDate);
+  const relatedTxns = txns.filter(
+    (t) =>
+      t.adds.some((a) => a.playerId === playerId) ||
+      t.drops.some((d) => d.playerId === playerId) ||
+      t.sides.some((s) => s.players.some((p) => p.playerId === playerId))
+  );
+
+  const state = { tab: "bio", season: seasons[0] || null };
+
+  function renderBio() {
+    const latest = seasons[0] ? player.seasons[seasons[0]] : null;
+    return `
+      <div class="player-bio">
+        <div class="player-bio-row"><span class="player-bio-label">Age</span><span>${
+          age != null ? age.toFixed(1) : "—"
+        }</span></div>
+        <div class="player-bio-row"><span class="player-bio-label">NFL Team</span><span>${nflLogoImgHTML(
+          player.nflTeam
+        )} ${player.nflTeam ? nflAbbr3(player.nflTeam) : "—"}</span></div>
+        <div class="player-bio-row"><span class="player-bio-label">Dynasty Team</span><span>${
+          player.currentTeam ? teamCellHTML(player.currentTeam) : '<span class="muted">Free Agent</span>'
+        }</span></div>
+        ${
+          latest
+            ? `
+          <div class="player-bio-row"><span class="player-bio-label">${seasons[0]} Position Rank</span><span>${
+                player.position || ""
+              }${latest.positionRank ?? "—"}</span></div>
+          <div class="player-bio-row"><span class="player-bio-label">${seasons[0]} Overall Rank</span><span>#${
+                latest.overallRank ?? "—"
+              }</span></div>`
+            : ""
+        }
+      </div>
+    `;
+  }
+
+  function renderSeasons() {
+    if (!seasons.length) return `<div class="empty-state">No season data.</div>`;
+    return `
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Season</th><th class="num">GP</th><th class="num">Pts</th><th class="num">Pos Rank</th><th class="num">Overall</th></tr></thead>
+          <tbody>
+            ${seasons
+              .map((s) => {
+                const d = player.seasons[s];
+                return `<tr>
+                  <td>${s}</td>
+                  <td class="num">${d.gamesPlayed}</td>
+                  <td class="num">${d.totalPoints.toFixed(2)}</td>
+                  <td class="num">${player.position || ""}${d.positionRank ?? "—"}</td>
+                  <td class="num">#${d.overallRank ?? "—"}</td>
+                </tr>`;
+              })
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderGames() {
+    const seasonData = state.season ? player.seasons[state.season] : null;
+    const seasonPicker = `
+      <select id="player-modal-season-select">
+        ${seasons
+          .map((s) => `<option value="${s}" ${s === state.season ? "selected" : ""}>${s}</option>`)
+          .join("")}
+      </select>
+    `;
+    if (!seasonData || !seasonData.games.length) {
+      return `${seasonPicker}<div class="empty-state">No games logged for this season.</div>`;
+    }
+    const rows = [...seasonData.games]
+      .sort((a, b) => a.week - b.week)
+      .map((g) => {
+        const statParts = Object.entries(g.stats)
+          .map(([k, v]) => `${k}: ${v}`)
+          .join(", ");
+        return `<tr>
+          <td>${g.week}</td>
+          <td class="num">${g.points.toFixed(2)}</td>
+          <td>${g.played ? "Yes" : "No"}</td>
+          <td class="game-log-stats">${statParts || "—"}</td>
+        </tr>`;
+      })
+      .join("");
+    return `
+      ${seasonPicker}
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Wk</th><th class="num">Pts</th><th>Played</th><th>Stats</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderTxns() {
+    if (!relatedTxns.length) return `<div class="empty-state">No transaction history.</div>`;
+    return relatedTxns
+      .map(
+        (t) => `
+          <div class="txn-row">
+            <div class="txn-row-top">
+              <span class="txn-type txn-type-${t.type}">${t.type}</span>
+              <span class="txn-teams">${t.teams.map((tm) => tm.teamName).join(" & ") || "Unknown"}</span>
+              <span class="txn-date">${new Date(t.date).toLocaleDateString()}</span>
+            </div>
+            ${t.type === "trade" ? `<div class="history-hop-trade">${tradeSidesHTML(t.sides)}</div>` : ""}
+          </div>
+        `
+      )
+      .join("");
+  }
+
+  function renderTabContent() {
+    const content = root.querySelector("#player-modal-content");
+    if (!content) return;
+    if (state.tab === "bio") content.innerHTML = renderBio();
+    else if (state.tab === "seasons") content.innerHTML = renderSeasons();
+    else if (state.tab === "games") {
+      content.innerHTML = renderGames();
+      const sel = content.querySelector("#player-modal-season-select");
+      if (sel)
+        sel.addEventListener("change", () => {
+          state.season = sel.value;
+          renderTabContent();
+        });
+    } else if (state.tab === "txns") content.innerHTML = renderTxns();
+  }
+
+  box.innerHTML = `
+    <button class="modal-close" id="player-modal-close">&times;</button>
+    <div class="modal-header">
+      <h2>${player.name}</h2>
+      <div class="modal-subtitle">${player.position || ""}${
+    player.nflTeam ? " &middot; " + nflAbbr3(player.nflTeam) : ""
+  }</div>
+    </div>
+    <div class="view-toggle" id="player-modal-tabs">
+      <button type="button" data-tab="bio" class="active">Bio</button>
+      <button type="button" data-tab="seasons">Seasons</button>
+      <button type="button" data-tab="games">Game Log</button>
+      <button type="button" data-tab="txns">Transactions (${relatedTxns.length})</button>
+    </div>
+    <div class="modal-tab-content" id="player-modal-content"></div>
+  `;
+
+  box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+  box.querySelector("#player-modal-tabs").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-tab]");
+    if (!btn) return;
+    state.tab = btn.dataset.tab;
+    box.querySelectorAll("#player-modal-tabs button").forEach((b) => b.classList.toggle("active", b === btn));
+    renderTabContent();
+  });
+
+  renderTabContent();
+}
+
+function closePlayerModal() {
+  const root = document.getElementById("player-modal-root");
+  if (root) root.innerHTML = "";
+}
+
+// Capture phase + stopPropagation: player links sometimes sit inside other
+// clickable elements (e.g. a draft pick row that expands on click) — this
+// intercepts before those ancestor handlers fire, so clicking a name only
+// opens the player modal, not both that and the ancestor's own behavior.
+document.addEventListener(
+  "click",
+  (e) => {
+    const link = e.target.closest(".player-link");
+    if (!link) return;
+    e.stopPropagation();
+    openPlayerModal(link.dataset.playerId);
+  },
+  true
+);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closePlayerModal();
+});
