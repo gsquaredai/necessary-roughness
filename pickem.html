@@ -285,7 +285,13 @@
         container.innerHTML = `<div class="empty-state">No matchups for this week.</div>`;
         return;
       }
-      const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
+      // While a week's still open for picks, pull fresh Sleeper projections
+      // on every load so the spread actually tracks real-world projection
+      // moves — not just whatever the site's data was last built with.
+      // Once it locks, fall back to the static/frozen snapshot below.
+      const matchupInfo = locked
+        ? matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m))
+        : await Promise.all(matchups.map((m) => liveMatchupSpreadInfo(currentSeason, allPlayers, m, week)));
       if (locked) {
         // Freeze the spread everyone sees/is graded against at exactly what
         // it was the moment this week locked (30 min before kickoff) —

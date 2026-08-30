@@ -1024,6 +1024,71 @@ function matchupSpreadInfo(season, players, m) {
   return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
 }
 
+// ---------- live weekly projections (Pick-Em) ----------
+// The build-time data.json snapshot's projections only move when the
+// site's data pipeline gets manually re-run — that's fine for history, but
+// the ACTIVE (not-yet-locked) Pick-Em week should track real projection
+// changes on every page load, not just whenever someone remembers to rerun
+// the pipeline. So fetch Sleeper's projections directly in the browser and
+// score them with this league's own scoring settings, the same dot-product
+// the pipeline runs server-side (scripts/fetch-sleeper.mjs).
+
+// Caches the in-flight PROMISE (not just the resolved value) — every
+// matchup card on a week fetches this concurrently, so caching only after
+// the first one resolves would still fire one request per card.
+const weeklyProjectionsCache = new Map(); // "season_week" -> Promise<raw Sleeper projections map | null>
+
+function loadLiveWeeklyProjections(season, week) {
+  const key = `${season.season}_${week}`;
+  if (weeklyProjectionsCache.has(key)) return weeklyProjectionsCache.get(key);
+  const promise = (async () => {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(`https://api.sleeper.app/v1/projections/nfl/regular/${season.season}/${week}`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      return await res.json();
+    } catch {
+      return null; // network hiccup / API unreachable — caller falls back to the static snapshot
+    }
+  })();
+  weeklyProjectionsCache.set(key, promise);
+  return promise;
+}
+
+function computeLeagueScoredPoints(rawStats, scoringSettings) {
+  if (!rawStats || !scoringSettings) return 0;
+  let total = 0;
+  for (const [key, weight] of Object.entries(scoringSettings)) {
+    const value = rawStats[key];
+    if (value) total += value * weight;
+  }
+  return total;
+}
+
+// A live version of matchupSpreadInfo: same best-possible-lineup spread
+// math, but projByPlayer is rebuilt from freshly-fetched Sleeper
+// projections instead of the static data.json snapshot. Falls back to the
+// static snapshot if the live fetch fails, so this never blocks or errors.
+async function liveMatchupSpreadInfo(season, players, m, week) {
+  const liveProjections = await loadLiveWeeklyProjections(season, week);
+  if (!liveProjections) return matchupSpreadInfo(season, players, m);
+  const teamA = teamById(season, m.teamA.rosterId);
+  const teamB = teamById(season, m.teamB.rosterId);
+  const projFor = (playerIds) => {
+    const out = {};
+    for (const pid of playerIds || []) out[pid] = computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings);
+    return out;
+  };
+  const totalA = computeOptimalProjectedLineup(m.teamA.players, projFor(m.teamA.players), players, season.rosterPositions);
+  const totalB = computeOptimalProjectedLineup(m.teamB.players, projFor(m.teamB.players), players, season.rosterPositions);
+  const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
+  const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
+  return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
+}
+
 // ---------- Pick-Em spread locking ----------
 // The spread above is computed live from data.json's current projections,
 // which only change when the site's data pipeline is manually re-run — but
