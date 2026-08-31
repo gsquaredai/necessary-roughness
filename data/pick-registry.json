@@ -20527,12 +20527,73 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "WANGHAF",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
-      "ownerId": "1128523568641466368",
-      "rosterId": 7
+      "teamName": "Spotted Cow",
+      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+      "ownerId": "1373899826093096960",
+      "rosterId": 12
     },
     "tradeHistory": [
+      {
+        "date": "2026-08-30T23:37:40.656Z",
+        "from": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "to": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [
+              {
+                "playerId": "12545",
+                "name": "Tyler Shough",
+                "position": "QB"
+              }
+            ],
+            "picks": [],
+            "faab": [
+              110
+            ]
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "1466",
+                "name": "Travis Kelce",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-04-27T13:53:26.266Z",
         "from": {

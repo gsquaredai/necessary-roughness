@@ -504,17 +504,6 @@
     {
       "season": "2027",
       "round": 1,
-      "originalRosterId": 5,
-      "originalTeam": {
-        "teamName": "Black Ops",
-        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-        "ownerId": "1044114449679917056",
-        "rosterId": 5
-      }
-    },
-    {
-      "season": "2027",
-      "round": 1,
       "originalRosterId": 9,
       "originalTeam": {
         "teamName": "Los pollos hermanos",
@@ -932,6 +921,17 @@
     }
   ],
   "12": [
+    {
+      "season": "2027",
+      "round": 1,
+      "originalRosterId": 5,
+      "originalTeam": {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    },
     {
       "season": "2027",
       "round": 2,
