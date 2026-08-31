@@ -348,7 +348,7 @@
       list.querySelectorAll("[data-view-rosters]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
-          openMatchupModal(currentSeason, week, Number(btn.dataset.t1), Number(btn.dataset.t2));
+          openMatchupModal(currentSeason, week, Number(btn.dataset.t1), Number(btn.dataset.t2), { optimalLineup: true });
         });
       });
 

@@ -105,7 +105,10 @@ function computeOptimalProjectedLineup(playerIds, projByPlayer, playersDb, roste
     }))
     .filter((p) => p.pos);
 
-  const used = new Set();
+  // usedSlots: playerId -> the slot label it filled ("QB", "FLEX", "SUPER
+  // FLEX", "IDP", ...) — lets callers show exactly which roster spot each
+  // selected player is standing in, not just the total.
+  const usedSlots = new Map();
   let total = 0;
 
   // `eligible` is either an array of exact position codes, or a predicate
@@ -113,16 +116,16 @@ function computeOptimalProjectedLineup(playerIds, projByPlayer, playersDb, roste
   // defensive players with granular codes (DE, DT, CB, S, OLB, ILB, ...)
   // rather than a fixed small set, so "anything that isn't offense" is the
   // only reliable eligibility check there.
-  function takeBest(eligible, count) {
+  function takeBest(eligible, count, slotLabel) {
     const isEligible = typeof eligible === "function" ? eligible : (pos) => eligible.includes(pos);
     for (let i = 0; i < count; i++) {
       let best = null;
       for (const p of pool) {
-        if (used.has(p.id) || !isEligible(p.pos)) continue;
+        if (usedSlots.has(p.id) || !isEligible(p.pos)) continue;
         if (!best || p.pts > best.pts) best = p;
       }
       if (best) {
-        used.add(best.id);
+        usedSlots.set(best.id, slotLabel);
         total += best.pts;
       }
     }
@@ -131,15 +134,15 @@ function computeOptimalProjectedLineup(playerIds, projByPlayer, playersDb, roste
   const OFFENSE_POSITIONS = new Set(["QB", "RB", "WR", "TE", "K"]);
 
   for (const exact of ["QB", "RB", "WR", "TE"]) {
-    if (slotCounts[exact]) takeBest([exact], slotCounts[exact]);
+    if (slotCounts[exact]) takeBest([exact], slotCounts[exact], exact);
   }
-  if (slotCounts.FLEX) takeBest(["RB", "WR", "TE"], slotCounts.FLEX);
-  if (slotCounts.WRRB_FLEX) takeBest(["WR", "RB"], slotCounts.WRRB_FLEX);
-  if (slotCounts.REC_FLEX) takeBest(["WR", "TE"], slotCounts.REC_FLEX);
-  if (slotCounts.SUPER_FLEX) takeBest(["QB", "RB", "WR", "TE"], slotCounts.SUPER_FLEX);
-  if (slotCounts.IDP_FLEX) takeBest((pos) => !OFFENSE_POSITIONS.has(pos), slotCounts.IDP_FLEX);
+  if (slotCounts.FLEX) takeBest(["RB", "WR", "TE"], slotCounts.FLEX, "FLEX");
+  if (slotCounts.WRRB_FLEX) takeBest(["WR", "RB"], slotCounts.WRRB_FLEX, "FLEX");
+  if (slotCounts.REC_FLEX) takeBest(["WR", "TE"], slotCounts.REC_FLEX, "FLEX");
+  if (slotCounts.SUPER_FLEX) takeBest(["QB", "RB", "WR", "TE"], slotCounts.SUPER_FLEX, "SUPER FLEX");
+  if (slotCounts.IDP_FLEX) takeBest((pos) => !OFFENSE_POSITIONS.has(pos), slotCounts.IDP_FLEX, "IDP");
 
-  return total;
+  return { total, usedSlots };
 }
 
 // Named rivalry (if any) between two owner ids, order-independent.
@@ -934,10 +937,17 @@ let matchupPlayersCache = null;
 // projection map that overrides the static data.json snapshot
 // (side.projByPlayer) — used for the current, not-yet-played week so this
 // modal always agrees with the Matchups page and Pick-Em's live numbers.
-function matchupPlayerRowHTML(players, playerId, season, week, played, side, liveProjByPlayer) {
+// usedSlots, when given, is the playerId -> slot-label Map from
+// computeOptimalProjectedLineup — shows which exact roster spot (FLEX,
+// SUPER FLEX, IDP, ...) a player is filling in the best-possible lineup,
+// whenever that differs from their raw position.
+function matchupPlayerRowHTML(players, playerId, season, week, played, side, liveProjByPlayer, usedSlots) {
   const p = players[playerId];
   const name = p ? p.name : "Unknown Player";
-  const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
+  const slot = usedSlots?.get(playerId);
+  const metaParts = p ? [p.position, p.nflTeam] : [];
+  if (slot && slot !== p?.position) metaParts.push(slot);
+  const meta = metaParts.filter(Boolean).join(" &middot; ");
   let pts, isProj;
   if (played) {
     const game = p?.seasons?.[season.season]?.games?.find((g) => g.week === week);
@@ -955,31 +965,44 @@ function matchupPlayerRowHTML(players, playerId, season, week, played, side, liv
   `;
 }
 
-function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side, liveProjByPlayer) {
+function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side, liveProjByPlayer, usedSlots) {
   if (!playerIds.length) return "";
   return `
     <div class="roster-group">
       <div class="roster-group-title">${title} (${playerIds.length})</div>
-      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side, liveProjByPlayer)).join("")}
+      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side, liveProjByPlayer, usedSlots)).join("")}
     </div>
   `;
 }
 
-function matchupSideHTML(season, week, team, side, players, played, liveProjByPlayer) {
+// optimalInfo, when given ({ total, usedSlots }), groups by the
+// best-possible lineup (Pick-Em's actual spread basis) instead of the
+// real, actually-set starters — used when this modal is opened from
+// Pick-Em's "View Rosters & Projections" so it shows exactly which roster
+// the spread came from, not the unrelated actual-starters breakdown.
+function matchupSideHTML(season, week, team, side, players, played, liveProjByPlayer, optimalInfo) {
   if (!team || !side) return `<div class="empty-state">No roster data for this team.</div>`;
-  const starters = new Set(side.starters || []);
-  const bench = (side.players || []).filter((pid) => !starters.has(pid));
-  const liveTotal = liveProjByPlayer
-    ? (side.starters || []).reduce((sum, pid) => sum + (liveProjByPlayer[pid] ?? 0), 0)
-    : null;
-  const projTotal = liveTotal != null ? liveTotal : side.projPoints;
+  const primaryIds = optimalInfo ? [...optimalInfo.usedSlots.keys()] : side.starters || [];
+  const primarySet = optimalInfo ? optimalInfo.usedSlots : new Set(primaryIds);
+  const bench = (side.players || []).filter((pid) => !primarySet.has(pid));
+
+  let projTotal;
+  if (optimalInfo) {
+    projTotal = optimalInfo.total;
+  } else {
+    const liveTotal = liveProjByPlayer
+      ? (side.starters || []).reduce((sum, pid) => sum + (liveProjByPlayer[pid] ?? 0), 0)
+      : null;
+    projTotal = liveTotal != null ? liveTotal : side.projPoints;
+  }
   const totalHTML = played
     ? `${fmtPts(side.points)} pts`
     : `<span class="proj-primary">Proj ${projTotal != null ? fmtPts(projTotal) : "—"}</span>`;
+  const primaryTitle = optimalInfo ? "Optimal Lineup" : "Starters";
   return `
     <div class="info-section-title">${team.teamName} &mdash; ${totalHTML}</div>
-    ${matchupRosterGroupHTML("Starters", side.starters || [], players, season, week, played, side, liveProjByPlayer)}
-    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side, liveProjByPlayer)}
+    ${matchupRosterGroupHTML(primaryTitle, primaryIds, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots)}
+    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots)}
   `;
 }
 
@@ -1032,8 +1055,8 @@ async function loadPickCounts(week) {
 function matchupSpreadInfo(season, players, m) {
   const teamA = teamById(season, m.teamA.rosterId);
   const teamB = teamById(season, m.teamB.rosterId);
-  const totalA = computeOptimalProjectedLineup(m.teamA.players, m.teamA.projByPlayer, players, season.rosterPositions);
-  const totalB = computeOptimalProjectedLineup(m.teamB.players, m.teamB.projByPlayer, players, season.rosterPositions);
+  const totalA = computeOptimalProjectedLineup(m.teamA.players, m.teamA.projByPlayer, players, season.rosterPositions).total;
+  const totalB = computeOptimalProjectedLineup(m.teamB.players, m.teamB.projByPlayer, players, season.rosterPositions).total;
   const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
   const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
   return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
@@ -1098,8 +1121,8 @@ async function liveMatchupSpreadInfo(season, players, m, week) {
     for (const pid of playerIds || []) out[pid] = computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings);
     return out;
   };
-  const totalA = computeOptimalProjectedLineup(m.teamA.players, projFor(m.teamA.players), players, season.rosterPositions);
-  const totalB = computeOptimalProjectedLineup(m.teamB.players, projFor(m.teamB.players), players, season.rosterPositions);
+  const totalA = computeOptimalProjectedLineup(m.teamA.players, projFor(m.teamA.players), players, season.rosterPositions).total;
+  const totalB = computeOptimalProjectedLineup(m.teamB.players, projFor(m.teamB.players), players, season.rosterPositions).total;
   const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
   const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
   return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
@@ -1216,7 +1239,10 @@ async function computePickEmPoints(season, players) {
   return points;
 }
 
-async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
+// opts.optimalLineup: group each side by the best-possible lineup (Pick-Em's
+// spread basis) instead of actual starters — only applies to a not-yet-played
+// week, since a played week shows the real, already-final breakdown instead.
+async function openMatchupModal(season, week, rosterIdA, rosterIdB, opts) {
   let root = document.getElementById("player-modal-root");
   if (!root) {
     root = document.createElement("div");
@@ -1257,6 +1283,17 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
     }
   }
 
+  // Same per-player projections just built above (live if available, else
+  // the static data.json snapshot) — just optimally slotted instead of
+  // grouped by who's actually starting.
+  let optimalInfoA = null;
+  let optimalInfoB = null;
+  if (opts?.optimalLineup && !played) {
+    const projByPlayerFor = (side) => (liveProjByPlayer ? liveProjByPlayer : side?.projByPlayer || null);
+    if (sideA) optimalInfoA = computeOptimalProjectedLineup(sideA.players, projByPlayerFor(sideA), players, season.rosterPositions);
+    if (sideB) optimalInfoB = computeOptimalProjectedLineup(sideB.players, projByPlayerFor(sideB), players, season.rosterPositions);
+  }
+
   const box = document.getElementById("player-modal-root").querySelector(".modal-box");
   box.innerHTML = `
     <button class="modal-close" id="player-modal-close">&times;</button>
@@ -1265,8 +1302,8 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
       <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
     </div>
     <div class="modal-tab-content matchup-modal-columns">
-      <div>${matchupSideHTML(season, week, teamA, sideA, players, played, liveProjByPlayer)}</div>
-      <div>${matchupSideHTML(season, week, teamB, sideB, players, played, liveProjByPlayer)}</div>
+      <div>${matchupSideHTML(season, week, teamA, sideA, players, played, liveProjByPlayer, optimalInfoA)}</div>
+      <div>${matchupSideHTML(season, week, teamB, sideB, players, played, liveProjByPlayer, optimalInfoB)}</div>
     </div>
   `;
   box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
