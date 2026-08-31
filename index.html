@@ -120,8 +120,7 @@
     async function renderHome() {
       const idx = await loadIndex();
       const season = await loadSeason(idx.currentSeason);
-      const players = await loadPlayers();
-      const pickemPoints = await computePickEmPoints(season, players);
+      const pickemPoints = await computePickEmPoints(season);
 
       const standingsBody = document.getElementById("standings-body");
       const standingsCards = document.getElementById("standings-cards");

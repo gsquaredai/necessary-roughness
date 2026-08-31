@@ -80,66 +80,6 @@ function weekMedian(season, week) {
   return scores.length % 2 === 0 ? (scores[mid - 1] + scores[mid]) / 2 : scores[mid];
 }
 
-// Best-possible-lineup projected total for a team that week — the spread
-// basis for Pick-Em. Same nested-eligibility greedy fill a "potential
-// points" calc would use, just run on projections instead of actual
-// scores: exact positions first, then FLEX, then SUPER_FLEX, then
-// IDP_FLEX, each slot always taking the single highest-projected
-// still-available eligible player. That fill order is provably optimal
-// here because each later category's eligibility is a superset of the
-// ones already filled (a classic nested/laminar-matroid greedy).
-function computeOptimalProjectedLineup(playerIds, projByPlayer, playersDb, rosterPositions) {
-  const slotCounts = {};
-  for (const pos of rosterPositions || []) {
-    if (pos === "BN") continue;
-    slotCounts[pos] = (slotCounts[pos] || 0) + 1;
-  }
-
-  const pool = (playerIds || [])
-    .map((pid) => ({
-      id: pid,
-      pos: playersDb[pid]?.position || null,
-      pts: projByPlayer && projByPlayer[pid] != null ? projByPlayer[pid] : 0,
-    }))
-    .filter((p) => p.pos);
-
-  const used = new Set();
-  let total = 0;
-
-  // `eligible` is either an array of exact position codes, or a predicate
-  // function — needed for IDP_FLEX, since Sleeper labels individual
-  // defensive players with granular codes (DE, DT, CB, S, OLB, ILB, ...)
-  // rather than a fixed small set, so "anything that isn't offense" is the
-  // only reliable eligibility check there.
-  function takeBest(eligible, count) {
-    const isEligible = typeof eligible === "function" ? eligible : (pos) => eligible.includes(pos);
-    for (let i = 0; i < count; i++) {
-      let best = null;
-      for (const p of pool) {
-        if (used.has(p.id) || !isEligible(p.pos)) continue;
-        if (!best || p.pts > best.pts) best = p;
-      }
-      if (best) {
-        used.add(best.id);
-        total += best.pts;
-      }
-    }
-  }
-
-  const OFFENSE_POSITIONS = new Set(["QB", "RB", "WR", "TE", "K"]);
-
-  for (const exact of ["QB", "RB", "WR", "TE"]) {
-    if (slotCounts[exact]) takeBest([exact], slotCounts[exact]);
-  }
-  if (slotCounts.FLEX) takeBest(["RB", "WR", "TE"], slotCounts.FLEX);
-  if (slotCounts.WRRB_FLEX) takeBest(["WR", "RB"], slotCounts.WRRB_FLEX);
-  if (slotCounts.REC_FLEX) takeBest(["WR", "TE"], slotCounts.REC_FLEX);
-  if (slotCounts.SUPER_FLEX) takeBest(["QB", "RB", "WR", "TE"], slotCounts.SUPER_FLEX);
-  if (slotCounts.IDP_FLEX) takeBest((pos) => !OFFENSE_POSITIONS.has(pos), slotCounts.IDP_FLEX);
-
-  return total;
-}
-
 // Named rivalry (if any) between two owner ids, order-independent.
 function findRivalry(rivalries, ownerIdA, ownerIdB) {
   if (!ownerIdA || !ownerIdB) return null;
@@ -928,7 +868,11 @@ function matchupEntryForRosterInWeek(season, week, rosterId) {
 
 let matchupPlayersCache = null;
 
-function matchupPlayerRowHTML(players, playerId, season, week, played, side) {
+// liveProjByPlayer, when given, is a playerId -> freshly-fetched-Sleeper
+// projection map that overrides the static data.json snapshot
+// (side.projByPlayer) — used for the current, not-yet-played week so this
+// modal always agrees with the Matchups page and Pick-Em's live numbers.
+function matchupPlayerRowHTML(players, playerId, season, week, played, side, liveProjByPlayer) {
   const p = players[playerId];
   const name = p ? p.name : "Unknown Player";
   const meta = p ? [p.position, p.nflTeam].filter(Boolean).join(" &middot; ") : "";
@@ -938,7 +882,7 @@ function matchupPlayerRowHTML(players, playerId, season, week, played, side) {
     pts = game ? game.points : null;
     isProj = false;
   } else {
-    pts = side.projByPlayer ? side.projByPlayer[playerId] : null;
+    pts = liveProjByPlayer ? liveProjByPlayer[playerId] ?? 0 : side.projByPlayer ? side.projByPlayer[playerId] : null;
     isProj = true;
   }
   return `
@@ -949,27 +893,31 @@ function matchupPlayerRowHTML(players, playerId, season, week, played, side) {
   `;
 }
 
-function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side) {
+function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side, liveProjByPlayer) {
   if (!playerIds.length) return "";
   return `
     <div class="roster-group">
       <div class="roster-group-title">${title} (${playerIds.length})</div>
-      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side)).join("")}
+      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side, liveProjByPlayer)).join("")}
     </div>
   `;
 }
 
-function matchupSideHTML(season, week, team, side, players, played) {
+function matchupSideHTML(season, week, team, side, players, played, liveProjByPlayer) {
   if (!team || !side) return `<div class="empty-state">No roster data for this team.</div>`;
   const starters = new Set(side.starters || []);
   const bench = (side.players || []).filter((pid) => !starters.has(pid));
+  const liveTotal = liveProjByPlayer
+    ? (side.starters || []).reduce((sum, pid) => sum + (liveProjByPlayer[pid] ?? 0), 0)
+    : null;
+  const projTotal = liveTotal != null ? liveTotal : side.projPoints;
   const totalHTML = played
     ? `${fmtPts(side.points)} pts`
-    : `<span class="proj-primary">Proj ${side.projPoints != null ? fmtPts(side.projPoints) : "—"}</span>`;
+    : `<span class="proj-primary">Proj ${projTotal != null ? fmtPts(projTotal) : "—"}</span>`;
   return `
     <div class="info-section-title">${team.teamName} &mdash; ${totalHTML}</div>
-    ${matchupRosterGroupHTML("Starters", side.starters || [], players, season, week, played, side)}
-    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side)}
+    ${matchupRosterGroupHTML("Starters", side.starters || [], players, season, week, played, side, liveProjByPlayer)}
+    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side, liveProjByPlayer)}
   `;
 }
 
@@ -1012,13 +960,15 @@ async function loadPickCounts(week) {
   }
 }
 
-// The spread for one matchup: each side's best-possible-lineup projected
-// total, and the rounded-to-nearest-0.5 point difference between them.
-function matchupSpreadInfo(season, players, m) {
+// The spread for one matchup: each side's projected total (their actual
+// starters' projections — same basis as the Matchups page's "Proj" line,
+// not a hypothetical best-possible lineup), and the rounded-to-nearest-0.5
+// point difference between them.
+function matchupSpreadInfo(season, m) {
   const teamA = teamById(season, m.teamA.rosterId);
   const teamB = teamById(season, m.teamB.rosterId);
-  const totalA = computeOptimalProjectedLineup(m.teamA.players, m.teamA.projByPlayer, players, season.rosterPositions);
-  const totalB = computeOptimalProjectedLineup(m.teamB.players, m.teamB.projByPlayer, players, season.rosterPositions);
+  const totalA = m.teamA.projPoints ?? 0;
+  const totalB = m.teamB.projPoints ?? 0;
   const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
   const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
   return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
@@ -1068,22 +1018,20 @@ function computeLeagueScoredPoints(rawStats, scoringSettings) {
   return total;
 }
 
-// A live version of matchupSpreadInfo: same best-possible-lineup spread
-// math, but projByPlayer is rebuilt from freshly-fetched Sleeper
-// projections instead of the static data.json snapshot. Falls back to the
-// static snapshot if the live fetch fails, so this never blocks or errors.
-async function liveMatchupSpreadInfo(season, players, m, week) {
+// A live version of matchupSpreadInfo: same actual-starters projection
+// basis (matching the Matchups page exactly), but scored from
+// freshly-fetched Sleeper projections instead of the static data.json
+// snapshot. Falls back to the static snapshot if the live fetch fails, so
+// this never blocks or errors.
+async function liveMatchupSpreadInfo(season, m, week) {
   const liveProjections = await loadLiveWeeklyProjections(season, week);
-  if (!liveProjections) return matchupSpreadInfo(season, players, m);
+  if (!liveProjections) return matchupSpreadInfo(season, m);
   const teamA = teamById(season, m.teamA.rosterId);
   const teamB = teamById(season, m.teamB.rosterId);
-  const projFor = (playerIds) => {
-    const out = {};
-    for (const pid of playerIds || []) out[pid] = computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings);
-    return out;
-  };
-  const totalA = computeOptimalProjectedLineup(m.teamA.players, projFor(m.teamA.players), players, season.rosterPositions);
-  const totalB = computeOptimalProjectedLineup(m.teamB.players, projFor(m.teamB.players), players, season.rosterPositions);
+  const totalFor = (starters) =>
+    (starters || []).reduce((sum, pid) => sum + computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings), 0);
+  const totalA = totalFor(m.teamA.starters);
+  const totalB = totalFor(m.teamB.starters);
   const spread = Math.round(Math.abs(totalA - totalB) * 2) / 2;
   const favRosterId = totalA >= totalB ? teamA.rosterId : teamB.rosterId;
   return { m, teamA, teamB, totalA, totalB, spread, favRosterId };
@@ -1147,7 +1095,7 @@ function applyLockedSpreads(matchupInfo, lockedData) {
 // actually-played week (an unplayed week has no real result to grade
 // against yet). Fails closed (returns an empty map) if Firebase isn't
 // reachable.
-async function computePickEmPoints(season, players) {
+async function computePickEmPoints(season) {
   const points = new Map();
   try {
     await waitForFirebaseAuth();
@@ -1166,7 +1114,7 @@ async function computePickEmPoints(season, players) {
     const weekInfo = new Map();
     await Promise.all(
       weeksToGrade.map(async ({ week, matchups }) => {
-        const info = matchups.map((m) => matchupSpreadInfo(season, players, m));
+        const info = matchups.map((m) => matchupSpreadInfo(season, m));
         applyLockedSpreads(info, await loadLockedSpreads(season, week));
         weekInfo.set(week, info);
       })
@@ -1226,6 +1174,21 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
   const teamB = teamById(season, rosterIdB);
   const played = weekHasBeenPlayed(season, week);
 
+  // Not-yet-played week: pull the same live Sleeper projections the
+  // Matchups page and Pick-Em use, so every per-player row and both team
+  // totals here agree with the rest of the site instead of showing the
+  // static data.json snapshot.
+  let liveProjByPlayer = null;
+  if (!played) {
+    const liveProjections = await loadLiveWeeklyProjections(season, week);
+    if (liveProjections) {
+      const allPlayerIds = [...(sideA?.players || []), ...(sideB?.players || [])];
+      liveProjByPlayer = Object.fromEntries(
+        allPlayerIds.map((pid) => [pid, computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings)])
+      );
+    }
+  }
+
   const box = document.getElementById("player-modal-root").querySelector(".modal-box");
   box.innerHTML = `
     <button class="modal-close" id="player-modal-close">&times;</button>
@@ -1234,8 +1197,8 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB) {
       <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
     </div>
     <div class="modal-tab-content matchup-modal-columns">
-      <div>${matchupSideHTML(season, week, teamA, sideA, players, played)}</div>
-      <div>${matchupSideHTML(season, week, teamB, sideB, players, played)}</div>
+      <div>${matchupSideHTML(season, week, teamA, sideA, players, played, liveProjByPlayer)}</div>
+      <div>${matchupSideHTML(season, week, teamB, sideB, players, played, liveProjByPlayer)}</div>
     </div>
   `;
   box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);

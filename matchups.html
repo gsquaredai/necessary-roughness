@@ -182,6 +182,39 @@
       container.innerHTML = medianHTML + matchups.map((m) => renderMatchup(currentSeason, m, weekNum, wr)).join("");
 
       applyPickCounts(weekNum);
+      applyLiveProjections(weekNum);
+    }
+
+    // The "Proj" numbers rendered above are the static, data.json-snapshot
+    // projections — only refreshed whenever the site's data pipeline last
+    // ran. For the current, not-yet-played week, patch in a freshly-fetched
+    // Sleeper projection total instead, same live source and same
+    // actual-starters basis Pick-Em's spread uses, so the two pages always
+    // agree. Historical/played weeks keep their static (now-historical)
+    // number — there's no "live" projection for a game that's already over.
+    let liveProjRequestId = 0;
+    async function applyLiveProjections(weekNum) {
+      const requestId = ++liveProjRequestId;
+      if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
+      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      const liveProjections = await loadLiveWeeklyProjections(currentSeason, weekNum);
+      if (requestId !== liveProjRequestId || !liveProjections) return;
+
+      const matchups = currentSeason.matchups[weekNum] || [];
+      const totalFor = (starters) =>
+        (starters || []).reduce(
+          (sum, pid) => sum + computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings),
+          0
+        );
+      document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
+        const m = matchups.find((x) => String(x.matchupId) === card.dataset.matchupId);
+        if (!m) return;
+        const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
+        const elA = blockA?.querySelector(".proj-primary");
+        if (elA) elA.textContent = fmtPts(totalFor(m.teamA.starters));
+        const elB = blockB?.querySelector(".proj-primary");
+        if (elB && m.teamB) elB.textContent = fmtPts(totalFor(m.teamB.starters));
+      });
     }
 
     // Pick-Em only ever exists for the site's current season's regular
