@@ -60,6 +60,7 @@
     const db = firebase.firestore();
 
     let currentSeason = null;
+    let allPlayers = null;
     let rivalries = [];
     let currentUser = null;
     let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
@@ -289,8 +290,8 @@
       // moves — not just whatever the site's data was last built with.
       // Once it locks, fall back to the static/frozen snapshot below.
       const matchupInfo = locked
-        ? matchups.map((m) => matchupSpreadInfo(currentSeason, m))
-        : await Promise.all(matchups.map((m) => liveMatchupSpreadInfo(currentSeason, m, week)));
+        ? matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m))
+        : await Promise.all(matchups.map((m) => liveMatchupSpreadInfo(currentSeason, allPlayers, m, week)));
       if (locked) {
         // Freeze the spread everyone sees/is graded against at exactly what
         // it was the moment this week locked (30 min before kickoff) —
@@ -447,7 +448,7 @@
       const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
 
       const [pointsByOwner, submittedSnap] = await Promise.all([
-        computePickEmPoints(currentSeason),
+        computePickEmPoints(currentSeason, allPlayers),
         db.collection("picks").where("week", "==", maxWeek).get(),
       ]);
       const submittedThisWeek = new Set(submittedSnap.docs.map((d) => d.data().ownerId));
@@ -516,7 +517,7 @@
     async function init() {
       const idx = await loadIndex();
       currentSeason = await loadSeason(idx.currentSeason);
-      rivalries = await loadRivalries();
+      [allPlayers, rivalries] = await Promise.all([loadPlayers(), loadRivalries()]);
 
       auth.onAuthStateChanged(async (user) => {
         if (!user) {

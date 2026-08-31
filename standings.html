@@ -257,7 +257,7 @@
         currentView = "standings";
         updateViewButtons();
       }
-      const pickemPoints = pickemEra ? await computePickEmPoints(season) : new Map();
+      const pickemPoints = pickemEra ? await computePickEmPoints(season, await loadPlayers()) : new Map();
 
       const { picks: pickMap, projected } = pickNumberMap(season);
       document.getElementById("draft-projection-note").hidden = !(projected && currentView === "draft");
