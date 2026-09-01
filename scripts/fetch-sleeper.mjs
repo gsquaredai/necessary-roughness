@@ -365,6 +365,12 @@ async function buildSeason(league, nextLeague) {
       // roster, so just use it directly rather than re-deriving it.
       maxPF: (r.settings?.ppts ?? 0) + (r.settings?.ppts_decimal ?? 0) / 100,
       draftPick: (r.owner_id ? draftPickByOwner[r.owner_id] : null) ?? draftPickByRosterId[r.roster_id] ?? null,
+      // Sleeper's own authoritative FAAB-spent ledger for this roster —
+      // reflects real waiver-bid claims AND any manual commissioner
+      // adjustment (this league's missed-playoffs/All-Star bonus FAAB is
+      // applied directly in Sleeper, not as a transaction), so this is a
+      // more reliable "spent" figure than summing waiver-claim bids.
+      waiverBudgetUsed: r.settings?.waiver_budget_used ?? 0,
     };
   });
 
@@ -783,11 +789,12 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   for (const s of seasonDatas) {
     const isCurrentSeason = s === seasonDatas[seasonDatas.length - 1];
     const startingBudget = s.leagueSettings?.waiverBudget ?? 0;
-    const perRosterBalance = new Map();
-    const perRosterSpent = new Map();
+    // Starting budget, adjusted only by FAAB actually traded away/in this
+    // season — actual spend is tracked separately below via Sleeper's own
+    // per-roster ledger, not derived from transactions.
+    const perRosterBudget = new Map();
     for (const team of s.teams) {
-      perRosterBalance.set(team.rosterId, startingBudget);
-      perRosterSpent.set(team.rosterId, 0);
+      perRosterBudget.set(team.rosterId, startingBudget);
     }
 
     for (const t of s.rawTransactions) {
@@ -806,37 +813,36 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
           const toR = recordFor(teamRef(s.season, w.toRosterId, date));
           if (fromR) fromR.faabTradedNet -= w.amount;
           if (toR) toR.faabTradedNet += w.amount;
-          if (perRosterBalance.has(w.fromRosterId)) {
-            perRosterBalance.set(w.fromRosterId, perRosterBalance.get(w.fromRosterId) - w.amount);
+          if (perRosterBudget.has(w.fromRosterId)) {
+            perRosterBudget.set(w.fromRosterId, perRosterBudget.get(w.fromRosterId) - w.amount);
           }
-          if (perRosterBalance.has(w.toRosterId)) {
-            perRosterBalance.set(w.toRosterId, perRosterBalance.get(w.toRosterId) + w.amount);
+          if (perRosterBudget.has(w.toRosterId)) {
+            perRosterBudget.set(w.toRosterId, perRosterBudget.get(w.toRosterId) + w.amount);
           }
         }
       } else if (t.type === "waiver") {
         const rosterId = t.rosterIds[0];
         const r = recordFor(teamRef(s.season, rosterId, date));
         if (r) r.waiverPickups += 1;
-        const bid = t.waiverBid || 0;
-        if (bid) {
-          if (r) r.faabSpent += bid;
-          if (perRosterBalance.has(rosterId)) {
-            perRosterBalance.set(rosterId, perRosterBalance.get(rosterId) - bid);
-          }
-          if (perRosterSpent.has(rosterId)) {
-            perRosterSpent.set(rosterId, perRosterSpent.get(rosterId) + bid);
-          }
-        }
       }
     }
 
+    // Actual FAAB spend comes straight from Sleeper's own per-roster ledger
+    // (roster.settings.waiver_budget_used), not summed from waiver-claim
+    // transactions — that summation misses any manual commissioner
+    // adjustment (e.g. this league's missed-playoffs/All-Star bonus FAAB,
+    // applied directly in Sleeper rather than as a transaction), which was
+    // producing wrong totals.
     for (const team of s.teams) {
       const r = recordFor(team);
       if (!r) continue;
-      r.faabUnspent += perRosterBalance.get(team.rosterId) ?? 0;
+      const spent = team.waiverBudgetUsed ?? 0;
+      const budget = perRosterBudget.get(team.rosterId) ?? startingBudget;
+      r.faabSpent += spent;
+      r.faabUnspent += budget - spent;
       if (isCurrentSeason) {
-        r.faabCurrent = perRosterBalance.get(team.rosterId) ?? 0;
-        r.faabSpentCurrent = perRosterSpent.get(team.rosterId) ?? 0;
+        r.faabCurrent = budget - spent;
+        r.faabSpentCurrent = spent;
       }
     }
   }
