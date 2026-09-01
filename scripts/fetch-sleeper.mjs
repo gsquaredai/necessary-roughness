@@ -756,13 +756,15 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
   const log = [...draftEntries, ...realEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Lifetime per-manager activity for the History page: trade count,
-  // waiver-claim count, FAAB spent on those claims, net FAAB moved via
-  // trades (received minus sent), and FAAB left on the table at the end of
-  // each season (that season's starting budget, plus net FAAB traded,
-  // minus FAAB spent — summed across every season). Keyed by owner id via
-  // the same override-aware team identity used everywhere else, so a
-  // mid-season handoff (e.g. Spotted Cow/dannyhatty06) attributes activity
-  // to whoever actually made each move.
+  // waiver-claim count, FAAB spent on those claims (from the transaction
+  // log — real bids only), net FAAB moved via trades (received minus
+  // sent), and FAAB left on the table at the end of each season (from
+  // Sleeper's own per-roster ledger, summed across every season — see
+  // below for why that's the reliable source for the remaining balance).
+  // Keyed by owner id via the same override-aware team identity used
+  // everywhere else, so a mid-season handoff (e.g. Spotted
+  // Cow/dannyhatty06) attributes activity to whoever actually made each
+  // move.
   const teamRecords = new Map();
   const recordFor = (team) => {
     if (!team?.ownerId) return null;
@@ -788,14 +790,19 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
 
   for (const s of seasonDatas) {
     const isCurrentSeason = s === seasonDatas[seasonDatas.length - 1];
-    const startingBudget = s.leagueSettings?.waiverBudget ?? 0;
-    // Starting budget, adjusted only by FAAB actually traded away/in this
-    // season — actual spend is tracked separately below via Sleeper's own
-    // per-roster ledger, not derived from transactions.
-    const perRosterBudget = new Map();
-    for (const team of s.teams) {
-      perRosterBudget.set(team.rosterId, startingBudget);
-    }
+    // Sleeper only supports one waiver-budget number for the whole league —
+    // the commissioner sets it to the highest amount anyone gets this
+    // season (e.g. $115 when this league's missed-playoffs bonus applies to
+    // some teams), then brings the OTHER teams down to their real $100 by
+    // pre-loading exactly the bonus amount onto waiver_budget_used before
+    // any real claims happen. That means roster.settings.waiver_budget_used
+    // already nets out real waiver-bid spend, FAAB moved via trades, AND
+    // that bonus adjustment — confirmed by reconciling it against this
+    // season's actual trade log. So the remaining balance is simply the
+    // league's one setting minus that ledger value, roster by roster.
+    const seasonBudget = s.leagueSettings?.waiverBudget ?? 0;
+    const perRosterSpent = new Map();
+    for (const team of s.teams) perRosterSpent.set(team.rosterId, 0);
 
     for (const t of s.rawTransactions) {
       const date = new Date(t.created).toISOString();
@@ -813,36 +820,28 @@ function attachTradeHistoryAndBuildLog(seasonDatas, playerNames) {
           const toR = recordFor(teamRef(s.season, w.toRosterId, date));
           if (fromR) fromR.faabTradedNet -= w.amount;
           if (toR) toR.faabTradedNet += w.amount;
-          if (perRosterBudget.has(w.fromRosterId)) {
-            perRosterBudget.set(w.fromRosterId, perRosterBudget.get(w.fromRosterId) - w.amount);
-          }
-          if (perRosterBudget.has(w.toRosterId)) {
-            perRosterBudget.set(w.toRosterId, perRosterBudget.get(w.toRosterId) + w.amount);
-          }
         }
       } else if (t.type === "waiver") {
         const rosterId = t.rosterIds[0];
         const r = recordFor(teamRef(s.season, rosterId, date));
         if (r) r.waiverPickups += 1;
+        const bid = t.waiverBid || 0;
+        if (bid) {
+          if (r) r.faabSpent += bid;
+          if (perRosterSpent.has(rosterId)) {
+            perRosterSpent.set(rosterId, perRosterSpent.get(rosterId) + bid);
+          }
+        }
       }
     }
 
-    // Actual FAAB spend comes straight from Sleeper's own per-roster ledger
-    // (roster.settings.waiver_budget_used), not summed from waiver-claim
-    // transactions — that summation misses any manual commissioner
-    // adjustment (e.g. this league's missed-playoffs/All-Star bonus FAAB,
-    // applied directly in Sleeper rather than as a transaction), which was
-    // producing wrong totals.
     for (const team of s.teams) {
       const r = recordFor(team);
       if (!r) continue;
-      const spent = team.waiverBudgetUsed ?? 0;
-      const budget = perRosterBudget.get(team.rosterId) ?? startingBudget;
-      r.faabSpent += spent;
-      r.faabUnspent += budget - spent;
+      r.faabUnspent += seasonBudget - (team.waiverBudgetUsed ?? 0);
       if (isCurrentSeason) {
-        r.faabCurrent = budget - spent;
-        r.faabSpentCurrent = spent;
+        r.faabCurrent = seasonBudget - (team.waiverBudgetUsed ?? 0);
+        r.faabSpentCurrent = perRosterSpent.get(team.rosterId) ?? 0;
       }
     }
   }
