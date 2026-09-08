@@ -6582,137 +6582,6 @@
       }
     }
   },
-  "2227": {
-    "playerId": "2227",
-    "name": "Aaron Donald",
-    "position": "DT",
-    "nflTeam": "LAR",
-    "birthDate": "1991-05-23",
-    "currentTeam": {
-      "teamName": "WANGHAF",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
-      "ownerId": "1128523568641466368",
-      "rosterId": 7
-    },
-    "seasons": {
-      "2026": {
-        "totalPoints": 0,
-        "gamesPlayed": 0,
-        "positionRank": 2,
-        "overallRank": 284,
-        "games": [
-          {
-            "week": 1,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 2,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 3,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 4,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 5,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 6,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          }
-        ]
-      }
-    }
-  },
   "2306": {
     "playerId": "2306",
     "name": "Jameis Winston",
@@ -38773,7 +38642,7 @@
     "playerId": "6149",
     "name": "Darius Slayton",
     "position": "WR",
-    "nflTeam": "NYG",
+    "nflTeam": null,
     "birthDate": "1997-01-12",
     "currentTeam": null,
     "seasons": {
@@ -64549,6 +64418,137 @@
       }
     }
   },
+  "8127": {
+    "playerId": "8127",
+    "name": "Charlie Kolar",
+    "position": "TE",
+    "nflTeam": "LAC",
+    "birthDate": "1999-02-10",
+    "currentTeam": {
+      "teamName": "WANGHAF",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+      "ownerId": "1128523568641466368",
+      "rosterId": 7
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 42,
+        "overallRank": 285,
+        "games": [
+          {
+            "week": 1,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 2,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 3,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 4,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "8129": {
     "playerId": "8129",
     "name": "Dameon Pierce",
@@ -76750,7 +76750,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 7,
+        "positionRank": 6,
         "overallRank": 314,
         "games": [
           {
@@ -76883,137 +76883,6 @@
         "gamesPlayed": 0,
         "positionRank": 5,
         "overallRank": 298,
-        "games": [
-          {
-            "week": 1,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 2,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 3,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 4,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 5,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 6,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          }
-        ]
-      }
-    }
-  },
-  "8355": {
-    "playerId": "8355",
-    "name": "Kayvon Thibodeaux",
-    "position": "DL",
-    "nflTeam": "NYG",
-    "birthDate": "2000-12-15",
-    "currentTeam": {
-      "teamName": "WANGHAF",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
-      "ownerId": "1128523568641466368",
-      "rosterId": 7
-    },
-    "seasons": {
-      "2026": {
-        "totalPoints": 0,
-        "gamesPlayed": 0,
-        "positionRank": 3,
-        "overallRank": 285,
         "games": [
           {
             "week": 1,
@@ -97163,7 +97032,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 5,
+        "positionRank": 4,
         "overallRank": 296,
         "games": [
           {
@@ -118370,7 +118239,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 8,
+        "positionRank": 7,
         "overallRank": 315,
         "games": [
           {
@@ -118489,7 +118358,7 @@
     "playerId": "11748",
     "name": "Bub Means",
     "position": "WR",
-    "nflTeam": null,
+    "nflTeam": "CLE",
     "birthDate": "2001-01-10",
     "currentTeam": null,
     "seasons": {
@@ -134563,7 +134432,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 4,
+        "positionRank": 3,
         "overallRank": 286,
         "games": [
           {
@@ -135893,7 +135762,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 45,
+        "positionRank": 46,
         "overallRank": 317,
         "games": [
           {
@@ -136155,7 +136024,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 43,
+        "positionRank": 44,
         "overallRank": 318,
         "games": [
           {
@@ -137056,6 +136925,137 @@
       }
     }
   },
+  "13289": {
+    "playerId": "13289",
+    "name": "Drew Allar",
+    "position": "QB",
+    "nflTeam": "PIT",
+    "birthDate": "2004-03-08",
+    "currentTeam": {
+      "teamName": "WANGHAF",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+      "ownerId": "1128523568641466368",
+      "rosterId": 7
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 45,
+        "overallRank": 278,
+        "games": [
+          {
+            "week": 1,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 2,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 3,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 4,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "13293": {
     "playerId": "13293",
     "name": "Ja'Kobi Lane",
@@ -137204,7 +137204,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 98,
-        "overallRank": 278,
+        "overallRank": 279,
         "games": [
           {
             "week": 1,
@@ -137335,7 +137335,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 99,
-        "overallRank": 279,
+        "overallRank": 280,
         "games": [
           {
             "week": 1,
@@ -138382,7 +138382,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 42,
+        "positionRank": 43,
         "overallRank": 308,
         "games": [
           {
@@ -138644,7 +138644,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 6,
+        "positionRank": 5,
         "overallRank": 301,
         "games": [
           {
@@ -138776,7 +138776,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 78,
-        "overallRank": 280,
+        "overallRank": 281,
         "games": [
           {
             "week": 1,
@@ -139169,7 +139169,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 41,
-        "overallRank": 281,
+        "overallRank": 282,
         "games": [
           {
             "week": 1,
@@ -140348,7 +140348,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 100,
-        "overallRank": 282,
+        "overallRank": 283,
         "games": [
           {
             "week": 1,
@@ -141396,7 +141396,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 79,
-        "overallRank": 283,
+        "overallRank": 284,
         "games": [
           {
             "week": 1,
