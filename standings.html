@@ -63,7 +63,7 @@
                 <th class="num">Max PF</th>
                 <th class="num">PA</th>
                 <th class="num" id="pickem-col-header" hidden>Pick-Em Pts</th>
-                <th id="pick-owner-col-header" hidden>Round 1 Pick Owner</th>
+                <th id="pick-owner-col-header" hidden>Owned By</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
@@ -148,6 +148,12 @@
 
     let currentSeason = null;
     let currentView = "standings";
+
+    // Keeps the "Owned By" column narrow on the Draft Order table.
+    function truncName(name, max) {
+      if (!name) return "";
+      return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
+    }
 
     async function init() {
       const idx = await loadIndex();
@@ -288,14 +294,13 @@
           (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1;
         const mine = isMyTeam(team.ownerId);
         const pickemPts = pickemPoints.get(team.ownerId) || 0;
-        const pickOwner = pickOwners.get(team.rosterId);
-        const traded = pickOwner && pickOwner.rosterId !== team.rosterId ? pickOwner : null;
-        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded };
+        const pickOwner = pickOwners.get(team.rosterId) ?? team;
+        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner };
       });
 
       document.getElementById("standings-body").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner }) => `
             <tr class="clickable-row${cutoff ? " playoff-cutoff" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, second, third, last })}</td>
@@ -304,7 +309,7 @@
               <td class="num">${fmtPts(team.maxPF)}</td>
               <td class="num">${fmtPts(team.fptsAgainst)}</td>
               <td class="num"${pickemEra ? "" : " hidden"}>${pickemPts}</td>
-              <td${showPickOwner ? "" : " hidden"}>${traded ? `Traded to ${traded.teamName}` : "&mdash;"}</td>
+              <td${showPickOwner ? "" : " hidden"}>${truncName(pickOwner.teamName, 7)}</td>
             </tr>
           `
         )
@@ -312,7 +317,7 @@
 
       document.getElementById("standings-cards").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner }) => `
             <div class="standing-card${cutoff ? " playoff-cutoff-card" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <div class="standing-card-top">
                 <span class="standing-card-rank">${rankCell}</span>
@@ -346,11 +351,11 @@
                     : ""
                 }
                 ${
-                  showPickOwner && traded
+                  showPickOwner
                     ? `
-                      <div class="standing-card-stat standing-card-stat-full">
-                        <span class="standing-card-stat-label">Round 1 Pick</span>
-                        <span class="standing-card-stat-value">Traded to ${traded.teamName}</span>
+                      <div class="standing-card-stat">
+                        <span class="standing-card-stat-label">Owned By</span>
+                        <span class="standing-card-stat-value">${truncName(pickOwner.teamName, 7)}</span>
                       </div>
                     `
                     : ""
