@@ -63,13 +63,13 @@
                 <th class="num">Max PF</th>
                 <th class="num">PA</th>
                 <th class="num" id="pickem-col-header" hidden>Pick-Em Pts</th>
-                <th id="pick-owner-col-header" hidden>Owned By</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
           </table>
         </div>
         <div class="standing-cards" id="standings-cards"></div>
+        <div id="draft-order-list" hidden></div>
       </section>
     </main>
   </div>
@@ -114,10 +114,12 @@
         label: "#",
         sort: (season) => standingsSorted(season),
       },
+      // Draft Order gets its own dedicated render path (renderDraftOrderList)
+      // instead of the shared table/cards below — it lists 4 full rounds of
+      // picks, not one row per team. label is kept so updateViewButtons()
+      // (which always reads VIEWS[currentView].label) doesn't break.
       draft: {
         label: "Pick",
-        sort: (season, pickMap) =>
-          [...season.teams].sort((a, b) => (pickMap.get(a.rosterId) ?? 999) - (pickMap.get(b.rosterId) ?? 999)),
       },
       pf: {
         label: "#",
@@ -148,12 +150,6 @@
 
     let currentSeason = null;
     let currentView = "standings";
-
-    // Keeps the "Owned By" column narrow on the Draft Order table.
-    function truncName(name, max) {
-      if (!name) return "";
-      return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
-    }
 
     async function init() {
       const idx = await loadIndex();
@@ -253,6 +249,123 @@
       };
     }
 
+    // Draft Order's own render path: 4 full rounds of picks (not one row
+    // per team), each labeled like a real dynasty pick slot ("2.05"). Every
+    // team sits in the same slot across all 4 rounds — only who currently
+    // holds that round's pick differs — so slot position alone tells us
+    // the placement (numTeams = champion's slot, numTeams-1 = runner-up,
+    // numTeams-2 = 3rd) and where the playoff cutoff falls (right after
+    // the last missed-playoffs slot). Real once the season's actually
+    // done, or the same "current standings hold" projection pickMap
+    // already uses otherwise.
+    // Bonus picks 3.13 (loser's bracket winner) and 3.14 (Dynasty Pick-Em
+    // Pool winner) — both new starting 2026, both awarded at the end of
+    // Round 3, neither ever tradable. Each resolves to the real result once
+    // decided; until then it's a projection ("if this held today").
+    async function bonusPickTeams(season) {
+      if (parseInt(season.season, 10) < 2026) return null;
+
+      const losersFinal = (season.playoffBracket?.losers || []).find((m) => m.p === 1 && m.w != null);
+      let team313, projected313;
+      if (losersFinal) {
+        team313 = teamById(season, losersFinal.w);
+        projected313 = false;
+      } else {
+        const playoffTeams = season.leagueSettings?.playoffTeams ?? 8;
+        team313 = standingsSorted(season)[playoffTeams] ?? null; // best-ranked of the 4 non-playoff teams
+        projected313 = true;
+      }
+
+      const pickemPoints = await computePickEmPoints(season, await loadPlayers());
+      let team314 = null;
+      let bestPts = -Infinity;
+      for (const team of season.teams) {
+        const pts = pickemPoints.get(team.ownerId) || 0;
+        if (pts > bestPts) {
+          bestPts = pts;
+          team314 = team;
+        }
+      }
+
+      return { team313, projected313, team314, projected314: pickNumberMap(season).projected };
+    }
+
+    function bonusPickRowHTML(label, team, projected, explanation) {
+      return `
+        <div class="draft-pick-row bonus-pick-row">
+          <div class="draft-pick-no">${label}</div>
+          <div class="draft-pick-team">${team ? teamCellHTML(team) : '<span class="muted">TBD</span>'}</div>
+          <div class="bonus-pick-note">
+            ${explanation} Not tradable.
+            ${projected ? " Projected from today's standings — not final yet." : ""}
+          </div>
+        </div>
+      `;
+    }
+
+    async function renderDraftOrderList(season, pickMap) {
+      const container = document.getElementById("draft-order-list");
+      const futurePicks = await loadFuturePicks();
+      const draftSeason = String(parseInt(season.season, 10) + 1);
+      const naturalOrder = [...season.teams].sort(
+        (a, b) => (pickMap.get(a.rosterId) ?? 999) - (pickMap.get(b.rosterId) ?? 999)
+      );
+      const numTeams = naturalOrder.length;
+      const playoffTeams = season.leagueSettings?.playoffTeams ?? 8;
+      const missedPlayoffsCount = numTeams - playoffTeams;
+      const bonus = await bonusPickTeams(season);
+
+      const roundsHTML = [1, 2, 3, 4]
+        .map((round) => {
+          const owners = pickOwnersFor(season, futurePicks, draftSeason, round);
+          const rowsHTML = naturalOrder
+            .map((team, i) => {
+              const slot = i + 1;
+              const label = `${round}.${String(slot).padStart(2, "0")}`;
+              const owner = owners.get(team.rosterId) ?? team;
+              const champ = slot === numTeams;
+              const second = slot === numTeams - 1;
+              const third = slot === numTeams - 2;
+              const cutoff = slot === missedPlayoffsCount;
+              return `
+                <div class="draft-pick-row${cutoff ? " playoff-cutoff" : ""}" data-roster-id="${team.rosterId}">
+                  <div class="draft-pick-no">${label}</div>
+                  <div class="draft-pick-team">${teamCellHTML(team, { champ, second, third })}</div>
+                  <div class="pick-order-arrow">&rarr;</div>
+                  <div class="draft-pick-team">${teamCellHTML(owner)}</div>
+                </div>
+              `;
+            })
+            .join("");
+          const bonusHTML =
+            round === 3 && bonus
+              ? bonusPickRowHTML(
+                  "3.13",
+                  bonus.team313,
+                  bonus.projected313,
+                  "Awarded to the winner of the loser's bracket, a mini-tournament played among the 4 teams that miss the playoffs."
+                ) +
+                bonusPickRowHTML(
+                  "3.14",
+                  bonus.team314,
+                  bonus.projected314,
+                  "Awarded to the manager with the most points in the Dynasty Pick-Em Pool."
+                )
+              : "";
+          return `
+            <div class="info-section-title"${round > 1 ? ' style="margin-top: 24px;"' : ""}>Round ${round}</div>
+            <div class="draft-list">${rowsHTML}${bonusHTML}</div>
+          `;
+        })
+        .join("");
+
+      container.innerHTML = roundsHTML;
+
+      container.querySelectorAll(".draft-pick-row[data-roster-id]").forEach((row) => {
+        row.addEventListener("click", () => openRosterModal(season, Number(row.dataset.rosterId)));
+      });
+    }
+
     async function renderStandings(seasonKey) {
       const season = await loadSeason(seasonKey);
       currentSeason = season;
@@ -264,22 +377,20 @@
         currentView = "standings";
         updateViewButtons();
       }
-      const pickemPoints = pickemEra ? await computePickEmPoints(season, await loadPlayers()) : new Map();
 
       const { picks: pickMap, projected } = pickNumberMap(season);
       document.getElementById("draft-projection-note").hidden = !(projected && currentView === "draft");
 
-      // Draft Order lists each team's own natural first-round slot — but
-      // that pick may well have been traded away since. Look up who
-      // actually holds it now, for the rookie draft right after this
-      // season (only shown in the "draft" view, only round 1 — that's
-      // exactly what a draft-order slot number represents).
-      const showPickOwner = currentView === "draft";
-      document.getElementById("pick-owner-col-header").hidden = !showPickOwner;
-      const pickOwners = showPickOwner
-        ? pickOwnersFor(season, await loadFuturePicks(), String(parseInt(season.season, 10) + 1), 1)
-        : new Map();
+      const showDraftOrder = currentView === "draft";
+      document.querySelector(".standings-table-wrap").hidden = showDraftOrder;
+      document.getElementById("standings-cards").hidden = showDraftOrder;
+      document.getElementById("draft-order-list").hidden = !showDraftOrder;
+      if (showDraftOrder) {
+        await renderDraftOrderList(season, pickMap);
+        return;
+      }
 
+      const pickemPoints = pickemEra ? await computePickEmPoints(season, await loadPlayers()) : new Map();
       const sorted = VIEWS[currentView].sort(season, pickMap, projected, pickemPoints);
       const placements = playoffPlacements(season);
       const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
@@ -289,27 +400,24 @@
         const second = placements.runnerUp === team.rosterId;
         const third = placements.thirdPlace === team.rosterId;
         const last = placements.lastPlace === team.rosterId;
-        const rankCell = currentView === "draft" ? pickMap.get(team.rosterId) ?? "—" : i + 1;
         const cutoff =
           (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1;
         const mine = isMyTeam(team.ownerId);
         const pickemPts = pickemPoints.get(team.ownerId) || 0;
-        const pickOwner = pickOwners.get(team.rosterId) ?? team;
-        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner };
+        return { team, i, champ, second, third, last, cutoff, mine, pickemPts };
       });
 
       document.getElementById("standings-body").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner }) => `
+          ({ team, i, champ, second, third, last, cutoff, mine, pickemPts }) => `
             <tr class="clickable-row${cutoff ? " playoff-cutoff" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
-              <td>${rankCell}</td>
+              <td>${i + 1}</td>
               <td>${teamCellHTML(team, { champ, second, third, last })}</td>
               <td class="num">${record(team)}</td>
               <td class="num">${fmtPts(team.fpts)}</td>
               <td class="num">${fmtPts(team.maxPF)}</td>
               <td class="num">${fmtPts(team.fptsAgainst)}</td>
               <td class="num"${pickemEra ? "" : " hidden"}>${pickemPts}</td>
-              <td${showPickOwner ? "" : " hidden"}>${truncName(pickOwner.teamName, 7)}</td>
             </tr>
           `
         )
@@ -317,10 +425,10 @@
 
       document.getElementById("standings-cards").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, pickOwner }) => `
+          ({ team, i, champ, second, third, last, cutoff, mine, pickemPts }) => `
             <div class="standing-card${cutoff ? " playoff-cutoff-card" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <div class="standing-card-top">
-                <span class="standing-card-rank">${rankCell}</span>
+                <span class="standing-card-rank">${i + 1}</span>
                 ${teamCellHTML(team, { champ, second, third, last })}
               </div>
               <div class="standing-card-stats">
@@ -346,16 +454,6 @@
                       <div class="standing-card-stat">
                         <span class="standing-card-stat-label">Pick-Em Pts</span>
                         <span class="standing-card-stat-value">${pickemPts}</span>
-                      </div>
-                    `
-                    : ""
-                }
-                ${
-                  showPickOwner
-                    ? `
-                      <div class="standing-card-stat">
-                        <span class="standing-card-stat-label">Owned By</span>
-                        <span class="standing-card-stat-value">${truncName(pickOwner.teamName, 7)}</span>
                       </div>
                     `
                     : ""
