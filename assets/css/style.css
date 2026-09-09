@@ -816,6 +816,13 @@ th.num {
   font-size: 0.7rem;
 }
 
+.pick-order-record {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
 .draft-pick-row.playoff-cutoff {
   border-bottom: 3px dashed var(--accent);
   padding-bottom: 10px;

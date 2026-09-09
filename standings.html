@@ -330,7 +330,10 @@
               return `
                 <div class="draft-pick-row${cutoff ? " playoff-cutoff" : ""}" data-roster-id="${team.rosterId}">
                   <div class="draft-pick-no">${label}</div>
-                  <div class="draft-pick-team">${teamCellHTML(team, { champ, second, third })}</div>
+                  <div class="draft-pick-team">
+                    ${teamCellHTML(team, { champ, second, third })}
+                    <div class="pick-order-record">${record(team)} &middot; ${fmtPts(team.maxPF)} Max PF</div>
+                  </div>
                   <div class="pick-order-arrow">&rarr;</div>
                   <div class="draft-pick-team">${teamCellHTML(owner)}</div>
                 </div>
