@@ -135,10 +135,14 @@ async function fetchNflSchedule(season) {
   }
 }
 
-async function findChampionAndLastPlace(leagueId, league) {
-  let champion = league.metadata?.latest_league_winner_roster_id
-    ? Number(league.metadata.latest_league_winner_roster_id)
-    : null;
+async function findChampionAndLastPlace(leagueId) {
+  // NOT league.metadata?.latest_league_winner_roster_id — despite the name,
+  // Sleeper carries that field over from the dynasty chain's PREVIOUS
+  // completed season and populates it on the new season's league object
+  // before that new season has even started, so it's not reliable as "this
+  // season's champion." The only trustworthy source is this season's own
+  // bracket having an actual decided championship match.
+  let champion = null;
   let lastPlace = null;
 
   try {
@@ -146,7 +150,7 @@ async function findChampionAndLastPlace(leagueId, league) {
     const final = winners.find((m) => m.p === 1 && m.w != null);
     if (final) champion = final.w;
   } catch {
-    // bracket not available (e.g. season still in regular season) — fall back to metadata field
+    // bracket not available (e.g. season still in regular season)
   }
 
   try {
@@ -441,7 +445,7 @@ async function buildSeason(league, nextLeague) {
     }));
   }
 
-  const { champion, lastPlace } = await findChampionAndLastPlace(leagueId, league);
+  const { champion, lastPlace } = await findChampionAndLastPlace(leagueId);
   const rawTransactions = await fetchLeagueTransactions(leagueId, season);
   const playoffBracket = await fetchPlayoffBrackets(leagueId);
 
