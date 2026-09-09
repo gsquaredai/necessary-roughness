@@ -380,15 +380,6 @@
       }
     }
 
-    async function loadFuturePicks() {
-      try {
-        const res = await fetch("data/future-picks.json");
-        return await res.json();
-      } catch {
-        return {};
-      }
-    }
-
     // "Best finish" per the league's own convention: the following season's
     // draft order is reverse-standings, so the highest draftPick a manager
     // ever earned (closest to last pick) marks their best season. Skips the

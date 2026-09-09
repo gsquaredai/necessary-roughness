@@ -63,6 +63,7 @@
                 <th class="num">Max PF</th>
                 <th class="num">PA</th>
                 <th class="num" id="pickem-col-header" hidden>Pick-Em Pts</th>
+                <th id="pick-owner-col-header" hidden>Round 1 Pick Owner</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
@@ -262,6 +263,17 @@
       const { picks: pickMap, projected } = pickNumberMap(season);
       document.getElementById("draft-projection-note").hidden = !(projected && currentView === "draft");
 
+      // Draft Order lists each team's own natural first-round slot — but
+      // that pick may well have been traded away since. Look up who
+      // actually holds it now, for the rookie draft right after this
+      // season (only shown in the "draft" view, only round 1 — that's
+      // exactly what a draft-order slot number represents).
+      const showPickOwner = currentView === "draft";
+      document.getElementById("pick-owner-col-header").hidden = !showPickOwner;
+      const pickOwners = showPickOwner
+        ? pickOwnersFor(season, await loadFuturePicks(), String(parseInt(season.season, 10) + 1), 1)
+        : new Map();
+
       const sorted = VIEWS[currentView].sort(season, pickMap, projected, pickemPoints);
       const placements = playoffPlacements(season);
       const playoffTeams = season.leagueSettings?.playoffTeams ?? null;
@@ -276,12 +288,14 @@
           (currentView === "standings" || currentView === "record") && playoffTeams && i === playoffTeams - 1;
         const mine = isMyTeam(team.ownerId);
         const pickemPts = pickemPoints.get(team.ownerId) || 0;
-        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts };
+        const pickOwner = pickOwners.get(team.rosterId);
+        const traded = pickOwner && pickOwner.rosterId !== team.rosterId ? pickOwner : null;
+        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded };
       });
 
       document.getElementById("standings-body").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts }) => `
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
             <tr class="clickable-row${cutoff ? " playoff-cutoff" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
               <td>${teamCellHTML(team, { champ, second, third, last })}</td>
@@ -290,6 +304,7 @@
               <td class="num">${fmtPts(team.maxPF)}</td>
               <td class="num">${fmtPts(team.fptsAgainst)}</td>
               <td class="num"${pickemEra ? "" : " hidden"}>${pickemPts}</td>
+              <td${showPickOwner ? "" : " hidden"}>${traded ? `Traded to ${traded.teamName}` : "&mdash;"}</td>
             </tr>
           `
         )
@@ -297,7 +312,7 @@
 
       document.getElementById("standings-cards").innerHTML = rows
         .map(
-          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts }) => `
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
             <div class="standing-card${cutoff ? " playoff-cutoff-card" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <div class="standing-card-top">
                 <span class="standing-card-rank">${rankCell}</span>
@@ -326,6 +341,16 @@
                       <div class="standing-card-stat">
                         <span class="standing-card-stat-label">Pick-Em Pts</span>
                         <span class="standing-card-stat-value">${pickemPts}</span>
+                      </div>
+                    `
+                    : ""
+                }
+                ${
+                  showPickOwner && traded
+                    ? `
+                      <div class="standing-card-stat standing-card-stat-full">
+                        <span class="standing-card-stat-label">Round 1 Pick</span>
+                        <span class="standing-card-stat-value">Traded to ${traded.teamName}</span>
                       </div>
                     `
                     : ""

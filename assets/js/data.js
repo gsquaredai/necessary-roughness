@@ -53,6 +53,37 @@ async function loadSchedule() {
   return scheduleCache;
 }
 
+let futurePicksCache = null;
+// rosterId (current holder) -> the future draft picks they currently hold,
+// each { season, round, originalRosterId, originalTeam }. originalTeam is
+// null when it's that roster's own original pick (never traded).
+async function loadFuturePicks() {
+  if (futurePicksCache) return futurePicksCache;
+  try {
+    const res = await fetch("data/future-picks.json");
+    futurePicksCache = await res.json();
+  } catch {
+    futurePicksCache = {};
+  }
+  return futurePicksCache;
+}
+
+// For a given season and round, who CURRENTLY holds each roster's
+// originally-owned pick — rosterId -> the team (from data/future-picks.json)
+// currently holding that roster's own pick, after accounting for trades.
+// Falls back to the original team itself for any pick not found in the
+// registry (nothing traded it, so nothing lists it as "acquired").
+function pickOwnersFor(season, futurePicks, draftSeason, round) {
+  const owners = new Map();
+  for (const [holderRosterId, picks] of Object.entries(futurePicks)) {
+    for (const p of picks) {
+      if (p.season !== draftSeason || p.round !== round) continue;
+      owners.set(p.originalRosterId, teamById(season, Number(holderRosterId)));
+    }
+  }
+  return owners;
+}
+
 let rivalriesCache = null;
 async function loadRivalries() {
   if (rivalriesCache) return rivalriesCache;
