@@ -58,12 +58,12 @@
               <tr>
                 <th id="rank-header">#</th>
                 <th>Team</th>
-                <th class="num" id="record-col-header">Record</th>
-                <th class="num" id="pf-col-header">PF</th>
-                <th class="num" id="maxpf-col-header">Max PF</th>
-                <th class="num" id="pa-col-header">PA</th>
+                <th class="num">Record</th>
+                <th class="num">PF</th>
+                <th class="num">Max PF</th>
+                <th class="num">PA</th>
                 <th class="num" id="pickem-col-header" hidden>Pick-Em Pts</th>
-                <th id="pick-owner-col-header" hidden>Owned By</th>
+                <th id="pick-owner-col-header" hidden>Round 1 Pick Owner</th>
               </tr>
             </thead>
             <tbody id="standings-body"></tbody>
@@ -148,13 +148,6 @@
 
     let currentSeason = null;
     let currentView = "standings";
-
-    // Draft Order crams a team name AND who currently owns their pick onto
-    // one row, so long names there get clipped to keep it to one line.
-    function truncName(name, max = 9) {
-      if (!name) return "";
-      return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
-    }
 
     async function init() {
       const idx = await loadIndex();
@@ -260,6 +253,7 @@
 
       const pickemEra = isPickEmEra(season);
       document.getElementById("pickem-view-btn").hidden = !pickemEra;
+      document.getElementById("pickem-col-header").hidden = !pickemEra;
       if (!pickemEra && currentView === "pickem") {
         currentView = "standings";
         updateViewButtons();
@@ -273,16 +267,9 @@
       // that pick may well have been traded away since. Look up who
       // actually holds it now, for the rookie draft right after this
       // season (only shown in the "draft" view, only round 1 — that's
-      // exactly what a draft-order slot number represents). The other
-      // stat columns aren't relevant to draft order and just force
-      // horizontal scrolling, so this view drops them and shows only
-      // team + pick owner.
+      // exactly what a draft-order slot number represents).
       const showPickOwner = currentView === "draft";
       document.getElementById("pick-owner-col-header").hidden = !showPickOwner;
-      ["record", "pf", "maxpf", "pa"].forEach((id) => {
-        document.getElementById(`${id}-col-header`).hidden = showPickOwner;
-      });
-      document.getElementById("pickem-col-header").hidden = !pickemEra || showPickOwner;
       const pickOwners = showPickOwner
         ? pickOwnersFor(season, await loadFuturePicks(), String(parseInt(season.season, 10) + 1), 1)
         : new Map();
@@ -303,22 +290,21 @@
         const pickemPts = pickemPoints.get(team.ownerId) || 0;
         const pickOwner = pickOwners.get(team.rosterId);
         const traded = pickOwner && pickOwner.rosterId !== team.rosterId ? pickOwner : null;
-        const tableTeam = showPickOwner ? { ...team, teamName: truncName(team.teamName) } : team;
-        return { team, tableTeam, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded };
+        return { team, i, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded };
       });
 
       document.getElementById("standings-body").innerHTML = rows
         .map(
-          ({ team, tableTeam, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
+          ({ team, champ, second, third, last, rankCell, cutoff, mine, pickemPts, traded }) => `
             <tr class="clickable-row${cutoff ? " playoff-cutoff" : ""}${mine ? " is-my-team" : ""}" data-roster-id="${team.rosterId}">
               <td>${rankCell}</td>
-              <td>${teamCellHTML(tableTeam, { champ, second, third, last })}</td>
-              <td class="num"${showPickOwner ? " hidden" : ""}>${record(team)}</td>
-              <td class="num"${showPickOwner ? " hidden" : ""}>${fmtPts(team.fpts)}</td>
-              <td class="num"${showPickOwner ? " hidden" : ""}>${fmtPts(team.maxPF)}</td>
-              <td class="num"${showPickOwner ? " hidden" : ""}>${fmtPts(team.fptsAgainst)}</td>
-              <td class="num"${pickemEra && !showPickOwner ? "" : " hidden"}>${pickemPts}</td>
-              <td${showPickOwner ? "" : " hidden"}>${traded ? `Traded to ${truncName(traded.teamName)}` : "&mdash;"}</td>
+              <td>${teamCellHTML(team, { champ, second, third, last })}</td>
+              <td class="num">${record(team)}</td>
+              <td class="num">${fmtPts(team.fpts)}</td>
+              <td class="num">${fmtPts(team.maxPF)}</td>
+              <td class="num">${fmtPts(team.fptsAgainst)}</td>
+              <td class="num"${pickemEra ? "" : " hidden"}>${pickemPts}</td>
+              <td${showPickOwner ? "" : " hidden"}>${traded ? `Traded to ${traded.teamName}` : "&mdash;"}</td>
             </tr>
           `
         )
