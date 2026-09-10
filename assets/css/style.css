@@ -537,6 +537,11 @@ th.num {
   color: var(--accent-2);
 }
 
+.matchup .live-tag {
+  color: var(--loss);
+  font-weight: 700;
+}
+
 /* pick-em */
 
 .link-btn {

@@ -178,11 +178,13 @@
       const medianHTML =
         wr && wr.median != null
           ? `<div class="week-median-banner">League Median: <strong>${fmtPts(wr.median)}</strong></div>`
-          : "";
+          : `<div class="week-median-banner" id="live-median-banner" hidden></div>`;
       container.innerHTML = medianHTML + matchups.map((m) => renderMatchup(currentSeason, m, weekNum, wr)).join("");
 
       applyPickCounts(weekNum);
       applyLiveProjections(weekNum);
+      applyLiveScores(weekNum);
+      applyLiveMedian(weekNum);
     }
 
     // The "Proj" numbers rendered above are the static, data.json-snapshot
@@ -217,6 +219,98 @@
       });
     }
 
+    // Once a week's games actually kick off, the static data.json snapshot
+    // (last refreshed whenever the pipeline last ran) can lag real game
+    // action by hours. Pull Sleeper's own live matchups feed — the same
+    // in-progress scoring Sleeper's own app shows — and swap the
+    // "Projected" line over to a real, ticking score as soon as any point
+    // has actually been scored. Runs after applyLiveProjections so a truly
+    // live week always wins over a mere pre-kickoff projection.
+    let liveScoresRequestId = 0;
+    async function applyLiveScores(weekNum) {
+      const requestId = ++liveScoresRequestId;
+      if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
+      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      const liveMatchups = await loadLiveMatchups(currentSeason.leagueId, weekNum);
+      if (requestId !== liveScoresRequestId || !liveMatchups) return;
+
+      const pointsByRoster = new Map();
+      liveMatchups.forEach((r) => {
+        if (r.roster_id != null) pointsByRoster.set(r.roster_id, r.points ?? 0);
+      });
+
+      const matchups = currentSeason.matchups[weekNum] || [];
+      document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
+        const m = matchups.find((x) => String(x.matchupId) === card.dataset.matchupId);
+        if (!m) return;
+        const ptsA = pointsByRoster.get(m.teamA.rosterId);
+        const ptsB = m.teamB ? pointsByRoster.get(m.teamB.rosterId) : null;
+        if (ptsA == null) return;
+        // Neither side in THIS matchup has actually scored yet — leave the
+        // projection in place instead of flashing to "Live 0.00" just
+        // because some other game this week has already started.
+        if (!(ptsA > 0) && !(ptsB > 0)) return;
+        const winnerA = ptsB != null && ptsA > ptsB;
+        const winnerB = ptsB != null && ptsB > ptsA;
+        const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
+        const scoreA = blockA?.querySelector(".score-block");
+        if (scoreA) {
+          scoreA.innerHTML = `<div class="points${winnerA ? " winner" : ""}">${fmtPts(ptsA)}</div><div class="proj-points live-tag">Live</div>`;
+        }
+        if (m.teamB && ptsB != null) {
+          const scoreB = blockB?.querySelector(".score-block");
+          if (scoreB) {
+            scoreB.innerHTML = `<div class="points${winnerB ? " winner" : ""}">${fmtPts(ptsB)}</div><div class="proj-points live-tag">Live</div>`;
+          }
+        }
+      });
+    }
+
+    // A live-projected league median for a week that isn't fully played yet
+    // — each team's blended total (live points for whichever of their
+    // actual starters have already played, projections for the rest),
+    // median of those 12 totals. Recomputed on every load, so it shifts as
+    // real results come in throughout the week, same as the per-matchup
+    // live scores above. Once the week is fully played, the real median
+    // banner (computed from final static data) takes over on its own.
+    let liveMedianRequestId = 0;
+    async function applyLiveMedian(weekNum) {
+      const requestId = ++liveMedianRequestId;
+      if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
+      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      const [liveMatchups, liveProjections] = await Promise.all([
+        loadLiveMatchups(currentSeason.leagueId, weekNum),
+        loadLiveWeeklyProjections(currentSeason, weekNum),
+      ]);
+      if (requestId !== liveMedianRequestId || !liveMatchups) return;
+
+      const livePlayerPoints = {};
+      liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
+
+      const matchups = currentSeason.matchups[weekNum] || [];
+      const teamTotals = [];
+      matchups.forEach((m) => {
+        [m.teamA, m.teamB].filter(Boolean).forEach((side) => {
+          const total = (side.starters || []).reduce((sum, pid) => {
+            const live = livePlayerPoints[pid];
+            if (live) return sum + live;
+            const proj = liveProjections ? computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings) : 0;
+            return sum + proj;
+          }, 0);
+          teamTotals.push(total);
+        });
+      });
+      if (!teamTotals.length) return;
+      teamTotals.sort((a, b) => a - b);
+      const mid = Math.floor(teamTotals.length / 2);
+      const median = teamTotals.length % 2 === 0 ? (teamTotals[mid - 1] + teamTotals[mid]) / 2 : teamTotals[mid];
+
+      const banner = document.getElementById("live-median-banner");
+      if (!banner) return;
+      banner.hidden = false;
+      banner.innerHTML = `League Median <span class="live-tag">(Live Projection)</span>: <strong>${fmtPts(median)}</strong>`;
+    }
+
     // Pick-Em only ever exists for the site's current season's regular
     // season weeks — everything else (past seasons, playoffs) just skips
     // the fetch entirely rather than showing "0 picked" noise.
@@ -238,15 +332,17 @@
     }
 
     function scoreBlockHTML(side, played, isWinner) {
-      if (!side) return '<div class="points">—</div>';
+      if (!side) return '<div class="score-block"><div class="points">—</div></div>';
       if (played) {
         const projHTML =
           side.projPoints != null ? `<div class="proj-points">Proj ${fmtPts(side.projPoints)}</div>` : "";
-        return `<div class="points ${isWinner ? "winner" : ""}">${fmtPts(side.points)}</div>${projHTML}`;
+        return `<div class="score-block"><div class="points ${isWinner ? "winner" : ""}">${fmtPts(side.points)}</div>${projHTML}</div>`;
       }
       return `
-        <div class="points proj-primary">${side.projPoints != null ? fmtPts(side.projPoints) : "—"}</div>
-        <div class="proj-points">Projected</div>
+        <div class="score-block">
+          <div class="points proj-primary">${side.projPoints != null ? fmtPts(side.projPoints) : "—"}</div>
+          <div class="proj-points">Projected</div>
+        </div>
       `;
     }
 

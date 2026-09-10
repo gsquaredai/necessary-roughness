@@ -1127,6 +1127,34 @@ function loadLiveWeeklyProjections(season, week) {
   return promise;
 }
 
+// Live, in-progress actual scores straight from Sleeper's own matchups
+// endpoint — the exact source the pipeline snapshots into data.json, just
+// fetched fresh in the browser instead of waiting for the next pipeline
+// run. Sleeper updates each roster's points in real time as real NFL games
+// play out, so once a week's games kick off this is the only way to show
+// a truly live score rather than whatever the last data refresh captured.
+const liveMatchupsCache = new Map(); // "leagueId_week" -> Promise<raw Sleeper matchups array | null>
+
+function loadLiveMatchups(leagueId, week) {
+  const key = `${leagueId}_${week}`;
+  if (liveMatchupsCache.has(key)) return liveMatchupsCache.get(key);
+  const promise = (async () => {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(`https://api.sleeper.app/v1/league/${leagueId}/matchups/${week}`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      return await res.json();
+    } catch {
+      return null; // network hiccup / API unreachable — caller falls back to the static snapshot
+    }
+  })();
+  liveMatchupsCache.set(key, promise);
+  return promise;
+}
+
 function computeLeagueScoredPoints(rawStats, scoringSettings) {
   if (!rawStats || !scoringSettings) return 0;
   let total = 0;
