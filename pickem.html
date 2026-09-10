@@ -354,7 +354,7 @@
         });
       });
 
-      applyLiveCoverage(list, week, matchupInfo);
+      applyCoverProbability(list, week, matchupInfo);
 
       if (locked) return;
 
@@ -363,46 +363,38 @@
       container.querySelector("#pickem-submit").addEventListener("click", () => submitPicks(container, week, matchupInfo));
     }
 
-    // Once games actually start, tag whichever side is CURRENTLY covering
-    // the shown spread — live points for whoever's already played,
-    // projections for the rest, same optimal-lineup basis the spread
-    // itself is built on. Applies whether the week is locked or not; only
-    // skipped once the week is fully done (nothing "live" left to show).
-    async function applyLiveCoverage(list, week, matchupInfo) {
+    // A live, ever-updating percent chance each side covers the shown
+    // spread — same normal-distribution model as the Matchups page's win
+    // probability (coverProbability/data.js), just measured against the
+    // spread instead of zero. Blends live points for whoever's already
+    // played with projections for the rest, on the same optimal-lineup
+    // basis the spread itself is built on. Pregame this comes out ~50/50
+    // for both sides by construction (the spread was built from these same
+    // totals); it only moves once real results start landing. Applies
+    // whether the week is locked or not — only skipped once the week's
+    // fully done, when there's nothing left to project.
+    async function applyCoverProbability(list, week, matchupInfo) {
       if (weekFullyPlayed(currentSeason, week)) return;
       const [liveMatchups, liveProjections] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, week),
         loadLiveWeeklyProjections(currentSeason, week),
       ]);
-      if (!liveMatchups) return;
+      if (!liveProjections) return;
 
       const livePlayerPoints = {};
-      liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
+      if (liveMatchups) liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
 
       const blendedFor = (playerIds) => {
         const out = {};
         for (const pid of playerIds || []) {
           const live = livePlayerPoints[pid];
-          out[pid] =
-            live > 0
-              ? live
-              : liveProjections
-              ? computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings)
-              : 0;
+          out[pid] = live > 0 ? live : computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings);
         }
         return out;
       };
 
       matchupInfo.forEach((info) => {
         const { m, teamA, teamB, spread, favRosterId } = info;
-        // Neither side in THIS matchup has actually scored yet — leave it
-        // as a plain pregame projection instead of calling a "cover" based
-        // purely on projections, just because some other game has started.
-        const rosterHasLive = (ids) => (ids || []).some((pid) => livePlayerPoints[pid] > 0);
-        if (!rosterHasLive(m.teamA.players) && !rosterHasLive(m.teamB.players)) {
-          list.querySelector(`[data-matchup-id="${m.matchupId}"] .pickem-covering-tag`)?.remove();
-          return;
-        }
         const totalA = computeOptimalProjectedLineup(
           m.teamA.players,
           blendedFor(m.teamA.players),
@@ -416,18 +408,28 @@
           currentSeason.rosterPositions
         ).total;
         const favIsA = favRosterId === teamA.rosterId;
-        const actualMargin = favIsA ? totalA - totalB : totalB - totalA;
-        let coveringRosterId = null;
-        if (actualMargin > spread) coveringRosterId = favIsA ? teamA.rosterId : teamB.rosterId;
-        else if (actualMargin < spread) coveringRosterId = favIsA ? teamB.rosterId : teamA.rosterId;
+        const favTotal = favIsA ? totalA : totalB;
+        const dogTotal = favIsA ? totalB : totalA;
+        const pFavCovers = coverProbability(favTotal, dogTotal, spread);
+        const pA = favIsA ? pFavCovers : 1 - pFavCovers;
+        const pB = favIsA ? 1 - pFavCovers : pFavCovers;
 
-        list.querySelectorAll(`[data-matchup-id="${m.matchupId}"][data-pick-roster]`).forEach((el) => {
-          el.querySelector(".pickem-covering-tag")?.remove();
-        });
-        if (coveringRosterId == null) return;
-        const el = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${coveringRosterId}"]`);
-        if (el) el.insertAdjacentHTML("beforeend", `<div class="pickem-covering-tag">Currently Covering</div>`);
+        const elA = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamA.rosterId}"]`);
+        const elB = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamB.rosterId}"]`);
+        setCoverProbTag(elA, pA);
+        setCoverProbTag(elB, pB);
       });
+    }
+
+    function setCoverProbTag(el, prob) {
+      if (!el) return;
+      let tag = el.querySelector(".pickem-covering-tag");
+      if (!tag) {
+        tag = document.createElement("div");
+        tag.className = "pickem-covering-tag";
+        el.appendChild(tag);
+      }
+      tag.textContent = `${Math.round(prob * 100)}% to Cover`;
     }
 
     function updateSubmitButtonState(container, matchupInfo) {

@@ -368,6 +368,17 @@ function winProbability(totalA, totalB) {
   return normalCDF((totalA - totalB) / MATCHUP_SPREAD_STDDEV);
 }
 
+// Same model, generalized to a spread: probability the favorite's actual
+// margin (favTotal - dogTotal) ends up beating the given spread, i.e. P(the
+// favorite covers). Pregame, favTotal/dogTotal are what the spread itself
+// was built from, so this comes out ~50% by construction — it only
+// meaningfully departs from 50/50 once real results start pulling the
+// current totals away from the locked spread. winProbability is just this
+// with spread = 0.
+function coverProbability(favTotal, dogTotal, spread) {
+  return normalCDF((favTotal - dogTotal - spread) / MATCHUP_SPREAD_STDDEV);
+}
+
 // If a local 8-bit team image exists at assets/img/teams/<ownerId>.png, use it.
 // Otherwise fall back to the team's Sleeper logo, and if that's missing too,
 // render a blank placeholder. No manifest to maintain — just drop a PNG in

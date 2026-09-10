@@ -641,7 +641,7 @@ th.num {
 
 .pickem-covering-tag {
   font-size: 0.5rem;
-  color: var(--win);
+  color: var(--accent-2);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
