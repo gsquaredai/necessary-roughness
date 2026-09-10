@@ -67,6 +67,7 @@
     let rivalries = [];
     let weeklyRecords = null; // Map week -> { median, teams: { [rosterId]: {...} } }
     let lastRegularWeek = 14;
+    let closedThroughWeek = 0; // last week that's fully played AND past its Tuesday close-out
     let siteCurrentSeasonKey = null;
     let pickCountsRequestId = 0;
 
@@ -91,7 +92,12 @@
     async function loadSeasonInto(seasonKey) {
       currentSeason = await loadSeason(seasonKey);
       lastRegularWeek = (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
-      weeklyRecords = computeWeeklyRecords(currentSeason, lastRegularWeek);
+      // Results, records, and the median don't count until a week is
+      // officially over — fully played AND past its Tuesday close-out
+      // (latestClosedWeek, data.js) — not just "every game finished," which
+      // could still be hours before Tuesday for a Monday-night finish.
+      closedThroughWeek = (await latestClosedWeek(currentSeason)) ?? 0;
+      weeklyRecords = computeWeeklyRecords(currentSeason, Math.min(lastRegularWeek, closedThroughWeek));
       const weeks = Object.keys(currentSeason.matchups)
         .map(Number)
         .filter((w) => w <= lastRegularWeek)
@@ -203,7 +209,7 @@
     async function applyLiveProjections(weekNum) {
       const requestId = ++liveProjRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekFullyPlayed(currentSeason, weekNum)) return;
+      if (weekNum <= closedThroughWeek) return;
       const liveProjections = await loadLiveWeeklyProjections(currentSeason, weekNum);
       if (requestId !== liveProjRequestId || !liveProjections) return;
 
@@ -235,7 +241,7 @@
     async function applyLiveScores(weekNum) {
       const requestId = ++liveScoresRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekFullyPlayed(currentSeason, weekNum)) return;
+      if (weekNum <= closedThroughWeek) return;
       const [liveMatchups, liveProjections] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),
@@ -297,7 +303,7 @@
     async function applyLiveMedian(weekNum) {
       const requestId = ++liveMedianRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekFullyPlayed(currentSeason, weekNum)) return;
+      if (weekNum <= closedThroughWeek) return;
       const [liveMatchups, liveProjections] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),

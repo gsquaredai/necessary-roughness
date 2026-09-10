@@ -512,11 +512,20 @@ async function weekCloseoutDate(week) {
 // isn't closed yet.
 async function latestClosedWeek(season) {
   const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
+  // schedule.json (weekCloseoutDate's source) only ever covers the site's
+  // current season, so the Tuesday gate only makes sense there — a past
+  // season is already fully decided the moment its weeks have real data,
+  // no calendar check needed (and using the current season's schedule
+  // dates against a past season's weeks would be wrong anyway).
+  const idx = await loadIndex();
+  const isCurrentSeason = season.season === idx.currentSeason;
   let latest = null;
   for (let week = 1; week <= lastRegWeek; week++) {
     if (!weekFullyPlayed(season, week)) break;
-    const closeout = await weekCloseoutDate(week);
-    if (closeout && new Date() < closeout) break;
+    if (isCurrentSeason) {
+      const closeout = await weekCloseoutDate(week);
+      if (closeout && new Date() < closeout) break;
+    }
     latest = week;
   }
   return latest;
