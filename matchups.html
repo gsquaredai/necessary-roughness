@@ -115,12 +115,23 @@
     // Per team, per played regular-season week: did they win their
     // matchup, did they beat the median, and their cumulative record
     // (matchup + median results combined) through that week.
+    // weekHasBeenPlayed (data.js) only means SOME game that week has a
+    // score — true the moment a single Thursday-night player records a
+    // stat. Results, records, and the median must wait for every matchup
+    // to actually be final, or a partially-live week gets scored as if
+    // everyone who hasn't played yet had scored zero.
+    function weekFullyPlayed(season, week) {
+      const matchups = season.matchups[week] || [];
+      if (!matchups.length) return false;
+      return matchups.every((m) => m.teamA.points > 0 && (!m.teamB || m.teamB.points > 0));
+    }
+
     function computeWeeklyRecords(season, throughWeek) {
       const running = new Map(season.teams.map((t) => [t.rosterId, { wins: 0, losses: 0, ties: 0 }]));
       const perWeek = new Map();
 
       for (let week = 1; week <= throughWeek; week++) {
-        if (!weekHasBeenPlayed(season, week)) continue;
+        if (!weekFullyPlayed(season, week)) continue;
         const matchups = season.matchups[week] || [];
         const median = weekMedian(season, week);
         const teamsData = {};
@@ -198,7 +209,7 @@
     async function applyLiveProjections(weekNum) {
       const requestId = ++liveProjRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      if (weekFullyPlayed(currentSeason, weekNum)) return;
       const liveProjections = await loadLiveWeeklyProjections(currentSeason, weekNum);
       if (requestId !== liveProjRequestId || !liveProjections) return;
 
@@ -230,7 +241,7 @@
     async function applyLiveScores(weekNum) {
       const requestId = ++liveScoresRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      if (weekFullyPlayed(currentSeason, weekNum)) return;
       const liveMatchups = await loadLiveMatchups(currentSeason.leagueId, weekNum);
       if (requestId !== liveScoresRequestId || !liveMatchups) return;
 
@@ -277,7 +288,7 @@
     async function applyLiveMedian(weekNum) {
       const requestId = ++liveMedianRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
-      if (weekHasBeenPlayed(currentSeason, weekNum)) return;
+      if (weekFullyPlayed(currentSeason, weekNum)) return;
       const [liveMatchups, liveProjections] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),
@@ -366,7 +377,12 @@
     function renderMatchup(season, m, week, wr) {
       const teamA = teamById(season, m.teamA.rosterId);
       const teamB = m.teamB ? teamById(season, m.teamB.rosterId) : null;
-      const played = weekHasBeenPlayed(season, week);
+      // Per-matchup, not per-week — weekHasBeenPlayed only tells us SOME
+      // game this week has a score; without this, every card on a
+      // partially-live week would render as "final" (static 0.00) the
+      // instant any other matchup got real data, even ones that haven't
+      // kicked off yet.
+      const played = m.teamA.points > 0 || (m.teamB && m.teamB.points > 0);
       const aWins = played && teamB && m.teamA.points > m.teamB.points;
       const bWins = played && teamB && m.teamB.points > m.teamA.points;
 

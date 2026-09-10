@@ -72,13 +72,41 @@
       return (currentSeason.leagueSettings?.playoffWeekStart ?? 15) - 1;
     }
 
+    // The next NFL week always after the standard fantasy convention:
+    // 12:00am the Tuesday right after the previous week's last game (so a
+    // Monday-night finish opens picks the very next morning). Computed
+    // from the real schedule rather than assuming every week ends on a
+    // Monday, in case a week's last game ever falls on a different day.
+    function nextTuesdayOnOrAfter(date) {
+      const d = new Date(date);
+      d.setHours(0, 0, 0, 0);
+      const diff = (2 - d.getDay() + 7) % 7; // 0=Sun..6=Sat, Tuesday=2
+      d.setDate(d.getDate() + diff);
+      return d;
+    }
+
+    async function weekUnlockDate(week) {
+      if (week <= 1) return null; // week 1 has no prior week to gate on
+      const schedule = await loadSchedule();
+      const prevWeekGames = schedule.filter((g) => g.week === week - 1);
+      if (!prevWeekGames.length) return null; // can't determine — fail open
+      const lastDateStr = prevWeekGames.reduce((max, g) => (g.date > max ? g.date : max), prevWeekGames[0].date);
+      const [y, m, d] = lastDateStr.split("-").map(Number);
+      return nextTuesdayOnOrAfter(new Date(y, m - 1, d + 1));
+    }
+
     // A new week's picks unlock once the previous week has actually been
-    // played — never further ahead than that, and never past the regular
-    // season (no Pick-Em on playoff weeks).
-    function unlockedThroughWeek() {
+    // played AND it's past that week's Tuesday-morning reveal — never
+    // further ahead than that, and never past the regular season (no
+    // Pick-Em on playoff weeks).
+    async function unlockedThroughWeek() {
       const played = latestWeekWithData(currentSeason);
       const next = played == null ? 1 : played + 1;
-      return Math.min(next, lastRegularWeek());
+      const candidate = Math.min(next, lastRegularWeek());
+      if (candidate <= 1) return candidate;
+      const unlockDate = await weekUnlockDate(candidate);
+      if (unlockDate && new Date() < unlockDate) return candidate - 1;
+      return candidate;
     }
 
     // ---------- kickoff lock ----------
@@ -231,7 +259,7 @@
     // ---------- weeks tab ----------
 
     async function renderWeeksTab(container) {
-      const maxWeek = unlockedThroughWeek();
+      const maxWeek = await unlockedThroughWeek();
       const weeks = [];
       for (let w = 1; w <= maxWeek; w++) weeks.push(w);
 
@@ -444,7 +472,7 @@
     // ---------- pool tab ----------
 
     async function renderPoolTab(container) {
-      const maxWeek = unlockedThroughWeek();
+      const maxWeek = await unlockedThroughWeek();
       const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
 
       const [pointsByOwner, submittedSnap] = await Promise.all([
