@@ -354,11 +354,80 @@
         });
       });
 
+      applyLiveCoverage(list, week, matchupInfo);
+
       if (locked) return;
 
       updateSubmitButtonState(container, matchupInfo);
 
       container.querySelector("#pickem-submit").addEventListener("click", () => submitPicks(container, week, matchupInfo));
+    }
+
+    // Once games actually start, tag whichever side is CURRENTLY covering
+    // the shown spread — live points for whoever's already played,
+    // projections for the rest, same optimal-lineup basis the spread
+    // itself is built on. Applies whether the week is locked or not; only
+    // skipped once the week is fully done (nothing "live" left to show).
+    async function applyLiveCoverage(list, week, matchupInfo) {
+      if (weekFullyPlayed(currentSeason, week)) return;
+      const [liveMatchups, liveProjections] = await Promise.all([
+        loadLiveMatchups(currentSeason.leagueId, week),
+        loadLiveWeeklyProjections(currentSeason, week),
+      ]);
+      if (!liveMatchups) return;
+
+      const livePlayerPoints = {};
+      liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
+
+      const blendedFor = (playerIds) => {
+        const out = {};
+        for (const pid of playerIds || []) {
+          const live = livePlayerPoints[pid];
+          out[pid] =
+            live > 0
+              ? live
+              : liveProjections
+              ? computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings)
+              : 0;
+        }
+        return out;
+      };
+
+      matchupInfo.forEach((info) => {
+        const { m, teamA, teamB, spread, favRosterId } = info;
+        // Neither side in THIS matchup has actually scored yet — leave it
+        // as a plain pregame projection instead of calling a "cover" based
+        // purely on projections, just because some other game has started.
+        const rosterHasLive = (ids) => (ids || []).some((pid) => livePlayerPoints[pid] > 0);
+        if (!rosterHasLive(m.teamA.players) && !rosterHasLive(m.teamB.players)) {
+          list.querySelector(`[data-matchup-id="${m.matchupId}"] .pickem-covering-tag`)?.remove();
+          return;
+        }
+        const totalA = computeOptimalProjectedLineup(
+          m.teamA.players,
+          blendedFor(m.teamA.players),
+          allPlayers,
+          currentSeason.rosterPositions
+        ).total;
+        const totalB = computeOptimalProjectedLineup(
+          m.teamB.players,
+          blendedFor(m.teamB.players),
+          allPlayers,
+          currentSeason.rosterPositions
+        ).total;
+        const favIsA = favRosterId === teamA.rosterId;
+        const actualMargin = favIsA ? totalA - totalB : totalB - totalA;
+        let coveringRosterId = null;
+        if (actualMargin > spread) coveringRosterId = favIsA ? teamA.rosterId : teamB.rosterId;
+        else if (actualMargin < spread) coveringRosterId = favIsA ? teamB.rosterId : teamA.rosterId;
+
+        list.querySelectorAll(`[data-matchup-id="${m.matchupId}"][data-pick-roster]`).forEach((el) => {
+          el.querySelector(".pickem-covering-tag")?.remove();
+        });
+        if (coveringRosterId == null) return;
+        const el = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${coveringRosterId}"]`);
+        if (el) el.insertAdjacentHTML("beforeend", `<div class="pickem-covering-tag">Currently Covering</div>`);
+      });
     }
 
     function updateSubmitButtonState(container, matchupInfo) {
