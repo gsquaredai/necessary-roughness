@@ -474,6 +474,54 @@ function latestWeekWithData(season) {
   return weeks.length ? weeks[weeks.length - 1] : null;
 }
 
+// weekHasBeenPlayed above only means SOME game that week has a score —
+// true the moment a single Thursday-night player records a stat. Anything
+// that grades or finalizes a week (Pick-Em points, weekly records) needs
+// to wait until every matchup actually has real data.
+function weekFullyPlayed(season, week) {
+  const matchups = season.matchups[week] || [];
+  if (!matchups.length) return false;
+  return matchups.every((m) => m.teamA.points > 0 && (!m.teamB || m.teamB.points > 0));
+}
+
+function nextTuesdayOnOrAfter(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  const diff = (2 - d.getDay() + 7) % 7; // 0=Sun..6=Sat, Tuesday=2
+  d.setDate(d.getDate() + diff);
+  return d;
+}
+
+// 12:00am the Tuesday after `week`'s last real game — the standard
+// fantasy "week officially over" boundary (also when the following
+// week's picks unlock). Computed from the real schedule rather than
+// assumed to always land on Monday. Null if that week's schedule isn't
+// known yet.
+async function weekCloseoutDate(week) {
+  const schedule = await loadSchedule();
+  const weekGames = schedule.filter((g) => g.week === week);
+  if (!weekGames.length) return null;
+  const lastDateStr = weekGames.reduce((max, g) => (g.date > max ? g.date : max), weekGames[0].date);
+  const [y, m, d] = lastDateStr.split("-").map(Number);
+  return nextTuesdayOnOrAfter(new Date(y, m - 1, d + 1));
+}
+
+// The latest week that's BOTH fully played AND past its Tuesday
+// close-out — officially over for grading purposes, not just "has some
+// data." Weeks are sequential, so this stops at the first week that
+// isn't closed yet.
+async function latestClosedWeek(season) {
+  const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
+  let latest = null;
+  for (let week = 1; week <= lastRegWeek; week++) {
+    if (!weekFullyPlayed(season, week)) break;
+    const closeout = await weekCloseoutDate(week);
+    if (closeout && new Date() < closeout) break;
+    latest = week;
+  }
+  return latest;
+}
+
 function setActiveNav() {
   const page = document.body.dataset.page;
   document.querySelectorAll("nav.main-nav a").forEach((a) => {
@@ -1241,16 +1289,17 @@ function applyLockedSpreads(matchupInfo, lockedData) {
   return matchupInfo;
 }
 
-// All-time Pick-Em pool points per ownerId, graded through the last
-// actually-played week (an unplayed week has no real result to grade
-// against yet). Fails closed (returns an empty map) if Firebase isn't
-// reachable.
+// All-time Pick-Em pool points per ownerId, graded through the last week
+// that's officially over — fully played AND past its Tuesday close-out
+// (data.json can otherwise have partial results the moment one game this
+// week has started, which isn't a real result to grade against yet).
+// Fails closed (returns an empty map) if Firebase isn't reachable.
 async function computePickEmPoints(season, players) {
   const points = new Map();
   try {
     await waitForFirebaseAuth();
     const snap = await db.collection("picks").get();
-    const gradedThroughWeek = latestWeekWithData(season) ?? 0;
+    const gradedThroughWeek = (await latestClosedWeek(season)) ?? 0;
     const lastRegWeek = (season.leagueSettings?.playoffWeekStart ?? 15) - 1;
 
     // Preload each graded week's spread info once (not per pick doc),

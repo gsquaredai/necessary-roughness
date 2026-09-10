@@ -114,18 +114,12 @@
 
     // Per team, per played regular-season week: did they win their
     // matchup, did they beat the median, and their cumulative record
-    // (matchup + median results combined) through that week.
-    // weekHasBeenPlayed (data.js) only means SOME game that week has a
-    // score — true the moment a single Thursday-night player records a
-    // stat. Results, records, and the median must wait for every matchup
-    // to actually be final, or a partially-live week gets scored as if
-    // everyone who hasn't played yet had scored zero.
-    function weekFullyPlayed(season, week) {
-      const matchups = season.matchups[week] || [];
-      if (!matchups.length) return false;
-      return matchups.every((m) => m.teamA.points > 0 && (!m.teamB || m.teamB.points > 0));
-    }
-
+    // (matchup + median results combined) through that week. Uses
+    // weekFullyPlayed (data.js) rather than weekHasBeenPlayed — the latter
+    // only means SOME game that week has a score (true the moment a
+    // single Thursday-night player records a stat), which would score a
+    // partially-live week as if everyone who hasn't played yet had scored
+    // zero.
     function computeWeeklyRecords(season, throughWeek) {
       const running = new Map(season.teams.map((t) => [t.rosterId, { wins: 0, losses: 0, ties: 0 }]));
       const perWeek = new Map();
