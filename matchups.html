@@ -196,6 +196,19 @@
       applyLiveProjections(weekNum);
       applyLiveScores(weekNum);
       applyLiveMedian(weekNum);
+      applyWinProbability(weekNum);
+    }
+
+    // A starting lineup's current best-guess total: live points for
+    // whoever's already played, projection for the rest. Shared by
+    // applyLiveScores (the "Proj" caption) and applyWinProbability, so the
+    // two always agree instead of one showing a frozen pregame number.
+    function blendedStartersTotal(starters, livePlayerPoints, liveProjections) {
+      return (starters || []).reduce((sum, pid) => {
+        const live = livePlayerPoints[pid];
+        if (live > 0) return sum + live;
+        return sum + computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings);
+      }, 0);
     }
 
     // The "Proj" numbers rendered above are the static, data.json-snapshot
@@ -255,13 +268,13 @@
       // Still show a projected total alongside the live score, same basis
       // as applyLiveProjections — otherwise it disappears the moment a
       // matchup goes live, right when it's most useful for comparison.
-      const totalFor = (starters) =>
-        liveProjections
-          ? (starters || []).reduce(
-              (sum, pid) => sum + computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings),
-              0
-            )
-          : null;
+      // Blended (live points for whoever's already played, projection for
+      // the rest) rather than the frozen pregame projection, so it stays
+      // an accurate "expected final" and always agrees with the win
+      // probability below, which uses the same blend.
+      const livePlayerPoints = {};
+      liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
+      const totalFor = (starters) => (liveProjections ? blendedStartersTotal(starters, livePlayerPoints, liveProjections) : null);
 
       const matchups = currentSeason.matchups[weekNum] || [];
       document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
@@ -335,6 +348,53 @@
       if (!banner) return;
       banner.hidden = false;
       banner.innerHTML = `League Median <span class="live-tag">(Live Projection)</span>: <strong>${fmtPts(median)}</strong>`;
+    }
+
+    // Projected win probability for each side — each team's current
+    // best-guess total (live points where a player's already gone, their
+    // projection otherwise), run through a normal-distribution win model
+    // (winProbability, data.js). Runs last so it appends after
+    // applyLiveScores has already replaced .score-block's contents, and
+    // recomputes on every load so it tracks real results as they land,
+    // same as everything else live on this page. Once the week's actually
+    // decided there's nothing left to project, so it's skipped entirely.
+    let winProbRequestId = 0;
+    async function applyWinProbability(weekNum) {
+      const requestId = ++winProbRequestId;
+      if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
+      if (weekNum <= closedThroughWeek) return;
+      const [liveMatchups, liveProjections] = await Promise.all([
+        loadLiveMatchups(currentSeason.leagueId, weekNum),
+        loadLiveWeeklyProjections(currentSeason, weekNum),
+      ]);
+      if (requestId !== winProbRequestId || !liveProjections) return;
+
+      const livePlayerPoints = {};
+      if (liveMatchups) liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
+
+      const matchups = currentSeason.matchups[weekNum] || [];
+      document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
+        const m = matchups.find((x) => String(x.matchupId) === card.dataset.matchupId);
+        if (!m || !m.teamB) return; // no win probability against a bye
+        const totalA = blendedStartersTotal(m.teamA.starters, livePlayerPoints, liveProjections);
+        const totalB = blendedStartersTotal(m.teamB.starters, livePlayerPoints, liveProjections);
+        const winA = winProbability(totalA, totalB);
+        const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
+        setWinProbTag(blockA, winA);
+        setWinProbTag(blockB, 1 - winA);
+      });
+    }
+
+    function setWinProbTag(block, prob) {
+      const scoreBlock = block?.querySelector(".score-block");
+      if (!scoreBlock) return;
+      let el = scoreBlock.querySelector(".win-prob");
+      if (!el) {
+        el = document.createElement("div");
+        el.className = "win-prob";
+        scoreBlock.appendChild(el);
+      }
+      el.textContent = `${Math.round(prob * 100)}% Win`;
     }
 
     // Pick-Em only ever exists for the site's current season's regular
