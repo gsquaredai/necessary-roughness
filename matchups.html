@@ -242,13 +242,26 @@
       const requestId = ++liveScoresRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
       if (weekFullyPlayed(currentSeason, weekNum)) return;
-      const liveMatchups = await loadLiveMatchups(currentSeason.leagueId, weekNum);
+      const [liveMatchups, liveProjections] = await Promise.all([
+        loadLiveMatchups(currentSeason.leagueId, weekNum),
+        loadLiveWeeklyProjections(currentSeason, weekNum),
+      ]);
       if (requestId !== liveScoresRequestId || !liveMatchups) return;
 
       const pointsByRoster = new Map();
       liveMatchups.forEach((r) => {
         if (r.roster_id != null) pointsByRoster.set(r.roster_id, r.points ?? 0);
       });
+      // Still show a projected total alongside the live score, same basis
+      // as applyLiveProjections — otherwise it disappears the moment a
+      // matchup goes live, right when it's most useful for comparison.
+      const totalFor = (starters) =>
+        liveProjections
+          ? (starters || []).reduce(
+              (sum, pid) => sum + computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings),
+              0
+            )
+          : null;
 
       const matchups = currentSeason.matchups[weekNum] || [];
       document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
@@ -263,15 +276,17 @@
         if (!(ptsA > 0) && !(ptsB > 0)) return;
         const winnerA = ptsB != null && ptsA > ptsB;
         const winnerB = ptsB != null && ptsB > ptsA;
+        const projA = totalFor(m.teamA.starters);
+        const projB = m.teamB ? totalFor(m.teamB.starters) : null;
         const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
         const scoreA = blockA?.querySelector(".score-block");
         if (scoreA) {
-          scoreA.innerHTML = `<div class="points${winnerA ? " winner" : ""}">${fmtPts(ptsA)}</div><div class="proj-points live-tag">Live</div>`;
+          scoreA.innerHTML = `<div class="points${winnerA ? " winner" : ""}">${fmtPts(ptsA)}</div><div class="proj-points live-tag">Live${projA != null ? ` &middot; Proj ${fmtPts(projA)}` : ""}</div>`;
         }
         if (m.teamB && ptsB != null) {
           const scoreB = blockB?.querySelector(".score-block");
           if (scoreB) {
-            scoreB.innerHTML = `<div class="points${winnerB ? " winner" : ""}">${fmtPts(ptsB)}</div><div class="proj-points live-tag">Live</div>`;
+            scoreB.innerHTML = `<div class="points${winnerB ? " winner" : ""}">${fmtPts(ptsB)}</div><div class="proj-points live-tag">Live${projB != null ? ` &middot; Proj ${fmtPts(projB)}` : ""}</div>`;
           }
         }
       });
