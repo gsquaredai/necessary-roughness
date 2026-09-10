@@ -1,5 +1,37 @@
 [
   {
+    "id": "1403588992229711872",
+    "type": "free_agent",
+    "date": "2026-09-10T01:36:42.471Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "the left one’s bigger",
+        "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+        "ownerId": "996557160589000704",
+        "rosterId": 8
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "9511",
+        "name": "Keaton Mitchell",
+        "position": "RB",
+        "team": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1403523554376511488",
     "type": "free_agent",
     "date": "2026-09-09T21:16:40.871Z",
