@@ -648,6 +648,15 @@ th.num {
   margin-top: 2px;
 }
 
+.pickem-currently-covering {
+  font-size: 0.5rem;
+  color: var(--win);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
 .pickem-proj {
   font-size: 0.6rem;
   color: var(--text-dim);

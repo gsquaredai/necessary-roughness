@@ -418,6 +418,21 @@
         const elB = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamB.rosterId}"]`);
         setCoverProbTag(elA, pA);
         setCoverProbTag(elB, pB);
+
+        // "Currently Covering" only once this matchup actually has live
+        // data — pregame the margin is (by construction) exactly the
+        // spread itself, so calling a side "covering" would just be
+        // noise from rounding, not a real signal.
+        const rosterHasLive = (ids) => (ids || []).some((pid) => livePlayerPoints[pid] > 0);
+        const isLive = rosterHasLive(m.teamA.players) || rosterHasLive(m.teamB.players);
+        elA?.querySelector(".pickem-currently-covering")?.remove();
+        elB?.querySelector(".pickem-currently-covering")?.remove();
+        if (!isLive) return;
+        const actualMargin = favIsA ? totalA - totalB : totalB - totalA;
+        let coveringEl = null;
+        if (actualMargin > spread) coveringEl = favIsA ? elA : elB;
+        else if (actualMargin < spread) coveringEl = favIsA ? elB : elA;
+        coveringEl?.insertAdjacentHTML("beforeend", `<div class="pickem-currently-covering">Currently Covering</div>`);
       });
     }
 
