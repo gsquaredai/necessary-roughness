@@ -1,5 +1,49 @@
 [
   {
+    "id": "1404149244763316224",
+    "type": "free_agent",
+    "date": "2026-09-11T14:42:57.085Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11647",
+        "name": "Kimani Vidal",
+        "position": "RB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "12467",
+        "name": "Jordan James",
+        "position": "RB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1403749086582022144",
     "type": "free_agent",
     "date": "2026-09-10T12:12:51.940Z",
