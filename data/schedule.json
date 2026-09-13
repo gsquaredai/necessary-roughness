@@ -1,6 +1,6 @@
 [
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-13",
     "home": "CAR",
     "week": 1,
@@ -8,7 +8,7 @@
     "away": "CHI"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "CIN",
     "week": 1,
@@ -16,7 +16,7 @@
     "away": "TB"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-13",
     "home": "DET",
     "week": 1,
@@ -24,7 +24,7 @@
     "away": "NO"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "HOU",
     "week": 1,
@@ -32,7 +32,7 @@
     "away": "BUF"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "IND",
     "week": 1,
@@ -40,7 +40,7 @@
     "away": "BAL"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "JAX",
     "week": 1,
@@ -88,7 +88,7 @@
     "away": "WAS"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "PIT",
     "week": 1,
@@ -120,7 +120,7 @@
     "away": "SF"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-13",
     "home": "TEN",
     "week": 1,
