@@ -542,14 +542,6 @@ th.num {
   font-weight: 700;
 }
 
-.win-prob {
-  font-size: 0.55rem;
-  color: var(--accent-2);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-top: 4px;
-}
-
 /* pick-em */
 
 .link-btn {
@@ -637,15 +629,6 @@ th.num {
 
 .pickem-side.selected .pickem-line {
   color: var(--win);
-}
-
-.pickem-covering-tag {
-  font-size: 0.5rem;
-  color: var(--accent-2);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-top: 2px;
 }
 
 .pickem-currently-covering {

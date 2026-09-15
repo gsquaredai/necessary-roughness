@@ -67,15 +67,15 @@
     let currentPicks = {};
 
     // Sleeper's own CDN only holds this data for 60s, but nothing here ever
-    // asked again after the initial render — so cover %/Proj just froze at
-    // whatever it was when the page opened. Re-run on an interval for
-    // whichever week is currently on screen.
+    // asked again after the initial render — so the "Currently Covering"
+    // tag/Proj just froze at whatever it was when the page opened. Re-run
+    // on an interval for whichever week is currently on screen.
     const LIVE_REFRESH_INTERVAL_MS = 30 * 1000;
-    let coverProbTimer = null;
+    let liveCoverageTimer = null;
 
-    function stopCoverProbRefresh() {
-      if (coverProbTimer) clearInterval(coverProbTimer);
-      coverProbTimer = null;
+    function stopLiveCoverageRefresh() {
+      if (liveCoverageTimer) clearInterval(liveCoverageTimer);
+      liveCoverageTimer = null;
     }
 
     // ---------- week gating ----------
@@ -366,17 +366,17 @@
         });
       });
 
-      applyCoverProbability(list, week, matchupInfo);
-      stopCoverProbRefresh();
-      coverProbTimer = setInterval(() => {
+      applyLiveCoverage(list, week, matchupInfo);
+      stopLiveCoverageRefresh();
+      liveCoverageTimer = setInterval(() => {
         // The user's navigated elsewhere since this render (switched
         // weeks/tabs, submitted picks and re-rendered, ...) — this list
         // isn't on screen anymore, so stop patching it.
         if (!document.contains(list)) {
-          stopCoverProbRefresh();
+          stopLiveCoverageRefresh();
           return;
         }
-        applyCoverProbability(list, week, matchupInfo);
+        applyLiveCoverage(list, week, matchupInfo);
       }, LIVE_REFRESH_INTERVAL_MS);
 
       if (locked) return;
@@ -386,17 +386,15 @@
       container.querySelector("#pickem-submit").addEventListener("click", () => submitPicks(container, week, matchupInfo));
     }
 
-    // A live, ever-updating percent chance each side covers the shown
-    // spread — same normal-distribution model as the Matchups page's win
-    // probability (coverProbability/data.js), just measured against the
-    // spread instead of zero. Blends live points for whoever's already
-    // played with projections for the rest, on the same optimal-lineup
-    // basis the spread itself is built on. Pregame this comes out ~50/50
-    // for both sides by construction (the spread was built from these same
-    // totals); it only moves once real results start landing. Applies
-    // whether the week is locked or not — only skipped once the week's
-    // fully done, when there's nothing left to project.
-    async function applyCoverProbability(list, week, matchupInfo) {
+    // Tags whichever side is CURRENTLY covering the shown spread, using
+    // each side's live-blended total (blendedPlayerPoints, data.js — real
+    // points for whoever's already played, projection for the rest) on
+    // the same optimal-lineup basis the spread itself is built on. Only
+    // shown once the matchup actually has live data — pregame the margin
+    // is exactly the spread by construction, so there's no real signal
+    // yet. Applies whether the week is locked or not — only skipped once
+    // the week's fully done.
+    async function applyLiveCoverage(list, week, matchupInfo) {
       // NOT weekFullyPlayed directly — a team can already show a nonzero,
       // plausible-looking total while one of its players is still actively
       // playing (most of the roster's games are already final, only
@@ -443,23 +441,15 @@
           currentSeason.rosterPositions
         ).total;
         const favIsA = favRosterId === teamA.rosterId;
-        const favTotal = favIsA ? totalA : totalB;
-        const dogTotal = favIsA ? totalB : totalA;
-        const pFavCovers = coverProbability(favTotal, dogTotal, spread);
-        const pA = favIsA ? pFavCovers : 1 - pFavCovers;
-        const pB = favIsA ? 1 - pFavCovers : pFavCovers;
 
         const elA = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamA.rosterId}"]`);
         const elB = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamB.rosterId}"]`);
-        // Keep the displayed "Proj" in step with the totals the cover %
-        // is actually computed from — otherwise a refresh could show a
-        // frozen Proj number next to a percentage that's already moved on.
+        // Keep the displayed "Proj" in step with the totals "currently
+        // covering" is actually computed from.
         const projElA = elA?.querySelector(".pickem-proj");
         if (projElA) projElA.textContent = `Proj ${fmtPts(totalA)}`;
         const projElB = elB?.querySelector(".pickem-proj");
         if (projElB) projElB.textContent = `Proj ${fmtPts(totalB)}`;
-        setCoverProbTag(elA, pA);
-        setCoverProbTag(elB, pB);
 
         // "Currently Covering" only once this matchup actually has live
         // data — pregame the margin is (by construction) exactly the
@@ -476,17 +466,6 @@
         else if (actualMargin < spread) coveringEl = favIsA ? elB : elA;
         coveringEl?.insertAdjacentHTML("beforeend", `<div class="pickem-currently-covering">Currently Covering</div>`);
       });
-    }
-
-    function setCoverProbTag(el, prob) {
-      if (!el) return;
-      let tag = el.querySelector(".pickem-covering-tag");
-      if (!tag) {
-        tag = document.createElement("div");
-        tag.className = "pickem-covering-tag";
-        el.appendChild(tag);
-      }
-      tag.textContent = `${Math.round(prob * 100)}% to Cover`;
     }
 
     function updateSubmitButtonState(container, matchupInfo) {
