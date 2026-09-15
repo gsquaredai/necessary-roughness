@@ -709,7 +709,19 @@
 
       const picksByOwner = new Map();
       picksSnap.docs.forEach((d) => picksByOwner.set(d.data().ownerId, d.data().picks || {}));
-      const pointValue = week === 1 || week === lastRegularWeek() ? 2 : 1;
+      const isRivalryWeek = week === 1 || week === lastRegularWeek();
+      const pointValue = isRivalryWeek ? 2 : 1;
+
+      // Rivalry Week started in 2025 — every matchup that week is a
+      // designated rivalry, so its name/color replaces the plain "Team A
+      // vs Team B" label, same theming as the matchup cards themselves.
+      const rivalryByMatchupId = new Map();
+      if (isRivalryWeek && parseInt(currentSeason.season, 10) >= 2025) {
+        matchupInfo.forEach((info) => {
+          const rivalry = findRivalry(rivalries, info.teamA.ownerId, info.teamB.ownerId);
+          if (rivalry) rivalryByMatchupId.set(info.m.matchupId, rivalry);
+        });
+      }
 
       const teamsWithPoints = currentSeason.teams.map((t) => {
         const picks = picksByOwner.get(t.ownerId) || null;
@@ -731,7 +743,10 @@
           const matchupRows = matchupInfo
             .map((info) => {
               const { m, teamA, teamB } = info;
-              const label = `${truncName(teamA.teamName)} vs ${truncName(teamB.teamName)}`;
+              const rivalry = rivalryByMatchupId.get(m.matchupId);
+              const label = rivalry
+                ? `<span${rivalry.color ? ` style="color: ${rivalry.color};"` : ""}>${rivalry.name}</span>`
+                : `${truncName(teamA.teamName)} vs ${truncName(teamB.teamName)}`;
               const pickedRosterId = picks ? picks[m.matchupId] : null;
               const pickedTeam = pickedRosterId != null ? teamById(currentSeason, pickedRosterId) : null;
               let valueHTML = pickedTeam ? truncName(pickedTeam.teamName) : "&mdash;";
@@ -768,7 +783,19 @@
         })
         .join("");
 
-      container.innerHTML = `<div class="team-box-list">${cardsHTML}</div>`;
+      container.innerHTML = `
+        ${
+          isRivalryWeek
+            ? `
+              <div class="info-callout">
+                <span class="info-callout-label">Rivalry Week</span>
+                Correct spread picks counted double this week — 2 points each instead of 1.
+              </div>
+            `
+            : ""
+        }
+        <div class="team-box-list">${cardsHTML}</div>
+      `;
     }
 
     // ---------- init ----------
