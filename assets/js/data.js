@@ -379,6 +379,32 @@ const TROPHY_SVG = `
   </svg>
 `;
 
+const CHECK_SVG = `
+  <svg class="pixel-result-icon" viewBox="0 0 7 5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" shape-rendering="crispEdges">
+    <rect x="6" y="0" width="1" height="1"/>
+    <rect x="5" y="1" width="1" height="1"/>
+    <rect x="0" y="2" width="1" height="1"/>
+    <rect x="4" y="2" width="1" height="1"/>
+    <rect x="1" y="3" width="1" height="1"/>
+    <rect x="3" y="3" width="1" height="1"/>
+    <rect x="2" y="4" width="1" height="1"/>
+  </svg>
+`;
+
+const X_SVG = `
+  <svg class="pixel-result-icon" viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" shape-rendering="crispEdges">
+    <rect x="0" y="0" width="1" height="1"/>
+    <rect x="4" y="0" width="1" height="1"/>
+    <rect x="1" y="1" width="1" height="1"/>
+    <rect x="3" y="1" width="1" height="1"/>
+    <rect x="2" y="2" width="1" height="1"/>
+    <rect x="1" y="3" width="1" height="1"/>
+    <rect x="3" y="3" width="1" height="1"/>
+    <rect x="0" y="4" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+  </svg>
+`;
+
 const FOOTBALL_SVG = `
   <svg class="football-icon" viewBox="0 0 9 7" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
     <g fill="#8b5a2b">

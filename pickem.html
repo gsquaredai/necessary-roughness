@@ -595,6 +595,10 @@
     async function renderPoolTab(container) {
       const maxWeek = await unlockedThroughWeek();
       const gradedThroughWeek = latestWeekWithData(currentSeason) ?? 0;
+      // Week By Week only makes sense for a week that's actually closed —
+      // the current, still-open week has no real result to show yet (it's
+      // already covered by the "Submitted" column above).
+      const closedThroughWeek = (await latestClosedWeek(currentSeason)) ?? 0;
 
       const [pointsByOwner, submittedSnap] = await Promise.all([
         computePickEmPoints(currentSeason, allPlayers),
@@ -660,17 +664,25 @@
         <div class="standing-cards">${cards}</div>
 
         <div class="info-section-title" style="margin-top: 24px;">Week By Week</div>
-        <div class="controls">
-          <select id="pool-week-select">${Array.from({ length: maxWeek }, (_, i) => maxWeek - i)
-            .map((w) => `<option value="${w}">Week ${w}</option>`)
-            .join("")}</select>
-        </div>
-        <div id="pool-week-detail"></div>
+        ${
+          closedThroughWeek > 0
+            ? `
+              <div class="controls">
+                <select id="pool-week-select">${Array.from({ length: closedThroughWeek }, (_, i) => closedThroughWeek - i)
+                  .map((w) => `<option value="${w}">Week ${w}</option>`)
+                  .join("")}</select>
+              </div>
+              <div id="pool-week-detail"></div>
+            `
+            : `<div class="empty-state">No completed weeks yet.</div>`
+        }
       `;
 
-      const poolWeekSelect = container.querySelector("#pool-week-select");
-      poolWeekSelect.addEventListener("change", () => renderPoolWeekDetail(Number(poolWeekSelect.value)));
-      await renderPoolWeekDetail(maxWeek);
+      if (closedThroughWeek > 0) {
+        const poolWeekSelect = container.querySelector("#pool-week-select");
+        poolWeekSelect.addEventListener("change", () => renderPoolWeekDetail(Number(poolWeekSelect.value)));
+        await renderPoolWeekDetail(closedThroughWeek);
+      }
     }
 
     // Everyone's picks for one specific week — same vertical stacked-card
@@ -685,16 +697,15 @@
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
 
       const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
-      const [picksSnap, closedThroughWeek] = await Promise.all([
-        db.collection("picks").where("week", "==", week).get(),
-        latestClosedWeek(currentSeason),
-      ]);
-      const closed = week <= (closedThroughWeek ?? 0);
+      const picksSnap = await db.collection("picks").where("week", "==", week).get();
 
+      // renderPoolWeekDetail only ever runs for an already-closed week (see
+      // renderPoolTab's week-select, capped at closedThroughWeek) — so the
+      // spread is always locked and there's always a real result to grade.
       const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
-      if (closed) applyLockedSpreads(matchupInfo, await loadLockedSpreads(currentSeason, week));
+      applyLockedSpreads(matchupInfo, await loadLockedSpreads(currentSeason, week));
       const coveringByMatchupId = new Map();
-      if (closed) matchupInfo.forEach((info) => coveringByMatchupId.set(info.m.matchupId, coveringRosterIdFor(info)));
+      matchupInfo.forEach((info) => coveringByMatchupId.set(info.m.matchupId, coveringRosterIdFor(info)));
 
       const picksByOwner = new Map();
       picksSnap.docs.forEach((d) => picksByOwner.set(d.data().ownerId, d.data().picks || {}));
@@ -703,7 +714,7 @@
       const teamsWithPoints = currentSeason.teams.map((t) => {
         const picks = picksByOwner.get(t.ownerId) || null;
         let weekPoints = 0;
-        if (closed && picks) {
+        if (picks) {
           matchupInfo.forEach((info) => {
             const pickedRosterId = picks[info.m.matchupId];
             if (pickedRosterId != null && coveringByMatchupId.get(info.m.matchupId) === pickedRosterId) {
@@ -713,9 +724,7 @@
         }
         return { team: t, picks, weekPoints };
       });
-      teamsWithPoints.sort((a, b) =>
-        closed ? b.weekPoints - a.weekPoints : a.team.teamName.localeCompare(b.team.teamName)
-      );
+      teamsWithPoints.sort((a, b) => b.weekPoints - a.weekPoints);
 
       const cardsHTML = teamsWithPoints
         .map(({ team, picks, weekPoints }) => {
@@ -726,12 +735,12 @@
               const pickedRosterId = picks ? picks[m.matchupId] : null;
               const pickedTeam = pickedRosterId != null ? teamById(currentSeason, pickedRosterId) : null;
               let valueHTML = pickedTeam ? truncName(pickedTeam.teamName) : "&mdash;";
-              if (closed && pickedRosterId != null) {
+              if (pickedRosterId != null) {
                 const covering = coveringByMatchupId.get(m.matchupId);
                 if (covering != null) {
                   valueHTML += covering === pickedRosterId
-                    ? ` <span class="pickem-result-correct">&#10003;</span>`
-                    : ` <span class="pickem-result-incorrect">&#10007;</span>`;
+                    ? ` <span class="pickem-result-correct">${CHECK_SVG}</span>`
+                    : ` <span class="pickem-result-incorrect">${X_SVG}</span>`;
                 }
               }
               return `
@@ -742,8 +751,6 @@
               `;
             })
             .join("");
-          const headlineLabel = closed ? "Points This Week" : "Submitted";
-          const headlineValue = closed ? weekPoints : picks ? "&#10003;" : "&mdash;";
           return `
             <div class="standing-card">
               <div class="standing-card-top">
@@ -751,8 +758,8 @@
               </div>
               <div class="standing-card-stats">
                 <div class="standing-card-stat standing-card-stat-full">
-                  <span class="standing-card-stat-label">${headlineLabel}</span>
-                  <span class="standing-card-stat-value">${headlineValue}</span>
+                  <span class="standing-card-stat-label">Points This Week</span>
+                  <span class="standing-card-stat-value">${weekPoints}</span>
                 </div>
                 ${matchupRows}
               </div>

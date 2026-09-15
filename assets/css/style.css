@@ -640,14 +640,19 @@ th.num {
   margin-top: 2px;
 }
 
+.pixel-result-icon {
+  width: 11px;
+  height: 11px;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
 .pickem-result-correct {
   color: var(--win);
-  font-weight: 700;
 }
 
 .pickem-result-incorrect {
   color: var(--loss);
-  font-weight: 700;
 }
 
 .pickem-proj {
