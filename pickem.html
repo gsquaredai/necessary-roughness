@@ -287,11 +287,13 @@
 
     async function renderWeekBody(container, week) {
       container.innerHTML = `<div class="empty-state">Loading...</div>`;
-      const [existing, counts, locked] = await Promise.all([
+      const [existing, counts, locked, closedThroughWeek] = await Promise.all([
         identity ? loadPicksDoc(identity.ownerId, week) : null,
         loadPickCounts(week),
         isWeekLocked(week),
+        latestClosedWeek(currentSeason),
       ]);
+      const closed = week <= (closedThroughWeek ?? 0);
       currentPicks = existing && existing.picks ? { ...existing.picks } : {};
 
       const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
@@ -327,7 +329,14 @@
             : ""
         }
         ${
-          locked
+          closed
+            ? `
+              <div class="info-callout pickem-locked-callout">
+                <span class="info-callout-label">Week Complete</span>
+                Week ${week} is done and graded — here's how each matchup turned out, and which side you picked.
+              </div>
+            `
+            : locked
             ? `
               <div class="info-callout pickem-locked-callout">
                 <span class="info-callout-label">Picks Locked</span>
@@ -337,7 +346,7 @@
             `
             : ""
         }
-        <div class="draft-list${locked ? " pickem-locked" : ""}" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts)).join("")}</div>
+        <div class="draft-list${locked ? " pickem-locked" : ""}" id="pickem-matchups">${matchupInfo.map((info) => pickemMatchupCardHTML(info, week, counts, closed)).join("")}</div>
         <button type="button" id="pickem-submit" class="btn-primary" style="margin-top: 16px;"${locked ? " disabled" : ""}>${
           locked ? "Picks Locked" : existing ? "Update Picks" : "Submit Picks"
         }</button>
@@ -475,7 +484,7 @@
       btn.disabled = !allPicked;
     }
 
-    function pickemMatchupCardHTML(info, week, counts) {
+    function pickemMatchupCardHTML(info, week, counts, closed) {
       const { m, teamA, teamB, totalA, totalB, spread, favRosterId } = info;
       const favA = favRosterId === teamA.rosterId;
       const lineA = spread === 0 ? "PICK'EM" : favA ? `-${spread.toFixed(1)}` : `+${spread.toFixed(1)}`;
@@ -485,6 +494,21 @@
       const matchupCounts = counts ? counts[m.matchupId] : null;
       const countA = matchupCounts ? matchupCounts[teamA.rosterId] || 0 : null;
       const countB = matchupCounts ? matchupCounts[teamB.rosterId] || 0 : null;
+
+      // Once the week's officially closed, show the real final score
+      // instead of the (now moot) projection, and who actually covered
+      // the locked spread — same grading math computePickEmPoints uses,
+      // just against real final points instead of blended live ones.
+      let coveringRosterId = null;
+      if (closed) {
+        const actualMargin = favA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
+        if (actualMargin > spread) coveringRosterId = favA ? teamA.rosterId : teamB.rosterId;
+        else if (actualMargin < spread) coveringRosterId = favA ? teamB.rosterId : teamA.rosterId;
+      }
+      const pointsLabelA = closed ? fmtPts(m.teamA.points) : `Proj ${fmtPts(totalA)}`;
+      const pointsLabelB = closed ? fmtPts(m.teamB.points) : `Proj ${fmtPts(totalB)}`;
+      const coveredTagA = closed && coveringRosterId === teamA.rosterId ? `<div class="pickem-currently-covering">Covered</div>` : "";
+      const coveredTagB = closed && coveringRosterId === teamB.rosterId ? `<div class="pickem-currently-covering">Covered</div>` : "";
 
       // Same rivalry theming as the Matchups page — Week 1 and the last
       // regular-season week only, and only for 2025+ (when Rivalry Week
@@ -501,19 +525,21 @@
           <div class="pickem-card-row">
             <div class="pickem-side${pickedA ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamA.rosterId}">
               ${teamCellHTML(teamA)}
-              <div class="pickem-proj">Proj ${fmtPts(totalA)}</div>
+              <div class="pickem-proj">${pointsLabelA}</div>
               <div class="pickem-line">${lineA}</div>
+              ${coveredTagA}
               ${countA != null ? `<div class="pick-count">${countA} picked</div>` : ""}
             </div>
             <div class="pickem-vs">vs</div>
             <div class="pickem-side${pickedB ? " selected" : ""}" data-matchup-id="${m.matchupId}" data-pick-roster="${teamB.rosterId}">
               ${teamCellHTML(teamB)}
-              <div class="pickem-proj">Proj ${fmtPts(totalB)}</div>
+              <div class="pickem-proj">${pointsLabelB}</div>
               <div class="pickem-line">${lineB}</div>
+              ${coveredTagB}
               ${countB != null ? `<div class="pick-count">${countB} picked</div>` : ""}
             </div>
           </div>
-          <button type="button" class="pickem-expand-btn" data-view-rosters data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}">View Rosters &amp; Projections</button>
+          <button type="button" class="pickem-expand-btn" data-view-rosters data-t1="${teamA.rosterId}" data-t2="${teamB.rosterId}">View Rosters &amp; ${closed ? "Scores" : "Projections"}</button>
         </div>
       `;
     }
