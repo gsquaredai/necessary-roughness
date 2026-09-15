@@ -753,9 +753,12 @@
               if (pickedRosterId != null) {
                 const covering = coveringByMatchupId.get(m.matchupId);
                 if (covering != null) {
-                  valueHTML += covering === pickedRosterId
+                  const correct = covering === pickedRosterId;
+                  valueHTML += correct
                     ? ` <span class="pickem-result-correct">${CHECK_SVG}</span>`
                     : ` <span class="pickem-result-incorrect">${X_SVG}</span>`;
+                  const earned = correct ? pointValue : 0;
+                  valueHTML += ` <span class="pickem-points-delta ${correct ? "pickem-result-correct" : "pickem-result-incorrect"}">+${earned}</span>`;
                 }
               }
               return `

@@ -655,6 +655,12 @@ th.num {
   color: var(--loss);
 }
 
+.pickem-points-delta {
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
 .pickem-proj {
   font-size: 0.6rem;
   color: var(--text-dim);
