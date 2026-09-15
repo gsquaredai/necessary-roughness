@@ -374,7 +374,14 @@
     // whether the week is locked or not — only skipped once the week's
     // fully done, when there's nothing left to project.
     async function applyCoverProbability(list, week, matchupInfo) {
-      if (weekFullyPlayed(currentSeason, week)) return;
+      // NOT weekFullyPlayed directly — a team can already show a nonzero,
+      // plausible-looking total while one of its players is still actively
+      // playing (most of the roster's games are already final, only
+      // Monday night isn't), so that check alone goes true well before the
+      // week is really over. latestClosedWeek also requires being past the
+      // week's actual Tuesday close-out.
+      const closed = (await latestClosedWeek(currentSeason)) ?? 0;
+      if (week <= closed) return;
       const [liveMatchups, liveProjections] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, week),
         loadLiveWeeklyProjections(currentSeason, week),
