@@ -1449,19 +1449,36 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB, opts) {
   const sideB = entry ? (entry.teamA.rosterId === rosterIdB ? entry.teamA : entry.teamB) : null;
   const teamA = teamById(season, rosterIdA);
   const teamB = teamById(season, rosterIdB);
-  const played = weekHasBeenPlayed(season, week);
+  // NOT weekHasBeenPlayed — that's true the moment a single player
+  // anywhere this week has a score, well before the week (or this
+  // specific game log data) is actually final. latestClosedWeek requires
+  // every matchup to be fully played (and, for the current season, past
+  // the real Tuesday close-out) before trusting the static/historical
+  // game log over live data.
+  const played = week <= ((await latestClosedWeek(season)) ?? 0);
 
-  // Not-yet-played week: pull the same live Sleeper projections the
-  // Matchups page and Pick-Em use, so every per-player row and both team
-  // totals here agree with the rest of the site instead of showing the
-  // static data.json snapshot.
+  // Week not yet closed: pull live actual points AND live projections,
+  // blended per player (blendedPlayerPoints, data.js) — real final once a
+  // player's own game is complete, their live pace or projection
+  // (whichever's higher) while still mid-game, plain projection before
+  // kickoff. Matches the same live numbers the Matchups page and Pick-Em
+  // show, instead of a frozen pregame-only projection.
   let liveProjByPlayer = null;
   if (!played) {
-    const liveProjections = await loadLiveWeeklyProjections(season, week);
+    const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
+      loadLiveMatchups(season.leagueId, week),
+      loadLiveWeeklyProjections(season, week),
+      loadLiveGameStatusByTeam(season.season, week),
+    ]);
     if (liveProjections) {
+      const livePlayerPoints = {};
+      if (liveMatchups) liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
       const allPlayerIds = [...(sideA?.players || []), ...(sideB?.players || [])];
       liveProjByPlayer = Object.fromEntries(
-        allPlayerIds.map((pid) => [pid, computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings)])
+        allPlayerIds.map((pid) => [
+          pid,
+          blendedPlayerPoints(pid, livePlayerPoints, liveProjections, players, teamStatusByTeam, season.scoringSettings),
+        ])
       );
     }
   }
