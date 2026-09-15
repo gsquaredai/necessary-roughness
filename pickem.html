@@ -66,6 +66,13 @@
     let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
     let currentPicks = {};
 
+    // Keeps the Pool tab's per-week matchup labels ("Team A vs Team B") to
+    // one line inside a card.
+    function truncName(name, max = 12) {
+      if (!name) return "";
+      return name.length > max ? name.slice(0, max - 1).trimEnd() + "…" : name;
+    }
+
     // Sleeper's own CDN only holds this data for 60s, but nothing here ever
     // asked again after the initial render — so the "Currently Covering"
     // tag/Proj just froze at whatever it was when the page opened. Re-run
@@ -484,6 +491,19 @@
       btn.disabled = !allPicked;
     }
 
+    // Who actually covered a matchup's locked spread, from real final
+    // points — same grading math computePickEmPoints (data.js) uses. null
+    // for a push (margin exactly equals the spread). Shared by the
+    // matchup cards and the Pool tab's per-week breakdown.
+    function coveringRosterIdFor(info) {
+      const { m, teamA, teamB, spread, favRosterId } = info;
+      const favA = favRosterId === teamA.rosterId;
+      const actualMargin = favA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
+      if (actualMargin > spread) return favA ? teamA.rosterId : teamB.rosterId;
+      if (actualMargin < spread) return favA ? teamB.rosterId : teamA.rosterId;
+      return null;
+    }
+
     function pickemMatchupCardHTML(info, week, counts, closed) {
       const { m, teamA, teamB, totalA, totalB, spread, favRosterId } = info;
       const favA = favRosterId === teamA.rosterId;
@@ -497,14 +517,8 @@
 
       // Once the week's officially closed, show the real final score
       // instead of the (now moot) projection, and who actually covered
-      // the locked spread — same grading math computePickEmPoints uses,
-      // just against real final points instead of blended live ones.
-      let coveringRosterId = null;
-      if (closed) {
-        const actualMargin = favA ? m.teamA.points - m.teamB.points : m.teamB.points - m.teamA.points;
-        if (actualMargin > spread) coveringRosterId = favA ? teamA.rosterId : teamB.rosterId;
-        else if (actualMargin < spread) coveringRosterId = favA ? teamB.rosterId : teamA.rosterId;
-      }
+      // the locked spread.
+      const coveringRosterId = closed ? coveringRosterIdFor(info) : null;
       const pointsLabelA = closed ? fmtPts(m.teamA.points) : `Proj ${fmtPts(totalA)}`;
       const pointsLabelB = closed ? fmtPts(m.teamB.points) : `Proj ${fmtPts(totalB)}`;
       const coveredTagA = closed && coveringRosterId === teamA.rosterId ? `<div class="pickem-currently-covering">Covered</div>` : "";
@@ -644,7 +658,110 @@
           </table>
         </div>
         <div class="standing-cards">${cards}</div>
+
+        <div class="info-section-title" style="margin-top: 24px;">Week By Week</div>
+        <div class="controls">
+          <select id="pool-week-select">${Array.from({ length: maxWeek }, (_, i) => maxWeek - i)
+            .map((w) => `<option value="${w}">Week ${w}</option>`)
+            .join("")}</select>
+        </div>
+        <div id="pool-week-detail"></div>
       `;
+
+      const poolWeekSelect = container.querySelector("#pool-week-select");
+      poolWeekSelect.addEventListener("change", () => renderPoolWeekDetail(Number(poolWeekSelect.value)));
+      await renderPoolWeekDetail(maxWeek);
+    }
+
+    // Everyone's picks for one specific week — same vertical stacked-card
+    // layout as the Standings cards, one card per manager: their points
+    // earned that week, and which side they picked in every matchup, with
+    // a check/x once the week's closed and there's a real result to grade
+    // against. Sorted by that week's points once closed (a mini
+    // leaderboard for the week); alphabetically before that, since points
+    // aren't real yet.
+    async function renderPoolWeekDetail(week) {
+      const container = document.getElementById("pool-week-detail");
+      container.innerHTML = `<div class="empty-state">Loading...</div>`;
+
+      const matchups = (currentSeason.matchups[week] || []).filter((m) => m.teamB);
+      const [picksSnap, closedThroughWeek] = await Promise.all([
+        db.collection("picks").where("week", "==", week).get(),
+        latestClosedWeek(currentSeason),
+      ]);
+      const closed = week <= (closedThroughWeek ?? 0);
+
+      const matchupInfo = matchups.map((m) => matchupSpreadInfo(currentSeason, allPlayers, m));
+      if (closed) applyLockedSpreads(matchupInfo, await loadLockedSpreads(currentSeason, week));
+      const coveringByMatchupId = new Map();
+      if (closed) matchupInfo.forEach((info) => coveringByMatchupId.set(info.m.matchupId, coveringRosterIdFor(info)));
+
+      const picksByOwner = new Map();
+      picksSnap.docs.forEach((d) => picksByOwner.set(d.data().ownerId, d.data().picks || {}));
+      const pointValue = week === 1 || week === lastRegularWeek() ? 2 : 1;
+
+      const teamsWithPoints = currentSeason.teams.map((t) => {
+        const picks = picksByOwner.get(t.ownerId) || null;
+        let weekPoints = 0;
+        if (closed && picks) {
+          matchupInfo.forEach((info) => {
+            const pickedRosterId = picks[info.m.matchupId];
+            if (pickedRosterId != null && coveringByMatchupId.get(info.m.matchupId) === pickedRosterId) {
+              weekPoints += pointValue;
+            }
+          });
+        }
+        return { team: t, picks, weekPoints };
+      });
+      teamsWithPoints.sort((a, b) =>
+        closed ? b.weekPoints - a.weekPoints : a.team.teamName.localeCompare(b.team.teamName)
+      );
+
+      const cardsHTML = teamsWithPoints
+        .map(({ team, picks, weekPoints }) => {
+          const matchupRows = matchupInfo
+            .map((info) => {
+              const { m, teamA, teamB } = info;
+              const label = `${truncName(teamA.teamName)} vs ${truncName(teamB.teamName)}`;
+              const pickedRosterId = picks ? picks[m.matchupId] : null;
+              const pickedTeam = pickedRosterId != null ? teamById(currentSeason, pickedRosterId) : null;
+              let valueHTML = pickedTeam ? truncName(pickedTeam.teamName) : "&mdash;";
+              if (closed && pickedRosterId != null) {
+                const covering = coveringByMatchupId.get(m.matchupId);
+                if (covering != null) {
+                  valueHTML += covering === pickedRosterId
+                    ? ` <span class="pickem-result-correct">&#10003;</span>`
+                    : ` <span class="pickem-result-incorrect">&#10007;</span>`;
+                }
+              }
+              return `
+                <div class="standing-card-stat">
+                  <span class="standing-card-stat-label">${label}</span>
+                  <span class="standing-card-stat-value">${valueHTML}</span>
+                </div>
+              `;
+            })
+            .join("");
+          const headlineLabel = closed ? "Points This Week" : "Submitted";
+          const headlineValue = closed ? weekPoints : picks ? "&#10003;" : "&mdash;";
+          return `
+            <div class="standing-card">
+              <div class="standing-card-top">
+                ${teamCellHTML(team)}
+              </div>
+              <div class="standing-card-stats">
+                <div class="standing-card-stat standing-card-stat-full">
+                  <span class="standing-card-stat-label">${headlineLabel}</span>
+                  <span class="standing-card-stat-value">${headlineValue}</span>
+                </div>
+                ${matchupRows}
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+
+      container.innerHTML = `<div class="team-box-list">${cardsHTML}</div>`;
     }
 
     // ---------- init ----------
