@@ -65,6 +65,7 @@
 
     let currentSeason = null;
     let rivalries = [];
+    let allPlayers = null;
     let weeklyRecords = null; // Map week -> { median, teams: { [rosterId]: {...} } }
     let lastRegularWeek = 14;
     let closedThroughWeek = 0; // last week that's fully played AND past its Tuesday close-out
@@ -74,7 +75,7 @@
     async function init() {
       const idx = await loadIndex();
       siteCurrentSeasonKey = idx.currentSeason;
-      rivalries = await loadRivalries();
+      [rivalries, allPlayers] = await Promise.all([loadRivalries(), loadPlayers()]);
       const seasonSelect = document.getElementById("season-select");
       seasonSelect.innerHTML = idx.seasons
         .slice()
@@ -234,16 +235,18 @@
       startLiveRefresh(weekNum);
     }
 
-    // A starting lineup's current best-guess total: live points for
-    // whoever's already played, projection for the rest. Shared by
-    // applyLiveScores (the "Proj" caption) and applyWinProbability, so the
-    // two always agree instead of one showing a frozen pregame number.
-    function blendedStartersTotal(starters, livePlayerPoints, liveProjections) {
-      return (starters || []).reduce((sum, pid) => {
-        const live = livePlayerPoints[pid];
-        if (live > 0) return sum + live;
-        return sum + computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings);
-      }, 0);
+    // A starting lineup's current best-guess total, player by player via
+    // blendedPlayerPoints (data.js) — real final once a player's game is
+    // actually over, their live pace or projection (whichever's higher)
+    // while still mid-game, plain projection before kickoff. Shared by
+    // applyLiveScores (the "Proj" caption), applyLiveMedian, and
+    // applyWinProbability, so all three always agree.
+    function blendedStartersTotal(starters, livePlayerPoints, liveProjections, teamStatusByTeam) {
+      return (starters || []).reduce(
+        (sum, pid) =>
+          sum + blendedPlayerPoints(pid, livePlayerPoints, liveProjections, allPlayers, teamStatusByTeam, currentSeason.scoringSettings),
+        0
+      );
     }
 
     // The "Proj" numbers rendered above are the static, data.json-snapshot
@@ -290,9 +293,10 @@
       const requestId = ++liveScoresRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
       if (weekNum <= closedThroughWeek) return;
-      const [liveMatchups, liveProjections] = await Promise.all([
+      const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),
+        loadLiveGameStatusByTeam(currentSeason.season, weekNum),
       ]);
       if (requestId !== liveScoresRequestId || !liveMatchups) return;
 
@@ -303,13 +307,15 @@
       // Still show a projected total alongside the live score, same basis
       // as applyLiveProjections — otherwise it disappears the moment a
       // matchup goes live, right when it's most useful for comparison.
-      // Blended (live points for whoever's already played, projection for
-      // the rest) rather than the frozen pregame projection, so it stays
-      // an accurate "expected final" and always agrees with the win
-      // probability below, which uses the same blend.
+      // Blended (real final for finished players, live-or-projection for
+      // whoever's still mid-game, plain projection for the rest) rather
+      // than the frozen pregame projection, so it stays an accurate
+      // "expected final" and always agrees with the win probability
+      // below, which uses the same blend.
       const livePlayerPoints = {};
       liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
-      const totalFor = (starters) => (liveProjections ? blendedStartersTotal(starters, livePlayerPoints, liveProjections) : null);
+      const totalFor = (starters) =>
+        liveProjections ? blendedStartersTotal(starters, livePlayerPoints, liveProjections, teamStatusByTeam) : null;
 
       const matchups = currentSeason.matchups[weekNum] || [];
       document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
@@ -352,9 +358,10 @@
       const requestId = ++liveMedianRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
       if (weekNum <= closedThroughWeek) return;
-      const [liveMatchups, liveProjections] = await Promise.all([
+      const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),
+        loadLiveGameStatusByTeam(currentSeason.season, weekNum),
       ]);
       if (requestId !== liveMedianRequestId || !liveMatchups) return;
 
@@ -365,13 +372,7 @@
       const teamTotals = [];
       matchups.forEach((m) => {
         [m.teamA, m.teamB].filter(Boolean).forEach((side) => {
-          const total = (side.starters || []).reduce((sum, pid) => {
-            const live = livePlayerPoints[pid];
-            if (live) return sum + live;
-            const proj = liveProjections ? computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings) : 0;
-            return sum + proj;
-          }, 0);
-          teamTotals.push(total);
+          teamTotals.push(blendedStartersTotal(side.starters, livePlayerPoints, liveProjections, teamStatusByTeam));
         });
       });
       if (!teamTotals.length) return;
@@ -398,9 +399,10 @@
       const requestId = ++winProbRequestId;
       if (currentSeason.season !== siteCurrentSeasonKey || weekNum < 1 || weekNum > lastRegularWeek) return;
       if (weekNum <= closedThroughWeek) return;
-      const [liveMatchups, liveProjections] = await Promise.all([
+      const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, weekNum),
         loadLiveWeeklyProjections(currentSeason, weekNum),
+        loadLiveGameStatusByTeam(currentSeason.season, weekNum),
       ]);
       if (requestId !== winProbRequestId || !liveProjections) return;
 
@@ -411,8 +413,8 @@
       document.querySelectorAll("#matchups-list .matchup[data-matchup-id]").forEach((card) => {
         const m = matchups.find((x) => String(x.matchupId) === card.dataset.matchupId);
         if (!m || !m.teamB) return; // no win probability against a bye
-        const totalA = blendedStartersTotal(m.teamA.starters, livePlayerPoints, liveProjections);
-        const totalB = blendedStartersTotal(m.teamB.starters, livePlayerPoints, liveProjections);
+        const totalA = blendedStartersTotal(m.teamA.starters, livePlayerPoints, liveProjections, teamStatusByTeam);
+        const totalB = blendedStartersTotal(m.teamB.starters, livePlayerPoints, liveProjections, teamStatusByTeam);
         const winA = winProbability(totalA, totalB);
         const [blockA, blockB] = card.querySelectorAll(".matchup-side-block");
         setWinProbTag(blockA, winA);

@@ -1274,6 +1274,64 @@ function computeLeagueScoredPoints(rawStats, scoringSettings) {
   return total;
 }
 
+// Sleeper's matchups endpoint (loadLiveMatchups above) has no per-game
+// status — just a running point total — so a player mid-game with a lower
+// partial score than they'll finish with looks indistinguishable from one
+// whose game is actually over. This live schedule endpoint DOES carry real
+// per-game status ("pre_game" / "in_game" / "complete"), keyed by NFL
+// team, which is what blendedPlayerPoints below needs to tell "this
+// player's final score is locked in" apart from "this player is still
+// mid-game, their total is still climbing."
+const gameStatusCache = new Map(); // "seasonYear_week" -> { promise, expiresAt }
+
+function loadLiveGameStatusByTeam(seasonYear, week) {
+  const key = `${seasonYear}_${week}`;
+  const cached = gameStatusCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.promise;
+  const promise = (async () => {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(`https://api.sleeper.app/schedule/nfl/regular/${seasonYear}`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      const games = await res.json();
+      const map = new Map();
+      games
+        .filter((g) => g.week === week)
+        .forEach((g) => {
+          map.set(g.home, g.status);
+          map.set(g.away, g.status);
+        });
+      return map;
+    } catch {
+      return new Map(); // unreachable — every team reads as unknown, callers fall back to projection
+    }
+  })();
+  gameStatusCache.set(key, { promise, expiresAt: Date.now() + LIVE_CACHE_TTL_MS });
+  return promise;
+}
+
+// The best current estimate of one player's points for the week: their
+// real final total once their NFL game is actually complete (trusted even
+// if it came in under projection); while they're still mid-game, whichever
+// is higher of their current live pace or their pregame projection (their
+// total can only still go up from either); their plain pregame projection
+// before kickoff. This is what makes a team's "projected final" and the
+// win/cover probabilities built on it track Sleeper's own numbers instead
+// of freezing a currently-playing player at whatever partial total they
+// happen to be sitting on right now.
+function blendedPlayerPoints(pid, livePlayerPoints, liveProjections, playersDb, teamStatusByTeam, scoringSettings) {
+  const nflTeam = playersDb?.[pid]?.nflTeam;
+  const status = nflTeam ? teamStatusByTeam.get(nflTeam) : null;
+  const live = livePlayerPoints[pid] ?? 0;
+  const proj = liveProjections ? computeLeagueScoredPoints(liveProjections[pid], scoringSettings) : 0;
+  if (status === "complete") return live;
+  if (status === "in_game") return Math.max(live, proj);
+  return proj;
+}
+
 // A live version of matchupSpreadInfo: same best-possible-lineup spread
 // math, but built on freshly-fetched Sleeper projections (verified to
 // match the Matchups page's live per-player numbers) instead of the

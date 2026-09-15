@@ -405,20 +405,25 @@
       // week's actual Tuesday close-out.
       const closed = (await latestClosedWeek(currentSeason)) ?? 0;
       if (week <= closed) return;
-      const [liveMatchups, liveProjections] = await Promise.all([
+      const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
         loadLiveMatchups(currentSeason.leagueId, week),
         loadLiveWeeklyProjections(currentSeason, week),
+        loadLiveGameStatusByTeam(currentSeason.season, week),
       ]);
       if (!liveProjections) return;
 
       const livePlayerPoints = {};
       if (liveMatchups) liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
 
+      // blendedPlayerPoints (data.js): real final once a player's game is
+      // actually over, their live pace or projection (whichever's higher)
+      // while still mid-game, plain projection before kickoff — NOT just
+      // "any live points means done," which understates anyone still
+      // playing.
       const blendedFor = (playerIds) => {
         const out = {};
         for (const pid of playerIds || []) {
-          const live = livePlayerPoints[pid];
-          out[pid] = live > 0 ? live : computeLeagueScoredPoints(liveProjections[pid], currentSeason.scoringSettings);
+          out[pid] = blendedPlayerPoints(pid, livePlayerPoints, liveProjections, allPlayers, teamStatusByTeam, currentSeason.scoringSettings);
         }
         return out;
       };
