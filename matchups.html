@@ -175,10 +175,44 @@
       return perWeek;
     }
 
+    // Sleeper's own CDN only holds these for 60s, but nothing on this page
+    // ever asked again after the initial load — so "live" data just froze
+    // at whatever it was when the page opened and got more stale the
+    // longer someone left the tab open (confirmed: 20+ minutes behind
+    // during a live Monday-night game). Re-run the live patches on an
+    // interval for whichever week is currently showing, so the page keeps
+    // catching up on its own the same way Sleeper's own live feed does.
+    const LIVE_REFRESH_INTERVAL_MS = 30 * 1000;
+    let liveRefreshTimer = null;
+
+    function stopLiveRefresh() {
+      if (liveRefreshTimer) clearInterval(liveRefreshTimer);
+      liveRefreshTimer = null;
+    }
+
+    function startLiveRefresh(weekNum) {
+      stopLiveRefresh();
+      liveRefreshTimer = setInterval(() => {
+        // Bail quietly if the user's navigated away from this week/season
+        // since the timer was set, rather than patching a card no longer
+        // on screen.
+        if (document.getElementById("week-select").value !== String(weekNum)) {
+          stopLiveRefresh();
+          return;
+        }
+        applyPickCounts(weekNum);
+        applyLiveProjections(weekNum);
+        applyLiveScores(weekNum);
+        applyLiveMedian(weekNum);
+        applyWinProbability(weekNum);
+      }, LIVE_REFRESH_INTERVAL_MS);
+    }
+
     function renderWeek() {
       const week = document.getElementById("week-select").value;
       const container = document.getElementById("matchups-list");
       if (week === "playoffs") {
+        stopLiveRefresh();
         renderPlayoffs(container);
         return;
       }
@@ -197,6 +231,7 @@
       applyLiveScores(weekNum);
       applyLiveMedian(weekNum);
       applyWinProbability(weekNum);
+      startLiveRefresh(weekNum);
     }
 
     // A starting lineup's current best-guess total: live points for

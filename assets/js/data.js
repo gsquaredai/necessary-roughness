@@ -1205,12 +1205,19 @@ function matchupSpreadInfo(season, players, m) {
 
 // Caches the in-flight PROMISE (not just the resolved value) — every
 // matchup card on a week fetches this concurrently, so caching only after
-// the first one resolves would still fire one request per card.
-const weeklyProjectionsCache = new Map(); // "season_week" -> Promise<raw Sleeper projections map | null>
+// the first one resolves would still fire one request per card. Entries
+// expire after LIVE_CACHE_TTL_MS so a caller that asks again later (e.g.
+// the pages' own auto-refresh polling) actually gets a fresh fetch instead
+// of the same promise forever — Sleeper's own CDN only holds these for
+// 60s itself, so holding them longer client-side just adds extra lag on
+// top of that during a live game.
+const LIVE_CACHE_TTL_MS = 30 * 1000;
+const weeklyProjectionsCache = new Map(); // "season_week" -> { promise, expiresAt }
 
 function loadLiveWeeklyProjections(season, week) {
   const key = `${season.season}_${week}`;
-  if (weeklyProjectionsCache.has(key)) return weeklyProjectionsCache.get(key);
+  const cached = weeklyProjectionsCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.promise;
   const promise = (async () => {
     try {
       const controller = new AbortController();
@@ -1224,7 +1231,7 @@ function loadLiveWeeklyProjections(season, week) {
       return null; // network hiccup / API unreachable — caller falls back to the static snapshot
     }
   })();
-  weeklyProjectionsCache.set(key, promise);
+  weeklyProjectionsCache.set(key, { promise, expiresAt: Date.now() + LIVE_CACHE_TTL_MS });
   return promise;
 }
 
@@ -1234,11 +1241,12 @@ function loadLiveWeeklyProjections(season, week) {
 // run. Sleeper updates each roster's points in real time as real NFL games
 // play out, so once a week's games kick off this is the only way to show
 // a truly live score rather than whatever the last data refresh captured.
-const liveMatchupsCache = new Map(); // "leagueId_week" -> Promise<raw Sleeper matchups array | null>
+const liveMatchupsCache = new Map(); // "leagueId_week" -> { promise, expiresAt }
 
 function loadLiveMatchups(leagueId, week) {
   const key = `${leagueId}_${week}`;
-  if (liveMatchupsCache.has(key)) return liveMatchupsCache.get(key);
+  const cached = liveMatchupsCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.promise;
   const promise = (async () => {
     try {
       const controller = new AbortController();
@@ -1252,7 +1260,7 @@ function loadLiveMatchups(leagueId, week) {
       return null; // network hiccup / API unreachable — caller falls back to the static snapshot
     }
   })();
-  liveMatchupsCache.set(key, promise);
+  liveMatchupsCache.set(key, { promise, expiresAt: Date.now() + LIVE_CACHE_TTL_MS });
   return promise;
 }
 

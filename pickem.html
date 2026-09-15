@@ -66,6 +66,18 @@
     let identity = null; // {ownerId, rosterId, teamName}, from identities/{uid}
     let currentPicks = {};
 
+    // Sleeper's own CDN only holds this data for 60s, but nothing here ever
+    // asked again after the initial render — so cover %/Proj just froze at
+    // whatever it was when the page opened. Re-run on an interval for
+    // whichever week is currently on screen.
+    const LIVE_REFRESH_INTERVAL_MS = 30 * 1000;
+    let coverProbTimer = null;
+
+    function stopCoverProbRefresh() {
+      if (coverProbTimer) clearInterval(coverProbTimer);
+      coverProbTimer = null;
+    }
+
     // ---------- week gating ----------
 
     function lastRegularWeek() {
@@ -355,6 +367,17 @@
       });
 
       applyCoverProbability(list, week, matchupInfo);
+      stopCoverProbRefresh();
+      coverProbTimer = setInterval(() => {
+        // The user's navigated elsewhere since this render (switched
+        // weeks/tabs, submitted picks and re-rendered, ...) — this list
+        // isn't on screen anymore, so stop patching it.
+        if (!document.contains(list)) {
+          stopCoverProbRefresh();
+          return;
+        }
+        applyCoverProbability(list, week, matchupInfo);
+      }, LIVE_REFRESH_INTERVAL_MS);
 
       if (locked) return;
 
@@ -423,6 +446,13 @@
 
         const elA = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamA.rosterId}"]`);
         const elB = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamB.rosterId}"]`);
+        // Keep the displayed "Proj" in step with the totals the cover %
+        // is actually computed from — otherwise a refresh could show a
+        // frozen Proj number next to a percentage that's already moved on.
+        const projElA = elA?.querySelector(".pickem-proj");
+        if (projElA) projElA.textContent = `Proj ${fmtPts(totalA)}`;
+        const projElB = elB?.querySelector(".pickem-proj");
+        if (projElB) projElB.textContent = `Proj ${fmtPts(totalB)}`;
         setCoverProbTag(elA, pA);
         setCoverProbTag(elB, pB);
 
