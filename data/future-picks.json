@@ -77,12 +77,6 @@
       "originalTeam": null
     },
     {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 2,
-      "originalTeam": null
-    },
-    {
       "season": "2028",
       "round": 1,
       "originalRosterId": 2,
@@ -814,6 +808,17 @@
       "round": 2,
       "originalRosterId": 11,
       "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 2,
+      "originalTeam": {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
     },
     {
       "season": "2027",

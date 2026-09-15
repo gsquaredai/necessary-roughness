@@ -1,5 +1,197 @@
 [
   {
+    "id": "1405640052322676736",
+    "type": "free_agent",
+    "date": "2026-09-15T17:26:53.304Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "11627",
+        "name": "Troy Franklin",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1405639568559972352",
+    "type": "trade",
+    "date": "2026-09-15T17:24:57.966Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      },
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "players": [
+          {
+            "playerId": "5850",
+            "name": "Josh Jacobs",
+            "position": "RB"
+          },
+          {
+            "playerId": "7600",
+            "name": "Pat Freiermuth",
+            "position": "TE"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "players": [
+          {
+            "playerId": "6819",
+            "name": "Michael Pittman",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 3,
+            "originalRosterId": 2,
+            "result": null,
+            "originalTeam": "GrayPornography"
+          }
+        ],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "5850",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      },
+      {
+        "playerId": "6819",
+        "name": "Michael Pittman",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      },
+      {
+        "playerId": "7600",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "5850",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      },
+      {
+        "playerId": "6819",
+        "name": "Michael Pittman",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      },
+      {
+        "playerId": "7600",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 3,
+        "originalRosterId": 2,
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1405002439437869056",
     "type": "free_agent",
     "date": "2026-09-13T23:13:14.546Z",

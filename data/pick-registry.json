@@ -23236,12 +23236,77 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Exciting Whites",
+      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+      "ownerId": "1128912559073067008",
+      "rosterId": 11
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-15T17:24:57.966Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "5850",
+                "name": "Josh Jacobs",
+                "position": "RB"
+              },
+              {
+                "playerId": "7600",
+                "name": "Pat Freiermuth",
+                "position": "TE"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6819",
+                "name": "Michael Pittman",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-3-3": {
     "season": "2027",
