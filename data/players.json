@@ -13491,7 +13491,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 36,
-        "overallRank": 265,
+        "overallRank": 266,
         "games": [
           {
             "week": 2,
@@ -14487,8 +14487,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 68,
-        "overallRank": 266,
+        "positionRank": 69,
+        "overallRank": 267,
         "games": [
           {
             "week": 1,
@@ -24988,7 +24988,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 97,
+        "positionRank": 96,
         "overallRank": 269,
         "games": [
           {
@@ -32054,7 +32054,7 @@
         "totalPoints": -0.38,
         "gamesPlayed": 1,
         "positionRank": 46,
-        "overallRank": 321,
+        "overallRank": 322,
         "games": [
           {
             "week": 1,
@@ -48108,7 +48108,12 @@
     "position": "RB",
     "nflTeam": "MIN",
     "birthDate": "1998-09-16",
-    "currentTeam": null,
+    "currentTeam": {
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
+    },
     "seasons": {
       "2024": {
         "totalPoints": 1,
@@ -48125,6 +48130,116 @@
               "rec_tgt": 1,
               "rec_yd": 5
             }
+          }
+        ]
+      },
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 68,
+        "overallRank": 265,
+        "games": [
+          {
+            "week": 2,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 3,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 4,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
           }
         ]
       }
@@ -60640,7 +60755,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 21,
-        "overallRank": 313,
+        "overallRank": 314,
         "games": [
           {
             "week": 1,
@@ -63892,7 +64007,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 95,
-        "overallRank": 267,
+        "overallRank": 268,
         "games": [
           {
             "week": 1,
@@ -79034,7 +79149,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 71,
+        "positionRank": 72,
         "overallRank": 275,
         "games": [
           {
@@ -113992,12 +114107,7 @@
     "position": "WR",
     "nflTeam": "PIT",
     "birthDate": "2001-06-19",
-    "currentTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 0,
@@ -114242,116 +114352,6 @@
           },
           {
             "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          }
-        ]
-      },
-      "2026": {
-        "totalPoints": 0,
-        "gamesPlayed": 0,
-        "positionRank": 96,
-        "overallRank": 268,
-        "games": [
-          {
-            "week": 2,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 3,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 4,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 5,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 6,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}
@@ -117116,8 +117116,8 @@
       "2026": {
         "totalPoints": -0.1,
         "gamesPlayed": 1,
-        "positionRank": 83,
-        "overallRank": 320,
+        "positionRank": 84,
+        "overallRank": 321,
         "games": [
           {
             "week": 1,
@@ -118939,8 +118939,8 @@
       "2026": {
         "totalPoints": -0.6,
         "gamesPlayed": 1,
-        "positionRank": 84,
-        "overallRank": 322,
+        "positionRank": 85,
+        "overallRank": 323,
         "games": [
           {
             "week": 1,
@@ -119336,8 +119336,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 80,
-        "overallRank": 305,
+        "positionRank": 81,
+        "overallRank": 306,
         "games": [
           {
             "week": 2,
@@ -120589,7 +120589,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 70,
+        "positionRank": 71,
         "overallRank": 274,
         "games": [
           {
@@ -120905,7 +120905,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 72,
+        "positionRank": 73,
         "overallRank": 277,
         "games": [
           {
@@ -121320,7 +121320,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 77,
+        "positionRank": 78,
         "overallRank": 291,
         "games": [
           {
@@ -121577,7 +121577,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 73,
+        "positionRank": 74,
         "overallRank": 278,
         "games": [
           {
@@ -122955,7 +122955,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 100,
+        "positionRank": 99,
         "overallRank": 284,
         "games": [
           {
@@ -125120,7 +125120,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 76,
+        "positionRank": 77,
         "overallRank": 290,
         "games": [
           {
@@ -125389,7 +125389,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 99,
+        "positionRank": 98,
         "overallRank": 280,
         "games": [
           {
@@ -127081,7 +127081,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 74,
+        "positionRank": 75,
         "overallRank": 281,
         "games": [
           {
@@ -132248,7 +132248,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 75,
+        "positionRank": 76,
         "overallRank": 289,
         "games": [
           {
@@ -133614,7 +133614,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 101,
+        "positionRank": 100,
         "overallRank": 285,
         "games": [
           {
@@ -134157,8 +134157,8 @@
       "2026": {
         "totalPoints": -0.8,
         "gamesPlayed": 1,
-        "positionRank": 113,
-        "overallRank": 323,
+        "positionRank": 112,
+        "overallRank": 324,
         "games": [
           {
             "week": 1,
@@ -134715,7 +134715,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 69,
+        "positionRank": 70,
         "overallRank": 271,
         "games": [
           {
@@ -135308,7 +135308,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 98,
+        "positionRank": 97,
         "overallRank": 273,
         "games": [
           {
@@ -135950,7 +135950,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 102,
+        "positionRank": 101,
         "overallRank": 286,
         "games": [
           {
@@ -136376,8 +136376,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 112,
-        "overallRank": 317,
+        "positionRank": 111,
+        "overallRank": 318,
         "games": [
           {
             "week": 1,
@@ -136508,7 +136508,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 42,
-        "overallRank": 306,
+        "overallRank": 307,
         "games": [
           {
             "week": 1,
@@ -136639,7 +136639,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 43,
-        "overallRank": 307,
+        "overallRank": 308,
         "games": [
           {
             "week": 1,
@@ -136769,7 +136769,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 105,
+        "positionRank": 104,
         "overallRank": 297,
         "games": [
           {
@@ -136901,7 +136901,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 45,
-        "overallRank": 318,
+        "overallRank": 319,
         "games": [
           {
             "week": 1,
@@ -137166,8 +137166,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 43,
-        "overallRank": 319,
+        "positionRank": 44,
+        "overallRank": 320,
         "games": [
           {
             "week": 1,
@@ -137432,8 +137432,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 109,
-        "overallRank": 314,
+        "positionRank": 108,
+        "overallRank": 315,
         "games": [
           {
             "week": 1,
@@ -137973,8 +137973,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 79,
-        "overallRank": 303,
+        "positionRank": 80,
+        "overallRank": 304,
         "games": [
           {
             "week": 1,
@@ -138105,7 +138105,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 44,
-        "overallRank": 308,
+        "overallRank": 309,
         "games": [
           {
             "week": 1,
@@ -138915,7 +138915,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 41,
-        "overallRank": 304,
+        "overallRank": 305,
         "games": [
           {
             "week": 1,
@@ -139433,6 +139433,131 @@
       }
     }
   },
+  "13319": {
+    "playerId": "13319",
+    "name": "Oscar Delp",
+    "position": "TE",
+    "nflTeam": "NO",
+    "birthDate": "2003-08-04",
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 42,
+        "overallRank": 303,
+        "games": [
+          {
+            "week": 2,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 3,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 4,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "13320": {
     "playerId": "13320",
     "name": "Zachariah Branch",
@@ -139449,7 +139574,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 106,
+        "positionRank": 105,
         "overallRank": 298,
         "games": [
           {
@@ -139986,8 +140111,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 81,
-        "overallRank": 309,
+        "positionRank": 82,
+        "overallRank": 310,
         "games": [
           {
             "week": 1,
@@ -140253,8 +140378,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 82,
-        "overallRank": 312,
+        "positionRank": 83,
+        "overallRank": 313,
         "games": [
           {
             "week": 1,
@@ -140384,8 +140509,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 42,
-        "overallRank": 310,
+        "positionRank": 43,
+        "overallRank": 311,
         "games": [
           {
             "week": 1,
@@ -140515,7 +140640,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 107,
+        "positionRank": 106,
         "overallRank": 301,
         "games": [
           {
@@ -140908,7 +141033,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 103,
+        "positionRank": 102,
         "overallRank": 292,
         "games": [
           {
@@ -141437,8 +141562,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 108,
-        "overallRank": 311,
+        "positionRank": 107,
+        "overallRank": 312,
         "games": [
           {
             "week": 1,
@@ -141702,8 +141827,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 110,
-        "overallRank": 315,
+        "positionRank": 109,
+        "overallRank": 316,
         "games": [
           {
             "week": 1,
@@ -141833,8 +141958,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 111,
-        "overallRank": 316,
+        "positionRank": 110,
+        "overallRank": 317,
         "games": [
           {
             "week": 1,
@@ -142103,7 +142228,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 104,
+        "positionRank": 103,
         "overallRank": 293,
         "games": [
           {
@@ -142370,7 +142495,7 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 78,
+        "positionRank": 79,
         "overallRank": 296,
         "games": [
           {
