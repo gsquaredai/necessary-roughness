@@ -1,5 +1,169 @@
 [
   {
+    "id": "1405800701484908544",
+    "type": "waiver",
+    "date": "2026-09-16T04:05:15.049Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11630",
+        "name": "Roman Wilson",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11647",
+        "name": "Kimani Vidal",
+        "position": "RB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1405743502263959552",
+    "type": "waiver",
+    "date": "2026-09-16T00:17:57.692Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "8267",
+        "name": "Nakobe Dean",
+        "position": "LB",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "13376",
+        "name": "Caleb Downs",
+        "position": "DB",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1405743123342110720",
+    "type": "waiver",
+    "date": "2026-09-16T00:16:27.350Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "4454",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 4
+  },
+  {
+    "id": "1405701125163720704",
+    "type": "waiver",
+    "date": "2026-09-15T21:29:34.204Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "D1 Jayden Glazer",
+        "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "3286",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": {
+          "teamName": "D1 Jayden Glazer",
+          "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "8119",
+        "name": "Jahan Dotson",
+        "position": "WR",
+        "team": {
+          "teamName": "D1 Jayden Glazer",
+          "avatar": "https://sleepercdn.com/uploads/c7065f99f4ac3c74d52454edc64a83a2.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 9
+  },
+  {
     "id": "1405640052322676736",
     "type": "free_agent",
     "date": "2026-09-15T17:26:53.304Z",
@@ -190,6 +354,94 @@
     ],
     "faab": [],
     "waiverBid": null
+  },
+  {
+    "id": "1405568148937199616",
+    "type": "waiver",
+    "date": "2026-09-15T12:41:10.202Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "4033",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "12504",
+        "name": "Kaleb Johnson",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 16
+  },
+  {
+    "id": "1405564575880921088",
+    "type": "waiver",
+    "date": "2026-09-15T12:26:58.318Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "9511",
+        "name": "Keaton Mitchell",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "9506",
+        "name": "Sean Tucker",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 21
   },
   {
     "id": "1405002439437869056",
