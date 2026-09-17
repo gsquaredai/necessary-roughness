@@ -1,5 +1,49 @@
 [
   {
+    "id": "1406111396860567552",
+    "type": "free_agent",
+    "date": "2026-09-17T00:39:50.600Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13379",
+        "name": "Josiah Trotter",
+        "position": "LB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "10235",
+        "name": "Roschon Johnson",
+        "position": "RB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1406022345801420800",
     "type": "free_agent",
     "date": "2026-09-16T18:45:59.172Z",
