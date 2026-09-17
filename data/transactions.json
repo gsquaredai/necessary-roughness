@@ -1,5 +1,37 @@
 [
   {
+    "id": "1406389313729482752",
+    "type": "free_agent",
+    "date": "2026-09-17T19:04:11.144Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "9501",
+        "name": "DeMario Douglas",
+        "position": "WR",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1406111396860567552",
     "type": "free_agent",
     "date": "2026-09-17T00:39:50.600Z",
