@@ -26323,7 +26323,7 @@
         ]
       },
       "2026": {
-        "totalPoints": 81.78,
+        "totalPoints": 81.47999999999999,
         "gamesPlayed": 2,
         "positionRank": 1,
         "overallRank": 1,
@@ -26344,15 +26344,15 @@
           },
           {
             "week": 2,
-            "points": 44.12,
+            "points": 43.82,
             "played": true,
             "stats": {
               "pass_att": 31,
               "pass_cmp": 20,
               "pass_yd": 248,
               "pass_td": 3,
-              "rush_att": 12,
-              "rush_yd": 71,
+              "rush_att": 14,
+              "rush_yd": 69,
               "rush_td": 2
             }
           },
@@ -96678,7 +96678,7 @@
             "played": true,
             "stats": {
               "rec": 7,
-              "rec_tgt": 9,
+              "rec_tgt": 8,
               "rec_yd": 95,
               "rec_td": 1
             }
