@@ -21408,12 +21408,132 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Exciting Whites",
+      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+      "ownerId": "1128912559073067008",
+      "rosterId": 11
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-18T19:58:10.570Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "5872",
+                "name": "Deebo Samuel",
+                "position": "WR"
+              },
+              {
+                "playerId": "8167",
+                "name": "Christian Watson",
+                "position": "WR"
+              },
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "5927",
+                "name": "Terry McLaurin",
+                "position": "WR"
+              },
+              {
+                "playerId": "9486",
+                "name": "Dontayvion Wicks",
+                "position": "WR"
+              },
+              {
+                "playerId": "12509",
+                "name": "Tre' Harris",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-10-23T00:05:57.858Z",
         "from": {
@@ -21749,12 +21869,132 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
+      "teamName": "WANGHAF",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+      "ownerId": "1128523568641466368",
+      "rosterId": 7
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-18T19:58:10.570Z",
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "5872",
+                "name": "Deebo Samuel",
+                "position": "WR"
+              },
+              {
+                "playerId": "8167",
+                "name": "Christian Watson",
+                "position": "WR"
+              },
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "5927",
+                "name": "Terry McLaurin",
+                "position": "WR"
+              },
+              {
+                "playerId": "9486",
+                "name": "Dontayvion Wicks",
+                "position": "WR"
+              },
+              {
+                "playerId": "12509",
+                "name": "Tre' Harris",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-01-12T17:54:40.485Z",
         "from": {
@@ -22163,12 +22403,132 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Exciting Whites",
+      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+      "ownerId": "1128912559073067008",
+      "rosterId": 11
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-18T19:58:10.570Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "5872",
+                "name": "Deebo Samuel",
+                "position": "WR"
+              },
+              {
+                "playerId": "8167",
+                "name": "Christian Watson",
+                "position": "WR"
+              },
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "5927",
+                "name": "Terry McLaurin",
+                "position": "WR"
+              },
+              {
+                "playerId": "9486",
+                "name": "Dontayvion Wicks",
+                "position": "WR"
+              },
+              {
+                "playerId": "12509",
+                "name": "Tre' Harris",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-11-19T13:30:37.602Z",
         "from": {
@@ -23355,12 +23715,132 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-18T19:58:10.570Z",
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "5872",
+                "name": "Deebo Samuel",
+                "position": "WR"
+              },
+              {
+                "playerId": "8167",
+                "name": "Christian Watson",
+                "position": "WR"
+              },
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "5927",
+                "name": "Terry McLaurin",
+                "position": "WR"
+              },
+              {
+                "playerId": "9486",
+                "name": "Dontayvion Wicks",
+                "position": "WR"
+              },
+              {
+                "playerId": "12509",
+                "name": "Tre' Harris",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-01-12T17:54:40.485Z",
         "from": {
@@ -24390,12 +24870,133 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-18T19:58:10.570Z",
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "5872",
+                "name": "Deebo Samuel",
+                "position": "WR"
+              },
+              {
+                "playerId": "8167",
+                "name": "Christian Watson",
+                "position": "WR"
+              },
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "5927",
+                "name": "Terry McLaurin",
+                "position": "WR"
+              },
+              {
+                "playerId": "9486",
+                "name": "Dontayvion Wicks",
+                "position": "WR"
+              },
+              {
+                "playerId": "12509",
+                "name": "Tre' Harris",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 11,
+                "result": null,
+                "originalTeam": "Exciting Whites"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-1-12": {
     "season": "2028",
