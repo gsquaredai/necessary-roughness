@@ -136,7 +136,7 @@
     "away": "SEA"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-20",
     "home": "ATL",
     "week": 2,
@@ -144,7 +144,7 @@
     "away": "CAR"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-20",
     "home": "BAL",
     "week": 2,
@@ -160,7 +160,7 @@
     "away": "DET"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-20",
     "home": "CHI",
     "week": 2,
@@ -176,7 +176,7 @@
     "away": "WAS"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-20",
     "home": "DEN",
     "week": 2,
@@ -184,7 +184,7 @@
     "away": "JAX"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-20",
     "home": "HOU",
     "week": 2,
@@ -200,7 +200,7 @@
     "away": "IND"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-20",
     "home": "NE",
     "week": 2,
@@ -208,7 +208,7 @@
     "away": "PIT"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-20",
     "home": "NYJ",
     "week": 2,
@@ -216,7 +216,7 @@
     "away": "GB"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-09-20",
     "home": "LAC",
     "week": 2,
@@ -240,7 +240,7 @@
     "away": "NYG"
   },
   {
-    "status": "pre_game",
+    "status": "suspended",
     "date": "2026-09-20",
     "home": "TB",
     "week": 2,
@@ -248,7 +248,7 @@
     "away": "CLE"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-09-20",
     "home": "TEN",
     "week": 2,
