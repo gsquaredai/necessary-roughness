@@ -1,5 +1,49 @@
 [
   {
+    "id": "1407876801979490304",
+    "type": "free_agent",
+    "date": "2026-09-21T21:34:55.980Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11655",
+        "name": "Tyrone Tracy",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "4033",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1407458767930433536",
     "type": "free_agent",
     "date": "2026-09-20T17:53:48.896Z",
@@ -1237,7 +1281,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -1251,7 +1295,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -1269,7 +1313,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -1284,7 +1328,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -1336,7 +1380,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -1358,7 +1402,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -1382,7 +1426,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -1406,7 +1450,7 @@
         "originalRosterId": 2,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -1801,7 +1845,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -1814,7 +1858,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -1827,7 +1871,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -2041,7 +2085,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -2054,7 +2098,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -2073,7 +2117,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -2086,7 +2130,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -3072,7 +3116,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -3085,7 +3129,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -3098,7 +3142,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -4515,7 +4559,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -4529,7 +4573,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -4777,7 +4821,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -4791,7 +4835,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -4905,7 +4949,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -4919,7 +4963,7 @@
         "position": "QB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -4937,7 +4981,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -4951,7 +4995,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -4971,7 +5015,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -4984,7 +5028,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -6195,7 +6239,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -6208,7 +6252,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -6229,7 +6273,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -6242,7 +6286,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -6501,7 +6545,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -6514,7 +6558,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -6834,7 +6878,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -6849,7 +6893,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -6907,7 +6951,7 @@
         },
         "to": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -6918,7 +6962,7 @@
         "originalRosterId": 2,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -6935,7 +6979,7 @@
         "amount": 9,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -7801,7 +7845,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -7816,7 +7860,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -7862,7 +7906,7 @@
         "position": "QB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -7888,7 +7932,7 @@
         "originalRosterId": 9,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -8514,7 +8558,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -8528,7 +8572,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -8546,7 +8590,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -8560,7 +8604,7 @@
         "position": "QB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -8674,7 +8718,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -8689,7 +8733,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -8738,7 +8782,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -8760,7 +8804,7 @@
         "position": "QB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -8795,7 +8839,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -8817,7 +8861,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -9250,7 +9294,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -9264,7 +9308,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -9410,7 +9454,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -9425,7 +9469,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -9471,7 +9515,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -9497,7 +9541,7 @@
         "originalRosterId": 8,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -9520,7 +9564,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -9535,7 +9579,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -9590,7 +9634,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -9614,7 +9658,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -9636,7 +9680,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10249,7 +10293,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -10263,7 +10307,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10281,7 +10325,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -10296,7 +10340,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10354,7 +10398,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10380,7 +10424,7 @@
         "originalRosterId": 10,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10397,7 +10441,7 @@
         "originalRosterId": 3,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10555,7 +10599,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -10569,7 +10613,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10619,7 +10663,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -10634,7 +10678,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10718,7 +10762,7 @@
         "position": "TE",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10737,7 +10781,7 @@
         },
         "to": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10754,7 +10798,7 @@
         },
         "to": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10765,7 +10809,7 @@
         "originalRosterId": 7,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10854,7 +10898,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       },
@@ -10869,7 +10913,7 @@
       {
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -10951,7 +10995,7 @@
         "position": "RB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10962,7 +11006,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -10999,7 +11043,7 @@
         "originalRosterId": 10,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -11016,7 +11060,7 @@
         "originalRosterId": 11,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -11033,7 +11077,7 @@
         "originalRosterId": 2,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -11050,7 +11094,7 @@
         "originalRosterId": 9,
         "from": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         },
@@ -12173,7 +12217,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -12187,7 +12231,7 @@
         "position": "WR",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -12574,7 +12618,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -12587,7 +12631,7 @@
         "position": "LB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -12606,7 +12650,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -12619,7 +12663,7 @@
         "position": "DB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
@@ -12638,7 +12682,7 @@
     "teams": [
       {
         "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
       }
@@ -12651,7 +12695,7 @@
         "position": "LB",
         "team": {
           "teamName": "GrayPornography",
-          "avatar": "https://sleepercdn.com/uploads/c5780d3deae7a309c80f82c10f46a063.jpg",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
           "ownerId": "990079789383897088",
           "rosterId": 2
         }
