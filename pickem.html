@@ -138,7 +138,7 @@
     async function isWeekLocked(week) {
       const kickoff = await firstKickoffForWeek(week);
       if (kickoff == null) return false; // can't determine kickoff — don't block
-      return Date.now() >= kickoff - LOCK_BUFFER_MS;
+      return (await trustedNow()) >= kickoff - LOCK_BUFFER_MS;
     }
 
     // ---------- team identity ----------

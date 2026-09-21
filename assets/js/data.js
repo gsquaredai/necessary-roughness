@@ -510,26 +510,96 @@ function weekFullyPlayed(season, week) {
   return matchups.every((m) => m.teamA.points > 0 && (!m.teamB || m.teamB.points > 0));
 }
 
-function nextTuesdayOnOrAfter(date) {
-  const d = new Date(date);
-  d.setHours(0, 0, 0, 0);
-  const diff = (2 - d.getDay() + 7) % 7; // 0=Sun..6=Sat, Tuesday=2
-  d.setDate(d.getDate() + diff);
-  return d;
+// ---------- trusted clock + fixed league timezone ----------
+// Every lock/close-out on the site (Pick-Em's kickoff lock, the Tuesday
+// week close-out) must be the same absolute instant for everyone, no
+// matter their timezone or what their device clock says. So: deadlines
+// are defined in Eastern Time, and "now" comes from the site's server
+// (the HTTP Date header), not new Date()/Date.now() on the visitor's
+// machine.
+const LEAGUE_TIMEZONE = "America/New_York";
+
+let serverClockPromise = null;
+let serverClockAnchor = null; // { serverMs, perfMs }
+
+function syncServerClock() {
+  if (!serverClockPromise) {
+    serverClockPromise = (async () => {
+      try {
+        const sentPerf = performance.now();
+        const res = await fetch(`data/index.json?_=${Math.random().toString(36).slice(2)}`, {
+          cache: "no-store",
+        });
+        const recvPerf = performance.now();
+        const dateHeader = res.headers.get("date");
+        const serverMs = dateHeader ? new Date(dateHeader).getTime() : NaN;
+        if (Number.isNaN(serverMs)) return;
+        const ageMs = (Number(res.headers.get("age")) || 0) * 1000;
+        // Assume the response was stamped halfway through the round trip.
+        serverClockAnchor = {
+          serverMs: serverMs + ageMs,
+          perfMs: (sentPerf + recvPerf) / 2,
+        };
+      } catch {
+        // Falls back to the device clock below.
+      }
+    })();
+  }
+  return serverClockPromise;
 }
 
-// 12:00am the Tuesday after `week`'s last real game — the standard
+// Current time in ms, anchored to the server. performance.now() is
+// monotonic, so changing the device clock mid-session can't move it.
+// Falls back to Date.now() only if the server clock couldn't be read.
+async function trustedNow() {
+  await syncServerClock();
+  if (!serverClockAnchor) return Date.now();
+  return serverClockAnchor.serverMs + (performance.now() - serverClockAnchor.perfMs);
+}
+
+// The absolute instant (ms) at which the wall clock in `timeZone` reads
+// the given date/time — DST-safe.
+function zonedTimeToMs(y, m, d, h, mi, timeZone) {
+  const fmt = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hourCycle: "h23",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+  const wallAsUtc = Date.UTC(y, m - 1, d, h, mi);
+  let guess = wallAsUtc;
+  for (let i = 0; i < 2; i++) {
+    const p = Object.fromEntries(fmt.formatToParts(new Date(guess)).map((x) => [x.type, x.value]));
+    const shown = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
+    guess += wallAsUtc - shown;
+  }
+  return guess;
+}
+
+// 12:00am Eastern on the first Tuesday on/after the given calendar date.
+function nextTuesdayEasternMs(y, m, d) {
+  const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay(); // 0=Sun..6=Sat, Tuesday=2
+  const diff = (2 - dow + 7) % 7;
+  const t = new Date(Date.UTC(y, m - 1, d + diff));
+  return zonedTimeToMs(t.getUTCFullYear(), t.getUTCMonth() + 1, t.getUTCDate(), 0, 0, LEAGUE_TIMEZONE);
+}
+
+// 12:00am Eastern the Tuesday after `week`'s last real game — the standard
 // fantasy "week officially over" boundary (also when the following
 // week's picks unlock). Computed from the real schedule rather than
-// assumed to always land on Monday. Null if that week's schedule isn't
-// known yet.
+// assumed to always land on Monday. Returns an absolute timestamp (ms),
+// or null if that week's schedule isn't known yet.
 async function weekCloseoutDate(week) {
   const schedule = await loadSchedule();
   const weekGames = schedule.filter((g) => g.week === week);
   if (!weekGames.length) return null;
   const lastDateStr = weekGames.reduce((max, g) => (g.date > max ? g.date : max), weekGames[0].date);
   const [y, m, d] = lastDateStr.split("-").map(Number);
-  return nextTuesdayOnOrAfter(new Date(y, m - 1, d + 1));
+  return nextTuesdayEasternMs(y, m, d + 1);
 }
 
 // The latest week that's BOTH fully played AND past its Tuesday
@@ -550,7 +620,7 @@ async function latestClosedWeek(season) {
     if (!weekFullyPlayed(season, week)) break;
     if (isCurrentSeason) {
       const closeout = await weekCloseoutDate(week);
-      if (closeout && new Date() < closeout) break;
+      if (closeout && (await trustedNow()) < closeout) break;
     }
     latest = week;
   }
