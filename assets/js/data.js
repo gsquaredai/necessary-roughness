@@ -1125,36 +1125,64 @@ let matchupPlayersCache = null;
 // computeOptimalProjectedLineup — shows which exact roster spot (FLEX,
 // SUPER FLEX, IDP, ...) a player is filling in the best-possible lineup,
 // whenever that differs from their raw position.
-function matchupPlayerRowHTML(players, playerId, season, week, played, side, liveProjByPlayer, usedSlots) {
+// A player's game state this week, from their NFL team's live game status
+// (same source blendedPlayerPoints uses): "final" (game over), "live"
+// (in progress), "upcoming" (not kicked off), "bye" (team has no game), or
+// null when it can't be determined.
+function matchupPlayerState(players, playerId, liveStatus) {
+  const team = players[playerId]?.nflTeam;
+  if (!team || !liveStatus) return null;
+  const st = liveStatus.statusByTeam.get(team);
+  if (st === "complete") return "final";
+  if (st === "in_game") return "live";
+  if (st) return "upcoming";
+  return liveStatus.statusByTeam.size ? "bye" : null;
+}
+
+const MATCHUP_STATE_LABELS = { final: "Final", live: "Live", upcoming: "To Play", bye: "Bye" };
+
+// liveStatus, when given ({points, proj, statusByTeam}), turns each row into
+// a played / playing / yet-to-play readout: real points for finished and
+// in-progress players, projection for everyone still to go.
+function matchupPlayerRowHTML(players, playerId, season, week, played, side, liveProjByPlayer, usedSlots, liveStatus) {
   const p = players[playerId];
   const name = p ? p.name : "Unknown Player";
   const slot = usedSlots?.get(playerId);
   const metaParts = p ? [p.position, p.nflTeam] : [];
   if (slot && slot !== p?.position) metaParts.push(slot);
   const meta = metaParts.filter(Boolean).join(" &middot; ");
-  let pts, isProj;
+  const state = !played && liveStatus ? matchupPlayerState(players, playerId, liveStatus) : null;
+  const tag = state ? `<span class="player-status ${state}">${MATCHUP_STATE_LABELS[state]}</span>` : "";
+  let valueHTML;
   if (played) {
     const game = p?.seasons?.[season.season]?.games?.find((g) => g.week === week);
-    pts = game ? game.points : null;
-    isProj = false;
+    valueHTML = `<span class="info-stat-value">${game ? fmtPts(game.points) : "—"}</span>`;
+  } else if (state === "final") {
+    valueHTML = `<span class="info-stat-value">${fmtPts(liveStatus.points[playerId] ?? 0)}</span>`;
+  } else if (state === "live") {
+    const pts = liveStatus.points[playerId] ?? 0;
+    const proj = Math.max(pts, liveStatus.proj[playerId] ?? 0);
+    valueHTML = `<span class="info-stat-value">${fmtPts(pts)}</span><span class="player-proj-sub">Proj ${fmtPts(proj)}</span>`;
+  } else if (state === "bye") {
+    valueHTML = `<span class="info-stat-value">—</span>`;
   } else {
-    pts = liveProjByPlayer ? liveProjByPlayer[playerId] ?? 0 : side.projByPlayer ? side.projByPlayer[playerId] : null;
-    isProj = true;
+    const pts = liveProjByPlayer ? liveProjByPlayer[playerId] ?? 0 : side.projByPlayer ? side.projByPlayer[playerId] : null;
+    valueHTML = `<span class="info-stat-value proj-primary">${pts != null ? `Proj ${fmtPts(pts)}` : "—"}</span>`;
   }
   return `
-    <div class="roster-player">
-      <span>${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}</span>
-      <span class="info-stat-value${isProj ? " proj-primary" : ""}">${pts != null ? fmtPts(pts) : "—"}</span>
+    <div class="roster-player${state ? ` state-${state}` : ""}">
+      <span>${playerLinkHTML(playerId, name)}${meta ? `<span class="player-meta">${meta}</span>` : ""}${tag}</span>
+      <span class="player-value">${valueHTML}</span>
     </div>
   `;
 }
 
-function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side, liveProjByPlayer, usedSlots) {
+function matchupRosterGroupHTML(title, playerIds, players, season, week, played, side, liveProjByPlayer, usedSlots, liveStatus) {
   if (!playerIds.length) return "";
   return `
     <div class="roster-group">
       <div class="roster-group-title">${title} (${playerIds.length})</div>
-      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side, liveProjByPlayer, usedSlots)).join("")}
+      ${playerIds.map((pid) => matchupPlayerRowHTML(players, pid, season, week, played, side, liveProjByPlayer, usedSlots, liveStatus)).join("")}
     </div>
   `;
 }
@@ -1164,7 +1192,7 @@ function matchupRosterGroupHTML(title, playerIds, players, season, week, played,
 // real, actually-set starters — used when this modal is opened from
 // Pick-Em's "View Rosters & Projections" so it shows exactly which roster
 // the spread came from, not the unrelated actual-starters breakdown.
-function matchupSideHTML(season, week, team, side, players, played, liveProjByPlayer, optimalInfo) {
+function matchupSideHTML(season, week, team, side, players, played, liveProjByPlayer, optimalInfo, liveStatus) {
   if (!team || !side) return `<div class="empty-state">No roster data for this team.</div>`;
   const primaryIds = optimalInfo ? [...optimalInfo.usedSlots.keys()] : side.starters || [];
   const primarySet = optimalInfo ? optimalInfo.usedSlots : new Set(primaryIds);
@@ -1183,10 +1211,42 @@ function matchupSideHTML(season, week, team, side, players, played, liveProjByPl
     ? `${fmtPts(side.points)} pts`
     : `<span class="proj-primary">Proj ${projTotal != null ? fmtPts(projTotal) : "—"}</span>`;
   const primaryTitle = optimalInfo ? "Optimal Lineup" : "Starters";
+
+  // Played-so-far vs. still-to-come, for the lineup actually being scored.
+  let progressHTML = "";
+  if (!played && liveStatus && !optimalInfo && liveStatus.statusByTeam.size) {
+    let scored = 0;
+    let remaining = 0;
+    let liveCount = 0;
+    let toPlay = 0;
+    primaryIds.forEach((pid) => {
+      const state = matchupPlayerState(players, pid, liveStatus);
+      const pts = liveStatus.points[pid] ?? 0;
+      const proj = liveStatus.proj[pid] ?? 0;
+      if (state === "final") scored += pts;
+      else if (state === "live") {
+        scored += pts;
+        remaining += Math.max(0, proj - pts);
+        liveCount++;
+      } else if (state === "upcoming") {
+        remaining += proj;
+        toPlay++;
+      }
+    });
+    progressHTML = `
+      <div class="matchup-progress">
+        <span>Scored <strong>${fmtPts(scored)}</strong></span>
+        <span>Live <strong>${liveCount}</strong></span>
+        <span>To play <strong>${toPlay}</strong>${toPlay + liveCount > 0 ? ` <em>(+${fmtPts(remaining)} proj)</em>` : ""}</span>
+      </div>
+    `;
+  }
+  const rowStatus = optimalInfo ? null : liveStatus;
   return `
     <div class="info-section-title">${team.teamName} &mdash; ${totalHTML}</div>
-    ${matchupRosterGroupHTML(primaryTitle, primaryIds, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots)}
-    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots)}
+    ${progressHTML}
+    ${matchupRosterGroupHTML(primaryTitle, primaryIds, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots, rowStatus)}
+    ${matchupRosterGroupHTML("Bench", bench, players, season, week, played, side, liveProjByPlayer, optimalInfo?.usedSlots, rowStatus)}
   `;
 }
 
@@ -1521,7 +1581,13 @@ async function computePickEmPoints(season, players) {
 // opts.optimalLineup: group each side by the best-possible lineup (Pick-Em's
 // spread basis) instead of actual starters — only applies to a not-yet-played
 // week, since a played week shows the real, already-final breakdown instead.
+// Pick-Em passes it only BEFORE the week locks; after that, grading is on
+// what each team actually starts.
+let matchupModalTimer = null;
+
 async function openMatchupModal(season, week, rosterIdA, rosterIdB, opts) {
+  if (matchupModalTimer) clearInterval(matchupModalTimer);
+  matchupModalTimer = null;
   let root = document.getElementById("player-modal-root");
   if (!root) {
     root = document.createElement("div");
@@ -1536,13 +1602,14 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB, opts) {
   root.querySelector("#player-modal-overlay").addEventListener("click", (e) => {
     if (e.target.id === "player-modal-overlay") closePlayerModal();
   });
+  const box = root.querySelector(".modal-box");
 
   if (!matchupPlayersCache) matchupPlayersCache = await loadPlayers();
   const players = matchupPlayersCache;
 
   const entry = matchupEntryForRosterInWeek(season, week, rosterIdA);
-  const sideA = entry ? (entry.teamA.rosterId === rosterIdA ? entry.teamA : entry.teamB) : null;
-  const sideB = entry ? (entry.teamA.rosterId === rosterIdB ? entry.teamA : entry.teamB) : null;
+  const baseSideA = entry ? (entry.teamA.rosterId === rosterIdA ? entry.teamA : entry.teamB) : null;
+  const baseSideB = entry ? (entry.teamA.rosterId === rosterIdB ? entry.teamA : entry.teamB) : null;
   const teamA = teamById(season, rosterIdA);
   const teamB = teamById(season, rosterIdB);
   // NOT weekHasBeenPlayed — that's true the moment a single player
@@ -1553,56 +1620,96 @@ async function openMatchupModal(season, week, rosterIdA, rosterIdB, opts) {
   // game log over live data.
   const played = week <= ((await latestClosedWeek(season)) ?? 0);
 
-  // Week not yet closed: pull live actual points AND live projections,
-  // blended per player (blendedPlayerPoints, data.js) — real final once a
-  // player's own game is complete, their live pace or projection
-  // (whichever's higher) while still mid-game, plain projection before
-  // kickoff. Matches the same live numbers the Matchups page and Pick-Em
-  // show, instead of a frozen pregame-only projection.
-  let liveProjByPlayer = null;
-  if (!played) {
-    const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
-      loadLiveMatchups(season.leagueId, week),
-      loadLiveWeeklyProjections(season, week),
-      loadLiveGameStatusByTeam(season.season, week),
-    ]);
-    if (liveProjections) {
-      const livePlayerPoints = {};
-      if (liveMatchups) liveMatchups.forEach((r) => Object.assign(livePlayerPoints, r.players_points || {}));
-      const allPlayerIds = [...(sideA?.players || []), ...(sideB?.players || [])];
-      liveProjByPlayer = Object.fromEntries(
-        allPlayerIds.map((pid) => [
-          pid,
-          blendedPlayerPoints(pid, livePlayerPoints, liveProjections, players, teamStatusByTeam, season.scoringSettings),
-        ])
-      );
+  const renderBody = async () => {
+    let sideA = baseSideA;
+    let sideB = baseSideB;
+    // Week not yet closed: pull live actual points AND live projections,
+    // blended per player (blendedPlayerPoints, data.js) — real final once a
+    // player's own game is complete, their live pace or projection
+    // (whichever's higher) while still mid-game, plain projection before
+    // kickoff. Starters come from Sleeper's live matchups feed too, since
+    // the data.json snapshot can lag a lineup change.
+    let liveProjByPlayer = null;
+    let liveStatus = null;
+    if (!played) {
+      const [liveMatchups, liveProjections, teamStatusByTeam] = await Promise.all([
+        loadLiveMatchups(season.leagueId, week),
+        loadLiveWeeklyProjections(season, week),
+        loadLiveGameStatusByTeam(season.season, week),
+      ]);
+      if (liveProjections) {
+        const livePlayerPoints = {};
+        const startersByRoster = new Map();
+        if (liveMatchups) {
+          liveMatchups.forEach((r) => {
+            Object.assign(livePlayerPoints, r.players_points || {});
+            startersByRoster.set(r.roster_id, r.starters);
+          });
+        }
+        const withLiveStarters = (side) =>
+          side && startersByRoster.get(side.rosterId) ? { ...side, starters: startersByRoster.get(side.rosterId) } : side;
+        sideA = withLiveStarters(sideA);
+        sideB = withLiveStarters(sideB);
+        const allPlayerIds = [
+          ...new Set([...(sideA?.players || []), ...(sideA?.starters || []), ...(sideB?.players || []), ...(sideB?.starters || [])]),
+        ];
+        liveProjByPlayer = Object.fromEntries(
+          allPlayerIds.map((pid) => [
+            pid,
+            blendedPlayerPoints(pid, livePlayerPoints, liveProjections, players, teamStatusByTeam, season.scoringSettings),
+          ])
+        );
+        liveStatus = {
+          points: livePlayerPoints,
+          proj: Object.fromEntries(
+            allPlayerIds.map((pid) => [pid, computeLeagueScoredPoints(liveProjections[pid], season.scoringSettings)])
+          ),
+          statusByTeam: teamStatusByTeam,
+        };
+      }
     }
-  }
 
-  // Same per-player projections just built above (live if available, else
-  // the static data.json snapshot) — just optimally slotted instead of
-  // grouped by who's actually starting.
-  let optimalInfoA = null;
-  let optimalInfoB = null;
-  if (opts?.optimalLineup && !played) {
-    const projByPlayerFor = (side) => (liveProjByPlayer ? liveProjByPlayer : side?.projByPlayer || null);
-    if (sideA) optimalInfoA = computeOptimalProjectedLineup(sideA.players, projByPlayerFor(sideA), players, season.rosterPositions);
-    if (sideB) optimalInfoB = computeOptimalProjectedLineup(sideB.players, projByPlayerFor(sideB), players, season.rosterPositions);
-  }
+    // Same per-player projections just built above (live if available, else
+    // the static data.json snapshot) — just optimally slotted instead of
+    // grouped by who's actually starting.
+    let optimalInfoA = null;
+    let optimalInfoB = null;
+    if (opts?.optimalLineup && !played) {
+      const projByPlayerFor = (side) => (liveProjByPlayer ? liveProjByPlayer : side?.projByPlayer || null);
+      if (sideA) optimalInfoA = computeOptimalProjectedLineup(sideA.players, projByPlayerFor(sideA), players, season.rosterPositions);
+      if (sideB) optimalInfoB = computeOptimalProjectedLineup(sideB.players, projByPlayerFor(sideB), players, season.rosterPositions);
+    }
 
-  const box = document.getElementById("player-modal-root").querySelector(".modal-box");
-  box.innerHTML = `
-    <button class="modal-close" id="player-modal-close">&times;</button>
-    <div class="modal-header">
-      <h2>Week ${week}</h2>
-      <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
-    </div>
-    <div class="modal-tab-content matchup-modal-columns">
-      <div>${matchupSideHTML(season, week, teamA, sideA, players, played, liveProjByPlayer, optimalInfoA)}</div>
-      <div>${matchupSideHTML(season, week, teamB, sideB, players, played, liveProjByPlayer, optimalInfoB)}</div>
-    </div>
-  `;
-  box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+    const scrollTop = box.scrollTop;
+    box.innerHTML = `
+      <button class="modal-close" id="player-modal-close">&times;</button>
+      <div class="modal-header">
+        <h2>Week ${week}</h2>
+        <div class="modal-subtitle">${teamA ? teamA.teamName : "?"} vs ${teamB ? teamB.teamName : "?"}</div>
+      </div>
+      <div class="modal-tab-content matchup-modal-columns">
+        <div>${matchupSideHTML(season, week, teamA, sideA, players, played, liveProjByPlayer, optimalInfoA, liveStatus)}</div>
+        <div>${matchupSideHTML(season, week, teamB, sideB, players, played, liveProjByPlayer, optimalInfoB, liveStatus)}</div>
+      </div>
+    `;
+    box.scrollTop = scrollTop;
+    box.querySelector("#player-modal-close").addEventListener("click", closePlayerModal);
+  };
+
+  await renderBody();
+
+  // Keep the numbers live while the modal stays open. Stops as soon as
+  // this modal is gone (closed, or replaced by a player popup).
+  if (!played) {
+    matchupModalTimer = setInterval(async () => {
+      if (!document.contains(box)) {
+        clearInterval(matchupModalTimer);
+        matchupModalTimer = null;
+        return;
+      }
+      await renderBody();
+    }, LIVE_CACHE_TTL_MS);
+  }
 }
 
 // ---------- shared trade-hop chain renderer ----------

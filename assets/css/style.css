@@ -1171,6 +1171,68 @@ th.num {
   flex-shrink: 0;
 }
 
+.roster-player .player-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.player-proj-sub {
+  color: var(--accent-2);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+.player-status {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 4px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.player-status.final {
+  color: var(--win);
+}
+
+.player-status.live {
+  color: var(--loss);
+}
+
+.player-status.upcoming,
+.player-status.bye {
+  color: var(--text-dim);
+}
+
+.roster-player.state-upcoming,
+.roster-player.state-bye {
+  opacity: 0.8;
+}
+
+.matchup-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 10px;
+  font-size: 0.55rem;
+  color: var(--text-dim);
+}
+
+.matchup-progress strong {
+  color: var(--text);
+}
+
+.matchup-progress em {
+  color: var(--accent-2);
+  font-style: normal;
+}
+
 .roster-pick {
   font-size: 0.6rem;
   padding: 5px 0;
