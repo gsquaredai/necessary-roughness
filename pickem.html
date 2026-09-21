@@ -442,20 +442,25 @@
         return out;
       };
 
+      // Before lock, the spread and the projection shown next to it are both
+      // built on each roster's best-possible lineup. Once the week locks,
+      // grading is on what each team actually starts, so switch to the real
+      // Sleeper lineups — same starters + blend the Matchups page uses (live
+      // starters from Sleeper's matchups feed, since the data.json snapshot
+      // can lag a lineup change).
+      const locked = await isWeekLocked(week);
+      const liveStartersByRoster = new Map();
+      if (liveMatchups) liveMatchups.forEach((r) => liveStartersByRoster.set(r.roster_id, r.starters));
+      const startersFor = (side) => liveStartersByRoster.get(side.rosterId) || side.starters || [];
+      const totalFor = (side) =>
+        locked
+          ? startersFor(side).reduce((sum, pid) => sum + (blendedFor([pid])[pid] ?? 0), 0)
+          : computeOptimalProjectedLineup(side.players, blendedFor(side.players), allPlayers, currentSeason.rosterPositions).total;
+
       matchupInfo.forEach((info) => {
         const { m, teamA, teamB, spread, favRosterId } = info;
-        const totalA = computeOptimalProjectedLineup(
-          m.teamA.players,
-          blendedFor(m.teamA.players),
-          allPlayers,
-          currentSeason.rosterPositions
-        ).total;
-        const totalB = computeOptimalProjectedLineup(
-          m.teamB.players,
-          blendedFor(m.teamB.players),
-          allPlayers,
-          currentSeason.rosterPositions
-        ).total;
+        const totalA = totalFor(m.teamA);
+        const totalB = totalFor(m.teamB);
         const favIsA = favRosterId === teamA.rosterId;
 
         const elA = list.querySelector(`[data-matchup-id="${m.matchupId}"][data-pick-roster="${teamA.rosterId}"]`);
