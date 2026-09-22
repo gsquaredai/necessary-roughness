@@ -1,5 +1,37 @@
 [
   {
+    "id": "1408111123542130688",
+    "type": "free_agent",
+    "date": "2026-09-22T13:06:02.593Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "3286",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1407876801979490304",
     "type": "free_agent",
     "date": "2026-09-21T21:34:55.980Z",

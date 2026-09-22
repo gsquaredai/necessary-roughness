@@ -11280,12 +11280,7 @@
     "position": "WR",
     "nflTeam": "SF",
     "birthDate": "1994-09-21",
-    "currentTeam": {
-      "teamName": "My Pookie NOOOOO",
-      "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
-      "ownerId": "1004418514142253056",
-      "rosterId": 10
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 99.3,
@@ -11632,102 +11627,6 @@
               "rec_tgt": 3,
               "rec_yd": 34
             }
-          },
-          {
-            "week": 3,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 4,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 5,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 6,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
           }
         ]
       }
