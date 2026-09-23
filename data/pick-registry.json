@@ -22893,12 +22893,121 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-23T17:36:00.817Z",
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4217",
+                "name": "George Kittle",
+                "position": "TE"
+              },
+              {
+                "playerId": "10229",
+                "name": "Rashee Rice",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "11635",
+                "name": "Ladd McConkey",
+                "position": "WR"
+              },
+              {
+                "playerId": "12518",
+                "name": "Tyler Warren",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "13286",
+                "name": "Jadarian Price",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-06-02T15:53:46.686Z",
         "from": {
@@ -23847,12 +23956,122 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Big Dike Energy",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T17:36:00.817Z",
+        "from": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4217",
+                "name": "George Kittle",
+                "position": "TE"
+              },
+              {
+                "playerId": "10229",
+                "name": "Rashee Rice",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "11635",
+                "name": "Ladd McConkey",
+                "position": "WR"
+              },
+              {
+                "playerId": "12518",
+                "name": "Tyler Warren",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "13286",
+                "name": "Jadarian Price",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-3-4": {
     "season": "2027",
@@ -25485,12 +25704,122 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Big Dike Energy",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T17:36:00.817Z",
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4217",
+                "name": "George Kittle",
+                "position": "TE"
+              },
+              {
+                "playerId": "10229",
+                "name": "Rashee Rice",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "11635",
+                "name": "Ladd McConkey",
+                "position": "WR"
+              },
+              {
+                "playerId": "12518",
+                "name": "Tyler Warren",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "13286",
+                "name": "Jadarian Price",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-2-6": {
     "season": "2028",
@@ -25503,12 +25832,122 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T17:36:00.817Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Big Dike Energy",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4217",
+                "name": "George Kittle",
+                "position": "TE"
+              },
+              {
+                "playerId": "10229",
+                "name": "Rashee Rice",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "11635",
+                "name": "Ladd McConkey",
+                "position": "WR"
+              },
+              {
+                "playerId": "12518",
+                "name": "Tyler Warren",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "13286",
+                "name": "Jadarian Price",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-2-7": {
     "season": "2028",

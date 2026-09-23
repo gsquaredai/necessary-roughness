@@ -188,12 +188,6 @@
     },
     {
       "season": "2027",
-      "round": 3,
-      "originalRosterId": 3,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 3,
       "originalTeam": null
@@ -220,6 +214,17 @@
       "round": 2,
       "originalRosterId": 3,
       "originalTeam": null
+    },
+    {
+      "season": "2028",
+      "round": 2,
+      "originalRosterId": 5,
+      "originalTeam": {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
     },
     {
       "season": "2028",
@@ -361,17 +366,6 @@
       }
     },
     {
-      "season": "2027",
-      "round": 2,
-      "originalRosterId": 9,
-      "originalTeam": {
-        "teamName": "Los pollos hermanos",
-        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
-        "ownerId": "1128774237046636544",
-        "rosterId": 9
-      }
-    },
-    {
       "season": "2028",
       "round": 1,
       "originalRosterId": 5,
@@ -380,8 +374,13 @@
     {
       "season": "2028",
       "round": 2,
-      "originalRosterId": 5,
-      "originalTeam": null
+      "originalRosterId": 6,
+      "originalTeam": {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
     },
     {
       "season": "2028",
@@ -445,6 +444,28 @@
     },
     {
       "season": "2027",
+      "round": 2,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 3,
+      "originalTeam": {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    },
+    {
+      "season": "2027",
       "round": 3,
       "originalRosterId": 6,
       "originalTeam": null
@@ -458,12 +479,6 @@
     {
       "season": "2028",
       "round": 1,
-      "originalRosterId": 6,
-      "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 2,
       "originalRosterId": 6,
       "originalTeam": null
     },
