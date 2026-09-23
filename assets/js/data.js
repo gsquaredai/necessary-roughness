@@ -304,8 +304,81 @@ async function loadSeason(season) {
   if (seasonCache.has(season)) return seasonCache.get(season);
   const res = await fetch(`data/${season}.json`);
   const data = await res.json();
+  const idx = await loadIndex();
+  if (season === idx.currentSeason) await applyLiveRosterOwnership(data);
   seasonCache.set(season, data);
   return data;
+}
+
+// ---------- live roster ownership ----------
+// A trade can land any time, but data.json's roster snapshots only refresh
+// whenever the site's data pipeline last ran (every 6h) — so a trade can
+// leave every roster-dependent view (the Teams roster popup, a player's
+// "Dynasty Team", Pick-Em's spread, the Matchups bench/optimal lineup)
+// showing the wrong owner for a player for hours. Sleeper's live rosters
+// endpoint is the actual ground truth for "who owns this player right
+// now" — a matchup's own `players` field is just a snapshot taken when
+// that week's matchups were generated, not re-synced after a trade
+// either. Cached briefly (not on the 30s live-score TTL — roster moves
+// are rare, not continuously ticking) so this doesn't hit Sleeper on
+// every render.
+const ROSTER_CACHE_TTL_MS = 2 * 60 * 1000;
+const liveRostersCache = new Map(); // leagueId -> {promise, expiresAt}
+
+function loadLiveRosters(leagueId) {
+  const cached = liveRostersCache.get(leagueId);
+  if (cached && cached.expiresAt > Date.now()) return cached.promise;
+  const promise = fetch(`https://api.sleeper.app/v1/league/${leagueId}/rosters`)
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null);
+  liveRostersCache.set(leagueId, { promise, expiresAt: Date.now() + ROSTER_CACHE_TTL_MS });
+  return promise;
+}
+
+// Patches live roster ownership directly onto an already-loaded season, in
+// place — only ever called for the site's CURRENT season (loadSeason
+// above), since a past season's rosters are already historically frozen
+// and correct. Every reader downstream (season.rosterPlayers,
+// matchupSpreadInfo/liveMatchupSpreadInfo, the matchup modal, Pick-Em)
+// then automatically sees the live roster with no changes needed at the
+// call site.
+async function applyLiveRosterOwnership(season) {
+  const rosters = await loadLiveRosters(season.leagueId);
+  if (!rosters) return; // network hiccup — keep whatever the static snapshot has
+  const closed = (await latestClosedWeek(season)) ?? 0;
+  for (const r of rosters) {
+    if (r.roster_id == null) continue;
+    const entry = { players: r.players || [], starters: r.starters || [], taxi: r.taxi || [], reserve: r.reserve || [] };
+    if (season.rosterPlayers) season.rosterPlayers[r.roster_id] = entry;
+    // Only an UNPLAYED week's roster gets overwritten — a played/closed
+    // week's matchup roster is the real historical lineup at scoring time
+    // and must stay untouched for grading/history to stay accurate.
+    for (const week of Object.keys(season.matchups || {})) {
+      if (Number(week) <= closed) continue;
+      for (const m of season.matchups[week]) {
+        for (const side of [m.teamA, m.teamB]) {
+          if (side && side.rosterId === r.roster_id) {
+            side.players = entry.players;
+            side.starters = entry.starters;
+          }
+        }
+      }
+    }
+  }
+}
+
+// The live-ownership team for a player right now (current season only),
+// or null for a free agent, or undefined if live rosters couldn't be
+// fetched (caller should fall back to the static players.json snapshot).
+async function liveOwnerTeamFor(playerId) {
+  const idx = await loadIndex();
+  const season = await loadSeason(idx.currentSeason);
+  const rosters = await loadLiveRosters(season.leagueId);
+  if (!rosters) return undefined;
+  const owning = rosters.find((r) => (r.players || []).includes(playerId));
+  if (!owning) return null;
+  const t = teamById(season, owning.roster_id);
+  return t ? { teamName: t.teamName, avatar: t.avatar, ownerId: t.ownerId, rosterId: t.rosterId } : null;
 }
 
 async function loadLatestCompletedSeason() {
@@ -797,11 +870,12 @@ async function openPlayerModal(playerId) {
     if (e.target.id === "player-modal-overlay") closePlayerModal();
   });
 
-  const [players, txns, idx, schedule] = await Promise.all([
+  const [players, txns, idx, schedule, liveTeam] = await Promise.all([
     loadPlayers(),
     loadTransactions(),
     loadIndex(),
     loadSchedule(),
+    liveOwnerTeamFor(playerId),
   ]);
   const player = players[playerId];
   const box = root.querySelector(".modal-box");
@@ -809,6 +883,10 @@ async function openPlayerModal(playerId) {
     box.innerHTML = `<div class="empty-state">Player not found.</div>`;
     return;
   }
+  // liveOwnerTeamFor: live Sleeper rosters, so a trade shows up here right
+  // away instead of waiting on the next data pipeline run. Only undefined
+  // (rosters unreachable) falls back to the static players.json snapshot.
+  const currentTeam = liveTeam !== undefined ? liveTeam : player.currentTeam;
 
   const seasons = Object.keys(player.seasons).sort((a, b) => b - a);
   const age = ageAt(player.birthDate);
@@ -832,7 +910,7 @@ async function openPlayerModal(playerId) {
           player.nflTeam
         )} ${player.nflTeam ? nflAbbr3(player.nflTeam) : "—"}</span></div>
         <div class="player-bio-row"><span class="player-bio-label">Dynasty Team</span><span>${
-          player.currentTeam ? teamCellHTML(player.currentTeam) : '<span class="muted">Free Agent</span>'
+          currentTeam ? teamCellHTML(currentTeam) : '<span class="muted">Free Agent</span>'
         }</span></div>
         ${
           latest
