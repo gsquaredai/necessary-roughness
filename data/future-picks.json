@@ -24,6 +24,17 @@
     },
     {
       "season": "2027",
+      "round": 2,
+      "originalRosterId": 4,
+      "originalTeam": {
+        "teamName": "Faded off the Josh",
+        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+        "ownerId": "1125954610599964672",
+        "rosterId": 4
+      }
+    },
+    {
+      "season": "2027",
       "round": 3,
       "originalRosterId": 5,
       "originalTeam": {
@@ -72,9 +83,14 @@
   "2": [
     {
       "season": "2027",
-      "round": 2,
-      "originalRosterId": 2,
-      "originalTeam": null
+      "round": 3,
+      "originalRosterId": 12,
+      "originalTeam": {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
     },
     {
       "season": "2028",
@@ -95,15 +111,20 @@
     },
     {
       "season": "2028",
-      "round": 2,
+      "round": 3,
       "originalRosterId": 2,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
-      "originalRosterId": 2,
-      "originalTeam": null
+      "originalRosterId": 12,
+      "originalTeam": {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
     },
     {
       "season": "2028",
@@ -252,12 +273,6 @@
     {
       "season": "2027",
       "round": 1,
-      "originalRosterId": 4,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
-      "round": 2,
       "originalRosterId": 4,
       "originalTeam": null
     },
@@ -940,6 +955,17 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 2,
+      "originalTeam": {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    },
+    {
+      "season": "2027",
+      "round": 2,
       "originalRosterId": 8,
       "originalTeam": {
         "teamName": "the left one’s bigger",
@@ -951,12 +977,6 @@
     {
       "season": "2027",
       "round": 2,
-      "originalRosterId": 12,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
-      "round": 3,
       "originalRosterId": 12,
       "originalTeam": null
     },
@@ -975,6 +995,17 @@
     {
       "season": "2028",
       "round": 2,
+      "originalRosterId": 2,
+      "originalTeam": {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    },
+    {
+      "season": "2028",
+      "round": 2,
       "originalRosterId": 8,
       "originalTeam": {
         "teamName": "the left one’s bigger",
@@ -986,12 +1017,6 @@
     {
       "season": "2028",
       "round": 2,
-      "originalRosterId": 12,
-      "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 3,
       "originalRosterId": 12,
       "originalTeam": null
     },

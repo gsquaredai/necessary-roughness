@@ -21815,12 +21815,88 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Spotted Cow",
+      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+      "ownerId": "1373899826093096960",
+      "rosterId": 12
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T02:42:57.481Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "1466",
+                "name": "Travis Kelce",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              },
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-2-3": {
     "season": "2027",
@@ -21851,12 +21927,104 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Faded off the Josh",
-      "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
-      "ownerId": "1125954610599964672",
-      "rosterId": 4
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-21T02:11:31.454Z",
+        "from": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "11584",
+                "name": "Bucky Irving",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 4,
+                "result": null,
+                "originalTeam": "Faded off the Josh"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            },
+            "players": [
+              {
+                "playerId": "4943",
+                "name": "Sam Darnold",
+                "position": "QB"
+              },
+              {
+                "playerId": "4983",
+                "name": "DJ Moore",
+                "position": "WR"
+              },
+              {
+                "playerId": "9500",
+                "name": "Josh Downs",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "8137",
+                "name": "George Pickens",
+                "position": "WR"
+              },
+              {
+                "playerId": "9756",
+                "name": "Jordan Addison",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-2-5": {
     "season": "2027",
@@ -24163,12 +24331,88 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Spotted Cow",
-      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
-      "ownerId": "1373899826093096960",
-      "rosterId": 12
+      "teamName": "GrayPornography",
+      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+      "ownerId": "990079789383897088",
+      "rosterId": 2
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T02:42:57.481Z",
+        "from": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "to": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "1466",
+                "name": "Travis Kelce",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              },
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-4-1": {
     "season": "2027",
@@ -25111,12 +25355,88 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Spotted Cow",
+      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+      "ownerId": "1373899826093096960",
+      "rosterId": 12
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T02:42:57.481Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "1466",
+                "name": "Travis Kelce",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              },
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-2-3": {
     "season": "2028",
@@ -25674,12 +25994,88 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Spotted Cow",
-      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
-      "ownerId": "1373899826093096960",
-      "rosterId": 12
+      "teamName": "GrayPornography",
+      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+      "ownerId": "990079789383897088",
+      "rosterId": 2
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-23T02:42:57.481Z",
+        "from": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "to": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "1466",
+                "name": "Travis Kelce",
+                "position": "TE"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              },
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 2,
+                "result": null,
+                "originalTeam": "GrayPornography"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-4-1": {
     "season": "2028",
