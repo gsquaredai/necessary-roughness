@@ -466,12 +466,6 @@
     },
     {
       "season": "2027",
-      "round": 3,
-      "originalRosterId": 6,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 6,
       "originalTeam": null
@@ -771,6 +765,17 @@
     }
   ],
   "10": [
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 6,
+      "originalTeam": {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    },
     {
       "season": "2027",
       "round": 3,

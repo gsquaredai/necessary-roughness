@@ -24333,12 +24333,125 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "My Pookie NOOOOO",
+      "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+      "ownerId": "1004418514142253056",
+      "rosterId": 10
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-09-24T15:37:57.905Z",
+        "from": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "to": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "My Pookie NOOOOO",
+              "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "players": [
+              {
+                "playerId": "5892",
+                "name": "David Montgomery",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "13279",
+                "name": "Carnell Tate",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      },
+      {
+        "date": "2026-09-24T14:07:19.929Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "9754",
+                "name": "Quentin Johnston",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-3-7": {
     "season": "2027",
