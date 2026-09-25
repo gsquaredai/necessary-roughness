@@ -1,5 +1,81 @@
 [
   {
+    "id": "1408993550711943168",
+    "type": "free_agent",
+    "date": "2026-09-24T23:32:29.625Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11687",
+        "name": "Edgerrin Cooper",
+        "position": "LB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11655",
+        "name": "Tyrone Tracy",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1408977841692897280",
+    "type": "free_agent",
+    "date": "2026-09-24T22:30:04.303Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "4017",
+        "name": "Deshaun Watson",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1408877296516894720",
     "type": "free_agent",
     "date": "2026-09-24T15:50:32.466Z",
