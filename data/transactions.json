@@ -172,6 +172,50 @@
     "waiverBid": null
   },
   {
+    "id": "1408880087134203904",
+    "type": "waiver",
+    "date": "2026-09-24T16:01:37.801Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "8188",
+        "name": "Tyquan Thornton",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "12048",
+        "name": "George Holani",
+        "position": "RB",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 6
+  },
+  {
     "id": "1408877296516894720",
     "type": "free_agent",
     "date": "2026-09-24T15:50:32.466Z",
