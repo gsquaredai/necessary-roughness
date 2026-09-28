@@ -5934,7 +5934,7 @@
             "played": true,
             "stats": {
               "rec": 7,
-              "rec_tgt": 12,
+              "rec_tgt": 13,
               "rec_yd": 137
             }
           },
@@ -73538,7 +73538,7 @@
               "rush_att": 15,
               "rush_yd": 88,
               "rec": 6,
-              "rec_tgt": 8,
+              "rec_tgt": 7,
               "rec_yd": 70
             }
           },
@@ -139268,7 +139268,7 @@
     "seasons": {
       "2026": {
         "totalPoints": 0,
-        "gamesPlayed": 1,
+        "gamesPlayed": 0,
         "positionRank": 46,
         "overallRank": 322,
         "games": [
@@ -139287,7 +139287,7 @@
           {
             "week": 3,
             "points": 0,
-            "played": true,
+            "played": false,
             "stats": {}
           },
           {
@@ -142202,7 +142202,7 @@
             "played": true,
             "stats": {
               "rec": 1,
-              "rec_tgt": 4,
+              "rec_tgt": 3,
               "rec_yd": 40,
               "rec_td": 1
             }
