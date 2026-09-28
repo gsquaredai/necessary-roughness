@@ -3,6 +3,12 @@
     {
       "season": "2027",
       "round": 1,
+      "originalRosterId": 1,
+      "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 1,
       "originalRosterId": 3,
       "originalTeam": {
         "teamName": "Big Dike Energy",
@@ -31,17 +37,6 @@
         "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
         "ownerId": "1125954610599964672",
         "rosterId": 4
-      }
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 5,
-      "originalTeam": {
-        "teamName": "Black Ops",
-        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-        "ownerId": "1044114449679917056",
-        "rosterId": 5
       }
     },
     {
@@ -160,17 +155,6 @@
   "3": [
     {
       "season": "2027",
-      "round": 1,
-      "originalRosterId": 1,
-      "originalTeam": {
-        "teamName": "Schro's Nest",
-        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-        "ownerId": "989741725566427136",
-        "rosterId": 1
-      }
-    },
-    {
-      "season": "2027",
       "round": 2,
       "originalRosterId": 1,
       "originalTeam": {
@@ -185,6 +169,17 @@
       "round": 2,
       "originalRosterId": 3,
       "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 5,
+      "originalTeam": {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
     },
     {
       "season": "2027",
