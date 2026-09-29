@@ -1,5 +1,138 @@
 [
   {
+    "id": "1410678933220835328",
+    "type": "trade",
+    "date": "2026-09-29T15:09:36.128Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      },
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "players": [
+          {
+            "playerId": "10232",
+            "name": "Michael Wilson",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 3,
+            "originalRosterId": 7,
+            "result": null,
+            "originalTeam": "WANGHAF"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "players": [
+          {
+            "playerId": "13346",
+            "name": "Denzel Boston",
+            "position": "WR"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "10232",
+        "name": "Michael Wilson",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      },
+      {
+        "playerId": "13346",
+        "name": "Denzel Boston",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "10232",
+        "name": "Michael Wilson",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      },
+      {
+        "playerId": "13346",
+        "name": "Denzel Boston",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 3,
+        "originalRosterId": 7,
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1410498520560988160",
     "type": "free_agent",
     "date": "2026-09-29T03:12:42.399Z",

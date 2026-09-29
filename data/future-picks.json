@@ -461,6 +461,17 @@
     },
     {
       "season": "2027",
+      "round": 3,
+      "originalRosterId": 7,
+      "originalTeam": {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    },
+    {
+      "season": "2027",
       "round": 4,
       "originalRosterId": 6,
       "originalTeam": null
@@ -865,17 +876,6 @@
         "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
-      }
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 7,
-      "originalTeam": {
-        "teamName": "WANGHAF",
-        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
-        "ownerId": "1128523568641466368",
-        "rosterId": 7
       }
     },
     {

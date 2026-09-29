@@ -24598,12 +24598,71 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
     "tradeHistory": [
+      {
+        "date": "2026-09-29T15:09:36.128Z",
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "10232",
+                "name": "Michael Wilson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "13346",
+                "name": "Denzel Boston",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-04-24T02:53:24.837Z",
         "from": {
