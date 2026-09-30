@@ -1,5 +1,225 @@
 [
   {
+    "id": "1410976151962124288",
+    "type": "free_agent",
+    "date": "2026-09-30T10:50:38.599Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "6183",
+        "name": "Andrew Van Ginkel",
+        "position": "LB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "5854",
+        "name": "Drew Lock",
+        "position": "QB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1410815664041537536",
+    "type": "waiver",
+    "date": "2026-09-30T00:12:55.296Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12476",
+        "name": "Devin Neal",
+        "position": "RB",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "13726",
+        "name": "Camden Brown",
+        "position": "WR",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1410709216234074112",
+    "type": "waiver",
+    "date": "2026-09-29T17:09:56.162Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "9757",
+        "name": "Kendre Miller",
+        "position": "RB",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "9501",
+        "name": "DeMario Douglas",
+        "position": "WR",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 5
+  },
+  {
+    "id": "1410709063532023808",
+    "type": "waiver",
+    "date": "2026-09-29T17:09:19.754Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11571",
+        "name": "Isaiah Davis",
+        "position": "RB",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11370",
+        "name": "Chris Brooks",
+        "position": "RB",
+        "team": {
+          "teamName": "Big Dike Energy",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 25
+  },
+  {
+    "id": "1410706740189614080",
+    "type": "waiver",
+    "date": "2026-09-29T17:00:05.826Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11630",
+        "name": "Roman Wilson",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "6828",
+        "name": "AJ Dillon",
+        "position": "RB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 5
+  },
+  {
     "id": "1410678933220835328",
     "type": "trade",
     "date": "2026-09-29T15:09:36.128Z",
@@ -131,6 +351,50 @@
     ],
     "faab": [],
     "waiverBid": null
+  },
+  {
+    "id": "1410628507981094912",
+    "type": "waiver",
+    "date": "2026-09-29T11:49:13.815Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "1737",
+        "name": "Case Keenum",
+        "position": "QB",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7090",
+        "name": "Darnell Mooney",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 11
   },
   {
     "id": "1410498520560988160",
@@ -297,6 +561,170 @@
     "draftPicksTraded": [],
     "faab": [],
     "waiverBid": null
+  },
+  {
+    "id": "1410476993098629120",
+    "type": "waiver",
+    "date": "2026-09-29T01:47:09.851Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "9479",
+        "name": "Darnell Washington",
+        "position": "TE",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1410385562078031872",
+    "type": "waiver",
+    "date": "2026-09-28T19:43:50.997Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12718",
+        "name": "Konata Mumpfield",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7562",
+        "name": "Tutu Atwell",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 16
+  },
+  {
+    "id": "1410342055489617920",
+    "type": "waiver",
+    "date": "2026-09-28T16:50:58.219Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13425",
+        "name": "Jalon Daniels",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "6789",
+        "name": "Henry Ruggs",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 6
+  },
+  {
+    "id": "1410309635981783040",
+    "type": "waiver",
+    "date": "2026-09-28T14:42:08.806Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7627",
+        "name": "Greg Rousseau",
+        "position": "DE",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11687",
+        "name": "Edgerrin Cooper",
+        "position": "LB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 5
   },
   {
     "id": "1410099532972257280",
