@@ -13529,7 +13529,7 @@
         "totalPoints": 37.260000000000005,
         "gamesPlayed": 2,
         "positionRank": 24,
-        "overallRank": 70,
+        "overallRank": 69,
         "games": [
           {
             "week": 1,
@@ -24073,7 +24073,7 @@
         "totalPoints": 37.1,
         "gamesPlayed": 3,
         "positionRank": 25,
-        "overallRank": 71,
+        "overallRank": 70,
         "games": [
           {
             "week": 1,
@@ -29371,10 +29371,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 37.5,
+        "totalPoints": 37,
         "gamesPlayed": 3,
         "positionRank": 3,
-        "overallRank": 67,
+        "overallRank": 71,
         "games": [
           {
             "week": 1,
@@ -29390,7 +29390,7 @@
           },
           {
             "week": 3,
-            "points": 15.5,
+            "points": 15,
             "played": true,
             "stats": {}
           },
@@ -40619,7 +40619,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 20,
-        "overallRank": 325,
+        "overallRank": 326,
         "games": [
           {
             "week": 4,
@@ -44939,7 +44939,7 @@
         "totalPoints": 37.4,
         "gamesPlayed": 3,
         "positionRank": 17,
-        "overallRank": 68,
+        "overallRank": 67,
         "games": [
           {
             "week": 1,
@@ -61898,7 +61898,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 21,
-        "overallRank": 331,
+        "overallRank": 332,
         "games": [
           {
             "week": 1,
@@ -70823,7 +70823,7 @@
     "playerId": "8143",
     "name": "Jerome Ford",
     "position": "RB",
-    "nflTeam": "MIN",
+    "nflTeam": null,
     "birthDate": "1999-09-12",
     "currentTeam": null,
     "seasons": {
@@ -75733,6 +75733,119 @@
               "rec_td": 1
             }
           },
+          {
+            "week": 4,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
+  "8168": {
+    "playerId": "8168",
+    "name": "Skyy Moore",
+    "position": "WR",
+    "nflTeam": "GB",
+    "birthDate": "2000-09-10",
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 114,
+        "overallRank": 324,
+        "games": [
           {
             "week": 4,
             "points": 0,
@@ -95238,7 +95351,7 @@
     "playerId": "10215",
     "name": "Jake Haener",
     "position": "QB",
-    "nflTeam": null,
+    "nflTeam": "NYG",
     "birthDate": "1999-03-10",
     "currentTeam": null,
     "seasons": {
@@ -106920,7 +107033,7 @@
     "playerId": "11579",
     "name": "Audric Estime",
     "position": "RB",
-    "nflTeam": null,
+    "nflTeam": "MIN",
     "birthDate": "2003-09-06",
     "currentTeam": null,
     "seasons": {
@@ -121391,7 +121504,7 @@
         "totalPoints": -0.6,
         "gamesPlayed": 2,
         "positionRank": 89,
-        "overallRank": 336,
+        "overallRank": 337,
         "games": [
           {
             "week": 1,
@@ -136768,8 +136881,8 @@
       "2026": {
         "totalPoints": -0.8,
         "gamesPlayed": 2,
-        "positionRank": 117,
-        "overallRank": 337,
+        "positionRank": 118,
+        "overallRank": 338,
         "games": [
           {
             "week": 1,
@@ -139043,8 +139156,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 116,
-        "overallRank": 333,
+        "positionRank": 117,
+        "overallRank": 334,
         "games": [
           {
             "week": 1,
@@ -139175,7 +139288,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 47,
-        "overallRank": 326,
+        "overallRank": 327,
         "games": [
           {
             "week": 1,
@@ -139306,7 +139419,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 48,
-        "overallRank": 327,
+        "overallRank": 328,
         "games": [
           {
             "week": 1,
@@ -139576,7 +139689,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 50,
-        "overallRank": 334,
+        "overallRank": 335,
         "games": [
           {
             "week": 1,
@@ -139842,7 +139955,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 44,
-        "overallRank": 335,
+        "overallRank": 336,
         "games": [
           {
             "week": 1,
@@ -140541,7 +140654,7 @@
         "totalPoints": 37.4,
         "gamesPlayed": 3,
         "positionRank": 15,
-        "overallRank": 69,
+        "overallRank": 68,
         "games": [
           {
             "week": 1,
@@ -140826,7 +140939,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 49,
-        "overallRank": 328,
+        "overallRank": 329,
         "games": [
           {
             "week": 1,
@@ -141669,7 +141782,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 46,
-        "overallRank": 324,
+        "overallRank": 325,
         "games": [
           {
             "week": 1,
@@ -143211,7 +143324,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 43,
-        "overallRank": 329,
+        "overallRank": 330,
         "games": [
           {
             "week": 1,
@@ -144272,8 +144385,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 114,
-        "overallRank": 330,
+        "positionRank": 115,
+        "overallRank": 331,
         "games": [
           {
             "week": 1,
@@ -144675,8 +144788,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 3,
-        "positionRank": 115,
-        "overallRank": 332,
+        "positionRank": 116,
+        "overallRank": 333,
         "games": [
           {
             "week": 1,
