@@ -1,5 +1,195 @@
 [
   {
+    "id": "1413040364259909632",
+    "type": "free_agent",
+    "date": "2026-10-06T03:33:05.161Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "8168",
+        "name": "Skyy Moore",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1413030977340465152",
+    "type": "trade",
+    "date": "2026-10-06T02:55:47.146Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      },
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "players": [
+          {
+            "playerId": "5927",
+            "name": "Terry McLaurin",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 4,
+            "originalRosterId": 5,
+            "result": null,
+            "originalTeam": "Black Ops"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "players": [
+          {
+            "playerId": "13311",
+            "name": "Chris Bell",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2028",
+            "round": 2,
+            "originalRosterId": 6,
+            "result": null,
+            "originalTeam": "Smitty Committee"
+          }
+        ],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "5927",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      },
+      {
+        "playerId": "13311",
+        "name": "Chris Bell",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "5927",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      },
+      {
+        "playerId": "13311",
+        "name": "Chris Bell",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 4,
+        "originalRosterId": 5,
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      },
+      {
+        "season": "2028",
+        "round": 2,
+        "originalRosterId": 6,
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1412517332340813824",
     "type": "free_agent",
     "date": "2026-10-04T16:54:44.634Z",
