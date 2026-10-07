@@ -1,5 +1,49 @@
 [
   {
+    "id": "1413459212855484416",
+    "type": "free_agent",
+    "date": "2026-10-07T07:17:26.449Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7083",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "5816",
+        "name": "Nick Bosa",
+        "position": "DE",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1413298445761974272",
     "type": "free_agent",
     "date": "2026-10-06T20:38:36.586Z",
@@ -30,6 +74,82 @@
     "draftPicksTraded": [],
     "faab": [],
     "waiverBid": null
+  },
+  {
+    "id": "1413211145535242240",
+    "type": "waiver",
+    "date": "2026-10-06T14:51:42.590Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13453",
+        "name": "Jacob Rodriguez",
+        "position": "LB",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "8188",
+        "name": "Tyquan Thornton",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1413205799869616128",
+    "type": "waiver",
+    "date": "2026-10-06T14:30:28.084Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13264",
+        "name": "Dohnte Meyers",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 12
   },
   {
     "id": "1413040364259909632",
