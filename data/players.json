@@ -13188,7 +13188,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 4,
-        "overallRank": 323,
+        "overallRank": 324,
         "games": [
           {
             "week": 1,
@@ -21622,12 +21622,7 @@
     "position": "WR",
     "nflTeam": "ARI",
     "birthDate": "1995-08-04",
-    "currentTeam": {
-      "teamName": "Big Dike Energy",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 45.699999999999996,
@@ -21965,90 +21960,6 @@
             "week": 4,
             "points": 0,
             "played": true,
-            "stats": {}
-          },
-          {
-            "week": 5,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 6,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
             "stats": {}
           }
         ]
@@ -51247,6 +51158,113 @@
       }
     }
   },
+  "7039": {
+    "playerId": "7039",
+    "name": "Cody White",
+    "position": "WR",
+    "nflTeam": "LV",
+    "birthDate": "1998-11-28",
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 114,
+        "overallRank": 326,
+        "games": [
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "7049": {
     "playerId": "7049",
     "name": "Jauan Jennings",
@@ -62238,7 +62256,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 22,
-        "overallRank": 333,
+        "overallRank": 335,
         "games": [
           {
             "week": 1,
@@ -122011,7 +122029,7 @@
         "totalPoints": -0.6,
         "gamesPlayed": 2,
         "positionRank": 89,
-        "overallRank": 337,
+        "overallRank": 339,
         "games": [
           {
             "week": 1,
@@ -124794,7 +124812,7 @@
     "playerId": "12476",
     "name": "Devin Neal",
     "position": "RB",
-    "nflTeam": "MIN",
+    "nflTeam": null,
     "birthDate": "2003-08-12",
     "currentTeam": {
       "teamName": "Spotted Cow",
@@ -137558,8 +137576,8 @@
       "2026": {
         "totalPoints": -0.8,
         "gamesPlayed": 2,
-        "positionRank": 116,
-        "overallRank": 338,
+        "positionRank": 118,
+        "overallRank": 340,
         "games": [
           {
             "week": 1,
@@ -139711,6 +139729,113 @@
       }
     }
   },
+  "13150": {
+    "playerId": "13150",
+    "name": "Darius Cooper",
+    "position": "WR",
+    "nflTeam": "PHI",
+    "birthDate": "2001-11-22",
+    "currentTeam": {
+      "teamName": "Big Dike Energy",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 112,
+        "overallRank": 323,
+        "games": [
+          {
+            "week": 5,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 6,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "13264": {
     "playerId": "13264",
     "name": "Dohnte Meyers",
@@ -139727,8 +139852,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 113,
-        "overallRank": 325,
+        "positionRank": 115,
+        "overallRank": 327,
         "games": [
           {
             "week": 5,
@@ -139970,7 +140095,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 48,
-        "overallRank": 327,
+        "overallRank": 329,
         "games": [
           {
             "week": 1,
@@ -140101,7 +140226,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 49,
-        "overallRank": 328,
+        "overallRank": 330,
         "games": [
           {
             "week": 1,
@@ -140375,7 +140500,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 51,
-        "overallRank": 335,
+        "overallRank": 337,
         "games": [
           {
             "week": 1,
@@ -140641,7 +140766,7 @@
         "totalPoints": 0,
         "gamesPlayed": 3,
         "positionRank": 44,
-        "overallRank": 336,
+        "overallRank": 338,
         "games": [
           {
             "week": 1,
@@ -141644,7 +141769,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 50,
-        "overallRank": 329,
+        "overallRank": 331,
         "games": [
           {
             "week": 1,
@@ -142499,7 +142624,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 47,
-        "overallRank": 326,
+        "overallRank": 328,
         "games": [
           {
             "week": 1,
@@ -144070,7 +144195,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 43,
-        "overallRank": 330,
+        "overallRank": 332,
         "games": [
           {
             "week": 1,
@@ -144200,8 +144325,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 112,
-        "overallRank": 324,
+        "positionRank": 113,
+        "overallRank": 325,
         "games": [
           {
             "week": 1,
@@ -145254,8 +145379,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 114,
-        "overallRank": 331,
+        "positionRank": 116,
+        "overallRank": 333,
         "games": [
           {
             "week": 1,
@@ -145660,8 +145785,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 4,
-        "positionRank": 115,
-        "overallRank": 334,
+        "positionRank": 117,
+        "overallRank": 336,
         "games": [
           {
             "week": 1,
@@ -146615,7 +146740,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 21,
-        "overallRank": 332,
+        "overallRank": 334,
         "games": [
           {
             "week": 5,
