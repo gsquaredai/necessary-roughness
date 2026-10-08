@@ -22638,12 +22638,140 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-18T19:58:10.570Z",
         "from": {
@@ -22960,12 +23088,140 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "GrayPornography",
+      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+      "ownerId": "990079789383897088",
+      "rosterId": 2
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-23T17:36:00.817Z",
         "from": {
@@ -24023,12 +24279,140 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "GrayPornography",
+      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+      "ownerId": "990079789383897088",
+      "rosterId": 2
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-23T17:36:00.817Z",
         "from": {
@@ -25616,12 +26000,141 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "Exciting Whites",
+      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+      "ownerId": "1128912559073067008",
+      "rosterId": 11
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-1-7": {
     "season": "2028",
@@ -25863,12 +26376,140 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Exciting Whites",
+      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+      "ownerId": "1128912559073067008",
+      "rosterId": 11
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-10-25T01:21:01.600Z",
         "from": {
@@ -26873,12 +27514,140 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-07T23:15:39.227Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12512",
+                "name": "Quinshon Judkins",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Big Dike Energy"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "8155",
+                "name": "Breece Hall",
+                "position": "RB"
+              },
+              {
+                "playerId": "9228",
+                "name": "Bryce Young",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Exciting Whites",
+              "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+              "ownerId": "1128912559073067008",
+              "rosterId": 11
+            },
+            "players": [
+              {
+                "playerId": "6797",
+                "name": "Justin Herbert",
+                "position": "QB"
+              },
+              {
+                "playerId": "11630",
+                "name": "Roman Wilson",
+                "position": "WR"
+              },
+              {
+                "playerId": "12481",
+                "name": "Cam Skattebo",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2028",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2028",
+                "round": 1,
+                "originalRosterId": 6,
+                "result": null,
+                "originalTeam": "Smitty Committee"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-23T02:42:57.481Z",
         "from": {

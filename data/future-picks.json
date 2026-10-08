@@ -78,6 +78,28 @@
   "2": [
     {
       "season": "2027",
+      "round": 2,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 3,
+      "originalTeam": {
+        "teamName": "Big Dike Energy",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    },
+    {
+      "season": "2027",
       "round": 3,
       "originalRosterId": 12,
       "originalTeam": {
@@ -95,31 +117,9 @@
     },
     {
       "season": "2028",
-      "round": 2,
-      "originalRosterId": 1,
-      "originalTeam": {
-        "teamName": "Schro's Nest",
-        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-        "ownerId": "989741725566427136",
-        "rosterId": 1
-      }
-    },
-    {
-      "season": "2028",
       "round": 3,
       "originalRosterId": 2,
       "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 3,
-      "originalRosterId": 12,
-      "originalTeam": {
-        "teamName": "Spotted Cow",
-        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
-        "ownerId": "1373899826093096960",
-        "rosterId": 12
-      }
     },
     {
       "season": "2028",
@@ -435,23 +435,12 @@
     {
       "season": "2027",
       "round": 2,
-      "originalRosterId": 9,
+      "originalRosterId": 7,
       "originalTeam": {
-        "teamName": "Los pollos hermanos",
-        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
-        "ownerId": "1128774237046636544",
-        "rosterId": 9
-      }
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 3,
-      "originalTeam": {
-        "teamName": "Big Dike Energy",
-        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-        "ownerId": "326066174007713792",
-        "rosterId": 3
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
       }
     },
     {
@@ -473,15 +462,20 @@
     },
     {
       "season": "2028",
-      "round": 1,
+      "round": 3,
       "originalRosterId": 6,
       "originalTeam": null
     },
     {
       "season": "2028",
       "round": 3,
-      "originalRosterId": 6,
-      "originalTeam": null
+      "originalRosterId": 12,
+      "originalTeam": {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
     },
     {
       "season": "2029",
@@ -848,53 +842,64 @@
     {
       "season": "2027",
       "round": 2,
-      "originalRosterId": 7,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 2,
       "originalTeam": {
-        "teamName": "WANGHAF",
-        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
-        "ownerId": "1128523568641466368",
-        "rosterId": 7
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
       }
     },
     {
       "season": "2027",
+      "round": 3,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 4,
+      "originalRosterId": 2,
+      "originalTeam": {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    },
+    {
+      "season": "2027",
+      "round": 4,
+      "originalRosterId": 11,
+      "originalTeam": null
+    },
+    {
+      "season": "2028",
+      "round": 1,
+      "originalRosterId": 6,
+      "originalTeam": {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    },
+    {
+      "season": "2028",
       "round": 2,
-      "originalRosterId": 11,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 2,
+      "originalRosterId": 1,
       "originalTeam": {
-        "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-        "ownerId": "990079789383897088",
-        "rosterId": 2
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
       }
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 11,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
-      "round": 4,
-      "originalRosterId": 2,
-      "originalTeam": {
-        "teamName": "GrayPornography",
-        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-        "ownerId": "990079789383897088",
-        "rosterId": 2
-      }
-    },
-    {
-      "season": "2027",
-      "round": 4,
-      "originalRosterId": 11,
-      "originalTeam": null
     },
     {
       "season": "2028",
