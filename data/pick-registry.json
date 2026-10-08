@@ -22966,12 +22966,81 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Spotted Cow",
-      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
-      "ownerId": "1373899826093096960",
-      "rosterId": 12
+      "teamName": "the left one’s bigger",
+      "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+      "ownerId": "996557160589000704",
+      "rosterId": 8
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-08T13:30:37.455Z",
+        "from": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "to": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            },
+            "players": [
+              {
+                "playerId": "421",
+                "name": "Matthew Stafford",
+                "position": "QB"
+              },
+              {
+                "playerId": "7594",
+                "name": "Chuba Hubbard",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 8,
+                "result": null,
+                "originalTeam": "the left one’s bigger"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "5870",
+                "name": "Daniel Jones",
+                "position": "QB"
+              },
+              {
+                "playerId": "9226",
+                "name": "De'Von Achane",
+                "position": "RB"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-08-22T18:56:59.745Z",
         "from": {

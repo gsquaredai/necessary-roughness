@@ -633,6 +633,12 @@
     },
     {
       "season": "2027",
+      "round": 2,
+      "originalRosterId": 8,
+      "originalTeam": null
+    },
+    {
+      "season": "2027",
       "round": 3,
       "originalRosterId": 8,
       "originalTeam": null
@@ -976,17 +982,6 @@
         "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
         "ownerId": "990079789383897088",
         "rosterId": 2
-      }
-    },
-    {
-      "season": "2027",
-      "round": 2,
-      "originalRosterId": 8,
-      "originalTeam": {
-        "teamName": "the left one’s bigger",
-        "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
-        "ownerId": "996557160589000704",
-        "rosterId": 8
       }
     },
     {
