@@ -1,5 +1,49 @@
 [
   {
+    "id": "1415224875265626112",
+    "type": "free_agent",
+    "date": "2026-10-12T04:13:33.172Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "3271",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "13264",
+        "name": "Dohnte Meyers",
+        "position": "WR",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1415054054043717632",
     "type": "free_agent",
     "date": "2026-10-11T16:54:46.218Z",
