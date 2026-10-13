@@ -608,7 +608,7 @@
     "away": "SF"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-12",
     "home": "LAR",
     "week": 5,
@@ -646,14 +646,6 @@
     "week": 6,
     "game_id": "202610608",
     "away": "BAL"
-  },
-  {
-    "status": "canceled",
-    "date": "2026-10-15",
-    "home": "DAL",
-    "week": 6,
-    "game_id": "202610609",
-    "away": "SEA"
   },
   {
     "status": "pre_game",
