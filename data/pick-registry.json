@@ -25600,12 +25600,83 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-15T19:22:01.059Z",
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "8161",
+                "name": "Malik Willis",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "1166",
+                "name": "Kirk Cousins",
+                "position": "QB"
+              },
+              {
+                "playerId": "10213",
+                "name": "Tre Tucker",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-10-06T02:55:47.146Z",
         "from": {
@@ -27457,12 +27528,84 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-15T19:22:01.059Z",
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "8161",
+                "name": "Malik Willis",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "1166",
+                "name": "Kirk Cousins",
+                "position": "QB"
+              },
+              {
+                "playerId": "10213",
+                "name": "Tre Tucker",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-3-6": {
     "season": "2028",
