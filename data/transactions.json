@@ -1,5 +1,49 @@
 [
   {
+    "id": "1416857842907873280",
+    "type": "free_agent",
+    "date": "2026-10-16T16:22:22.996Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7083",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "8659",
+        "name": "Nate Landman",
+        "position": "LB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1416853078916812800",
     "type": "free_agent",
     "date": "2026-10-16T16:03:27.172Z",
