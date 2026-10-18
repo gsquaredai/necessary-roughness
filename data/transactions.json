@@ -1,5 +1,37 @@
 [
   {
+    "id": "1417587297955659776",
+    "type": "free_agent",
+    "date": "2026-10-18T16:40:58.633Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11439",
+        "name": "Jaleel McLaughlin",
+        "position": "RB",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1417542416373669888",
     "type": "free_agent",
     "date": "2026-10-18T13:42:38.030Z",
