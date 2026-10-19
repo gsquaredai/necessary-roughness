@@ -25309,12 +25309,89 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Spotted Cow",
+      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+      "ownerId": "1373899826093096960",
+      "rosterId": 12
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-18T21:57:06.708Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12519",
+                "name": "Luther Burden",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "5850",
+                "name": "Josh Jacobs",
+                "position": "RB"
+              },
+              {
+                "playerId": "11559",
+                "name": "Michael Penix",
+                "position": "QB"
+              },
+              {
+                "playerId": "11620",
+                "name": "Rome Odunze",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-23T02:42:57.481Z",
         "from": {
@@ -25957,12 +26034,90 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Spotted Cow",
-      "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
-      "ownerId": "1373899826093096960",
-      "rosterId": 12
+      "teamName": "GrayPornography",
+      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+      "ownerId": "990079789383897088",
+      "rosterId": 2
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-18T21:57:06.708Z",
+        "from": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        },
+        "to": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "12519",
+                "name": "Luther Burden",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Spotted Cow",
+              "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+              "ownerId": "1373899826093096960",
+              "rosterId": 12
+            },
+            "players": [
+              {
+                "playerId": "5850",
+                "name": "Josh Jacobs",
+                "position": "RB"
+              },
+              {
+                "playerId": "11559",
+                "name": "Michael Penix",
+                "position": "QB"
+              },
+              {
+                "playerId": "11620",
+                "name": "Rome Odunze",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 12,
+                "result": null,
+                "originalTeam": "Spotted Cow"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2028-1-1": {
     "season": "2028",
