@@ -1,5 +1,278 @@
 [
   {
+    "id": "1418287643346608128",
+    "type": "free_agent",
+    "date": "2026-10-20T15:03:53.985Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "8698",
+        "name": "Jake Tonges",
+        "position": "TE",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1418273678625443840",
+    "type": "free_agent",
+    "date": "2026-10-20T14:08:24.536Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "7083",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1418257512817291264",
+    "type": "free_agent",
+    "date": "2026-10-20T13:04:10.308Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "3161",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1418244807213555712",
+    "type": "trade",
+    "date": "2026-10-20T12:13:41.056Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      },
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "players": [
+          {
+            "playerId": "1479",
+            "name": "Keenan Allen",
+            "position": "WR"
+          },
+          {
+            "playerId": "4037",
+            "name": "Chris Godwin",
+            "position": "WR"
+          },
+          {
+            "playerId": "11834",
+            "name": "Devaughn Vele",
+            "position": "WR"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "players": [],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 2,
+            "originalRosterId": 9,
+            "result": null,
+            "originalTeam": "Los pollos hermanos"
+          }
+        ],
+        "faab": [
+          39
+        ]
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "1479",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      },
+      {
+        "playerId": "4037",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      },
+      {
+        "playerId": "11834",
+        "name": "Devaughn Vele",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "1479",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      },
+      {
+        "playerId": "4037",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      },
+      {
+        "playerId": "11834",
+        "name": "Devaughn Vele",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 2,
+        "originalRosterId": 9,
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "faab": [
+      {
+        "amount": 39,
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "waiverBid": null
+  },
+  {
     "id": "1418063627063136256",
     "type": "free_agent",
     "date": "2026-10-20T00:13:44.342Z",

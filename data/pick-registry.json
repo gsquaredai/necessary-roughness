@@ -23157,12 +23157,77 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "WANGHAF",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+      "ownerId": "1128523568641466368",
+      "rosterId": 7
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-20T12:13:41.056Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "1479",
+                "name": "Keenan Allen",
+                "position": "WR"
+              },
+              {
+                "playerId": "4037",
+                "name": "Chris Godwin",
+                "position": "WR"
+              },
+              {
+                "playerId": "11834",
+                "name": "Devaughn Vele",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "WANGHAF",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+              "ownerId": "1128523568641466368",
+              "rosterId": 7
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 9,
+                "result": null,
+                "originalTeam": "Los pollos hermanos"
+              }
+            ],
+            "faab": [
+              39
+            ]
+          }
+        ]
+      },
       {
         "date": "2026-10-07T23:15:39.227Z",
         "from": {
