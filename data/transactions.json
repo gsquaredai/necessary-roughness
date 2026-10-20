@@ -1,5 +1,37 @@
 [
   {
+    "id": "1418363723629826048",
+    "type": "free_agent",
+    "date": "2026-10-20T20:06:12.939Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "7528",
+        "name": "Najee Harris",
+        "position": "RB",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1418287643346608128",
     "type": "free_agent",
     "date": "2026-10-20T15:03:53.985Z",
