@@ -1,5 +1,37 @@
 [
   {
+    "id": "1418473663417614336",
+    "type": "free_agent",
+    "date": "2026-10-21T03:23:04.627Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "12472",
+        "name": "Raheim Sanders",
+        "position": "RB",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1418363723629826048",
     "type": "free_agent",
     "date": "2026-10-20T20:06:12.939Z",
