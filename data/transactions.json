@@ -1,5 +1,69 @@
 [
   {
+    "id": "1418632912449855488",
+    "type": "free_agent",
+    "date": "2026-10-21T13:55:52.555Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "5995",
+        "name": "Justice Hill",
+        "position": "RB",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1418632336366440449",
+    "type": "free_agent",
+    "date": "2026-10-21T13:53:35.206Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "12471",
+        "name": "DJ Giddens",
+        "position": "RB",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1418587874512654336",
     "type": "free_agent",
     "date": "2026-10-21T10:56:54.673Z",
