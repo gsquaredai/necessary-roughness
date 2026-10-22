@@ -20483,12 +20483,93 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Sutton On Deez",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-22T19:53:38.058Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "7569",
+                "name": "Nico Collins",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-11-29T02:09:32.560Z",
         "from": {
@@ -21791,12 +21872,93 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Sutton On Deez",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-22T19:53:38.058Z",
+        "from": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "7569",
+                "name": "Nico Collins",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-05-31T00:29:36.389Z",
         "from": {
@@ -21976,12 +22138,94 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Sutton On Deez",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-22T19:53:38.058Z",
+        "from": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "7569",
+                "name": "Nico Collins",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-2-4": {
     "season": "2027",
@@ -27748,12 +27992,93 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Sutton On Deez",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-22T19:53:38.058Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "7569",
+                "name": "Nico Collins",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "13281",
+                "name": "Jordyn Tyson",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Sutton On Deez"
+              },
+              {
+                "season": "2028",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-10-15T19:22:01.059Z",
         "from": {
