@@ -1,5 +1,49 @@
 [
   {
+    "id": "1418681567978524672",
+    "type": "waiver",
+    "date": "2026-10-21T17:09:12.936Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7083",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "2197",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
     "id": "1418632912449855488",
     "type": "free_agent",
     "date": "2026-10-21T13:55:52.555Z",
