@@ -108,6 +108,50 @@
     "waiverBid": null
   },
   {
+    "id": "1418552684524449792",
+    "type": "waiver",
+    "date": "2026-10-21T08:37:04.727Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "3634",
+        "name": "Kalif Raymond",
+        "position": "WR",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7627",
+        "name": "Greg Rousseau",
+        "position": "DE",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 1
+  },
+  {
     "id": "1418473663417614336",
     "type": "free_agent",
     "date": "2026-10-21T03:23:04.627Z",
