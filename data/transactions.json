@@ -515,6 +515,38 @@
     "waiverBid": null
   },
   {
+    "id": "1418718130150076416",
+    "type": "waiver",
+    "date": "2026-10-21T19:34:30.037Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "2505",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 2
+  },
+  {
     "id": "1418681567978524672",
     "type": "waiver",
     "date": "2026-10-21T17:09:12.936Z",
