@@ -106,6 +106,17 @@
     },
     {
       "season": "2027",
+      "round": 3,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    },
+    {
+      "season": "2027",
       "round": 4,
       "originalRosterId": 12,
       "originalTeam": {
@@ -708,12 +719,6 @@
         "ownerId": "989741725566427136",
         "rosterId": 1
       }
-    },
-    {
-      "season": "2027",
-      "round": 3,
-      "originalRosterId": 9,
-      "originalTeam": null
     },
     {
       "season": "2027",
