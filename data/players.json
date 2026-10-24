@@ -6254,7 +6254,12 @@
     "position": "WR",
     "nflTeam": "SF",
     "birthDate": "1993-09-25",
-    "currentTeam": null,
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
     "seasons": {
       "2024": {
         "totalPoints": 46.89999999999999,
@@ -6502,6 +6507,78 @@
               "rec_tgt": 2,
               "rec_yd": 13
             }
+          },
+          {
+            "week": 7,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
           }
         ]
       }
@@ -56976,12 +57053,7 @@
     "position": "WR",
     "nflTeam": "LAR",
     "birthDate": "1999-10-07",
-    "currentTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 71.7,
@@ -57274,78 +57346,6 @@
           },
           {
             "week": 3,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 7,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}

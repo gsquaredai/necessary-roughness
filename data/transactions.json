@@ -1,5 +1,49 @@
 [
   {
+    "id": "1419566459478147072",
+    "type": "waiver",
+    "date": "2026-10-24T03:45:27.511Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "2197",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7562",
+        "name": "Tutu Atwell",
+        "position": "WR",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 5
+  },
+  {
     "id": "1419134039360573440",
     "type": "free_agent",
     "date": "2026-10-22T23:07:10.521Z",
