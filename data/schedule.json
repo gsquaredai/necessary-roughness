@@ -744,7 +744,7 @@
     "away": "PIT"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-10-25",
     "home": "ARI",
     "week": 7,
@@ -752,7 +752,7 @@
     "away": "DEN"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "ATL",
     "week": 7,
@@ -760,7 +760,7 @@
     "away": "SF"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "BAL",
     "week": 7,
@@ -768,7 +768,7 @@
     "away": "CIN"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "CAR",
     "week": 7,
@@ -792,7 +792,7 @@
     "away": "GB"
   },
   {
-    "status": "pre_game",
+    "status": "in_game",
     "date": "2026-10-25",
     "home": "HOU",
     "week": 7,
@@ -800,7 +800,7 @@
     "away": "NYG"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "MIN",
     "week": 7,
@@ -808,7 +808,7 @@
     "away": "IND"
   },
   {
-    "status": "in_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "NO",
     "week": 7,
@@ -816,7 +816,7 @@
     "away": "PIT"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "NYJ",
     "week": 7,
@@ -848,7 +848,7 @@
     "away": "KC"
   },
   {
-    "status": "pre_game",
+    "status": "complete",
     "date": "2026-10-25",
     "home": "TEN",
     "week": 7,
