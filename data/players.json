@@ -106127,7 +106127,7 @@
               "pass_yd": 222,
               "pass_td": 1,
               "rush_att": 7,
-              "rush_yd": 74,
+              "rush_yd": 73,
               "rush_td": 1
             }
           },
@@ -119907,7 +119907,7 @@
       },
       "2026": {
         "totalPoints": 21.2,
-        "gamesPlayed": 4,
+        "gamesPlayed": 3,
         "positionRank": 78,
         "overallRank": 228,
         "games": [
@@ -119949,7 +119949,7 @@
           {
             "week": 7,
             "points": 0,
-            "played": true,
+            "played": false,
             "stats": {}
           },
           {
