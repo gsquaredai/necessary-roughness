@@ -36,17 +36,6 @@
     },
     {
       "season": "2027",
-      "round": 2,
-      "originalRosterId": 4,
-      "originalTeam": {
-        "teamName": "Faded off the Josh",
-        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
-        "ownerId": "1125954610599964672",
-        "rosterId": 4
-      }
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 5,
       "originalTeam": {
@@ -178,6 +167,28 @@
     },
     {
       "season": "2027",
+      "round": 1,
+      "originalRosterId": 8,
+      "originalTeam": {
+        "teamName": "the left one’s bigger",
+        "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+        "ownerId": "996557160589000704",
+        "rosterId": 8
+      }
+    },
+    {
+      "season": "2027",
+      "round": 2,
+      "originalRosterId": 4,
+      "originalTeam": {
+        "teamName": "Faded off the Josh",
+        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+        "ownerId": "1125954610599964672",
+        "rosterId": 4
+      }
+    },
+    {
+      "season": "2027",
       "round": 3,
       "originalRosterId": 5,
       "originalTeam": {
@@ -278,6 +289,17 @@
       "round": 3,
       "originalRosterId": 3,
       "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 5,
+      "originalTeam": {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
     },
     {
       "season": "2029",
@@ -409,12 +431,6 @@
     {
       "season": "2029",
       "round": 2,
-      "originalRosterId": 5,
-      "originalTeam": null
-    },
-    {
-      "season": "2029",
-      "round": 3,
       "originalRosterId": 5,
       "originalTeam": null
     },
@@ -641,12 +657,6 @@
     }
   ],
   "8": [
-    {
-      "season": "2027",
-      "round": 1,
-      "originalRosterId": 8,
-      "originalTeam": null
-    },
     {
       "season": "2027",
       "round": 2,

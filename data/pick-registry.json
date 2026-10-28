@@ -21144,12 +21144,77 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "the left one’s bigger",
-      "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
-      "ownerId": "996557160589000704",
-      "rosterId": 8
+      "teamName": "Sutton On Deez",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-28T02:30:47.176Z",
+        "from": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        },
+        "to": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "8142",
+                "name": "Alec Pierce",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 8,
+                "result": null,
+                "originalTeam": "the left one’s bigger"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "the left one’s bigger",
+              "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+              "ownerId": "996557160589000704",
+              "rosterId": 8
+            },
+            "players": [
+              {
+                "playerId": "4217",
+                "name": "George Kittle",
+                "position": "TE"
+              },
+              {
+                "playerId": "8228",
+                "name": "Jaylen Warren",
+                "position": "RB"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2027-1-9": {
     "season": "2027",
@@ -22238,12 +22303,65 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Sutton On Deez",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-28T02:49:23.338Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "10229",
+                "name": "Rashee Rice",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 4,
+                "result": null,
+                "originalTeam": "Faded off the Josh"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-21T02:11:31.454Z",
         "from": {
@@ -29393,12 +29511,72 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Sutton On Deez",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-10-28T02:40:47.829Z",
+        "from": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "to": {
+          "teamName": "Sutton On Deez",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Sutton On Deez",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "6904",
+                "name": "Jalen Hurts",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2029",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Black Ops",
+              "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+              "ownerId": "1044114449679917056",
+              "rosterId": 5
+            },
+            "players": [
+              {
+                "playerId": "6804",
+                "name": "Jordan Love",
+                "position": "QB"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2029-3-6": {
     "season": "2029",
