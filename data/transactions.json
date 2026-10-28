@@ -1,5 +1,37 @@
 [
   {
+    "id": "1421207138646196224",
+    "type": "free_agent",
+    "date": "2026-10-28T16:24:55.906Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "827",
+        "name": "Tyrod Taylor",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1421005604650037248",
     "type": "trade",
     "date": "2026-10-28T03:04:06.458Z",
@@ -96,7 +128,7 @@
         "rosterId": 1
       },
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -122,7 +154,7 @@
       },
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -159,7 +191,7 @@
         "name": "Rashee Rice",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -178,7 +210,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -227,7 +259,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -240,7 +272,7 @@
         "name": "Tez Johnson",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -253,7 +285,7 @@
         "name": "Malik Davis",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -271,7 +303,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -284,7 +316,7 @@
         "name": "Tommy Tremble",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -303,7 +335,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -318,7 +350,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -376,7 +408,7 @@
         "name": "Jalen Hurts",
         "position": "QB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -389,7 +421,7 @@
         "name": "Jordan Love",
         "position": "QB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -419,7 +451,7 @@
           "rosterId": 5
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -468,7 +500,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -483,7 +515,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -546,7 +578,7 @@
         "name": "Alec Pierce",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -570,7 +602,7 @@
         "name": "George Kittle",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -592,7 +624,7 @@
         "name": "Jaylen Warren",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -611,7 +643,7 @@
           "rosterId": 8
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -961,7 +993,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -974,7 +1006,7 @@
         "name": "Dohnte Meyers",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1031,7 +1063,7 @@
         "rosterId": 1
       },
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -1065,14 +1097,14 @@
             "round": 2,
             "originalRosterId": 3,
             "result": null,
-            "originalTeam": "Sutton On Deez"
+            "originalTeam": "Firesale"
           }
         ],
         "faab": []
       },
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1090,7 +1122,7 @@
             "round": 1,
             "originalRosterId": 3,
             "result": null,
-            "originalTeam": "Sutton On Deez"
+            "originalTeam": "Firesale"
           },
           {
             "season": "2028",
@@ -1120,7 +1152,7 @@
         "name": "Jordyn Tyson",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1133,7 +1165,7 @@
         "name": "Nico Collins",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1157,7 +1189,7 @@
         "round": 2,
         "originalRosterId": 1,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1180,7 +1212,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1191,7 +1223,7 @@
         "round": 2,
         "originalRosterId": 3,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -1214,7 +1246,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -2116,7 +2148,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -2130,7 +2162,7 @@
         "name": "Kalif Raymond",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -3052,7 +3084,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -3065,7 +3097,7 @@
         "name": "Kimani Vidal",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -3078,7 +3110,7 @@
         "name": "Kaleb Johnson",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -3096,7 +3128,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -3109,7 +3141,7 @@
         "name": "Dameon Pierce",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -3122,7 +3154,7 @@
         "name": "Isaiah Davis",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -3779,7 +3811,7 @@
             "round": 3,
             "originalRosterId": 3,
             "result": null,
-            "originalTeam": "Sutton On Deez"
+            "originalTeam": "Firesale"
           },
           {
             "season": "2027",
@@ -4153,7 +4185,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -4166,7 +4198,7 @@
         "name": "Darius Cooper",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -4179,7 +4211,7 @@
         "name": "Kendrick Bourne",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -4779,7 +4811,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -4792,7 +4824,7 @@
         "name": "Kendre Miller",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -4805,7 +4837,7 @@
         "name": "DeMario Douglas",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -4823,7 +4855,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -4836,7 +4868,7 @@
         "name": "Isaiah Davis",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -4849,7 +4881,7 @@
         "name": "Chris Brooks",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -5424,7 +5456,7 @@
         "rosterId": 1
       },
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -5458,7 +5490,7 @@
       },
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -5499,7 +5531,7 @@
         "name": "Omarion Hampton",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -5512,7 +5544,7 @@
         "name": "D'Andre Swift",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -5536,7 +5568,7 @@
         "round": 1,
         "originalRosterId": 1,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -5559,7 +5591,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6094,7 +6126,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -6108,7 +6140,7 @@
         "name": "Jordyn Brooks",
         "position": "LB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6126,7 +6158,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -6147,7 +6179,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6225,7 +6257,7 @@
             "round": 3,
             "originalRosterId": 3,
             "result": null,
-            "originalTeam": "Sutton On Deez"
+            "originalTeam": "Firesale"
           },
           {
             "season": "2027",
@@ -6244,7 +6276,7 @@
         "name": "George Kittle",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6255,7 +6287,7 @@
         "name": "Rashee Rice",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6334,7 +6366,7 @@
         "name": "Tyler Warren",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6358,7 +6390,7 @@
         "round": 3,
         "originalRosterId": 3,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6381,7 +6413,7 @@
           "rosterId": 5
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6706,7 +6738,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -6719,7 +6751,7 @@
         "name": "Kaleb Johnson",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6732,7 +6764,7 @@
         "name": "Barion Brown",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6750,7 +6782,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -6763,7 +6795,7 @@
         "name": "Emanuel Wilson",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6776,7 +6808,7 @@
         "name": "Kendre Miller",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6794,7 +6826,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -6807,7 +6839,7 @@
         "name": "Kalif Raymond",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -6820,7 +6852,7 @@
         "name": "Chimere Dike",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8043,7 +8075,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -8056,7 +8088,7 @@
         "name": "Kendre Miller",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8069,7 +8101,7 @@
         "name": "Tyrone Tracy Jr.",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8119,7 +8151,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -8132,7 +8164,7 @@
         "name": "DeMario Douglas",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8403,7 +8435,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -8416,7 +8448,7 @@
         "name": "Nakobe Dean",
         "position": "LB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8429,7 +8461,7 @@
         "name": "Caleb Downs",
         "position": "DB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -8447,7 +8479,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -8460,7 +8492,7 @@
         "name": "Kendrick Bourne",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -9519,7 +9551,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -9532,7 +9564,7 @@
         "name": "Chris Brooks",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -9545,7 +9577,7 @@
         "name": "Kimani Vidal",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -10314,7 +10346,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -10327,7 +10359,7 @@
         "name": "Kaelon Black",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -10340,7 +10372,7 @@
         "name": "Marvin Mims Jr.",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -10402,7 +10434,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -10415,7 +10447,7 @@
         "name": "Barion Brown",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -10428,7 +10460,7 @@
         "name": "Evan Engram",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -11769,7 +11801,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -11783,7 +11815,7 @@
         "name": "Quay Walker",
         "position": "LB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -11833,7 +11865,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -11847,7 +11879,7 @@
         "name": "KeAndre Lambert-Smith",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -11931,7 +11963,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -11945,7 +11977,7 @@
         "name": "Cole Kmet",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -12801,7 +12833,7 @@
     "originalRosterId": 7,
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -12814,7 +12846,7 @@
         "name": "Zachariah Branch",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -12869,7 +12901,7 @@
     "originalRosterId": 9,
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -12882,7 +12914,7 @@
         "name": "Germie Bernard",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -13141,7 +13173,7 @@
     "originalRosterId": 3,
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -13154,7 +13186,7 @@
         "name": "Mike Washington",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -13549,7 +13581,7 @@
     "originalRosterId": 3,
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -13562,7 +13594,7 @@
         "name": "Caleb Downs",
         "position": "DB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14249,7 +14281,7 @@
         "rosterId": 1
       },
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -14282,7 +14314,7 @@
       },
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14316,7 +14348,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14327,7 +14359,7 @@
         "round": 3,
         "originalRosterId": 10,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14350,7 +14382,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14366,7 +14398,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -14380,7 +14412,7 @@
         "name": "Cedric Tillman",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14398,7 +14430,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -14412,7 +14444,7 @@
         "name": "Darren Waller",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14430,7 +14462,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -14445,7 +14477,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14511,7 +14543,7 @@
         "name": "Tyler Warren",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14524,7 +14556,7 @@
         "name": "Tee Higgins",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -14535,7 +14567,7 @@
         "name": "Jonathon Brooks",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -15736,7 +15768,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -15750,7 +15782,7 @@
         "name": "Dillon Gabriel",
         "position": "QB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -15768,7 +15800,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -15782,7 +15814,7 @@
         "name": "Isaiah Davis",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -16121,7 +16153,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -16136,7 +16168,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -16195,7 +16227,7 @@
         "name": "Jacoby Brissett",
         "position": "QB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -16206,7 +16238,7 @@
         "name": "Dallas Goedert",
         "position": "TE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -16243,7 +16275,7 @@
         "round": 1,
         "originalRosterId": 10,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -16266,7 +16298,7 @@
           "rosterId": 7
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17379,7 +17411,7 @@
         "rosterId": 1
       },
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -17405,7 +17437,7 @@
       },
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17458,7 +17490,7 @@
         "name": "Marvin Harrison Jr.",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17471,7 +17503,7 @@
         "name": "Justin Jefferson",
         "position": "WR",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17501,7 +17533,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17518,7 +17550,7 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17706,7 +17738,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -17721,7 +17753,7 @@
     "sides": [
       {
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17775,7 +17807,7 @@
         "name": "D'Andre Swift",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17807,7 +17839,7 @@
           "rosterId": 7
         },
         "to": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -17818,7 +17850,7 @@
         "round": 1,
         "originalRosterId": 9,
         "from": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -18847,7 +18879,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -18861,7 +18893,7 @@
         "name": "Samaje Perine",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -18879,7 +18911,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -18893,7 +18925,7 @@
         "name": "Zonovan Knight",
         "position": "RB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -20276,7 +20308,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -20289,7 +20321,7 @@
         "name": "Quay Walker",
         "position": "LB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -20308,7 +20340,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -20321,7 +20353,7 @@
         "name": "Jordyn Brooks",
         "position": "LB",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -20340,7 +20372,7 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "Sutton On Deez",
+        "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
@@ -20353,7 +20385,7 @@
         "name": "Myles Garrett",
         "position": "DE",
         "team": {
-          "teamName": "Sutton On Deez",
+          "teamName": "Firesale",
           "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
           "ownerId": "326066174007713792",
           "rosterId": 3
@@ -22273,7 +22305,7 @@
             "round": 1,
             "originalRosterId": 3,
             "result": null,
-            "originalTeam": "Sutton On Deez"
+            "originalTeam": "Firesale"
           }
         ],
         "faab": []

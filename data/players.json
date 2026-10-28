@@ -1709,7 +1709,12 @@
     "position": "QB",
     "nflTeam": "GB",
     "birthDate": "1989-08-03",
-    "currentTeam": null,
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
     "seasons": {
       "2025": {
         "totalPoints": 51.120000000000005,
@@ -1840,6 +1845,80 @@
           },
           {
             "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      },
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 47,
+        "overallRank": 331,
+        "games": [
+          {
+            "week": 8,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}
@@ -5509,8 +5588,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 47,
-        "overallRank": 338,
+        "positionRank": 48,
+        "overallRank": 339,
         "games": [
           {
             "week": 6,
@@ -11306,7 +11385,7 @@
     "nflTeam": "ARI",
     "birthDate": "1992-12-11",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -13434,7 +13513,7 @@
     "nflTeam": "LAR",
     "birthDate": "1995-12-29",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -13444,7 +13523,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 3,
-        "overallRank": 341,
+        "overallRank": 342,
         "games": [
           {
             "week": 1,
@@ -29673,7 +29752,7 @@
     "nflTeam": "PHI",
     "birthDate": "1995-01-03",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -30280,7 +30359,7 @@
     "nflTeam": "DEN",
     "birthDate": "1995-10-10",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -41641,7 +41720,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 20,
-        "overallRank": 339,
+        "overallRank": 340,
         "games": [
           {
             "week": 8,
@@ -42301,8 +42380,8 @@
       "2026": {
         "totalPoints": -0.64,
         "gamesPlayed": 1,
-        "positionRank": 52,
-        "overallRank": 351,
+        "positionRank": 53,
+        "overallRank": 352,
         "games": [
           {
             "week": 1,
@@ -47116,7 +47195,7 @@
     "nflTeam": "DEN",
     "birthDate": "1998-12-17",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -49675,7 +49754,7 @@
     "nflTeam": "PHI",
     "birthDate": "1998-08-07",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -51198,7 +51277,7 @@
     "nflTeam": "NO",
     "birthDate": "1996-09-13",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -63331,7 +63410,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 21,
-        "overallRank": 348,
+        "overallRank": 349,
         "games": [
           {
             "week": 1,
@@ -64049,7 +64128,7 @@
     "nflTeam": "CAR",
     "birthDate": "2000-06-02",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -68031,7 +68110,7 @@
     "nflTeam": "PHI",
     "birthDate": "2000-02-19",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -72439,7 +72518,7 @@
     "nflTeam": "IND",
     "birthDate": "2000-05-02",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -76065,7 +76144,7 @@
     "nflTeam": "ATL",
     "birthDate": "1999-03-22",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -80636,7 +80715,7 @@
     "nflTeam": "LV",
     "birthDate": "2000-12-13",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -95172,7 +95251,7 @@
     "nflTeam": "NO",
     "birthDate": "2002-06-11",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -102410,7 +102489,7 @@
     "playerId": "11199",
     "name": "Emari Demercado",
     "position": "RB",
-    "nflTeam": "DAL",
+    "nflTeam": "HOU",
     "birthDate": "1999-01-20",
     "currentTeam": null,
     "seasons": {
@@ -102840,7 +102919,7 @@
     "nflTeam": "SEA",
     "birthDate": "1999-05-08",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -106957,7 +107036,7 @@
     "nflTeam": "WAS",
     "birthDate": "2000-12-18",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -118839,7 +118918,7 @@
     "nflTeam": "HOU",
     "birthDate": "2002-08-11",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -123122,7 +123201,7 @@
     "nflTeam": "LAC",
     "birthDate": "2001-08-28",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -125875,7 +125954,7 @@
     "nflTeam": "KC",
     "birthDate": "2003-04-11",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -126782,7 +126861,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 95,
-        "overallRank": 333,
+        "overallRank": 334,
         "games": [
           {
             "week": 1,
@@ -127557,7 +127636,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 94,
-        "overallRank": 331,
+        "overallRank": 332,
         "games": [
           {
             "week": 4,
@@ -128505,7 +128584,7 @@
     "nflTeam": "TB",
     "birthDate": "2002-05-18",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -128674,7 +128753,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 117,
-        "overallRank": 332,
+        "overallRank": 333,
         "games": [
           {
             "week": 8,
@@ -133136,7 +133215,7 @@
     "nflTeam": "LAC",
     "birthDate": "2003-03-16",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -140298,7 +140377,7 @@
         "totalPoints": -0.8,
         "gamesPlayed": 2,
         "positionRank": 123,
-        "overallRank": 352,
+        "overallRank": 353,
         "games": [
           {
             "week": 1,
@@ -142574,7 +142653,7 @@
     "nflTeam": "PHI",
     "birthDate": "2001-11-22",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -142694,7 +142773,7 @@
     "nflTeam": "CIN",
     "birthDate": "2000-07-06",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -143082,8 +143161,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 49,
-        "overallRank": 344,
+        "positionRank": 50,
+        "overallRank": 345,
         "games": [
           {
             "week": 1,
@@ -143204,7 +143283,7 @@
     "nflTeam": "PIT",
     "birthDate": "2003-12-02",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -143371,8 +143450,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 51,
-        "overallRank": 349,
+        "positionRank": 52,
+        "overallRank": 350,
         "games": [
           {
             "week": 1,
@@ -143648,7 +143727,7 @@
         "totalPoints": 0,
         "gamesPlayed": 4,
         "positionRank": 46,
-        "overallRank": 350,
+        "overallRank": 351,
         "games": [
           {
             "week": 1,
@@ -143931,7 +144010,7 @@
     "nflTeam": "NO",
     "birthDate": "2004-08-12",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -143941,7 +144020,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 120,
-        "overallRank": 340,
+        "overallRank": 341,
         "games": [
           {
             "week": 1,
@@ -144680,8 +144759,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 50,
-        "overallRank": 345,
+        "positionRank": 51,
+        "overallRank": 346,
         "games": [
           {
             "week": 1,
@@ -145585,8 +145664,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 48,
-        "overallRank": 343,
+        "positionRank": 49,
+        "overallRank": 344,
         "games": [
           {
             "week": 1,
@@ -145707,7 +145786,7 @@
     "nflTeam": "LV",
     "birthDate": "2003-07-03",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -146176,7 +146255,7 @@
     "nflTeam": "ATL",
     "birthDate": "2004-03-29",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -146666,7 +146745,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 119,
-        "overallRank": 335,
+        "overallRank": 336,
         "games": [
           {
             "week": 7,
@@ -147345,7 +147424,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 45,
-        "overallRank": 346,
+        "overallRank": 347,
         "games": [
           {
             "week": 1,
@@ -147478,7 +147557,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 121,
-        "overallRank": 342,
+        "overallRank": 343,
         "games": [
           {
             "week": 1,
@@ -148506,7 +148585,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 44,
-        "overallRank": 336,
+        "overallRank": 337,
         "games": [
           {
             "week": 1,
@@ -148637,7 +148716,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 122,
-        "overallRank": 347,
+        "overallRank": 348,
         "games": [
           {
             "week": 1,
@@ -149045,7 +149124,7 @@
     "nflTeam": "SF",
     "birthDate": "2001-10-17",
     "currentTeam": {
-      "teamName": "Sutton On Deez",
+      "teamName": "Firesale",
       "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
       "ownerId": "326066174007713792",
       "rosterId": 3
@@ -149219,7 +149298,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 118,
-        "overallRank": 334,
+        "overallRank": 335,
         "games": [
           {
             "week": 1,
@@ -149507,7 +149586,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 96,
-        "overallRank": 337,
+        "overallRank": 338,
         "games": [
           {
             "week": 1,
