@@ -1,5 +1,293 @@
 [
   {
+    "id": "1421583492671688704",
+    "type": "free_agent",
+    "date": "2026-10-29T17:20:25.699Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12482",
+        "name": "Savion Williams",
+        "position": "WR",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1421583427718627328",
+    "type": "free_agent",
+    "date": "2026-10-29T17:20:10.212Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7561",
+        "name": "Elijah Mitchell",
+        "position": "RB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1421583258134523904",
+    "type": "free_agent",
+    "date": "2026-10-29T17:19:29.781Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "8129",
+        "name": "Dameon Pierce",
+        "position": "RB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1421582912230338560",
+    "type": "free_agent",
+    "date": "2026-10-29T17:18:07.311Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "8119",
+        "name": "Jahan Dotson",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1421582225064902656",
+    "type": "trade",
+    "date": "2026-10-29T17:15:23.477Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      },
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "players": [
+          {
+            "playerId": "9221",
+            "name": "Jahmyr Gibbs",
+            "position": "RB"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        },
+        "players": [
+          {
+            "playerId": "6790",
+            "name": "D'Andre Swift",
+            "position": "RB"
+          },
+          {
+            "playerId": "12534",
+            "name": "Kyle Monangai",
+            "position": "RB"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 1,
+            "originalRosterId": 7,
+            "result": null,
+            "originalTeam": "WANGHAF"
+          }
+        ],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "6790",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      },
+      {
+        "playerId": "9221",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      },
+      {
+        "playerId": "12534",
+        "name": "Kyle Monangai",
+        "position": "RB",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "6790",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      },
+      {
+        "playerId": "9221",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      },
+      {
+        "playerId": "12534",
+        "name": "Kyle Monangai",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 1,
+        "originalRosterId": 7,
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1421207138646196224",
     "type": "free_agent",
     "date": "2026-10-28T16:24:55.906Z",
@@ -327,6 +615,113 @@
     "draftPicksTraded": [],
     "faab": [],
     "waiverBid": 0
+  },
+  {
+    "id": "1421000995814612992",
+    "type": "trade",
+    "date": "2026-10-28T02:45:47.625Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      },
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "players": [
+          {
+            "playerId": "12487",
+            "name": "Terrance Ferguson",
+            "position": "TE"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        },
+        "players": [
+          {
+            "playerId": "5022",
+            "name": "Dallas Goedert",
+            "position": "TE"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "5022",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      },
+      {
+        "playerId": "12487",
+        "name": "Terrance Ferguson",
+        "position": "TE",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "5022",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "playerId": "12487",
+        "name": "Terrance Ferguson",
+        "position": "TE",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
   },
   {
     "id": "1420999738378973184",

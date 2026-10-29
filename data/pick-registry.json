@@ -21058,12 +21058,76 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "My Pookie NOOOOO",
+      "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+      "ownerId": "1004418514142253056",
+      "rosterId": 10
     },
     "tradeHistory": [
+      {
+        "date": "2026-10-29T17:15:23.477Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "9221",
+                "name": "Jahmyr Gibbs",
+                "position": "RB"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "My Pookie NOOOOO",
+              "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+              "ownerId": "1004418514142253056",
+              "rosterId": 10
+            },
+            "players": [
+              {
+                "playerId": "6790",
+                "name": "D'Andre Swift",
+                "position": "RB"
+              },
+              {
+                "playerId": "12534",
+                "name": "Kyle Monangai",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 1,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2025-09-30T16:44:29.189Z",
         "from": {
