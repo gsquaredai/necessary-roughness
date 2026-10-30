@@ -84,17 +84,6 @@
     },
     {
       "season": "2027",
-      "round": 3,
-      "originalRosterId": 9,
-      "originalTeam": {
-        "teamName": "Los pollos hermanos",
-        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
-        "ownerId": "1128774237046636544",
-        "rosterId": 9
-      }
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 12,
       "originalTeam": {
@@ -125,12 +114,6 @@
     {
       "season": "2029",
       "round": 1,
-      "originalRosterId": 2,
-      "originalTeam": null
-    },
-    {
-      "season": "2029",
-      "round": 2,
       "originalRosterId": 2,
       "originalTeam": null
     },
@@ -306,17 +289,6 @@
     },
     {
       "season": "2027",
-      "round": 2,
-      "originalRosterId": 10,
-      "originalTeam": {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
-        "ownerId": "1004418514142253056",
-        "rosterId": 10
-      }
-    },
-    {
-      "season": "2027",
       "round": 3,
       "originalRosterId": 4,
       "originalTeam": null
@@ -324,8 +296,30 @@
     {
       "season": "2027",
       "round": 4,
+      "originalRosterId": 1,
+      "originalTeam": {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    },
+    {
+      "season": "2027",
+      "round": 4,
       "originalRosterId": 4,
       "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 4,
+      "originalRosterId": 7,
+      "originalTeam": {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
     },
     {
       "season": "2028",
@@ -344,6 +338,17 @@
       "round": 3,
       "originalRosterId": 4,
       "originalTeam": null
+    },
+    {
+      "season": "2028",
+      "round": 3,
+      "originalRosterId": 7,
+      "originalTeam": {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
     },
     {
       "season": "2028",
@@ -356,6 +361,17 @@
       "round": 1,
       "originalRosterId": 4,
       "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 2,
+      "originalRosterId": 2,
+      "originalTeam": {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
     },
     {
       "season": "2029",
@@ -581,20 +597,14 @@
     },
     {
       "season": "2027",
-      "round": 4,
-      "originalRosterId": 1,
+      "round": 2,
+      "originalRosterId": 10,
       "originalTeam": {
-        "teamName": "Schro's Nest",
-        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-        "ownerId": "989741725566427136",
-        "rosterId": 1
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
       }
-    },
-    {
-      "season": "2027",
-      "round": 4,
-      "originalRosterId": 7,
-      "originalTeam": null
     },
     {
       "season": "2028",
@@ -605,12 +615,6 @@
     {
       "season": "2028",
       "round": 2,
-      "originalRosterId": 7,
-      "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 3,
       "originalRosterId": 7,
       "originalTeam": null
     },
@@ -657,6 +661,17 @@
       "round": 3,
       "originalRosterId": 8,
       "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
     },
     {
       "season": "2027",

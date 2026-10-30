@@ -1,5 +1,37 @@
 [
   {
+    "id": "1421939914991284224",
+    "type": "free_agent",
+    "date": "2026-10-30T16:56:43.402Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "4098",
+        "name": "Kareem Hunt",
+        "position": "RB",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1421704594165133312",
     "type": "free_agent",
     "date": "2026-10-30T01:21:38.544Z",
@@ -479,6 +511,350 @@
           "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1421360070888853504",
+    "type": "trade",
+    "date": "2026-10-29T02:32:37.794Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      },
+      {
+        "teamName": "Faded off the Josh",
+        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+        "ownerId": "1125954610599964672",
+        "rosterId": 4
+      },
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      },
+      {
+        "teamName": "the left one’s bigger",
+        "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+        "ownerId": "996557160589000704",
+        "rosterId": 8
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "players": [
+          {
+            "playerId": "4983",
+            "name": "DJ Moore",
+            "position": "WR"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "players": [
+          {
+            "playerId": "4950",
+            "name": "Christian Kirk",
+            "position": "WR"
+          },
+          {
+            "playerId": "9501",
+            "name": "DeMario Douglas",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 4,
+            "originalRosterId": 1,
+            "result": null,
+            "originalTeam": "Schro's Nest"
+          },
+          {
+            "season": "2029",
+            "round": 2,
+            "originalRosterId": 2,
+            "result": null,
+            "originalTeam": "GrayPornography"
+          },
+          {
+            "season": "2027",
+            "round": 4,
+            "originalRosterId": 7,
+            "result": null,
+            "originalTeam": "WANGHAF"
+          },
+          {
+            "season": "2028",
+            "round": 3,
+            "originalRosterId": 7,
+            "result": null,
+            "originalTeam": "WANGHAF"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "players": [
+          {
+            "playerId": "13337",
+            "name": "Emmett Johnson",
+            "position": "RB"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 2,
+            "originalRosterId": 10,
+            "result": null,
+            "originalTeam": "My Pookie NOOOOO"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        },
+        "players": [],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 3,
+            "originalRosterId": 9,
+            "result": null,
+            "originalTeam": "Los pollos hermanos"
+          }
+        ],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "4950",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "playerId": "4983",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      },
+      {
+        "playerId": "9501",
+        "name": "DeMario Douglas",
+        "position": "WR",
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "playerId": "13337",
+        "name": "Emmett Johnson",
+        "position": "RB",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "4950",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      },
+      {
+        "playerId": "4983",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "playerId": "9501",
+        "name": "DeMario Douglas",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      },
+      {
+        "playerId": "13337",
+        "name": "Emmett Johnson",
+        "position": "RB",
+        "team": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 4,
+        "originalRosterId": 1,
+        "from": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "season": "2027",
+        "round": 2,
+        "originalRosterId": 10,
+        "from": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "to": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      },
+      {
+        "season": "2029",
+        "round": 2,
+        "originalRosterId": 2,
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "season": "2027",
+        "round": 4,
+        "originalRosterId": 7,
+        "from": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "season": "2028",
+        "round": 3,
+        "originalRosterId": 7,
+        "from": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      },
+      {
+        "season": "2027",
+        "round": 3,
+        "originalRosterId": 9,
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
         }
       }
     ],
