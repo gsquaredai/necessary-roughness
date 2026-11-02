@@ -7664,7 +7664,7 @@
       },
       "2026": {
         "totalPoints": 38.5,
-        "gamesPlayed": 4,
+        "gamesPlayed": 3,
         "positionRank": 34,
         "overallRank": 193,
         "games": [
@@ -7733,7 +7733,7 @@
           {
             "week": 8,
             "points": 0,
-            "played": true,
+            "played": false,
             "stats": {}
           },
           {
@@ -104276,7 +104276,7 @@
       },
       "2026": {
         "totalPoints": 0,
-        "gamesPlayed": 1,
+        "gamesPlayed": 0,
         "positionRank": 44,
         "overallRank": 328,
         "games": [
@@ -104295,7 +104295,7 @@
           {
             "week": 8,
             "points": 0,
-            "played": true,
+            "played": false,
             "stats": {}
           },
           {
