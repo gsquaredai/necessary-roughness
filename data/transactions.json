@@ -1,5 +1,201 @@
 [
   {
+    "id": "1423686589430697984",
+    "type": "free_agent",
+    "date": "2026-11-04T12:37:23.039Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13350",
+        "name": "Joe Fagnano",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7083",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423678661919285248",
+    "type": "free_agent",
+    "date": "2026-11-04T12:05:52.973Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "GrayPornography",
+        "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+        "ownerId": "990079789383897088",
+        "rosterId": 2
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12540",
+        "name": "Chimere Dike",
+        "position": "WR",
+        "team": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423432910525984768",
+    "type": "waiver",
+    "date": "2026-11-03T19:49:21.276Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "3161",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
+    "id": "1423363298232893440",
+    "type": "waiver",
+    "date": "2026-11-03T15:12:44.411Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "6011",
+        "name": "Gardner Minshew II",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "2306",
+        "name": "Jameis Winston",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 8
+  },
+  {
+    "id": "1423193585703993344",
+    "type": "waiver",
+    "date": "2026-11-03T03:58:21.792Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "8119",
+        "name": "Jahan Dotson",
+        "position": "WR",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11439",
+        "name": "Jaleel McLaughlin",
+        "position": "RB",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
     "id": "1422740232188461056",
     "type": "free_agent",
     "date": "2026-11-01T21:56:53.891Z",
