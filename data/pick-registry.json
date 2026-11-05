@@ -22001,12 +22001,96 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Firesale",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
     "tradeHistory": [
+      {
+        "date": "2026-11-04T23:33:02.442Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "3257",
+                "name": "Jacoby Brissett",
+                "position": "QB"
+              },
+              {
+                "playerId": "11566",
+                "name": "Jayden Daniels",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Firesale",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4881",
+                "name": "Lamar Jackson",
+                "position": "QB"
+              },
+              {
+                "playerId": "13417",
+                "name": "De'Zhaun Stribling",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2029",
+                "round": 3,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-10-22T19:53:38.058Z",
         "from": {
@@ -25242,12 +25326,96 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Firesale",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
+      "teamName": "Schro's Nest",
+      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+      "ownerId": "989741725566427136",
+      "rosterId": 1
     },
     "tradeHistory": [
+      {
+        "date": "2026-11-04T23:33:02.442Z",
+        "from": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "3257",
+                "name": "Jacoby Brissett",
+                "position": "QB"
+              },
+              {
+                "playerId": "11566",
+                "name": "Jayden Daniels",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Firesale",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4881",
+                "name": "Lamar Jackson",
+                "position": "QB"
+              },
+              {
+                "playerId": "13417",
+                "name": "De'Zhaun Stribling",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2029",
+                "round": 3,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-28T00:47:16.345Z",
         "from": {
@@ -30280,12 +30448,97 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Schro's Nest",
-      "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
-      "ownerId": "989741725566427136",
-      "rosterId": 1
+      "teamName": "Firesale",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
     },
-    "tradeHistory": []
+    "tradeHistory": [
+      {
+        "date": "2026-11-04T23:33:02.442Z",
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Schro's Nest",
+              "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+              "ownerId": "989741725566427136",
+              "rosterId": 1
+            },
+            "players": [
+              {
+                "playerId": "3257",
+                "name": "Jacoby Brissett",
+                "position": "QB"
+              },
+              {
+                "playerId": "11566",
+                "name": "Jayden Daniels",
+                "position": "QB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 5,
+                "result": null,
+                "originalTeam": "Black Ops"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Firesale",
+              "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+              "ownerId": "326066174007713792",
+              "rosterId": 3
+            },
+            "players": [
+              {
+                "playerId": "4881",
+                "name": "Lamar Jackson",
+                "position": "QB"
+              },
+              {
+                "playerId": "13417",
+                "name": "De'Zhaun Stribling",
+                "position": "WR"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 2,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              },
+              {
+                "season": "2029",
+                "round": 3,
+                "originalRosterId": 1,
+                "result": null,
+                "originalTeam": "Schro's Nest"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      }
+    ]
   },
   "2029-3-2": {
     "season": "2029",

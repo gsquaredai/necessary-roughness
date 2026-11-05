@@ -9,18 +9,23 @@
     {
       "season": "2027",
       "round": 2,
-      "originalRosterId": 1,
-      "originalTeam": null
-    },
-    {
-      "season": "2027",
-      "round": 2,
       "originalRosterId": 3,
       "originalTeam": {
         "teamName": "Firesale",
         "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
         "ownerId": "326066174007713792",
         "rosterId": 3
+      }
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 5,
+      "originalTeam": {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
       }
     },
     {
@@ -54,12 +59,6 @@
     {
       "season": "2029",
       "round": 2,
-      "originalRosterId": 1,
-      "originalTeam": null
-    },
-    {
-      "season": "2029",
-      "round": 3,
       "originalRosterId": 1,
       "originalTeam": null
     },
@@ -151,6 +150,17 @@
     {
       "season": "2027",
       "round": 2,
+      "originalRosterId": 1,
+      "originalTeam": {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    },
+    {
+      "season": "2027",
+      "round": 2,
       "originalRosterId": 4,
       "originalTeam": {
         "teamName": "Faded off the Josh",
@@ -161,17 +171,6 @@
     },
     {
       "season": "2027",
-      "round": 3,
-      "originalRosterId": 5,
-      "originalTeam": {
-        "teamName": "Black Ops",
-        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-        "ownerId": "1044114449679917056",
-        "rosterId": 5
-      }
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 3,
       "originalTeam": null
@@ -255,6 +254,17 @@
       "round": 2,
       "originalRosterId": 3,
       "originalTeam": null
+    },
+    {
+      "season": "2029",
+      "round": 3,
+      "originalRosterId": 1,
+      "originalTeam": {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
     },
     {
       "season": "2029",

@@ -1,5 +1,381 @@
 [
   {
+    "id": "1423879608947822592",
+    "type": "free_agent",
+    "date": "2026-11-05T01:24:22.478Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13273",
+        "name": "Josh Cuevas",
+        "position": "TE",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423879170177384448",
+    "type": "free_agent",
+    "date": "2026-11-05T01:22:37.867Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "5045",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423854232729030656",
+    "type": "free_agent",
+    "date": "2026-11-04T23:43:32.317Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12497",
+        "name": "Tory Horton",
+        "position": "WR",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7561",
+        "name": "Elijah Mitchell",
+        "position": "RB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423853186166312960",
+    "type": "free_agent",
+    "date": "2026-11-04T23:39:22.796Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "9511",
+        "name": "Keaton Mitchell",
+        "position": "RB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1423851590846009344",
+    "type": "trade",
+    "date": "2026-11-04T23:33:02.442Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Schro's Nest",
+        "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+        "ownerId": "989741725566427136",
+        "rosterId": 1
+      },
+      {
+        "teamName": "Firesale",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "players": [
+          {
+            "playerId": "3257",
+            "name": "Jacoby Brissett",
+            "position": "QB"
+          },
+          {
+            "playerId": "11566",
+            "name": "Jayden Daniels",
+            "position": "QB"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 3,
+            "originalRosterId": 5,
+            "result": null,
+            "originalTeam": "Black Ops"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "players": [
+          {
+            "playerId": "4881",
+            "name": "Lamar Jackson",
+            "position": "QB"
+          },
+          {
+            "playerId": "13417",
+            "name": "De'Zhaun Stribling",
+            "position": "WR"
+          }
+        ],
+        "picks": [
+          {
+            "season": "2027",
+            "round": 2,
+            "originalRosterId": 1,
+            "result": null,
+            "originalTeam": "Schro's Nest"
+          },
+          {
+            "season": "2029",
+            "round": 3,
+            "originalRosterId": 1,
+            "result": null,
+            "originalTeam": "Schro's Nest"
+          }
+        ],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "3257",
+        "name": "Jacoby Brissett",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      },
+      {
+        "playerId": "4881",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "playerId": "11566",
+        "name": "Jayden Daniels",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      },
+      {
+        "playerId": "13417",
+        "name": "De'Zhaun Stribling",
+        "position": "WR",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "3257",
+        "name": "Jacoby Brissett",
+        "position": "QB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "playerId": "4881",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      },
+      {
+        "playerId": "11566",
+        "name": "Jayden Daniels",
+        "position": "QB",
+        "team": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "playerId": "13417",
+        "name": "De'Zhaun Stribling",
+        "position": "WR",
+        "team": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2027",
+        "round": 2,
+        "originalRosterId": 1,
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "season": "2029",
+        "round": 3,
+        "originalRosterId": 1,
+        "from": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        },
+        "to": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      },
+      {
+        "season": "2027",
+        "round": 3,
+        "originalRosterId": 5,
+        "from": {
+          "teamName": "Firesale",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        },
+        "to": {
+          "teamName": "Schro's Nest",
+          "avatar": "https://sleepercdn.com/uploads/5f7f8af74eb988c08127df81799077cf",
+          "ownerId": "989741725566427136",
+          "rosterId": 1
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1423786302683271168",
     "type": "free_agent",
     "date": "2026-11-04T19:13:36.531Z",
