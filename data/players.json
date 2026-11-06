@@ -870,7 +870,7 @@
         "totalPoints": 131.14,
         "gamesPlayed": 8,
         "positionRank": 16,
-        "overallRank": 25,
+        "overallRank": 26,
         "games": [
           {
             "week": 1,
@@ -3841,7 +3841,7 @@
         "totalPoints": 135.12,
         "gamesPlayed": 8,
         "positionRank": 15,
-        "overallRank": 22,
+        "overallRank": 23,
         "games": [
           {
             "week": 1,
@@ -4690,7 +4690,7 @@
         "totalPoints": 82.00000000000001,
         "gamesPlayed": 7,
         "positionRank": 8,
-        "overallRank": 80,
+        "overallRank": 81,
         "games": [
           {
             "week": 1,
@@ -5189,8 +5189,8 @@
       "2026": {
         "totalPoints": 57.5,
         "gamesPlayed": 7,
-        "positionRank": 35,
-        "overallRank": 129,
+        "positionRank": 36,
+        "overallRank": 132,
         "games": [
           {
             "week": 1,
@@ -5623,8 +5623,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 49,
-        "overallRank": 341,
+        "positionRank": 48,
+        "overallRank": 340,
         "games": [
           {
             "week": 6,
@@ -6258,8 +6258,8 @@
       "2026": {
         "totalPoints": 88,
         "gamesPlayed": 6,
-        "positionRank": 16,
-        "overallRank": 69,
+        "positionRank": 17,
+        "overallRank": 71,
         "games": [
           {
             "week": 1,
@@ -6993,7 +6993,7 @@
         "totalPoints": 75.50000000000001,
         "gamesPlayed": 6,
         "positionRank": 23,
-        "overallRank": 96,
+        "overallRank": 97,
         "games": [
           {
             "week": 1,
@@ -7354,7 +7354,7 @@
         "totalPoints": 70.74000000000001,
         "gamesPlayed": 5,
         "positionRank": 31,
-        "overallRank": 107,
+        "overallRank": 108,
         "games": [
           {
             "week": 3,
@@ -8679,7 +8679,7 @@
         "totalPoints": 68.7,
         "gamesPlayed": 6,
         "positionRank": 26,
-        "overallRank": 110,
+        "overallRank": 111,
         "games": [
           {
             "week": 1,
@@ -10114,8 +10114,8 @@
       "2026": {
         "totalPoints": 157.06,
         "gamesPlayed": 7,
-        "positionRank": 8,
-        "overallRank": 10,
+        "positionRank": 9,
+        "overallRank": 11,
         "games": [
           {
             "week": 1,
@@ -10701,10 +10701,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 130.70000000000002,
-        "gamesPlayed": 8,
-        "positionRank": 7,
-        "overallRank": 26,
+        "totalPoints": 136.28000000000003,
+        "gamesPlayed": 9,
+        "positionRank": 5,
+        "overallRank": 22,
         "games": [
           {
             "week": 1,
@@ -10810,9 +10810,15 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 5.58,
+            "played": true,
+            "stats": {
+              "pass_att": 1,
+              "pass_cmp": 1,
+              "pass_yd": -3,
+              "rush_att": 17,
+              "rush_yd": 57
+            }
           },
           {
             "week": 10,
@@ -11243,7 +11249,7 @@
         "totalPoints": 75.6,
         "gamesPlayed": 8,
         "positionRank": 15,
-        "overallRank": 95,
+        "overallRank": 96,
         "games": [
           {
             "week": 1,
@@ -11806,7 +11812,7 @@
         "totalPoints": 116.66,
         "gamesPlayed": 8,
         "positionRank": 18,
-        "overallRank": 37,
+        "overallRank": 38,
         "games": [
           {
             "week": 1,
@@ -12736,8 +12742,8 @@
       "2026": {
         "totalPoints": 161.94,
         "gamesPlayed": 8,
-        "positionRank": 6,
-        "overallRank": 8,
+        "positionRank": 7,
+        "overallRank": 9,
         "games": [
           {
             "week": 1,
@@ -13374,7 +13380,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 3,
-        "overallRank": 346,
+        "overallRank": 345,
         "games": [
           {
             "week": 1,
@@ -13697,7 +13703,7 @@
         "totalPoints": 103.22,
         "gamesPlayed": 7,
         "positionRank": 23,
-        "overallRank": 51,
+        "overallRank": 52,
         "games": [
           {
             "week": 1,
@@ -15437,7 +15443,7 @@
         "totalPoints": 54.8,
         "gamesPlayed": 6,
         "positionRank": 33,
-        "overallRank": 145,
+        "overallRank": 146,
         "games": [
           {
             "week": 1,
@@ -17663,7 +17669,7 @@
         "totalPoints": 94,
         "gamesPlayed": 8,
         "positionRank": 1,
-        "overallRank": 59,
+        "overallRank": 60,
         "games": [
           {
             "week": 1,
@@ -19878,8 +19884,8 @@
       "2026": {
         "totalPoints": 28.4,
         "gamesPlayed": 4,
-        "positionRank": 73,
-        "overallRank": 217,
+        "positionRank": 74,
+        "overallRank": 218,
         "games": [
           {
             "week": 1,
@@ -20424,7 +20430,7 @@
         "totalPoints": 72.3,
         "gamesPlayed": 7,
         "positionRank": 23,
-        "overallRank": 103,
+        "overallRank": 104,
         "games": [
           {
             "week": 1,
@@ -20923,7 +20929,7 @@
         "totalPoints": 105.50000000000001,
         "gamesPlayed": 7,
         "positionRank": 4,
-        "overallRank": 49,
+        "overallRank": 50,
         "games": [
           {
             "week": 1,
@@ -22222,8 +22228,8 @@
       "2026": {
         "totalPoints": 27.799999999999997,
         "gamesPlayed": 7,
-        "positionRank": 74,
-        "overallRank": 218,
+        "positionRank": 75,
+        "overallRank": 220,
         "games": [
           {
             "week": 2,
@@ -23279,8 +23285,8 @@
       "2026": {
         "totalPoints": 47,
         "gamesPlayed": 6,
-        "positionRank": 37,
-        "overallRank": 161,
+        "positionRank": 38,
+        "overallRank": 162,
         "games": [
           {
             "week": 1,
@@ -23869,7 +23875,7 @@
         "totalPoints": 85.08,
         "gamesPlayed": 5,
         "positionRank": 27,
-        "overallRank": 77,
+        "overallRank": 79,
         "games": [
           {
             "week": 1,
@@ -24480,7 +24486,7 @@
         "totalPoints": 46.160000000000004,
         "gamesPlayed": 5,
         "positionRank": 32,
-        "overallRank": 164,
+        "overallRank": 166,
         "games": [
           {
             "week": 1,
@@ -25796,10 +25802,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 77,
-        "gamesPlayed": 8,
-        "positionRank": 6,
-        "overallRank": 90,
+        "totalPoints": 82,
+        "gamesPlayed": 9,
+        "positionRank": 5,
+        "overallRank": 82,
         "games": [
           {
             "week": 1,
@@ -25851,8 +25857,8 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
+            "points": 5,
+            "played": true,
             "stats": {}
           },
           {
@@ -26815,8 +26821,8 @@
       "2026": {
         "totalPoints": 45.9,
         "gamesPlayed": 5,
-        "positionRank": 50,
-        "overallRank": 166,
+        "positionRank": 51,
+        "overallRank": 168,
         "games": [
           {
             "week": 1,
@@ -28275,7 +28281,7 @@
         "totalPoints": 77.1,
         "gamesPlayed": 7,
         "positionRank": 13,
-        "overallRank": 89,
+        "overallRank": 91,
         "games": [
           {
             "week": 1,
@@ -29396,10 +29402,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 54.8,
-        "gamesPlayed": 8,
+        "totalPoints": 58.699999999999996,
+        "gamesPlayed": 9,
         "positionRank": 22,
-        "overallRank": 143,
+        "overallRank": 131,
         "games": [
           {
             "week": 1,
@@ -29485,9 +29491,14 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 3.9,
+            "played": true,
+            "stats": {
+              "rush_att": 2,
+              "rec": 2,
+              "rec_tgt": 2,
+              "rec_yd": 19
+            }
           },
           {
             "week": 10,
@@ -30045,8 +30056,8 @@
       "2026": {
         "totalPoints": 82.5,
         "gamesPlayed": 7,
-        "positionRank": 3,
-        "overallRank": 79,
+        "positionRank": 4,
+        "overallRank": 80,
         "games": [
           {
             "week": 1,
@@ -31484,10 +31495,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 72,
-        "gamesPlayed": 7,
-        "positionRank": 8,
-        "overallRank": 105,
+        "totalPoints": 85.5,
+        "gamesPlayed": 8,
+        "positionRank": 3,
+        "overallRank": 77,
         "games": [
           {
             "week": 1,
@@ -31539,8 +31550,8 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
+            "points": 13.5,
+            "played": true,
             "stats": {}
           },
           {
@@ -32063,7 +32074,7 @@
         "totalPoints": 79.5,
         "gamesPlayed": 7,
         "positionRank": 9,
-        "overallRank": 82,
+        "overallRank": 84,
         "games": [
           {
             "week": 1,
@@ -32575,8 +32586,8 @@
       "2026": {
         "totalPoints": 62.39999999999999,
         "gamesPlayed": 8,
-        "positionRank": 30,
-        "overallRank": 123,
+        "positionRank": 31,
+        "overallRank": 124,
         "games": [
           {
             "week": 1,
@@ -33419,7 +33430,7 @@
         "totalPoints": 78.58,
         "gamesPlayed": 6,
         "positionRank": 28,
-        "overallRank": 85,
+        "overallRank": 87,
         "games": [
           {
             "week": 1,
@@ -34190,7 +34201,7 @@
         "totalPoints": 24.4,
         "gamesPlayed": 1,
         "positionRank": 36,
-        "overallRank": 229,
+        "overallRank": 230,
         "games": [
           {
             "week": 2,
@@ -34956,7 +34967,7 @@
         "totalPoints": 14.600000000000001,
         "gamesPlayed": 3,
         "positionRank": 86,
-        "overallRank": 250,
+        "overallRank": 251,
         "games": [
           {
             "week": 1,
@@ -35594,7 +35605,7 @@
         "totalPoints": 72.17999999999999,
         "gamesPlayed": 8,
         "positionRank": 30,
-        "overallRank": 104,
+        "overallRank": 105,
         "games": [
           {
             "week": 1,
@@ -36177,7 +36188,7 @@
         "totalPoints": 52.4,
         "gamesPlayed": 5,
         "positionRank": 45,
-        "overallRank": 150,
+        "overallRank": 151,
         "games": [
           {
             "week": 1,
@@ -38296,10 +38307,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 54.6,
-        "gamesPlayed": 7,
-        "positionRank": 42,
-        "overallRank": 146,
+        "totalPoints": 63.1,
+        "gamesPlayed": 8,
+        "positionRank": 30,
+        "overallRank": 123,
         "games": [
           {
             "week": 1,
@@ -38383,9 +38394,13 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 8.5,
+            "played": true,
+            "stats": {
+              "rec": 4,
+              "rec_tgt": 6,
+              "rec_yd": 65
+            }
           },
           {
             "week": 10,
@@ -39471,7 +39486,7 @@
         "totalPoints": 46.5,
         "gamesPlayed": 8,
         "positionRank": 1,
-        "overallRank": 162,
+        "overallRank": 163,
         "games": [
           {
             "week": 1,
@@ -39962,10 +39977,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 10.3,
-        "gamesPlayed": 2,
-        "positionRank": 66,
-        "overallRank": 263,
+        "totalPoints": 28,
+        "gamesPlayed": 3,
+        "positionRank": 52,
+        "overallRank": 219,
         "games": [
           {
             "week": 7,
@@ -39993,9 +40008,16 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 17.7,
+            "played": true,
+            "stats": {
+              "rush_att": 9,
+              "rush_yd": 85,
+              "rush_td": 1,
+              "rec": 3,
+              "rec_tgt": 3,
+              "rec_yd": 7
+            }
           },
           {
             "week": 10,
@@ -40343,8 +40365,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 50,
-        "overallRank": 348,
+        "positionRank": 49,
+        "overallRank": 347,
         "games": [
           {
             "week": 9,
@@ -40815,7 +40837,7 @@
         "totalPoints": 88.5,
         "gamesPlayed": 8,
         "positionRank": 1,
-        "overallRank": 66,
+        "overallRank": 68,
         "games": [
           {
             "week": 1,
@@ -41986,7 +42008,7 @@
         "totalPoints": 25.5,
         "gamesPlayed": 3,
         "positionRank": 16,
-        "overallRank": 224,
+        "overallRank": 225,
         "games": [
           {
             "week": 4,
@@ -42087,7 +42109,7 @@
         "totalPoints": 10.5,
         "gamesPlayed": 1,
         "positionRank": 20,
-        "overallRank": 262,
+        "overallRank": 263,
         "games": [
           {
             "week": 8,
@@ -43800,7 +43822,7 @@
         "totalPoints": 25.1,
         "gamesPlayed": 8,
         "positionRank": 78,
-        "overallRank": 226,
+        "overallRank": 227,
         "games": [
           {
             "week": 1,
@@ -45427,7 +45449,7 @@
         "totalPoints": 72.4,
         "gamesPlayed": 6,
         "positionRank": 24,
-        "overallRank": 102,
+        "overallRank": 103,
         "games": [
           {
             "week": 1,
@@ -46044,7 +46066,7 @@
         "totalPoints": 76.72000000000001,
         "gamesPlayed": 7,
         "positionRank": 29,
-        "overallRank": 91,
+        "overallRank": 92,
         "games": [
           {
             "week": 1,
@@ -46546,7 +46568,7 @@
         "totalPoints": 118.1,
         "gamesPlayed": 7,
         "positionRank": 4,
-        "overallRank": 36,
+        "overallRank": 37,
         "games": [
           {
             "week": 1,
@@ -48035,7 +48057,7 @@
         "totalPoints": 55.3,
         "gamesPlayed": 8,
         "positionRank": 30,
-        "overallRank": 141,
+        "overallRank": 143,
         "games": [
           {
             "week": 1,
@@ -48606,8 +48628,8 @@
       "2026": {
         "totalPoints": 133.7,
         "gamesPlayed": 8,
-        "positionRank": 6,
-        "overallRank": 24,
+        "positionRank": 7,
+        "overallRank": 25,
         "games": [
           {
             "week": 1,
@@ -49280,7 +49302,7 @@
         "totalPoints": 13.4,
         "gamesPlayed": 3,
         "positionRank": 89,
-        "overallRank": 253,
+        "overallRank": 254,
         "games": [
           {
             "week": 1,
@@ -50713,7 +50735,7 @@
         "totalPoints": 88.02,
         "gamesPlayed": 5,
         "positionRank": 26,
-        "overallRank": 68,
+        "overallRank": 70,
         "games": [
           {
             "week": 1,
@@ -52091,7 +52113,7 @@
         "totalPoints": 72.5,
         "gamesPlayed": 7,
         "positionRank": 17,
-        "overallRank": 101,
+        "overallRank": 102,
         "games": [
           {
             "week": 1,
@@ -53787,7 +53809,7 @@
         "totalPoints": 13.4,
         "gamesPlayed": 3,
         "positionRank": 90,
-        "overallRank": 254,
+        "overallRank": 255,
         "games": [
           {
             "week": 1,
@@ -54375,10 +54397,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 150.6,
-        "gamesPlayed": 7,
-        "positionRank": 9,
-        "overallRank": 12,
+        "totalPoints": 165.18,
+        "gamesPlayed": 8,
+        "positionRank": 6,
+        "overallRank": 8,
         "games": [
           {
             "week": 1,
@@ -54482,9 +54504,16 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 14.58,
+            "played": true,
+            "stats": {
+              "pass_att": 26,
+              "pass_cmp": 16,
+              "pass_yd": 242,
+              "pass_td": 1,
+              "rush_att": 1,
+              "rush_yd": -1
+            }
           },
           {
             "week": 10,
@@ -54899,8 +54928,8 @@
       "2026": {
         "totalPoints": 57,
         "gamesPlayed": 4,
-        "positionRank": 39,
-        "overallRank": 133,
+        "positionRank": 40,
+        "overallRank": 136,
         "games": [
           {
             "week": 1,
@@ -56588,8 +56617,8 @@
       "2026": {
         "totalPoints": 25.4,
         "gamesPlayed": 3,
-        "positionRank": 52,
-        "overallRank": 225,
+        "positionRank": 53,
+        "overallRank": 226,
         "games": [
           {
             "week": 1,
@@ -57104,7 +57133,7 @@
         "totalPoints": 114.5,
         "gamesPlayed": 7,
         "positionRank": 5,
-        "overallRank": 39,
+        "overallRank": 40,
         "games": [
           {
             "week": 1,
@@ -58452,7 +58481,7 @@
         "totalPoints": 112.70000000000002,
         "gamesPlayed": 7,
         "positionRank": 6,
-        "overallRank": 40,
+        "overallRank": 41,
         "games": [
           {
             "week": 1,
@@ -58916,8 +58945,8 @@
       "2026": {
         "totalPoints": 48,
         "gamesPlayed": 8,
-        "positionRank": 35,
-        "overallRank": 156,
+        "positionRank": 36,
+        "overallRank": 157,
         "games": [
           {
             "week": 1,
@@ -59891,10 +59920,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 45.3,
-        "gamesPlayed": 8,
-        "positionRank": 51,
-        "overallRank": 169,
+        "totalPoints": 46.4,
+        "gamesPlayed": 9,
+        "positionRank": 49,
+        "overallRank": 164,
         "games": [
           {
             "week": 1,
@@ -59975,9 +60004,13 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 1.1,
+            "played": true,
+            "stats": {
+              "rec": 1,
+              "rec_tgt": 2,
+              "rec_yd": 6
+            }
           },
           {
             "week": 10,
@@ -62774,7 +62807,7 @@
         "totalPoints": 79,
         "gamesPlayed": 8,
         "positionRank": 11,
-        "overallRank": 84,
+        "overallRank": 86,
         "games": [
           {
             "week": 1,
@@ -63576,7 +63609,7 @@
         "totalPoints": 87.4,
         "gamesPlayed": 8,
         "positionRank": 18,
-        "overallRank": 71,
+        "overallRank": 73,
         "games": [
           {
             "week": 1,
@@ -63756,7 +63789,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 21,
-        "overallRank": 353,
+        "overallRank": 352,
         "games": [
           {
             "week": 1,
@@ -63887,7 +63920,7 @@
         "totalPoints": 62,
         "gamesPlayed": 7,
         "positionRank": 12,
-        "overallRank": 124,
+        "overallRank": 125,
         "games": [
           {
             "week": 1,
@@ -64353,7 +64386,7 @@
         "totalPoints": 92,
         "gamesPlayed": 8,
         "positionRank": 2,
-        "overallRank": 62,
+        "overallRank": 64,
         "games": [
           {
             "week": 1,
@@ -65313,7 +65346,7 @@
         "totalPoints": 45.5,
         "gamesPlayed": 8,
         "positionRank": 28,
-        "overallRank": 167,
+        "overallRank": 169,
         "games": [
           {
             "week": 1,
@@ -66305,8 +66338,8 @@
       "2026": {
         "totalPoints": 95.8,
         "gamesPlayed": 8,
-        "positionRank": 12,
-        "overallRank": 57,
+        "positionRank": 13,
+        "overallRank": 58,
         "games": [
           {
             "week": 1,
@@ -67233,7 +67266,7 @@
         "totalPoints": 51.099999999999994,
         "gamesPlayed": 6,
         "positionRank": 46,
-        "overallRank": 151,
+        "overallRank": 152,
         "games": [
           {
             "week": 1,
@@ -68311,8 +68344,8 @@
       "2026": {
         "totalPoints": 59.80000000000001,
         "gamesPlayed": 8,
-        "positionRank": 33,
-        "overallRank": 127,
+        "positionRank": 34,
+        "overallRank": 128,
         "games": [
           {
             "week": 1,
@@ -68650,8 +68683,8 @@
       "2026": {
         "totalPoints": 24.3,
         "gamesPlayed": 2,
-        "positionRank": 53,
-        "overallRank": 230,
+        "positionRank": 54,
+        "overallRank": 231,
         "games": [
           {
             "week": 6,
@@ -69046,7 +69079,7 @@
         "totalPoints": 151.4,
         "gamesPlayed": 8,
         "positionRank": 1,
-        "overallRank": 11,
+        "overallRank": 12,
         "games": [
           {
             "week": 1,
@@ -69526,7 +69559,7 @@
         "totalPoints": 112.50000000000001,
         "gamesPlayed": 7,
         "positionRank": 3,
-        "overallRank": 41,
+        "overallRank": 42,
         "games": [
           {
             "week": 1,
@@ -70053,7 +70086,7 @@
         "totalPoints": 73.6,
         "gamesPlayed": 8,
         "positionRank": 22,
-        "overallRank": 100,
+        "overallRank": 101,
         "games": [
           {
             "week": 1,
@@ -71416,7 +71449,7 @@
         "totalPoints": 54.8,
         "gamesPlayed": 6,
         "positionRank": 32,
-        "overallRank": 144,
+        "overallRank": 145,
         "games": [
           {
             "week": 1,
@@ -71937,8 +71970,8 @@
       "2026": {
         "totalPoints": 85.8,
         "gamesPlayed": 8,
-        "positionRank": 19,
-        "overallRank": 75,
+        "positionRank": 20,
+        "overallRank": 76,
         "games": [
           {
             "week": 1,
@@ -74484,8 +74517,8 @@
       "2026": {
         "totalPoints": 92.2,
         "gamesPlayed": 8,
-        "positionRank": 14,
-        "overallRank": 60,
+        "positionRank": 15,
+        "overallRank": 62,
         "games": [
           {
             "week": 1,
@@ -75175,8 +75208,8 @@
       "2026": {
         "totalPoints": 88.2,
         "gamesPlayed": 7,
-        "positionRank": 15,
-        "overallRank": 67,
+        "positionRank": 16,
+        "overallRank": 69,
         "games": [
           {
             "week": 1,
@@ -75750,8 +75783,8 @@
       "2026": {
         "totalPoints": 134.50000000000003,
         "gamesPlayed": 8,
-        "positionRank": 5,
-        "overallRank": 23,
+        "positionRank": 6,
+        "overallRank": 24,
         "games": [
           {
             "week": 1,
@@ -76857,8 +76890,8 @@
       "2026": {
         "totalPoints": 50.6,
         "gamesPlayed": 6,
-        "positionRank": 34,
-        "overallRank": 153,
+        "positionRank": 35,
+        "overallRank": 154,
         "games": [
           {
             "week": 1,
@@ -78631,7 +78664,7 @@
         "totalPoints": 49.599999999999994,
         "gamesPlayed": 7,
         "positionRank": 24,
-        "overallRank": 154,
+        "overallRank": 155,
         "games": [
           {
             "week": 1,
@@ -79186,8 +79219,8 @@
       "2026": {
         "totalPoints": 161.02,
         "gamesPlayed": 7,
-        "positionRank": 7,
-        "overallRank": 9,
+        "positionRank": 8,
+        "overallRank": 10,
         "games": [
           {
             "week": 1,
@@ -81103,8 +81136,8 @@
       "2026": {
         "totalPoints": 80.5,
         "gamesPlayed": 7,
-        "positionRank": 4,
-        "overallRank": 81,
+        "positionRank": 6,
+        "overallRank": 83,
         "games": [
           {
             "week": 2,
@@ -81229,7 +81262,7 @@
         "totalPoints": 57,
         "gamesPlayed": 7,
         "positionRank": 3,
-        "overallRank": 134,
+        "overallRank": 137,
         "games": [
           {
             "week": 1,
@@ -81360,7 +81393,7 @@
         "totalPoints": 27.5,
         "gamesPlayed": 4,
         "positionRank": 15,
-        "overallRank": 221,
+        "overallRank": 222,
         "games": [
           {
             "week": 3,
@@ -81476,10 +81509,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 86.5,
-        "gamesPlayed": 8,
+        "totalPoints": 93.5,
+        "gamesPlayed": 9,
         "positionRank": 1,
-        "overallRank": 73,
+        "overallRank": 61,
         "games": [
           {
             "week": 1,
@@ -81531,8 +81564,8 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
+            "points": 7,
+            "played": true,
             "stats": {}
           },
           {
@@ -82102,8 +82135,8 @@
       "2026": {
         "totalPoints": 20.7,
         "gamesPlayed": 3,
-        "positionRank": 56,
-        "overallRank": 235,
+        "positionRank": 57,
+        "overallRank": 236,
         "games": [
           {
             "week": 1,
@@ -84140,7 +84173,7 @@
         "totalPoints": 74.89999999999999,
         "gamesPlayed": 7,
         "positionRank": 21,
-        "overallRank": 97,
+        "overallRank": 98,
         "games": [
           {
             "week": 1,
@@ -84587,8 +84620,8 @@
       "2026": {
         "totalPoints": 15.600000000000001,
         "gamesPlayed": 4,
-        "positionRank": 63,
-        "overallRank": 248,
+        "positionRank": 64,
+        "overallRank": 249,
         "games": [
           {
             "week": 1,
@@ -85155,8 +85188,8 @@
       "2026": {
         "totalPoints": 21.099999999999998,
         "gamesPlayed": 3,
-        "positionRank": 55,
-        "overallRank": 234,
+        "positionRank": 56,
+        "overallRank": 235,
         "games": [
           {
             "week": 1,
@@ -86466,7 +86499,7 @@
         "totalPoints": 47.199999999999996,
         "gamesPlayed": 5,
         "positionRank": 26,
-        "overallRank": 160,
+        "overallRank": 161,
         "games": [
           {
             "week": 4,
@@ -86866,10 +86899,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 67.4,
-        "gamesPlayed": 7,
+        "totalPoints": 71.60000000000001,
+        "gamesPlayed": 8,
         "positionRank": 18,
-        "overallRank": 111,
+        "overallRank": 106,
         "games": [
           {
             "week": 1,
@@ -86950,9 +86983,13 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 4.2,
+            "played": true,
+            "stats": {
+              "rec": 2,
+              "rec_tgt": 2,
+              "rec_yd": 22
+            }
           },
           {
             "week": 10,
@@ -87244,7 +87281,7 @@
         "totalPoints": 78.1,
         "gamesPlayed": 8,
         "positionRank": 12,
-        "overallRank": 87,
+        "overallRank": 89,
         "games": [
           {
             "week": 1,
@@ -87732,7 +87769,7 @@
         "totalPoints": 89.5,
         "gamesPlayed": 8,
         "positionRank": 6,
-        "overallRank": 65,
+        "overallRank": 67,
         "games": [
           {
             "week": 1,
@@ -88237,7 +88274,7 @@
         "totalPoints": 43.9,
         "gamesPlayed": 6,
         "positionRank": 52,
-        "overallRank": 172,
+        "overallRank": 173,
         "games": [
           {
             "week": 1,
@@ -88626,10 +88663,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 83,
-        "gamesPlayed": 7,
-        "positionRank": 21,
-        "overallRank": 78,
+        "totalPoints": 96.1,
+        "gamesPlayed": 8,
+        "positionRank": 12,
+        "overallRank": 57,
         "games": [
           {
             "week": 1,
@@ -88716,9 +88753,14 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 13.1,
+            "played": true,
+            "stats": {
+              "rec": 2,
+              "rec_tgt": 7,
+              "rec_yd": 61,
+              "rec_td": 1
+            }
           },
           {
             "week": 10,
@@ -89852,7 +89894,7 @@
         "totalPoints": 111.6,
         "gamesPlayed": 6,
         "positionRank": 7,
-        "overallRank": 42,
+        "overallRank": 43,
         "games": [
           {
             "week": 1,
@@ -90731,8 +90773,8 @@
       "2026": {
         "totalPoints": 55.7,
         "gamesPlayed": 8,
-        "positionRank": 41,
-        "overallRank": 139,
+        "positionRank": 42,
+        "overallRank": 141,
         "games": [
           {
             "week": 1,
@@ -91258,7 +91300,7 @@
         "totalPoints": 24.6,
         "gamesPlayed": 4,
         "positionRank": 80,
-        "overallRank": 228,
+        "overallRank": 229,
         "games": [
           {
             "week": 2,
@@ -92050,7 +92092,7 @@
         "totalPoints": 26.900000000000002,
         "gamesPlayed": 7,
         "positionRank": 77,
-        "overallRank": 223,
+        "overallRank": 224,
         "games": [
           {
             "week": 1,
@@ -92876,8 +92918,8 @@
       "2026": {
         "totalPoints": 19.6,
         "gamesPlayed": 6,
-        "positionRank": 58,
-        "overallRank": 239,
+        "positionRank": 59,
+        "overallRank": 240,
         "games": [
           {
             "week": 1,
@@ -94903,8 +94945,8 @@
       "2026": {
         "totalPoints": 28.5,
         "gamesPlayed": 6,
-        "positionRank": 72,
-        "overallRank": 216,
+        "positionRank": 73,
+        "overallRank": 217,
         "games": [
           {
             "week": 1,
@@ -95827,8 +95869,8 @@
       "2026": {
         "totalPoints": 22.2,
         "gamesPlayed": 4,
-        "positionRank": 54,
-        "overallRank": 232,
+        "positionRank": 55,
+        "overallRank": 233,
         "games": [
           {
             "week": 2,
@@ -96945,10 +96987,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 102.2,
-        "gamesPlayed": 7,
+        "totalPoints": 107,
+        "gamesPlayed": 8,
         "positionRank": 9,
-        "overallRank": 52,
+        "overallRank": 47,
         "games": [
           {
             "week": 1,
@@ -97035,9 +97077,15 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 4.8,
+            "played": true,
+            "stats": {
+              "rush_att": 3,
+              "rush_yd": 17,
+              "rec": 3,
+              "rec_tgt": 6,
+              "rec_yd": 6
+            }
           },
           {
             "week": 10,
@@ -97706,8 +97754,8 @@
       "2026": {
         "totalPoints": 85.3,
         "gamesPlayed": 8,
-        "positionRank": 20,
-        "overallRank": 76,
+        "positionRank": 21,
+        "overallRank": 78,
         "games": [
           {
             "week": 1,
@@ -98206,7 +98254,7 @@
         "totalPoints": 43.9,
         "gamesPlayed": 7,
         "positionRank": 53,
-        "overallRank": 173,
+        "overallRank": 174,
         "games": [
           {
             "week": 1,
@@ -98542,10 +98590,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 42.2,
-        "gamesPlayed": 7,
-        "positionRank": 41,
-        "overallRank": 180,
+        "totalPoints": 52.400000000000006,
+        "gamesPlayed": 8,
+        "positionRank": 34,
+        "overallRank": 150,
         "games": [
           {
             "week": 1,
@@ -98628,9 +98676,16 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 10.2,
+            "played": true,
+            "stats": {
+              "rush_att": 10,
+              "rush_yd": 19,
+              "rush_td": 1,
+              "rec": 2,
+              "rec_tgt": 2,
+              "rec_yd": 13
+            }
           },
           {
             "week": 10,
@@ -99776,8 +99831,8 @@
       "2026": {
         "totalPoints": 46.300000000000004,
         "gamesPlayed": 5,
-        "positionRank": 49,
-        "overallRank": 163,
+        "positionRank": 50,
+        "overallRank": 165,
         "games": [
           {
             "week": 1,
@@ -100271,8 +100326,8 @@
       "2026": {
         "totalPoints": 87.17999999999999,
         "gamesPlayed": 8,
-        "positionRank": 18,
-        "overallRank": 72,
+        "positionRank": 19,
+        "overallRank": 74,
         "games": [
           {
             "week": 1,
@@ -100656,8 +100711,8 @@
       "2026": {
         "totalPoints": 18.1,
         "gamesPlayed": 4,
-        "positionRank": 60,
-        "overallRank": 243,
+        "positionRank": 61,
+        "overallRank": 244,
         "games": [
           {
             "week": 1,
@@ -101096,7 +101151,7 @@
         "totalPoints": 79.1,
         "gamesPlayed": 7,
         "positionRank": 10,
-        "overallRank": 83,
+        "overallRank": 85,
         "games": [
           {
             "week": 1,
@@ -101824,7 +101879,7 @@
         "totalPoints": 85.89999999999999,
         "gamesPlayed": 7,
         "positionRank": 7,
-        "overallRank": 74,
+        "overallRank": 75,
         "games": [
           {
             "week": 1,
@@ -102313,7 +102368,7 @@
         "totalPoints": 48,
         "gamesPlayed": 7,
         "positionRank": 13,
-        "overallRank": 157,
+        "overallRank": 158,
         "games": [
           {
             "week": 1,
@@ -102444,7 +102499,7 @@
         "totalPoints": 71.5,
         "gamesPlayed": 8,
         "positionRank": 2,
-        "overallRank": 106,
+        "overallRank": 107,
         "games": [
           {
             "week": 1,
@@ -102706,7 +102761,7 @@
         "totalPoints": 12,
         "gamesPlayed": 2,
         "positionRank": 5,
-        "overallRank": 259,
+        "overallRank": 260,
         "games": [
           {
             "week": 1,
@@ -104487,7 +104542,7 @@
         "totalPoints": 91.77999999999999,
         "gamesPlayed": 6,
         "positionRank": 25,
-        "overallRank": 63,
+        "overallRank": 65,
         "games": [
           {
             "week": 1,
@@ -105093,7 +105148,7 @@
         "totalPoints": 103.58,
         "gamesPlayed": 5,
         "positionRank": 22,
-        "overallRank": 50,
+        "overallRank": 51,
         "games": [
           {
             "week": 1,
@@ -107132,7 +107187,7 @@
         "totalPoints": 27.7,
         "gamesPlayed": 3,
         "positionRank": 35,
-        "overallRank": 219,
+        "overallRank": 221,
         "games": [
           {
             "week": 1,
@@ -107668,7 +107723,7 @@
         "totalPoints": 106.64,
         "gamesPlayed": 5,
         "positionRank": 20,
-        "overallRank": 47,
+        "overallRank": 48,
         "games": [
           {
             "week": 1,
@@ -109327,7 +109382,7 @@
         "totalPoints": 92.1,
         "gamesPlayed": 8,
         "positionRank": 17,
-        "overallRank": 61,
+        "overallRank": 63,
         "games": [
           {
             "week": 1,
@@ -109776,8 +109831,8 @@
       "2026": {
         "totalPoints": 11.7,
         "gamesPlayed": 3,
-        "positionRank": 65,
-        "overallRank": 260,
+        "positionRank": 66,
+        "overallRank": 261,
         "games": [
           {
             "week": 3,
@@ -110330,8 +110385,8 @@
       "2026": {
         "totalPoints": 45.300000000000004,
         "gamesPlayed": 8,
-        "positionRank": 38,
-        "overallRank": 168,
+        "positionRank": 39,
+        "overallRank": 170,
         "games": [
           {
             "week": 1,
@@ -111769,7 +111824,7 @@
         "totalPoints": 77.8,
         "gamesPlayed": 8,
         "positionRank": 19,
-        "overallRank": 88,
+        "overallRank": 90,
         "games": [
           {
             "week": 1,
@@ -114381,7 +114436,7 @@
         "totalPoints": 47.8,
         "gamesPlayed": 8,
         "positionRank": 25,
-        "overallRank": 159,
+        "overallRank": 160,
         "games": [
           {
             "week": 1,
@@ -115538,8 +115593,8 @@
       "2026": {
         "totalPoints": 57.2,
         "gamesPlayed": 7,
-        "positionRank": 36,
-        "overallRank": 130,
+        "positionRank": 37,
+        "overallRank": 133,
         "games": [
           {
             "week": 1,
@@ -117013,8 +117068,8 @@
       "2026": {
         "totalPoints": 59.8,
         "gamesPlayed": 8,
-        "positionRank": 34,
-        "overallRank": 128,
+        "positionRank": 35,
+        "overallRank": 129,
         "games": [
           {
             "week": 1,
@@ -117909,7 +117964,7 @@
         "totalPoints": 43.5,
         "gamesPlayed": 7,
         "positionRank": 54,
-        "overallRank": 174,
+        "overallRank": 175,
         "games": [
           {
             "week": 1,
@@ -119965,7 +120020,7 @@
         "totalPoints": 21.2,
         "gamesPlayed": 3,
         "positionRank": 82,
-        "overallRank": 233,
+        "overallRank": 234,
         "games": [
           {
             "week": 2,
@@ -120447,7 +120502,7 @@
       },
       "2026": {
         "totalPoints": 29.7,
-        "gamesPlayed": 7,
+        "gamesPlayed": 8,
         "positionRank": 71,
         "overallRank": 214,
         "games": [
@@ -120528,7 +120583,7 @@
           {
             "week": 9,
             "points": 0,
-            "played": false,
+            "played": true,
             "stats": {}
           },
           {
@@ -121428,7 +121483,7 @@
         "totalPoints": 43.1,
         "gamesPlayed": 6,
         "positionRank": 56,
-        "overallRank": 176,
+        "overallRank": 177,
         "games": [
           {
             "week": 1,
@@ -121894,8 +121949,8 @@
       "2026": {
         "totalPoints": 56.7,
         "gamesPlayed": 7,
-        "positionRank": 40,
-        "overallRank": 137,
+        "positionRank": 41,
+        "overallRank": 139,
         "games": [
           {
             "week": 1,
@@ -125133,8 +125188,8 @@
       "2026": {
         "totalPoints": 18,
         "gamesPlayed": 6,
-        "positionRank": 61,
-        "overallRank": 244,
+        "positionRank": 62,
+        "overallRank": 245,
         "games": [
           {
             "week": 2,
@@ -125487,8 +125542,8 @@
       "2026": {
         "totalPoints": 61.5,
         "gamesPlayed": 8,
-        "positionRank": 31,
-        "overallRank": 125,
+        "positionRank": 32,
+        "overallRank": 126,
         "games": [
           {
             "week": 1,
@@ -125851,7 +125906,7 @@
         "totalPoints": 69.3,
         "gamesPlayed": 7,
         "positionRank": 25,
-        "overallRank": 108,
+        "overallRank": 109,
         "games": [
           {
             "week": 1,
@@ -126784,8 +126839,8 @@
       "2026": {
         "totalPoints": 19.1,
         "gamesPlayed": 3,
-        "positionRank": 59,
-        "overallRank": 241,
+        "positionRank": 60,
+        "overallRank": 242,
         "games": [
           {
             "week": 1,
@@ -127386,8 +127441,8 @@
       "2026": {
         "totalPoints": 13.1,
         "gamesPlayed": 4,
-        "positionRank": 64,
-        "overallRank": 256,
+        "positionRank": 65,
+        "overallRank": 257,
         "games": [
           {
             "week": 2,
@@ -127662,7 +127717,7 @@
         "totalPoints": 55.5,
         "gamesPlayed": 7,
         "positionRank": 29,
-        "overallRank": 140,
+        "overallRank": 142,
         "games": [
           {
             "week": 1,
@@ -128587,7 +128642,7 @@
         "totalPoints": 14.3,
         "gamesPlayed": 4,
         "positionRank": 87,
-        "overallRank": 251,
+        "overallRank": 252,
         "games": [
           {
             "week": 1,
@@ -129583,7 +129638,7 @@
         "totalPoints": 19.299999999999997,
         "gamesPlayed": 3,
         "positionRank": 36,
-        "overallRank": 240,
+        "overallRank": 241,
         "games": [
           {
             "week": 1,
@@ -129940,7 +129995,7 @@
         "totalPoints": 54.9,
         "gamesPlayed": 6,
         "positionRank": 31,
-        "overallRank": 142,
+        "overallRank": 144,
         "games": [
           {
             "week": 1,
@@ -130289,10 +130344,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 110.80000000000001,
-        "gamesPlayed": 7,
-        "positionRank": 15,
-        "overallRank": 44,
+        "totalPoints": 119.70000000000002,
+        "gamesPlayed": 8,
+        "positionRank": 14,
+        "overallRank": 36,
         "games": [
           {
             "week": 1,
@@ -130391,9 +130446,13 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 8.9,
+            "played": true,
+            "stats": {
+              "rush_att": 12,
+              "rush_yd": 29,
+              "rush_td": 1
+            }
           },
           {
             "week": 10,
@@ -130617,7 +130676,7 @@
         "totalPoints": 27.400000000000002,
         "gamesPlayed": 4,
         "positionRank": 76,
-        "overallRank": 222,
+        "overallRank": 223,
         "games": [
           {
             "week": 1,
@@ -131264,7 +131323,7 @@
         "totalPoints": 69.2,
         "gamesPlayed": 7,
         "positionRank": 24,
-        "overallRank": 109,
+        "overallRank": 110,
         "games": [
           {
             "week": 1,
@@ -131563,7 +131622,7 @@
         "totalPoints": 13.399999999999999,
         "gamesPlayed": 4,
         "positionRank": 91,
-        "overallRank": 255,
+        "overallRank": 256,
         "games": [
           {
             "week": 1,
@@ -131848,7 +131907,7 @@
         "totalPoints": 44.6,
         "gamesPlayed": 6,
         "positionRank": 29,
-        "overallRank": 170,
+        "overallRank": 171,
         "games": [
           {
             "week": 1,
@@ -132540,7 +132599,7 @@
         "totalPoints": 111,
         "gamesPlayed": 8,
         "positionRank": 8,
-        "overallRank": 43,
+        "overallRank": 44,
         "games": [
           {
             "week": 1,
@@ -133602,7 +133661,7 @@
         "totalPoints": 90.1,
         "gamesPlayed": 8,
         "positionRank": 5,
-        "overallRank": 64,
+        "overallRank": 66,
         "games": [
           {
             "week": 1,
@@ -133938,7 +133997,7 @@
         "totalPoints": 56.7,
         "gamesPlayed": 7,
         "positionRank": 28,
-        "overallRank": 138,
+        "overallRank": 140,
         "games": [
           {
             "week": 1,
@@ -135245,7 +135304,7 @@
         "totalPoints": 76.10000000000001,
         "gamesPlayed": 7,
         "positionRank": 20,
-        "overallRank": 92,
+        "overallRank": 93,
         "games": [
           {
             "week": 1,
@@ -135601,8 +135660,8 @@
       "2026": {
         "totalPoints": 57.099999999999994,
         "gamesPlayed": 6,
-        "positionRank": 38,
-        "overallRank": 132,
+        "positionRank": 39,
+        "overallRank": 135,
         "games": [
           {
             "week": 1,
@@ -136055,7 +136114,7 @@
         "totalPoints": 73.9,
         "gamesPlayed": 8,
         "positionRank": 16,
-        "overallRank": 99,
+        "overallRank": 100,
         "games": [
           {
             "week": 1,
@@ -136407,7 +136466,7 @@
         "totalPoints": 75.7,
         "gamesPlayed": 6,
         "positionRank": 14,
-        "overallRank": 94,
+        "overallRank": 95,
         "games": [
           {
             "week": 1,
@@ -136748,8 +136807,8 @@
       "2026": {
         "totalPoints": 95.6,
         "gamesPlayed": 8,
-        "positionRank": 13,
-        "overallRank": 58,
+        "positionRank": 14,
+        "overallRank": 59,
         "games": [
           {
             "week": 1,
@@ -137444,7 +137503,7 @@
         "totalPoints": 106.52,
         "gamesPlayed": 8,
         "positionRank": 21,
-        "overallRank": 48,
+        "overallRank": 49,
         "games": [
           {
             "week": 1,
@@ -138115,8 +138174,8 @@
       "2026": {
         "totalPoints": 87.89999999999999,
         "gamesPlayed": 7,
-        "positionRank": 17,
-        "overallRank": 70,
+        "positionRank": 18,
+        "overallRank": 72,
         "games": [
           {
             "week": 1,
@@ -138489,8 +138548,8 @@
       "2026": {
         "totalPoints": 114.8,
         "gamesPlayed": 8,
-        "positionRank": 14,
-        "overallRank": 38,
+        "positionRank": 15,
+        "overallRank": 39,
         "games": [
           {
             "week": 1,
@@ -139167,10 +139226,10 @@
         ]
       },
       "2026": {
-        "totalPoints": 56.9,
-        "gamesPlayed": 7,
+        "totalPoints": 59.8,
+        "gamesPlayed": 8,
         "positionRank": 2,
-        "overallRank": 135,
+        "overallRank": 130,
         "games": [
           {
             "week": 1,
@@ -139241,9 +139300,14 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 2.9,
+            "played": true,
+            "stats": {
+              "rec": 1,
+              "rec_tgt": 1,
+              "rec_yd": -1,
+              "fum_lost": 1
+            }
           },
           {
             "week": 10,
@@ -139650,8 +139714,8 @@
       "2026": {
         "totalPoints": 42.4,
         "gamesPlayed": 5,
-        "positionRank": 40,
-        "overallRank": 178,
+        "positionRank": 41,
+        "overallRank": 179,
         "games": [
           {
             "week": 1,
@@ -140004,7 +140068,7 @@
         "totalPoints": 56.8,
         "gamesPlayed": 4,
         "positionRank": 27,
-        "overallRank": 136,
+        "overallRank": 138,
         "games": [
           {
             "week": 1,
@@ -140316,7 +140380,7 @@
         "totalPoints": 24.7,
         "gamesPlayed": 7,
         "positionRank": 79,
-        "overallRank": 227,
+        "overallRank": 228,
         "games": [
           {
             "week": 1,
@@ -140637,8 +140701,8 @@
       "2026": {
         "totalPoints": 57.2,
         "gamesPlayed": 7,
-        "positionRank": 37,
-        "overallRank": 131,
+        "positionRank": 38,
+        "overallRank": 134,
         "games": [
           {
             "week": 1,
@@ -141155,7 +141219,7 @@
         "totalPoints": 14.7,
         "gamesPlayed": 4,
         "positionRank": 85,
-        "overallRank": 249,
+        "overallRank": 250,
         "games": [
           {
             "week": 5,
@@ -141581,7 +141645,7 @@
       },
       "2026": {
         "totalPoints": 2,
-        "gamesPlayed": 7,
+        "gamesPlayed": 8,
         "positionRank": 82,
         "overallRank": 302,
         "games": [
@@ -141649,8 +141713,10 @@
           {
             "week": 9,
             "points": 0,
-            "played": false,
-            "stats": {}
+            "played": true,
+            "stats": {
+              "rec_tgt": 2
+            }
           },
           {
             "week": 10,
@@ -142234,7 +142300,7 @@
         "totalPoints": 12.3,
         "gamesPlayed": 4,
         "positionRank": 92,
-        "overallRank": 258,
+        "overallRank": 259,
         "games": [
           {
             "week": 1,
@@ -142482,8 +142548,8 @@
       "2026": {
         "totalPoints": 74,
         "gamesPlayed": 8,
-        "positionRank": 7,
-        "overallRank": 98,
+        "positionRank": 8,
+        "overallRank": 99,
         "games": [
           {
             "week": 1,
@@ -142732,7 +142798,7 @@
         "totalPoints": 16.799999999999997,
         "gamesPlayed": 5,
         "positionRank": 84,
-        "overallRank": 246,
+        "overallRank": 247,
         "games": [
           {
             "week": 1,
@@ -143271,7 +143337,7 @@
         "totalPoints": 20.599999999999998,
         "gamesPlayed": 4,
         "positionRank": 83,
-        "overallRank": 236,
+        "overallRank": 237,
         "games": [
           {
             "week": 5,
@@ -143777,8 +143843,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 52,
-        "overallRank": 350,
+        "positionRank": 51,
+        "overallRank": 349,
         "games": [
           {
             "week": 1,
@@ -143907,14 +143973,14 @@
     "seasons": {
       "2026": {
         "totalPoints": 0,
-        "gamesPlayed": 0,
+        "gamesPlayed": 1,
         "positionRank": 45,
-        "overallRank": 342,
+        "overallRank": 341,
         "games": [
           {
             "week": 9,
             "points": 0,
-            "played": false,
+            "played": true,
             "stats": {}
           },
           {
@@ -143992,7 +144058,7 @@
         "totalPoints": 50.8,
         "gamesPlayed": 8,
         "positionRank": 47,
-        "overallRank": 152,
+        "overallRank": 153,
         "games": [
           {
             "week": 1,
@@ -144153,8 +144219,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 54,
-        "overallRank": 354,
+        "positionRank": 53,
+        "overallRank": 353,
         "games": [
           {
             "week": 1,
@@ -144285,7 +144351,7 @@
         "totalPoints": 42.8,
         "gamesPlayed": 4,
         "positionRank": 57,
-        "overallRank": 177,
+        "overallRank": 178,
         "games": [
           {
             "week": 1,
@@ -144430,7 +144496,7 @@
         "totalPoints": 0,
         "gamesPlayed": 5,
         "positionRank": 46,
-        "overallRank": 355,
+        "overallRank": 354,
         "games": [
           {
             "week": 1,
@@ -144560,8 +144626,8 @@
       "2026": {
         "totalPoints": 61.3,
         "gamesPlayed": 7,
-        "positionRank": 32,
-        "overallRank": 126,
+        "positionRank": 33,
+        "overallRank": 127,
         "games": [
           {
             "week": 1,
@@ -144723,7 +144789,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 119,
-        "overallRank": 343,
+        "overallRank": 342,
         "games": [
           {
             "week": 1,
@@ -145013,8 +145079,8 @@
       "2026": {
         "totalPoints": 16.7,
         "gamesPlayed": 4,
-        "positionRank": 62,
-        "overallRank": 247,
+        "positionRank": 63,
+        "overallRank": 248,
         "games": [
           {
             "week": 1,
@@ -145170,8 +145236,8 @@
       "2026": {
         "totalPoints": 47.9,
         "gamesPlayed": 6,
-        "positionRank": 36,
-        "overallRank": 158,
+        "positionRank": 37,
+        "overallRank": 159,
         "games": [
           {
             "week": 1,
@@ -145471,8 +145537,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 53,
-        "overallRank": 351,
+        "positionRank": 52,
+        "overallRank": 350,
         "games": [
           {
             "week": 1,
@@ -145601,9 +145667,9 @@
     "seasons": {
       "2026": {
         "totalPoints": 13.899999999999999,
-        "gamesPlayed": 4,
+        "gamesPlayed": 5,
         "positionRank": 88,
-        "overallRank": 252,
+        "overallRank": 253,
         "games": [
           {
             "week": 1,
@@ -145672,7 +145738,7 @@
           {
             "week": 9,
             "points": 0,
-            "played": false,
+            "played": true,
             "stats": {}
           },
           {
@@ -145750,7 +145816,7 @@
         "totalPoints": 48.099999999999994,
         "gamesPlayed": 8,
         "positionRank": 48,
-        "overallRank": 155,
+        "overallRank": 156,
         "games": [
           {
             "week": 1,
@@ -146064,7 +146130,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 120,
-        "overallRank": 344,
+        "overallRank": 343,
         "games": [
           {
             "week": 9,
@@ -146319,7 +146385,7 @@
         "totalPoints": 43.4,
         "gamesPlayed": 7,
         "positionRank": 55,
-        "overallRank": 175,
+        "overallRank": 176,
         "games": [
           {
             "week": 1,
@@ -146479,8 +146545,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 51,
-        "overallRank": 349,
+        "positionRank": 50,
+        "overallRank": 348,
         "games": [
           {
             "week": 1,
@@ -146778,7 +146844,7 @@
         "totalPoints": 23.199999999999996,
         "gamesPlayed": 7,
         "positionRank": 81,
-        "overallRank": 231,
+        "overallRank": 232,
         "games": [
           {
             "week": 1,
@@ -147091,7 +147157,7 @@
         "totalPoints": 11.2,
         "gamesPlayed": 8,
         "positionRank": 93,
-        "overallRank": 261,
+        "overallRank": 262,
         "games": [
           {
             "week": 1,
@@ -147249,7 +147315,7 @@
         "totalPoints": 45.900000000000006,
         "gamesPlayed": 8,
         "positionRank": 27,
-        "overallRank": 165,
+        "overallRank": 167,
         "games": [
           {
             "week": 1,
@@ -147414,8 +147480,8 @@
       "2026": {
         "totalPoints": 44.4,
         "gamesPlayed": 7,
-        "positionRank": 39,
-        "overallRank": 171,
+        "positionRank": 40,
+        "overallRank": 172,
         "games": [
           {
             "week": 1,
@@ -147582,7 +147648,7 @@
         "totalPoints": 13,
         "gamesPlayed": 6,
         "positionRank": 5,
-        "overallRank": 257,
+        "overallRank": 258,
         "games": [
           {
             "week": 1,
@@ -147864,7 +147930,7 @@
         "totalPoints": 75.9,
         "gamesPlayed": 8,
         "positionRank": 22,
-        "overallRank": 93,
+        "overallRank": 94,
         "games": [
           {
             "week": 1,
@@ -148309,16 +148375,23 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 0,
-        "gamesPlayed": 0,
-        "positionRank": 48,
-        "overallRank": 338,
+        "totalPoints": -0.3,
+        "gamesPlayed": 1,
+        "positionRank": 54,
+        "overallRank": 355,
         "games": [
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": -0.3,
+            "played": true,
+            "stats": {
+              "pass_att": 18,
+              "pass_cmp": 10,
+              "pass_yd": 60,
+              "pass_int": 2,
+              "rush_att": 3,
+              "rush_yd": 13
+            }
           },
           {
             "week": 10,
@@ -148395,7 +148468,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 122,
-        "overallRank": 347,
+        "overallRank": 346,
         "games": [
           {
             "week": 1,
@@ -148526,7 +148599,7 @@
         "totalPoints": 20,
         "gamesPlayed": 2,
         "positionRank": 17,
-        "overallRank": 238,
+        "overallRank": 239,
         "games": [
           {
             "week": 6,
@@ -148876,8 +148949,8 @@
       "2026": {
         "totalPoints": 78.5,
         "gamesPlayed": 7,
-        "positionRank": 5,
-        "overallRank": 86,
+        "positionRank": 7,
+        "overallRank": 88,
         "games": [
           {
             "week": 1,
@@ -149143,7 +149216,7 @@
         "totalPoints": 17.5,
         "gamesPlayed": 5,
         "positionRank": 19,
-        "overallRank": 245,
+        "overallRank": 246,
         "games": [
           {
             "week": 1,
@@ -149271,10 +149344,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 27.7,
-        "gamesPlayed": 7,
-        "positionRank": 75,
-        "overallRank": 220,
+        "totalPoints": 28.8,
+        "gamesPlayed": 8,
+        "positionRank": 72,
+        "overallRank": 216,
         "games": [
           {
             "week": 1,
@@ -149346,9 +149419,13 @@
           },
           {
             "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
+            "points": 1.1,
+            "played": true,
+            "stats": {
+              "rec": 1,
+              "rec_tgt": 1,
+              "rec_yd": 6
+            }
           },
           {
             "week": 10,
@@ -149425,7 +149502,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 44,
-        "overallRank": 339,
+        "overallRank": 338,
         "games": [
           {
             "week": 1,
@@ -149556,7 +149633,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 123,
-        "overallRank": 352,
+        "overallRank": 351,
         "games": [
           {
             "week": 1,
@@ -150142,7 +150219,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 121,
-        "overallRank": 345,
+        "overallRank": 344,
         "games": [
           {
             "week": 1,
@@ -150273,7 +150350,7 @@
         "totalPoints": 42.3,
         "gamesPlayed": 7,
         "positionRank": 30,
-        "overallRank": 179,
+        "overallRank": 180,
         "games": [
           {
             "week": 1,
@@ -150434,7 +150511,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 97,
-        "overallRank": 340,
+        "overallRank": 339,
         "games": [
           {
             "week": 1,
@@ -150564,8 +150641,8 @@
       "2026": {
         "totalPoints": 20.5,
         "gamesPlayed": 8,
-        "positionRank": 57,
-        "overallRank": 237,
+        "positionRank": 58,
+        "overallRank": 238,
         "games": [
           {
             "week": 1,
@@ -150728,7 +150805,7 @@
         "totalPoints": 19,
         "gamesPlayed": 3,
         "positionRank": 18,
-        "overallRank": 242,
+        "overallRank": 243,
         "games": [
           {
             "week": 5,
