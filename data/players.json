@@ -30177,7 +30177,12 @@
     "position": "WR",
     "nflTeam": "DEN",
     "birthDate": "1995-10-10",
-    "currentTeam": null,
+    "currentTeam": {
+      "teamName": "My Pookie NOOOOO",
+      "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+      "ownerId": "1004418514142253056",
+      "rosterId": 10
+    },
     "seasons": {
       "2024": {
         "totalPoints": 181.49999999999997,
@@ -30620,6 +30625,66 @@
               "rec_tgt": 4,
               "rec_yd": 53
             }
+          },
+          {
+            "week": 9,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
           }
         ]
       }
@@ -91827,12 +91892,7 @@
     "position": "WR",
     "nflTeam": "HOU",
     "birthDate": "2002-05-07",
-    "currentTeam": {
-      "teamName": "My Pookie NOOOOO",
-      "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
-      "ownerId": "1004418514142253056",
-      "rosterId": 10
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 47.099999999999994,
@@ -92166,66 +92226,6 @@
           },
           {
             "week": 8,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 9,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}

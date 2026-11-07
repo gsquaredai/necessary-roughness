@@ -1,5 +1,49 @@
 [
   {
+    "id": "1424238942793879552",
+    "type": "waiver",
+    "date": "2026-11-06T01:12:14.343Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "My Pookie NOOOOO",
+        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "5045",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "9504",
+        "name": "Kayshon Boutte",
+        "position": "WR",
+        "team": {
+          "teamName": "My Pookie NOOOOO",
+          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 19
+  },
+  {
     "id": "1423879608947822592",
     "type": "free_agent",
     "date": "2026-11-05T01:24:22.478Z",
