@@ -1,5 +1,81 @@
 [
   {
+    "id": "1425203924633145344",
+    "type": "free_agent",
+    "date": "2026-11-08T17:06:43.942Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "WANGHAF",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+        "ownerId": "1128523568641466368",
+        "rosterId": 7
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "11616",
+        "name": "Jacob Cowing",
+        "position": "WR",
+        "team": {
+          "teamName": "WANGHAF",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/15d7cf259bc30eab8f6120f45f652fb6",
+          "ownerId": "1128523568641466368",
+          "rosterId": 7
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1425149016013836288",
+    "type": "free_agent",
+    "date": "2026-11-08T13:28:32.708Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11579",
+        "name": "Audric Estime",
+        "position": "RB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "12048",
+        "name": "George Holani",
+        "position": "RB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1424238942793879552",
     "type": "waiver",
     "date": "2026-11-06T01:12:14.343Z",
