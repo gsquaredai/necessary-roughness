@@ -1,5 +1,37 @@
 [
   {
+    "id": "1425907217319604224",
+    "type": "free_agent",
+    "date": "2026-11-10T15:41:21.986Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "3161",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1425203924633145344",
     "type": "free_agent",
     "date": "2026-11-08T17:06:43.942Z",
@@ -82,8 +114,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -95,8 +127,8 @@
         "name": "Courtland Sutton",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -108,8 +140,8 @@
         "name": "Kayshon Boutte",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1220,8 +1252,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -1234,8 +1266,8 @@
         "name": "Jahan Dotson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1258,8 +1290,8 @@
         "rosterId": 1
       },
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -1284,8 +1316,8 @@
       },
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -1319,8 +1351,8 @@
         "name": "D'Andre Swift",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1341,8 +1373,8 @@
         "name": "Kyle Monangai",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1365,8 +1397,8 @@
         "name": "Jahmyr Gibbs",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1395,8 +1427,8 @@
           "rosterId": 1
         },
         "to": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -1525,7 +1557,7 @@
             "round": 2,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
@@ -2091,8 +2123,8 @@
         "rosterId": 3
       },
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -2117,8 +2149,8 @@
       },
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -2139,8 +2171,8 @@
         "name": "Dallas Goedert",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -2174,8 +2206,8 @@
         "name": "Terrance Ferguson",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -3604,8 +3636,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -3617,8 +3649,8 @@
         "name": "Jahan Dotson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -4821,8 +4853,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -4835,8 +4867,8 @@
         "name": "Patrick Queen",
         "position": "LB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -6162,8 +6194,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -6175,8 +6207,8 @@
         "name": "Jacob Rodriguez",
         "position": "LB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -6188,8 +6220,8 @@
         "name": "Tyquan Thornton",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -6516,8 +6548,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -6529,8 +6561,8 @@
         "name": "Caleb Downs",
         "position": "DB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -7637,8 +7669,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -7650,8 +7682,8 @@
         "name": "Tyquan Thornton",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -7663,8 +7695,8 @@
         "name": "George Holani",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -7713,8 +7745,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       },
@@ -7728,8 +7760,8 @@
     "sides": [
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -7775,8 +7807,8 @@
         "name": "David Montgomery",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -7810,8 +7842,8 @@
         "name": "Carnell Tate",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -7829,8 +7861,8 @@
           "rosterId": 12
         },
         "to": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -8771,8 +8803,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -8785,8 +8817,8 @@
         "name": "Demarcus Robinson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -10368,8 +10400,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -10381,8 +10413,8 @@
         "name": "Demarcus Robinson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -10394,8 +10426,8 @@
         "name": "Jahan Dotson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -10844,8 +10876,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -10857,8 +10889,8 @@
         "name": "Jahan Dotson",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -10870,8 +10902,8 @@
         "name": "David Njoku",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -11344,8 +11376,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -11357,8 +11389,8 @@
         "name": "George Holani",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -11376,8 +11408,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -11390,8 +11422,8 @@
         "name": "Michael Trigg",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -11452,8 +11484,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -11465,8 +11497,8 @@
         "name": "Greg Dulcich",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -11478,8 +11510,8 @@
         "name": "Theo Johnson",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -12551,7 +12583,7 @@
             "round": 2,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
@@ -12784,8 +12816,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -12798,8 +12830,8 @@
         "name": "Mac Jones",
         "position": "QB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -12822,8 +12854,8 @@
         "rosterId": 8
       },
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       },
@@ -12859,8 +12891,8 @@
       },
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -12928,8 +12960,8 @@
         "name": "Mike Evans",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -12961,8 +12993,8 @@
         "name": "Kyle Pitts Sr.",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -13062,8 +13094,8 @@
         "name": "Tank Dell",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -13073,8 +13105,8 @@
         "name": "Brian Thomas Jr.",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -13920,8 +13952,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -13934,8 +13966,8 @@
         "name": "Darnell Washington",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -14214,8 +14246,8 @@
     "originalRosterId": 3,
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -14227,8 +14259,8 @@
         "name": "Carnell Tate",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -15098,8 +15130,8 @@
     "originalRosterId": 7,
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -15111,8 +15143,8 @@
         "name": "Rueben Bain",
         "position": "DL",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -15132,8 +15164,8 @@
     "originalRosterId": 6,
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -15145,8 +15177,8 @@
         "name": "Michael Trigg",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -15472,8 +15504,8 @@
     "originalRosterId": 10,
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -15485,8 +15517,8 @@
         "name": "Demond Claiborne",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -16517,8 +16549,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -16531,8 +16563,8 @@
         "name": "Devin Neal",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -16848,8 +16880,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -16862,8 +16894,8 @@
         "name": "Jonnu Smith",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17098,8 +17130,8 @@
         "rosterId": 7
       },
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -17226,8 +17258,8 @@
       },
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -17271,8 +17303,8 @@
         "name": "Jared Goff",
         "position": "QB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17326,8 +17358,8 @@
         "name": "Jake Ferguson",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17337,8 +17369,8 @@
         "name": "Kyren Williams",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17405,8 +17437,8 @@
         "name": "Rhamondre Stevenson",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17438,8 +17470,8 @@
         "name": "TreVeyon Henderson",
         "position": "RB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17451,8 +17483,8 @@
         "round": 1,
         "originalRosterId": 1,
         "from": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -17542,8 +17574,8 @@
           "rosterId": 5
         },
         "to": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -17570,8 +17602,8 @@
         "round": 1,
         "originalRosterId": 7,
         "from": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -18072,7 +18104,7 @@
             "round": 1,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
@@ -18489,8 +18521,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -18503,8 +18535,8 @@
         "name": "Andrei Iosivas",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -19324,7 +19356,7 @@
             "round": 1,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
@@ -19762,8 +19794,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -19776,8 +19808,8 @@
         "name": "Davis Mills",
         "position": "QB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -19800,8 +19832,8 @@
         "rosterId": 2
       },
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -19845,8 +19877,8 @@
       },
       {
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -19880,8 +19912,8 @@
         "name": "Theo Johnson",
         "position": "TE",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -19906,8 +19938,8 @@
         "round": 2,
         "originalRosterId": 10,
         "from": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -19923,8 +19955,8 @@
         "round": 4,
         "originalRosterId": 2,
         "from": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         },
@@ -19946,8 +19978,8 @@
           "rosterId": 2
         },
         "to": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -20868,8 +20900,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -20882,8 +20914,8 @@
         "name": "Jalen Milroe",
         "position": "QB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -20900,8 +20932,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -20914,8 +20946,8 @@
         "name": "John Metchie III",
         "position": "WR",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -21973,8 +22005,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -21986,8 +22018,8 @@
         "name": "Patrick Queen",
         "position": "LB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -22005,8 +22037,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -22018,8 +22050,8 @@
         "name": "Zack Baun",
         "position": "LB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -22037,8 +22069,8 @@
     "season": "2026",
     "teams": [
       {
-        "teamName": "My Pookie NOOOOO",
-        "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
         "ownerId": "1004418514142253056",
         "rosterId": 10
       }
@@ -22050,8 +22082,8 @@
         "name": "Micah Parsons",
         "position": "LB",
         "team": {
-          "teamName": "My Pookie NOOOOO",
-          "avatar": "https://sleepercdn.com/uploads/f5646947031ea17ca6ea112b5ae96b40.jpg",
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
           "ownerId": "1004418514142253056",
           "rosterId": 10
         }
@@ -29053,7 +29085,7 @@
             "round": 1,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
@@ -29974,7 +30006,7 @@
             "round": 2,
             "originalRosterId": 10,
             "result": null,
-            "originalTeam": "My Pookie NOOOOO"
+            "originalTeam": "بسم الله، السلام عليكم"
           }
         ],
         "faab": []
