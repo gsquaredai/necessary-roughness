@@ -25839,12 +25839,79 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
+      "teamName": "Faded off the Josh",
+      "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+      "ownerId": "1125954610599964672",
+      "rosterId": 4
     },
     "tradeHistory": [
+      {
+        "date": "2026-11-11T02:29:14.767Z",
+        "from": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            },
+            "players": [
+              {
+                "playerId": "12489",
+                "name": "RJ Harvey",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "7543",
+                "name": "Travis Etienne Jr.",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-09-29T15:09:36.128Z",
         "from": {
@@ -27044,12 +27111,79 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "Faded off the Josh",
-      "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
-      "ownerId": "1125954610599964672",
-      "rosterId": 4
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
     },
     "tradeHistory": [
+      {
+        "date": "2026-11-11T02:29:14.767Z",
+        "from": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "to": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            },
+            "players": [
+              {
+                "playerId": "12489",
+                "name": "RJ Harvey",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Smitty Committee",
+              "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+              "ownerId": "854223684238454784",
+              "rosterId": 6
+            },
+            "players": [
+              {
+                "playerId": "7543",
+                "name": "Travis Etienne Jr.",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 4,
+                "originalRosterId": 7,
+                "result": null,
+                "originalTeam": "WANGHAF"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-10-29T02:32:37.794Z",
         "from": {
