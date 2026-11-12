@@ -21635,7 +21635,7 @@
     "playerId": "4274",
     "name": "David Moore",
     "position": "WR",
-    "nflTeam": null,
+    "nflTeam": "CAR",
     "birthDate": "1995-01-15",
     "currentTeam": null,
     "seasons": {
@@ -81310,10 +81310,10 @@
     },
     "seasons": {
       "2026": {
-        "totalPoints": 96,
+        "totalPoints": 96.5,
         "gamesPlayed": 8,
         "positionRank": 4,
-        "overallRank": 71,
+        "overallRank": 69,
         "games": [
           {
             "week": 2,
@@ -81359,7 +81359,7 @@
           },
           {
             "week": 9,
-            "points": 15.5,
+            "points": 16,
             "played": true,
             "stats": {}
           },
@@ -88879,7 +88879,7 @@
         "totalPoints": 96.1,
         "gamesPlayed": 8,
         "positionRank": 16,
-        "overallRank": 70,
+        "overallRank": 71,
         "games": [
           {
             "week": 1,
@@ -100545,7 +100545,7 @@
         "totalPoints": 96.17999999999999,
         "gamesPlayed": 9,
         "positionRank": 15,
-        "overallRank": 69,
+        "overallRank": 70,
         "games": [
           {
             "week": 1,
@@ -137403,7 +137403,7 @@
             "played": true,
             "stats": {
               "rec": 7,
-              "rec_tgt": 9,
+              "rec_tgt": 10,
               "rec_yd": 97,
               "rec_td": 1,
               "fum_lost": 1
