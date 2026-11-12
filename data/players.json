@@ -42654,7 +42654,7 @@
         "totalPoints": -0.64,
         "gamesPlayed": 1,
         "positionRank": 52,
-        "overallRank": 354,
+        "overallRank": 355,
         "games": [
           {
             "week": 1,
@@ -61327,7 +61327,7 @@
         "totalPoints": -2.1,
         "gamesPlayed": 2,
         "positionRank": 53,
-        "overallRank": 356,
+        "overallRank": 357,
         "games": [
           {
             "week": 1,
@@ -63854,7 +63854,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 20,
-        "overallRank": 351,
+        "overallRank": 352,
         "games": [
           {
             "week": 1,
@@ -64571,12 +64571,7 @@
     "position": "TE",
     "nflTeam": "CAR",
     "birthDate": "2000-06-02",
-    "currentTeam": {
-      "teamName": "Strib Club Closed",
-      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-      "ownerId": "326066174007713792",
-      "rosterId": 3
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 17,
@@ -64661,60 +64656,6 @@
               "rec_yd": 24,
               "rec_td": 1
             }
-          },
-          {
-            "week": 10,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
           }
         ]
       }
@@ -141490,8 +141431,8 @@
       "2026": {
         "totalPoints": -0.8,
         "gamesPlayed": 2,
-        "positionRank": 126,
-        "overallRank": 355,
+        "positionRank": 127,
+        "overallRank": 356,
         "games": [
           {
             "week": 1,
@@ -144410,7 +144351,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 49,
-        "overallRank": 348,
+        "overallRank": 349,
         "games": [
           {
             "week": 1,
@@ -144786,7 +144727,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 51,
-        "overallRank": 352,
+        "overallRank": 353,
         "games": [
           {
             "week": 1,
@@ -145066,7 +145007,7 @@
         "totalPoints": 0,
         "gamesPlayed": 6,
         "positionRank": 46,
-        "overallRank": 353,
+        "overallRank": 354,
         "games": [
           {
             "week": 1,
@@ -146123,7 +146064,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 50,
-        "overallRank": 349,
+        "overallRank": 350,
         "games": [
           {
             "week": 1,
@@ -147154,7 +147095,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 48,
-        "overallRank": 347,
+        "overallRank": 348,
         "games": [
           {
             "week": 1,
@@ -148025,6 +147966,83 @@
               "rec_yd": 49
             }
           },
+          {
+            "week": 10,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
+  "13333": {
+    "playerId": "13333",
+    "name": "Deion Burks",
+    "position": "WR",
+    "nflTeam": "IND",
+    "birthDate": "2003-01-08",
+    "currentTeam": {
+      "teamName": "Strib Club Closed",
+      "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+      "ownerId": "326066174007713792",
+      "rosterId": 3
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 123,
+        "overallRank": 345,
+        "games": [
           {
             "week": 10,
             "points": 0,
@@ -149013,8 +149031,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 124,
-        "overallRank": 346,
+        "positionRank": 125,
+        "overallRank": 347,
         "games": [
           {
             "week": 1,
@@ -150178,8 +150196,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 2,
-        "positionRank": 125,
-        "overallRank": 350,
+        "positionRank": 126,
+        "overallRank": 351,
         "games": [
           {
             "week": 1,
@@ -150775,8 +150793,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 1,
-        "positionRank": 123,
-        "overallRank": 345,
+        "positionRank": 124,
+        "overallRank": 346,
         "games": [
           {
             "week": 1,

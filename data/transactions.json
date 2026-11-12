@@ -1,5 +1,49 @@
 [
   {
+    "id": "1426745109709324288",
+    "type": "free_agent",
+    "date": "2026-11-12T23:10:51.098Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Strib Club Closed",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13333",
+        "name": "Deion Burks",
+        "position": "WR",
+        "team": {
+          "teamName": "Strib Club Closed",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7694",
+        "name": "Tommy Tremble",
+        "position": "TE",
+        "team": {
+          "teamName": "Strib Club Closed",
+          "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+          "ownerId": "326066174007713792",
+          "rosterId": 3
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1426380627044753408",
     "type": "free_agent",
     "date": "2026-11-11T23:02:31.659Z",
