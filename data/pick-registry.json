@@ -25052,12 +25052,86 @@
     },
     "resolved": false,
     "currentHolderTeam": {
-      "teamName": "GrayPornography",
-      "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
-      "ownerId": "990079789383897088",
-      "rosterId": 2
+      "teamName": "Faded off the Josh",
+      "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+      "ownerId": "1125954610599964672",
+      "rosterId": 4
     },
     "tradeHistory": [
+      {
+        "date": "2026-11-13T02:38:02.041Z",
+        "from": {
+          "teamName": "GrayPornography",
+          "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+          "ownerId": "990079789383897088",
+          "rosterId": 2
+        },
+        "to": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        },
+        "sides": [
+          {
+            "team": {
+              "teamName": "GrayPornography",
+              "avatar": "https://sleepercdn.com/uploads/a5aef38b28f0ac7c55ae03dc8853ed94.jpg",
+              "ownerId": "990079789383897088",
+              "rosterId": 2
+            },
+            "players": [
+              {
+                "playerId": "4943",
+                "name": "Sam Darnold",
+                "position": "QB"
+              },
+              {
+                "playerId": "8151",
+                "name": "Kenneth Walker III",
+                "position": "RB"
+              },
+              {
+                "playerId": "13293",
+                "name": "Ja'Kobi Lane",
+                "position": "WR"
+              }
+            ],
+            "picks": [],
+            "faab": []
+          },
+          {
+            "team": {
+              "teamName": "Faded off the Josh",
+              "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+              "ownerId": "1125954610599964672",
+              "rosterId": 4
+            },
+            "players": [
+              {
+                "playerId": "9500",
+                "name": "Josh Downs",
+                "position": "WR"
+              },
+              {
+                "playerId": "13287",
+                "name": "Jeremiyah Love",
+                "position": "RB"
+              }
+            ],
+            "picks": [
+              {
+                "season": "2027",
+                "round": 3,
+                "originalRosterId": 3,
+                "result": null,
+                "originalTeam": "Strib Club Closed"
+              }
+            ],
+            "faab": []
+          }
+        ]
+      },
       {
         "date": "2026-10-07T23:15:39.227Z",
         "from": {

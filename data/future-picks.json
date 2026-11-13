@@ -72,17 +72,6 @@
   "2": [
     {
       "season": "2027",
-      "round": 3,
-      "originalRosterId": 3,
-      "originalTeam": {
-        "teamName": "Strib Club Closed",
-        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
-        "ownerId": "326066174007713792",
-        "rosterId": 3
-      }
-    },
-    {
-      "season": "2027",
       "round": 4,
       "originalRosterId": 12,
       "originalTeam": {
@@ -296,6 +285,17 @@
       "round": 1,
       "originalRosterId": 4,
       "originalTeam": null
+    },
+    {
+      "season": "2027",
+      "round": 3,
+      "originalRosterId": 3,
+      "originalTeam": {
+        "teamName": "Strib Club Closed",
+        "avatar": "https://sleepercdn.com/uploads/88955fd6b8c172b8a34ffb1fb0eed68b.jpg",
+        "ownerId": "326066174007713792",
+        "rosterId": 3
+      }
     },
     {
       "season": "2027",
