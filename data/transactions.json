@@ -1,5 +1,69 @@
 [
   {
+    "id": "1428811164174786560",
+    "type": "free_agent",
+    "date": "2026-11-18T16:00:36.868Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Faded off the Josh",
+        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+        "ownerId": "1125954610599964672",
+        "rosterId": 4
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "3155",
+        "name": "Laquon Treadwell",
+        "position": "WR",
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1428811076329283584",
+    "type": "free_agent",
+    "date": "2026-11-18T16:00:15.925Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Faded off the Josh",
+        "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+        "ownerId": "1125954610599964672",
+        "rosterId": 4
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11199",
+        "name": "Emari Demercado",
+        "position": "RB",
+        "team": {
+          "teamName": "Faded off the Josh",
+          "avatar": "https://sleepercdn.com/uploads/d0a943cf459a731dd634792782d37289.jpg",
+          "ownerId": "1125954610599964672",
+          "rosterId": 4
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1428761054812344320",
     "type": "free_agent",
     "date": "2026-11-18T12:41:29.866Z",
