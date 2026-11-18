@@ -1,5 +1,213 @@
 [
   {
+    "id": "1428761054812344320",
+    "type": "free_agent",
+    "date": "2026-11-18T12:41:29.866Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "the left one’s bigger",
+        "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+        "ownerId": "996557160589000704",
+        "rosterId": 8
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12540",
+        "name": "Chimere Dike",
+        "position": "WR",
+        "team": {
+          "teamName": "the left one’s bigger",
+          "avatar": "https://sleepercdn.com/uploads/35926a83b1168948aa0fa75487ee686b.jpg",
+          "ownerId": "996557160589000704",
+          "rosterId": 8
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1428757852637396992",
+    "type": "free_agent",
+    "date": "2026-11-18T12:28:46.407Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "13425",
+        "name": "Jalon Daniels",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "6783",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1428670247929380864",
+    "type": "waiver",
+    "date": "2026-11-18T06:40:39.818Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "9504",
+        "name": "Kayshon Boutte",
+        "position": "WR",
+        "team": {
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "7562",
+        "name": "Tutu Atwell",
+        "position": "WR",
+        "team": {
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 16
+  },
+  {
+    "id": "1428445181480308736",
+    "type": "waiver",
+    "date": "2026-11-17T15:46:19.794Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7627",
+        "name": "Greg Rousseau",
+        "position": "DE",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "10235",
+        "name": "Roschon Johnson",
+        "position": "RB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 3
+  },
+  {
+    "id": "1428179420908097536",
+    "type": "waiver",
+    "date": "2026-11-16T22:10:17.537Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Spotted Cow",
+        "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+        "ownerId": "1373899826093096960",
+        "rosterId": 12
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12496",
+        "name": "Tai Felton",
+        "position": "WR",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "11762",
+        "name": "Anthony Gould",
+        "position": "WR",
+        "team": {
+          "teamName": "Spotted Cow",
+          "avatar": "https://sleepercdn.com/uploads/187cedb68679c12a108f935e6a381f3d.jpg",
+          "ownerId": "1373899826093096960",
+          "rosterId": 12
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": 0
+  },
+  {
     "id": "1426806016376307712",
     "type": "free_agent",
     "date": "2026-11-13T03:12:52.379Z",
