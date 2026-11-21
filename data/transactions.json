@@ -1,5 +1,37 @@
 [
   {
+    "id": "1429991428854931456",
+    "type": "free_agent",
+    "date": "2026-11-21T22:10:33.897Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "8385",
+        "name": "George Karlaftis",
+        "position": "DL",
+        "team": {
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1429303333394325504",
     "type": "free_agent",
     "date": "2026-11-20T00:36:19.154Z",
