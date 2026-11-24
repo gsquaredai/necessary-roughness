@@ -47381,7 +47381,7 @@
     "playerId": "6803",
     "name": "Brandon Aiyuk",
     "position": "WR",
-    "nflTeam": "SF",
+    "nflTeam": null,
     "birthDate": "1998-03-17",
     "currentTeam": {
       "teamName": "Smitty Committee",
@@ -111778,12 +111778,7 @@
     "position": "RB",
     "nflTeam": "NO",
     "birthDate": "2003-09-06",
-    "currentTeam": {
-      "teamName": "Exciting Whites",
-      "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
-      "ownerId": "1128912559073067008",
-      "rosterId": 11
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 36.800000000000004,
@@ -112008,48 +112003,6 @@
           },
           {
             "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}
