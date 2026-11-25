@@ -2146,10 +2146,10 @@
     "nflTeam": "MIN",
     "birthDate": "1988-08-19",
     "currentTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Los pollos hermanos",
+      "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+      "ownerId": "1128774237046636544",
+      "rosterId": 9
     },
     "seasons": {
       "2024": {
@@ -2953,12 +2953,7 @@
     "position": "TE",
     "nflTeam": "PHI",
     "birthDate": "1990-11-10",
-    "currentTeam": {
-      "teamName": "Los pollos hermanos",
-      "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
-      "ownerId": "1128774237046636544",
-      "rosterId": 9
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 161.99999999999997,
@@ -3383,48 +3378,6 @@
             "week": 11,
             "points": 0,
             "played": true,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
             "stats": {}
           }
         ]
@@ -6403,7 +6356,7 @@
     "playerId": "2197",
     "name": "Brandin Cooks",
     "position": "WR",
-    "nflTeam": null,
+    "nflTeam": "SF",
     "birthDate": "1993-09-25",
     "currentTeam": null,
     "seasons": {
@@ -9518,7 +9471,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 127,
-        "overallRank": 355,
+        "overallRank": 356,
         "games": [
           {
             "week": 11,
@@ -11978,7 +11931,7 @@
         "totalPoints": 8.1,
         "gamesPlayed": 1,
         "positionRank": 45,
-        "overallRank": 282,
+        "overallRank": 283,
         "games": [
           {
             "week": 1,
@@ -21897,7 +21850,7 @@
         "totalPoints": 4.1000000000000005,
         "gamesPlayed": 2,
         "positionRank": 82,
-        "overallRank": 290,
+        "overallRank": 291,
         "games": [
           {
             "week": 13,
@@ -23114,7 +23067,7 @@
     "playerId": "4574",
     "name": "Cooper Rush",
     "position": "QB",
-    "nflTeam": "TB",
+    "nflTeam": null,
     "birthDate": "1993-11-21",
     "currentTeam": null,
     "seasons": {
@@ -23259,12 +23212,7 @@
     "position": "RB",
     "nflTeam": "WAS",
     "birthDate": "1995-05-17",
-    "currentTeam": {
-      "teamName": "Smitty Committee",
-      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
-      "ownerId": "854223684238454784",
-      "rosterId": 6
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 110.6,
@@ -23617,48 +23565,6 @@
               "rec_tgt": 3,
               "rec_yd": 3
             }
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
           }
         ]
       }
@@ -23671,10 +23577,10 @@
     "nflTeam": "PHI",
     "birthDate": "1997-02-09",
     "currentTeam": {
-      "teamName": "Black Ops",
-      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
-      "ownerId": "1044114449679917056",
-      "rosterId": 5
+      "teamName": "Los pollos hermanos",
+      "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+      "ownerId": "1128774237046636544",
+      "rosterId": 9
     },
     "seasons": {
       "2024": {
@@ -26507,7 +26413,7 @@
         "totalPoints": 4,
         "gamesPlayed": 6,
         "positionRank": 117,
-        "overallRank": 291,
+        "overallRank": 292,
         "games": [
           {
             "week": 1,
@@ -26762,7 +26668,12 @@
     "position": "QB",
     "nflTeam": "PIT",
     "birthDate": "1995-07-17",
-    "currentTeam": null,
+    "currentTeam": {
+      "teamName": "Smitty Committee",
+      "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+      "ownerId": "854223684238454784",
+      "rosterId": 6
+    },
     "seasons": {
       "2024": {
         "totalPoints": 63.44,
@@ -26889,6 +26800,56 @@
               "rush_yd": 7,
               "fum_lost": 1
             }
+          }
+        ]
+      },
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 48,
+        "overallRank": 342,
+        "games": [
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
           }
         ]
       }
@@ -27233,7 +27194,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 123,
-        "overallRank": 342,
+        "overallRank": 343,
         "games": [
           {
             "week": 1,
@@ -40158,7 +40119,7 @@
         "totalPoints": 3.6,
         "gamesPlayed": 3,
         "positionRank": 47,
-        "overallRank": 294,
+        "overallRank": 295,
         "games": [
           {
             "week": 12,
@@ -41265,8 +41226,8 @@
       "2024": {
         "totalPoints": -0.1,
         "gamesPlayed": 2,
-        "positionRank": 51,
-        "overallRank": 313,
+        "positionRank": 52,
+        "overallRank": 314,
         "games": [
           {
             "week": 1,
@@ -43430,8 +43391,8 @@
       "2026": {
         "totalPoints": -0.64,
         "gamesPlayed": 1,
-        "positionRank": 52,
-        "overallRank": 361,
+        "positionRank": 54,
+        "overallRank": 364,
         "games": [
           {
             "week": 1,
@@ -47381,7 +47342,7 @@
     "playerId": "6803",
     "name": "Brandon Aiyuk",
     "position": "WR",
-    "nflTeam": null,
+    "nflTeam": "WAS",
     "birthDate": "1998-03-17",
     "currentTeam": {
       "teamName": "Smitty Committee",
@@ -51612,7 +51573,7 @@
         "totalPoints": 1,
         "gamesPlayed": 1,
         "positionRank": 86,
-        "overallRank": 302,
+        "overallRank": 303,
         "games": [
           {
             "week": 17,
@@ -61026,7 +60987,7 @@
         "totalPoints": 2.7,
         "gamesPlayed": 2,
         "positionRank": 120,
-        "overallRank": 296,
+        "overallRank": 297,
         "games": [
           {
             "week": 1,
@@ -62161,8 +62122,8 @@
       "2026": {
         "totalPoints": -2.3000000000000003,
         "gamesPlayed": 4,
-        "positionRank": 53,
-        "overallRank": 362,
+        "positionRank": 55,
+        "overallRank": 365,
         "games": [
           {
             "week": 1,
@@ -63897,7 +63858,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 122,
-        "overallRank": 305,
+        "overallRank": 306,
         "games": [
           {
             "week": 1,
@@ -64011,7 +63972,7 @@
         "totalPoints": 9.1,
         "gamesPlayed": 1,
         "positionRank": 78,
-        "overallRank": 281,
+        "overallRank": 282,
         "games": [
           {
             "week": 17,
@@ -64811,8 +64772,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 20,
-        "overallRank": 358,
+        "positionRank": 21,
+        "overallRank": 361,
         "games": [
           {
             "week": 1,
@@ -65849,6 +65810,71 @@
               "rec_tgt": 2,
               "rec_yd": 25
             }
+          }
+        ]
+      }
+    }
+  },
+  "7936": {
+    "playerId": "7936",
+    "name": "Amen Ogbongbemiga",
+    "position": "LB",
+    "nflTeam": "DET",
+    "birthDate": "1998-09-04",
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
+    "seasons": {
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 20,
+        "overallRank": 358,
+        "games": [
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
           }
         ]
       }
@@ -67731,7 +67757,7 @@
         "totalPoints": 7.8,
         "gamesPlayed": 5,
         "positionRank": 114,
-        "overallRank": 284,
+        "overallRank": 285,
         "games": [
           {
             "week": 1,
@@ -71856,7 +71882,7 @@
         "totalPoints": 5.5,
         "gamesPlayed": 5,
         "positionRank": 116,
-        "overallRank": 287,
+        "overallRank": 288,
         "games": [
           {
             "week": 1,
@@ -79139,8 +79165,8 @@
       "2024": {
         "totalPoints": -0.84,
         "gamesPlayed": 3,
-        "positionRank": 52,
-        "overallRank": 314,
+        "positionRank": 53,
+        "overallRank": 315,
         "games": [
           {
             "week": 1,
@@ -79753,7 +79779,7 @@
         "totalPoints": 7.8,
         "gamesPlayed": 8,
         "positionRank": 46,
-        "overallRank": 283,
+        "overallRank": 284,
         "games": [
           {
             "week": 1,
@@ -82369,7 +82395,7 @@
         "totalPoints": 2,
         "gamesPlayed": 1,
         "positionRank": 85,
-        "overallRank": 298,
+        "overallRank": 299,
         "games": [
           {
             "week": 17,
@@ -83667,12 +83693,7 @@
     "position": "WR",
     "nflTeam": "SEA",
     "birthDate": "1998-08-31",
-    "currentTeam": {
-      "teamName": "بسم الله، السلام عليكم",
-      "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
-      "ownerId": "1004418514142253056",
-      "rosterId": 10
-    },
+    "currentTeam": null,
     "seasons": {
       "2024": {
         "totalPoints": 69.80000000000001,
@@ -84108,48 +84129,6 @@
             "points": 0,
             "played": false,
             "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
-            "points": 0,
-            "played": false,
-            "stats": {}
           }
         ]
       }
@@ -84244,7 +84223,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 46,
-        "overallRank": 345,
+        "overallRank": 346,
         "games": [
           {
             "week": 1,
@@ -84315,7 +84294,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 94,
-        "overallRank": 344,
+        "overallRank": 345,
         "games": [
           {
             "week": 1,
@@ -84375,7 +84354,7 @@
         "totalPoints": 3.9,
         "gamesPlayed": 1,
         "positionRank": 119,
-        "overallRank": 293,
+        "overallRank": 294,
         "games": [
           {
             "week": 17,
@@ -87806,7 +87785,7 @@
         "totalPoints": 1.5,
         "gamesPlayed": 1,
         "positionRank": 49,
-        "overallRank": 300,
+        "overallRank": 301,
         "games": [
           {
             "week": 1,
@@ -95227,7 +95206,7 @@
         "totalPoints": 0,
         "gamesPlayed": 3,
         "positionRank": 88,
-        "overallRank": 309,
+        "overallRank": 310,
         "games": [
           {
             "week": 1,
@@ -99527,8 +99506,8 @@
       "2024": {
         "totalPoints": 0.66,
         "gamesPlayed": 1,
-        "positionRank": 47,
-        "overallRank": 304,
+        "positionRank": 48,
+        "overallRank": 305,
         "games": [
           {
             "week": 15,
@@ -99571,7 +99550,7 @@
         "totalPoints": 4.6,
         "gamesPlayed": 1,
         "positionRank": 81,
-        "overallRank": 289,
+        "overallRank": 290,
         "games": [
           {
             "week": 17,
@@ -99623,7 +99602,7 @@
         "totalPoints": 9.4,
         "gamesPlayed": 8,
         "positionRank": 112,
-        "overallRank": 279,
+        "overallRank": 280,
         "games": [
           {
             "week": 6,
@@ -100044,7 +100023,7 @@
         "totalPoints": 10,
         "gamesPlayed": 3,
         "positionRank": 77,
-        "overallRank": 278,
+        "overallRank": 279,
         "games": [
           {
             "week": 14,
@@ -104973,6 +104952,109 @@
       }
     }
   },
+  "11292": {
+    "playerId": "11292",
+    "name": "Tommy DeVito",
+    "position": "QB",
+    "nflTeam": "NE",
+    "birthDate": "1998-08-07",
+    "currentTeam": {
+      "teamName": "Black Ops",
+      "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+      "ownerId": "1044114449679917056",
+      "rosterId": 5
+    },
+    "seasons": {
+      "2024": {
+        "totalPoints": 10.76,
+        "gamesPlayed": 2,
+        "positionRank": 47,
+        "overallRank": 278,
+        "games": [
+          {
+            "week": 11,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 12,
+            "points": 10.76,
+            "played": true,
+            "stats": {
+              "pass_att": 31,
+              "pass_cmp": 21,
+              "pass_yd": 189,
+              "rush_att": 7,
+              "rush_yd": 32
+            }
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": true,
+            "stats": {}
+          }
+        ]
+      },
+      "2026": {
+        "totalPoints": 0,
+        "gamesPlayed": 0,
+        "positionRank": 51,
+        "overallRank": 357,
+        "games": [
+          {
+            "week": 12,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 13,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 14,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 15,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 16,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 17,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          },
+          {
+            "week": 18,
+            "points": 0,
+            "played": false,
+            "stats": {}
+          }
+        ]
+      }
+    }
+  },
   "11435": {
     "playerId": "11435",
     "name": "Emanuel Wilson",
@@ -105638,8 +105720,8 @@
       "2024": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 50,
-        "overallRank": 312,
+        "positionRank": 51,
+        "overallRank": 313,
         "games": [
           {
             "week": 1,
@@ -108645,8 +108727,8 @@
       "2024": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 48,
-        "overallRank": 306,
+        "positionRank": 49,
+        "overallRank": 307,
         "games": [
           {
             "week": 1,
@@ -109671,8 +109753,8 @@
       "2024": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 49,
-        "overallRank": 310,
+        "positionRank": 50,
+        "overallRank": 311,
         "games": [
           {
             "week": 1,
@@ -109792,7 +109874,7 @@
         "totalPoints": 3.4000000000000004,
         "gamesPlayed": 4,
         "positionRank": 83,
-        "overallRank": 295,
+        "overallRank": 296,
         "games": [
           {
             "week": 1,
@@ -110239,7 +110321,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 87,
-        "overallRank": 308,
+        "overallRank": 309,
         "games": [
           {
             "week": 1,
@@ -111381,7 +111463,7 @@
         "totalPoints": 5,
         "gamesPlayed": 15,
         "positionRank": 80,
-        "overallRank": 288,
+        "overallRank": 289,
         "games": [
           {
             "week": 1,
@@ -112028,7 +112110,7 @@
         "totalPoints": 2.3,
         "gamesPlayed": 1,
         "positionRank": 84,
-        "overallRank": 297,
+        "overallRank": 298,
         "games": [
           {
             "week": 1,
@@ -112432,7 +112514,7 @@
         "totalPoints": 6,
         "gamesPlayed": 3,
         "positionRank": 79,
-        "overallRank": 286,
+        "overallRank": 287,
         "games": [
           {
             "week": 1,
@@ -114523,7 +114605,7 @@
         "totalPoints": 1.7,
         "gamesPlayed": 7,
         "positionRank": 48,
-        "overallRank": 299,
+        "overallRank": 300,
         "games": [
           {
             "week": 1,
@@ -117031,7 +117113,7 @@
         "totalPoints": 1.1,
         "gamesPlayed": 13,
         "positionRank": 50,
-        "overallRank": 301,
+        "overallRank": 302,
         "games": [
           {
             "week": 1,
@@ -117697,7 +117779,7 @@
         "totalPoints": 4,
         "gamesPlayed": 14,
         "positionRank": 118,
-        "overallRank": 292,
+        "overallRank": 293,
         "games": [
           {
             "week": 1,
@@ -117955,7 +118037,7 @@
         "totalPoints": 0.9,
         "gamesPlayed": 3,
         "positionRank": 121,
-        "overallRank": 303,
+        "overallRank": 304,
         "games": [
           {
             "week": 1,
@@ -119109,7 +119191,7 @@
         "totalPoints": 0,
         "gamesPlayed": 3,
         "positionRank": 123,
-        "overallRank": 307,
+        "overallRank": 308,
         "games": [
           {
             "week": 1,
@@ -121677,7 +121759,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 124,
-        "overallRank": 311,
+        "overallRank": 312,
         "games": [
           {
             "week": 1,
@@ -127345,7 +127427,7 @@
         "totalPoints": 9.3,
         "gamesPlayed": 2,
         "positionRank": 113,
-        "overallRank": 280,
+        "overallRank": 281,
         "games": [
           {
             "week": 7,
@@ -128096,7 +128178,7 @@
         "totalPoints": 7.5,
         "gamesPlayed": 3,
         "positionRank": 115,
-        "overallRank": 285,
+        "overallRank": 286,
         "games": [
           {
             "week": 7,
@@ -128910,8 +128992,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 49,
-        "overallRank": 347,
+        "positionRank": 50,
+        "overallRank": 348,
         "games": [
           {
             "week": 1,
@@ -129159,7 +129241,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 96,
-        "overallRank": 350,
+        "overallRank": 351,
         "games": [
           {
             "week": 1,
@@ -129946,7 +130028,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 95,
-        "overallRank": 349,
+        "overallRank": 350,
         "games": [
           {
             "week": 4,
@@ -130906,7 +130988,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 124,
-        "overallRank": 348,
+        "overallRank": 349,
         "games": [
           {
             "week": 1,
@@ -137228,8 +137310,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 48,
-        "overallRank": 346,
+        "positionRank": 49,
+        "overallRank": 347,
         "games": [
           {
             "week": 1,
@@ -142841,12 +142923,7 @@
     "position": "WR",
     "nflTeam": "HOU",
     "birthDate": "2002-09-04",
-    "currentTeam": {
-      "teamName": "Los pollos hermanos",
-      "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
-      "ownerId": "1128774237046636544",
-      "rosterId": 9
-    },
+    "currentTeam": null,
     "seasons": {
       "2025": {
         "totalPoints": 53.6,
@@ -143125,48 +143202,6 @@
           },
           {
             "week": 11,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 12,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 13,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 14,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 15,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 16,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 17,
-            "points": 0,
-            "played": false,
-            "stats": {}
-          },
-          {
-            "week": 18,
             "points": 0,
             "played": false,
             "stats": {}
@@ -143759,7 +143794,7 @@
         "totalPoints": 0,
         "gamesPlayed": 3,
         "positionRank": 93,
-        "overallRank": 343,
+        "overallRank": 344,
         "games": [
           {
             "week": 3,
@@ -146736,8 +146771,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 51,
-        "overallRank": 359,
+        "positionRank": 53,
+        "overallRank": 362,
         "games": [
           {
             "week": 1,
@@ -147017,7 +147052,7 @@
         "totalPoints": 0,
         "gamesPlayed": 7,
         "positionRank": 48,
-        "overallRank": 360,
+        "overallRank": 363,
         "games": [
           {
             "week": 1,
@@ -148104,8 +148139,8 @@
       "2026": {
         "totalPoints": 0,
         "gamesPlayed": 0,
-        "positionRank": 50,
-        "overallRank": 356,
+        "positionRank": 52,
+        "overallRank": 359,
         "games": [
           {
             "week": 1,
@@ -151167,7 +151202,7 @@
         "totalPoints": 0,
         "gamesPlayed": 0,
         "positionRank": 126,
-        "overallRank": 354,
+        "overallRank": 355,
         "games": [
           {
             "week": 1,
@@ -152210,7 +152245,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 47,
-        "overallRank": 351,
+        "overallRank": 352,
         "games": [
           {
             "week": 1,
@@ -152341,7 +152376,7 @@
         "totalPoints": 0,
         "gamesPlayed": 3,
         "positionRank": 128,
-        "overallRank": 357,
+        "overallRank": 360,
         "games": [
           {
             "week": 1,
@@ -152965,7 +153000,7 @@
         "totalPoints": 0,
         "gamesPlayed": 1,
         "positionRank": 125,
-        "overallRank": 353,
+        "overallRank": 354,
         "games": [
           {
             "week": 1,
@@ -153265,7 +153300,7 @@
         "totalPoints": 0,
         "gamesPlayed": 2,
         "positionRank": 97,
-        "overallRank": 352,
+        "overallRank": 353,
         "games": [
           {
             "week": 1,

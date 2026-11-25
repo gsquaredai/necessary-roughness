@@ -1,5 +1,365 @@
 [
   {
+    "id": "1431372957715800064",
+    "type": "free_agent",
+    "date": "2026-11-25T17:40:16.044Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "7936",
+        "name": "Amen Ogbongbemiga",
+        "position": "LB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431372774642847744",
+    "type": "free_agent",
+    "date": "2026-11-25T17:39:32.396Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "11292",
+        "name": "Tommy DeVito",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "drops": [],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431357787769671680",
+    "type": "free_agent",
+    "date": "2026-11-25T16:39:59.247Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "بسم الله، السلام عليكم",
+        "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+        "ownerId": "1004418514142253056",
+        "rosterId": 10
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "8676",
+        "name": "Rashid Shaheed",
+        "position": "WR",
+        "team": {
+          "teamName": "بسم الله، السلام عليكم",
+          "avatar": "https://sleepercdn.com/uploads/c8630f7b98fc1798bc3991193376b19d.jpg",
+          "ownerId": "1004418514142253056",
+          "rosterId": 10
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431353558988509184",
+    "type": "free_agent",
+    "date": "2026-11-25T16:23:11.028Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "12536",
+        "name": "Jaylin Noel",
+        "position": "WR",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431353406663979008",
+    "type": "free_agent",
+    "date": "2026-11-25T16:22:34.711Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "1339",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431325858076856320",
+    "type": "free_agent",
+    "date": "2026-11-25T14:33:06.615Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Smitty Committee",
+        "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+        "ownerId": "854223684238454784",
+        "rosterId": 6
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "4972",
+        "name": "Mason Rudolph",
+        "position": "QB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "4663",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": {
+          "teamName": "Smitty Committee",
+          "avatar": "https://sleepercdn.com/avatars/thumbs/f95356e7e7258fa90ad8e7e78d501d60",
+          "ownerId": "854223684238454784",
+          "rosterId": 6
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1431173080956280832",
+    "type": "trade",
+    "date": "2026-11-25T04:26:01.711Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Black Ops",
+        "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+        "ownerId": "1044114449679917056",
+        "rosterId": 5
+      },
+      {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    ],
+    "sides": [
+      {
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        },
+        "players": [],
+        "picks": [
+          {
+            "season": "2028",
+            "round": 1,
+            "originalRosterId": 9,
+            "result": null,
+            "originalTeam": "Los pollos hermanos"
+          },
+          {
+            "season": "2028",
+            "round": 2,
+            "originalRosterId": 9,
+            "result": null,
+            "originalTeam": "Los pollos hermanos"
+          }
+        ],
+        "faab": []
+      },
+      {
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        },
+        "players": [
+          {
+            "playerId": "1166",
+            "name": "Kirk Cousins",
+            "position": "QB"
+          },
+          {
+            "playerId": "4866",
+            "name": "Saquon Barkley",
+            "position": "RB"
+          }
+        ],
+        "picks": [],
+        "faab": []
+      }
+    ],
+    "adds": [
+      {
+        "playerId": "1166",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      },
+      {
+        "playerId": "4866",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "1166",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      },
+      {
+        "playerId": "4866",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "draftPicksTraded": [
+      {
+        "season": "2028",
+        "round": 1,
+        "originalRosterId": 9,
+        "from": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        },
+        "to": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      },
+      {
+        "season": "2028",
+        "round": 2,
+        "originalRosterId": 9,
+        "from": {
+          "teamName": "Los pollos hermanos",
+          "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+          "ownerId": "1128774237046636544",
+          "rosterId": 9
+        },
+        "to": {
+          "teamName": "Black Ops",
+          "avatar": "https://sleepercdn.com/uploads/af8b6e31acdf9e6cff881a7d6c2cd2dc.jpg",
+          "ownerId": "1044114449679917056",
+          "rosterId": 5
+        }
+      }
+    ],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1430995161302704128",
     "type": "free_agent",
     "date": "2026-11-24T16:39:02.360Z",

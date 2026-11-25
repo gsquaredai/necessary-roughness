@@ -422,6 +422,28 @@
     },
     {
       "season": "2028",
+      "round": 1,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    },
+    {
+      "season": "2028",
+      "round": 2,
+      "originalRosterId": 9,
+      "originalTeam": {
+        "teamName": "Los pollos hermanos",
+        "avatar": "https://sleepercdn.com/uploads/331e2992b70e504b06e03aee2a6eeebb.jpg",
+        "ownerId": "1128774237046636544",
+        "rosterId": 9
+      }
+    },
+    {
+      "season": "2028",
       "round": 4,
       "originalRosterId": 1,
       "originalTeam": {
@@ -747,18 +769,6 @@
     {
       "season": "2027",
       "round": 4,
-      "originalRosterId": 9,
-      "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 1,
-      "originalRosterId": 9,
-      "originalTeam": null
-    },
-    {
-      "season": "2028",
-      "round": 2,
       "originalRosterId": 9,
       "originalTeam": null
     },
