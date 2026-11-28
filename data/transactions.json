@@ -1,5 +1,125 @@
 [
   {
+    "id": "1432222410576232448",
+    "type": "free_agent",
+    "date": "2026-11-28T01:55:41.388Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "12773",
+        "name": "DJ Uiagalelei",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "260",
+        "name": "Josh Johnson",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1432167675550769152",
+    "type": "free_agent",
+    "date": "2026-11-27T22:18:11.541Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [
+      {
+        "playerId": "260",
+        "name": "Josh Johnson",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "drops": [
+      {
+        "playerId": "4039",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
+    "id": "1432166746973818880",
+    "type": "free_agent",
+    "date": "2026-11-27T22:14:30.151Z",
+    "season": "2026",
+    "teams": [
+      {
+        "teamName": "Exciting Whites",
+        "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+        "ownerId": "1128912559073067008",
+        "rosterId": 11
+      }
+    ],
+    "sides": [],
+    "adds": [],
+    "drops": [
+      {
+        "playerId": "13425",
+        "name": "Jalon Daniels",
+        "position": "QB",
+        "team": {
+          "teamName": "Exciting Whites",
+          "avatar": "https://sleepercdn.com/uploads/da594c9aa73dccefcaec0ffb0aa612b1.jpg",
+          "ownerId": "1128912559073067008",
+          "rosterId": 11
+        }
+      }
+    ],
+    "draftPicksTraded": [],
+    "faab": [],
+    "waiverBid": null
+  },
+  {
     "id": "1431372957715800064",
     "type": "free_agent",
     "date": "2026-11-25T17:40:16.044Z",
